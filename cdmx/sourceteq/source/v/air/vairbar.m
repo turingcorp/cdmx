@@ -1,7 +1,7 @@
 #import "vairbar.h"
 #import "uicolor+uicolormain.h"
 
-static NSUInteger const navbarintrinsicwidth;
+static NSUInteger const navbarintrinsicwidth = 320;
 
 @implementation vairbar
 
