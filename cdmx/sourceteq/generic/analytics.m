@@ -1,4 +1,5 @@
 #import "analytics.h"
+#import "privateconstants.h"
 
 @implementation analytics
 {

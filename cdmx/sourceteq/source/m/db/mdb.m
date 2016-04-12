@@ -1,6 +1,9 @@
 #import "mdb.h"
+#import "mdbcreate.h"
 #import "db.h"
 #import "tools.h"
+#import "updater.h"
+#import "mdirs.h"
 
 @implementation mdb
 

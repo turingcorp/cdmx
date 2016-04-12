@@ -2,6 +2,7 @@
 #import "tools.h"
 #import "msettings.h"
 #import "mdb.h"
+#import "db.h"
 
 @implementation updater
 

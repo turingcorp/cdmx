@@ -1,4 +1,6 @@
 #import "valert.h"
+#import "uicolor+uicolormain.h"
+#import "uifont+uifontmain.h"
 
 @implementation valert
 
