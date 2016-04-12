@@ -49,6 +49,8 @@
 		DAD876021CBD6F4000A4F91C /* cmenu.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD876011CBD6F4000A4F91C /* cmenu.m */; };
 		DAD876061CBD6F7600A4F91C /* vmenu.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD876051CBD6F7600A4F91C /* vmenu.m */; };
 		DAD8760C1CBD70B000A4F91C /* vmenubanner.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD8760B1CBD70B000A4F91C /* vmenubanner.m */; };
+		DAD8760F1CBD72A200A4F91C /* vmenuheader.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD8760E1CBD72A200A4F91C /* vmenuheader.m */; };
+		DAD876121CBD72F400A4F91C /* vmenucell.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD876111CBD72F400A4F91C /* vmenucell.m */; };
 		E99EDB84D6293E5D839C08A5 /* libPods-cdmx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E47528F2CEFA76F37D95E3 /* libPods-cdmx.a */; };
 /* End PBXBuildFile section */
 
@@ -133,6 +135,10 @@
 		DAD876051CBD6F7600A4F91C /* vmenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vmenu.m; sourceTree = "<group>"; };
 		DAD8760A1CBD70B000A4F91C /* vmenubanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vmenubanner.h; sourceTree = "<group>"; };
 		DAD8760B1CBD70B000A4F91C /* vmenubanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vmenubanner.m; sourceTree = "<group>"; };
+		DAD8760D1CBD72A200A4F91C /* vmenuheader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vmenuheader.h; sourceTree = "<group>"; };
+		DAD8760E1CBD72A200A4F91C /* vmenuheader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vmenuheader.m; sourceTree = "<group>"; };
+		DAD876101CBD72F400A4F91C /* vmenucell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vmenucell.h; sourceTree = "<group>"; };
+		DAD876111CBD72F400A4F91C /* vmenucell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vmenucell.m; sourceTree = "<group>"; };
 		EFFF53693CD2BFB9D79DACFE /* Pods-cdmx.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cdmx.release.xcconfig"; path = "Pods/Target Support Files/Pods-cdmx/Pods-cdmx.release.xcconfig"; sourceTree = "<group>"; };
 		FB216D6F4F8C21A7E0923298 /* Pods-cdmx.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cdmx.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cdmx/Pods-cdmx.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -474,6 +480,10 @@
 				DAD876051CBD6F7600A4F91C /* vmenu.m */,
 				DAD8760A1CBD70B000A4F91C /* vmenubanner.h */,
 				DAD8760B1CBD70B000A4F91C /* vmenubanner.m */,
+				DAD8760D1CBD72A200A4F91C /* vmenuheader.h */,
+				DAD8760E1CBD72A200A4F91C /* vmenuheader.m */,
+				DAD876101CBD72F400A4F91C /* vmenucell.h */,
+				DAD876111CBD72F400A4F91C /* vmenucell.m */,
 			);
 			path = menu;
 			sourceTree = "<group>";
@@ -634,8 +644,10 @@
 				DAD340031CBC83E300C87502 /* valert.m in Sources */,
 				DAD875CF1CBD2F0400A4F91C /* cpages.m in Sources */,
 				DAD33FF71CBC83E300C87502 /* analytics.m in Sources */,
+				DAD876121CBD72F400A4F91C /* vmenucell.m in Sources */,
 				DAD340001CBC83E300C87502 /* mdbcreate.m in Sources */,
 				DAD875F91CBD6A0600A4F91C /* vaircell.m in Sources */,
+				DAD8760F1CBD72A200A4F91C /* vmenuheader.m in Sources */,
 				DAD875FC1CBD6CF200A4F91C /* vmenubutton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

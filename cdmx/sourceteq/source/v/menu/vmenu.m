@@ -1,7 +1,10 @@
 #import "vmenu.h"
 #import "uicolor+uicolormain.h"
 #import "vmenubanner.h"
+#import "vmenuheader.h"
 
+static NSString* const menuheaderid = @"headerid";
+static NSString* const menucellid = @"cellid";
 static NSUInteger const bannerheight = 200;
 
 @implementation vmenu
@@ -14,6 +17,27 @@ static NSUInteger const bannerheight = 200;
     self.controller = controller;
     
     vmenubanner *banner = [[vmenubanner alloc] init];
+    
+    UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
+    [flow setHeaderReferenceSize:CGSizeZero];
+    [flow setFooterReferenceSize:CGSizeZero];
+    [flow setMinimumInteritemSpacing:0];
+    [flow setMinimumLineSpacing:1];
+    [flow setSectionInset:UIEdgeInsetsMake(bannerheight, 0, collectionbottom, 0)];
+    [flow setScrollDirection:UICollectionViewScrollDirectionVertical];
+    
+    UICollectionView *collection = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flow];
+    [collection setBackgroundColor:[UIColor clearColor]];
+    [collection setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [collection setClipsToBounds:YES];
+    [collection setShowsVerticalScrollIndicator:NO];
+    [collection setShowsHorizontalScrollIndicator:NO];
+    [collection setAlwaysBounceVertical:YES];
+    [collection setDataSource:self];
+    [collection setDelegate:self];
+    [collection registerClass:[] forSupplementaryViewOfKind:<#(nonnull NSString *)#> withReuseIdentifier:<#(nonnull NSString *)#>];
+    [collection registerClass:[vaircell class] forCellWithReuseIdentifier:menucellid];
+    self.collection = collection;
     
     [self addSubview:banner];
     

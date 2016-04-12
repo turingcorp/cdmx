@@ -5,7 +5,6 @@
 
 static NSString* const cellairid = @"cellair";
 static NSUInteger const mapheight = 200;
-static NSUInteger const collectionbottom = 40;
 static NSUInteger const cellheight = 60;
 
 @implementation vair
@@ -37,6 +36,7 @@ static NSUInteger const cellheight = 60;
     [collection setDataSource:self];
     [collection setDelegate:self];
     [collection registerClass:[vaircell class] forCellWithReuseIdentifier:cellairid];
+    self.collection = collection;
     
     [self addSubview:bar];
     [self addSubview:collection];
