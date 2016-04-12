@@ -45,6 +45,7 @@
 		DAD875F61CBD645500A4F91C /* vairbar.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD875F51CBD645500A4F91C /* vairbar.m */; };
 		DAD875F91CBD6A0600A4F91C /* vaircell.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD875F81CBD6A0600A4F91C /* vaircell.m */; };
 		DAD875FC1CBD6CF200A4F91C /* vmenubutton.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD875FB1CBD6CF200A4F91C /* vmenubutton.m */; };
+		DAD875FE1CBD6E7800A4F91C /* general.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAD875FD1CBD6E7800A4F91C /* general.xcassets */; };
 		E99EDB84D6293E5D839C08A5 /* libPods-cdmx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E47528F2CEFA76F37D95E3 /* libPods-cdmx.a */; };
 /* End PBXBuildFile section */
 
@@ -122,6 +123,7 @@
 		DAD875F81CBD6A0600A4F91C /* vaircell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vaircell.m; sourceTree = "<group>"; };
 		DAD875FA1CBD6CF200A4F91C /* vmenubutton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vmenubutton.h; sourceTree = "<group>"; };
 		DAD875FB1CBD6CF200A4F91C /* vmenubutton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vmenubutton.m; sourceTree = "<group>"; };
+		DAD875FD1CBD6E7800A4F91C /* general.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = general.xcassets; sourceTree = "<group>"; };
 		EFFF53693CD2BFB9D79DACFE /* Pods-cdmx.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cdmx.release.xcconfig"; path = "Pods/Target Support Files/Pods-cdmx/Pods-cdmx.release.xcconfig"; sourceTree = "<group>"; };
 		FB216D6F4F8C21A7E0923298 /* Pods-cdmx.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cdmx.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cdmx/Pods-cdmx.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -212,6 +214,7 @@
 			children = (
 				DAD3400A1CBC858A00C87502 /* brand.xcassets */,
 				DAD875D71CBD33FB00A4F91C /* spinner.xcassets */,
+				DAD875FD1CBD6E7800A4F91C /* general.xcassets */,
 			);
 			path = imateq;
 			sourceTree = "<group>";
@@ -507,6 +510,7 @@
 			files = (
 				DAD33FF01CBC83E300C87502 /* cdmx.db in Resources */,
 				DAD33FF31CBC83E300C87502 /* Localizable.strings in Resources */,
+				DAD875FE1CBD6E7800A4F91C /* general.xcassets in Resources */,
 				DAD33FF21CBC83E300C87502 /* defs.plist in Resources */,
 				DAD33FF51CBC83E300C87502 /* Info.plist in Resources */,
 				DAD33FF11CBC83E300C87502 /* analytics.plist in Resources */,
