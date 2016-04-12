@@ -9,7 +9,7 @@ static NSUInteger const buttonheight = 45;
 {
     self = [super init];
     [self setClipsToBounds:YES];
-    [self setBackgroundColor:[UIColor whiteColor]];
+    [self setBackgroundColor:[UIColor clearColor]];
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self.imageView setClipsToBounds:YES];
     [self.imageView setContentMode:UIViewContentModeScaleAspectFit];

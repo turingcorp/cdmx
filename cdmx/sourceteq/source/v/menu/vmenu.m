@@ -57,12 +57,23 @@ static NSUInteger const bannerheight = 200;
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView*)col
 {
-    return 1;
+    NSUInteger sections = self.model.sections.count;
+    
+    return sections;
 }
 
 -(NSInteger)collectionView:(UICollectionView*)col numberOfItemsInSection:(NSInteger)section
 {
+    NSUInteger items = self.model.sections[section].items.count;
     
+    return items;
+}
+
+-(UICollectionViewCell*)collectionView:(UICollectionView*)col cellForItemAtIndexPath:(NSIndexPath*)index
+{
+    vmenucell *cell = [col dequeueReusableCellWithReuseIdentifier:menucellid forIndexPath:index];
+    
+    return cell;
 }
 
 @end
