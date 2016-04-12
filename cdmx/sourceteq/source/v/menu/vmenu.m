@@ -2,6 +2,8 @@
 #import "uicolor+uicolormain.h"
 #import "vmenubanner.h"
 #import "vmenuheader.h"
+#import "vmenucell.h"
+#import "cmain.h"
 
 static NSString* const menuheaderid = @"headerid";
 static NSString* const menucellid = @"cellid";
@@ -15,11 +17,11 @@ static NSUInteger const bannerheight = 200;
     [self setClipsToBounds:YES];
     [self setBackgroundColor:[UIColor collection]];
     self.controller = controller;
+    self.model = [cmain singleton].pages.model;
     
     vmenubanner *banner = [[vmenubanner alloc] init];
     
     UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
-    [flow setHeaderReferenceSize:CGSizeZero];
     [flow setFooterReferenceSize:CGSizeZero];
     [flow setMinimumInteritemSpacing:0];
     [flow setMinimumLineSpacing:1];
@@ -35,8 +37,8 @@ static NSUInteger const bannerheight = 200;
     [collection setAlwaysBounceVertical:YES];
     [collection setDataSource:self];
     [collection setDelegate:self];
-    [collection registerClass:[] forSupplementaryViewOfKind:<#(nonnull NSString *)#> withReuseIdentifier:<#(nonnull NSString *)#>];
-    [collection registerClass:[vaircell class] forCellWithReuseIdentifier:menucellid];
+    [collection registerClass:[vmenuheader class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:menuheaderid];
+    [collection registerClass:[vmenucell class] forCellWithReuseIdentifier:menucellid];
     self.collection = collection;
     
     [self addSubview:banner];
@@ -48,6 +50,19 @@ static NSUInteger const bannerheight = 200;
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[banner(bannerheight)]" options:0 metrics:metrics views:views]];
     
     return self;
+}
+
+#pragma mark -
+#pragma mark col del
+
+-(NSInteger)numberOfSectionsInCollectionView:(UICollectionView*)col
+{
+    return 1;
+}
+
+-(NSInteger)collectionView:(UICollectionView*)col numberOfItemsInSection:(NSInteger)section
+{
+    
 }
 
 @end
