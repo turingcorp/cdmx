@@ -1,13 +1,5 @@
-//
-//  vmenubanner.h
-//  cdmx
-//
-//  Created by zero on 4/12/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
+#import "appdel.h"
 
-#import <Foundation/Foundation.h>
-
-@interface vmenubanner : NSObject
+@interface vmenubanner:UIView
 
 @end

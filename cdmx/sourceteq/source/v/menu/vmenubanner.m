@@ -1,13 +1,14 @@
-//
-//  vmenubanner.m
-//  cdmx
-//
-//  Created by zero on 4/12/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
-
 #import "vmenubanner.h"
 
 @implementation vmenubanner
+
+-(instancetype)init
+{
+    self = [super init];
+    [self setClipsToBounds:YES];
+    [self setBackgroundColor:[UIColor clearColor]];
+    
+    return self;
+}
 
 @end

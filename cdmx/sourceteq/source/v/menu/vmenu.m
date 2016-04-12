@@ -1,5 +1,6 @@
 #import "vmenu.h"
 #import "uicolor+uicolormain.h"
+#import "vmenubanner.h"
 
 @implementation vmenu
 
