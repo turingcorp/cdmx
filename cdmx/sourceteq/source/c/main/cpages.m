@@ -40,9 +40,9 @@
     [self changecontroller:controller direction:direction animated:animated];
 }
 
--(void)loadfinished
+-(void)loadfinished:(mpages*)model
 {
-    NSLog(@"load finished");
+    self.model = model;
 }
 
 @end
