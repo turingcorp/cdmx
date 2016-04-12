@@ -1,4 +1,4 @@
-#import "appdel.h"
+#import "db.h"
 
 @interface mdbcreate:NSObject
 

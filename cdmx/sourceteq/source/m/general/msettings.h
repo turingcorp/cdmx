@@ -1,10 +1,8 @@
-#import "appdel.h"
+#import <UIKit/UIKit.h>
 
 @interface msettings:NSObject
 
 +(instancetype)singleton;
 -(void)save;
-
-@property(nonatomic)NSUInteger starsrated;
 
 @end

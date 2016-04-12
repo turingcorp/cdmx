@@ -20,11 +20,9 @@
     
     if(settings)
     {
-        self.starsrated = [settings[@"starsrated"] unsignedIntegerValue];
     }
     else
     {
-        self.starsrated = 0;
     }
     
     if(!settings)
@@ -42,7 +40,6 @@
 -(void)save
 {
     NSMutableDictionary *settings = [NSMutableDictionary dictionary];
-    settings[@"starsrated"] = @(self.starsrated);
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setValue:settings forKey:@"settings"];

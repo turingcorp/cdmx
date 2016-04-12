@@ -1,4 +1,5 @@
-#import "appdel.h"
+#import <Foundation/Foundation.h>
+#import <Google/Analytics.h>
 #import "mgeneral.h"
 
 @interface analytics:NSObject
