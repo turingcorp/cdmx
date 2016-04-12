@@ -38,6 +38,8 @@
 		DAD875DC1CBD415300A4F91C /* cair.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD875DB1CBD415300A4F91C /* cair.m */; };
 		DAD875E01CBD5A6000A4F91C /* vair.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD875DF1CBD5A6000A4F91C /* vair.m */; };
 		DAD875E41CBD5B1D00A4F91C /* mpages.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD875E31CBD5B1D00A4F91C /* mpages.m */; };
+		DAD875E71CBD5F1600A4F91C /* mpagessection.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD875E61CBD5F1600A4F91C /* mpagessection.m */; };
+		DAD875EA1CBD5F2D00A4F91C /* mpagessectionitem.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD875E91CBD5F2D00A4F91C /* mpagessectionitem.m */; };
 		E99EDB84D6293E5D839C08A5 /* libPods-cdmx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E47528F2CEFA76F37D95E3 /* libPods-cdmx.a */; };
 /* End PBXBuildFile section */
 
@@ -101,6 +103,10 @@
 		DAD875DF1CBD5A6000A4F91C /* vair.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vair.m; sourceTree = "<group>"; };
 		DAD875E21CBD5B1D00A4F91C /* mpages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpages.h; sourceTree = "<group>"; };
 		DAD875E31CBD5B1D00A4F91C /* mpages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mpages.m; sourceTree = "<group>"; };
+		DAD875E51CBD5F1600A4F91C /* mpagessection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpagessection.h; sourceTree = "<group>"; };
+		DAD875E61CBD5F1600A4F91C /* mpagessection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mpagessection.m; sourceTree = "<group>"; };
+		DAD875E81CBD5F2D00A4F91C /* mpagessectionitem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpagessectionitem.h; sourceTree = "<group>"; };
+		DAD875E91CBD5F2D00A4F91C /* mpagessectionitem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mpagessectionitem.m; sourceTree = "<group>"; };
 		EFFF53693CD2BFB9D79DACFE /* Pods-cdmx.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cdmx.release.xcconfig"; path = "Pods/Target Support Files/Pods-cdmx/Pods-cdmx.release.xcconfig"; sourceTree = "<group>"; };
 		FB216D6F4F8C21A7E0923298 /* Pods-cdmx.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cdmx.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cdmx/Pods-cdmx.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -405,6 +411,10 @@
 			children = (
 				DAD875E21CBD5B1D00A4F91C /* mpages.h */,
 				DAD875E31CBD5B1D00A4F91C /* mpages.m */,
+				DAD875E51CBD5F1600A4F91C /* mpagessection.h */,
+				DAD875E61CBD5F1600A4F91C /* mpagessection.m */,
+				DAD875E81CBD5F2D00A4F91C /* mpagessectionitem.h */,
+				DAD875E91CBD5F2D00A4F91C /* mpagessectionitem.m */,
 			);
 			path = pages;
 			sourceTree = "<group>";
@@ -542,8 +552,10 @@
 				DAD875D21CBD30E100A4F91C /* cloading.m in Sources */,
 				DAD33FFC1CBC83E300C87502 /* updater.m in Sources */,
 				DAD33FFB1CBC83E300C87502 /* uifont+uifontmain.m in Sources */,
+				DAD875EA1CBD5F2D00A4F91C /* mpagessectionitem.m in Sources */,
 				DAD340051CBC83E300C87502 /* vspinner.m in Sources */,
 				DAD33FFF1CBC83E300C87502 /* mdb.m in Sources */,
+				DAD875E71CBD5F1600A4F91C /* mpagessection.m in Sources */,
 				DAD340041CBC83E300C87502 /* vblur.m in Sources */,
 				DAD875D61CBD312900A4F91C /* vloading.m in Sources */,
 				DAD33FF41CBC83E300C87502 /* appdel.m in Sources */,
