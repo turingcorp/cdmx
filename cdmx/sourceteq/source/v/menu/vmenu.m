@@ -71,7 +71,8 @@ static NSUInteger const bannerheight = 200;
 
 -(UICollectionReusableView*)collectionView:(UICollectionView*)col viewForSupplementaryElementOfKind:(NSString*)kind atIndexPath:(NSIndexPath*)index
 {
-    UICollectionReusableView *reusable = [col dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:menuheaderid forIndexPath:index];
+    vmenuheader *reusable = [col dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:menuheaderid forIndexPath:index];
+    [reusable config:self.model.sections[index.section]];
     
     return reusable;
 }
