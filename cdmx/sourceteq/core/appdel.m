@@ -1,5 +1,4 @@
 #import "appdel.h"
-#import "analytics.h"
 #import "updater.h"
 #import "cmain.h"
 
@@ -10,8 +9,6 @@
 
 -(BOOL)application:(UIApplication*)app didFinishLaunchingWithOptions:(NSDictionary*)options
 {
-    [[analytics singleton] start];
-    
     window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [window makeKeyAndVisible];
     [window setBackgroundColor:[UIColor whiteColor]];

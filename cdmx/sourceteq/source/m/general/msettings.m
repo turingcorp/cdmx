@@ -11,10 +11,12 @@
     return single;
 }
 
--(instancetype)init
-{
-    self = [super init];
+#pragma mark functionality
 
+#pragma mark public
+
+-(void)load
+{
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSDictionary *settings = [defaults valueForKey:@"settings"];
     
@@ -29,13 +31,7 @@
     {
         [self save];
     }
-    
-    return self;
 }
-
-#pragma mark functionality
-
-#pragma mark public
 
 -(void)save
 {

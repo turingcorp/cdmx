@@ -3,6 +3,7 @@
 #import "msettings.h"
 #import "mdb.h"
 #import "db.h"
+#import "analytics.h"
 
 @implementation updater
 
@@ -14,7 +15,13 @@ NSString *documents;
                    ^
                    {
                        [updater update];
-                       [msettings singleton];
+                       [[msettings singleton] load];
+                       
+                       dispatch_async(dispatch_get_main_queue(),
+                                      ^
+                                      {
+                                          [[analytics singleton] start];
+                                      });
                    });
 }
 
