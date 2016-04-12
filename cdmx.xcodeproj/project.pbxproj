@@ -52,6 +52,7 @@
 		DAD8760F1CBD72A200A4F91C /* vmenuheader.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD8760E1CBD72A200A4F91C /* vmenuheader.m */; };
 		DAD876121CBD72F400A4F91C /* vmenucell.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD876111CBD72F400A4F91C /* vmenucell.m */; };
 		DAD876151CBDA0DE00A4F91C /* vairmap.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD876141CBDA0DE00A4F91C /* vairmap.m */; };
+		DAD876171CBDA75100A4F91C /* stations.csv in Resources */ = {isa = PBXBuildFile; fileRef = DAD876161CBDA75100A4F91C /* stations.csv */; };
 		E99EDB84D6293E5D839C08A5 /* libPods-cdmx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E47528F2CEFA76F37D95E3 /* libPods-cdmx.a */; };
 /* End PBXBuildFile section */
 
@@ -142,6 +143,7 @@
 		DAD876111CBD72F400A4F91C /* vmenucell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vmenucell.m; sourceTree = "<group>"; };
 		DAD876131CBDA0DE00A4F91C /* vairmap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vairmap.h; sourceTree = "<group>"; };
 		DAD876141CBDA0DE00A4F91C /* vairmap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vairmap.m; sourceTree = "<group>"; };
+		DAD876161CBDA75100A4F91C /* stations.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stations.csv; sourceTree = "<group>"; };
 		EFFF53693CD2BFB9D79DACFE /* Pods-cdmx.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cdmx.release.xcconfig"; path = "Pods/Target Support Files/Pods-cdmx/Pods-cdmx.release.xcconfig"; sourceTree = "<group>"; };
 		FB216D6F4F8C21A7E0923298 /* Pods-cdmx.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cdmx.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cdmx/Pods-cdmx.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -243,6 +245,7 @@
 				DAD33FAE1CBC83E300C87502 /* analytics.plist */,
 				DAD33FAF1CBC83E300C87502 /* defs.plist */,
 				DAD33FB01CBC83E300C87502 /* Localizable.strings */,
+				DAD876161CBDA75100A4F91C /* stations.csv */,
 			);
 			path = langteq;
 			sourceTree = "<group>";
@@ -557,6 +560,7 @@
 				DAD33FF01CBC83E300C87502 /* cdmx.db in Resources */,
 				DAD33FF31CBC83E300C87502 /* Localizable.strings in Resources */,
 				DAD875FE1CBD6E7800A4F91C /* general.xcassets in Resources */,
+				DAD876171CBDA75100A4F91C /* stations.csv in Resources */,
 				DAD33FF21CBC83E300C87502 /* defs.plist in Resources */,
 				DAD33FF51CBC83E300C87502 /* Info.plist in Resources */,
 				DAD33FF11CBC83E300C87502 /* analytics.plist in Resources */,
