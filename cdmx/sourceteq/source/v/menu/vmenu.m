@@ -9,7 +9,7 @@ static NSString* const menuheaderid = @"headerid";
 static NSString* const menucellid = @"cellid";
 static NSUInteger const bannerheight = 200;
 static NSUInteger const headerheight = 60;
-static NSUInteger const cellheight = 80;
+static NSUInteger const cellheight = 70;
 
 @implementation vmenu
 
