@@ -1,5 +1,6 @@
 #import "vair.h"
 #import "vairbar.h"
+#import "vairmap.h"
 #import "vaircell.h"
 #import "uicolor+uicolormain.h"
 
@@ -17,6 +18,8 @@ static NSUInteger const cellheight = 60;
     self.controller = controller;
     
     vairbar *bar = [[vairbar alloc] init:controller];
+    
+    vairmap *map = [[vairmap alloc] init:controller];
     
     UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
     [flow setHeaderReferenceSize:CGSizeZero];
@@ -40,13 +43,16 @@ static NSUInteger const cellheight = 60;
     
     [self addSubview:bar];
     [self addSubview:collection];
+    [self addSubview:map];
     
-    NSDictionary *views = @{@"bar":bar, @"col":collection};
-    NSDictionary *metrics = @{};
+    NSDictionary *views = @{@"bar":bar, @"col":collection, @"map":map};
+    NSDictionary *metrics = @{@"mapheight":@(mapheight)};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[bar]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[map]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[bar]-0-[col]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[bar]-0-[map(mapheight)]" options:0 metrics:metrics views:views]];
     
     return self;
 }
