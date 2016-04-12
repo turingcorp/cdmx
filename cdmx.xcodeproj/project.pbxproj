@@ -37,6 +37,7 @@
 		DAD875D81CBD33FB00A4F91C /* spinner.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAD875D71CBD33FB00A4F91C /* spinner.xcassets */; };
 		DAD875DC1CBD415300A4F91C /* cair.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD875DB1CBD415300A4F91C /* cair.m */; };
 		DAD875E01CBD5A6000A4F91C /* vair.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD875DF1CBD5A6000A4F91C /* vair.m */; };
+		DAD875E41CBD5B1D00A4F91C /* mpages.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD875E31CBD5B1D00A4F91C /* mpages.m */; };
 		E99EDB84D6293E5D839C08A5 /* libPods-cdmx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E47528F2CEFA76F37D95E3 /* libPods-cdmx.a */; };
 /* End PBXBuildFile section */
 
@@ -98,6 +99,8 @@
 		DAD875DB1CBD415300A4F91C /* cair.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cair.m; sourceTree = "<group>"; };
 		DAD875DE1CBD5A6000A4F91C /* vair.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vair.h; sourceTree = "<group>"; };
 		DAD875DF1CBD5A6000A4F91C /* vair.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vair.m; sourceTree = "<group>"; };
+		DAD875E21CBD5B1D00A4F91C /* mpages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpages.h; sourceTree = "<group>"; };
+		DAD875E31CBD5B1D00A4F91C /* mpages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mpages.m; sourceTree = "<group>"; };
 		EFFF53693CD2BFB9D79DACFE /* Pods-cdmx.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cdmx.release.xcconfig"; path = "Pods/Target Support Files/Pods-cdmx/Pods-cdmx.release.xcconfig"; sourceTree = "<group>"; };
 		FB216D6F4F8C21A7E0923298 /* Pods-cdmx.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cdmx.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cdmx/Pods-cdmx.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -294,6 +297,7 @@
 		DAD33FD41CBC83E300C87502 /* m */ = {
 			isa = PBXGroup;
 			children = (
+				DAD875E11CBD5B1300A4F91C /* pages */,
 				DAD33FD51CBC83E300C87502 /* db */,
 				DAD33FDA1CBC83E300C87502 /* dirs */,
 				DAD33FDD1CBC83E300C87502 /* general */,
@@ -394,6 +398,15 @@
 				DAD875DF1CBD5A6000A4F91C /* vair.m */,
 			);
 			path = air;
+			sourceTree = "<group>";
+		};
+		DAD875E11CBD5B1300A4F91C /* pages */ = {
+			isa = PBXGroup;
+			children = (
+				DAD875E21CBD5B1D00A4F91C /* mpages.h */,
+				DAD875E31CBD5B1D00A4F91C /* mpages.m */,
+			);
+			path = pages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -536,6 +549,7 @@
 				DAD33FF41CBC83E300C87502 /* appdel.m in Sources */,
 				DAD33FFA1CBC83E300C87502 /* uicolor+uicolormain.m in Sources */,
 				DAD340011CBC83E300C87502 /* mdirs.m in Sources */,
+				DAD875E41CBD5B1D00A4F91C /* mpages.m in Sources */,
 				DACEDEE21CBC89630088AA8B /* cmain.m in Sources */,
 				DAD33FF81CBC83E300C87502 /* nsnotification+nsnotificationmain.m in Sources */,
 				DAD33FF91CBC83E300C87502 /* tools.m in Sources */,
