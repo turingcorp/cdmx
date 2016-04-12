@@ -1,6 +1,9 @@
 #import "vair.h"
 #import "vairbar.h"
 
+static NSUInteger const mapheight = 200;
+static NSUInteger const collectionbottom = 40;
+
 @implementation vair
 
 -(instancetype)init:(cair*)controller
@@ -13,6 +16,12 @@
     vairbar *bar = [[vairbar alloc] init];
     
     UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
+    [flow setHeaderReferenceSize:CGSizeZero];
+    [flow setFooterReferenceSize:CGSizeZero];
+    [flow setMinimumInteritemSpacing:0];
+    [flow setMinimumLineSpacing:1];
+    [flow setSectionInset:UIEdgeInsetsMake(mapheight, 0, collectionbottom, 0)];
+    [flow setScrollDirection:UICollectionViewScrollDirectionVertical];
     
     UICollectionView *collection = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flow];
     [collection setBackgroundColor:[UIColor clearColor]];
@@ -20,6 +29,7 @@
     [collection setClipsToBounds:YES];
     [collection setShowsVerticalScrollIndicator:NO];
     [collection setShowsHorizontalScrollIndicator:NO];
+    [collection setAlwaysBounceVertical:YES];
     [collection setDataSource:self];
     [collection setDelegate:self];
     
@@ -32,7 +42,6 @@
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[bar]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[bar]-0-[col]-0-|" options:0 metrics:metrics views:views]];
-
     
     return self;
 }
