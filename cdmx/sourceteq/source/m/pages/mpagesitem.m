@@ -1,13 +1,13 @@
 //
-//  mpagessectionitem.m
+//  mpagesitem.m
 //  cdmx
 //
 //  Created by zero on 4/12/16.
 //  Copyright © 2016 Iturbide. All rights reserved.
 //
 
-#import "mpagessectionitem.h"
+#import "mpagesitem.h"
 
-@implementation mpagessectionitem
+@implementation mpagesitem
 
 @end

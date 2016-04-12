@@ -1,5 +1,5 @@
 //
-//  mpagessectionitem.h
+//  mpagesitem.h
 //  cdmx
 //
 //  Created by zero on 4/12/16.
@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface mpagessectionitem : NSObject
+@interface mpagesitem : NSObject
 
 @end
