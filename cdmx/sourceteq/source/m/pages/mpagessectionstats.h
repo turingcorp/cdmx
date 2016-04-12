@@ -1,13 +1,5 @@
-//
-//  mpagessectionstats.h
-//  cdmx
-//
-//  Created by zero on 4/12/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
+#import "mpagessection.h"
 
-#import <Foundation/Foundation.h>
-
-@interface mpagessectionstats : NSObject
+@interface mpagessectionstats:mpagessection
 
 @end
