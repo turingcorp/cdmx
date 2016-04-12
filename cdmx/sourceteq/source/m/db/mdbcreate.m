@@ -34,8 +34,8 @@
         NSString *rawstationid = rawrows[6];
         double rawlatitude = [rawrows[3] doubleValue];
         double rawlongitude = [rawrows[2] doubleValue];
-        NSUInteger rawaltitude = [rawrows[4] integerValue];
-        NSString *rawshortname = rawrows[0];
+        NSInteger rawaltitude = [rawrows[4] integerValue];
+        NSString *rawshortname = [rawrows[0] lowercaseString];
         NSString *rawname = rawrows[1];
         NSString *rawmessage = rawrows[5];
         NSInteger storinglatitude = rawlatitude * coordinatesmult;
