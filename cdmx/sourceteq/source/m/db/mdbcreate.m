@@ -7,6 +7,10 @@
     NSString *query;
     db *dbcon = [db begin];
     
+    query = [NSString stringWithFormat:
+             @"CREATE TABLE station "
+             "(id INTEGER PRIMARY KEY, stationid INTEGER, latitude INTEGER, longitude INTEGER, altitude INTEGER, shortname TEXT COLLATE NOCASE, name TEXT COLLATE NOCASE, message TEXT);"];
+    
     [dbcon commit];
 }
 
