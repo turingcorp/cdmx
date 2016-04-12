@@ -4,7 +4,7 @@
 
 +(UIColor*)main
 {
-    return [UIColor colorWithRed:0.01568 green:0.76862 blue:0.85098 alpha:1];
+    return [UIColor colorWithRed:1 green:0.18823 blue:0 alpha:1];
 }
 
 +(UIColor*)second
