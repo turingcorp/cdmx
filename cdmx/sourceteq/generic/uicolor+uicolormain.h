@@ -6,5 +6,6 @@ static NSUInteger const navbarheight = 65;
 
 +(UIColor*)main;
 +(UIColor*)second;
++(UIColor*)collection;
 
 @end

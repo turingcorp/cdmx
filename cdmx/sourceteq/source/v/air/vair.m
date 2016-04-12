@@ -1,6 +1,7 @@
 #import "vair.h"
 #import "vairbar.h"
 #import "vaircell.h"
+#import "uicolor+uicolormain.h"
 
 static NSString* const cellairid = @"cellair";
 static NSUInteger const mapheight = 200;
@@ -13,7 +14,7 @@ static NSUInteger const cellheight = 60;
 {
     self = [super init];
     [self setClipsToBounds:YES];
-    [self setBackgroundColor:[UIColor whiteColor]];
+    [self setBackgroundColor:[UIColor collection]];
     self.controller = controller;
     
     vairbar *bar = [[vairbar alloc] init];
