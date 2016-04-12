@@ -8,8 +8,8 @@
 static NSString* const menuheaderid = @"headerid";
 static NSString* const menucellid = @"cellid";
 static NSUInteger const bannerheight = 200;
-static NSUInteger const headerheight = 50;
-static NSUInteger const cellheight = 90;
+static NSUInteger const headerheight = 60;
+static NSUInteger const cellheight = 80;
 
 @implementation vmenu
 
@@ -27,7 +27,7 @@ static NSUInteger const cellheight = 90;
     [flow setFooterReferenceSize:CGSizeZero];
     [flow setMinimumInteritemSpacing:0];
     [flow setMinimumLineSpacing:1];
-    [flow setSectionInset:UIEdgeInsetsMake(bannerheight, 0, collectionbottom, 0)];
+    [flow setSectionInset:UIEdgeInsetsMake(0, 0, collectionbottom, 0)];
     [flow setScrollDirection:UICollectionViewScrollDirectionVertical];
     
     UICollectionView *collection = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flow];
@@ -100,6 +100,7 @@ static NSUInteger const cellheight = 90;
 -(UICollectionViewCell*)collectionView:(UICollectionView*)col cellForItemAtIndexPath:(NSIndexPath*)index
 {
     vmenucell *cell = [col dequeueReusableCellWithReuseIdentifier:menucellid forIndexPath:index];
+    [cell config:self.model.sections[index.section].items[index.item]];
     
     return cell;
 }

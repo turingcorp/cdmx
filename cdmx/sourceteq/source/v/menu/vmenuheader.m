@@ -14,8 +14,8 @@
     [title setBackgroundColor:[UIColor clearColor]];
     [title setUserInteractionEnabled:NO];
     [title setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [title setFont:[UIFont regularsize:18]];
-    [title setTextColor:[UIColor colorWithWhite:0 alpha:0.4]];
+    [title setFont:[UIFont regularsize:16]];
+    [title setTextColor:[UIColor colorWithWhite:0 alpha:0.6]];
     self.title = title;
     
     [self addSubview:title];
@@ -24,7 +24,7 @@
     NSDictionary *metrics = @{};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[title]" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[title]-20-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[title]-10-|" options:0 metrics:metrics views:views]];
     
     return self;
 }
