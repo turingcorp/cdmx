@@ -34,6 +34,7 @@
 		DAD875CF1CBD2F0400A4F91C /* cpages.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD875CE1CBD2F0400A4F91C /* cpages.m */; };
 		DAD875D21CBD30E100A4F91C /* cloading.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD875D11CBD30E100A4F91C /* cloading.m */; };
 		DAD875D61CBD312900A4F91C /* vloading.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD875D51CBD312900A4F91C /* vloading.m */; };
+		DAD875D81CBD33FB00A4F91C /* spinner.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAD875D71CBD33FB00A4F91C /* spinner.xcassets */; };
 		E99EDB84D6293E5D839C08A5 /* libPods-cdmx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E47528F2CEFA76F37D95E3 /* libPods-cdmx.a */; };
 /* End PBXBuildFile section */
 
@@ -90,6 +91,7 @@
 		DAD875D11CBD30E100A4F91C /* cloading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cloading.m; sourceTree = "<group>"; };
 		DAD875D41CBD312900A4F91C /* vloading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vloading.h; sourceTree = "<group>"; };
 		DAD875D51CBD312900A4F91C /* vloading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vloading.m; sourceTree = "<group>"; };
+		DAD875D71CBD33FB00A4F91C /* spinner.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = spinner.xcassets; sourceTree = "<group>"; };
 		EFFF53693CD2BFB9D79DACFE /* Pods-cdmx.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cdmx.release.xcconfig"; path = "Pods/Target Support Files/Pods-cdmx/Pods-cdmx.release.xcconfig"; sourceTree = "<group>"; };
 		FB216D6F4F8C21A7E0923298 /* Pods-cdmx.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cdmx.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cdmx/Pods-cdmx.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -179,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				DAD3400A1CBC858A00C87502 /* brand.xcassets */,
+				DAD875D71CBD33FB00A4F91C /* spinner.xcassets */,
 			);
 			path = imateq;
 			sourceTree = "<group>";
@@ -434,6 +437,7 @@
 				DAD33FF51CBC83E300C87502 /* Info.plist in Resources */,
 				DAD33FF11CBC83E300C87502 /* analytics.plist in Resources */,
 				DAD3400B1CBC858A00C87502 /* brand.xcassets in Resources */,
+				DAD875D81CBD33FB00A4F91C /* spinner.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

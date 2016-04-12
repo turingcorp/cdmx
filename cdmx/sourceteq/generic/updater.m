@@ -4,6 +4,7 @@
 #import "mdb.h"
 #import "db.h"
 #import "analytics.h"
+#import "cmain.h"
 
 @implementation updater
 
@@ -21,6 +22,7 @@ NSString *documents;
                                       ^
                                       {
                                           [[analytics singleton] start];
+                                          [[cmain singleton].pages loadfinished];
                                       });
                    });
 }

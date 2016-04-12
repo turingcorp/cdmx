@@ -40,4 +40,9 @@
     [self changecontroller:controller direction:direction animated:animated];
 }
 
+-(void)loadfinished
+{
+    NSLog(@"load finished");
+}
+
 @end
