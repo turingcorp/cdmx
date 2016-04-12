@@ -44,7 +44,7 @@
         NSMutableString *query = [NSMutableString string];
         [query appendString:@"INSERT INTO station "];
         [query appendString:@"(stationid, latitude, longitude, altitude, shortname, name, message) "];
-        [query appendString:@"values("];
+        [query appendString:@"VALUES("];
         [query appendFormat:@"\"%@\", ", rawstationid];
         [query appendFormat:@"%@, ", @(storinglatitude)];
         [query appendFormat:@"%@, ", @(storinglongitude)];
