@@ -81,6 +81,8 @@
 		DAD33FED1CBC83E300C87502 /* vhome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vhome.h; sourceTree = "<group>"; };
 		DAD33FEE1CBC83E300C87502 /* vhome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vhome.m; sourceTree = "<group>"; };
 		DAD33FEF1CBC83E300C87502 /* v.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = v.h; sourceTree = "<group>"; };
+		DAD340081CBC84A700C87502 /* private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = private.h; sourceTree = "<group>"; };
+		DAD340091CBC84A700C87502 /* privateconstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = privateconstants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 		DAD33FB31CBC83E300C87502 /* sourceteq */ = {
 			isa = PBXGroup;
 			children = (
+				DAD340071CBC84A700C87502 /* private */,
 				DAD33FB41CBC83E300C87502 /* core */,
 				DAD33FB91CBC83E300C87502 /* generic */,
 				DAD33FC71CBC83E300C87502 /* lib */,
@@ -315,6 +318,15 @@
 				DAD33FEE1CBC83E300C87502 /* vhome.m */,
 			);
 			path = home;
+			sourceTree = "<group>";
+		};
+		DAD340071CBC84A700C87502 /* private */ = {
+			isa = PBXGroup;
+			children = (
+				DAD340081CBC84A700C87502 /* private.h */,
+				DAD340091CBC84A700C87502 /* privateconstants.h */,
+			);
+			path = private;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
