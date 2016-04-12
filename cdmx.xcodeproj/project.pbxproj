@@ -43,6 +43,7 @@
 		DAD875F01CBD5FB700A4F91C /* mpagesitem.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD875EF1CBD5FB700A4F91C /* mpagesitem.m */; };
 		DAD875F31CBD603D00A4F91C /* mpagesitemair.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD875F21CBD603D00A4F91C /* mpagesitemair.m */; };
 		DAD875F61CBD645500A4F91C /* vairbar.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD875F51CBD645500A4F91C /* vairbar.m */; };
+		DAD875F91CBD6A0600A4F91C /* vaircell.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD875F81CBD6A0600A4F91C /* vaircell.m */; };
 		E99EDB84D6293E5D839C08A5 /* libPods-cdmx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E47528F2CEFA76F37D95E3 /* libPods-cdmx.a */; };
 /* End PBXBuildFile section */
 
@@ -116,6 +117,8 @@
 		DAD875F21CBD603D00A4F91C /* mpagesitemair.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mpagesitemair.m; sourceTree = "<group>"; };
 		DAD875F41CBD645500A4F91C /* vairbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vairbar.h; sourceTree = "<group>"; };
 		DAD875F51CBD645500A4F91C /* vairbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vairbar.m; sourceTree = "<group>"; };
+		DAD875F71CBD6A0600A4F91C /* vaircell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vaircell.h; sourceTree = "<group>"; };
+		DAD875F81CBD6A0600A4F91C /* vaircell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vaircell.m; sourceTree = "<group>"; };
 		EFFF53693CD2BFB9D79DACFE /* Pods-cdmx.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cdmx.release.xcconfig"; path = "Pods/Target Support Files/Pods-cdmx/Pods-cdmx.release.xcconfig"; sourceTree = "<group>"; };
 		FB216D6F4F8C21A7E0923298 /* Pods-cdmx.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cdmx.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cdmx/Pods-cdmx.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -413,6 +416,8 @@
 				DAD875DF1CBD5A6000A4F91C /* vair.m */,
 				DAD875F41CBD645500A4F91C /* vairbar.h */,
 				DAD875F51CBD645500A4F91C /* vairbar.m */,
+				DAD875F71CBD6A0600A4F91C /* vaircell.h */,
+				DAD875F81CBD6A0600A4F91C /* vaircell.m */,
 			);
 			path = air;
 			sourceTree = "<group>";
@@ -587,6 +592,7 @@
 				DAD875CF1CBD2F0400A4F91C /* cpages.m in Sources */,
 				DAD33FF71CBC83E300C87502 /* analytics.m in Sources */,
 				DAD340001CBC83E300C87502 /* mdbcreate.m in Sources */,
+				DAD875F91CBD6A0600A4F91C /* vaircell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
