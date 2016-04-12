@@ -5,7 +5,7 @@
 #import "uicolor+uicolormain.h"
 
 static NSString* const cellairid = @"cellair";
-static NSUInteger const mapheight = 200;
+static NSUInteger const mapheight = 300;
 static NSUInteger const cellheight = 60;
 
 @implementation vair
