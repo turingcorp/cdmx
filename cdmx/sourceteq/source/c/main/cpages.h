@@ -5,6 +5,7 @@
 
 -(void)pageloading:(BOOL)animated direction:(UIPageViewControllerNavigationDirection)direction;
 -(void)loadfinished:(mpages*)model;
+-(void)page:(mpagesitem*)model animated:(BOOL)animated direction:(UIPageViewControllerNavigationDirection)direction;
 
 @property(strong, nonatomic)mpages *model;
 

@@ -43,6 +43,13 @@
 -(void)loadfinished:(mpages*)model
 {
     self.model = model;
+    [self page:model.sections[0].items[0] animated:YES direction:UIPageViewControllerNavigationDirectionForward];
+}
+
+-(void)page:(mpagesitem*)model animated:(BOOL)animated direction:(UIPageViewControllerNavigationDirection)direction
+{
+    UIViewController *controller = [model controller];
+    [self changecontroller:controller direction:direction animated:animated];
 }
 
 @end
