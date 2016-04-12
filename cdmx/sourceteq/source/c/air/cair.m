@@ -1,5 +1,6 @@
 #import "cair.h"
 #import "vair.h"
+#import "cmain.h"
 
 @interface cair ()
 
@@ -24,6 +25,13 @@
 -(BOOL)prefersStatusBarHidden
 {
     return NO;
+}
+
+#pragma mark public
+
+-(void)openmenu
+{
+    [[cmain singleton].pages pagemenu];
 }
 
 @end

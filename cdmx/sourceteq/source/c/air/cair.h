@@ -2,4 +2,6 @@
 
 @interface cair:UIViewController
 
+-(void)openmenu;
+
 @end

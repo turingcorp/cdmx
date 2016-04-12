@@ -13,7 +13,7 @@
     self.controller = controller;
     
     vmenubutton *menubutton = [[vmenubutton alloc] init];
-    
+    [menubutton addTarget:self action:@selector(actionmenu:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:menubutton];
     
     NSDictionary *views = @{@"menubutton":menubutton};
@@ -30,6 +30,13 @@
     CGSize size = CGSizeMake(navbarintrinsicwidth, navbarheight);
     
     return size;
+}
+
+#pragma mark actions
+
+-(void)actionmenu:(UIButton*)button
+{
+    [self.controller openmenu];
 }
 
 @end

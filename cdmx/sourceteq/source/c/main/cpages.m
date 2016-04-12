@@ -1,5 +1,6 @@
 #import "cpages.h"
 #import "cloading.h"
+#import "cmenu.h"
 
 @implementation cpages
 
@@ -55,6 +56,12 @@
 {
     UIViewController *controller = [model controller];
     [self changecontroller:controller direction:direction animated:animated];
+}
+
+-(void)pagemenu
+{
+    cmenu *controller = [[cmenu alloc] init];
+    [self changecontroller:controller direction:UIPageViewControllerNavigationDirectionReverse animated:YES];
 }
 
 @end
