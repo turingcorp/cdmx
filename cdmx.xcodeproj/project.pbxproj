@@ -29,7 +29,7 @@
 		DAD340031CBC83E300C87502 /* valert.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD33FE71CBC83E300C87502 /* valert.m */; };
 		DAD340041CBC83E300C87502 /* vblur.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD33FE91CBC83E300C87502 /* vblur.m */; };
 		DAD340051CBC83E300C87502 /* vspinner.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD33FEB1CBC83E300C87502 /* vspinner.m */; };
-		DAD340061CBC83E300C87502 /* vhome.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD33FEE1CBC83E300C87502 /* vhome.m */; };
+		DAD3400B1CBC858A00C87502 /* brand.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAD3400A1CBC858A00C87502 /* brand.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,11 +78,10 @@
 		DAD33FE91CBC83E300C87502 /* vblur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vblur.m; sourceTree = "<group>"; };
 		DAD33FEA1CBC83E300C87502 /* vspinner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vspinner.h; sourceTree = "<group>"; };
 		DAD33FEB1CBC83E300C87502 /* vspinner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vspinner.m; sourceTree = "<group>"; };
-		DAD33FED1CBC83E300C87502 /* vhome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vhome.h; sourceTree = "<group>"; };
-		DAD33FEE1CBC83E300C87502 /* vhome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vhome.m; sourceTree = "<group>"; };
 		DAD33FEF1CBC83E300C87502 /* v.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = v.h; sourceTree = "<group>"; };
 		DAD340081CBC84A700C87502 /* private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = private.h; sourceTree = "<group>"; };
 		DAD340091CBC84A700C87502 /* privateconstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = privateconstants.h; sourceTree = "<group>"; };
+		DAD3400A1CBC858A00C87502 /* brand.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = brand.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +135,7 @@
 		DAD33FAC1CBC83E300C87502 /* imateq */ = {
 			isa = PBXGroup;
 			children = (
+				DAD3400A1CBC858A00C87502 /* brand.xcassets */,
 			);
 			path = imateq;
 			sourceTree = "<group>";
@@ -292,7 +292,6 @@
 			isa = PBXGroup;
 			children = (
 				DAD33FE51CBC83E300C87502 /* general */,
-				DAD33FEC1CBC83E300C87502 /* home */,
 				DAD33FEF1CBC83E300C87502 /* v.h */,
 			);
 			path = v;
@@ -309,15 +308,6 @@
 				DAD33FEB1CBC83E300C87502 /* vspinner.m */,
 			);
 			path = general;
-			sourceTree = "<group>";
-		};
-		DAD33FEC1CBC83E300C87502 /* home */ = {
-			isa = PBXGroup;
-			children = (
-				DAD33FED1CBC83E300C87502 /* vhome.h */,
-				DAD33FEE1CBC83E300C87502 /* vhome.m */,
-			);
-			path = home;
 			sourceTree = "<group>";
 		};
 		DAD340071CBC84A700C87502 /* private */ = {
@@ -392,6 +382,7 @@
 				DAD33FF21CBC83E300C87502 /* defs.plist in Resources */,
 				DAD33FF51CBC83E300C87502 /* Info.plist in Resources */,
 				DAD33FF11CBC83E300C87502 /* analytics.plist in Resources */,
+				DAD3400B1CBC858A00C87502 /* brand.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,7 +394,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAD340021CBC83E300C87502 /* msettings.m in Sources */,
-				DAD340061CBC83E300C87502 /* vhome.m in Sources */,
 				DAD33FF61CBC83E300C87502 /* main.m in Sources */,
 				DAD33FFC1CBC83E300C87502 /* updater.m in Sources */,
 				DAD33FFB1CBC83E300C87502 /* uifont+uifontmain.m in Sources */,
@@ -524,7 +514,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = cdmx/Info.plist;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				INFOPLIST_FILE = "$(SRCROOT)/cdmx/sourceteq/core/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -539,7 +530,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = cdmx/Info.plist;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				INFOPLIST_FILE = "$(SRCROOT)/cdmx/sourceteq/core/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

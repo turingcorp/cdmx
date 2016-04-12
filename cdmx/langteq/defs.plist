@@ -7,6 +7,6 @@
 	<key>version</key>
 	<integer>10</integer>
 	<key>dbname</key>
-	<string>cleaner.db</string>
+	<string>cdmx.db</string>
 </dict>
 </plist>

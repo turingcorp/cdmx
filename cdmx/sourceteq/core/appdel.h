@@ -1,9 +1,6 @@
 #import <Foundation/Foundation.h>
-
 #import <UIKit/UIKit.h>
 #import <Google/Analytics.h>
-#import <StoreKit/StoreKit.h>
-#import <GLKit/GLKit.h>
 #import "db.h"
 #import "timerbg.h"
 #import "generic.h"

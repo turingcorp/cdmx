@@ -47,7 +47,6 @@ NSString *documents;
     [userdef removePersistentDomainForName:NSArgumentDomain];
     [userdef removePersistentDomainForName:NSRegistrationDomain];
     [userdef setValue:appid forKey:@"appid"];
-    [userdef setValue:@0 forKey:@"ttl"];
     [userdef synchronize];
 }
 
