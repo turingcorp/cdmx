@@ -5,12 +5,14 @@ static NSUInteger const navbarintrinsicwidth = 320;
 
 @implementation vairbar
 
--(instancetype)init
+-(instancetype)init:(cair*)controller
 {
     self = [super init];
     [self setClipsToBounds:YES];
     [self setBackgroundColor:[UIColor main]];
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
+    self.controller = controller;
+    
     
     return self;
 }

@@ -1,7 +1,7 @@
 #import "vmenubutton.h"
 
 static NSUInteger const buttonwidth = 65;
-static NSUInteger const buttonheight = 50;
+static NSUInteger const buttonheight = 45;
 
 @implementation vmenubutton
 
