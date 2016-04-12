@@ -10,6 +10,8 @@
     query = [NSString stringWithFormat:
              @"CREATE TABLE station "
              "(id INTEGER PRIMARY KEY, stationid INTEGER, latitude INTEGER, longitude INTEGER, altitude INTEGER, shortname TEXT COLLATE NOCASE, name TEXT COLLATE NOCASE, message TEXT);"];
+    [dbcon query:query];
+    [mdbcreate loadstations:dbcon];
     
     [dbcon commit];
 }
@@ -24,11 +26,14 @@
     for(NSUInteger i = 2; i < countlines; i++)
     {
         NSString *rawline = rawlines[i];
-        NSArray *rawrow = [rawline componentsSeparatedByString:@","];
-        NSUInteger countrows = rawrow.count;
+        NSArray *rawrows = [rawline componentsSeparatedByString:@","];
+        NSUInteger countrows = rawrows.count;
         
         NSAssert(countrows == 7, @"Cannot load stations from csv file", raw);
         
+        NSUInteger rawstationid = [rawrows[0] unsignedIntegerValue];
+        double rawlatitude = [rawrows[3] doubleValue];
+        double rawlongitude = [rawrows[2] doubleValue];
         
     }
 }
