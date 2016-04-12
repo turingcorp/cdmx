@@ -1,13 +1,14 @@
-//
-//  mpagesitemair.m
-//  cdmx
-//
-//  Created by zero on 4/12/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
-
 #import "mpagesitemair.h"
 
 @implementation mpagesitemair
+
+-(instancetype)init
+{
+    self = [super init];
+    self.name = NSLocalizedString(@"pages_item_air_name", nil);
+    self.descr = NSLocalizedString(@"pages_item_air_descr", nil);
+    
+    return self;
+}
 
 @end

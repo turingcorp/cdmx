@@ -1,13 +1,5 @@
-//
-//  mpagesitemair.h
-//  cdmx
-//
-//  Created by zero on 4/12/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
+#import "mpagesitem.h"
 
-#import <Foundation/Foundation.h>
-
-@interface mpagesitemair : NSObject
+@interface mpagesitemair:mpagesitem
 
 @end
