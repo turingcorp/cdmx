@@ -56,6 +56,15 @@ static NSUInteger const cellheight = 70;
     return self;
 }
 
+#pragma mark functionality
+
+-(mpagesitem*)modelatindex:(NSIndexPath*)index
+{
+    mpagesitem *model = self.model.sections[index.section].items[index.item];
+    
+    return model;
+}
+
 #pragma mark -
 #pragma mark col del
 
@@ -99,10 +108,17 @@ static NSUInteger const cellheight = 70;
 
 -(UICollectionViewCell*)collectionView:(UICollectionView*)col cellForItemAtIndexPath:(NSIndexPath*)index
 {
+    mpagesitem *model = [self modelatindex:index];
     vmenucell *cell = [col dequeueReusableCellWithReuseIdentifier:menucellid forIndexPath:index];
-    [cell config:self.model.sections[index.section].items[index.item]];
+    [cell config:model];
     
     return cell;
+}
+
+-(void)collectionView:(UICollectionView*)col didSelectItemAtIndexPath:(NSIndexPath*)index
+{
+    mpagesitem *model = [self modelatindex:index];
+    [[cmain singleton].pages page:model animated:YES direction:UIPageViewControllerNavigationDirectionForward];
 }
 
 @end
