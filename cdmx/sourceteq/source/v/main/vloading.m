@@ -6,7 +6,7 @@
 {
     self = [super init];
     [self setClipsToBounds:YES];
-    [self setBackgroundColor:[UIColor blueColor]];
+    [self setBackgroundColor:[UIColor clearColor]];
 
     vspinner *spinner = [[vspinner alloc] init];
     self.spinner = spinner;
@@ -26,8 +26,7 @@
 -(void)layoutSubviews
 {
     CGFloat height = self.bounds.size.height;
-    CGFloat spinnerheight = self.spinner.bounds.size.height;
-    CGFloat remain = height - spinnerheight;
+    CGFloat remain = height - spinnerintrinsicsize;
     CGFloat margin = remain / 2.0;
     self.layoutmargintop.constant = margin;
     
