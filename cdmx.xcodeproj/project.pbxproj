@@ -33,6 +33,7 @@
 		DAD3400B1CBC858A00C87502 /* brand.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAD3400A1CBC858A00C87502 /* brand.xcassets */; };
 		DAD875CF1CBD2F0400A4F91C /* cpages.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD875CE1CBD2F0400A4F91C /* cpages.m */; };
 		DAD875D21CBD30E100A4F91C /* cloading.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD875D11CBD30E100A4F91C /* cloading.m */; };
+		DAD875D61CBD312900A4F91C /* vloading.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD875D51CBD312900A4F91C /* vloading.m */; };
 		E99EDB84D6293E5D839C08A5 /* libPods-cdmx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E47528F2CEFA76F37D95E3 /* libPods-cdmx.a */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +88,8 @@
 		DAD875CE1CBD2F0400A4F91C /* cpages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cpages.m; sourceTree = "<group>"; };
 		DAD875D01CBD30E100A4F91C /* cloading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cloading.h; sourceTree = "<group>"; };
 		DAD875D11CBD30E100A4F91C /* cloading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cloading.m; sourceTree = "<group>"; };
+		DAD875D41CBD312900A4F91C /* vloading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vloading.h; sourceTree = "<group>"; };
+		DAD875D51CBD312900A4F91C /* vloading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vloading.m; sourceTree = "<group>"; };
 		EFFF53693CD2BFB9D79DACFE /* Pods-cdmx.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cdmx.release.xcconfig"; path = "Pods/Target Support Files/Pods-cdmx/Pods-cdmx.release.xcconfig"; sourceTree = "<group>"; };
 		FB216D6F4F8C21A7E0923298 /* Pods-cdmx.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cdmx.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cdmx/Pods-cdmx.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -328,6 +331,7 @@
 		DAD33FE41CBC83E300C87502 /* v */ = {
 			isa = PBXGroup;
 			children = (
+				DAD875D31CBD311F00A4F91C /* main */,
 				DAD33FE51CBC83E300C87502 /* general */,
 			);
 			path = v;
@@ -352,6 +356,15 @@
 				DAD340091CBC84A700C87502 /* privateconstants.h */,
 			);
 			path = private;
+			sourceTree = "<group>";
+		};
+		DAD875D31CBD311F00A4F91C /* main */ = {
+			isa = PBXGroup;
+			children = (
+				DAD875D41CBD312900A4F91C /* vloading.h */,
+				DAD875D51CBD312900A4F91C /* vloading.m */,
+			);
+			path = main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -487,6 +500,7 @@
 				DAD340051CBC83E300C87502 /* vspinner.m in Sources */,
 				DAD33FFF1CBC83E300C87502 /* mdb.m in Sources */,
 				DAD340041CBC83E300C87502 /* vblur.m in Sources */,
+				DAD875D61CBD312900A4F91C /* vloading.m in Sources */,
 				DAD33FF41CBC83E300C87502 /* appdel.m in Sources */,
 				DAD33FFA1CBC83E300C87502 /* uicolor+uicolormain.m in Sources */,
 				DAD340011CBC83E300C87502 /* mdirs.m in Sources */,
