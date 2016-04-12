@@ -1,4 +1,5 @@
 #import "mpagesitemair.h"
+#import "cair.h"
 
 @implementation mpagesitemair
 
@@ -9,6 +10,16 @@
     self.descr = NSLocalizedString(@"pages_item_air_descr", nil);
     
     return self;
+}
+
+#pragma mark
+#pragma mark pages item
+
+-(UIViewController*)controller
+{
+    cair *controller = [[cair alloc] init];
+    
+    return controller;
 }
 
 @end
