@@ -69,6 +69,13 @@ static NSUInteger const bannerheight = 200;
     return items;
 }
 
+-(UICollectionReusableView*)collectionView:(UICollectionView*)col viewForSupplementaryElementOfKind:(NSString*)kind atIndexPath:(NSIndexPath*)index
+{
+    UICollectionReusableView *reusable = [col dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:menuheaderid forIndexPath:index];
+    
+    return reusable;
+}
+
 -(UICollectionViewCell*)collectionView:(UICollectionView*)col cellForItemAtIndexPath:(NSIndexPath*)index
 {
     vmenucell *cell = [col dequeueReusableCellWithReuseIdentifier:menucellid forIndexPath:index];
