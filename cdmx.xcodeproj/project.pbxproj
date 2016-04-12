@@ -6,8 +6,81 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		DAD33FF01CBC83E300C87502 /* cdmx.db in Resources */ = {isa = PBXBuildFile; fileRef = DAD33FAB1CBC83E300C87502 /* cdmx.db */; };
+		DAD33FF11CBC83E300C87502 /* analytics.plist in Resources */ = {isa = PBXBuildFile; fileRef = DAD33FAE1CBC83E300C87502 /* analytics.plist */; };
+		DAD33FF21CBC83E300C87502 /* defs.plist in Resources */ = {isa = PBXBuildFile; fileRef = DAD33FAF1CBC83E300C87502 /* defs.plist */; };
+		DAD33FF31CBC83E300C87502 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DAD33FB01CBC83E300C87502 /* Localizable.strings */; };
+		DAD33FF41CBC83E300C87502 /* appdel.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD33FB61CBC83E300C87502 /* appdel.m */; };
+		DAD33FF51CBC83E300C87502 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DAD33FB71CBC83E300C87502 /* Info.plist */; };
+		DAD33FF61CBC83E300C87502 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD33FB81CBC83E300C87502 /* main.m */; };
+		DAD33FF71CBC83E300C87502 /* analytics.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD33FBB1CBC83E300C87502 /* analytics.m */; };
+		DAD33FF81CBC83E300C87502 /* nsnotification+nsnotificationmain.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD33FBE1CBC83E300C87502 /* nsnotification+nsnotificationmain.m */; };
+		DAD33FF91CBC83E300C87502 /* tools.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD33FC01CBC83E300C87502 /* tools.m */; };
+		DAD33FFA1CBC83E300C87502 /* uicolor+uicolormain.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD33FC21CBC83E300C87502 /* uicolor+uicolormain.m */; };
+		DAD33FFB1CBC83E300C87502 /* uifont+uifontmain.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD33FC41CBC83E300C87502 /* uifont+uifontmain.m */; };
+		DAD33FFC1CBC83E300C87502 /* updater.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD33FC61CBC83E300C87502 /* updater.m */; };
+		DAD33FFD1CBC83E300C87502 /* libdb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DAD33FCA1CBC83E300C87502 /* libdb.a */; };
+		DAD33FFE1CBC83E300C87502 /* libtimerbg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DAD33FCB1CBC83E300C87502 /* libtimerbg.a */; };
+		DAD33FFF1CBC83E300C87502 /* mdb.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD33FD71CBC83E300C87502 /* mdb.m */; };
+		DAD340001CBC83E300C87502 /* mdbcreate.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD33FD91CBC83E300C87502 /* mdbcreate.m */; };
+		DAD340011CBC83E300C87502 /* mdirs.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD33FDC1CBC83E300C87502 /* mdirs.m */; };
+		DAD340021CBC83E300C87502 /* msettings.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD33FE01CBC83E300C87502 /* msettings.m */; };
+		DAD340031CBC83E300C87502 /* valert.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD33FE71CBC83E300C87502 /* valert.m */; };
+		DAD340041CBC83E300C87502 /* vblur.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD33FE91CBC83E300C87502 /* vblur.m */; };
+		DAD340051CBC83E300C87502 /* vspinner.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD33FEB1CBC83E300C87502 /* vspinner.m */; };
+		DAD340061CBC83E300C87502 /* vhome.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD33FEE1CBC83E300C87502 /* vhome.m */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		DAD33F901CBC825900C87502 /* cdmx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cdmx.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAD33FAB1CBC83E300C87502 /* cdmx.db */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cdmx.db; sourceTree = "<group>"; };
+		DAD33FAE1CBC83E300C87502 /* analytics.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = analytics.plist; sourceTree = "<group>"; };
+		DAD33FAF1CBC83E300C87502 /* defs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = defs.plist; sourceTree = "<group>"; };
+		DAD33FB11CBC83E300C87502 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DAD33FB21CBC83E300C87502 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DAD33FB51CBC83E300C87502 /* appdel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = appdel.h; sourceTree = "<group>"; };
+		DAD33FB61CBC83E300C87502 /* appdel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = appdel.m; sourceTree = "<group>"; };
+		DAD33FB71CBC83E300C87502 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DAD33FB81CBC83E300C87502 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DAD33FBA1CBC83E300C87502 /* analytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = analytics.h; sourceTree = "<group>"; };
+		DAD33FBB1CBC83E300C87502 /* analytics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = analytics.m; sourceTree = "<group>"; };
+		DAD33FBC1CBC83E300C87502 /* generic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = generic.h; sourceTree = "<group>"; };
+		DAD33FBD1CBC83E300C87502 /* nsnotification+nsnotificationmain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "nsnotification+nsnotificationmain.h"; sourceTree = "<group>"; };
+		DAD33FBE1CBC83E300C87502 /* nsnotification+nsnotificationmain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "nsnotification+nsnotificationmain.m"; sourceTree = "<group>"; };
+		DAD33FBF1CBC83E300C87502 /* tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tools.h; sourceTree = "<group>"; };
+		DAD33FC01CBC83E300C87502 /* tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tools.m; sourceTree = "<group>"; };
+		DAD33FC11CBC83E300C87502 /* uicolor+uicolormain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "uicolor+uicolormain.h"; sourceTree = "<group>"; };
+		DAD33FC21CBC83E300C87502 /* uicolor+uicolormain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "uicolor+uicolormain.m"; sourceTree = "<group>"; };
+		DAD33FC31CBC83E300C87502 /* uifont+uifontmain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "uifont+uifontmain.h"; sourceTree = "<group>"; };
+		DAD33FC41CBC83E300C87502 /* uifont+uifontmain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "uifont+uifontmain.m"; sourceTree = "<group>"; };
+		DAD33FC51CBC83E300C87502 /* updater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = updater.h; sourceTree = "<group>"; };
+		DAD33FC61CBC83E300C87502 /* updater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = updater.m; sourceTree = "<group>"; };
+		DAD33FC91CBC83E300C87502 /* db.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = db.h; sourceTree = "<group>"; };
+		DAD33FCA1CBC83E300C87502 /* libdb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libdb.a; sourceTree = "<group>"; };
+		DAD33FCB1CBC83E300C87502 /* libtimerbg.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libtimerbg.a; sourceTree = "<group>"; };
+		DAD33FCD1CBC83E300C87502 /* timerbg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = timerbg.h; sourceTree = "<group>"; };
+		DAD33FD31CBC83E300C87502 /* c.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = c.h; sourceTree = "<group>"; };
+		DAD33FD61CBC83E300C87502 /* mdb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mdb.h; sourceTree = "<group>"; };
+		DAD33FD71CBC83E300C87502 /* mdb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mdb.m; sourceTree = "<group>"; };
+		DAD33FD81CBC83E300C87502 /* mdbcreate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mdbcreate.h; sourceTree = "<group>"; };
+		DAD33FD91CBC83E300C87502 /* mdbcreate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mdbcreate.m; sourceTree = "<group>"; };
+		DAD33FDB1CBC83E300C87502 /* mdirs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mdirs.h; sourceTree = "<group>"; };
+		DAD33FDC1CBC83E300C87502 /* mdirs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mdirs.m; sourceTree = "<group>"; };
+		DAD33FDE1CBC83E300C87502 /* mgeneral.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgeneral.h; sourceTree = "<group>"; };
+		DAD33FDF1CBC83E300C87502 /* msettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = msettings.h; sourceTree = "<group>"; };
+		DAD33FE01CBC83E300C87502 /* msettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = msettings.m; sourceTree = "<group>"; };
+		DAD33FE11CBC83E300C87502 /* m.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = m.h; sourceTree = "<group>"; };
+		DAD33FE31CBC83E300C87502 /* s.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = s.h; sourceTree = "<group>"; };
+		DAD33FE61CBC83E300C87502 /* valert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = valert.h; sourceTree = "<group>"; };
+		DAD33FE71CBC83E300C87502 /* valert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = valert.m; sourceTree = "<group>"; };
+		DAD33FE81CBC83E300C87502 /* vblur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vblur.h; sourceTree = "<group>"; };
+		DAD33FE91CBC83E300C87502 /* vblur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vblur.m; sourceTree = "<group>"; };
+		DAD33FEA1CBC83E300C87502 /* vspinner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vspinner.h; sourceTree = "<group>"; };
+		DAD33FEB1CBC83E300C87502 /* vspinner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vspinner.m; sourceTree = "<group>"; };
+		DAD33FED1CBC83E300C87502 /* vhome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vhome.h; sourceTree = "<group>"; };
+		DAD33FEE1CBC83E300C87502 /* vhome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vhome.m; sourceTree = "<group>"; };
+		DAD33FEF1CBC83E300C87502 /* v.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = v.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -15,6 +88,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAD33FFE1CBC83E300C87502 /* libtimerbg.a in Frameworks */,
+				DAD33FFD1CBC83E300C87502 /* libdb.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,8 +115,206 @@
 		DAD33F921CBC825900C87502 /* cdmx */ = {
 			isa = PBXGroup;
 			children = (
+				DAD33FAA1CBC83E300C87502 /* db */,
+				DAD33FAC1CBC83E300C87502 /* imateq */,
+				DAD33FAD1CBC83E300C87502 /* langteq */,
+				DAD33FB31CBC83E300C87502 /* sourceteq */,
 			);
 			path = cdmx;
+			sourceTree = "<group>";
+		};
+		DAD33FAA1CBC83E300C87502 /* db */ = {
+			isa = PBXGroup;
+			children = (
+				DAD33FAB1CBC83E300C87502 /* cdmx.db */,
+			);
+			path = db;
+			sourceTree = "<group>";
+		};
+		DAD33FAC1CBC83E300C87502 /* imateq */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = imateq;
+			sourceTree = "<group>";
+		};
+		DAD33FAD1CBC83E300C87502 /* langteq */ = {
+			isa = PBXGroup;
+			children = (
+				DAD33FAE1CBC83E300C87502 /* analytics.plist */,
+				DAD33FAF1CBC83E300C87502 /* defs.plist */,
+				DAD33FB01CBC83E300C87502 /* Localizable.strings */,
+			);
+			path = langteq;
+			sourceTree = "<group>";
+		};
+		DAD33FB31CBC83E300C87502 /* sourceteq */ = {
+			isa = PBXGroup;
+			children = (
+				DAD33FB41CBC83E300C87502 /* core */,
+				DAD33FB91CBC83E300C87502 /* generic */,
+				DAD33FC71CBC83E300C87502 /* lib */,
+				DAD33FD11CBC83E300C87502 /* source */,
+			);
+			path = sourceteq;
+			sourceTree = "<group>";
+		};
+		DAD33FB41CBC83E300C87502 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				DAD33FB51CBC83E300C87502 /* appdel.h */,
+				DAD33FB61CBC83E300C87502 /* appdel.m */,
+				DAD33FB71CBC83E300C87502 /* Info.plist */,
+				DAD33FB81CBC83E300C87502 /* main.m */,
+			);
+			path = core;
+			sourceTree = "<group>";
+		};
+		DAD33FB91CBC83E300C87502 /* generic */ = {
+			isa = PBXGroup;
+			children = (
+				DAD33FBA1CBC83E300C87502 /* analytics.h */,
+				DAD33FBB1CBC83E300C87502 /* analytics.m */,
+				DAD33FBC1CBC83E300C87502 /* generic.h */,
+				DAD33FBD1CBC83E300C87502 /* nsnotification+nsnotificationmain.h */,
+				DAD33FBE1CBC83E300C87502 /* nsnotification+nsnotificationmain.m */,
+				DAD33FBF1CBC83E300C87502 /* tools.h */,
+				DAD33FC01CBC83E300C87502 /* tools.m */,
+				DAD33FC11CBC83E300C87502 /* uicolor+uicolormain.h */,
+				DAD33FC21CBC83E300C87502 /* uicolor+uicolormain.m */,
+				DAD33FC31CBC83E300C87502 /* uifont+uifontmain.h */,
+				DAD33FC41CBC83E300C87502 /* uifont+uifontmain.m */,
+				DAD33FC51CBC83E300C87502 /* updater.h */,
+				DAD33FC61CBC83E300C87502 /* updater.m */,
+			);
+			path = generic;
+			sourceTree = "<group>";
+		};
+		DAD33FC71CBC83E300C87502 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				DAD33FC81CBC83E300C87502 /* db */,
+				DAD33FCA1CBC83E300C87502 /* libdb.a */,
+				DAD33FCB1CBC83E300C87502 /* libtimerbg.a */,
+				DAD33FCC1CBC83E300C87502 /* timerbg */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		DAD33FC81CBC83E300C87502 /* db */ = {
+			isa = PBXGroup;
+			children = (
+				DAD33FC91CBC83E300C87502 /* db.h */,
+			);
+			path = db;
+			sourceTree = "<group>";
+		};
+		DAD33FCC1CBC83E300C87502 /* timerbg */ = {
+			isa = PBXGroup;
+			children = (
+				DAD33FCD1CBC83E300C87502 /* timerbg.h */,
+			);
+			path = timerbg;
+			sourceTree = "<group>";
+		};
+		DAD33FD11CBC83E300C87502 /* source */ = {
+			isa = PBXGroup;
+			children = (
+				DAD33FD21CBC83E300C87502 /* c */,
+				DAD33FD41CBC83E300C87502 /* m */,
+				DAD33FE21CBC83E300C87502 /* s */,
+				DAD33FE41CBC83E300C87502 /* v */,
+			);
+			path = source;
+			sourceTree = "<group>";
+		};
+		DAD33FD21CBC83E300C87502 /* c */ = {
+			isa = PBXGroup;
+			children = (
+				DAD33FD31CBC83E300C87502 /* c.h */,
+			);
+			path = c;
+			sourceTree = "<group>";
+		};
+		DAD33FD41CBC83E300C87502 /* m */ = {
+			isa = PBXGroup;
+			children = (
+				DAD33FD51CBC83E300C87502 /* db */,
+				DAD33FDA1CBC83E300C87502 /* dirs */,
+				DAD33FDD1CBC83E300C87502 /* general */,
+				DAD33FE11CBC83E300C87502 /* m.h */,
+			);
+			path = m;
+			sourceTree = "<group>";
+		};
+		DAD33FD51CBC83E300C87502 /* db */ = {
+			isa = PBXGroup;
+			children = (
+				DAD33FD61CBC83E300C87502 /* mdb.h */,
+				DAD33FD71CBC83E300C87502 /* mdb.m */,
+				DAD33FD81CBC83E300C87502 /* mdbcreate.h */,
+				DAD33FD91CBC83E300C87502 /* mdbcreate.m */,
+			);
+			path = db;
+			sourceTree = "<group>";
+		};
+		DAD33FDA1CBC83E300C87502 /* dirs */ = {
+			isa = PBXGroup;
+			children = (
+				DAD33FDB1CBC83E300C87502 /* mdirs.h */,
+				DAD33FDC1CBC83E300C87502 /* mdirs.m */,
+			);
+			path = dirs;
+			sourceTree = "<group>";
+		};
+		DAD33FDD1CBC83E300C87502 /* general */ = {
+			isa = PBXGroup;
+			children = (
+				DAD33FDE1CBC83E300C87502 /* mgeneral.h */,
+				DAD33FDF1CBC83E300C87502 /* msettings.h */,
+				DAD33FE01CBC83E300C87502 /* msettings.m */,
+			);
+			path = general;
+			sourceTree = "<group>";
+		};
+		DAD33FE21CBC83E300C87502 /* s */ = {
+			isa = PBXGroup;
+			children = (
+				DAD33FE31CBC83E300C87502 /* s.h */,
+			);
+			path = s;
+			sourceTree = "<group>";
+		};
+		DAD33FE41CBC83E300C87502 /* v */ = {
+			isa = PBXGroup;
+			children = (
+				DAD33FE51CBC83E300C87502 /* general */,
+				DAD33FEC1CBC83E300C87502 /* home */,
+				DAD33FEF1CBC83E300C87502 /* v.h */,
+			);
+			path = v;
+			sourceTree = "<group>";
+		};
+		DAD33FE51CBC83E300C87502 /* general */ = {
+			isa = PBXGroup;
+			children = (
+				DAD33FE61CBC83E300C87502 /* valert.h */,
+				DAD33FE71CBC83E300C87502 /* valert.m */,
+				DAD33FE81CBC83E300C87502 /* vblur.h */,
+				DAD33FE91CBC83E300C87502 /* vblur.m */,
+				DAD33FEA1CBC83E300C87502 /* vspinner.h */,
+				DAD33FEB1CBC83E300C87502 /* vspinner.m */,
+			);
+			path = general;
+			sourceTree = "<group>";
+		};
+		DAD33FEC1CBC83E300C87502 /* home */ = {
+			isa = PBXGroup;
+			children = (
+				DAD33FED1CBC83E300C87502 /* vhome.h */,
+				DAD33FEE1CBC83E300C87502 /* vhome.m */,
+			);
+			path = home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -85,6 +358,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = DAD33F871CBC825900C87502;
 			productRefGroup = DAD33F911CBC825900C87502 /* Products */;
@@ -101,6 +375,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAD33FF01CBC83E300C87502 /* cdmx.db in Resources */,
+				DAD33FF31CBC83E300C87502 /* Localizable.strings in Resources */,
+				DAD33FF21CBC83E300C87502 /* defs.plist in Resources */,
+				DAD33FF51CBC83E300C87502 /* Info.plist in Resources */,
+				DAD33FF11CBC83E300C87502 /* analytics.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,10 +390,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAD340021CBC83E300C87502 /* msettings.m in Sources */,
+				DAD340061CBC83E300C87502 /* vhome.m in Sources */,
+				DAD33FF61CBC83E300C87502 /* main.m in Sources */,
+				DAD33FFC1CBC83E300C87502 /* updater.m in Sources */,
+				DAD33FFB1CBC83E300C87502 /* uifont+uifontmain.m in Sources */,
+				DAD340051CBC83E300C87502 /* vspinner.m in Sources */,
+				DAD33FFF1CBC83E300C87502 /* mdb.m in Sources */,
+				DAD340041CBC83E300C87502 /* vblur.m in Sources */,
+				DAD33FF41CBC83E300C87502 /* appdel.m in Sources */,
+				DAD33FFA1CBC83E300C87502 /* uicolor+uicolormain.m in Sources */,
+				DAD340011CBC83E300C87502 /* mdirs.m in Sources */,
+				DAD33FF81CBC83E300C87502 /* nsnotification+nsnotificationmain.m in Sources */,
+				DAD33FF91CBC83E300C87502 /* tools.m in Sources */,
+				DAD340031CBC83E300C87502 /* valert.m in Sources */,
+				DAD33FF71CBC83E300C87502 /* analytics.m in Sources */,
+				DAD340001CBC83E300C87502 /* mdbcreate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DAD33FB01CBC83E300C87502 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DAD33FB11CBC83E300C87502 /* en */,
+				DAD33FB21CBC83E300C87502 /* es */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		DAD33FA51CBC825A00C87502 /* Debug */ = {
@@ -207,6 +514,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = cdmx/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/cdmx/sourceteq/lib",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = iturbide.cdmx;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -218,6 +529,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = cdmx/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/cdmx/sourceteq/lib",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = iturbide.cdmx;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -242,6 +557,7 @@
 				DAD33FA91CBC825A00C87502 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
