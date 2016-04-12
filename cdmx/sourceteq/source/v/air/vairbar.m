@@ -2,8 +2,6 @@
 #import "uicolor+uicolormain.h"
 #import "vmenubutton.h"
 
-static NSUInteger const navbarintrinsicwidth = 320;
-
 @implementation vairbar
 
 -(instancetype)init:(cair*)controller
