@@ -53,6 +53,8 @@
 		DAD876121CBD72F400A4F91C /* vmenucell.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD876111CBD72F400A4F91C /* vmenucell.m */; };
 		DAD876151CBDA0DE00A4F91C /* vairmap.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD876141CBDA0DE00A4F91C /* vairmap.m */; };
 		DAD876171CBDA75100A4F91C /* stations.csv in Resources */ = {isa = PBXBuildFile; fileRef = DAD876161CBDA75100A4F91C /* stations.csv */; };
+		DAD8761B1CBDBB8300A4F91C /* mstations.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD8761A1CBDBB8300A4F91C /* mstations.m */; };
+		DAD8761E1CBDBBD100A4F91C /* mstationsitem.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD8761D1CBDBBD100A4F91C /* mstationsitem.m */; };
 		E99EDB84D6293E5D839C08A5 /* libPods-cdmx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E47528F2CEFA76F37D95E3 /* libPods-cdmx.a */; };
 /* End PBXBuildFile section */
 
@@ -144,6 +146,10 @@
 		DAD876131CBDA0DE00A4F91C /* vairmap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vairmap.h; sourceTree = "<group>"; };
 		DAD876141CBDA0DE00A4F91C /* vairmap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vairmap.m; sourceTree = "<group>"; };
 		DAD876161CBDA75100A4F91C /* stations.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stations.csv; sourceTree = "<group>"; };
+		DAD876191CBDBB8300A4F91C /* mstations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mstations.h; sourceTree = "<group>"; };
+		DAD8761A1CBDBB8300A4F91C /* mstations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mstations.m; sourceTree = "<group>"; };
+		DAD8761C1CBDBBD100A4F91C /* mstationsitem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mstationsitem.h; sourceTree = "<group>"; };
+		DAD8761D1CBDBBD100A4F91C /* mstationsitem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mstationsitem.m; sourceTree = "<group>"; };
 		EFFF53693CD2BFB9D79DACFE /* Pods-cdmx.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cdmx.release.xcconfig"; path = "Pods/Target Support Files/Pods-cdmx/Pods-cdmx.release.xcconfig"; sourceTree = "<group>"; };
 		FB216D6F4F8C21A7E0923298 /* Pods-cdmx.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cdmx.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cdmx/Pods-cdmx.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -343,6 +349,7 @@
 		DAD33FD41CBC83E300C87502 /* m */ = {
 			isa = PBXGroup;
 			children = (
+				DAD876181CBDBB7700A4F91C /* stations */,
 				DAD875E11CBD5B1300A4F91C /* pages */,
 				DAD33FD51CBC83E300C87502 /* db */,
 				DAD33FDA1CBC83E300C87502 /* dirs */,
@@ -494,6 +501,17 @@
 				DAD876111CBD72F400A4F91C /* vmenucell.m */,
 			);
 			path = menu;
+			sourceTree = "<group>";
+		};
+		DAD876181CBDBB7700A4F91C /* stations */ = {
+			isa = PBXGroup;
+			children = (
+				DAD876191CBDBB8300A4F91C /* mstations.h */,
+				DAD8761A1CBDBB8300A4F91C /* mstations.m */,
+				DAD8761C1CBDBBD100A4F91C /* mstationsitem.h */,
+				DAD8761D1CBDBBD100A4F91C /* mstationsitem.m */,
+			);
+			path = stations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -652,6 +670,8 @@
 				DAD33FF81CBC83E300C87502 /* nsnotification+nsnotificationmain.m in Sources */,
 				DAD33FF91CBC83E300C87502 /* tools.m in Sources */,
 				DAD340031CBC83E300C87502 /* valert.m in Sources */,
+				DAD8761E1CBDBBD100A4F91C /* mstationsitem.m in Sources */,
+				DAD8761B1CBDBB8300A4F91C /* mstations.m in Sources */,
 				DAD875CF1CBD2F0400A4F91C /* cpages.m in Sources */,
 				DAD33FF71CBC83E300C87502 /* analytics.m in Sources */,
 				DAD876121CBD72F400A4F91C /* vmenucell.m in Sources */,
