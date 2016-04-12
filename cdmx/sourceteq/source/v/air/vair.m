@@ -1,8 +1,11 @@
 #import "vair.h"
 #import "vairbar.h"
+#import "vaircell.h"
 
+static NSString* const cellairid = @"cellair";
 static NSUInteger const mapheight = 200;
 static NSUInteger const collectionbottom = 40;
+static NSUInteger const cellheight = 60;
 
 @implementation vair
 
@@ -32,6 +35,7 @@ static NSUInteger const collectionbottom = 40;
     [collection setAlwaysBounceVertical:YES];
     [collection setDataSource:self];
     [collection setDelegate:self];
+    [collection registerClass:[vaircell class] forCellWithReuseIdentifier:cellairid];
     
     [self addSubview:bar];
     [self addSubview:collection];
@@ -49,6 +53,14 @@ static NSUInteger const collectionbottom = 40;
 #pragma mark -
 #pragma mark col del
 
+-(CGSize)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout referenceSizeForHeaderInSection:(NSInteger)section
+{
+    CGFloat width = col.bounds.size.width;
+    CGSize size = CGSizeMake(width, cellheight);
+    
+    return size;
+}
+
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView*)col
 {
     return 1;
@@ -61,7 +73,9 @@ static NSUInteger const collectionbottom = 40;
 
 -(UICollectionViewCell*)collectionView:(UICollectionView*)col cellForItemAtIndexPath:(NSIndexPath*)index
 {
+    vaircell *cell = [col dequeueReusableCellWithReuseIdentifier:cellairid forIndexPath:index];
     
+    return cell;
 }
 
 @end
