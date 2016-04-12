@@ -1,4 +1,5 @@
 #import "cpages.h"
+#import "cloading.h"
 
 @implementation cpages
 
@@ -23,8 +24,6 @@
     return YES;
 }
 
-#pragma mark actions
-
 #pragma mark functionality
 
 -(void)changecontroller:(UIViewController*)controller direction:(UIPageViewControllerNavigationDirection)direction animated:(BOOL)animated
@@ -40,18 +39,5 @@
     UIViewController *controller = [[chome alloc] init];
     [self changecontroller:controller direction:direction animated:animated];
 }
-
--(void)sectiongame
-{
-    UIViewController *controller = [[cgameloader alloc] init];
-    [self changecontroller:controller direction:UIPageViewControllerNavigationDirectionForward animated:YES];
-}
-
--(void)sectiongamestart:(mgame*)model
-{
-    UIViewController *controller = [[cgame alloc] init:model];
-    [self changecontroller:controller direction:UIPageViewControllerNavigationDirectionForward animated:YES];
-}
-
 
 @end

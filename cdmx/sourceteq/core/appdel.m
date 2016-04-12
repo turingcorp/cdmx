@@ -14,7 +14,7 @@
     
     window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [window makeKeyAndVisible];
-    [window setBackgroundColor:[UIColor blackColor]];
+    [window setBackgroundColor:[UIColor whiteColor]];
     [window setRootViewController:[cmain singleton]];
 
     [updater launch];
