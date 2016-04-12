@@ -18,11 +18,13 @@ NSString *documents;
                        [updater update];
                        [[msettings singleton] load];
                        
+                       mpages *modelpages = [[mpages alloc] init];
+                       
                        dispatch_async(dispatch_get_main_queue(),
                                       ^
                                       {
                                           [[analytics singleton] start];
-                                          [[cmain singleton].pages loadfinished];
+                                          [[cmain singleton].pages loadfinished:modelpages];
                                       });
                    });
 }
