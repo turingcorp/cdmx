@@ -6,7 +6,7 @@
 -(instancetype)init
 {
     self = [super initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
-    [self sectionhome:NO direction:UIPageViewControllerNavigationDirectionForward];
+    [self pageloading:NO direction:UIPageViewControllerNavigationDirectionForward];
     
     return self;
 }
@@ -34,9 +34,9 @@
 
 #pragma mark public
 
--(void)sectionhome:(BOOL)animated direction:(UIPageViewControllerNavigationDirection)direction
+-(void)pageloading:(BOOL)animated direction:(UIPageViewControllerNavigationDirection)direction
 {
-    UIViewController *controller = [[chome alloc] init];
+    cloading *controller = [[cloading alloc] init];
     [self changecontroller:controller direction:direction animated:animated];
 }
 
