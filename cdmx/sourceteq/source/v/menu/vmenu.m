@@ -8,6 +8,8 @@
 static NSString* const menuheaderid = @"headerid";
 static NSString* const menucellid = @"cellid";
 static NSUInteger const bannerheight = 200;
+static NSUInteger const headerheight = 50;
+static NSUInteger const cellheight = 90;
 
 @implementation vmenu
 
@@ -42,18 +44,36 @@ static NSUInteger const bannerheight = 200;
     self.collection = collection;
     
     [self addSubview:banner];
+    [self addSubview:collection];
     
-    NSDictionary *views = @{@"banner":banner};
+    NSDictionary *views = @{@"banner":banner, @"col":collection};
     NSDictionary *metrics = @{@"bannerheight":@(bannerheight)};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[banner]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[banner(bannerheight)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[banner(bannerheight)]-0-[col]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
     
     return self;
 }
 
 #pragma mark -
 #pragma mark col del
+
+-(CGSize)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout referenceSizeForHeaderInSection:(NSInteger)section
+{
+    CGFloat width = col.bounds.size.width;
+    CGSize size = CGSizeMake(width, headerheight);
+    
+    return size;
+}
+
+-(CGSize)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout sizeForItemAtIndexPath:(NSIndexPath*)index
+{
+    CGFloat width = col.bounds.size.width;
+    CGSize size = CGSizeMake(width, cellheight);
+    
+    return size;
+}
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView*)col
 {
