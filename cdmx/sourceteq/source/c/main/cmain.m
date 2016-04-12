@@ -11,4 +11,29 @@
     return single;
 }
 
+-(instancetype)init
+{
+    cpages *pages = [[cpages alloc] init];
+    self.pages = pages;
+    self = [super initWithRootViewController:pages];
+    
+    return self;
+}
+
+-(void)viewDidLoad
+{
+    [super viewDidLoad];
+    [self setNavigationBarHidden:YES];
+}
+
+-(UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
+
+-(BOOL)prefersStatusBarHidden
+{
+    return NO;
+}
+
 @end
