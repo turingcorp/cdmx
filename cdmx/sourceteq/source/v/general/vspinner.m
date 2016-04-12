@@ -1,6 +1,7 @@
 #import "vspinner.h"
 
 static CGFloat const animationduration = 3.0;
+static NSUInteger const intrinsicsize = 60;
 
 @implementation vspinner
 
@@ -14,16 +15,23 @@ static CGFloat const animationduration = 3.0;
     [self setContentMode:UIViewContentModeScaleAspectFit];
     [self setAnimationDuration:animationduration];
     self.animationImages = @[
-                             [UIImage imageNamed:@"loader0"],
-                             [UIImage imageNamed:@"loader1"],
-                             [UIImage imageNamed:@"loader2"],
-                             [UIImage imageNamed:@"loader3"],
-                             [UIImage imageNamed:@"loader4"],
-                             [UIImage imageNamed:@"loader5"]
+                             [UIImage imageNamed:@"spinner_0"],
+                             [UIImage imageNamed:@"spinner_1"],
+                             [UIImage imageNamed:@"spinner_2"],
+                             [UIImage imageNamed:@"spinner_3"],
+                             [UIImage imageNamed:@"spinner_4"],
+                             [UIImage imageNamed:@"spinner_5"]
                              ];
     [self startAnimating];
     
     return self;
+}
+
+-(CGSize)intrinsicContentSize
+{
+    CGSize size = CGSizeMake(intrinsicsize, intrinsicsize);
+    
+    return size;
 }
 
 @end
