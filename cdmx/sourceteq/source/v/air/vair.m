@@ -17,7 +17,7 @@ static NSUInteger const cellheight = 60;
     [self setBackgroundColor:[UIColor collection]];
     self.controller = controller;
     
-    vairbar *bar = [[vairbar alloc] init];
+    vairbar *bar = [[vairbar alloc] init:controller];
     
     UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
     [flow setHeaderReferenceSize:CGSizeZero];
