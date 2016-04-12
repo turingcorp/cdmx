@@ -1,4 +1,7 @@
 #import "updater.h"
+#import "tools.h"
+#import "msettings.h"
+#import "mdb.h"
 
 @implementation updater
 

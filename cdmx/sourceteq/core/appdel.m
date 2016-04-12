@@ -1,4 +1,7 @@
 #import "appdel.h"
+#import "analytics.h"
+#import "updater.h"
+#import "cmain.h"
 
 @implementation appdel
 {

@@ -2,4 +2,6 @@
 
 @interface cmain:UINavigationController
 
++(instancetype)singleton;
+
 @end

@@ -1,4 +1,6 @@
 #import "mdb.h"
+#import "db.h"
+#import "tools.h"
 
 @implementation mdb
 
