@@ -1,13 +1,13 @@
-//
-//  vair.m
-//  cdmx
-//
-//  Created by zero on 4/12/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
-
 #import "vair.h"
 
 @implementation vair
+
+-(instancetype)init:(cair*)controller
+{
+    self = [super init];
+    self.controller = controller;
+    
+    return self;
+}
 
 @end
