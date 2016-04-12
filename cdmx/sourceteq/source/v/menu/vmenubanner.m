@@ -7,6 +7,7 @@
     self = [super init];
     [self setClipsToBounds:YES];
     [self setBackgroundColor:[UIColor whiteColor]];
+    [self setTranslatesAutoresizingMaskIntoConstraints:NO];
     
     return self;
 }
