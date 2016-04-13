@@ -279,10 +279,18 @@
                         for(NSUInteger i = 0; i < countsplit; i++)
                         {
                             NSString *insplithg = splithg[i];
+                            mstationsnodrivehologram *hologram = [mstationsnodrivehologram hologramforstring:insplithg];
                             
-                            
+                            if(hologram)
+                            {
+                                [mutholograms addObject:hologram];
+                            }
                         }
                     }
+                    
+                    newnodrive.plates = mutplates;
+                    newnodrive.holograms = mutholograms;
+                    [mstations singleton].nodrive = newnodrive;
                 }
             }
         }
