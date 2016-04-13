@@ -50,8 +50,14 @@
                 {
                     NSDictionary *rawitem = rawtotal[i];
                     NSString *rawname = rawitem[@"name"];
-                    NSString *rawshortname = rawitem[@"shortName"];
+                    NSString *rawshortname = [rawitem[@"shortName"] lowercaseString];
+                    NSString *rawlocation = rawitem[@"location"];
+                    NSString *rawpollutant = rawitem[@"pollutant"];
                     NSInteger rawpoints = [rawitem[@"imecaPoints"] integerValue];
+                    CGFloat rawtemperature = [rawitem[@"temperature"] floatValue];
+                    CGFloat rawhumidity = [rawitem[@"humidity"] floatValue];
+                    NSInteger rawwinddirection = [rawitem[@"windDirection"] integerValue];
+                    NSInteger rawwindspeed = [rawitem[@"windSpeed"] integerValue];
                     
                 }
                 

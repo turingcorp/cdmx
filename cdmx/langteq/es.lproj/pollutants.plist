@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>screens</key>
+	<array>
+		<string>stats</string>
+        <string>options</string>
+        <string>options/contact</string>
+        <string>store</string>
+        <string>play</string>
+        <string>play/finish</string>
+	</array>
+	<key>events</key>
+	<array>
+		<string>purchase</string>
+        <string>rate</string>
+        <string>review</string>
+        <string>email</string>
+        <string>message</string>
+	</array>
+	<key>actions</key>
+	<array>
+        <string>optin</string>
+	</array>
+</dict>
+</plist>
