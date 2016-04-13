@@ -42,6 +42,7 @@
             {
                 NSInteger countstations = [mstations singleton].items.count;
                 mstationsreading *newreading = [[mstationsreading alloc] init];
+                newreading.date = date;
                 NSMutableArray *mutarray = [NSMutableArray array];
                 NSDictionary *dictpollutants = [NSDictionary dictionaryWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"pollutants" withExtension:@"plist"]];
                 NSArray *rawdel = pollution[@"delegations"];
@@ -244,18 +245,29 @@
                 
                 if(createnodrive)
                 {
+                    mstationsnodrive *newnodrive = [[mstationsnodrive alloc] init];
+                    newnodrive.date = date;
+                    
+                    NSMutableArray<mstationsnodrivehologram*> *mutholograms = [NSMutableArray array];
+                    NSMutableArray<mstationsnodrivecolor*> *mutcolors = [NSMutableArray array];
+                    NSMutableArray<mstationsnodriveplate*> *mutplates = [NSMutableArray array];
+                    
                     NSDictionary *dictplates = [NSDictionary dictionaryWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"nodriveplates" withExtension:@"plist"]];
                     NSString *rawplatecolor = rawinfo[@"color"];
                     NSString *rawplatecolor2 = rawinfo[@"color2"];
                     
                     if(rawplatecolor && rawplatecolor.length > 1)
                     {
+                        mstationsnodrivecolor *maincolor = [[mstationsnodrivecolor alloc] init:rawplatecolor];
                         
+                        [mutcolors addObject:maincolor];
                     }
                     
                     if(rawplatecolor2 && rawplatecolor2.length > 1)
                     {
+                        mstationsnodrivecolor *secondcolor = [[mstationsnodrivecolor alloc] init:rawplatecolor2];
                         
+                        [mutcolors addObject:secondcolor];
                     }
                 }
             }
