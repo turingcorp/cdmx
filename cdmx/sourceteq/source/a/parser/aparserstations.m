@@ -93,6 +93,22 @@
                                 }
                             }
                             
+                            if(!initem.pollutant && rawpollutant)
+                            {
+                                NSString *statpollutant = dictpollutants[rawpollutant];
+                                
+                                if(statpollutant)
+                                {
+                                    initem.pollutant = statpollutant;
+                                }
+                            }
+                            
+                            if(!initem.index || initem.index.points < rawpoints)
+                            {
+                                mstationsreadingitemindex *newindex = [mstationsreadingitemindex indexwithpoints:rawpoints];
+                                initem.index = newindex;
+                            }
+                            
                             add = NO;
                             
                             break;
