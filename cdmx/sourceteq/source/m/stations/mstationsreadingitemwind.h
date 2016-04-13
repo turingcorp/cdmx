@@ -1,13 +1,8 @@
-//
-//  mstationsreadingitemwind.h
-//  cdmx
-//
-//  Created by zero on 4/13/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
+#import <UIKit/UIKit.h>
 
-#import <Foundation/Foundation.h>
+@interface mstationsreadingitemwind:NSObject
 
-@interface mstationsreadingitemwind : NSObject
+@property(nonatomic)NSInteger direction;
+@property(nonatomic)NSInteger speed;
 
 @end
