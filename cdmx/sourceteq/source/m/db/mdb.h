@@ -7,6 +7,6 @@
 @interface mdb:NSObject
 
 +(void)updatedb;
-+(mstations*)loadstations;
++(NSArray*)loadstations;
 
 @end
