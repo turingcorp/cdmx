@@ -3,6 +3,7 @@
 #import "mstationsreading.h"
 #import "acalldelegate.h"
 #import "mstationsnodrive.h"
+#import "mstationsreadinguv.h"
 
 @interface mstations:NSObject<acalldelegate>
 
@@ -10,6 +11,7 @@
 -(void)load;
 
 @property(strong, nonatomic)mstationsnodrive *nodrive;
+@property(strong, nonatomic)mstationsreadinguv *uv;
 @property(strong, nonatomic)NSArray<mstationsitem*> *items;
 @property(strong, nonatomic)NSMutableArray<mstationsreading*> *readings;
 @property(nonatomic)BOOL loaded;
