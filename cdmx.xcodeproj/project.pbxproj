@@ -41,6 +41,11 @@
 		DA87088E1CBEDC73000C08E1 /* mstationsreadingitemconditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DA87088D1CBEDC73000C08E1 /* mstationsreadingitemconditions.m */; };
 		DA8708911CBEDCFC000C08E1 /* mstationsreadingitemwind.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8708901CBEDCFC000C08E1 /* mstationsreadingitemwind.m */; };
 		DA8708931CBEFF1A000C08E1 /* nodriveplates.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA8708921CBEFF1A000C08E1 /* nodriveplates.plist */; };
+		DA8708961CBF0BBA000C08E1 /* mstationsnodrivehologramfree.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8708951CBF0BBA000C08E1 /* mstationsnodrivehologramfree.m */; };
+		DA8708991CBF0BC6000C08E1 /* mstationsnodrivehologramdoubleo.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8708981CBF0BC6000C08E1 /* mstationsnodrivehologramdoubleo.m */; };
+		DA87089C1CBF0BD1000C08E1 /* mstationsnodrivehologramo.m in Sources */ = {isa = PBXBuildFile; fileRef = DA87089B1CBF0BD1000C08E1 /* mstationsnodrivehologramo.m */; };
+		DA8708A51CBF0C0C000C08E1 /* mstationsnodrivehologramonce.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8708A41CBF0C0C000C08E1 /* mstationsnodrivehologramonce.m */; };
+		DA8708A81CBF0C16000C08E1 /* mstationsnodrivehologramtwice.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8708A71CBF0C16000C08E1 /* mstationsnodrivehologramtwice.m */; };
 		DACEDEE21CBC89630088AA8B /* cmain.m in Sources */ = {isa = PBXBuildFile; fileRef = DACEDEE11CBC89630088AA8B /* cmain.m */; };
 		DAD33FF01CBC83E300C87502 /* cdmx.db in Resources */ = {isa = PBXBuildFile; fileRef = DAD33FAB1CBC83E300C87502 /* cdmx.db */; };
 		DAD33FF11CBC83E300C87502 /* analytics.plist in Resources */ = {isa = PBXBuildFile; fileRef = DAD33FAE1CBC83E300C87502 /* analytics.plist */; };
@@ -163,6 +168,16 @@
 		DA87088F1CBEDCFC000C08E1 /* mstationsreadingitemwind.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mstationsreadingitemwind.h; sourceTree = "<group>"; };
 		DA8708901CBEDCFC000C08E1 /* mstationsreadingitemwind.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mstationsreadingitemwind.m; sourceTree = "<group>"; };
 		DA8708921CBEFF1A000C08E1 /* nodriveplates.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = nodriveplates.plist; sourceTree = "<group>"; };
+		DA8708941CBF0BBA000C08E1 /* mstationsnodrivehologramfree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mstationsnodrivehologramfree.h; sourceTree = "<group>"; };
+		DA8708951CBF0BBA000C08E1 /* mstationsnodrivehologramfree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mstationsnodrivehologramfree.m; sourceTree = "<group>"; };
+		DA8708971CBF0BC6000C08E1 /* mstationsnodrivehologramdoubleo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mstationsnodrivehologramdoubleo.h; sourceTree = "<group>"; };
+		DA8708981CBF0BC6000C08E1 /* mstationsnodrivehologramdoubleo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mstationsnodrivehologramdoubleo.m; sourceTree = "<group>"; };
+		DA87089A1CBF0BD1000C08E1 /* mstationsnodrivehologramo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mstationsnodrivehologramo.h; sourceTree = "<group>"; };
+		DA87089B1CBF0BD1000C08E1 /* mstationsnodrivehologramo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mstationsnodrivehologramo.m; sourceTree = "<group>"; };
+		DA8708A31CBF0C0C000C08E1 /* mstationsnodrivehologramonce.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mstationsnodrivehologramonce.h; sourceTree = "<group>"; };
+		DA8708A41CBF0C0C000C08E1 /* mstationsnodrivehologramonce.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mstationsnodrivehologramonce.m; sourceTree = "<group>"; };
+		DA8708A61CBF0C16000C08E1 /* mstationsnodrivehologramtwice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mstationsnodrivehologramtwice.h; sourceTree = "<group>"; };
+		DA8708A71CBF0C16000C08E1 /* mstationsnodrivehologramtwice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mstationsnodrivehologramtwice.m; sourceTree = "<group>"; };
 		DACEDEE01CBC89630088AA8B /* cmain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cmain.h; sourceTree = "<group>"; };
 		DACEDEE11CBC89630088AA8B /* cmain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cmain.m; sourceTree = "<group>"; };
 		DAD33F901CBC825900C87502 /* cdmx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cdmx.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -705,6 +720,16 @@
 				DA8708461CBE99FA000C08E1 /* mstationsnodrivecolor.m */,
 				DA8708481CBE9A0A000C08E1 /* mstationsnodriveplate.h */,
 				DA8708491CBE9A0A000C08E1 /* mstationsnodriveplate.m */,
+				DA8708941CBF0BBA000C08E1 /* mstationsnodrivehologramfree.h */,
+				DA8708951CBF0BBA000C08E1 /* mstationsnodrivehologramfree.m */,
+				DA8708971CBF0BC6000C08E1 /* mstationsnodrivehologramdoubleo.h */,
+				DA8708981CBF0BC6000C08E1 /* mstationsnodrivehologramdoubleo.m */,
+				DA87089A1CBF0BD1000C08E1 /* mstationsnodrivehologramo.h */,
+				DA87089B1CBF0BD1000C08E1 /* mstationsnodrivehologramo.m */,
+				DA8708A31CBF0C0C000C08E1 /* mstationsnodrivehologramonce.h */,
+				DA8708A41CBF0C0C000C08E1 /* mstationsnodrivehologramonce.m */,
+				DA8708A61CBF0C16000C08E1 /* mstationsnodrivehologramtwice.h */,
+				DA8708A71CBF0C16000C08E1 /* mstationsnodrivehologramtwice.m */,
 			);
 			path = stations;
 			sourceTree = "<group>";
@@ -853,13 +878,16 @@
 				DA8708621CBEBD11000C08E1 /* mstationsreadingitemindex.m in Sources */,
 				DAD33FFC1CBC83E300C87502 /* updater.m in Sources */,
 				DAD876021CBD6F4000A4F91C /* cmenu.m in Sources */,
+				DA8708A51CBF0C0C000C08E1 /* mstationsnodrivehologramonce.m in Sources */,
 				DA8708691CBEBE37000C08E1 /* mstationsreadingitemindexregular.m in Sources */,
+				DA87089C1CBF0BD1000C08E1 /* mstationsnodrivehologramo.m in Sources */,
 				DAD33FFB1CBC83E300C87502 /* uifont+uifontmain.m in Sources */,
 				DAD340051CBC83E300C87502 /* vspinner.m in Sources */,
 				DA8708341CBE8717000C08E1 /* acallstations.m in Sources */,
 				DA87088B1CBED74E000C08E1 /* mstationsitemlocation.m in Sources */,
 				DAD8760C1CBD70B000A4F91C /* vmenubanner.m in Sources */,
 				DA87083E1CBE92A5000C08E1 /* mstationsreadingitem.m in Sources */,
+				DA8708961CBF0BBA000C08E1 /* mstationsnodrivehologramfree.m in Sources */,
 				DAD33FFF1CBC83E300C87502 /* mdb.m in Sources */,
 				DA87085F1CBE9F9D000C08E1 /* mstationsreadinguvindexextreme.m in Sources */,
 				DA8708411CBE96BC000C08E1 /* mstationsnodrive.m in Sources */,
@@ -882,6 +910,7 @@
 				DA87088E1CBEDC73000C08E1 /* mstationsreadingitemconditions.m in Sources */,
 				DAD875E41CBD5B1D00A4F91C /* mpages.m in Sources */,
 				DA87086F1CBEBE63000C08E1 /* mstationsreadingitemindexverybad.m in Sources */,
+				DA8708991CBF0BC6000C08E1 /* mstationsnodrivehologramdoubleo.m in Sources */,
 				DA87083B1CBE9297000C08E1 /* mstationsreading.m in Sources */,
 				DAD875ED1CBD5F9600A4F91C /* mpagessectionstats.m in Sources */,
 				DA87087E1CBEC829000C08E1 /* mstationsreadingitemindexactivityperfect.m in Sources */,
@@ -907,6 +936,7 @@
 				DAD875F91CBD6A0600A4F91C /* vaircell.m in Sources */,
 				DA8708501CBE9F0D000C08E1 /* mstationsreadinguvindex.m in Sources */,
 				DAD8760F1CBD72A200A4F91C /* vmenuheader.m in Sources */,
+				DA8708A81CBF0C16000C08E1 /* mstationsnodrivehologramtwice.m in Sources */,
 				DAD875FC1CBD6CF200A4F91C /* vmenubutton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
