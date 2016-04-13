@@ -1,5 +1,6 @@
 #import <Foundation/Foundation.h>
 #import "mstationsitem.h"
+#import "mstationsreading.h"
 #import "acalldelegate.h"
 
 @interface mstations:NSObject<acalldelegate>
@@ -8,6 +9,7 @@
 -(void)load;
 
 @property(strong, nonatomic)NSArray<mstationsitem*> *items;
+@property(strong, nonatomic)NSMutableArray<mstationsreading*> *readings;
 @property(nonatomic)BOOL loaded;
 
 @end

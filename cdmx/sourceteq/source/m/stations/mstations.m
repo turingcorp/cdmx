@@ -18,6 +18,7 @@
 {
     self = [super init];
     self.loaded = NO;
+    self.readings = [NSMutableArray array];
     
     return self;
 }
