@@ -51,12 +51,12 @@
         NSString *rawmessage = rawstation[@"message"];
         CGFloat coordlatitude = rawlatitude * coordinatesmult;
         CGFloat coordlongitude = rawlongitude * coordinatesmult;
+        mstationsitemlocation *location = [[mstationsitemlocation alloc] init:coordlatitude lon:coordlongitude];
         
         mstationsitem *item = [[mstationsitem alloc] init];
         item.stationid = rawid;
         item.sid = rawstationid;
-        item.latitude = coordlatitude;
-        item.longitiude = coordlongitude;
+        item.location = location;
         item.altitude = rawaltitude;
         item.shortname = rawshortname;
         item.name = rawname;
