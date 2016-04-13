@@ -12,6 +12,8 @@
 		DA8708311CBE8532000C08E1 /* aparser.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8708301CBE8532000C08E1 /* aparser.m */; };
 		DA8708341CBE8717000C08E1 /* acallstations.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8708331CBE8717000C08E1 /* acallstations.m */; };
 		DA8708371CBE87F7000C08E1 /* aparserstations.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8708361CBE87F7000C08E1 /* aparserstations.m */; };
+		DA87083B1CBE9297000C08E1 /* mstationsreading.m in Sources */ = {isa = PBXBuildFile; fileRef = DA87083A1CBE9297000C08E1 /* mstationsreading.m */; };
+		DA87083E1CBE92A5000C08E1 /* mstationsreadingitem.m in Sources */ = {isa = PBXBuildFile; fileRef = DA87083D1CBE92A5000C08E1 /* mstationsreadingitem.m */; };
 		DACEDEE21CBC89630088AA8B /* cmain.m in Sources */ = {isa = PBXBuildFile; fileRef = DACEDEE11CBC89630088AA8B /* cmain.m */; };
 		DAD33FF01CBC83E300C87502 /* cdmx.db in Resources */ = {isa = PBXBuildFile; fileRef = DAD33FAB1CBC83E300C87502 /* cdmx.db */; };
 		DAD33FF11CBC83E300C87502 /* analytics.plist in Resources */ = {isa = PBXBuildFile; fileRef = DAD33FAE1CBC83E300C87502 /* analytics.plist */; };
@@ -76,6 +78,10 @@
 		DA8708331CBE8717000C08E1 /* acallstations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = acallstations.m; sourceTree = "<group>"; };
 		DA8708351CBE87F7000C08E1 /* aparserstations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aparserstations.h; sourceTree = "<group>"; };
 		DA8708361CBE87F7000C08E1 /* aparserstations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = aparserstations.m; sourceTree = "<group>"; };
+		DA8708391CBE9297000C08E1 /* mstationsreading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mstationsreading.h; sourceTree = "<group>"; };
+		DA87083A1CBE9297000C08E1 /* mstationsreading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mstationsreading.m; sourceTree = "<group>"; };
+		DA87083C1CBE92A5000C08E1 /* mstationsreadingitem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mstationsreadingitem.h; sourceTree = "<group>"; };
+		DA87083D1CBE92A5000C08E1 /* mstationsreadingitem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mstationsreadingitem.m; sourceTree = "<group>"; };
 		DACEDEE01CBC89630088AA8B /* cmain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cmain.h; sourceTree = "<group>"; };
 		DACEDEE11CBC89630088AA8B /* cmain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cmain.m; sourceTree = "<group>"; };
 		DAD33F901CBC825900C87502 /* cdmx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cdmx.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -561,6 +567,10 @@
 				DAD8761A1CBDBB8300A4F91C /* mstations.m */,
 				DAD8761C1CBDBBD100A4F91C /* mstationsitem.h */,
 				DAD8761D1CBDBBD100A4F91C /* mstationsitem.m */,
+				DA8708391CBE9297000C08E1 /* mstationsreading.h */,
+				DA87083A1CBE9297000C08E1 /* mstationsreading.m */,
+				DA87083C1CBE92A5000C08E1 /* mstationsreadingitem.h */,
+				DA87083D1CBE92A5000C08E1 /* mstationsreadingitem.m */,
 			);
 			path = stations;
 			sourceTree = "<group>";
@@ -705,6 +715,7 @@
 				DAD340051CBC83E300C87502 /* vspinner.m in Sources */,
 				DA8708341CBE8717000C08E1 /* acallstations.m in Sources */,
 				DAD8760C1CBD70B000A4F91C /* vmenubanner.m in Sources */,
+				DA87083E1CBE92A5000C08E1 /* mstationsreadingitem.m in Sources */,
 				DAD33FFF1CBC83E300C87502 /* mdb.m in Sources */,
 				DAD875E71CBD5F1600A4F91C /* mpagessection.m in Sources */,
 				DAD340041CBC83E300C87502 /* vblur.m in Sources */,
@@ -719,6 +730,7 @@
 				DA87082A1CBE840F000C08E1 /* amanager.m in Sources */,
 				DAD875F31CBD603D00A4F91C /* mpagesitemair.m in Sources */,
 				DAD875E41CBD5B1D00A4F91C /* mpages.m in Sources */,
+				DA87083B1CBE9297000C08E1 /* mstationsreading.m in Sources */,
 				DAD875ED1CBD5F9600A4F91C /* mpagessectionstats.m in Sources */,
 				DA8708371CBE87F7000C08E1 /* aparserstations.m in Sources */,
 				DACEDEE21CBC89630088AA8B /* cmain.m in Sources */,
