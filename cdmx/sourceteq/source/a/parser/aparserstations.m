@@ -245,6 +245,18 @@
                 if(createnodrive)
                 {
                     NSDictionary *dictplates = [NSDictionary dictionaryWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"nodriveplates" withExtension:@"plist"]];
+                    NSString *rawplatecolor = rawinfo[@"color"];
+                    NSString *rawplatecolor2 = rawinfo[@"color2"];
+                    
+                    if(rawplatecolor && rawplatecolor.length > 1)
+                    {
+                        
+                    }
+                    
+                    if(rawplatecolor2 && rawplatecolor2.length > 1)
+                    {
+                        
+                    }
                 }
             }
         }

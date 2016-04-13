@@ -10,5 +10,6 @@
 +(UIColor*)pollution_orange;
 +(UIColor*)pollution_red;
 +(UIColor*)pollution_violet;
++(UIColor*)pollution_pink;
 
 @end
