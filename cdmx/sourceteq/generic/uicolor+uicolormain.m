@@ -19,27 +19,27 @@
 
 +(UIColor*)uvgreen
 {
-    return [UIColor colorWithRed:0 green:0 blue:0 alpha:0];
+    return [UIColor colorWithRed:0.3 green:1 blue:0.5 alpha:1];
 }
 
 +(UIColor*)uvyellow
 {
-    return [UIColor colorWithRed:0 green:0 blue:0 alpha:0];
+    return [UIColor colorWithRed:0.94 green:0.9 blue:0.1 alpha:1];
 }
 
 +(UIColor*)uvorange
 {
-    return [UIColor colorWithRed:0 green:0 blue:0 alpha:0];
+    return [UIColor colorWithRed:1 green:0.7 blue:0 alpha:1];
 }
 
 +(UIColor*)uvred
 {
-    return [UIColor colorWithRed:0 green:0 blue:0 alpha:0];
+    return [UIColor colorWithRed:1 green:0 blue:0 alpha:1];
 }
 
 +(UIColor*)uvviolet
 {
-    return [UIColor colorWithRed:0 green:0 blue:0 alpha:0];
+    return [UIColor colorWithRed:0.8 green:0.4 blue:0.6 alpha:1];
 }
 
 @end
