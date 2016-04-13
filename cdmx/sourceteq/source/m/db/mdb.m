@@ -28,14 +28,43 @@
 
 +(NSArray*)loadstations
 {
+    NSMutableArray *stations = [NSMutableArray array];
     NSString *query = [NSString stringWithFormat:
                        @"SELECT id, stationid, latitude, longitude, "
                        "altitude, shortname, name, message "
                        "FROM station "
                        "ORDER BY name ASC;"];
     NSArray *rawstations = [db rows:query];
+    NSUInteger count = rawstations.count;
     
-    return rawstations;
+    for(NSUInteger i = 0; i < count; i++)
+    {
+        NSDictionary *rawstation = rawstations[i];
+        NSInteger rawid = [rawstation[@"id"] integerValue];
+        NSString *rawstationid = rawstation[@"stationid"];
+        NSInteger rawlatitude = [rawstation[@"latitude"] integerValue];
+        NSInteger rawlongitude = [rawstation[@"longitude"] integerValue];
+        NSInteger rawaltitude = [rawstation[@"altitude"] integerValue];
+        NSString *rawshortname = rawstation[@"shortname"];
+        NSString *rawname = rawstation[@"name"];
+        NSString *rawmessage = rawstation[@"message"];
+        CGFloat coordlatitude = rawlatitude * coordinatesmult;
+        CGFloat coordlongitude = rawlongitude * coordinatesmult;
+        
+        mstationsitem *item = [[mstationsitem alloc] init];
+        item.stationid = rawid;
+        item.sid = rawstationid;
+        item.latitude = coordlatitude;
+        item.longitiude = coordlongitude;
+        item.altitude = rawaltitude;
+        item.shortname = rawshortname;
+        item.name = rawname;
+        item.message = rawmessage;
+        
+        [stations addObject:item];
+    }
+    
+    return stations;
 }
 
 @end

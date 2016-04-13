@@ -24,37 +24,8 @@
 
 -(void)load
 {
-    self.items = [NSMutableArray array];
+    self.items = [mdb loadstations];
     
-    NSArray *rawstations = [mdb loadstations];
-    NSUInteger count = rawstations.count;
-    
-    for(NSUInteger i = 0; i < count; i++)
-    {
-        NSDictionary *rawstation = rawstations[i];
-        NSInteger rawid = [rawstation[@"id"] integerValue];
-        NSString *rawstationid = rawstation[@"stationid"];
-        NSInteger rawlatitude = [rawstation[@"latitude"] integerValue];
-        NSInteger rawlongitude = [rawstation[@"longitude"] integerValue];
-        NSInteger rawaltitude = [rawstation[@"altitude"] integerValue];
-        NSString *rawshortname = rawstation[@"shortname"];
-        NSString *rawname = rawstation[@"name"];
-        NSString *rawmessage = rawstation[@"message"];
-        CGFloat coordlatitude = rawlatitude * coordinatesmult;
-        CGFloat coordlongitude = rawlongitude * coordinatesmult;
-        
-        mstationsitem *item = [[mstationsitem alloc] init];
-        item.stationid = rawid;
-        item.sid = rawstationid;
-        item.latitude = coordlatitude;
-        item.longitiude = coordlongitude;
-        item.altitude = rawaltitude;
-        item.shortname = rawshortname;
-        item.name = rawname;
-        item.message = rawmessage;
-        
-        [self.items addObject:item];
-    }
 }
 
 @end

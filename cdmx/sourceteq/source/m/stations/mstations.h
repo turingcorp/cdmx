@@ -6,6 +6,6 @@
 +(instancetype)singleton;
 -(void)load;
 
-@property(strong, nonatomic)NSMutableArray<mstationsitem*> *items;
+@property(strong, nonatomic)NSArray<mstationsitem*> *items;
 
 @end
