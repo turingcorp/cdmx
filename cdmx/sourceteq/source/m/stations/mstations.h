@@ -1,7 +1,8 @@
 #import <Foundation/Foundation.h>
 #import "mstationsitem.h"
+#import "acalldelegate.h"
 
-@interface mstations:NSObject
+@interface mstations:NSObject<acalldelegate>
 
 +(instancetype)singleton;
 -(void)load;

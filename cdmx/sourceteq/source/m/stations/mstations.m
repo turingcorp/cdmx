@@ -1,5 +1,7 @@
 #import "mstations.h"
 #import "mdb.h"
+#import "amanager.h"
+#import "acallstations.h"
 
 @implementation mstations
 
@@ -20,11 +22,32 @@
     return self;
 }
 
+#pragma mark functionality
+
+-(void)fetch
+{
+    [amanager call:[[acallstations alloc] init] delegate:self];
+}
+
 #pragma mark public
 
 -(void)load
 {
     self.items = [mdb loadstations];
+    [self fetch];
+}
+
+#pragma mark -
+#pragma mark call del
+
+-(void)callsuccess:(amanager*)manager
+{
+    
+}
+
+-(void)call:(amanager*)manager error:(NSString*)error
+{
+    
 }
 
 @end
