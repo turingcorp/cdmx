@@ -48,6 +48,20 @@
         NSString *rawshortname = rawstation[@"shortname"];
         NSString *rawname = rawstation[@"name"];
         NSString *rawmessage = rawstation[@"message"];
+        CGFloat coordlatitude = rawlatitude * coordinatesmult;
+        CGFloat coordlongitude = rawlongitude * coordinatesmult;
+        
+        mstationsitem *item = [[mstationsitem alloc] init];
+        item.stationid = rawid;
+        item.sid = rawstationid;
+        item.latitude = coordlatitude;
+        item.longitiude = coordlongitude;
+        item.altitude = rawaltitude;
+        item.shortname = rawshortname;
+        item.name = rawname;
+        item.message = rawmessage;
+        
+        [model.items addObject:item];
     }
     
     return model;

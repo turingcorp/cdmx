@@ -5,6 +5,7 @@
 @property(copy, nonatomic)NSString *name;
 @property(copy, nonatomic)NSString *shortname;
 @property(copy, nonatomic)NSString *sid;
+@property(copy, nonatomic)NSString *message;
 @property(nonatomic)NSInteger stationid;
 @property(nonatomic)NSInteger altitude;
 @property(nonatomic)CGFloat latitude;
