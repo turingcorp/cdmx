@@ -226,6 +226,9 @@
                         }
                     }
                 }
+                
+                mstationsreadinguv *newuv = [[mstationsreadinguv alloc] init:uvindex title:uvtitle descr:uvdescr];
+                [mstations singleton].uv = newuv;
             }
         }
     }
