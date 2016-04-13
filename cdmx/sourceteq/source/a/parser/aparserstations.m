@@ -255,6 +255,7 @@
                     NSDictionary *dictplates = [NSDictionary dictionaryWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"nodriveplates" withExtension:@"plist"]];
                     NSString *rawplatecolor = rawinfo[@"color"];
                     NSString *rawplatecolor2 = rawinfo[@"color2"];
+                    NSString *rawholograms = rawinfo[@"txtsemana"];
                     
                     if(rawplatecolor && rawplatecolor.length > 1)
                     {

@@ -1,13 +1,8 @@
-//
-//  mstationsnodrivehologram.h
-//  cdmx
-//
-//  Created by zero on 4/13/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
+#import <UIKit/UIKit.h>
 
-#import <Foundation/Foundation.h>
+@interface mstationsnodrivehologram:NSObject
 
-@interface mstationsnodrivehologram : NSObject
+@property(copy, nonatomic)NSString *name;
+@property(copy, nonatomic)NSString *symbol;
 
 @end
