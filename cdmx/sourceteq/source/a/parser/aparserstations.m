@@ -1,5 +1,6 @@
 #import "aparserstations.h"
 #import "tools.h"
+#import "mstations.h"
 
 @implementation aparserstations
 
@@ -13,11 +14,28 @@
         
         if(pollution)
         {
+            BOOL parsestations = NO;
             NSString *pollutiontimestamp = pollution[@"timeStamp"];
-            
             NSDate *date = [[tools singleton] stringtodate:pollutiontimestamp];
+            NSInteger pollutionhour = [pollution[@"report"] integerValue];
             
-            NSLog(@"%@", date);
+            if(![mstations singleton].readings.count)
+            {
+                parsestations = YES;
+            }
+            else
+            {
+                mstationsreading *lastreading = [[mstations singleton].readings lastObject];
+                                                 
+                if(![lastreading.date isEqualToDate:date])
+                {
+                    parsestations = YES;
+                }
+                else if(lastreading.hour != pollutionhour)
+                {
+                    parsestations = YES;
+                }
+            }
         }
     }
 }
