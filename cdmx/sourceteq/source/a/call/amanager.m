@@ -78,9 +78,8 @@
         {
             NSError *jsonerror;
             
-            NSLog(@"%@", [[NSString alloc] initWithData:self.data encoding:NSISOLatin1StringEncoding]);
-            NSLog(@"-----");
-            self.response = [NSJSONSerialization JSONObjectWithData:self.data options:NSJSONReadingAllowFragments error:&jsonerror];
+            NSData *cleaneddata = [self.call.parser cleandata:self.data];
+            self.response = [NSJSONSerialization JSONObjectWithData:cleaneddata options:NSJSONReadingAllowFragments error:&jsonerror];
             
             if(jsonerror)
             {

@@ -12,4 +12,12 @@
     }
 }
 
+-(NSData*)cleandata:(NSData*)data
+{
+    NSString *cleanstring = [[NSString alloc] initWithData:data encoding:NSISOLatin1StringEncoding];
+    NSData *cleaneddata = [cleanstring dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:NO];
+    
+    return cleaneddata;
+}
+
 @end

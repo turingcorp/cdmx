@@ -64,4 +64,9 @@
     self.validjson = [self basicparse:json];
 }
 
+-(NSData*)cleandata:(NSData*)data
+{
+    return data;
+}
+
 @end
