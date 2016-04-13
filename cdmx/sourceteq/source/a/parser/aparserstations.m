@@ -259,15 +259,43 @@
                     if(rawplatecolor && rawplatecolor.length > 1)
                     {
                         mstationsnodrivecolor *maincolor = [[mstationsnodrivecolor alloc] init:rawplatecolor];
-                        
                         [mutcolors addObject:maincolor];
+                        
+                        NSArray *rawplates = dictplates[rawplatecolor];
+                        
+                        if(rawplates)
+                        {
+                            NSUInteger countrawplates = rawplates.count;
+                            
+                            for(NSUInteger i = 0; i < countrawplates; i++)
+                            {
+                                NSNumber *numrawplates = rawplates[i];
+                                
+                                mstationsnodriveplate *newplate = [[mstationsnodriveplate alloc] init:numrawplates.integerValue];
+                                [mutplates addObject:newplate];
+                            }
+                        }
                     }
                     
                     if(rawplatecolor2 && rawplatecolor2.length > 1)
                     {
                         mstationsnodrivecolor *secondcolor = [[mstationsnodrivecolor alloc] init:rawplatecolor2];
-                        
                         [mutcolors addObject:secondcolor];
+                        
+                        NSArray *rawplates = dictplates[rawplatecolor2];
+                        
+                        if(rawplates)
+                        {
+                            NSUInteger countrawplates = rawplates.count;
+                            
+                            for(NSUInteger i = 0; i < countrawplates; i++)
+                            {
+                                NSNumber *numrawplates = rawplates[i];
+                                
+                                mstationsnodriveplate *newplate = [[mstationsnodriveplate alloc] init:numrawplates.integerValue];
+                                [mutplates addObject:newplate];
+                            }
+                        }
                     }
                 }
             }
