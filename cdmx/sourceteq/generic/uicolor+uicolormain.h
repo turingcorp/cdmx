@@ -9,5 +9,10 @@ static NSUInteger const collectionbottom = 40;
 +(UIColor*)main;
 +(UIColor*)second;
 +(UIColor*)collection;
++(UIColor*)uvgreen;
++(UIColor*)uvyellow;
++(UIColor*)uvorange;
++(UIColor*)uvred;
++(UIColor*)uvviolet;
 
 @end
