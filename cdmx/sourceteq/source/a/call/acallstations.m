@@ -1,5 +1,6 @@
 #import "acallstations.h"
 #import "aparserstations.h"
+#import "privateconstants.h"
 
 @implementation acallstations
 
@@ -7,7 +8,7 @@
 {
     self = [super init];
     
-    self.urlstring;
+    self.urlstring = stationsurl;
     self.parser = [[aparserstations alloc] init];
     
     return self;
