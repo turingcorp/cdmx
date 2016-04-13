@@ -13,19 +13,19 @@
     }
     else if([rawcolor isEqualToString:@"rosa"])
     {
-        self.color = [UIColor pollution_yellow];
+        self.color = [UIColor pollution_pink];
     }
     else if([rawcolor isEqualToString:@"rojo"])
     {
-        
+        self.color = [UIColor pollution_red];
     }
     else if([rawcolor isEqualToString:@"verde"])
     {
-        
+        self.color = [UIColor pollution_green];
     }
     else if([rawcolor isEqualToString:@"azul"])
     {
-        
+        self.color = [UIColor pollution_blue];
     }
     
     return self;
