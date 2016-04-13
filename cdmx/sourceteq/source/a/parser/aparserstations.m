@@ -41,6 +41,51 @@
             {
                 NSArray *rawdel = pollution[@"delegations"];
                 NSArray *rawsta = pollution[@"stations"];
+                NSMutableArray *rawtotal = [NSMutableArray array];
+                [rawtotal addObjectsFromArray:rawdel];
+                [rawtotal addObjectsFromArray:rawsta];
+                NSUInteger count = rawtotal.count;
+                
+                for(NSUInteger i = 0; i < count; i++)
+                {
+                    NSDictionary *rawitem = rawtotal[i];
+                    NSString *rawname = rawitem[@"name"];
+                    NSString *rawshortname = rawitem[@"shortName"];
+                    NSInteger rawpoints = [rawitem[@"imecaPoints"] integerValue];
+                    
+                }
+                
+                /*
+                 
+                 {
+                 "name": "HUIXQUILUCAN",
+                 "shortName": "HUI",
+                 "imecaPoints": "30",
+                 "pollutant": "O3",
+                 "indice": "BUENA",
+                 "riesgo": "Sin riesgo",
+                 "recomendacion": "Se puede realizar cualquier actividad al aire libre.",
+                 "recomendacionaireuno":"Puedes realizar actividades al aire libre",
+                 "recomendacionairedos":"Puedes ejercitarte al aire libre",
+                 "recomendacionairetres":"Sin riesgo para grupos sensibles",
+                 "color": "#97CA03"
+                 
+                 }
+                 
+                 
+                 {
+                 "name": "Acolman",
+                 "shortName": "ACO",
+                 "location": "19.635501,-98.912003",
+                 "imecaPoints": "16",
+                 "pollutant": "O3",
+                 "temperature": "17.2",
+                 "humidity": "54",
+                 "windDirection": "197",
+                 "windSpeed": "-99"
+                 }
+                 
+                 */
             }
         }
     }

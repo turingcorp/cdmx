@@ -25,6 +25,7 @@
 		DA8708591CBE9F67000C08E1 /* mstationsreadinguvindexhigh.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8708581CBE9F67000C08E1 /* mstationsreadinguvindexhigh.m */; };
 		DA87085C1CBE9F74000C08E1 /* mstationsreadinguvindexveryhigh.m in Sources */ = {isa = PBXBuildFile; fileRef = DA87085B1CBE9F74000C08E1 /* mstationsreadinguvindexveryhigh.m */; };
 		DA87085F1CBE9F9D000C08E1 /* mstationsreadinguvindexextreme.m in Sources */ = {isa = PBXBuildFile; fileRef = DA87085E1CBE9F9D000C08E1 /* mstationsreadinguvindexextreme.m */; };
+		DA8708621CBEBD11000C08E1 /* mstationsreadingitemindex.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8708611CBEBD11000C08E1 /* mstationsreadingitemindex.m */; };
 		DACEDEE21CBC89630088AA8B /* cmain.m in Sources */ = {isa = PBXBuildFile; fileRef = DACEDEE11CBC89630088AA8B /* cmain.m */; };
 		DAD33FF01CBC83E300C87502 /* cdmx.db in Resources */ = {isa = PBXBuildFile; fileRef = DAD33FAB1CBC83E300C87502 /* cdmx.db */; };
 		DAD33FF11CBC83E300C87502 /* analytics.plist in Resources */ = {isa = PBXBuildFile; fileRef = DAD33FAE1CBC83E300C87502 /* analytics.plist */; };
@@ -115,6 +116,9 @@
 		DA87085B1CBE9F74000C08E1 /* mstationsreadinguvindexveryhigh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mstationsreadinguvindexveryhigh.m; sourceTree = "<group>"; };
 		DA87085D1CBE9F9D000C08E1 /* mstationsreadinguvindexextreme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mstationsreadinguvindexextreme.h; sourceTree = "<group>"; };
 		DA87085E1CBE9F9D000C08E1 /* mstationsreadinguvindexextreme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mstationsreadinguvindexextreme.m; sourceTree = "<group>"; };
+		DA8708601CBEBD11000C08E1 /* mstationsreadingitemindex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mstationsreadingitemindex.h; sourceTree = "<group>"; };
+		DA8708611CBEBD11000C08E1 /* mstationsreadingitemindex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mstationsreadingitemindex.m; sourceTree = "<group>"; };
+		DA8708631CBEBD5C000C08E1 /* genericconstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = genericconstants.h; sourceTree = "<group>"; };
 		DACEDEE01CBC89630088AA8B /* cmain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cmain.h; sourceTree = "<group>"; };
 		DACEDEE11CBC89630088AA8B /* cmain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cmain.m; sourceTree = "<group>"; };
 		DAD33F901CBC825900C87502 /* cdmx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cdmx.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -383,6 +387,7 @@
 				DAD33FC41CBC83E300C87502 /* uifont+uifontmain.m */,
 				DAD33FC51CBC83E300C87502 /* updater.h */,
 				DAD33FC61CBC83E300C87502 /* updater.m */,
+				DA8708631CBEBD5C000C08E1 /* genericconstants.h */,
 			);
 			path = generic;
 			sourceTree = "<group>";
@@ -604,6 +609,8 @@
 				DA87083A1CBE9297000C08E1 /* mstationsreading.m */,
 				DA87083C1CBE92A5000C08E1 /* mstationsreadingitem.h */,
 				DA87083D1CBE92A5000C08E1 /* mstationsreadingitem.m */,
+				DA8708601CBEBD11000C08E1 /* mstationsreadingitemindex.h */,
+				DA8708611CBEBD11000C08E1 /* mstationsreadingitemindex.m */,
 				DA87084B1CBE9D66000C08E1 /* mstationsreadinguv.h */,
 				DA87084C1CBE9D66000C08E1 /* mstationsreadinguv.m */,
 				DA87084E1CBE9F0D000C08E1 /* mstationsreadinguvindex.h */,
@@ -767,6 +774,7 @@
 				DAD33FF61CBC83E300C87502 /* main.m in Sources */,
 				DA87085C1CBE9F74000C08E1 /* mstationsreadinguvindexveryhigh.m in Sources */,
 				DAD875D21CBD30E100A4F91C /* cloading.m in Sources */,
+				DA8708621CBEBD11000C08E1 /* mstationsreadingitemindex.m in Sources */,
 				DAD33FFC1CBC83E300C87502 /* updater.m in Sources */,
 				DAD876021CBD6F4000A4F91C /* cmenu.m in Sources */,
 				DAD33FFB1CBC83E300C87502 /* uifont+uifontmain.m in Sources */,
