@@ -1,13 +1,14 @@
-//
-//  mstationsreadingitemconditions.m
-//  cdmx
-//
-//  Created by zero on 4/13/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
-
 #import "mstationsreadingitemconditions.h"
 
 @implementation mstationsreadingitemconditions
+
+-(instancetype)init:(CGFloat)temperature humidity:(CGFloat)humidity
+{
+    self = [super init];
+    self.temperature = temperature;
+    self.humidity = humidity;
+    
+    return self;
+}
 
 @end
