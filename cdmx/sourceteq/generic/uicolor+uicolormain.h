@@ -5,10 +5,10 @@
 +(UIColor*)main;
 +(UIColor*)second;
 +(UIColor*)collection;
-+(UIColor*)uvgreen;
-+(UIColor*)uvyellow;
-+(UIColor*)uvorange;
-+(UIColor*)uvred;
-+(UIColor*)uvviolet;
++(UIColor*)pollution_green;
++(UIColor*)pollution_yellow;
++(UIColor*)pollution_orange;
++(UIColor*)pollution_red;
++(UIColor*)pollution_violet;
 
 @end
