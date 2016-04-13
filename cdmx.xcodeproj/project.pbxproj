@@ -31,6 +31,11 @@
 		DA87086C1CBEBE4A000C08E1 /* mstationsreadingitemindexbad.m in Sources */ = {isa = PBXBuildFile; fileRef = DA87086B1CBEBE4A000C08E1 /* mstationsreadingitemindexbad.m */; };
 		DA87086F1CBEBE63000C08E1 /* mstationsreadingitemindexverybad.m in Sources */ = {isa = PBXBuildFile; fileRef = DA87086E1CBEBE63000C08E1 /* mstationsreadingitemindexverybad.m */; };
 		DA8708721CBEBE72000C08E1 /* mstationsreadingitemindexextreme.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8708711CBEBE72000C08E1 /* mstationsreadingitemindexextreme.m */; };
+		DA8708751CBEC79C000C08E1 /* mstationsreadingitemindexactivity.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8708741CBEC79C000C08E1 /* mstationsreadingitemindexactivity.m */; };
+		DA87087B1CBEC814000C08E1 /* mstationsreadingitemindexactivitylimited.m in Sources */ = {isa = PBXBuildFile; fileRef = DA87087A1CBEC814000C08E1 /* mstationsreadingitemindexactivitylimited.m */; };
+		DA87087E1CBEC829000C08E1 /* mstationsreadingitemindexactivityperfect.m in Sources */ = {isa = PBXBuildFile; fileRef = DA87087D1CBEC829000C08E1 /* mstationsreadingitemindexactivityperfect.m */; };
+		DA8708811CBEC874000C08E1 /* mstationsreadingitemindexactivityverylimited.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8708801CBEC874000C08E1 /* mstationsreadingitemindexactivityverylimited.m */; };
+		DA8708841CBEC87E000C08E1 /* mstationsreadingitemindexactivitynone.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8708831CBEC87E000C08E1 /* mstationsreadingitemindexactivitynone.m */; };
 		DACEDEE21CBC89630088AA8B /* cmain.m in Sources */ = {isa = PBXBuildFile; fileRef = DACEDEE11CBC89630088AA8B /* cmain.m */; };
 		DAD33FF01CBC83E300C87502 /* cdmx.db in Resources */ = {isa = PBXBuildFile; fileRef = DAD33FAB1CBC83E300C87502 /* cdmx.db */; };
 		DAD33FF11CBC83E300C87502 /* analytics.plist in Resources */ = {isa = PBXBuildFile; fileRef = DAD33FAE1CBC83E300C87502 /* analytics.plist */; };
@@ -134,6 +139,16 @@
 		DA87086E1CBEBE63000C08E1 /* mstationsreadingitemindexverybad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mstationsreadingitemindexverybad.m; sourceTree = "<group>"; };
 		DA8708701CBEBE72000C08E1 /* mstationsreadingitemindexextreme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mstationsreadingitemindexextreme.h; sourceTree = "<group>"; };
 		DA8708711CBEBE72000C08E1 /* mstationsreadingitemindexextreme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mstationsreadingitemindexextreme.m; sourceTree = "<group>"; };
+		DA8708731CBEC79C000C08E1 /* mstationsreadingitemindexactivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mstationsreadingitemindexactivity.h; sourceTree = "<group>"; };
+		DA8708741CBEC79C000C08E1 /* mstationsreadingitemindexactivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mstationsreadingitemindexactivity.m; sourceTree = "<group>"; };
+		DA8708791CBEC814000C08E1 /* mstationsreadingitemindexactivitylimited.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mstationsreadingitemindexactivitylimited.h; sourceTree = "<group>"; };
+		DA87087A1CBEC814000C08E1 /* mstationsreadingitemindexactivitylimited.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mstationsreadingitemindexactivitylimited.m; sourceTree = "<group>"; };
+		DA87087C1CBEC829000C08E1 /* mstationsreadingitemindexactivityperfect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mstationsreadingitemindexactivityperfect.h; sourceTree = "<group>"; };
+		DA87087D1CBEC829000C08E1 /* mstationsreadingitemindexactivityperfect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mstationsreadingitemindexactivityperfect.m; sourceTree = "<group>"; };
+		DA87087F1CBEC874000C08E1 /* mstationsreadingitemindexactivityverylimited.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mstationsreadingitemindexactivityverylimited.h; sourceTree = "<group>"; };
+		DA8708801CBEC874000C08E1 /* mstationsreadingitemindexactivityverylimited.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mstationsreadingitemindexactivityverylimited.m; sourceTree = "<group>"; };
+		DA8708821CBEC87E000C08E1 /* mstationsreadingitemindexactivitynone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mstationsreadingitemindexactivitynone.h; sourceTree = "<group>"; };
+		DA8708831CBEC87E000C08E1 /* mstationsreadingitemindexactivitynone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mstationsreadingitemindexactivitynone.m; sourceTree = "<group>"; };
 		DACEDEE01CBC89630088AA8B /* cmain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cmain.h; sourceTree = "<group>"; };
 		DACEDEE11CBC89630088AA8B /* cmain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cmain.m; sourceTree = "<group>"; };
 		DAD33F901CBC825900C87502 /* cdmx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cdmx.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -658,6 +673,16 @@
 				DA8708461CBE99FA000C08E1 /* mstationsnodrivecolor.m */,
 				DA8708481CBE9A0A000C08E1 /* mstationsnodriveplate.h */,
 				DA8708491CBE9A0A000C08E1 /* mstationsnodriveplate.m */,
+				DA8708731CBEC79C000C08E1 /* mstationsreadingitemindexactivity.h */,
+				DA8708741CBEC79C000C08E1 /* mstationsreadingitemindexactivity.m */,
+				DA8708791CBEC814000C08E1 /* mstationsreadingitemindexactivitylimited.h */,
+				DA87087A1CBEC814000C08E1 /* mstationsreadingitemindexactivitylimited.m */,
+				DA87087C1CBEC829000C08E1 /* mstationsreadingitemindexactivityperfect.h */,
+				DA87087D1CBEC829000C08E1 /* mstationsreadingitemindexactivityperfect.m */,
+				DA87087F1CBEC874000C08E1 /* mstationsreadingitemindexactivityverylimited.h */,
+				DA8708801CBEC874000C08E1 /* mstationsreadingitemindexactivityverylimited.m */,
+				DA8708821CBEC87E000C08E1 /* mstationsreadingitemindexactivitynone.h */,
+				DA8708831CBEC87E000C08E1 /* mstationsreadingitemindexactivitynone.m */,
 			);
 			path = stations;
 			sourceTree = "<group>";
@@ -790,8 +815,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA8708751CBEC79C000C08E1 /* mstationsreadingitemindexactivity.m in Sources */,
 				DAD875E01CBD5A6000A4F91C /* vair.m in Sources */,
 				DA87084A1CBE9A0A000C08E1 /* mstationsnodriveplate.m in Sources */,
+				DA8708841CBEC87E000C08E1 /* mstationsreadingitemindexactivitynone.m in Sources */,
 				DA8708471CBE99FA000C08E1 /* mstationsnodrivecolor.m in Sources */,
 				DAD875DC1CBD415300A4F91C /* cair.m in Sources */,
 				DAD340021CBC83E300C87502 /* msettings.m in Sources */,
@@ -817,6 +844,7 @@
 				DAD876061CBD6F7600A4F91C /* vmenu.m in Sources */,
 				DAD875D61CBD312900A4F91C /* vloading.m in Sources */,
 				DAD876151CBDA0DE00A4F91C /* vairmap.m in Sources */,
+				DA87087B1CBEC814000C08E1 /* mstationsreadingitemindexactivitylimited.m in Sources */,
 				DAD875F01CBD5FB700A4F91C /* mpagesitem.m in Sources */,
 				DA8708591CBE9F67000C08E1 /* mstationsreadinguvindexhigh.m in Sources */,
 				DAD875F61CBD645500A4F91C /* vairbar.m in Sources */,
@@ -830,7 +858,9 @@
 				DA87086F1CBEBE63000C08E1 /* mstationsreadingitemindexverybad.m in Sources */,
 				DA87083B1CBE9297000C08E1 /* mstationsreading.m in Sources */,
 				DAD875ED1CBD5F9600A4F91C /* mpagessectionstats.m in Sources */,
+				DA87087E1CBEC829000C08E1 /* mstationsreadingitemindexactivityperfect.m in Sources */,
 				DA8708371CBE87F7000C08E1 /* aparserstations.m in Sources */,
+				DA8708811CBEC874000C08E1 /* mstationsreadingitemindexactivityverylimited.m in Sources */,
 				DACEDEE21CBC89630088AA8B /* cmain.m in Sources */,
 				DAD33FF81CBC83E300C87502 /* nsnotification+nsnotificationmain.m in Sources */,
 				DA8708441CBE99E4000C08E1 /* mstationsnodrivehologram.m in Sources */,
