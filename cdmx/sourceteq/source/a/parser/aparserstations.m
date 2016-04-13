@@ -267,7 +267,22 @@
                         [mutplates addObject:secondcolor];
                     }
                     
-                    
+                    if(rawholograms && rawholograms.length)
+                    {
+                        NSString *cleanhg = rawholograms.lowercaseString;
+                        cleanhg = [cleanhg stringByReplacingOccurrencesOfString:@"," withString:@""];
+                        cleanhg = [cleanhg stringByReplacingOccurrencesOfString:@"." withString:@""];
+                        NSArray *splithg = [cleanhg componentsSeparatedByString:@" "];
+                        
+                        NSUInteger countsplit = splithg.count;
+                        
+                        for(NSUInteger i = 0; i < countsplit; i++)
+                        {
+                            NSString *insplithg = splithg[i];
+                            
+                            
+                        }
+                    }
                 }
             }
         }
