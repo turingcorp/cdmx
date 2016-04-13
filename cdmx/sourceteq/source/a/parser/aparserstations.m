@@ -79,18 +79,8 @@
                             
                             if(rawlocation && !initem.location)
                             {
-                                NSArray *splitlocation = [rawlocation componentsSeparatedByString:@","];
-                                
-                                if(splitlocation.count == 2)
-                                {
-                                    NSString *splitlatitude = splitlocation[0];
-                                    NSString *splitlongitude = splitlocation[1];
-                                    CGFloat rawlatitude = splitlatitude.floatValue;
-                                    CGFloat rawlongitude = splitlongitude.floatValue;
-                                    
-                                    mstationsitemlocation *location = [[mstationsitemlocation alloc] init:rawlatitude lon:rawlongitude];
-                                    initem.location = location;
-                                }
+                                mstationsitemlocation *location = [self locationfromstring:rawlocation];
+                                initem.location = location;
                             }
                             
                             if(!initem.pollutant && rawpollutant)
@@ -136,6 +126,15 @@
                     if(add)
                     {
                         mstationsreadingitem *newitem = [[mstationsreadingitem alloc] init];
+                        newitem.name = rawname;
+                        newitem.shortname = rawshortname;
+                        
+                        if(rawlocation)
+                        {
+                            mstationsitemlocation *location = [self locationfromstring:rawlocation];
+                            newitem.location = location;
+                        }
+                        
                         [mutarray addObject:newitem];
                     }
                 }
@@ -153,6 +152,26 @@
     NSData *cleaneddata = [cleanstring dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:NO];
     
     return cleaneddata;
+}
+
+#pragma mark functionality
+
+-(mstationsitemlocation*)locationfromstring:(NSString*)string
+{
+    mstationsitemlocation *location;
+    NSArray *splitlocation = [string componentsSeparatedByString:@","];
+    
+    if(splitlocation.count == 2)
+    {
+        NSString *splitlatitude = splitlocation[0];
+        NSString *splitlongitude = splitlocation[1];
+        CGFloat rawlatitude = splitlatitude.floatValue;
+        CGFloat rawlongitude = splitlongitude.floatValue;
+        
+        location = [[mstationsitemlocation alloc] init:rawlatitude lon:rawlongitude];
+    }
+    
+    return location;
 }
 
 @end
