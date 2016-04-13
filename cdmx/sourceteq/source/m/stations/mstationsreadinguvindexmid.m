@@ -5,7 +5,7 @@
 -(instancetype)init:(NSInteger)number
 {
     self = [super init:number];
-    self.color = [UIColor uvyellow];
+    self.color = [UIColor pollution_yellow];
     
     return self;
 }
