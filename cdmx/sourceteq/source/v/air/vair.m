@@ -3,6 +3,7 @@
 #import "vairmap.h"
 #import "vaircell.h"
 #import "uicolor+uicolormain.h"
+#import "genericconstants.h"
 
 static NSString* const cellairid = @"cellair";
 static NSUInteger const mapheight = 300;

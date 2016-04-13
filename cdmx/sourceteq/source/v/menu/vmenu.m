@@ -4,6 +4,7 @@
 #import "vmenuheader.h"
 #import "vmenucell.h"
 #import "cmain.h"
+#import "genericconstants.h"
 
 static NSString* const menuheaderid = @"headerid";
 static NSString* const menucellid = @"cellid";

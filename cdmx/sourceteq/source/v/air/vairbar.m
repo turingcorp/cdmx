@@ -1,6 +1,7 @@
 #import "vairbar.h"
 #import "uicolor+uicolormain.h"
 #import "vmenubutton.h"
+#import "genericconstants.h"
 
 @implementation vairbar
 

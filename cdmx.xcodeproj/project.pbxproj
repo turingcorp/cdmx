@@ -26,6 +26,11 @@
 		DA87085C1CBE9F74000C08E1 /* mstationsreadinguvindexveryhigh.m in Sources */ = {isa = PBXBuildFile; fileRef = DA87085B1CBE9F74000C08E1 /* mstationsreadinguvindexveryhigh.m */; };
 		DA87085F1CBE9F9D000C08E1 /* mstationsreadinguvindexextreme.m in Sources */ = {isa = PBXBuildFile; fileRef = DA87085E1CBE9F9D000C08E1 /* mstationsreadinguvindexextreme.m */; };
 		DA8708621CBEBD11000C08E1 /* mstationsreadingitemindex.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8708611CBEBD11000C08E1 /* mstationsreadingitemindex.m */; };
+		DA8708661CBEBE1F000C08E1 /* mstationsreadingitemindexgood.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8708651CBEBE1F000C08E1 /* mstationsreadingitemindexgood.m */; };
+		DA8708691CBEBE37000C08E1 /* mstationsreadingitemindexregular.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8708681CBEBE37000C08E1 /* mstationsreadingitemindexregular.m */; };
+		DA87086C1CBEBE4A000C08E1 /* mstationsreadingitemindexbad.m in Sources */ = {isa = PBXBuildFile; fileRef = DA87086B1CBEBE4A000C08E1 /* mstationsreadingitemindexbad.m */; };
+		DA87086F1CBEBE63000C08E1 /* mstationsreadingitemindexverybad.m in Sources */ = {isa = PBXBuildFile; fileRef = DA87086E1CBEBE63000C08E1 /* mstationsreadingitemindexverybad.m */; };
+		DA8708721CBEBE72000C08E1 /* mstationsreadingitemindexextreme.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8708711CBEBE72000C08E1 /* mstationsreadingitemindexextreme.m */; };
 		DACEDEE21CBC89630088AA8B /* cmain.m in Sources */ = {isa = PBXBuildFile; fileRef = DACEDEE11CBC89630088AA8B /* cmain.m */; };
 		DAD33FF01CBC83E300C87502 /* cdmx.db in Resources */ = {isa = PBXBuildFile; fileRef = DAD33FAB1CBC83E300C87502 /* cdmx.db */; };
 		DAD33FF11CBC83E300C87502 /* analytics.plist in Resources */ = {isa = PBXBuildFile; fileRef = DAD33FAE1CBC83E300C87502 /* analytics.plist */; };
@@ -119,6 +124,16 @@
 		DA8708601CBEBD11000C08E1 /* mstationsreadingitemindex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mstationsreadingitemindex.h; sourceTree = "<group>"; };
 		DA8708611CBEBD11000C08E1 /* mstationsreadingitemindex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mstationsreadingitemindex.m; sourceTree = "<group>"; };
 		DA8708631CBEBD5C000C08E1 /* genericconstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = genericconstants.h; sourceTree = "<group>"; };
+		DA8708641CBEBE1F000C08E1 /* mstationsreadingitemindexgood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mstationsreadingitemindexgood.h; sourceTree = "<group>"; };
+		DA8708651CBEBE1F000C08E1 /* mstationsreadingitemindexgood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mstationsreadingitemindexgood.m; sourceTree = "<group>"; };
+		DA8708671CBEBE37000C08E1 /* mstationsreadingitemindexregular.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mstationsreadingitemindexregular.h; sourceTree = "<group>"; };
+		DA8708681CBEBE37000C08E1 /* mstationsreadingitemindexregular.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mstationsreadingitemindexregular.m; sourceTree = "<group>"; };
+		DA87086A1CBEBE4A000C08E1 /* mstationsreadingitemindexbad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mstationsreadingitemindexbad.h; sourceTree = "<group>"; };
+		DA87086B1CBEBE4A000C08E1 /* mstationsreadingitemindexbad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mstationsreadingitemindexbad.m; sourceTree = "<group>"; };
+		DA87086D1CBEBE63000C08E1 /* mstationsreadingitemindexverybad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mstationsreadingitemindexverybad.h; sourceTree = "<group>"; };
+		DA87086E1CBEBE63000C08E1 /* mstationsreadingitemindexverybad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mstationsreadingitemindexverybad.m; sourceTree = "<group>"; };
+		DA8708701CBEBE72000C08E1 /* mstationsreadingitemindexextreme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mstationsreadingitemindexextreme.h; sourceTree = "<group>"; };
+		DA8708711CBEBE72000C08E1 /* mstationsreadingitemindexextreme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mstationsreadingitemindexextreme.m; sourceTree = "<group>"; };
 		DACEDEE01CBC89630088AA8B /* cmain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cmain.h; sourceTree = "<group>"; };
 		DACEDEE11CBC89630088AA8B /* cmain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cmain.m; sourceTree = "<group>"; };
 		DAD33F901CBC825900C87502 /* cdmx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cdmx.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -611,6 +626,16 @@
 				DA87083D1CBE92A5000C08E1 /* mstationsreadingitem.m */,
 				DA8708601CBEBD11000C08E1 /* mstationsreadingitemindex.h */,
 				DA8708611CBEBD11000C08E1 /* mstationsreadingitemindex.m */,
+				DA8708641CBEBE1F000C08E1 /* mstationsreadingitemindexgood.h */,
+				DA8708651CBEBE1F000C08E1 /* mstationsreadingitemindexgood.m */,
+				DA8708671CBEBE37000C08E1 /* mstationsreadingitemindexregular.h */,
+				DA8708681CBEBE37000C08E1 /* mstationsreadingitemindexregular.m */,
+				DA87086A1CBEBE4A000C08E1 /* mstationsreadingitemindexbad.h */,
+				DA87086B1CBEBE4A000C08E1 /* mstationsreadingitemindexbad.m */,
+				DA87086D1CBEBE63000C08E1 /* mstationsreadingitemindexverybad.h */,
+				DA87086E1CBEBE63000C08E1 /* mstationsreadingitemindexverybad.m */,
+				DA8708701CBEBE72000C08E1 /* mstationsreadingitemindexextreme.h */,
+				DA8708711CBEBE72000C08E1 /* mstationsreadingitemindexextreme.m */,
 				DA87084B1CBE9D66000C08E1 /* mstationsreadinguv.h */,
 				DA87084C1CBE9D66000C08E1 /* mstationsreadinguv.m */,
 				DA87084E1CBE9F0D000C08E1 /* mstationsreadinguvindex.h */,
@@ -777,6 +802,7 @@
 				DA8708621CBEBD11000C08E1 /* mstationsreadingitemindex.m in Sources */,
 				DAD33FFC1CBC83E300C87502 /* updater.m in Sources */,
 				DAD876021CBD6F4000A4F91C /* cmenu.m in Sources */,
+				DA8708691CBEBE37000C08E1 /* mstationsreadingitemindexregular.m in Sources */,
 				DAD33FFB1CBC83E300C87502 /* uifont+uifontmain.m in Sources */,
 				DAD340051CBC83E300C87502 /* vspinner.m in Sources */,
 				DA8708341CBE8717000C08E1 /* acallstations.m in Sources */,
@@ -787,6 +813,7 @@
 				DA8708411CBE96BC000C08E1 /* mstationsnodrive.m in Sources */,
 				DAD875E71CBD5F1600A4F91C /* mpagessection.m in Sources */,
 				DAD340041CBC83E300C87502 /* vblur.m in Sources */,
+				DA87086C1CBEBE4A000C08E1 /* mstationsreadingitemindexbad.m in Sources */,
 				DAD876061CBD6F7600A4F91C /* vmenu.m in Sources */,
 				DAD875D61CBD312900A4F91C /* vloading.m in Sources */,
 				DAD876151CBDA0DE00A4F91C /* vairmap.m in Sources */,
@@ -800,6 +827,7 @@
 				DA87084D1CBE9D66000C08E1 /* mstationsreadinguv.m in Sources */,
 				DAD875F31CBD603D00A4F91C /* mpagesitemair.m in Sources */,
 				DAD875E41CBD5B1D00A4F91C /* mpages.m in Sources */,
+				DA87086F1CBEBE63000C08E1 /* mstationsreadingitemindexverybad.m in Sources */,
 				DA87083B1CBE9297000C08E1 /* mstationsreading.m in Sources */,
 				DAD875ED1CBD5F9600A4F91C /* mpagessectionstats.m in Sources */,
 				DA8708371CBE87F7000C08E1 /* aparserstations.m in Sources */,
@@ -815,7 +843,9 @@
 				DAD33FF71CBC83E300C87502 /* analytics.m in Sources */,
 				DA8708561CBE9F5D000C08E1 /* mstationsreadinguvindexmid.m in Sources */,
 				DA8708311CBE8532000C08E1 /* aparser.m in Sources */,
+				DA8708661CBEBE1F000C08E1 /* mstationsreadingitemindexgood.m in Sources */,
 				DAD876121CBD72F400A4F91C /* vmenucell.m in Sources */,
+				DA8708721CBEBE72000C08E1 /* mstationsreadingitemindexextreme.m in Sources */,
 				DAD340001CBC83E300C87502 /* mdbcreate.m in Sources */,
 				DAD875F91CBD6A0600A4F91C /* vaircell.m in Sources */,
 				DA8708501CBE9F0D000C08E1 /* mstationsreadinguvindex.m in Sources */,
