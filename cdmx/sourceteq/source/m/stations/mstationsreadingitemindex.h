@@ -3,6 +3,7 @@
 
 @interface mstationsreadingitemindex:NSObject
 
++(instancetype)indexwithpoints:(NSInteger)points;
 -(instancetype)init:(NSInteger)points;
 
 @property(strong, nonatomic)UIColor *color;
