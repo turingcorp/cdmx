@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ben</key>
+	<string>Benceno</string>
+	<key>tol</key>
+	<string>Tolueno</string>
+	<key>so4</key>
+	<string>Solfato</string>
+	<key>no3</key>
+	<string>Nitrato</string>
+	<key>cl</key>
+	<string>Cloruro</string>
+	<key>co3</key>
+	<string>Carbonato</string>
+	<key>h</key>
+	<string>Hidrógeno</string>
+	<key>nh4</key>
+	<string>Amonio</string>
+	<key>ca</key>
+	<string>Calcio</string>
+	<key>mg</key>
+	<string>Magnesio</string>
+	<key>na</key>
+	<string>Sodio</string>
+	<key>k</key>
+	<string>Potasio</string>
+	<key>pbpst</key>
+	<string>Plomo</string>
+	<key>pbpm</key>
+	<string>Plomo</string>
+	<key>etb</key>
+	<string>Etilbenceno</string>
+	<key>xil</key>
+	<string>Xilenos</string>
+</dict>
+</plist>

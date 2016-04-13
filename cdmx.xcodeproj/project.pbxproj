@@ -151,6 +151,7 @@
 		DA8708821CBEC87E000C08E1 /* mstationsreadingitemindexactivitynone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mstationsreadingitemindexactivitynone.h; sourceTree = "<group>"; };
 		DA8708831CBEC87E000C08E1 /* mstationsreadingitemindexactivitynone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mstationsreadingitemindexactivitynone.m; sourceTree = "<group>"; };
 		DA8708861CBECFB6000C08E1 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = es; path = es.lproj/pollutants.plist; sourceTree = "<group>"; };
+		DA8708881CBED130000C08E1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/pollutants.plist; sourceTree = "<group>"; };
 		DACEDEE01CBC89630088AA8B /* cmain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cmain.h; sourceTree = "<group>"; };
 		DACEDEE11CBC89630088AA8B /* cmain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cmain.m; sourceTree = "<group>"; };
 		DAD33F901CBC825900C87502 /* cdmx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cdmx.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -895,6 +896,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				DA8708861CBECFB6000C08E1 /* es */,
+				DA8708881CBED130000C08E1 /* en */,
 			);
 			name = pollutants.plist;
 			sourceTree = "<group>";
