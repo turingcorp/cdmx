@@ -8,7 +8,5 @@
 @property(copy, nonatomic)NSString *message;
 @property(nonatomic)NSInteger stationid;
 @property(nonatomic)NSInteger altitude;
-@property(nonatomic)CGFloat latitude;
-@property(nonatomic)CGFloat longitiude;
 
 @end

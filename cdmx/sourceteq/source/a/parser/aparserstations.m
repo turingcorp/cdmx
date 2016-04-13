@@ -39,12 +39,15 @@
             
             if(createreading)
             {
+                mstationsreading *newreading = [[mstationsreading alloc] init];
+                NSMutableArray *mutarray = [NSMutableArray array];
                 NSDictionary *dictpollutants = [NSDictionary dictionaryWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"pollutants" withExtension:@"plist"]];
                 NSArray *rawdel = pollution[@"delegations"];
                 NSArray *rawsta = pollution[@"stations"];
                 NSMutableArray *rawtotal = [NSMutableArray array];
                 [rawtotal addObjectsFromArray:rawdel];
                 [rawtotal addObjectsFromArray:rawsta];
+                
                 NSUInteger count = rawtotal.count;
                 
                 for(NSUInteger i = 0; i < count; i++)
@@ -60,6 +63,17 @@
                     NSInteger rawwinddirection = [rawitem[@"windDirection"] integerValue];
                     NSInteger rawwindspeed = [rawitem[@"windSpeed"] integerValue];
                     
+                    NSUInteger countmut = mutarray.count;
+                    
+                    for(NSUInteger j = 0; j < countmut; j++)
+                    {
+                        mstationsreadingitem *initem = mutarray[j];
+                        
+                        if([initem.shortname isEqualToString:rawshortname])
+                        {
+                            
+                        }
+                    }
                 }
                 
                 /*
@@ -93,6 +107,8 @@
                  }
                  
                  */
+                
+                [[mstations singleton].readings addObject:newreading];
             }
         }
     }
