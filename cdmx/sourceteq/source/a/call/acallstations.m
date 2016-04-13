@@ -1,4 +1,5 @@
 #import "acallstations.h"
+#import "aparserstations.h"
 
 @implementation acallstations
 
@@ -7,7 +8,7 @@
     self = [super init:variables];
     
     self.keyforendpoint = @"search";
-    self.parser = [[aparsersearch alloc] init];
+    self.parser = [[aparserstations alloc] init];
     
     return self;
 }
