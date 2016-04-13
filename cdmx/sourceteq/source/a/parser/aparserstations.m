@@ -39,6 +39,7 @@
             
             if(createreading)
             {
+                NSDictionary *dictpollutants = [NSDictionary dictionaryWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"pollutants" withExtension:@"plist"]];
                 NSArray *rawdel = pollution[@"delegations"];
                 NSArray *rawsta = pollution[@"stations"];
                 NSMutableArray *rawtotal = [NSMutableArray array];
@@ -52,7 +53,7 @@
                     NSString *rawname = rawitem[@"name"];
                     NSString *rawshortname = [rawitem[@"shortName"] lowercaseString];
                     NSString *rawlocation = rawitem[@"location"];
-                    NSString *rawpollutant = rawitem[@"pollutant"];
+                    NSString *rawpollutant = [rawitem[@"pollutant"] lowercaseString];
                     NSInteger rawpoints = [rawitem[@"imecaPoints"] integerValue];
                     CGFloat rawtemperature = [rawitem[@"temperature"] floatValue];
                     CGFloat rawhumidity = [rawitem[@"humidity"] floatValue];
