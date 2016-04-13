@@ -18,6 +18,7 @@
             NSString *pollutiontimestamp = pollution[@"timeStamp"];
             NSDate *date = [[tools singleton] stringtodate:pollutiontimestamp];
             NSInteger pollutionhour = [pollution[@"report"] integerValue];
+            NSDictionary *rawinfo = pollution[@"information"];
             
             if(![mstations singleton].readings.count)
             {
@@ -182,6 +183,49 @@
                 
                 newreading.items = mutarray;
                 [[mstations singleton].readings addObject:newreading];
+            }
+            
+            if(rawinfo)
+            {
+                NSString *rawuvindex = [rawinfo[@"indiceradiacion"] lowercaseString];
+                NSString *rawuvtitle = rawinfo[@"riesgouv"];
+                NSString *rawuvdescr1 = rawinfo[@"recomendacionuvuno"];
+                NSString *rawuvdescr2 = rawinfo[@"recomendacionuvdos"];
+                NSString *rawuvdescr3 = rawinfo[@"recomendacionuvtres"];
+                
+                NSInteger uvindex = 0;
+                NSString *uvtitle;
+                NSMutableString *uvdescr = [NSMutableString string];
+                
+                if(rawuvindex && rawuvindex.length)
+                {
+                    NSString *cleanedindex = [rawuvindex stringByReplacingOccurrencesOfString:@".png" withString:@""];
+                    uvindex = cleanedindex.integerValue;
+                }
+                
+                if(rawuvtitle)
+                {
+                    uvtitle = rawuvtitle;
+                }
+                else
+                {
+                    uvtitle = @"";
+                }
+                
+                if(rawuvdescr1 && rawuvdescr1.length > 1)
+                {
+                    [uvdescr appendString:rawuvdescr1];
+                    
+                    if(rawuvdescr2 && rawuvdescr2.length > 1)
+                    {
+                        [uvdescr appendFormat:@"\n%@", rawuvdescr2];
+                        
+                        if(rawuvdescr3 && rawuvdescr3.length > 1)
+                        {
+                            [uvdescr appendFormat:@"\n%@", rawuvdescr3];
+                        }
+                    }
+                }
             }
         }
     }
