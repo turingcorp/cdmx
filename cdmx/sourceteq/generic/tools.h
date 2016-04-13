@@ -13,5 +13,6 @@
 -(NSString*)numbertostring:(NSNumber*)number;
 -(NSString*)pricetostring:(NSNumber*)number currency:(NSString*)currency;
 -(NSNumber*)stringtonumber:(NSString*)string;
+-(NSDate*)stringtodate:(NSString*)string;
 
 @end

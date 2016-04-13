@@ -8,5 +8,6 @@
 @property(strong, nonatomic)NSArray<mstationsnodrivehologram*> *holograms;
 @property(strong, nonatomic)NSArray<mstationsnodrivecolor*> *colors;
 @property(strong, nonatomic)NSArray<mstationsnodriveplate*> *plates;
+@property(strong, nonatomic)NSDate *date;
 
 @end

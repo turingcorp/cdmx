@@ -1,4 +1,5 @@
 #import "aparserstations.h"
+#import "tools.h"
 
 @implementation aparserstations
 
@@ -8,7 +9,16 @@
     
     if(self.validjson)
     {
-        NSLog(@"%@", self.validjson);
+        NSDictionary *pollution = self.validjson[@"pollutionMeasurements"];
+        
+        if(pollution)
+        {
+            NSString *pollutiontimestamp = pollution[@"timeStamp"];
+            
+            NSDate *date = [[tools singleton] stringtodate:pollutiontimestamp];
+            
+            NSLog(@"%@", date);
+        }
     }
 }
 

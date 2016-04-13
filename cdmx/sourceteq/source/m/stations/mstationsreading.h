@@ -6,5 +6,7 @@
 
 @property(strong, nonatomic)mstationsreadinguv *uv;
 @property(strong, nonatomic)NSArray<mstationsreadingitem*> *items;
+@property(strong, nonatomic)NSDate *date;
+@property(nonatomic)NSInteger hour;
 
 @end

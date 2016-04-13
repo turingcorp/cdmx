@@ -8,6 +8,7 @@ static NSUInteger const minuteseconds = 60;
 {
     NSNumberFormatter *numformatter;
     NSNumberFormatter *priceformatter;
+    NSDateFormatter *dateformatter;
     CFStringRef stringref;
 }
 
@@ -117,6 +118,8 @@ static NSUInteger const minuteseconds = 60;
     priceformatter = [[NSNumberFormatter alloc] init];
     [priceformatter setNumberStyle:NSNumberFormatterCurrencyStyle];
     stringref = (CFStringRef)@"!*'();:@&=+$,/?%#[]";
+    dateformatter = [[NSDateFormatter alloc] init];
+    [dateformatter setDateFormat:@"yyyy-MM-dd"];
     
     return self;
 }
@@ -150,6 +153,11 @@ static NSUInteger const minuteseconds = 60;
     NSNumber *number = [numformatter numberFromString:string];
     
     return number;
+}
+
+-(NSDate*)stringtodate:(NSString*)string
+{
+    return [dateformatter dateFromString:string];
 }
 
 @end
