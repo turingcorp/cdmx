@@ -1,13 +1,12 @@
-//
-//  mstationsreadingitemconditions.h
-//  cdmx
-//
-//  Created by zero on 4/13/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
+#import <UIKit/UIKit.h>
 
-#import <Foundation/Foundation.h>
+@interface mstationsreadingitemconditions:NSObject
 
-@interface mstationsreadingitemconditions : NSObject
+-(instancetype)init:(CGFloat)temperature humidity:(CGFloat)humidity;
+
+@property(nonatomic)CGFloat temperature;
+@property(nonatomic)CGFloat humidity;
+@property(nonatomic)NSInteger winddirection;
+@property(nonatomic)NSInteger windspeed;
 
 @end

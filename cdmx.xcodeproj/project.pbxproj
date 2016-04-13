@@ -39,6 +39,7 @@
 		DA8708871CBECFB6000C08E1 /* pollutants.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA8708851CBECFB6000C08E1 /* pollutants.plist */; };
 		DA87088B1CBED74E000C08E1 /* mstationsitemlocation.m in Sources */ = {isa = PBXBuildFile; fileRef = DA87088A1CBED74E000C08E1 /* mstationsitemlocation.m */; };
 		DA87088E1CBEDC73000C08E1 /* mstationsreadingitemconditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DA87088D1CBEDC73000C08E1 /* mstationsreadingitemconditions.m */; };
+		DA8708911CBEDCFC000C08E1 /* mstationsreadingitemwind.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8708901CBEDCFC000C08E1 /* mstationsreadingitemwind.m */; };
 		DACEDEE21CBC89630088AA8B /* cmain.m in Sources */ = {isa = PBXBuildFile; fileRef = DACEDEE11CBC89630088AA8B /* cmain.m */; };
 		DAD33FF01CBC83E300C87502 /* cdmx.db in Resources */ = {isa = PBXBuildFile; fileRef = DAD33FAB1CBC83E300C87502 /* cdmx.db */; };
 		DAD33FF11CBC83E300C87502 /* analytics.plist in Resources */ = {isa = PBXBuildFile; fileRef = DAD33FAE1CBC83E300C87502 /* analytics.plist */; };
@@ -158,6 +159,8 @@
 		DA87088A1CBED74E000C08E1 /* mstationsitemlocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mstationsitemlocation.m; sourceTree = "<group>"; };
 		DA87088C1CBEDC73000C08E1 /* mstationsreadingitemconditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mstationsreadingitemconditions.h; sourceTree = "<group>"; };
 		DA87088D1CBEDC73000C08E1 /* mstationsreadingitemconditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mstationsreadingitemconditions.m; sourceTree = "<group>"; };
+		DA87088F1CBEDCFC000C08E1 /* mstationsreadingitemwind.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mstationsreadingitemwind.h; sourceTree = "<group>"; };
+		DA8708901CBEDCFC000C08E1 /* mstationsreadingitemwind.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mstationsreadingitemwind.m; sourceTree = "<group>"; };
 		DACEDEE01CBC89630088AA8B /* cmain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cmain.h; sourceTree = "<group>"; };
 		DACEDEE11CBC89630088AA8B /* cmain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cmain.m; sourceTree = "<group>"; };
 		DAD33F901CBC825900C87502 /* cdmx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cdmx.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -675,6 +678,8 @@
 				DA8708831CBEC87E000C08E1 /* mstationsreadingitemindexactivitynone.m */,
 				DA87088C1CBEDC73000C08E1 /* mstationsreadingitemconditions.h */,
 				DA87088D1CBEDC73000C08E1 /* mstationsreadingitemconditions.m */,
+				DA87088F1CBEDCFC000C08E1 /* mstationsreadingitemwind.h */,
+				DA8708901CBEDCFC000C08E1 /* mstationsreadingitemwind.m */,
 				DA87084B1CBE9D66000C08E1 /* mstationsreadinguv.h */,
 				DA87084C1CBE9D66000C08E1 /* mstationsreadinguv.m */,
 				DA87084E1CBE9F0D000C08E1 /* mstationsreadinguvindex.h */,
@@ -894,6 +899,7 @@
 				DAD876121CBD72F400A4F91C /* vmenucell.m in Sources */,
 				DA8708721CBEBE72000C08E1 /* mstationsreadingitemindexextreme.m in Sources */,
 				DAD340001CBC83E300C87502 /* mdbcreate.m in Sources */,
+				DA8708911CBEDCFC000C08E1 /* mstationsreadingitemwind.m in Sources */,
 				DAD875F91CBD6A0600A4F91C /* vaircell.m in Sources */,
 				DA8708501CBE9F0D000C08E1 /* mstationsreadinguvindex.m in Sources */,
 				DAD8760F1CBD72A200A4F91C /* vmenuheader.m in Sources */,
