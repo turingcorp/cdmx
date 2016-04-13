@@ -3,23 +3,14 @@
 
 @implementation acallstations
 
--(instancetype)init:(id)variables
+-(instancetype)init
 {
-    self = [super init:variables];
+    self = [super init];
     
-    self.keyforendpoint = @"search";
+    self.urlstring;
     self.parser = [[aparserstations alloc] init];
     
     return self;
-}
-
-#pragma mark -
-#pragma mark acall
-
--(void)buildendpoint:(NSDictionary*)params
-{
-    NSString *rawendpoint = params[self.keyforendpoint];
-    self.endpoint = [NSString stringWithFormat:rawendpoint, [msettings singleton].country.countryid];
 }
 
 @end

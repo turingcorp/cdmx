@@ -11,7 +11,6 @@
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
                    ^
                    {
-                       [callmodel buildrequest];
                        [manager makecall:callmodel];
                    });
     
@@ -46,7 +45,7 @@
     [configuration setAllowsCellularAccess:YES];
     [configuration setTimeoutIntervalForRequest:call.timeout];
     self.session = [NSURLSession sessionWithConfiguration:configuration delegate:self delegateQueue:operation];
-    task = [self.session dataTaskWithRequest:call.request];
+    task = [self.session dataTaskWithRequest:[call request]];
     [task resume];
     
     [self.session finishTasksAndInvalidate];

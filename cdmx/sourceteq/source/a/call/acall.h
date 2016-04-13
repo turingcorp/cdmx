@@ -4,7 +4,6 @@
 
 @interface acall:NSObject
 
--(void)buildrequest;
 -(NSURLRequest*)request;
 
 @property(strong, nonatomic)aparser *parser;

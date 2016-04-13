@@ -7,6 +7,7 @@
 {
     self = [super init];
     
+    self.urlstring = @"";
     self.post = NO;
     self.timeout = 25;
     self.cachepolicy = NSURLRequestReloadIgnoringLocalCacheData;
@@ -15,11 +16,6 @@
 }
 
 #pragma mark public
-
--(void)buildrequest
-{
-    self.urlstring = @"";
-}
 
 -(NSURLRequest*)request
 {
