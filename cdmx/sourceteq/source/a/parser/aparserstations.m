@@ -14,14 +14,14 @@
         
         if(pollution)
         {
-            BOOL parsestations = NO;
+            BOOL createreading = NO;
             NSString *pollutiontimestamp = pollution[@"timeStamp"];
             NSDate *date = [[tools singleton] stringtodate:pollutiontimestamp];
             NSInteger pollutionhour = [pollution[@"report"] integerValue];
             
             if(![mstations singleton].readings.count)
             {
-                parsestations = YES;
+                createreading = YES;
             }
             else
             {
@@ -29,12 +29,18 @@
                                                  
                 if(![lastreading.date isEqualToDate:date])
                 {
-                    parsestations = YES;
+                    createreading = YES;
                 }
                 else if(lastreading.hour != pollutionhour)
                 {
-                    parsestations = YES;
+                    createreading = YES;
                 }
+            }
+            
+            if(createreading)
+            {
+                NSArray *rawdel = pollution[@"delegations"];
+                NSArray *rawsta = pollution[@"stations"];
             }
         }
     }
