@@ -1,7 +1,9 @@
 #import <UIKit/UIKit.h>
+#import "mstationsitemlocation.h"
 
 @interface mstationsitem:NSObject
 
+@property(strong, nonatomic)mstationsitemlocation *location;
 @property(copy, nonatomic)NSString *name;
 @property(copy, nonatomic)NSString *shortname;
 @property(copy, nonatomic)NSString *sid;
