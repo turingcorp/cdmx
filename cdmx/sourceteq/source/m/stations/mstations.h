@@ -7,5 +7,6 @@
 -(void)load;
 
 @property(strong, nonatomic)NSArray<mstationsitem*> *items;
+@property(nonatomic)BOOL loaded;
 
 @end

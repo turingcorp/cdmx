@@ -15,6 +15,7 @@
 -(instancetype)init
 {
     self = [super init];
+    self.loaded = NO;
     
     return self;
 }
