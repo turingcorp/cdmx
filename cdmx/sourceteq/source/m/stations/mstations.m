@@ -1,6 +1,5 @@
 #import "mstations.h"
 #import "mdb.h"
-#import "mdbcreate.h"
 
 @implementation mstations
 
@@ -25,7 +24,6 @@
 -(void)load
 {
     self.items = [mdb loadstations];
-    
 }
 
 @end

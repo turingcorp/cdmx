@@ -5,6 +5,7 @@
 #import "db.h"
 #import "analytics.h"
 #import "cmain.h"
+#import "mstations.h"
 
 @implementation updater
 
@@ -19,6 +20,7 @@ NSString *documents;
                        [[msettings singleton] load];
                        
                        mpages *modelpages = [[mpages alloc] init];
+                       [[mstations singleton] load];
                        
                        dispatch_async(dispatch_get_main_queue(),
                                       ^

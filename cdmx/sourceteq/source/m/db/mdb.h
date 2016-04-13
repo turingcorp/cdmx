@@ -1,5 +1,4 @@
 #import <UIKit/UIKit.h>
-#import "mstations.h";
 
 @class mdbitem;
 @class mcourseitemchapter;
