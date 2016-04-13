@@ -1,30 +1,35 @@
 #import "mstationsreadingitemindex.h"
+#import "mstationsreadingitemindexgood.h"
+#import "mstationsreadingitemindexregular.h"
+#import "mstationsreadingitemindexbad.h"
+#import "mstationsreadingitemindexverybad.h"
+#import "mstationsreadingitemindexextreme.h"
 
 @implementation mstationsreadingitemindex
 
 +(instancetype)indexwithpoints:(NSInteger)points
 {
-    mstationsreadinguvindex *index;
+    mstationsreadingitemindex *index;
     
-    if(number < 3)
+    if(points < 51)
     {
-        index = [[mstationsreadinguvindexlow alloc] init:number];
+        index = [[mstationsreadingitemindexgood alloc] init:points];
     }
-    else if(number < 6)
+    else if(points < 101)
     {
-        index = [[mstationsreadinguvindexmid alloc] init:number];
+        index = [[mstationsreadingitemindexregular alloc] init:points];
     }
-    else if(number < 8)
+    else if(points < 151)
     {
-        index = [[mstationsreadinguvindexhigh alloc] init:number];
+        index = [[mstationsreadingitemindexbad alloc] init:points];
     }
-    else if(number < 12)
+    else if(points < 201)
     {
-        index = [[mstationsreadinguvindexveryhigh alloc] init:number];
+        index = [[mstationsreadingitemindexverybad alloc] init:points];
     }
     else
     {
-        index = [[mstationsreadinguvindexextreme alloc] init:number];
+        index = [[mstationsreadingitemindexextreme alloc] init:points];
     }
     
     return index;
