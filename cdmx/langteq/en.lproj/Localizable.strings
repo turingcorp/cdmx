@@ -4,3 +4,9 @@
 
 "api_error_nodata"="Error connecting to server, try again";
 "api_error_invalidjson"="Problems with connection, try again";
+
+"hologram_exento"="Free";
+"hologram_00"="Double zero";
+"hologram_0"="Zero";
+"hologram_1"="Once";
+"hologram_2"="Twice";
