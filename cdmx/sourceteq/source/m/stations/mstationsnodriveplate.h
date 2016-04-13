@@ -1,9 +1,10 @@
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface mstationsnodriveplate:NSObject
 
--(instancetype)init:(NSInteger)number;
+-(instancetype)init:(NSString*)rawcolor;
 
-@property(nonatomic)NSInteger number;
+@property(strong, nonatomic)UIColor *color;
+@property(strong, nonatomic)NSArray<NSNumber*> *numbers;
 
 @end

@@ -16,7 +16,6 @@
 		DA87083E1CBE92A5000C08E1 /* mstationsreadingitem.m in Sources */ = {isa = PBXBuildFile; fileRef = DA87083D1CBE92A5000C08E1 /* mstationsreadingitem.m */; };
 		DA8708411CBE96BC000C08E1 /* mstationsnodrive.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8708401CBE96BC000C08E1 /* mstationsnodrive.m */; };
 		DA8708441CBE99E4000C08E1 /* mstationsnodrivehologram.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8708431CBE99E4000C08E1 /* mstationsnodrivehologram.m */; };
-		DA8708471CBE99FA000C08E1 /* mstationsnodrivecolor.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8708461CBE99FA000C08E1 /* mstationsnodrivecolor.m */; };
 		DA87084A1CBE9A0A000C08E1 /* mstationsnodriveplate.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8708491CBE9A0A000C08E1 /* mstationsnodriveplate.m */; };
 		DA87084D1CBE9D66000C08E1 /* mstationsreadinguv.m in Sources */ = {isa = PBXBuildFile; fileRef = DA87084C1CBE9D66000C08E1 /* mstationsreadinguv.m */; };
 		DA8708501CBE9F0D000C08E1 /* mstationsreadinguvindex.m in Sources */ = {isa = PBXBuildFile; fileRef = DA87084F1CBE9F0D000C08E1 /* mstationsreadinguvindex.m */; };
@@ -118,8 +117,6 @@
 		DA8708401CBE96BC000C08E1 /* mstationsnodrive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mstationsnodrive.m; sourceTree = "<group>"; };
 		DA8708421CBE99E4000C08E1 /* mstationsnodrivehologram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mstationsnodrivehologram.h; sourceTree = "<group>"; };
 		DA8708431CBE99E4000C08E1 /* mstationsnodrivehologram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mstationsnodrivehologram.m; sourceTree = "<group>"; };
-		DA8708451CBE99FA000C08E1 /* mstationsnodrivecolor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mstationsnodrivecolor.h; sourceTree = "<group>"; };
-		DA8708461CBE99FA000C08E1 /* mstationsnodrivecolor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mstationsnodrivecolor.m; sourceTree = "<group>"; };
 		DA8708481CBE9A0A000C08E1 /* mstationsnodriveplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mstationsnodriveplate.h; sourceTree = "<group>"; };
 		DA8708491CBE9A0A000C08E1 /* mstationsnodriveplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mstationsnodriveplate.m; sourceTree = "<group>"; };
 		DA87084B1CBE9D66000C08E1 /* mstationsreadinguv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mstationsreadinguv.h; sourceTree = "<group>"; };
@@ -716,8 +713,6 @@
 				DA8708401CBE96BC000C08E1 /* mstationsnodrive.m */,
 				DA8708421CBE99E4000C08E1 /* mstationsnodrivehologram.h */,
 				DA8708431CBE99E4000C08E1 /* mstationsnodrivehologram.m */,
-				DA8708451CBE99FA000C08E1 /* mstationsnodrivecolor.h */,
-				DA8708461CBE99FA000C08E1 /* mstationsnodrivecolor.m */,
 				DA8708481CBE9A0A000C08E1 /* mstationsnodriveplate.h */,
 				DA8708491CBE9A0A000C08E1 /* mstationsnodriveplate.m */,
 				DA8708941CBF0BBA000C08E1 /* mstationsnodrivehologramfree.h */,
@@ -868,7 +863,6 @@
 				DAD875E01CBD5A6000A4F91C /* vair.m in Sources */,
 				DA87084A1CBE9A0A000C08E1 /* mstationsnodriveplate.m in Sources */,
 				DA8708841CBEC87E000C08E1 /* mstationsreadingitemindexactivitynone.m in Sources */,
-				DA8708471CBE99FA000C08E1 /* mstationsnodrivecolor.m in Sources */,
 				DAD875DC1CBD415300A4F91C /* cair.m in Sources */,
 				DAD340021CBC83E300C87502 /* msettings.m in Sources */,
 				DA87082D1CBE844A000C08E1 /* acall.m in Sources */,
