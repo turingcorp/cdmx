@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA87082A1CBE840F000C08E1 /* amanager.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8708291CBE840F000C08E1 /* amanager.m */; };
 		DACEDEE21CBC89630088AA8B /* cmain.m in Sources */ = {isa = PBXBuildFile; fileRef = DACEDEE11CBC89630088AA8B /* cmain.m */; };
 		DAD33FF01CBC83E300C87502 /* cdmx.db in Resources */ = {isa = PBXBuildFile; fileRef = DAD33FAB1CBC83E300C87502 /* cdmx.db */; };
 		DAD33FF11CBC83E300C87502 /* analytics.plist in Resources */ = {isa = PBXBuildFile; fileRef = DAD33FAE1CBC83E300C87502 /* analytics.plist */; };
@@ -60,6 +61,8 @@
 
 /* Begin PBXFileReference section */
 		B9E47528F2CEFA76F37D95E3 /* libPods-cdmx.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-cdmx.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA8708281CBE840F000C08E1 /* amanager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = amanager.h; sourceTree = "<group>"; };
+		DA8708291CBE840F000C08E1 /* amanager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = amanager.m; sourceTree = "<group>"; };
 		DACEDEE01CBC89630088AA8B /* cmain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cmain.h; sourceTree = "<group>"; };
 		DACEDEE11CBC89630088AA8B /* cmain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cmain.m; sourceTree = "<group>"; };
 		DAD33F901CBC825900C87502 /* cdmx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cdmx.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -197,6 +200,8 @@
 		DA8708261CBE8245000C08E1 /* call */ = {
 			isa = PBXGroup;
 			children = (
+				DA8708281CBE840F000C08E1 /* amanager.h */,
+				DA8708291CBE840F000C08E1 /* amanager.m */,
 			);
 			path = call;
 			sourceTree = "<group>";
@@ -687,6 +692,7 @@
 				DAD33FF41CBC83E300C87502 /* appdel.m in Sources */,
 				DAD33FFA1CBC83E300C87502 /* uicolor+uicolormain.m in Sources */,
 				DAD340011CBC83E300C87502 /* mdirs.m in Sources */,
+				DA87082A1CBE840F000C08E1 /* amanager.m in Sources */,
 				DAD875F31CBD603D00A4F91C /* mpagesitemair.m in Sources */,
 				DAD875E41CBD5B1D00A4F91C /* mpages.m in Sources */,
 				DAD875ED1CBD5F9600A4F91C /* mpagessectionstats.m in Sources */,
