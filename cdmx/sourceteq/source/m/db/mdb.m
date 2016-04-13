@@ -28,12 +28,6 @@
 
 +(mstations*)loadstations
 {
-    /*
-     
-     (id INTEGER PRIMARY KEY, stationid TEXT COLLAGE NOCASE, latitude INTEGER, longitude INTEGER, altitude INTEGER, shortname TEXT COLLATE NOCASE, name TEXT COLLATE NOCASE, message TEXT)
-     
-     */
-    
     mstations *model = [[mstations alloc] init];
     NSString *query = [NSString stringWithFormat:
                        @"SELECT id, stationid, latitude, longitude, "
@@ -46,7 +40,14 @@
     for(NSUInteger i = 0; i < count; i++)
     {
         NSDictionary *rawstation = rawstations[i];
-        
+        NSInteger rawid = [rawstation[@"id"] integerValue];
+        NSString *rawstationid = rawstation[@"stationid"];
+        NSInteger rawlatitude = [rawstation[@"latitude"] integerValue];
+        NSInteger rawlongitude = [rawstation[@"longitude"] integerValue];
+        NSInteger rawaltitude = [rawstation[@"altitude"] integerValue];
+        NSString *rawshortname = rawstation[@"shortname"];
+        NSString *rawname = rawstation[@"name"];
+        NSString *rawmessage = rawstation[@"message"];
     }
     
     return model;
