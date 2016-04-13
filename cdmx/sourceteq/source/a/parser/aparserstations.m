@@ -249,55 +249,25 @@
                     newnodrive.date = date;
                     
                     NSMutableArray<mstationsnodrivehologram*> *mutholograms = [NSMutableArray array];
-                    NSMutableArray<mstationsnodrivecolor*> *mutcolors = [NSMutableArray array];
                     NSMutableArray<mstationsnodriveplate*> *mutplates = [NSMutableArray array];
                     
-                    NSDictionary *dictplates = [NSDictionary dictionaryWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"nodriveplates" withExtension:@"plist"]];
                     NSString *rawplatecolor = rawinfo[@"color"];
                     NSString *rawplatecolor2 = rawinfo[@"color2"];
                     NSString *rawholograms = rawinfo[@"txtsemana"];
                     
                     if(rawplatecolor && rawplatecolor.length > 1)
                     {
-                        mstationsnodrivecolor *maincolor = [[mstationsnodrivecolor alloc] init:rawplatecolor];
-                        [mutcolors addObject:maincolor];
-                        
-                        NSArray *rawplates = dictplates[rawplatecolor];
-                        
-                        if(rawplates)
-                        {
-                            NSUInteger countrawplates = rawplates.count;
-                            
-                            for(NSUInteger i = 0; i < countrawplates; i++)
-                            {
-                                NSNumber *numrawplates = rawplates[i];
-                                
-                                mstationsnodriveplate *newplate = [[mstationsnodriveplate alloc] init:numrawplates.integerValue];
-                                [mutplates addObject:newplate];
-                            }
-                        }
+                        mstationsnodriveplate *maincolor = [[mstationsnodriveplate alloc] init:rawplatecolor];
+                        [mutplates addObject:maincolor];
                     }
                     
                     if(rawplatecolor2 && rawplatecolor2.length > 1)
                     {
-                        mstationsnodrivecolor *secondcolor = [[mstationsnodrivecolor alloc] init:rawplatecolor2];
-                        [mutcolors addObject:secondcolor];
-                        
-                        NSArray *rawplates = dictplates[rawplatecolor2];
-                        
-                        if(rawplates)
-                        {
-                            NSUInteger countrawplates = rawplates.count;
-                            
-                            for(NSUInteger i = 0; i < countrawplates; i++)
-                            {
-                                NSNumber *numrawplates = rawplates[i];
-                                
-                                mstationsnodriveplate *newplate = [[mstationsnodriveplate alloc] init:numrawplates.integerValue];
-                                [mutplates addObject:newplate];
-                            }
-                        }
+                        mstationsnodriveplate *secondcolor = [[mstationsnodriveplate alloc] init:rawplatecolor2];
+                        [mutplates addObject:secondcolor];
                     }
+                    
+                    
                 }
             }
         }

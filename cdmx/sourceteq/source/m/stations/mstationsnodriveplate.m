@@ -28,6 +28,9 @@
         self.color = [UIColor pollution_blue];
     }
     
+    NSDictionary *dictplates = [NSDictionary dictionaryWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"nodriveplates" withExtension:@"plist"]];
+    self.numbers = dictplates[rawcolor];
+    
     return self;
 }
 
