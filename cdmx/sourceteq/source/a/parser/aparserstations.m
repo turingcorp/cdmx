@@ -77,7 +77,7 @@
                                 initem.name = rawname;
                             }
                             
-                            if(rawlocation && !initem.location)
+                            if(!initem.location)
                             {
                                 mstationsitemlocation *location = [self locationfromstring:rawlocation];
                                 initem.location = location;
@@ -129,10 +129,38 @@
                         newitem.name = rawname;
                         newitem.shortname = rawshortname;
                         
-                        if(rawlocation)
+                        mstationsreadingitemindex *newindex = [mstationsreadingitemindex indexwithpoints:rawpoints];
+                        newitem.index = newindex;
+                        
+                        mstationsitemlocation *location = [self locationfromstring:rawlocation];
+                        newitem.location = location;
+                        
+                        if(rawpollutant)
                         {
-                            mstationsitemlocation *location = [self locationfromstring:rawlocation];
-                            newitem.location = location;
+                            NSString *statpollutant = dictpollutants[rawpollutant];
+                            
+                            if(statpollutant)
+                            {
+                                newitem.pollutant = statpollutant;
+                            }
+                        }
+                        
+                        if(rawtemperature && rawhumidity)
+                        {
+                            CGFloat scalartemperature = rawtemperature.floatValue;
+                            CGFloat scalarhumidity = rawhumidity.floatValue;
+                            mstationsreadingitemconditions *newconditions = [[mstationsreadingitemconditions alloc] init:scalartemperature humidity:scalarhumidity];
+                            
+                            newitem.conditions = newconditions;
+                        }
+                        
+                        if(rawwinddirection && rawwindspeed)
+                        {
+                            NSInteger scalarwinddirection = rawtemperature.integerValue;
+                            NSInteger scalarwindspeed = rawhumidity.integerValue;
+                            mstationsreadingitemwind *newwind = [[mstationsreadingitemwind alloc] init:scalarwinddirection speed:scalarwindspeed];
+                            
+                            newitem.wind = newwind;
                         }
                         
                         [mutarray addObject:newitem];
@@ -159,16 +187,20 @@
 -(mstationsitemlocation*)locationfromstring:(NSString*)string
 {
     mstationsitemlocation *location;
-    NSArray *splitlocation = [string componentsSeparatedByString:@","];
     
-    if(splitlocation.count == 2)
+    if(string)
     {
-        NSString *splitlatitude = splitlocation[0];
-        NSString *splitlongitude = splitlocation[1];
-        CGFloat rawlatitude = splitlatitude.floatValue;
-        CGFloat rawlongitude = splitlongitude.floatValue;
+        NSArray *splitlocation = [string componentsSeparatedByString:@","];
         
-        location = [[mstationsitemlocation alloc] init:rawlatitude lon:rawlongitude];
+        if(splitlocation.count == 2)
+        {
+            NSString *splitlatitude = splitlocation[0];
+            NSString *splitlongitude = splitlocation[1];
+            CGFloat rawlatitude = splitlatitude.floatValue;
+            CGFloat rawlongitude = splitlongitude.floatValue;
+            
+            location = [[mstationsitemlocation alloc] init:rawlatitude lon:rawlongitude];
+        }
     }
     
     return location;
