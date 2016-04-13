@@ -1,3 +1,6 @@
 "pages_section_stats"="Stats";
 "pages_item_air_name"="Air quality";
 "pages_item_air_descr"="\nCurrent air quality in the city";
+
+"api_error_nodata"="Error connecting to server, try again";
+"api_error_invalidjson"="Problems with connection, try again";

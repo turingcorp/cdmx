@@ -1,4 +1,6 @@
 #import "amanager.h"
+#import "acall.h"
+#import "aparser.h"
 
 @implementation amanager
 
@@ -71,7 +73,7 @@
         }
         else if(!self.data)
         {
-            [self callerror:NSLocalizedString(@"apicall_error_nodata", nil)];
+            [self callerror:NSLocalizedString(@"api_error_nodata", nil)];
         }
         else
         {
@@ -84,7 +86,7 @@
             }
             else if(!self.response)
             {
-                [self callerror:NSLocalizedString(@"apicall_error_parsingjgon", nil)];
+                [self callerror:NSLocalizedString(@"api_error_invalidjson", nil)];
             }
             else
             {
