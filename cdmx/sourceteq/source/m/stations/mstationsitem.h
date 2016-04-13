@@ -1,9 +1,13 @@
 #import <UIKit/UIKit.h>
 #import "mstationsitemlocation.h"
+#import "mstationsreadingitem.h"
 
 @interface mstationsitem:NSObject
 
+-(BOOL)ownsreading:(mstationsreadingitem*)reading;
+
 @property(strong, nonatomic)mstationsitemlocation *location;
+@property(weak, nonatomic)mstationsreadingitem *lastreading;
 @property(copy, nonatomic)NSString *name;
 @property(copy, nonatomic)NSString *shortname;
 @property(copy, nonatomic)NSString *sid;

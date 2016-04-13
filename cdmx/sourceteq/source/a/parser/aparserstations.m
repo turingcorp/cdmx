@@ -39,6 +39,7 @@
             
             if(createreading)
             {
+                NSInteger countstations = [mstations singleton].items.count;
                 mstationsreading *newreading = [[mstationsreading alloc] init];
                 NSMutableArray *mutarray = [NSMutableArray array];
                 NSDictionary *dictpollutants = [NSDictionary dictionaryWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"pollutants" withExtension:@"plist"]];
@@ -164,6 +165,18 @@
                         }
                         
                         [mutarray addObject:newitem];
+                        
+                        for(NSUInteger j = 0; j < countstations; j++)
+                        {
+                            mstationsitem *station = [mstations singleton].items[j];
+                            
+                            if([station ownsreading:newitem])
+                            {
+                                station.lastreading = newitem;
+                                
+                                break;
+                            }
+                        }
                     }
                 }
                 
