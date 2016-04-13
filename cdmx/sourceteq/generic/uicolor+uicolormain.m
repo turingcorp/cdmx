@@ -42,4 +42,14 @@
     return [UIColor colorWithRed:0.8 green:0.4 blue:0.6 alpha:1];
 }
 
++(UIColor*)pollution_pink
+{
+    return [UIColor colorWithRed:0.95 green:0.65 blue:0.7 alpha:1];
+}
+
++(UIColor*)pollution_blue
+{
+    return [UIColor colorWithRed:0.5 green:0.8 blue:0.97 alpha:1];
+}
+
 @end
