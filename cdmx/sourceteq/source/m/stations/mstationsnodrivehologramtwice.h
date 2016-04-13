@@ -1,13 +1,6 @@
-//
-//  mstationsnodrivehologramtwice.h
-//  cdmx
-//
-//  Created by zero on 4/13/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
+#import <UIKit/UIKit.h>
+#import "mstationsnodrivehologram.h"
 
-#import <Foundation/Foundation.h>
-
-@interface mstationsnodrivehologramtwice : NSObject
+@interface mstationsnodrivehologramtwice:mstationsnodrivehologram
 
 @end
