@@ -3,36 +3,36 @@
 <plist version="1.0">
 <dict>
 	<key>ben</key>
-	<string>Benceno</string>
+	<string>Benzene</string>
 	<key>tol</key>
-	<string>Tolueno</string>
+	<string>Toluene</string>
 	<key>so4</key>
-	<string>Solfato</string>
+	<string>Sulfate</string>
 	<key>no3</key>
-	<string>Nitrato</string>
+	<string>Nitrate</string>
 	<key>cl</key>
-	<string>Cloruro</string>
+	<string>Chloride</string>
 	<key>co3</key>
-	<string>Carbonato</string>
+	<string>Carbonate</string>
 	<key>h</key>
-	<string>Hidrógeno</string>
+	<string>Hydrogen</string>
 	<key>nh4</key>
-	<string>Amonio</string>
+	<string>Ammonium</string>
 	<key>ca</key>
-	<string>Calcio</string>
+	<string>Calcium</string>
 	<key>mg</key>
-	<string>Magnesio</string>
+	<string>Magnesium</string>
 	<key>na</key>
-	<string>Sodio</string>
+	<string>Sodium</string>
 	<key>k</key>
-	<string>Potasio</string>
+	<string>Potassium</string>
 	<key>pbpst</key>
-	<string>Plomo</string>
+	<string>Lead</string>
 	<key>pbpm</key>
-	<string>Plomo</string>
+	<string>Lead</string>
 	<key>etb</key>
-	<string>Etilbenceno</string>
+	<string>Ethylbenzene</string>
 	<key>xil</key>
-	<string>Xilenos</string>
+	<string>Xylene</string>
 </dict>
 </plist>
