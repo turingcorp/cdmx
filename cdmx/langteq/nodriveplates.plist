@@ -1,14 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<!--
-   nodriveplates.plist
-   cdmx
-
-   Created by zero on 4/13/16.
-   Copyright (c) 2016 Iturbide. All rights reserved.
--->
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-    <dict>
-    
-    </dict>
+<dict>
+    <key>amarillo</key>
+    <array>
+        <integer>5</integer>
+        <string>6</string>
+    </array>
+    <key>rosa</key>
+    <array>
+        <integer>7</integer>
+        <string>8</string>
+    </array>
+    <key>rojo</key>
+    <array>
+        <integer>3</integer>
+        <string>4</string>
+    </array>
+	<key>verde</key>
+	<array>
+		<integer>1</integer>
+		<string>2</string>
+	</array>
+    <key>azul</key>
+    <array>
+        <integer>9</integer>
+        <string>0</string>
+    </array>
+</dict>
 </plist>
