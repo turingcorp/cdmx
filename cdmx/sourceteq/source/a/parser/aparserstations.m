@@ -57,11 +57,11 @@
                     NSString *rawshortname = [rawitem[@"shortName"] lowercaseString];
                     NSString *rawlocation = rawitem[@"location"];
                     NSString *rawpollutant = [rawitem[@"pollutant"] lowercaseString];
+                    NSString *rawtemperature = rawitem[@"temperature"];
+                    NSString *rawhumidity = rawitem[@"humidity"];
+                    NSString *rawwinddirection = rawitem[@"windDirection"];
+                    NSString *rawwindspeed = rawitem[@"windSpeed"];
                     NSInteger rawpoints = [rawitem[@"imecaPoints"] integerValue];
-                    CGFloat rawtemperature = [rawitem[@"temperature"] floatValue];
-                    CGFloat rawhumidity = [rawitem[@"humidity"] floatValue];
-                    NSInteger rawwinddirection = [rawitem[@"windDirection"] integerValue];
-                    NSInteger rawwindspeed = [rawitem[@"windSpeed"] integerValue];
                     
                     BOOL add = YES;
                     NSUInteger countmut = mutarray.count;
@@ -107,6 +107,24 @@
                             {
                                 mstationsreadingitemindex *newindex = [mstationsreadingitemindex indexwithpoints:rawpoints];
                                 initem.index = newindex;
+                            }
+                            
+                            if(!initem.conditions && rawtemperature && rawhumidity)
+                            {
+                                CGFloat scalartemperature = rawtemperature.floatValue;
+                                CGFloat scalarhumidity = rawhumidity.floatValue;
+                                mstationsreadingitemconditions *newconditions = [[mstationsreadingitemconditions alloc] init:scalartemperature humidity:scalarhumidity];
+                                
+                                initem.conditions = newconditions;
+                            }
+                            
+                            if(!initem.wind && rawwinddirection && rawwindspeed)
+                            {
+                                NSInteger scalarwinddirection = rawtemperature.integerValue;
+                                NSInteger scalarwindspeed = rawhumidity.integerValue;
+                                mstationsreadingitemwind *newwind = [[mstationsreadingitemwind alloc] init:scalarwinddirection speed:scalarwindspeed];
+                                
+                                initem.wind = newwind;
                             }
                             
                             add = NO;
