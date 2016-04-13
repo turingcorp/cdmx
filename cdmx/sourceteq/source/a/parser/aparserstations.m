@@ -229,6 +229,23 @@
                 
                 mstationsreadinguv *newuv = [[mstationsreadinguv alloc] init:uvindex title:uvtitle descr:uvdescr];
                 [mstations singleton].uv = newuv;
+                
+                BOOL createnodrive = NO;
+                mstationsnodrive *currentnodrive = [mstations singleton].nodrive;
+                
+                if(!currentnodrive)
+                {
+                    createnodrive = YES;
+                }
+                else if(![currentnodrive.date isEqualToDate:date])
+                {
+                    createnodrive = YES;
+                }
+                
+                if(createnodrive)
+                {
+                    NSDictionary *dictplates = [NSDictionary dictionaryWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"nodriveplates" withExtension:@"plist"]];
+                }
             }
         }
     }
