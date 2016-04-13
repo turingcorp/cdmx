@@ -7,8 +7,6 @@
 -(instancetype)init:(NSInteger)number;
 
 @property(strong, nonatomic)UIColor *color;
-@property(copy, nonatomic)NSString *title;
-@property(copy, nonatomic)NSString *descr;
 @property(nonatomic)NSInteger number;
 
 @end
