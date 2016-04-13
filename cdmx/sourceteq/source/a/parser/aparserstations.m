@@ -135,10 +135,12 @@
                     
                     if(add)
                     {
-                        mstationsreadingitem *initem = [[mstationsreadingitem alloc] init];
+                        mstationsreadingitem *newitem = [[mstationsreadingitem alloc] init];
+                        [mutarray addObject:newitem];
                     }
                 }
                 
+                newreading.items = mutarray;
                 [[mstations singleton].readings addObject:newreading];
             }
         }
