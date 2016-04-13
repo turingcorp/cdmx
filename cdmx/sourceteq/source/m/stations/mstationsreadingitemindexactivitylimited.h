@@ -1,13 +1,6 @@
-//
-//  mstationsreadingitemindexactivitylimited.h
-//  cdmx
-//
-//  Created by zero on 4/13/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
+#import <UIKit/UIKit.h>
+#import "mstationsreadingitemindexactivity.h"
 
-#import <Foundation/Foundation.h>
-
-@interface mstationsreadingitemindexactivitylimited : NSObject
+@interface mstationsreadingitemindexactivitylimited:mstationsreadingitemindexactivity
 
 @end
