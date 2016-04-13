@@ -63,6 +63,7 @@
                     NSInteger rawwinddirection = [rawitem[@"windDirection"] integerValue];
                     NSInteger rawwindspeed = [rawitem[@"windSpeed"] integerValue];
                     
+                    BOOL add = YES;
                     NSUInteger countmut = mutarray.count;
                     
                     for(NSUInteger j = 0; j < countmut; j++)
@@ -71,7 +72,30 @@
                         
                         if([initem.shortname isEqualToString:rawshortname])
                         {
+                            if(!initem.name)
+                            {
+                                initem.name = rawname;
+                            }
                             
+                            if(rawlocation && !initem.location)
+                            {
+                                NSArray *splitlocation = [rawlocation componentsSeparatedByString:@","];
+                                
+                                if(splitlocation.count == 2)
+                                {
+                                    NSString *splitlatitude = splitlocation[0];
+                                    NSString *splitlongitude = splitlocation[1];
+                                    CGFloat rawlatitude = splitlatitude.floatValue;
+                                    CGFloat rawlongitude = splitlongitude.floatValue;
+                                    
+                                    mstationsitemlocation *location = [[mstationsitemlocation alloc] init:rawlatitude lon:rawlongitude];
+                                    initem.location = location;
+                                }
+                            }
+                            
+                            add = NO;
+                            
+                            break;
                         }
                     }
                 }
