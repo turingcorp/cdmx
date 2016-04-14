@@ -9,7 +9,7 @@
 
 static NSString* const cellairid = @"cellair";
 static NSInteger const mapheight = 300;
-static NSInteger const cellheight = 50;
+static NSInteger const cellheight = 65;
 
 @implementation vair
 

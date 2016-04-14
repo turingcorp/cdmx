@@ -4,6 +4,7 @@
 #import "mstationsreadingitemindexbad.h"
 #import "mstationsreadingitemindexverybad.h"
 #import "mstationsreadingitemindexextreme.h"
+#import "mstationsreadingitemindexnodata.h"
 
 @implementation mstationsreadingitemindex
 
@@ -11,7 +12,11 @@
 {
     mstationsreadingitemindex *index;
     
-    if(points < 51)
+    if(points < 1)
+    {
+        index = [[mstationsreadingitemindexnodata alloc] init:points];
+    }
+    else if(points < 51)
     {
         index = [[mstationsreadingitemindexgood alloc] init:points];
     }

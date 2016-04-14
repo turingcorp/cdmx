@@ -24,7 +24,7 @@
 
 +(UIColor*)pollution_yellow
 {
-    return [UIColor colorWithRed:0.94 green:0.9 blue:0.1 alpha:1];
+    return [UIColor colorWithRed:0.97 green:0.96 blue:0.1 alpha:1];
 }
 
 +(UIColor*)pollution_orange
@@ -50,6 +50,11 @@
 +(UIColor*)pollution_blue
 {
     return [UIColor colorWithRed:0.5 green:0.8 blue:0.97 alpha:1];
+}
+
++(UIColor*)pollution_gray
+{
+    return [UIColor colorWithWhite:0.8 alpha:1];
 }
 
 @end
