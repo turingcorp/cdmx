@@ -8,8 +8,8 @@
 #import "mstations.h"
 
 static NSString* const cellairid = @"cellair";
-static NSUInteger const mapheight = 300;
-static NSUInteger const cellheight = 65;
+static NSInteger const mapheight = 300;
+static NSInteger const cellheight = 65;
 
 @implementation vair
 
@@ -51,8 +51,8 @@ static NSUInteger const cellheight = 65;
     NSDictionary *views = @{@"bar":bar, @"col":collection, @"map":map};
     NSDictionary *metrics = @{@"mapheight":@(mapheight)};
     
-    self.layoutbarheight = [NSLayoutConstraint constraintWithItem:bar attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:mapheight];
-    self.layoutmapheight = [NSLayoutConstraint constraintWithItem:map attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:navbarheight];
+    self.layoutbarheight = [NSLayoutConstraint constraintWithItem:bar attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:navbarheight];
+    self.layoutmapheight = [NSLayoutConstraint constraintWithItem:map attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:mapheight];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[bar]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[map]-0-|" options:0 metrics:metrics views:views]];
@@ -107,11 +107,20 @@ static NSUInteger const cellheight = 65;
     CGFloat offset = self.collection.contentOffset.y;
     CGFloat offset_10 = offset / 10.0;
     CGFloat barheight = navbarheight - offset_10;
-    CGFloat newmapheight = mapheight + offset;
+    CGFloat newmapheight = mapheight - offset;
     
     if(barheight < navbarheightmin)
     {
         barheight = navbarheightmin;
+    }
+    else if(barheight > navbarheight)
+    {
+        barheight = navbarheight;
+    }
+    
+    if(newmapheight < 0)
+    {
+        newmapheight = 0;
     }
     
     self.layoutbarheight.constant = barheight;

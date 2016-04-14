@@ -1,6 +1,5 @@
 #import "vairbar.h"
 #import "uicolor+uicolormain.h"
-#import "vmenubutton.h"
 #import "genericconstants.h"
 
 @implementation vairbar
@@ -15,6 +14,7 @@
     
     vmenubutton *menubutton = [[vmenubutton alloc] init];
     [menubutton addTarget:self action:@selector(actionmenu:) forControlEvents:UIControlEventTouchUpInside];
+    self.menubutton = menubutton;
     [self addSubview:menubutton];
     
     NSDictionary *views = @{@"menubutton":menubutton};
@@ -31,6 +31,26 @@
     CGSize size = CGSizeMake(navbarintrinsicwidth, navbarheight);
     
     return size;
+}
+
+-(void)layoutSubviews
+{
+    __weak typeof(self) welf = self;
+    CGFloat delta = (navbarheight - welf.bounds.size.height) / 35.0;
+    CGFloat alpha = 1 - delta;
+    
+    if(alpha < 0)
+    {
+        alpha = 0;
+    }
+    
+    dispatch_async(dispatch_get_main_queue(),
+                   ^
+                   {
+                       [welf.menubutton setAlpha:alpha];
+                   });
+    
+    [super layoutSubviews];
 }
 
 #pragma mark actions

@@ -14,7 +14,7 @@
 
 +(UIColor*)collection
 {
-    return [UIColor colorWithWhite:0.97 alpha:1];
+    return [UIColor colorWithWhite:0.95 alpha:1];
 }
 
 +(UIColor*)pollution_green
