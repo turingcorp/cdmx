@@ -5,6 +5,7 @@
 #import "uicolor+uicolormain.h"
 #import "genericconstants.h"
 #import "nsnotification+nsnotificationmain.h"
+#import "mstations.h"
 
 static NSString* const cellairid = @"cellair";
 static NSUInteger const mapheight = 300;
@@ -56,6 +57,7 @@ static NSUInteger const cellheight = 60;
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[bar]-0-[col]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[bar]-0-[map(mapheight)]" options:0 metrics:metrics views:views]];
  
+    [self refresh];
     [NSNotification observe:self stationsloaded:@selector(notifiedstationsloaded:)];
     
     return self;
@@ -73,14 +75,30 @@ static NSUInteger const cellheight = 60;
     dispatch_async(dispatch_get_main_queue(),
                    ^
                    {
-                       [self.collection reloadData];
+                       [self refresh];
                    });
+}
+
+#pragma mark functionality
+
+-(void)refresh
+{
+    [self.collection reloadData];
+    
+    if([mstations singleton].error)
+    {
+        
+    }
+    else
+    {
+        
+    }
 }
 
 #pragma mark -
 #pragma mark col del
 
--(CGSize)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout referenceSizeForHeaderInSection:(NSInteger)section
+-(CGSize)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout sizeForItemAtIndexPath:(NSIndexPath*)index
 {
     CGFloat width = col.bounds.size.width;
     CGSize size = CGSizeMake(width, cellheight);
@@ -95,7 +113,9 @@ static NSUInteger const cellheight = 60;
 
 -(NSInteger)collectionView:(UICollectionView*)col numberOfItemsInSection:(NSInteger)section
 {
-    return 0;
+    NSUInteger count = [mstations singleton].items.count;
+    
+    return count;
 }
 
 -(UICollectionViewCell*)collectionView:(UICollectionView*)col cellForItemAtIndexPath:(NSIndexPath*)index
