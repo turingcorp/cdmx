@@ -3,7 +3,8 @@
 #import "mstationsitemlocation.h"
 #import "mstationsreadingitemconditions.h"
 #import "mstationsreadingitemwind.h"
-#import "mstationsitem.h"
+
+@class mstationsitem;
 
 @interface mstationsreadingitem:NSObject
 

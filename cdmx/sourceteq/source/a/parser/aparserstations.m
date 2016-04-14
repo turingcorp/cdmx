@@ -174,7 +174,7 @@
                             
                             if([station ownsreading:newitem])
                             {
-                                newitem.station = newitem;
+                                newitem.station = station;
                                 
                                 break;
                             }

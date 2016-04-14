@@ -83,16 +83,16 @@ static NSUInteger const cellheight = 60;
 
 -(void)refresh
 {
-    [self.collection reloadData];
-    
-    if([mstations singleton].error)
+    if([mstations singleton].error || ![mstations singleton].readings.count)
     {
-        
+        self.lastreading = nil;
     }
     else
     {
-        
+        self.lastreading = [[mstations singleton].readings lastObject];
     }
+    
+    [self.collection reloadData];
 }
 
 #pragma mark -
@@ -113,7 +113,7 @@ static NSUInteger const cellheight = 60;
 
 -(NSInteger)collectionView:(UICollectionView*)col numberOfItemsInSection:(NSInteger)section
 {
-    NSUInteger count = [mstations singleton].items.count;
+    NSUInteger count = self.lastreading.items.count;
     
     return count;
 }
