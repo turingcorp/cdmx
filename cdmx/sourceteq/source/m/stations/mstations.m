@@ -43,6 +43,7 @@
 
 -(void)callsuccess:(amanager*)manager
 {
+    self.loaded = YES;
     
 }
 

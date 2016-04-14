@@ -1,7 +1,8 @@
 #import <Foundation/Foundation.h>
 
-static NSString* const notification_purchaseupd =       @"purchaseupdate";
-
 @interface NSNotification (nsnotificationmain)
+
++(void)stationsloaded;
++(void)observe:(id)observer stationsloaded:(SEL)selector;
 
 @end

@@ -18,7 +18,7 @@
             NSString *pollutiontimestamp = pollution[@"timeStamp"];
             NSDate *date = [[tools singleton] stringtodate:pollutiontimestamp];
             NSInteger pollutionhour = [pollution[@"report"] integerValue];
-            NSDictionary *rawinfo = pollution[@"information"];
+            NSArray *rawinfoarr = pollution[@"information"];
             
             if(![mstations singleton].readings.count)
             {
@@ -186,8 +186,9 @@
                 [[mstations singleton].readings addObject:newreading];
             }
             
-            if(rawinfo)
+            if(rawinfoarr && rawinfoarr.count)
             {
+                NSDictionary *rawinfo = rawinfoarr[0];
                 NSString *rawuvindex = [rawinfo[@"indiceradiacion"] lowercaseString];
                 NSString *rawuvtitle = rawinfo[@"riesgouv"];
                 NSString *rawuvdescr1 = rawinfo[@"recomendacionuvuno"];
