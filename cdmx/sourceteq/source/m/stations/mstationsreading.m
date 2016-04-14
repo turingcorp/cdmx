@@ -13,10 +13,10 @@
 
 -(void)sort
 {
-    [self.items sortedArrayUsingComparator:^NSComparisonResult(mstationsreadingitem *obj1, mstationsreadingitem *obj2)
-    {
-        return [obj1.name compare:obj2.name];
-    }];
+    self.items = [self.items sortedArrayUsingComparator:^NSComparisonResult(mstationsreadingitem *obj1, mstationsreadingitem *obj2)
+                  {
+                      return [obj1.name compare:obj2.name];
+                  }];
 }
 
 @end

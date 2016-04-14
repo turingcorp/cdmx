@@ -182,6 +182,7 @@
                 }
                 
                 newreading.items = mutarray;
+                [newreading sort];
                 [[mstations singleton].readings addObject:newreading];
             }
             
