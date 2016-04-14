@@ -51,12 +51,14 @@ static NSUInteger const cellheight = 65;
     NSDictionary *views = @{@"bar":bar, @"col":collection, @"map":map};
     NSDictionary *metrics = @{@"mapheight":@(mapheight)};
     
-    self.layoutmapheight = [NSLayoutConstraint constraintWithItem:map attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:mapheight];
+    self.layoutbarheight = [NSLayoutConstraint constraintWithItem:bar attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:mapheight];
+    self.layoutmapheight = [NSLayoutConstraint constraintWithItem:map attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:navbarheight];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[bar]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[map]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[bar]-0-[col]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[bar]-0-[map]" options:0 metrics:metrics views:views]];
+    [self addConstraint:self.layoutbarheight];
     [self addConstraint:self.layoutmapheight];
  
     [self refresh];
@@ -99,6 +101,22 @@ static NSUInteger const cellheight = 65;
 
 #pragma mark -
 #pragma mark col del
+
+-(void)scrollViewDidScroll:(UIScrollView*)scroll
+{
+    CGFloat offset = self.collection.contentOffset.y;
+    CGFloat offset_10 = offset / 10.0;
+    CGFloat barheight = navbarheight - offset_10;
+    CGFloat newmapheight = mapheight + offset;
+    
+    if(barheight < navbarheightmin)
+    {
+        barheight = navbarheightmin;
+    }
+    
+    self.layoutbarheight.constant = barheight;
+    self.layoutmapheight.constant = newmapheight;
+}
 
 -(CGSize)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout sizeForItemAtIndexPath:(NSIndexPath*)index
 {
