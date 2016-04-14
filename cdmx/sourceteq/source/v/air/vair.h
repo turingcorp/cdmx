@@ -9,5 +9,6 @@
 @property(weak, nonatomic)cair *controller;
 @property(weak, nonatomic)mstationsreading *lastreading;
 @property(weak, nonatomic)UICollectionView *collection;
+@property(weak, nonatomic)NSLayoutConstraint *layoutmapheight;
 
 @end

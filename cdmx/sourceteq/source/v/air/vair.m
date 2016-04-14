@@ -9,7 +9,7 @@
 
 static NSString* const cellairid = @"cellair";
 static NSUInteger const mapheight = 300;
-static NSUInteger const cellheight = 60;
+static NSUInteger const cellheight = 65;
 
 @implementation vair
 
@@ -51,11 +51,13 @@ static NSUInteger const cellheight = 60;
     NSDictionary *views = @{@"bar":bar, @"col":collection, @"map":map};
     NSDictionary *metrics = @{@"mapheight":@(mapheight)};
     
+    self.layoutmapheight = [NSLayoutConstraint constraintWithItem:map attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:mapheight];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[bar]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[map]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[bar]-0-[col]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[bar]-0-[map(mapheight)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[bar]-0-[map]" options:0 metrics:metrics views:views]];
+    [self addConstraint:self.layoutmapheight];
  
     [self refresh];
     [NSNotification observe:self stationsloaded:@selector(notifiedstationsloaded:)];
