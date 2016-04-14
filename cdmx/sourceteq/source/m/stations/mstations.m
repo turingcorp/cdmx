@@ -2,6 +2,7 @@
 #import "mdb.h"
 #import "amanager.h"
 #import "acallstations.h"
+#import "nsnotification+nsnotificationmain.h"
 
 @implementation mstations
 
@@ -17,7 +18,6 @@
 -(instancetype)init
 {
     self = [super init];
-    self.loaded = NO;
     self.readings = [NSMutableArray array];
     
     return self;
@@ -43,13 +43,14 @@
 
 -(void)callsuccess:(amanager*)manager
 {
-    self.loaded = YES;
-    
+    self.error = nil;
+    [NSNotification stationsloaded];
 }
 
 -(void)call:(amanager*)manager error:(NSString*)error
 {
-    
+    self.error = error;
+    [NSNotification stationsloaded];
 }
 
 @end

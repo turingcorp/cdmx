@@ -14,6 +14,6 @@
 @property(strong, nonatomic)mstationsreadinguv *uv;
 @property(strong, nonatomic)NSArray<mstationsitem*> *items;
 @property(strong, nonatomic)NSMutableArray<mstationsreading*> *readings;
-@property(nonatomic)BOOL loaded;
+@property(copy, nonatomic)NSString *error;
 
 @end

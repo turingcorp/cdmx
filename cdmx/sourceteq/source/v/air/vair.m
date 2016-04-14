@@ -4,6 +4,7 @@
 #import "vaircell.h"
 #import "uicolor+uicolormain.h"
 #import "genericconstants.h"
+#import "nsnotification+nsnotificationmain.h"
 
 static NSString* const cellairid = @"cellair";
 static NSUInteger const mapheight = 300;
@@ -54,8 +55,26 @@ static NSUInteger const cellheight = 60;
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[map]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[bar]-0-[col]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[bar]-0-[map(mapheight)]" options:0 metrics:metrics views:views]];
+ 
+    [NSNotification observe:self stationsloaded:@selector(notifiedstationsloaded:)];
     
     return self;
+}
+
+-(void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+#pragma mark notified
+
+-(void)notifiedstationsloaded:(NSNotification*)notification
+{
+    dispatch_async(dispatch_get_main_queue(),
+                   ^
+                   {
+                       [self.collection reloadData];
+                   });
 }
 
 #pragma mark -
