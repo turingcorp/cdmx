@@ -150,6 +150,7 @@ static NSInteger const cellheight = 50;
 -(UICollectionViewCell*)collectionView:(UICollectionView*)col cellForItemAtIndexPath:(NSIndexPath*)index
 {
     vaircell *cell = [col dequeueReusableCellWithReuseIdentifier:cellairid forIndexPath:index];
+    [cell config:self.lastreading.items[index.item]];
     
     return cell;
 }
