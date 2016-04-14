@@ -3,6 +3,8 @@
 
 @interface mstationsreading:NSObject
 
+-(void)sort;
+
 @property(strong, nonatomic)NSArray<mstationsreadingitem*> *items;
 @property(strong, nonatomic)NSDate *date;
 @property(nonatomic)NSInteger hour;
