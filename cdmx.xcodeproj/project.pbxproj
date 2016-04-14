@@ -45,6 +45,7 @@
 		DA87089C1CBF0BD1000C08E1 /* mstationsnodrivehologramo.m in Sources */ = {isa = PBXBuildFile; fileRef = DA87089B1CBF0BD1000C08E1 /* mstationsnodrivehologramo.m */; };
 		DA8708A51CBF0C0C000C08E1 /* mstationsnodrivehologramonce.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8708A41CBF0C0C000C08E1 /* mstationsnodrivehologramonce.m */; };
 		DA8708A81CBF0C16000C08E1 /* mstationsnodrivehologramtwice.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8708A71CBF0C16000C08E1 /* mstationsnodrivehologramtwice.m */; };
+		DA8708AA1CBF2CCD000C08E1 /* stations.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA8708A91CBF2CCD000C08E1 /* stations.xcassets */; };
 		DACEDEE21CBC89630088AA8B /* cmain.m in Sources */ = {isa = PBXBuildFile; fileRef = DACEDEE11CBC89630088AA8B /* cmain.m */; };
 		DAD33FF01CBC83E300C87502 /* cdmx.db in Resources */ = {isa = PBXBuildFile; fileRef = DAD33FAB1CBC83E300C87502 /* cdmx.db */; };
 		DAD33FF11CBC83E300C87502 /* analytics.plist in Resources */ = {isa = PBXBuildFile; fileRef = DAD33FAE1CBC83E300C87502 /* analytics.plist */; };
@@ -175,6 +176,7 @@
 		DA8708A41CBF0C0C000C08E1 /* mstationsnodrivehologramonce.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mstationsnodrivehologramonce.m; sourceTree = "<group>"; };
 		DA8708A61CBF0C16000C08E1 /* mstationsnodrivehologramtwice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mstationsnodrivehologramtwice.h; sourceTree = "<group>"; };
 		DA8708A71CBF0C16000C08E1 /* mstationsnodrivehologramtwice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mstationsnodrivehologramtwice.m; sourceTree = "<group>"; };
+		DA8708A91CBF2CCD000C08E1 /* stations.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = stations.xcassets; sourceTree = "<group>"; };
 		DACEDEE01CBC89630088AA8B /* cmain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cmain.h; sourceTree = "<group>"; };
 		DACEDEE11CBC89630088AA8B /* cmain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cmain.m; sourceTree = "<group>"; };
 		DAD33F901CBC825900C87502 /* cdmx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cdmx.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -390,6 +392,7 @@
 				DAD3400A1CBC858A00C87502 /* brand.xcassets */,
 				DAD875D71CBD33FB00A4F91C /* spinner.xcassets */,
 				DAD875FD1CBD6E7800A4F91C /* general.xcassets */,
+				DA8708A91CBF2CCD000C08E1 /* stations.xcassets */,
 			);
 			path = imateq;
 			sourceTree = "<group>";
@@ -796,6 +799,7 @@
 				DAD875FE1CBD6E7800A4F91C /* general.xcassets in Resources */,
 				DAD876171CBDA75100A4F91C /* stations.csv in Resources */,
 				DA8708931CBEFF1A000C08E1 /* nodriveplates.plist in Resources */,
+				DA8708AA1CBF2CCD000C08E1 /* stations.xcassets in Resources */,
 				DAD33FF21CBC83E300C87502 /* defs.plist in Resources */,
 				DAD33FF51CBC83E300C87502 /* Info.plist in Resources */,
 				DAD33FF11CBC83E300C87502 /* analytics.plist in Resources */,
