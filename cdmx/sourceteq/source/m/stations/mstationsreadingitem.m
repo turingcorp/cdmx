@@ -19,7 +19,7 @@
         
         NSString *component = components[i];
         
-        if([component isEqualToString:@"UAM"])
+        if([component isEqualToString:@"uam"])
         {
             component = component.uppercaseString;
         }

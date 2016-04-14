@@ -9,7 +9,6 @@
 {
     self = [super initWithFrame:frame];
     [self setClipsToBounds:YES];
-    [self setBackgroundColor:[UIColor whiteColor]];
     
     UIImageView *cloud = [[UIImageView alloc] init];
     [cloud setClipsToBounds:YES];
@@ -48,6 +47,18 @@
     return self;
 }
 
+-(void)setSelected:(BOOL)selected
+{
+    [super setSelected:selected];
+    [self hover];
+}
+
+-(void)setHighlighted:(BOOL)highlighted
+{
+    [super setHighlighted:highlighted];
+    [self hover];
+}
+
 #pragma mark functionality
 
 -(void)hover
@@ -57,12 +68,14 @@
         [self.amount setTextColor:[UIColor whiteColor]];
         [self.title setTextColor:[UIColor whiteColor]];
         [self.cloud setTintColor:[UIColor whiteColor]];
+        [self setBackgroundColor:[UIColor main]];
     }
     else
     {
         [self.amount setTextColor:[UIColor colorWithWhite:0.2 alpha:1]];
         [self.title setTextColor:[UIColor colorWithWhite:0.5 alpha:1]];
         [self.cloud setTintColor:self.model.index.color];
+        [self setBackgroundColor:[UIColor whiteColor]];
     }
 }
 
