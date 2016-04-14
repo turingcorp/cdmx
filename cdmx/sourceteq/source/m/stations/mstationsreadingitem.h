@@ -8,6 +8,8 @@
 
 @interface mstationsreadingitem:NSObject
 
+-(instancetype)init:(NSString*)name;
+
 @property(strong, nonatomic)mstationsitemlocation *location;
 @property(strong, nonatomic)mstationsreadingitemindex *index;
 @property(strong, nonatomic)mstationsreadingitemconditions *conditions;

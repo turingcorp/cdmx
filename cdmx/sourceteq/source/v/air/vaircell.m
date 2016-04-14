@@ -1,6 +1,7 @@
 #import "vaircell.h"
 #import "tools.h"
 #import "uifont+uifontmain.h"
+#import "mstationsreadingitemindexnodata.h"
 
 @implementation vaircell
 
@@ -69,7 +70,12 @@
 
 -(void)config:(mstationsreadingitem*)model
 {
-    NSString *amount = [[tools singleton] numbertostring:@(model.index.points)];
+    NSString *amount = @"";
+    
+    if(![model.index isKindOfClass:[mstationsreadingitemindexnodata class]])
+    {
+        amount = [[tools singleton] numbertostring:@(model.index.points)];
+    }
     
     self.model = model;
     [self.amount setText:amount];

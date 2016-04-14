@@ -128,8 +128,7 @@
                     
                     if(add)
                     {
-                        mstationsreadingitem *newitem = [[mstationsreadingitem alloc] init];
-                        newitem.name = rawname;
+                        mstationsreadingitem *newitem = [[mstationsreadingitem alloc] init:rawname];
                         newitem.shortname = rawshortname;
                         
                         mstationsreadingitemindex *newindex = [mstationsreadingitemindex indexwithpoints:rawpoints];

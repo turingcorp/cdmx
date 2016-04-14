@@ -54,7 +54,7 @@
 
 +(UIColor*)pollution_gray
 {
-    return [UIColor colorWithWhite:0.8 alpha:1];
+    return [UIColor colorWithWhite:0.85 alpha:1];
 }
 
 @end
