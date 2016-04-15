@@ -47,6 +47,7 @@
 		DA8708A81CBF0C16000C08E1 /* mstationsnodrivehologramtwice.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8708A71CBF0C16000C08E1 /* mstationsnodrivehologramtwice.m */; };
 		DA8708AA1CBF2CCD000C08E1 /* stations.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA8708A91CBF2CCD000C08E1 /* stations.xcassets */; };
 		DA8708AD1CBF3517000C08E1 /* mstationsreadingitemindexnodata.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8708AC1CBF3517000C08E1 /* mstationsreadingitemindexnodata.m */; };
+		DA8F033C1CC1491C0007596C /* cairdetail.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8F033B1CC1491C0007596C /* cairdetail.m */; };
 		DACEDEE21CBC89630088AA8B /* cmain.m in Sources */ = {isa = PBXBuildFile; fileRef = DACEDEE11CBC89630088AA8B /* cmain.m */; };
 		DAD33FF01CBC83E300C87502 /* cdmx.db in Resources */ = {isa = PBXBuildFile; fileRef = DAD33FAB1CBC83E300C87502 /* cdmx.db */; };
 		DAD33FF11CBC83E300C87502 /* analytics.plist in Resources */ = {isa = PBXBuildFile; fileRef = DAD33FAE1CBC83E300C87502 /* analytics.plist */; };
@@ -180,6 +181,8 @@
 		DA8708A91CBF2CCD000C08E1 /* stations.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = stations.xcassets; sourceTree = "<group>"; };
 		DA8708AB1CBF3517000C08E1 /* mstationsreadingitemindexnodata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mstationsreadingitemindexnodata.h; sourceTree = "<group>"; };
 		DA8708AC1CBF3517000C08E1 /* mstationsreadingitemindexnodata.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mstationsreadingitemindexnodata.m; sourceTree = "<group>"; };
+		DA8F033A1CC1491C0007596C /* cairdetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cairdetail.h; sourceTree = "<group>"; };
+		DA8F033B1CC1491C0007596C /* cairdetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cairdetail.m; sourceTree = "<group>"; };
 		DACEDEE01CBC89630088AA8B /* cmain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cmain.h; sourceTree = "<group>"; };
 		DACEDEE11CBC89630088AA8B /* cmain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cmain.m; sourceTree = "<group>"; };
 		DAD33F901CBC825900C87502 /* cdmx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cdmx.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -602,6 +605,8 @@
 			children = (
 				DAD875DA1CBD415300A4F91C /* cair.h */,
 				DAD875DB1CBD415300A4F91C /* cair.m */,
+				DA8F033A1CC1491C0007596C /* cairdetail.h */,
+				DA8F033B1CC1491C0007596C /* cairdetail.m */,
 			);
 			path = air;
 			sourceTree = "<group>";
@@ -933,6 +938,7 @@
 				DA8708561CBE9F5D000C08E1 /* mstationsreadinguvindexmid.m in Sources */,
 				DA8708311CBE8532000C08E1 /* aparser.m in Sources */,
 				DA8708661CBEBE1F000C08E1 /* mstationsreadingitemindexgood.m in Sources */,
+				DA8F033C1CC1491C0007596C /* cairdetail.m in Sources */,
 				DAD876121CBD72F400A4F91C /* vmenucell.m in Sources */,
 				DA8708721CBEBE72000C08E1 /* mstationsreadingitemindexextreme.m in Sources */,
 				DAD340001CBC83E300C87502 /* mdbcreate.m in Sources */,
