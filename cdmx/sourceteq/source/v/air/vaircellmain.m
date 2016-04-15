@@ -84,6 +84,13 @@ static NSInteger const uvmax = 11;
     [labelhumidity setTranslatesAutoresizingMaskIntoConstraints:NO];
     self.labelhumidity = labelhumidity;
     
+    UIImageView *iconfactory = [[UIImageView alloc] init];
+    [iconfactory setClipsToBounds:YES];
+    [iconfactory setUserInteractionEnabled:NO];
+    [iconfactory setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [iconfactory setContentMode:UIViewContentModeScaleAspectFit];
+    [iconfactory setImage:[UIImage imageNamed:@"stations_factory"]];
+    
     UIImageView *icontemp = [[UIImageView alloc] init];
     [icontemp setClipsToBounds:YES];
     [icontemp setUserInteractionEnabled:NO];
@@ -103,14 +110,17 @@ static NSInteger const uvmax = 11;
     [self addSubview:label];
     [self addSubview:labeltemp];
     [self addSubview:labelhumidity];
+    [self addSubview:iconfactory];
     [self addSubview:icontemp];
     [self addSubview:iconhum];
     [self addSubview:collection];
     
-    NSDictionary *views = @{@"icontemp":icontemp, @"iconhum":iconhum, @"label":label, @"labeltemp":labeltemp, @"labelhumidity":labelhumidity, @"labeluv":labeluv, @"labeluvindex":labeluvindex, @"col":collection};
+    NSDictionary *views = @{@"icontemp":icontemp, @"iconhum":iconhum, @"label":label, @"labeltemp":labeltemp, @"labelhumidity":labelhumidity, @"labeluv":labeluv, @"labeluvindex":labeluvindex, @"col":collection, @"iconfactory":iconfactory};
     NSDictionary *metrics = @{@"colwidth":@(uvwidth), @"colheight":@(uvheight)};
     
     self.layoutlabelheight = [NSLayoutConstraint constraintWithItem:label attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:0];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[iconfactory(30)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-10-[iconfactory(30)]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[icontemp(20)]-5-[labeltemp(100)]-0-[iconhum(20)]-5-[labelhumidity(100)]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-80-[icontemp(30)]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-85-[iconhum(25)]" options:0 metrics:metrics views:views]];
