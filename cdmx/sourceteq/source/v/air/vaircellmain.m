@@ -9,6 +9,7 @@
     self = [super initWithFrame:frame];
     [self setBackgroundColor:[UIColor whiteColor]];
     [self setClipsToBounds:YES];
+    [self setUserInteractionEnabled:NO];
     
     UILabel *labeluv = [[UILabel alloc] init];
     [labeluv setBackgroundColor:[UIColor clearColor]];
