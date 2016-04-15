@@ -2,16 +2,16 @@
 
 @interface UIColor (uicolormain)
 
-+(UIColor*)main;
-+(UIColor*)second;
-+(UIColor*)collection;
-+(UIColor*)pollution_green;
-+(UIColor*)pollution_yellow;
-+(UIColor*)pollution_orange;
-+(UIColor*)pollution_red;
-+(UIColor*)pollution_violet;
-+(UIColor*)pollution_pink;
-+(UIColor*)pollution_blue;
-+(UIColor*)pollution_gray;
++(instancetype)main;
++(instancetype)second;
++(instancetype)collection;
++(instancetype)pollution_green;
++(instancetype)pollution_yellow;
++(instancetype)pollution_orange;
++(instancetype)pollution_red;
++(instancetype)pollution_violet;
++(instancetype)pollution_pink;
++(instancetype)pollution_blue;
++(instancetype)pollution_gray;
 
 @end
