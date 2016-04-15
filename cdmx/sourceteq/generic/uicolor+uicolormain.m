@@ -39,7 +39,7 @@
 
 +(instancetype)pollution_violet
 {
-    return [UIColor colorWithRed:0.8 green:0.4 blue:0.6 alpha:1];
+    return [UIColor colorWithRed:0.8 green:0.5 blue:0.7 alpha:1];
 }
 
 +(instancetype)pollution_pink

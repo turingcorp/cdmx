@@ -4,8 +4,9 @@
 #import "vaircellmaincell.h"
 
 static NSString* const uvindexcellid = @"uvcell";
-static NSInteger const uvheight = 10;
-static NSInteger const uvinteritem = 4;
+static NSInteger const uvwidth = 250;
+static NSInteger const uvheight = 14;
+static NSInteger const uvinteritem = 3;
 static NSInteger const uvpadding = 10;
 static NSInteger const uvmax = 11;
 
@@ -18,7 +19,7 @@ static NSInteger const uvmax = 11;
     [self setClipsToBounds:YES];
     [self setUserInteractionEnabled:NO];
     
-    CGFloat width = frame.size.width;
+    CGFloat width = uvwidth;
     CGFloat remain = width - (uvpadding * 2);
     CGFloat itemwidthspace = (remain + uvinteritem) / uvmax;
     CGFloat itemwidth = itemwidthspace - uvinteritem;
@@ -26,8 +27,8 @@ static NSInteger const uvmax = 11;
     UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
     [flow setHeaderReferenceSize:CGSizeZero];
     [flow setFooterReferenceSize:CGSizeZero];
-    [flow setMinimumLineSpacing:0];
-    [flow setMinimumInteritemSpacing:uvinteritem];
+    [flow setMinimumLineSpacing:uvinteritem];
+    [flow setMinimumInteritemSpacing:0];
     [flow setScrollDirection:UICollectionViewScrollDirectionHorizontal];
     [flow setSectionInset:UIEdgeInsetsMake(0, uvpadding, 0, uvpadding)];
     [flow setItemSize:CGSizeMake(itemwidth, uvheight)];
@@ -107,7 +108,7 @@ static NSInteger const uvmax = 11;
     [self addSubview:collection];
     
     NSDictionary *views = @{@"icontemp":icontemp, @"iconhum":iconhum, @"label":label, @"labeltemp":labeltemp, @"labelhumidity":labelhumidity, @"labeluv":labeluv, @"labeluvindex":labeluvindex, @"col":collection};
-    NSDictionary *metrics = @{@"colheight":@(uvheight), @"colpadding":@(uvpadding)};
+    NSDictionary *metrics = @{@"colwidth":@(uvwidth), @"colheight":@(uvheight)};
     
     self.layoutlabelheight = [NSLayoutConstraint constraintWithItem:label attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:0];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[icontemp(20)]-5-[labeltemp(100)]-0-[iconhum(20)]-5-[labelhumidity(100)]" options:0 metrics:metrics views:views]];
@@ -117,10 +118,10 @@ static NSInteger const uvmax = 11;
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-83-[labeltemp(30)]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[label]-10-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[labeluv]-8-[labeluvindex]" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(colpadding)-[col]-(colpadding)-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-145-[labeluv]-10-[col(colheight)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(0)-[col(colwidth)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-145-[labeluv]-8-[col(colheight)]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-141-[labeluvindex]" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-230-[label]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-210-[label]" options:0 metrics:metrics views:views]];
     [self addConstraint:self.layoutlabelheight];
     
     return self;
@@ -167,5 +168,23 @@ static NSInteger const uvmax = 11;
 
 #pragma mark -
 #pragma mark col del
+
+-(NSInteger)numberOfSectionsInCollectionView:(UICollectionView*)col
+{
+    return 1;
+}
+
+-(NSInteger)collectionView:(UICollectionView*)col numberOfItemsInSection:(NSInteger)section
+{
+    return uvmax;
+}
+
+-(UICollectionViewCell*)collectionView:(UICollectionView*)col cellForItemAtIndexPath:(NSIndexPath*)index
+{
+    vaircellmaincell *cell = [col dequeueReusableCellWithReuseIdentifier:uvindexcellid forIndexPath:index];
+    [cell config:index];
+    
+    return cell;
+}
 
 @end

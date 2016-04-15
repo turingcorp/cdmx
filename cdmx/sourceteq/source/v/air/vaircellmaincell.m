@@ -1,4 +1,5 @@
 #import "vaircellmaincell.h"
+#import "mstations.h"
 
 static NSInteger const cornerradius = 3;
 
@@ -16,11 +17,12 @@ static NSInteger const cornerradius = 3;
 
 #pragma mark public
 
--(void)config:(NSIndexPath*)index model:(mstationsreadinguvindex*)model
+-(void)config:(NSIndexPath*)index
 {
+    mstationsreadinguvindex *model = [mstations singleton].uv.index;
     UIColor *color;
     
-    if(index.item <= model.number)
+    if(index.item < model.number)
     {
         color = model.color;
     }
