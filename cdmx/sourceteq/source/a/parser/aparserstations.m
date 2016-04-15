@@ -194,6 +194,9 @@
                 NSString *rawuvdescr1 = rawinfo[@"recomendacionuvuno"];
                 NSString *rawuvdescr2 = rawinfo[@"recomendacionuvdos"];
                 NSString *rawuvdescr3 = rawinfo[@"recomendacionuvtres"];
+                NSString *rawworst = rawinfo[@"valormeca"];
+                NSString *rawtemperature = rawinfo[@"temperatura"];
+                NSString *rawhumidity = rawinfo[@"humedad"];
                 
                 NSInteger uvindex = 0;
                 NSString *uvtitle;
@@ -292,6 +295,22 @@
                     newnodrive.plates = mutplates;
                     newnodrive.holograms = mutholograms;
                     [mstations singleton].nodrive = newnodrive;
+                }
+                
+                if(rawworst && rawworst.length)
+                {
+                    NSInteger worstnumber = rawworst.integerValue;
+                    mstationsreadingitemindex *newindex = [mstationsreadingitemindex indexwithpoints:worstnumber];
+                    [mstations singleton].worstindex = newindex;
+                }
+                
+                if(rawhumidity && rawhumidity.length && rawtemperature && rawtemperature.length)
+                {
+                    CGFloat temperaturenumber = rawtemperature.floatValue;
+                    CGFloat humiditynumber = rawhumidity.floatValue;
+                    
+                    mstationsreadingitemconditions *newconditions = [[mstationsreadingitemconditions alloc] init:temperaturenumber humidity:humiditynumber];
+                    [mstations singleton].generalconditions = newconditions;
                 }
             }
         }
