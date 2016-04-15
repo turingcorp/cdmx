@@ -219,7 +219,7 @@
                 
                 if(rawuvdescr1 && rawuvdescr1.length > 1)
                 {
-                    [uvdescr appendString:rawuvdescr1];
+                    [uvdescr appendFormat:@"\n%@", rawuvdescr1];
                     
                     if(rawuvdescr2 && rawuvdescr2.length > 1)
                     {
