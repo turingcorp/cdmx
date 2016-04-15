@@ -1,6 +1,7 @@
 #import "vair.h"
 #import "vairbar.h"
 #import "vairmap.h"
+#import "vaircellmain.h"
 #import "vaircell.h"
 #import "uicolor+uicolormain.h"
 #import "genericconstants.h"
@@ -31,7 +32,6 @@ static NSInteger const cellheight = 65;
     [flow setFooterReferenceSize:CGSizeZero];
     [flow setMinimumInteritemSpacing:0];
     [flow setMinimumLineSpacing:1];
-    [flow setSectionInset:UIEdgeInsetsMake(mapheight, 0, collectionbottom, 0)];
     [flow setScrollDirection:UICollectionViewScrollDirectionVertical];
     
     UICollectionView *collection = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flow];
@@ -43,6 +43,7 @@ static NSInteger const cellheight = 65;
     [collection setAlwaysBounceVertical:YES];
     [collection setDataSource:self];
     [collection setDelegate:self];
+    [collection registerClass:[vaircellmain class] forCellWithReuseIdentifier:cellairmainid];
     [collection registerClass:[vaircell class] forCellWithReuseIdentifier:cellairid];
     self.collection = collection;
     
@@ -138,10 +139,37 @@ static NSInteger const cellheight = 65;
     self.layoutmapheight.constant = newmapheight;
 }
 
+-(UIEdgeInsets)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout insetForSectionAtIndex:(NSInteger)section
+{
+    UIEdgeInsets insets;
+    
+    if(section)
+    {
+        insets = UIEdgeInsetsMake(0, 0, collectionbottom, 0);
+    }
+    else
+    {
+        insets = UIEdgeInsetsMake(mapheight, 0, 0, 0);
+    }
+    
+    return insets;
+}
+
 -(CGSize)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout sizeForItemAtIndexPath:(NSIndexPath*)index
 {
     CGFloat width = col.bounds.size.width;
-    CGSize size = CGSizeMake(width, cellheight);
+    CGFloat height;
+    
+    if(index.section)
+    {
+        height = cellheight;
+    }
+    else
+    {
+        height = cellmainheight;
+    }
+    
+    CGSize size = CGSizeMake(width, height);
     
     return size;
 }
@@ -153,7 +181,16 @@ static NSInteger const cellheight = 65;
 
 -(NSInteger)collectionView:(UICollectionView*)col numberOfItemsInSection:(NSInteger)section
 {
-    NSUInteger count = self.lastreading.items.count;
+    NSUInteger count;
+    
+    if(section)
+    {
+        count = self.lastreading.items.count;
+    }
+    else
+    {
+        count = 1;
+    }
     
     return count;
 }
@@ -172,7 +209,7 @@ static NSInteger const cellheight = 65;
     }
     else
     {
-        
+        cell = [col dequeueReusableCellWithReuseIdentifier:cellairmainid forIndexPath:index];
     }
     
     return cell;
