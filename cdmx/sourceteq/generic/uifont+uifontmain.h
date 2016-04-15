@@ -2,7 +2,7 @@
 
 @interface UIFont (uifontmain)
 
-+(UIFont*)regularsize:(CGFloat)size;
-+(UIFont*)boldsize:(CGFloat)size;
++(instancetype)regularsize:(CGFloat)size;
++(instancetype)boldsize:(CGFloat)size;
 
 @end
