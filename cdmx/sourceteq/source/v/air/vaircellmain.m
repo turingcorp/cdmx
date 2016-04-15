@@ -97,7 +97,7 @@ static NSInteger const uvmax = 11;
     [labelindexname setBackgroundColor:[UIColor clearColor]];
     [labelindexname setUserInteractionEnabled:NO];
     [labelindexname setFont:[UIFont regularsize:17]];
-    [labelindexname setTextColor:[UIColor colorWithWhite:0 alpha:0.5]];
+    [labelindexname setTextColor:[UIColor colorWithWhite:0 alpha:0.8]];
     [labelindexname setTranslatesAutoresizingMaskIntoConstraints:NO];
     self.labelindexname = labelindexname;
     
@@ -176,6 +176,7 @@ static NSInteger const uvmax = 11;
     {
         NSString *worststring = [NSString stringWithFormat:@"%@", @([mstations singleton].worstindex.points)];
         
+        [self.labelindexname setText:[mstations singleton].worstindex.name];
         [self.labelindex setText:worststring];
         [self.baseindex setBackgroundColor:[mstations singleton].worstindex.color];
     }
