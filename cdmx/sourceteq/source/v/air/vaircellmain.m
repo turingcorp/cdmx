@@ -106,8 +106,8 @@ static NSInteger const uvmax = 11;
     [self addSubview:iconhum];
     [self addSubview:collection];
     
-    NSDictionary *views = @{@"icontemp":icontemp, @"iconhum":iconhum, @"label":label, @"labeltemp":labeltemp, @"labelhumidity":labelhumidity, @"labeluv":labeluv, @"labeluvindex":labeluvindex};
-    NSDictionary *metrics = @{};
+    NSDictionary *views = @{@"icontemp":icontemp, @"iconhum":iconhum, @"label":label, @"labeltemp":labeltemp, @"labelhumidity":labelhumidity, @"labeluv":labeluv, @"labeluvindex":labeluvindex, @"col":collection};
+    NSDictionary *metrics = @{@"colheight":@(uvheight), @"colpadding":@(uvpadding)};
     
     self.layoutlabelheight = [NSLayoutConstraint constraintWithItem:label attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:0];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[icontemp(20)]-5-[labeltemp(100)]-0-[iconhum(20)]-5-[labelhumidity(100)]" options:0 metrics:metrics views:views]];
@@ -117,7 +117,8 @@ static NSInteger const uvmax = 11;
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-83-[labeltemp(30)]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[label]-10-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[labeluv]-8-[labeluvindex]" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-145-[labeluv]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(colpadding)-[col]-(colpadding)-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-145-[labeluv]-10-[col(colheight)]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-141-[labeluvindex]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-230-[label]" options:0 metrics:metrics views:views]];
     [self addConstraint:self.layoutlabelheight];
@@ -150,6 +151,8 @@ static NSInteger const uvmax = 11;
         
         NSString *stringindex = [NSString stringWithFormat:@"%@", @([mstations singleton].uv.index.number)];
         [self.labeluvindex setText:stringindex];
+        
+        [self.collection reloadData];
     }
     
     if([mstations singleton].generalconditions)
@@ -161,5 +164,8 @@ static NSInteger const uvmax = 11;
         [self.labelhumidity setText:stringhum];
     }
 }
+
+#pragma mark -
+#pragma mark col del
 
 @end
