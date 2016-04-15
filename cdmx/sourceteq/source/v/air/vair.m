@@ -11,7 +11,7 @@
 static NSString* const cellairmainid = @"cellairmain";
 static NSString* const cellairid = @"cellair";
 static NSInteger const mapheight = 300;
-static NSInteger const cellmainheight = 360;
+static NSInteger const cellmainheight = 400;
 static NSInteger const cellheight = 65;
 static NSInteger const interitem = 1;
 
