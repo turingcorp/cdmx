@@ -1,6 +1,13 @@
 #import "vaircellmain.h"
 #import "mstations.h"
 #import "uifont+uifontmain.h"
+#import "vaircellmaincell.h"
+
+static NSString* const uvindexcellid = @"uvcell";
+static NSInteger const uvheight = 10;
+static NSInteger const uvinteritem = 4;
+static NSInteger const uvpadding = 10;
+static NSInteger const uvmax = 11;
 
 @implementation vaircellmain
 
@@ -10,6 +17,32 @@
     [self setBackgroundColor:[UIColor whiteColor]];
     [self setClipsToBounds:YES];
     [self setUserInteractionEnabled:NO];
+    
+    CGFloat width = frame.size.width;
+    CGFloat remain = width - (uvpadding * 2);
+    CGFloat itemwidthspace = (remain + uvinteritem) / uvmax;
+    CGFloat itemwidth = itemwidthspace - uvinteritem;
+    
+    UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
+    [flow setHeaderReferenceSize:CGSizeZero];
+    [flow setFooterReferenceSize:CGSizeZero];
+    [flow setMinimumLineSpacing:0];
+    [flow setMinimumInteritemSpacing:uvinteritem];
+    [flow setScrollDirection:UICollectionViewScrollDirectionHorizontal];
+    [flow setSectionInset:UIEdgeInsetsMake(0, uvpadding, 0, uvpadding)];
+    [flow setItemSize:CGSizeMake(itemwidth, uvheight)];
+    
+    UICollectionView *collection = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flow];
+    [collection setBackgroundColor:[UIColor clearColor]];
+    [collection setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [collection setClipsToBounds:YES];
+    [collection setUserInteractionEnabled:NO];
+    [collection setShowsVerticalScrollIndicator:NO];
+    [collection setShowsHorizontalScrollIndicator:NO];
+    [collection setDelegate:self];
+    [collection setDataSource:self];
+    [collection registerClass:[vaircellmaincell class] forCellWithReuseIdentifier:uvindexcellid];
+    self.collection = collection;
     
     UILabel *labeluv = [[UILabel alloc] init];
     [labeluv setBackgroundColor:[UIColor clearColor]];
