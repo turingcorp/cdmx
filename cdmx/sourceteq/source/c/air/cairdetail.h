@@ -1,5 +1,5 @@
 #import <UIKit/UIKit.h>
 
-@interface cairdetail:UIViewController
+@interface cairdetail:UIViewController<UIGestureRecognizerDelegate>
 
 @end
