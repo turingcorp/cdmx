@@ -7,8 +7,10 @@
 #import "nsnotification+nsnotificationmain.h"
 #import "mstations.h"
 
+static NSString* const cellairmainid = @"cellairmain";
 static NSString* const cellairid = @"cellair";
 static NSInteger const mapheight = 300;
+static NSInteger const cellmainheight = 110;
 static NSInteger const cellheight = 65;
 
 @implementation vair
