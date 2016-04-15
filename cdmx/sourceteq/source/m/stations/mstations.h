@@ -12,6 +12,9 @@
 
 @property(strong, nonatomic)mstationsnodrive *nodrive;
 @property(strong, nonatomic)mstationsreadinguv *uv;
+@property(strong, nonatomic)mstationsreadingitemindex *worstindex;
+@property(strong, nonatomic)mstationsreadingitemconditions *generalconditions;
+@property(strong, nonatomic)mstationsreadingitemwind *wind;
 @property(strong, nonatomic)NSArray<mstationsitem*> *items;
 @property(strong, nonatomic)NSMutableArray<mstationsreading*> *readings;
 @property(copy, nonatomic)NSString *error;
