@@ -13,6 +13,7 @@ static NSString* const cellairid = @"cellair";
 static NSInteger const mapheight = 300;
 static NSInteger const cellmainheight = 110;
 static NSInteger const cellheight = 65;
+static NSInteger const interitem = 1;
 
 @implementation vair
 
@@ -31,7 +32,7 @@ static NSInteger const cellheight = 65;
     [flow setHeaderReferenceSize:CGSizeZero];
     [flow setFooterReferenceSize:CGSizeZero];
     [flow setMinimumInteritemSpacing:0];
-    [flow setMinimumLineSpacing:1];
+    [flow setMinimumLineSpacing:interitem];
     [flow setScrollDirection:UICollectionViewScrollDirectionVertical];
     
     UICollectionView *collection = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flow];
@@ -149,7 +150,7 @@ static NSInteger const cellheight = 65;
     }
     else
     {
-        insets = UIEdgeInsetsMake(mapheight, 0, 0, 0);
+        insets = UIEdgeInsetsMake(mapheight, 0, interitem, 0);
     }
     
     return insets;
