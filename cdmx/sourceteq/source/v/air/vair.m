@@ -99,6 +99,15 @@ static NSInteger const cellheight = 65;
     [self.collection reloadData];
 }
 
+#pragma mark functionality
+
+-(mstationsreadingitem*)itemforindex:(NSUInteger)index
+{
+    mstationsreadingitem *item = self.lastreading.items[index];
+    
+    return item;
+}
+
 #pragma mark -
 #pragma mark col del
 
@@ -137,7 +146,7 @@ static NSInteger const cellheight = 65;
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView*)col
 {
-    return 1;
+    return 2;
 }
 
 -(NSInteger)collectionView:(UICollectionView*)col numberOfItemsInSection:(NSInteger)section
@@ -149,8 +158,20 @@ static NSInteger const cellheight = 65;
 
 -(UICollectionViewCell*)collectionView:(UICollectionView*)col cellForItemAtIndexPath:(NSIndexPath*)index
 {
-    vaircell *cell = [col dequeueReusableCellWithReuseIdentifier:cellairid forIndexPath:index];
-    [cell config:self.lastreading.items[index.item]];
+    NSUInteger section = index.section;
+    NSUInteger item = index.item;
+    
+    UICollectionViewCell *cell;
+    
+    if(section)
+    {
+        cell = [col dequeueReusableCellWithReuseIdentifier:cellairid forIndexPath:index];
+        [(vaircell*)cell config:[self itemforindex:item]];
+    }
+    else
+    {
+        
+    }
     
     return cell;
 }
