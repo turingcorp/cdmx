@@ -217,11 +217,23 @@ static NSInteger const interitem = 1;
     return cell;
 }
 
--(BOOL)collectionView:(UICollectionView*)collectionView shouldSelectItemAtIndexPath:(NSIndexPath*)index
+-(BOOL)collectionView:(UICollectionView*)col shouldSelectItemAtIndexPath:(NSIndexPath*)index
 {
     BOOL should = NO;
     
-    if(index.item)
+    if(index.section)
+    {
+        should = YES;
+    }
+    
+    return should;
+}
+
+-(BOOL)collectionView:(UICollectionView*)col shouldHighlightItemAtIndexPath:(NSIndexPath*)index
+{
+    BOOL should = NO;
+    
+    if(index.section)
     {
         should = YES;
     }
