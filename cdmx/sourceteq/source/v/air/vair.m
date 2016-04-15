@@ -11,7 +11,7 @@
 static NSString* const cellairmainid = @"cellairmain";
 static NSString* const cellairid = @"cellair";
 static NSInteger const mapheight = 300;
-static NSInteger const cellmainheight = 150;
+static NSInteger const cellmainheight = 220;
 static NSInteger const cellheight = 65;
 static NSInteger const interitem = 1;
 
@@ -211,6 +211,7 @@ static NSInteger const interitem = 1;
     else
     {
         cell = [col dequeueReusableCellWithReuseIdentifier:cellairmainid forIndexPath:index];
+        [(vaircellmain*)cell config];
     }
     
     return cell;
