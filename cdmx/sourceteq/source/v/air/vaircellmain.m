@@ -84,6 +84,23 @@ static NSInteger const uvmax = 11;
     [labelhumidity setTranslatesAutoresizingMaskIntoConstraints:NO];
     self.labelhumidity = labelhumidity;
     
+    UILabel *labelindex = [[UILabel alloc] init];
+    [labelindex setBackgroundColor:[UIColor clearColor]];
+    [labelindex setUserInteractionEnabled:NO];
+    [labelindex setFont:[UIFont boldsize:22]];
+    [labelindex setTextColor:[UIColor blackColor]];
+    [labelindex setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [labelindex setTextAlignment:NSTextAlignmentCenter];
+    self.labelindex = labelindex;
+    
+    UILabel *labelindexname = [[UILabel alloc] init];
+    [labelindexname setBackgroundColor:[UIColor clearColor]];
+    [labelindexname setUserInteractionEnabled:NO];
+    [labelindexname setFont:[UIFont regularsize:17]];
+    [labelindexname setTextColor:[UIColor colorWithWhite:0 alpha:0.5]];
+    [labelindexname setTranslatesAutoresizingMaskIntoConstraints:NO];
+    self.labelindexname = labelindexname;
+    
     UIImageView *iconfactory = [[UIImageView alloc] init];
     [iconfactory setClipsToBounds:YES];
     [iconfactory setUserInteractionEnabled:NO];
@@ -105,22 +122,36 @@ static NSInteger const uvmax = 11;
     [iconhum setContentMode:UIViewContentModeScaleAspectFit];
     [iconhum setImage:[UIImage imageNamed:@"stations_humidity"]];
     
+    UIView *baseindex = [[UIView alloc] init];
+    [baseindex setClipsToBounds:YES];
+    [baseindex setUserInteractionEnabled:NO];
+    [baseindex setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [baseindex.layer setCornerRadius:4];
+    self.baseindex = baseindex;
+    
+    [baseindex addSubview:labelindex];
     [self addSubview:labeluv];
     [self addSubview:labeluvindex];
     [self addSubview:label];
     [self addSubview:labeltemp];
     [self addSubview:labelhumidity];
+    [self addSubview:labelindexname];
     [self addSubview:iconfactory];
     [self addSubview:icontemp];
     [self addSubview:iconhum];
+    [self addSubview:baseindex];
     [self addSubview:collection];
     
-    NSDictionary *views = @{@"icontemp":icontemp, @"iconhum":iconhum, @"label":label, @"labeltemp":labeltemp, @"labelhumidity":labelhumidity, @"labeluv":labeluv, @"labeluvindex":labeluvindex, @"col":collection, @"iconfactory":iconfactory};
+    NSDictionary *views = @{@"icontemp":icontemp, @"iconhum":iconhum, @"label":label, @"labeltemp":labeltemp, @"labelhumidity":labelhumidity, @"labeluv":labeluv, @"labeluvindex":labeluvindex, @"col":collection, @"iconfactory":iconfactory, @"baseindex":baseindex, @"labelindex":labelindex, @"labelindexname":labelindexname};
     NSDictionary *metrics = @{@"colwidth":@(uvwidth), @"colheight":@(uvheight)};
     
     self.layoutlabelheight = [NSLayoutConstraint constraintWithItem:label attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:0];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[iconfactory(30)]" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-10-[iconfactory(30)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[iconfactory(30)]-12-[baseindex(66)]-8-[labelindexname(150)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-15-[iconfactory(30)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-13-[baseindex(34)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-13-[labelindexname(34)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[labelindex]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[labelindex]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[icontemp(20)]-5-[labeltemp(100)]-0-[iconhum(20)]-5-[labelhumidity(100)]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-80-[icontemp(30)]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-85-[iconhum(25)]" options:0 metrics:metrics views:views]];
@@ -141,6 +172,14 @@ static NSInteger const uvmax = 11;
 
 -(void)config
 {
+    if([mstations singleton].worstindex)
+    {
+        NSString *worststring = [NSString stringWithFormat:@"%@", @([mstations singleton].worstindex.points)];
+        
+        [self.labelindex setText:worststring];
+        [self.baseindex setBackgroundColor:[mstations singleton].worstindex.color];
+    }
+    
     if([mstations singleton].uv)
     {
         NSMutableAttributedString *mut = [[NSMutableAttributedString alloc] init];

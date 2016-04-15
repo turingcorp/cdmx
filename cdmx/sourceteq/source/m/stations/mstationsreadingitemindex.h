@@ -11,6 +11,7 @@
 @property(strong, nonatomic)mstationsreadingitemindexactivity *exercise;
 @property(strong, nonatomic)mstationsreadingitemindexactivity *sensible;
 @property(strong, nonatomic)UIColor *color;
+@property(copy, nonatomic)NSString *name;
 @property(nonatomic)NSInteger points;
 
 @end

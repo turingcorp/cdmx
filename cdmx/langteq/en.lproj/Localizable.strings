@@ -11,6 +11,13 @@
 "hologram_1"="Once";
 "hologram_2"="Twice";
 
+"air_index_nodata"="No data";
+"air_index_good"="Good";
+"air_index_regular"="Regular";
+"air_index_bad"="Bad";
+"air_index_verybad"="Very bad";
+"air_index_extreme"="Extreme";
+
 "air_main_uvlabel"="UV index";
 "air_main_temp"="%@ °C";
 "air_main_hum"="%@ %%";

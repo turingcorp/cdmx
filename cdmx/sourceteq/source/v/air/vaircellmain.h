@@ -9,6 +9,9 @@
 @property(weak, nonatomic)UILabel *labeltemp;
 @property(weak, nonatomic)UILabel *labelhumidity;
 @property(weak, nonatomic)UILabel *labeluvindex;
+@property(weak, nonatomic)UILabel *labelindex;
+@property(weak, nonatomic)UILabel *labelindexname;
+@property(weak, nonatomic)UIView *baseindex;
 @property(weak, nonatomic)NSLayoutConstraint *layoutlabelheight;
 
 @end

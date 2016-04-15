@@ -8,6 +8,7 @@
 {
     self = [super init:points];
     self.color = [UIColor pollution_orange];
+    self.name = NSLocalizedString(@"air_index_bad", nil);
     self.outdoors = [[mstationsreadingitemindexactivitylimited alloc] init];
     self.exercise = [[mstationsreadingitemindexactivityverylimited alloc] init];
     self.sensible = [[mstationsreadingitemindexactivityverylimited alloc] init];
