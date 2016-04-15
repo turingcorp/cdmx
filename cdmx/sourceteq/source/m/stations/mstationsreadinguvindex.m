@@ -23,7 +23,7 @@
     {
         index = [[mstationsreadinguvindexhigh alloc] init:number];
     }
-    else if(number < 12)
+    else if(number < 11)
     {
         index = [[mstationsreadinguvindexveryhigh alloc] init:number];
     }

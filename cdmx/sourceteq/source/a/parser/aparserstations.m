@@ -223,11 +223,11 @@
                     
                     if(rawuvdescr2 && rawuvdescr2.length > 1)
                     {
-                        [uvdescr appendFormat:@"\n%@", rawuvdescr2];
+                        [uvdescr appendFormat:@" %@", rawuvdescr2];
                         
                         if(rawuvdescr3 && rawuvdescr3.length > 1)
                         {
-                            [uvdescr appendFormat:@"\n%@", rawuvdescr3];
+                            [uvdescr appendFormat:@" %@", rawuvdescr3];
                         }
                     }
                 }

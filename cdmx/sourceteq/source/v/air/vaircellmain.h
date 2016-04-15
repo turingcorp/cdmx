@@ -5,5 +5,7 @@
 -(void)config;
 
 @property(weak, nonatomic)UILabel *label;
+@property(weak, nonatomic)UILabel *labeltemp;
+@property(weak, nonatomic)UILabel *labelhumidity;
 
 @end
