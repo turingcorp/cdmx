@@ -17,16 +17,6 @@
     self.view = [[vair alloc] init:self];
 }
 
--(UIStatusBarStyle)preferredStatusBarStyle
-{
-    return UIStatusBarStyleLightContent;
-}
-
--(BOOL)prefersStatusBarHidden
-{
-    return NO;
-}
-
 #pragma mark public
 
 -(void)openmenu

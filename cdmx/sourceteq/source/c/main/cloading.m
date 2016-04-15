@@ -16,14 +16,4 @@
     self.view = [[vloading alloc] init];
 }
 
--(UIStatusBarStyle)preferredStatusBarStyle
-{
-    return UIStatusBarStyleLightContent;
-}
-
--(BOOL)prefersStatusBarHidden
-{
-    return NO;
-}
-
 @end
