@@ -104,6 +104,7 @@ static NSInteger const uvmax = 11;
     [self addSubview:labelhumidity];
     [self addSubview:icontemp];
     [self addSubview:iconhum];
+    [self addSubview:collection];
     
     NSDictionary *views = @{@"icontemp":icontemp, @"iconhum":iconhum, @"label":label, @"labeltemp":labeltemp, @"labelhumidity":labelhumidity, @"labeluv":labeluv, @"labeluvindex":labeluvindex};
     NSDictionary *metrics = @{};

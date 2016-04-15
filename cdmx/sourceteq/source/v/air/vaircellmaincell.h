@@ -3,6 +3,6 @@
 
 @interface vaircellmaincell:UICollectionViewCell
 
--(void)config:(mstationsreadinguvindex*)model;
+-(void)config:(NSIndexPath*)index model:(mstationsreadinguvindex*)model;
 
 @end

@@ -16,9 +16,20 @@ static NSInteger const cornerradius = 3;
 
 #pragma mark public
 
--(void)config:(mstationsreadinguvindex*)model
+-(void)config:(NSIndexPath*)index model:(mstationsreadinguvindex*)model
 {
-    [self setBackgroundColor:model.color];
+    UIColor *color;
+    
+    if(index.item <= model.number)
+    {
+        color = model.color;
+    }
+    else
+    {
+        color = [UIColor colorWithWhite:0 alpha:0.1];
+    }
+    
+    [self setBackgroundColor:color];
 }
 
 @end
