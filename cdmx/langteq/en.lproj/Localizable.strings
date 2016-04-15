@@ -11,6 +11,6 @@
 "hologram_1"="Once";
 "hologram_2"="Twice";
 
-"air_main_uvlabel"="UV radiation index";
+"air_main_uvlabel"="UV index";
 "air_main_temp"="%@ °C";
 "air_main_hum"="%@ %%";
