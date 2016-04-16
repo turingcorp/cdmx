@@ -23,14 +23,12 @@
     return self;
 }
 
-#pragma mark functionality
+#pragma mark public
 
 -(void)fetch
 {
     [amanager call:[[acallstations alloc] init] delegate:self];
 }
-
-#pragma mark public
 
 -(void)load
 {

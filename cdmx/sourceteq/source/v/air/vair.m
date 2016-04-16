@@ -109,13 +109,20 @@ static NSInteger const interitem = 1;
     [self.collection reloadData];
 }
 
-#pragma mark functionality
-
 -(mstationsreadingitem*)itemforindex:(NSUInteger)index
 {
     mstationsreadingitem *item = self.lastreading.items[index];
     
     return item;
+}
+
+#pragma mark public
+
+-(void)retry
+{
+    self.error = nil;
+    [self.collection reloadData];
+    [[mstations singleton] fetch];
 }
 
 #pragma mark -

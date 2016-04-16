@@ -6,6 +6,7 @@
 @interface vair:UIView<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
 -(instancetype)init:(cair*)controller;
+-(void)retry;
 
 @property(weak, nonatomic)cair *controller;
 @property(weak, nonatomic)mstationsreading *lastreading;

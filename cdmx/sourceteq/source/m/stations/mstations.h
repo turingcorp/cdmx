@@ -8,6 +8,7 @@
 @interface mstations:NSObject<acalldelegate>
 
 +(instancetype)singleton;
+-(void)fetch;
 -(void)load;
 
 @property(strong, nonatomic)mstationsnodrive *nodrive;
