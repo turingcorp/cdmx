@@ -36,4 +36,16 @@ static NSInteger marginvr = 30;
     return self;
 }
 
+#pragma mark public
+
+-(void)refresh
+{
+    [self clean];
+}
+
+-(void)clean
+{
+    
+}
+
 @end

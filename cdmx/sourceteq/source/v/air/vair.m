@@ -1,6 +1,5 @@
 #import "vair.h"
 #import "vairbar.h"
-#import "vairmap.h"
 #import "vaircellmain.h"
 #import "vaircell.h"
 #import "uicolor+uicolormain.h"
@@ -8,8 +7,10 @@
 #import "nsnotification+nsnotificationmain.h"
 #import "mstations.h"
 
+static NSString* const cellairerrorid = @"cellairerror";
 static NSString* const cellairmainid = @"cellairmain";
 static NSString* const cellairid = @"cellair";
+static NSInteger const cellerrorheight = 150;
 static NSInteger const cellmainheight = 360;
 static NSInteger const cellheight = 65;
 static NSInteger const interitem = 1;
@@ -26,6 +27,7 @@ static NSInteger const interitem = 1;
     vairbar *bar = [[vairbar alloc] init:controller];
     
     vairmap *map = [[vairmap alloc] init:controller];
+    self.map = map;
     
     UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
     [flow setHeaderReferenceSize:CGSizeZero];
@@ -90,13 +92,17 @@ static NSInteger const interitem = 1;
 
 -(void)refresh
 {
-    if([mstations singleton].error || ![mstations singleton].readings.count)
+    self.error = [mstations singleton].error;
+    
+    if(self.error || ![mstations singleton].readings.count)
     {
         self.lastreading = nil;
+        [self.map clean];
     }
     else
     {
         self.lastreading = [[mstations singleton].readings lastObject];
+        [self.map refresh];
     }
     
     [self.collection reloadData];
@@ -189,7 +195,14 @@ static NSInteger const interitem = 1;
     }
     else
     {
-        count = 1;
+        if(self.error)
+        {
+            count = 2;
+        }
+        else
+        {
+            count = 1;
+        }
     }
     
     return count;
