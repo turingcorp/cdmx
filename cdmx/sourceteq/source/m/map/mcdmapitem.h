@@ -3,8 +3,11 @@
 
 @interface mcdmapitem:NSObject
 
+-(instancetype)init:(NSString*)shortname;
+
 @property(weak, nonatomic)mstationsreadingitem *readingmodel;
 @property(copy, nonatomic)NSString *name;
 @property(copy, nonatomic)NSString *asset;
+@property(copy, nonatomic)NSString *lookshortname;
 
 @end
