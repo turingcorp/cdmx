@@ -36,16 +36,44 @@ static NSInteger marginvr = 30;
     return self;
 }
 
+#pragma mark functionality
+
+-(void)loadmap
+{
+    self.model = [[mcdmap alloc] init];
+    
+    __weak typeof(self) welf = self;
+    
+    dispatch_async(dispatch_get_main_queue(),
+                   ^
+                   {
+                       [welf displaymap];
+                   });
+}
+
+-(void)displaymap
+{
+    
+}
+
 #pragma mark public
 
 -(void)refresh
 {
     [self clean];
+    
+    __weak typeof(self) welf = self;
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
+                   ^
+                   {
+                       [welf loadmap];
+                   });
 }
 
 -(void)clean
 {
-    
+    [self.overview removeFromSuperview];
 }
 
 @end

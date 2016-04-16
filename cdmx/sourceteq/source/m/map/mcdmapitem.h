@@ -7,7 +7,7 @@
 
 @property(weak, nonatomic)mstationsreadingitem *readingmodel;
 @property(copy, nonatomic)NSString *name;
-@property(copy, nonatomic)NSString *asset;
 @property(copy, nonatomic)NSString *lookshortname;
+@property(strong, nonatomic)UIImage *asset;
 
 @end

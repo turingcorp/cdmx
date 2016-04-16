@@ -6,7 +6,7 @@
 {
     self = [super init:@""];
     self.name = NSLocalizedString(@"map_district_tlahu", nil);
-    self.asset = @"districts_tlahu";
+    self.asset = [[UIImage imageNamed:@"districts_tlahu"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     
     return self;
 }
