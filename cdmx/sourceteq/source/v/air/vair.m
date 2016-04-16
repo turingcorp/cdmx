@@ -10,7 +10,6 @@
 
 static NSString* const cellairmainid = @"cellairmain";
 static NSString* const cellairid = @"cellair";
-static NSInteger const mapheight = 300;
 static NSInteger const cellmainheight = 360;
 static NSInteger const cellheight = 65;
 static NSInteger const interitem = 1;
@@ -53,10 +52,10 @@ static NSInteger const interitem = 1;
     [self addSubview:map];
     
     NSDictionary *views = @{@"bar":bar, @"col":collection, @"map":map};
-    NSDictionary *metrics = @{@"mapheight":@(mapheight)};
+    NSDictionary *metrics = @{@"mapheight":@(airmapheight)};
     
     self.layoutbarheight = [NSLayoutConstraint constraintWithItem:bar attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:navbarheight];
-    self.layoutmapheight = [NSLayoutConstraint constraintWithItem:map attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:mapheight];
+    self.layoutmapheight = [NSLayoutConstraint constraintWithItem:map attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:airmapheight];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[bar]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[map]-0-|" options:0 metrics:metrics views:views]];
@@ -120,7 +119,7 @@ static NSInteger const interitem = 1;
     CGFloat offset = self.collection.contentOffset.y;
     CGFloat offset_10 = offset / 10.0;
     CGFloat barheight = navbarheight - offset_10;
-    CGFloat newmapheight = mapheight - offset;
+    CGFloat newmapheight = airmapheight - offset;
     
     if(barheight < navbarheightmin)
     {
@@ -150,7 +149,7 @@ static NSInteger const interitem = 1;
     }
     else
     {
-        insets = UIEdgeInsetsMake(mapheight, 0, interitem, 0);
+        insets = UIEdgeInsetsMake(airmapheight + interitem, 0, interitem, 0);
     }
     
     return insets;
