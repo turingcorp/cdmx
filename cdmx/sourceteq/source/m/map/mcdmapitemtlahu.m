@@ -4,7 +4,7 @@
 
 -(instancetype)init
 {
-    self = [super init:@""];
+    self = [super init:@"tah"];
     self.name = NSLocalizedString(@"map_district_tlahu", nil);
     self.asset = [[UIImage imageNamed:@"districts_tlahu"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     
