@@ -8,5 +8,6 @@
 
 @property(weak, nonatomic)cair *controller;
 @property(weak, nonatomic)vmenubutton *menubutton;
+@property(weak, nonatomic)UIImageView *icon;
 
 @end

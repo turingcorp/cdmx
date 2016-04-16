@@ -22,6 +22,7 @@
     [icon setUserInteractionEnabled:NO];
     [icon setClipsToBounds:YES];
     [icon setContentMode:UIViewContentModeScaleAspectFit];
+    self.icon = icon;
     
     [self addSubview:icon];
     [self addSubview:menubutton];
@@ -59,6 +60,7 @@
                    ^
                    {
                        [welf.menubutton setAlpha:alpha];
+                       [welf.icon setAlpha:alpha];
                    });
     
     [super layoutSubviews];
