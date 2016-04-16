@@ -17,7 +17,14 @@
     self.menubutton = menubutton;
     [self addSubview:menubutton];
     
-    NSDictionary *views = @{@"menubutton":menubutton};
+    UIImageView *icon = [[UIImageView alloc] init];
+    [icon setImage:[UIImage imageNamed:@"general_environment"]];
+    [icon setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [icon setUserInteractionEnabled:NO];
+    [icon setClipsToBounds:YES];
+    [icon setContentMode:UIViewContentModeScaleAspectFit];
+    
+    NSDictionary *views = @{@"menubutton":menubutton, @"icon":icon};
     NSDictionary *metrics = @{};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[menubutton]" options:0 metrics:metrics views:views]];
