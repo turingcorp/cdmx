@@ -1,13 +1,14 @@
-//
-//  mcdmapitemmh.m
-//  cdmx
-//
-//  Created by zero on 4/16/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
-
 #import "mcdmapitemmh.h"
 
 @implementation mcdmapitemmh
+
+-(instancetype)init
+{
+    self = [super init:@""];
+    self.name = NSLocalizedString(@"map_district_mh", nil);
+    self.asset = @"gam";
+    
+    return self;
+}
 
 @end
