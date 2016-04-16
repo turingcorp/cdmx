@@ -1,5 +1,6 @@
 #import "vmenucell.h"
 #import "uifont+uifontmain.h"
+#import "uicolor+uicolormain.h"
 
 @implementation vmenucell
 {
@@ -22,13 +23,23 @@
     [title setBackgroundColor:[UIColor clearColor]];
     self.title = title;
     
-    [self addSubview:title];
+    UIImageView *icon = [[UIImageView alloc] init];
+    [icon setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [icon setUserInteractionEnabled:NO];
+    [icon setClipsToBounds:YES];
+    [icon setContentMode:UIViewContentModeScaleAspectFit];
+    [icon setTintColor:[UIColor main]];
+    self.icon = icon;
     
-    NSDictionary *views = @{@"title":title};
+    [self addSubview:title];
+    [self addSubview:icon];
+    
+    NSDictionary *views = @{@"title":title, @"icon":icon};
     NSDictionary *metrics = @{};
     
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-90-[title]-10-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[icon(40)]-10-[title]-10-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[title]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[icon]-0-|" options:0 metrics:metrics views:views]];
     
     return self;
 }
@@ -72,6 +83,7 @@
     [mut appendAttributedString:stringdescr];
     
     [self.title setAttributedText:mut];
+    [self.icon setImage:[[UIImage imageNamed:model.asset] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
     [self hover];
 }
 
