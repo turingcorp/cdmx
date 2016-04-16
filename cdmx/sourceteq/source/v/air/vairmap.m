@@ -80,7 +80,7 @@ static NSInteger const marginvr = 50;
         [view setUserInteractionEnabled:NO];
         [view setClipsToBounds:YES];
         [view setTranslatesAutoresizingMaskIntoConstraints:NO];
-        [view setContentMode:UIViewContentModeScaleAspectFit];
+        [view setContentMode:UIViewContentModeCenter];
         [view setTintColor:item.readingmodel.index.color];
         [view setAlpha:0];
         
