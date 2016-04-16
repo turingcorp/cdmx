@@ -28,7 +28,6 @@
     [icon setUserInteractionEnabled:NO];
     [icon setClipsToBounds:YES];
     [icon setContentMode:UIViewContentModeScaleAspectFit];
-    [icon setTintColor:[UIColor main]];
     self.icon = icon;
     
     [self addSubview:title];
@@ -62,11 +61,15 @@
 {
     if(self.isSelected || self.isHighlighted)
     {
-        [self setBackgroundColor:[UIColor colorWithWhite:0.8 alpha:1]];
+        [self setBackgroundColor:[UIColor main]];
+        [self.icon setTintColor:[UIColor whiteColor]];
+        [self.title setTextColor:[UIColor whiteColor]];
     }
     else
     {
         [self setBackgroundColor:[UIColor whiteColor]];
+        [self.icon setTintColor:[UIColor main]];
+        [self.title setAttributedText:self.mut];
     }
 }
 
@@ -78,11 +81,10 @@
     
     NSAttributedString *stringname = [[NSAttributedString alloc] initWithString:model.name attributes:attrname];
     NSAttributedString *stringdescr = [[NSAttributedString alloc] initWithString:model.descr attributes:attrdescr];
-    NSMutableAttributedString *mut = [[NSMutableAttributedString alloc] init];
-    [mut appendAttributedString:stringname];
-    [mut appendAttributedString:stringdescr];
-    
-    [self.title setAttributedText:mut];
+    self.mut = [[NSMutableAttributedString alloc] init];
+    [self.mut appendAttributedString:stringname];
+    [self.mut appendAttributedString:stringdescr];
+
     [self.icon setImage:[[UIImage imageNamed:model.asset] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
     [self hover];
 }

@@ -8,5 +8,6 @@
 @property(weak, nonatomic)mpagesitem *model;
 @property(weak, nonatomic)UILabel *title;
 @property(weak, nonatomic)UIImageView *icon;
+@property(strong, nonatomic)NSMutableAttributedString *mut;
 
 @end
