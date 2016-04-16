@@ -32,7 +32,7 @@
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[menubutton]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[menubutton]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-100-[icon]-100-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[icon(20)]-10-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[icon(30)]-8-|" options:0 metrics:metrics views:views]];
     
     return self;
 }
