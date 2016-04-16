@@ -1,5 +1,4 @@
 #import "vair.h"
-#import "vairbar.h"
 #import "vaircellerror.h"
 #import "vaircellmain.h"
 #import "vaircell.h"
@@ -25,7 +24,20 @@ static NSInteger const interitem = 1;
     [self setBackgroundColor:[UIColor collection]];
     self.controller = controller;
     
+    vairbar *bar = [[vairbar alloc] init:self.controller];
+    self.bar = bar;
     
+    [self addSubview:bar];
+    
+    NSDictionary *views = @{@"bar":bar};
+    NSDictionary *metrics = @{};
+    
+    self.layoutbarheight = [NSLayoutConstraint constraintWithItem:bar attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:navbarheight];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[bar]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[bar]" options:0 metrics:metrics views:views]];
+    [self addConstraint:self.layoutbarheight];
+    
+    [NSNotification observe:self stationsloaded:@selector(notifiedstationsloaded:)];
     
     return self;
 }
@@ -81,10 +93,46 @@ static NSInteger const interitem = 1;
 
 -(void)viewappear
 {
-    self.firsttime = NO;
+    vairmap *map = [[vairmap alloc] init:self.controller];
+    self.map = map;
+    
+    UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
+    [flow setHeaderReferenceSize:CGSizeZero];
+    [flow setFooterReferenceSize:CGSizeZero];
+    [flow setMinimumInteritemSpacing:0];
+    [flow setMinimumLineSpacing:interitem];
+    [flow setScrollDirection:UICollectionViewScrollDirectionVertical];
+    
+    UICollectionView *collection = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flow];
+    [collection setBackgroundColor:[UIColor clearColor]];
+    [collection setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [collection setClipsToBounds:YES];
+    [collection setShowsVerticalScrollIndicator:NO];
+    [collection setShowsHorizontalScrollIndicator:NO];
+    [collection setAlwaysBounceVertical:YES];
+    [collection registerClass:[vaircellmain class] forCellWithReuseIdentifier:cellairmainid];
+    [collection registerClass:[vaircellerror class] forCellWithReuseIdentifier:cellairerrorid];
+    [collection registerClass:[vaircell class] forCellWithReuseIdentifier:cellairid];
+    [collection setDelegate:self];
+    [collection setDataSource:self];
+    self.collection = collection;
+    
+    [self addSubview:collection];
+    [self addSubview:map];
+    
+    NSDictionary *views = @{@"bar":self.bar, @"col":collection, @"map":map};
+    NSDictionary *metrics = @{@"mapheight":@(airmapheight)};
+    
+    self.layoutmapheight = [NSLayoutConstraint constraintWithItem:map attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:airmapheight];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[map]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[bar]-0-[col]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[bar]-0-[map]" options:0 metrics:metrics views:views]];
+    [self addConstraint:self.layoutmapheight];
+    
+    [NSNotification observe:self stationsloaded:@selector(notifiedstationsloaded:)];
+    
     [self checkcontent];
-    [self.collection setDataSource:self];
-    [self.collection setDelegate:self];
 }
 
 -(void)retry

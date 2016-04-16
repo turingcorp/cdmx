@@ -21,7 +21,7 @@
 {
     [super viewDidAppear:animated];
     
-    if(self.view.firsttime)
+    if(!self.view.collection)
     {
         [self.view viewappear];
     }

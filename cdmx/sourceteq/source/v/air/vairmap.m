@@ -2,7 +2,7 @@
 #import "genericconstants.h"
 #import "uicolor+uicolormain.h"
 
-static CGFloat const animationaddseconds = 0.2;
+static CGFloat const animationaddseconds = 0.3;
 static NSInteger const marginvr = 50;
 
 @implementation vairmap
@@ -116,10 +116,10 @@ static NSInteger const marginvr = 50;
     
     __weak typeof(self) welf = self;
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_MSEC * 100), dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
                    ^
                    {
-                       //[welf loadmap];
+                       [welf loadmap];
                    });
 }
 
