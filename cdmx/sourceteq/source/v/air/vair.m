@@ -1,5 +1,6 @@
 #import "vair.h"
 #import "vairbar.h"
+#import "vaircellerror.h"
 #import "vaircellmain.h"
 #import "vaircell.h"
 #import "uicolor+uicolormain.h"
