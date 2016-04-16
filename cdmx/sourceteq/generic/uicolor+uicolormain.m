@@ -19,7 +19,7 @@
 
 +(instancetype)pollution_green
 {
-    return [UIColor colorWithRed:0.3 green:1 blue:0.5 alpha:1];
+    return [UIColor colorWithRed:0.5 green:0.9 blue:0 alpha:1];
 }
 
 +(instancetype)pollution_yellow

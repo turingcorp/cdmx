@@ -3,7 +3,7 @@
 #import "uicolor+uicolormain.h"
 
 static CGFloat const animationaddseconds = 0.3;
-static NSInteger const marginvr = 30;
+static NSInteger const marginvr = 50;
 
 @implementation vairmap
 
@@ -81,7 +81,6 @@ static NSInteger const marginvr = 30;
         [view setClipsToBounds:YES];
         [view setTranslatesAutoresizingMaskIntoConstraints:NO];
         [view setContentMode:UIViewContentModeScaleAspectFit];
-        [view setImage:item.asset];
         [view setTintColor:item.readingmodel.index.color];
         [view setAlpha:0];
         
@@ -93,14 +92,19 @@ static NSInteger const marginvr = 30;
         
         [overview addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[view]-0-|" options:0 metrics:metrics views:views]];
         [overview addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[view]-0-|" options:0 metrics:metrics views:views]];
-        
-        [UIView animateWithDuration:animationseconds animations:
-         ^
-         {
-             [wiew setAlpha:1];
-         }];
-        
         animationseconds += animationaddseconds;
+        
+        dispatch_async(dispatch_get_main_queue(),
+                       ^
+                       {
+                           [wiew setImage:item.asset];
+                           
+                           [UIView animateWithDuration:animationseconds animations:
+                            ^
+                            {
+                                [wiew setAlpha:1];
+                            }];
+                       });
     }
 }
 
@@ -112,7 +116,7 @@ static NSInteger const marginvr = 30;
     
     __weak typeof(self) welf = self;
     
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC), dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
                    ^
                    {
                        [welf loadmap];
