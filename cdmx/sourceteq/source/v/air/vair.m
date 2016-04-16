@@ -47,6 +47,7 @@ static NSInteger const interitem = 1;
     [collection setDataSource:self];
     [collection setDelegate:self];
     [collection registerClass:[vaircellmain class] forCellWithReuseIdentifier:cellairmainid];
+    [collection registerClass:[vaircellerror class] forCellWithReuseIdentifier:cellairerrorid];
     [collection registerClass:[vaircell class] forCellWithReuseIdentifier:cellairid];
     self.collection = collection;
     
@@ -180,7 +181,21 @@ static NSInteger const interitem = 1;
     }
     else
     {
-        height = cellmainheight;
+        if(self.error)
+        {
+            if(index.item)
+            {
+                height = cellmainheight;
+            }
+            else
+            {
+                height = cellerrorheight;
+            }
+        }
+        else
+        {
+            height = cellmainheight;
+        }
     }
     
     CGSize size = CGSizeMake(width, height);
@@ -230,8 +245,24 @@ static NSInteger const interitem = 1;
     }
     else
     {
-        cell = [col dequeueReusableCellWithReuseIdentifier:cellairmainid forIndexPath:index];
-        [(vaircellmain*)cell config];
+        if(self.error)
+        {
+            if(item)
+            {
+                cell = [col dequeueReusableCellWithReuseIdentifier:cellairmainid forIndexPath:index];
+                [(vaircellmain*)cell config];
+            }
+            else
+            {
+                cell = [col dequeueReusableCellWithReuseIdentifier:cellairerrorid forIndexPath:index];
+                [(vaircellerror*)cell config:self error:self.error];
+            }
+        }
+        else
+        {
+            cell = [col dequeueReusableCellWithReuseIdentifier:cellairmainid forIndexPath:index];
+            [(vaircellmain*)cell config];
+        }
     }
     
     return cell;
