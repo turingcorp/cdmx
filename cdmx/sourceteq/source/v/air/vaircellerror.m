@@ -34,11 +34,12 @@
     [self addSubview:label];
     [self addSubview:button];
     
-    NSDictionary *views = @{@"label":label};
+    NSDictionary *views = @{@"label":label, @"button":button};
     NSDictionary *metrics = @{};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[label]-20-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-10-[label]-0-[button(34)]-20-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-80-[button]-80-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-10-[label]-0-[button(34)]-30-|" options:0 metrics:metrics views:views]];
     
     return self;
 }
