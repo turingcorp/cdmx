@@ -21,3 +21,20 @@
 "air_main_uvlabel"="UV index";
 "air_main_temp"="%@ °C";
 "air_main_hum"="%@ %%";
+
+"map_district_alv"="Alvaro Obregon";
+"map_district_azc"="Azcapotzalco";
+"map_district_bj"="Benito Juarez";
+"map_district_coyo"="Coyoacan";
+"map_district_cuaji"="Cuajimalpa";
+"map_district_cuau"="Cuauhtemoc";
+"map_district_gam"="Gustavo A Madero";
+"map_district_iztaca"="Iztacalco";
+"map_district_iztapa"="Iztapalapa";
+"map_district_mag"="Magdalena Contreras";
+"map_district_mh"="Miguel Hidalgo";
+"map_district_milp"="Milpa Alta";
+"map_district_tlahu"="Tlahuac";
+"map_district_tlal"="Tlalpan";
+"map_district_ven"="Venustiano Carranza";
+"map_district_xochi"="Xochimilco";
