@@ -2,7 +2,7 @@
 #import "genericconstants.h"
 #import "uicolor+uicolormain.h"
 
-static CGFloat const animationaddseconds = 0.2;
+static CGFloat const animationaddseconds = 0.3;
 static NSInteger const marginvr = 30;
 
 @implementation vairmap
@@ -82,6 +82,7 @@ static NSInteger const marginvr = 30;
         [view setTranslatesAutoresizingMaskIntoConstraints:NO];
         [view setContentMode:UIViewContentModeScaleAspectFit];
         [view setImage:item.asset];
+        [view setTintColor:item.readingmodel.index.color];
         [view setAlpha:0];
         
         __weak typeof(view) wiew = view;
