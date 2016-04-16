@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA000D2C1CC29D2200A82EC0 /* mmap.m in Sources */ = {isa = PBXBuildFile; fileRef = DA000D2B1CC29D2200A82EC0 /* mmap.m */; };
 		DA87082A1CBE840F000C08E1 /* amanager.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8708291CBE840F000C08E1 /* amanager.m */; };
 		DA87082D1CBE844A000C08E1 /* acall.m in Sources */ = {isa = PBXBuildFile; fileRef = DA87082C1CBE844A000C08E1 /* acall.m */; };
 		DA8708311CBE8532000C08E1 /* aparser.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8708301CBE8532000C08E1 /* aparser.m */; };
@@ -104,6 +105,8 @@
 
 /* Begin PBXFileReference section */
 		B9E47528F2CEFA76F37D95E3 /* libPods-cdmx.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-cdmx.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA000D2A1CC29D2200A82EC0 /* mmap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mmap.h; sourceTree = "<group>"; };
+		DA000D2B1CC29D2200A82EC0 /* mmap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mmap.m; sourceTree = "<group>"; };
 		DA8708281CBE840F000C08E1 /* amanager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = amanager.h; sourceTree = "<group>"; };
 		DA8708291CBE840F000C08E1 /* amanager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = amanager.m; sourceTree = "<group>"; };
 		DA87082B1CBE844A000C08E1 /* acall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = acall.h; sourceTree = "<group>"; };
@@ -316,6 +319,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		DA000D291CC29D1700A82EC0 /* map */ = {
+			isa = PBXGroup;
+			children = (
+				DA000D2A1CC29D2200A82EC0 /* mmap.h */,
+				DA000D2B1CC29D2200A82EC0 /* mmap.m */,
+			);
+			path = map;
+			sourceTree = "<group>";
+		};
 		DA8708251CBE8245000C08E1 /* a */ = {
 			isa = PBXGroup;
 			children = (
@@ -520,6 +532,7 @@
 		DAD33FD41CBC83E300C87502 /* m */ = {
 			isa = PBXGroup;
 			children = (
+				DA000D291CC29D1700A82EC0 /* map */,
 				DAD876181CBDBB7700A4F91C /* stations */,
 				DAD875E11CBD5B1300A4F91C /* pages */,
 				DAD33FD51CBC83E300C87502 /* db */,
@@ -887,6 +900,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA000D2C1CC29D2200A82EC0 /* mmap.m in Sources */,
 				DA8708751CBEC79C000C08E1 /* mstationsreadingitemindexactivity.m in Sources */,
 				DAD875E01CBD5A6000A4F91C /* vair.m in Sources */,
 				DA87084A1CBE9A0A000C08E1 /* mstationsnodriveplate.m in Sources */,
