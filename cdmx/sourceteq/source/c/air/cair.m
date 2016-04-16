@@ -17,6 +17,16 @@
     self.view = [[vair alloc] init:self];
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    if(self.view.firsttime)
+    {
+        [self.view viewappear];
+    }
+}
+
 #pragma mark public
 
 -(void)openmenu

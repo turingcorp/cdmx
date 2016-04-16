@@ -25,51 +25,7 @@ static NSInteger const interitem = 1;
     [self setBackgroundColor:[UIColor collection]];
     self.controller = controller;
     
-    vairbar *bar = [[vairbar alloc] init:controller];
     
-    vairmap *map = [[vairmap alloc] init:controller];
-    self.map = map;
-    
-    UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
-    [flow setHeaderReferenceSize:CGSizeZero];
-    [flow setFooterReferenceSize:CGSizeZero];
-    [flow setMinimumInteritemSpacing:0];
-    [flow setMinimumLineSpacing:interitem];
-    [flow setScrollDirection:UICollectionViewScrollDirectionVertical];
-    
-    UICollectionView *collection = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flow];
-    [collection setBackgroundColor:[UIColor clearColor]];
-    [collection setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [collection setClipsToBounds:YES];
-    [collection setShowsVerticalScrollIndicator:NO];
-    [collection setShowsHorizontalScrollIndicator:NO];
-    [collection setAlwaysBounceVertical:YES];
-    [collection setDataSource:self];
-    [collection setDelegate:self];
-    [collection registerClass:[vaircellmain class] forCellWithReuseIdentifier:cellairmainid];
-    [collection registerClass:[vaircellerror class] forCellWithReuseIdentifier:cellairerrorid];
-    [collection registerClass:[vaircell class] forCellWithReuseIdentifier:cellairid];
-    self.collection = collection;
-    
-    [self addSubview:bar];
-    [self addSubview:collection];
-    [self addSubview:map];
-    
-    NSDictionary *views = @{@"bar":bar, @"col":collection, @"map":map};
-    NSDictionary *metrics = @{@"mapheight":@(airmapheight)};
-    
-    self.layoutbarheight = [NSLayoutConstraint constraintWithItem:bar attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:navbarheight];
-    self.layoutmapheight = [NSLayoutConstraint constraintWithItem:map attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:airmapheight];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[bar]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[map]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[bar]-0-[col]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[bar]-0-[map]" options:0 metrics:metrics views:views]];
-    [self addConstraint:self.layoutbarheight];
-    [self addConstraint:self.layoutmapheight];
- 
-    [self refresh];
-    [NSNotification observe:self stationsloaded:@selector(notifiedstationsloaded:)];
     
     return self;
 }
@@ -92,7 +48,7 @@ static NSInteger const interitem = 1;
 
 #pragma mark functionality
 
--(void)refresh
+-(void)checkcontent
 {
     self.error = [mstations singleton].error;
     
@@ -106,7 +62,11 @@ static NSInteger const interitem = 1;
         self.lastreading = [[mstations singleton].readings lastObject];
         [self.map refresh];
     }
-    
+}
+
+-(void)refresh
+{
+    [self checkcontent];
     [self.collection reloadData];
 }
 
@@ -118,6 +78,14 @@ static NSInteger const interitem = 1;
 }
 
 #pragma mark public
+
+-(void)viewappear
+{
+    self.firsttime = NO;
+    [self checkcontent];
+    [self.collection setDataSource:self];
+    [self.collection setDelegate:self];
+}
 
 -(void)retry
 {
