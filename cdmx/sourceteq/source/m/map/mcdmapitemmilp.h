@@ -1,13 +1,6 @@
-//
-//  mcdmapitemmilp.h
-//  cdmx
-//
-//  Created by zero on 4/16/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
+#import <UIKit/UIKit.h>
+#import "mcdmapitem.h"
 
-#import <Foundation/Foundation.h>
-
-@interface mcdmapitemmilp : NSObject
+@interface mcdmapitemmilp:mcdmapitem
 
 @end
