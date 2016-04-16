@@ -1,13 +1,14 @@
-//
-//  mcdmapitemcuau.m
-//  cdmx
-//
-//  Created by zero on 4/16/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
-
 #import "mcdmapitemcuau.h"
 
 @implementation mcdmapitemcuau
+
+-(instancetype)init
+{
+    self = [super init:@""];
+    self.name = NSLocalizedString(@"map_district_cuau", nil);
+    self.asset = @"districts_cuau";
+    
+    return self;
+}
 
 @end

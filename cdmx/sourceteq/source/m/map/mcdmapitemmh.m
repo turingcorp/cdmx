@@ -6,7 +6,7 @@
 {
     self = [super init:@""];
     self.name = NSLocalizedString(@"map_district_mh", nil);
-    self.asset = @"gam";
+    self.asset = @"districts_mh";
     
     return self;
 }

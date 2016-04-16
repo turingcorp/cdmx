@@ -1,13 +1,14 @@
-//
-//  mcdmapitemiztaca.m
-//  cdmx
-//
-//  Created by zero on 4/16/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
-
 #import "mcdmapitemiztaca.h"
 
 @implementation mcdmapitemiztaca
+
+-(instancetype)init
+{
+    self = [super init:@""];
+    self.name = NSLocalizedString(@"map_district_iztaca", nil);
+    self.asset = @"districts_iztaca";
+    
+    return self;
+}
 
 @end
