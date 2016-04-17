@@ -1,13 +1,27 @@
-//
-//  cairgeo.m
-//  cdmx
-//
-//  Created by zero on 4/17/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
-
 #import "cairgeo.h"
 
 @implementation cairgeo
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    self.navigationController.interactivePopGestureRecognizer.delegate = self;
+}
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    self.navigationController.interactivePopGestureRecognizer.delegate = self;
+}
+
+-(UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
+
+-(BOOL)prefersStatusBarHidden
+{
+    return NO;
+}
 
 @end

@@ -14,4 +14,14 @@
     self.navigationController.interactivePopGestureRecognizer.delegate = self;
 }
 
+-(UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
+
+-(BOOL)prefersStatusBarHidden
+{
+    return NO;
+}
+
 @end
