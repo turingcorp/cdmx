@@ -9,6 +9,7 @@ static NSInteger const uvheight = 14;
 static NSInteger const uvinteritem = 3;
 static NSInteger const uvpadding = 10;
 static NSInteger const uvmax = 11;
+static NSInteger const labeltop = 210;
 
 @implementation vaircellmain
 
@@ -143,7 +144,7 @@ static NSInteger const uvmax = 11;
     [self addSubview:collection];
     
     NSDictionary *views = @{@"icontemp":icontemp, @"iconhum":iconhum, @"label":label, @"labeltemp":labeltemp, @"labelhumidity":labelhumidity, @"labeluv":labeluv, @"labeluvindex":labeluvindex, @"col":collection, @"iconfactory":iconfactory, @"baseindex":baseindex, @"labelindex":labelindex, @"labelindexname":labelindexname};
-    NSDictionary *metrics = @{@"colwidth":@(uvwidth), @"colheight":@(uvheight)};
+    NSDictionary *metrics = @{@"colwidth":@(uvwidth), @"colheight":@(uvheight), @"label":@(top)};
     
     self.layoutlabelheight = [NSLayoutConstraint constraintWithItem:label attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:0];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[iconfactory(30)]-12-[baseindex(66)]-8-[labelindexname(150)]" options:0 metrics:metrics views:views]];
@@ -162,7 +163,7 @@ static NSInteger const uvmax = 11;
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[col(colwidth)]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-155-[col(colheight)]-6-[labeluv]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[col]-2-[labeluvindex]" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-210-[label]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(labeltop)-[label]" options:0 metrics:metrics views:views]];
     [self addConstraint:self.layoutlabelheight];
     
     return self;

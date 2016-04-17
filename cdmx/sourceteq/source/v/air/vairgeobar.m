@@ -15,8 +15,8 @@
     UIButton *buttonback = [[UIButton alloc] init];
     [buttonback setClipsToBounds:YES];
     [buttonback setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [buttonback setImage:[[UIImage imageNamed:@"generic_backbutton"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];
-    [buttonback setImage:[[UIImage imageNamed:@"generic_backbutton"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateHighlighted];
+    [buttonback setImage:[[UIImage imageNamed:@"general_backbutton"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];
+    [buttonback setImage:[[UIImage imageNamed:@"general_backbutton"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateHighlighted];
     [buttonback.imageView setTintColor:[UIColor colorWithWhite:1 alpha:0.2]];
     [buttonback.imageView setContentMode:UIViewContentModeScaleAspectFit];
     [buttonback addTarget:self action:@selector(actionback:) forControlEvents:UIControlEventTouchUpInside];
@@ -27,7 +27,7 @@
     NSDictionary *metrics = @{};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[buttonback(60)]" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[buttonback(55)]-(-5)-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[buttonback(45)]-0-|" options:0 metrics:metrics views:views]];
     
     return self;
 }
