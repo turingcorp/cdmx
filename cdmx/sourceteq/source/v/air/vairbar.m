@@ -83,7 +83,7 @@
 
 -(void)actiongeo:(UIButton*)button
 {
-    
+    [self.controller opengeo];
 }
 
 @end

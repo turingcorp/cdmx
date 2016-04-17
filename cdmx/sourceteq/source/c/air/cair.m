@@ -38,8 +38,7 @@
 -(void)opengeo
 {
     cairgeo *controller = [[cairgeo alloc] init];
-    
-    [self.navigationController pushViewController:controller animated:YES];
+    [[cmain singleton] pushViewController:controller animated:YES];
 }
 
 @end
