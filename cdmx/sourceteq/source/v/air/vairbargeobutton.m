@@ -1,6 +1,9 @@
 #import "vairbargeobutton.h"
 #import "uifont+uifontmain.h"
 
+static NSInteger const height = 45;
+static NSInteger const width = 100;
+
 @implementation vairbargeobutton
 
 -(instancetype)init
@@ -40,6 +43,13 @@
     [self hover];
     
     return self;
+}
+
+-(CGSize)intrinsicContentSize
+{
+    CGSize size = CGSizeMake(width, height);
+    
+    return size;
 }
 
 -(void)setSelected:(BOOL)selected

@@ -16,6 +16,9 @@
     [menubutton addTarget:self action:@selector(actionmenu:) forControlEvents:UIControlEventTouchUpInside];
     self.menubutton = menubutton;
     
+    vairbargeobutton *geobutton = [[vairbargeobutton alloc] init];
+    self.geobutton = geobutton;
+    
     UIImageView *icon = [[UIImageView alloc] init];
     [icon setImage:[UIImage imageNamed:@"general_environment"]];
     [icon setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -26,14 +29,17 @@
     
     [self addSubview:icon];
     [self addSubview:menubutton];
+    [self addSubview:geobutton];
     
-    NSDictionary *views = @{@"menubutton":menubutton, @"icon":icon};
+    NSDictionary *views = @{@"menubutton":menubutton, @"icon":icon, @"geobutton":geobutton};
     NSDictionary *metrics = @{};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[menubutton]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[menubutton]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-100-[icon]-100-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[icon(30)]-8-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[geobutton]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[geobutton]-0-|" options:0 metrics:metrics views:views]];
     
     return self;
 }
