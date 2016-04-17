@@ -17,6 +17,7 @@
     self.menubutton = menubutton;
     
     vairbargeobutton *geobutton = [[vairbargeobutton alloc] init];
+    [geobutton addTarget:self action:@selector(actiongeo:) forControlEvents:UIControlEventTouchUpInside];
     self.geobutton = geobutton;
     
     UIImageView *icon = [[UIImageView alloc] init];
@@ -78,6 +79,11 @@
 -(void)actionmenu:(UIButton*)button
 {
     [self.controller openmenu];
+}
+
+-(void)actiongeo:(UIButton*)button
+{
+    
 }
 
 @end
