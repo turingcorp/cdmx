@@ -38,4 +38,11 @@
     self.view = [[vairgeo alloc] init:self];
 }
 
+#pragma mark public
+
+-(void)back
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 @end

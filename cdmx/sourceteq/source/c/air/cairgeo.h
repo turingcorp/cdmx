@@ -2,4 +2,6 @@
 
 @interface cairgeo:UIViewController<UIGestureRecognizerDelegate>
 
+-(void)back;
+
 @end
