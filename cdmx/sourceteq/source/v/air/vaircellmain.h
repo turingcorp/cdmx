@@ -12,6 +12,7 @@
 @property(weak, nonatomic)UILabel *labelindex;
 @property(weak, nonatomic)UILabel *labelindexname;
 @property(weak, nonatomic)UIView *baseindex;
+@property(weak, nonatomic)NSLayoutConstraint *layoutlabeltop;
 @property(weak, nonatomic)NSLayoutConstraint *layoutlabelheight;
 
 @end

@@ -9,7 +9,6 @@ static NSInteger const uvheight = 14;
 static NSInteger const uvinteritem = 3;
 static NSInteger const uvpadding = 10;
 static NSInteger const uvmax = 11;
-static NSInteger const labeltop = 210;
 
 @implementation vaircellmain
 
@@ -144,9 +143,10 @@ static NSInteger const labeltop = 210;
     [self addSubview:collection];
     
     NSDictionary *views = @{@"icontemp":icontemp, @"iconhum":iconhum, @"label":label, @"labeltemp":labeltemp, @"labelhumidity":labelhumidity, @"labeluv":labeluv, @"labeluvindex":labeluvindex, @"col":collection, @"iconfactory":iconfactory, @"baseindex":baseindex, @"labelindex":labelindex, @"labelindexname":labelindexname};
-    NSDictionary *metrics = @{@"colwidth":@(uvwidth), @"colheight":@(uvheight), @"label":@(top)};
+    NSDictionary *metrics = @{@"colwidth":@(uvwidth), @"colheight":@(uvheight)};
     
     self.layoutlabelheight = [NSLayoutConstraint constraintWithItem:label attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:0];
+    self.layoutlabeltop = [NSLayoutConstraint constraintWithItem:label attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1 constant:0];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[iconfactory(30)]-12-[baseindex(66)]-8-[labelindexname(150)]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-15-[iconfactory(30)]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-13-[baseindex(34)]" options:0 metrics:metrics views:views]];
@@ -163,8 +163,8 @@ static NSInteger const labeltop = 210;
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[col(colwidth)]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-155-[col(colheight)]-6-[labeluv]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[col]-2-[labeluvindex]" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(labeltop)-[label]" options:0 metrics:metrics views:views]];
     [self addConstraint:self.layoutlabelheight];
+    [self addConstraint:self.layoutlabeltop];
     
     return self;
 }
@@ -184,27 +184,8 @@ static NSInteger const labeltop = 210;
     
     if([mstations singleton].uv)
     {
-        NSMutableAttributedString *mut = [[NSMutableAttributedString alloc] init];
-        
-        NSDictionary *dicttitle = @{NSFontAttributeName:[UIFont boldsize:17], NSForegroundColorAttributeName:[UIColor colorWithWhite:0 alpha:0.7]};
-        NSDictionary *dictdescr = @{NSFontAttributeName:[UIFont regularsize:15], NSForegroundColorAttributeName:[UIColor colorWithWhite:0 alpha:0.4]};
-        NSString *stringtitle = [mstations singleton].uv.title;
-        NSString *stringdescr = [mstations singleton].uv.descr;
-        NSAttributedString *attrtitle = [[NSAttributedString alloc] initWithString:stringtitle attributes:dicttitle];
-        NSAttributedString *attrdescr = [[NSAttributedString alloc] initWithString:stringdescr attributes:dictdescr];
-        [mut appendAttributedString:attrtitle];
-        [mut appendAttributedString:attrdescr];
-        
-        CGFloat width = self.bounds.size.width - 20;
-        CGFloat height = ceilf([mut boundingRectWithSize:CGSizeMake(width, 300) options:NSStringDrawingUsesFontLeading|NSStringDrawingUsesLineFragmentOrigin context:nil].size.height);
-        
-        [self.label setAttributedText:mut];
-        self.layoutlabelheight.constant = height;
-        
         NSString *stringindex = [NSString stringWithFormat:@"%@", @([mstations singleton].uv.index.number)];
         [self.labeluvindex setText:stringindex];
-        
-        [self.collection reloadData];
     }
     
     if([mstations singleton].generalconditions)
@@ -215,6 +196,8 @@ static NSInteger const labeltop = 210;
         [self.labeltemp setText:stringtemp];
         [self.labelhumidity setText:stringhum];
     }
+    
+    [self.collection reloadData];
 }
 
 #pragma mark -

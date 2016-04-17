@@ -6,16 +6,22 @@
 #import "genericconstants.h"
 #import "nsnotification+nsnotificationmain.h"
 #import "mstations.h"
+#import "uifont+uifontmain.h"
 
 static NSString* const cellairerrorid = @"cellairerror";
 static NSString* const cellairmainid = @"cellairmain";
 static NSString* const cellairid = @"cellair";
 static NSInteger const cellerrorheight = 200;
-static NSInteger const cellmainheight = 360;
 static NSInteger const cellheight = 65;
 static NSInteger const interitem = 1;
+static NSInteger const labelmaincelltop = 210;
+static NSInteger const labelmaincellbottom = 20;
 
 @implementation vair
+{
+    NSMutableAttributedString *stringmaincell;
+    NSInteger maincellstringheight;
+}
 
 -(instancetype)init:(cair*)controller
 {
@@ -73,6 +79,20 @@ static NSInteger const interitem = 1;
     {
         self.lastreading = [[mstations singleton].readings lastObject];
         [self.map refresh];
+        
+        stringmaincell = [[NSMutableAttributedString alloc] init];
+        
+        NSDictionary *dicttitle = @{NSFontAttributeName:[UIFont boldsize:17], NSForegroundColorAttributeName:[UIColor colorWithWhite:0 alpha:0.7]};
+        NSDictionary *dictdescr = @{NSFontAttributeName:[UIFont regularsize:15], NSForegroundColorAttributeName:[UIColor colorWithWhite:0 alpha:0.4]};
+        NSString *stringtitle = [mstations singleton].uv.title;
+        NSString *stringdescr = [mstations singleton].uv.descr;
+        NSAttributedString *attrtitle = [[NSAttributedString alloc] initWithString:stringtitle attributes:dicttitle];
+        NSAttributedString *attrdescr = [[NSAttributedString alloc] initWithString:stringdescr attributes:dictdescr];
+        [stringmaincell appendAttributedString:attrtitle];
+        [stringmaincell appendAttributedString:attrdescr];
+        
+        CGFloat width = self.bounds.size.width - 20;
+        maincellstringheight = ceilf([stringmaincell boundingRectWithSize:CGSizeMake(width, 300) options:NSStringDrawingUsesFontLeading|NSStringDrawingUsesLineFragmentOrigin context:nil].size.height);
     }
 }
 
@@ -201,7 +221,7 @@ static NSInteger const interitem = 1;
         {
             if(index.item)
             {
-                height = cellmainheight;
+                height = labelmaincelltop + labelmaincellbottom;
             }
             else
             {
@@ -210,7 +230,7 @@ static NSInteger const interitem = 1;
         }
         else
         {
-            height = cellmainheight;
+            height = labelmaincelltop + labelmaincellbottom + maincellstringheight;
         }
     }
     
@@ -278,6 +298,9 @@ static NSInteger const interitem = 1;
         {
             cell = [col dequeueReusableCellWithReuseIdentifier:cellairmainid forIndexPath:index];
             [(vaircellmain*)cell config];
+            ((vaircellmain*)cell).layoutlabeltop.constant = labelmaincelltop;
+            ((vaircellmain*)cell).layoutlabelheight.constant = maincellstringheight;
+            [((vaircellmain*)cell).label setAttributedText:stringmaincell];
         }
     }
     
