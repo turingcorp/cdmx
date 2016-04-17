@@ -34,4 +34,9 @@
     [[cmain singleton].pages pagemenu];
 }
 
+-(void)opengeo
+{
+    [self.navigationController ];
+}
+
 @end

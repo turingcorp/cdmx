@@ -3,5 +3,6 @@
 @interface cair:UIViewController
 
 -(void)openmenu;
+-(void)opengeo;
 
 @end
