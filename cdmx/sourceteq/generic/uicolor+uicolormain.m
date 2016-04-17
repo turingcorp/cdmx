@@ -9,7 +9,7 @@
 
 +(instancetype)second
 {
-    return [UIColor colorWithRed:0 green:0.49803 blue:0.62745 alpha:1];
+    return [UIColor colorWithRed:46/255.0 green:86/255.0 blue:138/255.0 alpha:1];
 }
 
 +(instancetype)collection

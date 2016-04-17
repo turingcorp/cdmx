@@ -1,13 +1,10 @@
-//
-//  vairgeobar.h
-//  cdmx
-//
-//  Created by zero on 4/17/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
+#import <UIKit/UIKit.h>
+#import "cairgeo.h"
 
-#import <Foundation/Foundation.h>
+@interface vairgeobar:UIView
 
-@interface vairgeobar : NSObject
+-(instancetype)init:(cairgeo*)controller;
+
+@property(weak, nonatomic)cairgeo *controller;
 
 @end
