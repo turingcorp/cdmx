@@ -1,13 +1,15 @@
-//
-//  vairgeo.m
-//  cdmx
-//
-//  Created by zero on 4/17/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
-
 #import "vairgeo.h"
 
 @implementation vairgeo
+
+-(instancetype)init:(cairgeo*)controller
+{
+    self = [super init];
+    [self setClipsToBounds:YES];
+    [self setBackgroundColor:[UIColor whiteColor]];
+    self.controller = controller;
+    
+    return self;
+}
 
 @end

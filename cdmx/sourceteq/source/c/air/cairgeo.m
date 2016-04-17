@@ -1,6 +1,15 @@
 #import "cairgeo.h"
+#import "vairgeo.h"
+
+@interface cairgeo ()
+
+@property(strong, nonatomic)vairgeo *view;
+
+@end
 
 @implementation cairgeo
+
+@dynamic view;
 
 -(void)viewDidAppear:(BOOL)animated
 {
@@ -22,6 +31,11 @@
 -(BOOL)prefersStatusBarHidden
 {
     return NO;
+}
+
+-(void)loadView
+{
+    self.view = [[vairgeo alloc] init:self];
 }
 
 @end

@@ -1,6 +1,7 @@
 #import "cair.h"
 #import "vair.h"
 #import "cmain.h"
+#import "cairgeo.h"
 
 @interface cair ()
 
@@ -36,7 +37,9 @@
 
 -(void)opengeo
 {
-    [self.navigationController ];
+    cairgeo *controller = [[cairgeo alloc] init];
+    
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 @end
