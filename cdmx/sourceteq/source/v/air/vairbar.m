@@ -67,6 +67,7 @@
                    {
                        [welf.menubutton setAlpha:alpha];
                        [welf.icon setAlpha:alpha];
+                       [welf.geobutton setAlpha:alpha];
                    });
     
     [super layoutSubviews];

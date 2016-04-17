@@ -2,7 +2,7 @@
 #import "uifont+uifontmain.h"
 
 static NSInteger const height = 45;
-static NSInteger const width = 100;
+static NSInteger const width = 120;
 
 @implementation vairbargeobutton
 
@@ -21,24 +21,24 @@ static NSInteger const width = 100;
     [icon setImage:[[UIImage imageNamed:@"stations_geo"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
     self.icon = icon;
     
-    UILabel *title = [[UILabel alloc] init];
-    [title setBackgroundColor:[UIColor clearColor]];
-    [title setUserInteractionEnabled:NO];
-    [title setFont:[UIFont boldsize:15]];
-    [title setText:NSLocalizedString(@"air_button_map", nil)];
-    [title setTranslatesAutoresizingMaskIntoConstraints:NO];
-    self.title = title;
+    UILabel *text = [[UILabel alloc] init];
+    [text setBackgroundColor:[UIColor clearColor]];
+    [text setUserInteractionEnabled:NO];
+    [text setFont:[UIFont boldsize:13]];
+    [text setText:NSLocalizedString(@"air_button_map", nil)];
+    [text setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [text setTextAlignment:NSTextAlignmentRight];
+    self.text = text;
     
     [self addSubview:icon];
-    [self addSubview:title];
+    [self addSubview:text];
     
-    NSDictionary *views = @{@"icon":icon, @"title":title};
+    NSDictionary *views = @{@"icon":icon, @"text":text};
     NSDictionary *metrics = @{};
     
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[title]" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[icon(30)]-20-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[text]-8-[icon(14)]-14-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[icon]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[title]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[text]-0-|" options:0 metrics:metrics views:views]];
     
     [self hover];
     
@@ -71,12 +71,12 @@ static NSInteger const width = 100;
     if(self.isSelected || self.isHighlighted)
     {
         [self.icon setTintColor:[UIColor colorWithWhite:1 alpha:0.2]];
-        [self.title setTintColor:[UIColor colorWithWhite:1 alpha:0.2]];
+        [self.text setTextColor:[UIColor colorWithWhite:1 alpha:0.2]];
     }
     else
     {
         [self.icon setTintColor:[UIColor whiteColor]];
-        [self.title setTintColor:[UIColor whiteColor]];
+        [self.text setTextColor:[UIColor colorWithWhite:1 alpha:0.7]];
     }
 }
 
