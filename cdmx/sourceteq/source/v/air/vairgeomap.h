@@ -1,13 +1,7 @@
-//
-//  vairgeomap.h
-//  cdmx
-//
-//  Created by zero on 4/17/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
+#import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface vairgeomap : NSObject
+@interface vairgeomap:MKMapView
 
 @end
