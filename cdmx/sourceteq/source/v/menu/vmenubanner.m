@@ -32,7 +32,7 @@
     [title setTranslatesAutoresizingMaskIntoConstraints:NO];
     [title setFont:[UIFont regularsize:30]];
     [title setTextColor:[UIColor whiteColor]];
-    [title setText:@"CDMX"];
+    [title setText:NSLocalizedString(@"app_name", nil)];
     [title setTextAlignment:NSTextAlignmentCenter];
     
     [self addSubview:background];

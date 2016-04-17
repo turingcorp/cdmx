@@ -1,3 +1,5 @@
+"app_name"="CDMX";
+
 "pages_section_stats"="Stats";
 "pages_item_air_name"="Air quality";
 "pages_item_air_descr"="\nCurrent air quality in the city";
@@ -18,6 +20,7 @@
 "air_index_verybad"="Very bad";
 "air_index_extreme"="Extreme";
 
+"air_button_map"="My location";
 "air_button_retry"="Try again";
 "air_main_uvlabel"="UV index";
 "air_main_temp"="%@ °C";
