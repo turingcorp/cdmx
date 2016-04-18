@@ -19,7 +19,7 @@ static CGFloat const mapspansize = 0.075;
     self.mapspan = MKCoordinateSpanMake(mapspansize, mapspansize);
     
     vairgeobar *bar = [[vairgeobar alloc] init:controller];
-    self.bar;
+    self.bar = bar;
     
     vairgeomap *map = [[vairgeomap alloc] init];
     self.map = map;
