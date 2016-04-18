@@ -34,6 +34,8 @@
 		DA000D821CC459D100A82EC0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA000D811CC459D100A82EC0 /* MapKit.framework */; };
 		DA000D851CC461D600A82EC0 /* vairgeomapann.m in Sources */ = {isa = PBXBuildFile; fileRef = DA000D841CC461D600A82EC0 /* vairgeomapann.m */; };
 		DA000D881CC4737800A82EC0 /* mstationsannotation.m in Sources */ = {isa = PBXBuildFile; fileRef = DA000D871CC4737800A82EC0 /* mstationsannotation.m */; };
+		DA188B041CC59EB300C91AF2 /* vairdetail.m in Sources */ = {isa = PBXBuildFile; fileRef = DA188B031CC59EB300C91AF2 /* vairdetail.m */; };
+		DA188B071CC59F2600C91AF2 /* vairdetailheader.m in Sources */ = {isa = PBXBuildFile; fileRef = DA188B061CC59F2600C91AF2 /* vairdetailheader.m */; };
 		DA87082A1CBE840F000C08E1 /* amanager.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8708291CBE840F000C08E1 /* amanager.m */; };
 		DA87082D1CBE844A000C08E1 /* acall.m in Sources */ = {isa = PBXBuildFile; fileRef = DA87082C1CBE844A000C08E1 /* acall.m */; };
 		DA8708311CBE8532000C08E1 /* aparser.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8708301CBE8532000C08E1 /* aparser.m */; };
@@ -184,6 +186,10 @@
 		DA000D841CC461D600A82EC0 /* vairgeomapann.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vairgeomapann.m; sourceTree = "<group>"; };
 		DA000D861CC4737800A82EC0 /* mstationsannotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mstationsannotation.h; sourceTree = "<group>"; };
 		DA000D871CC4737800A82EC0 /* mstationsannotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mstationsannotation.m; sourceTree = "<group>"; };
+		DA188B021CC59EB300C91AF2 /* vairdetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vairdetail.h; sourceTree = "<group>"; };
+		DA188B031CC59EB300C91AF2 /* vairdetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vairdetail.m; sourceTree = "<group>"; };
+		DA188B051CC59F2600C91AF2 /* vairdetailheader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vairdetailheader.h; sourceTree = "<group>"; };
+		DA188B061CC59F2600C91AF2 /* vairdetailheader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vairdetailheader.m; sourceTree = "<group>"; };
 		DA8708281CBE840F000C08E1 /* amanager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = amanager.h; sourceTree = "<group>"; };
 		DA8708291CBE840F000C08E1 /* amanager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = amanager.m; sourceTree = "<group>"; };
 		DA87082B1CBE844A000C08E1 /* acall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = acall.h; sourceTree = "<group>"; };
@@ -775,6 +781,10 @@
 				DA000D7F1CC4596400A82EC0 /* vairgeomap.m */,
 				DA000D831CC461D600A82EC0 /* vairgeomapann.h */,
 				DA000D841CC461D600A82EC0 /* vairgeomapann.m */,
+				DA188B021CC59EB300C91AF2 /* vairdetail.h */,
+				DA188B031CC59EB300C91AF2 /* vairdetail.m */,
+				DA188B051CC59F2600C91AF2 /* vairdetailheader.h */,
+				DA188B061CC59F2600C91AF2 /* vairdetailheader.m */,
 			);
 			path = air;
 			sourceTree = "<group>";
@@ -1110,6 +1120,7 @@
 				DA8708AD1CBF3517000C08E1 /* mstationsreadingitemindexnodata.m in Sources */,
 				DAD340031CBC83E300C87502 /* valert.m in Sources */,
 				DA000D5C1CC29FE600A82EC0 /* mcdmapitemxochi.m in Sources */,
+				DA188B071CC59F2600C91AF2 /* vairdetailheader.m in Sources */,
 				DAD8761E1CBDBBD100A4F91C /* mstationsitem.m in Sources */,
 				DAD8761B1CBDBB8300A4F91C /* mstations.m in Sources */,
 				DA000D771CC447C200A82EC0 /* vairgeo.m in Sources */,
@@ -1134,6 +1145,7 @@
 				DA000D3B1CC29E8800A82EC0 /* mcdmapitemazc.m in Sources */,
 				DA8708501CBE9F0D000C08E1 /* mstationsreadinguvindex.m in Sources */,
 				DAD8760F1CBD72A200A4F91C /* vmenuheader.m in Sources */,
+				DA188B041CC59EB300C91AF2 /* vairdetail.m in Sources */,
 				DA8708A81CBF0C16000C08E1 /* mstationsnodrivehologramtwice.m in Sources */,
 				DA000D4A1CC29F7A00A82EC0 /* mcdmapitembj.m in Sources */,
 				DAD875FC1CBD6CF200A4F91C /* vmenubutton.m in Sources */,
