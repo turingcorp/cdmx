@@ -15,6 +15,11 @@
 {
     [super viewDidAppear:animated];
     self.navigationController.interactivePopGestureRecognizer.delegate = self;
+    
+    if(!self.view.map.delegate)
+    {
+        [self.view loadmap];
+    }
 }
 
 -(void)viewWillDisappear:(BOOL)animated

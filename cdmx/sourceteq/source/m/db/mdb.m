@@ -49,8 +49,8 @@
         NSString *rawshortname = rawstation[@"shortname"];
         NSString *rawname = rawstation[@"name"];
         NSString *rawmessage = rawstation[@"message"];
-        CGFloat coordlatitude = rawlatitude * coordinatesmult;
-        CGFloat coordlongitude = rawlongitude * coordinatesmult;
+        CGFloat coordlatitude = rawlatitude / coordinatesmult;
+        CGFloat coordlongitude = rawlongitude / coordinatesmult;
         mstationsitemlocation *location = [[mstationsitemlocation alloc] init:coordlatitude lon:coordlongitude];
         
         mstationsitem *item = [[mstationsitem alloc] init];

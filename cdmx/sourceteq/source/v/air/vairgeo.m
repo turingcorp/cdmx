@@ -1,9 +1,13 @@
 #import "vairgeo.h"
 #import "vairgeobar.h"
+#import "mstations.h"
 
 static CGFloat const mapspansize = 0.025;
 
 @implementation vairgeo
+{
+    BOOL userfound;
+}
 
 -(instancetype)init:(cairgeo*)controller
 {
@@ -12,6 +16,7 @@ static CGFloat const mapspansize = 0.025;
     [self setBackgroundColor:[UIColor whiteColor]];
     self.controller = controller;
     
+    userfound = NO;
     self.mapspan = MKCoordinateSpanMake(mapspansize, mapspansize);
     vairgeobar *bar = [[vairgeobar alloc] init:controller];
     
@@ -26,7 +31,7 @@ static CGFloat const mapspansize = 0.025;
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[bar]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[bar]-0-[map]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[bar]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[map]-0-|" options:0 metrics:metrics views:views]];
     
     return self;
 }
@@ -55,7 +60,7 @@ static CGFloat const mapspansize = 0.025;
             
             self.locationmanager = [[CLLocationManager alloc] init];
             [self.locationmanager setDesiredAccuracy:kCLLocationAccuracyNearestTenMeters];
-            [self.locationmanager setDistanceFilter:20];
+            [self.locationmanager setDistanceFilter:30];
             [self.locationmanager setDelegate:self];
             
             if([self.locationmanager respondsToSelector:@selector(requestWhenInUseAuthorization)])
@@ -76,26 +81,61 @@ static CGFloat const mapspansize = 0.025;
             break;
             
         case kCLAuthorizationStatusDenied:
-            
-            [self afterfocusoncenter];
-            
             break;
         case kCLAuthorizationStatusRestricted:
             break;
     }
-}
-
--(void)afterfocusoncenter
-{
-    __weak typeof(self) welf = self;
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_MSEC * 500), dispatch_get_main_queue(),
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC), dispatch_get_main_queue(),
                    ^
                    {
-//                       [weakself.map focusoncenter];
+                       [self centeritems];
                    });
 }
 
+-(void)centeritems
+{
+    if([mstations singleton].readings.count)
+    {
+        NSArray<mstationsreadingitem*> *items = [[mstations singleton].readings lastObject].items;
+        BOOL first = YES;
+        
+        for(mstationsreadingitem *item in items)
+        {
+            MKPointAnnotation *point;
+            
+            if(item.location)
+            {
+                point = [[MKPointAnnotation alloc] init];
+                point.coordinate = [item.location coordinates];
+                point.title = item.name;
+            }
+            else if(item.station.location)
+            {
+                point = [[MKPointAnnotation alloc] init];
+                point.coordinate = [item.station.location coordinates];
+                point.title = item.station.name;
+            }
+            
+            if(point)
+            {
+                [self.map addAnnotation:point];
+                
+                if(first)
+                {
+                    first = NO;
+                    
+                    if(!userfound)
+                    {
+                        MKCoordinateRegion region = MKCoordinateRegionMake(point.coordinate, self.mapspan);
+                        [self.map setRegion:region animated:YES];
+                        [self.map selectAnnotation:point animated:YES];
+                    }
+                }
+            }
+        }
+    }
+}
 
 #pragma mark public
 
@@ -117,6 +157,12 @@ static CGFloat const mapspansize = 0.025;
 -(void)mapView:(MKMapView*)mapview didUpdateUserLocation:(MKUserLocation*)userlocation
 {
     self.userlocation = userlocation.coordinate;
+    
+    if(!userfound)
+    {
+        userfound = YES;
+        [self centeruser];
+    }
 }
 
 -(void)locationManager:(CLLocationManager*)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
@@ -126,23 +172,19 @@ static CGFloat const mapspansize = 0.025;
 //        [self.menu showbuttonuser];
         [self.map setShowsUserLocation:YES];
     }
-    else
-    {
-//        [self.map focusoncenter];
-    }
 }
 
 -(MKAnnotationView*)mapView:(MKMapView*)mapview viewForAnnotation:(id<MKAnnotation>)annotation
 {
     MKAnnotationView *anview;
     
-    if(annotation == self.annotation)
+    if(annotation == self.map.userLocation)
     {
-        anview = [[vitemlocationannotation alloc] init];
+        anview = [mapview viewForAnnotation:annotation];
     }
     else
     {
-        anview = [mapview viewForAnnotation:annotation];
+        anview = [[vairgeomapann alloc] init];
     }
     
     return anview;
