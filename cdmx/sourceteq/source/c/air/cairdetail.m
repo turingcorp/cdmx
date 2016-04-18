@@ -2,6 +2,14 @@
 
 @implementation cairdetail
 
+-(instancetype)init:(mstationsreadingitem*)model
+{
+    self = [super init];
+    self.model = model;
+    
+    return self;
+}
+
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
