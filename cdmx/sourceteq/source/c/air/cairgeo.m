@@ -1,5 +1,6 @@
 #import "cairgeo.h"
 #import "vairgeo.h"
+#import "cairdetail.h"
 
 @interface cairgeo ()
 
@@ -57,7 +58,8 @@
 
 -(void)selectitem:(mstationsreadingitem*)item
 {
-    NSLog(@"%@", item.name);
+    cairdetail *controller = [[cairdetail alloc] init:item];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 @end

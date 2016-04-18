@@ -2,6 +2,7 @@
 #import "vair.h"
 #import "cmain.h"
 #import "cairgeo.h"
+#import "cairdetail.h"
 
 @interface cair ()
 
@@ -39,6 +40,12 @@
 {
     cairgeo *controller = [[cairgeo alloc] init];
     [[cmain singleton] pushViewController:controller animated:YES];
+}
+
+-(void)selectitem:(mstationsreadingitem*)item
+{
+    cairdetail *controller = [[cairdetail alloc] init:item];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 @end

@@ -331,4 +331,10 @@ static NSInteger const labelmaincellbottom = 20;
     return should;
 }
 
+-(void)collectionView:(UICollectionView*)col didSelectItemAtIndexPath:(NSIndexPath*)index
+{
+    mstationsreadingitem *item = [self itemforindex:index.item];
+    [self.controller selectitem:item];
+}
+
 @end
