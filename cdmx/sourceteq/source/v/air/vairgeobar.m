@@ -59,4 +59,11 @@
     [self.controller back];
 }
 
+#pragma mark public
+
+-(void)showuser
+{
+    
+}
+
 @end

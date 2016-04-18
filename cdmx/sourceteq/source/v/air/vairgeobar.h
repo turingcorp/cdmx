@@ -4,6 +4,7 @@
 @interface vairgeobar:UIView
 
 -(instancetype)init:(cairgeo*)controller;
+-(void)showuser;
 
 @property(weak, nonatomic)cairgeo *controller;
 

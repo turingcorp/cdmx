@@ -1,5 +1,4 @@
 #import "vairgeo.h"
-#import "vairgeobar.h"
 #import "mstations.h"
 
 static CGFloat const mapspansize = 0.075;
@@ -18,7 +17,9 @@ static CGFloat const mapspansize = 0.075;
     
     userfound = NO;
     self.mapspan = MKCoordinateSpanMake(mapspansize, mapspansize);
+    
     vairgeobar *bar = [[vairgeobar alloc] init:controller];
+    self.bar;
     
     vairgeomap *map = [[vairgeomap alloc] init];
     self.map = map;
@@ -52,7 +53,7 @@ static CGFloat const mapspansize = 0.075;
         case kCLAuthorizationStatusAuthorizedWhenInUse:
             
             [self.map setShowsUserLocation:YES];
-//            [self.menu showuserbutton];
+            [self.bar showuser];
             
             break;
             
@@ -74,7 +75,7 @@ static CGFloat const mapspansize = 0.075;
             
             if(![UIVisualEffectView class])
             {
-//                [self.menu showuserbutton];
+                [self.bar showuser];
                 [self.map setShowsUserLocation:YES];
             }
             
@@ -172,7 +173,7 @@ static CGFloat const mapspansize = 0.075;
 {
     if(status == kCLAuthorizationStatusAuthorizedAlways || status == kCLAuthorizationStatusAuthorizedWhenInUse)
     {
-//        [self.menu showbuttonuser];
+        [self.bar showuser];
         [self.map setShowsUserLocation:YES];
     }
 }
