@@ -1,6 +1,15 @@
 #import "cairdetail.h"
+#import "vairdetail.h"
+
+@interface cairdetail ()
+
+@property(strong, nonatomic)vairdetail *view;
+
+@end
 
 @implementation cairdetail
+
+@dynamic view;
 
 -(instancetype)init:(mstationsreadingitem*)model
 {
@@ -30,6 +39,11 @@
 -(BOOL)prefersStatusBarHidden
 {
     return NO;
+}
+
+-(void)loadView
+{
+    self.view = [[vairdetail alloc] init:self];
 }
 
 @end
