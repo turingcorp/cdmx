@@ -1,13 +1,10 @@
-//
-//  vairdetailheader.h
-//  cdmx
-//
-//  Created by zero on 4/18/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
+#import <UIKit/UIKit.h>
+#import "cairdetail.h"
 
-#import <Foundation/Foundation.h>
+@interface vairdetailheader:UIView
 
-@interface vairdetailheader : NSObject
+-(instancetype)init:(cairdetail*)controller;
+
+@property(weak, nonatomic)cairdetail *controller;
 
 @end

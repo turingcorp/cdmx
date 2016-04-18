@@ -1,13 +1,17 @@
-//
-//  vairdetailheader.m
-//  cdmx
-//
-//  Created by zero on 4/18/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
-
 #import "vairdetailheader.h"
+#import "uicolor+uicolormain.h"
 
 @implementation vairdetailheader
+
+-(instancetype)init:(cairdetail*)controller
+{
+    self = [super init];
+    [self setClipsToBounds:YES];
+    [self setBackgroundColor:[UIColor main]];
+    [self setTranslatesAutoresizingMaskIntoConstraints:NO];
+    self.controller = controller;
+    
+    return self;
+}
 
 @end
