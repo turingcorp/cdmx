@@ -55,4 +55,9 @@
     [self.view centeruser];
 }
 
+-(void)selectitem:(mstationsreadingitem*)item
+{
+    NSLog(@"%@", item.name);
+}
+
 @end

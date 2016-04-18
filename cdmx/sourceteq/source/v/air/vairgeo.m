@@ -196,7 +196,10 @@ static CGFloat const mapspansize = 0.075;
 
 -(void)mapView:(MKMapView*)mapView didSelectAnnotationView:(MKAnnotationView*)view
 {
-    NSLog(@"selected");
+    if([view isKindOfClass:[vairgeomapann class]])
+    {
+        [self.controller selectitem:((vairgeomapann*)view).annotation.model];
+    }
 }
 
 @end

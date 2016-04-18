@@ -5,6 +5,7 @@
 
 -(instancetype)init:(mstationsannotation*)annotation;
 
+@property(strong, nonatomic)mstationsannotation *annotation;
 @property(weak, nonatomic)UIImageView *img;
 @property(weak, nonatomic)UIImageView *stick;
 @property(weak, nonatomic)UILabel *labeltitle;

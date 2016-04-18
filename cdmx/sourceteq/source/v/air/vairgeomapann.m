@@ -7,6 +7,8 @@ static CGFloat const annheight = 99;
 
 @implementation vairgeomapann
 
+@dynamic annotation;
+
 -(instancetype)init:(mstationsannotation*)annotation
 {
     self = [super initWithFrame:CGRectMake(0, 0, annwidth, annheight)];
@@ -44,7 +46,7 @@ static CGFloat const annheight = 99;
     [labeltitle setTextAlignment:NSTextAlignmentCenter];
     [labeltitle setTranslatesAutoresizingMaskIntoConstraints:NO];
     [labeltitle setBackgroundColor:[UIColor clearColor]];
-    [labeltitle setTextColor:[UIColor colorWithWhite:0 alpha:0.85]];
+    [labeltitle setTextColor:[UIColor colorWithWhite:0 alpha:0.9]];
     [labeltitle setFont:[UIFont regularsize:12]];
     [labeltitle setText:annotation.title];
     self.labeltitle = labeltitle;
@@ -105,7 +107,7 @@ static CGFloat const annheight = 99;
     }
     else
     {
-        [self.img setAlpha:0.6];
+        [self.img setAlpha:0.7];
         [self.labeltitle setAlpha:0.6];
         [self.labelindex setAlpha:0.6];
         [self.stick setTintColor:[UIColor colorWithWhite:0 alpha:0.16]];
