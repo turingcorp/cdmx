@@ -1,7 +1,7 @@
 #import "vairgeomapann.h"
 
-static CGFloat const annwidth = 25;
-static CGFloat const annheight = 48;
+static CGFloat const annwidth = 200;
+static CGFloat const annheight = 105;
 
 @implementation vairgeomapann
 
@@ -10,7 +10,6 @@ static CGFloat const annheight = 48;
     self = [super initWithFrame:CGRectMake(0, 0, annwidth, annheight)];
     [self setClipsToBounds:NO];
     [self setBackgroundColor:[UIColor clearColor]];
-    [self setUserInteractionEnabled:NO];
     
     UIImageView *image = [[UIImageView alloc] init];
     [image setClipsToBounds:YES];
