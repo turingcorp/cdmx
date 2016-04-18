@@ -50,4 +50,9 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+-(void)centeruser
+{
+    [self.view centeruser];
+}
+
 @end

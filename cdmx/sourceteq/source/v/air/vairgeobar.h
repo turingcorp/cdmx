@@ -7,5 +7,6 @@
 -(void)showuser;
 
 @property(weak, nonatomic)cairgeo *controller;
+@property(weak, nonatomic)UIButton *buttonuser;
 
 @end
