@@ -1,5 +1,6 @@
 #import "vairgeomapann.h"
 #import "uifont+uifontmain.h"
+#import "uicolor+uicolormain.h"
 
 static CGFloat const annwidth = 161;
 static CGFloat const annheight = 99;
@@ -12,6 +13,7 @@ static CGFloat const annheight = 99;
     [self setClipsToBounds:NO];
     [self setBackgroundColor:[UIColor clearColor]];
     [self setUserInteractionEnabled:NO];
+    [self setCenterOffset:CGPointMake(0, annheight / -2.0)];
     self.annotation = annotation;
     NSString *stringindex = @"";
     
@@ -27,21 +29,22 @@ static CGFloat const annheight = 99;
     [image setTranslatesAutoresizingMaskIntoConstraints:NO];
     [image setImage:[[UIImage imageNamed:@"stations_annotation"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
     [image setTintColor:annotation.model.index.color];
-    self.image = image;
+    self.img = image;
     
     UIImageView *stick = [[UIImageView alloc] init];
     [stick setClipsToBounds:YES];
     [stick setContentMode:UIViewContentModeScaleAspectFit];
     [stick setUserInteractionEnabled:NO];
     [stick setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [stick setImage:[UIImage imageNamed:@"stations_annotationstick"]];
+    [stick setImage:[[UIImage imageNamed:@"stations_annotationstick"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+    self.stick = stick;
     
     UILabel *labeltitle = [[UILabel alloc] init];
     [labeltitle setUserInteractionEnabled:NO];
     [labeltitle setTextAlignment:NSTextAlignmentCenter];
     [labeltitle setTranslatesAutoresizingMaskIntoConstraints:NO];
     [labeltitle setBackgroundColor:[UIColor clearColor]];
-    [labeltitle setTextColor:[UIColor colorWithWhite:0 alpha:0.7]];
+    [labeltitle setTextColor:[UIColor colorWithWhite:0 alpha:0.85]];
     [labeltitle setFont:[UIFont regularsize:12]];
     [labeltitle setText:annotation.title];
     self.labeltitle = labeltitle;
@@ -93,20 +96,20 @@ static CGFloat const annheight = 99;
 
 -(void)hover
 {
-    CGFloat alpha;
-    
     if(self.isSelected || self.isHighlighted)
     {
-        alpha = 1;
+        [self.img setAlpha:1];
+        [self.labeltitle setAlpha:1];
+        [self.labelindex setAlpha:1];
+        [self.stick setTintColor:[UIColor main]];
     }
     else
     {
-        alpha = 0.4;
+        [self.img setAlpha:0.6];
+        [self.labeltitle setAlpha:0.6];
+        [self.labelindex setAlpha:0.6];
+        [self.stick setTintColor:[UIColor colorWithWhite:0 alpha:0.16]];
     }
-    
-    [self.image setAlpha:alpha];
-    [self.labeltitle setAlpha:alpha];
-    [self.labelindex setAlpha:alpha];
 }
 
 @end
