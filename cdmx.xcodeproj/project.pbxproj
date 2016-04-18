@@ -33,6 +33,7 @@
 		DA000D801CC4596400A82EC0 /* vairgeomap.m in Sources */ = {isa = PBXBuildFile; fileRef = DA000D7F1CC4596400A82EC0 /* vairgeomap.m */; };
 		DA000D821CC459D100A82EC0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA000D811CC459D100A82EC0 /* MapKit.framework */; };
 		DA000D851CC461D600A82EC0 /* vairgeomapann.m in Sources */ = {isa = PBXBuildFile; fileRef = DA000D841CC461D600A82EC0 /* vairgeomapann.m */; };
+		DA000D881CC4737800A82EC0 /* mstationsannotation.m in Sources */ = {isa = PBXBuildFile; fileRef = DA000D871CC4737800A82EC0 /* mstationsannotation.m */; };
 		DA87082A1CBE840F000C08E1 /* amanager.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8708291CBE840F000C08E1 /* amanager.m */; };
 		DA87082D1CBE844A000C08E1 /* acall.m in Sources */ = {isa = PBXBuildFile; fileRef = DA87082C1CBE844A000C08E1 /* acall.m */; };
 		DA8708311CBE8532000C08E1 /* aparser.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8708301CBE8532000C08E1 /* aparser.m */; };
@@ -181,6 +182,8 @@
 		DA000D811CC459D100A82EC0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		DA000D831CC461D600A82EC0 /* vairgeomapann.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vairgeomapann.h; sourceTree = "<group>"; };
 		DA000D841CC461D600A82EC0 /* vairgeomapann.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vairgeomapann.m; sourceTree = "<group>"; };
+		DA000D861CC4737800A82EC0 /* mstationsannotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mstationsannotation.h; sourceTree = "<group>"; };
+		DA000D871CC4737800A82EC0 /* mstationsannotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mstationsannotation.m; sourceTree = "<group>"; };
 		DA8708281CBE840F000C08E1 /* amanager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = amanager.h; sourceTree = "<group>"; };
 		DA8708291CBE840F000C08E1 /* amanager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = amanager.m; sourceTree = "<group>"; };
 		DA87082B1CBE844A000C08E1 /* acall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = acall.h; sourceTree = "<group>"; };
@@ -888,6 +891,8 @@
 				DA8708A41CBF0C0C000C08E1 /* mstationsnodrivehologramonce.m */,
 				DA8708A61CBF0C16000C08E1 /* mstationsnodrivehologramtwice.h */,
 				DA8708A71CBF0C16000C08E1 /* mstationsnodrivehologramtwice.m */,
+				DA000D861CC4737800A82EC0 /* mstationsannotation.h */,
+				DA000D871CC4737800A82EC0 /* mstationsannotation.m */,
 			);
 			path = stations;
 			sourceTree = "<group>";
@@ -1112,6 +1117,7 @@
 				DAD33FF71CBC83E300C87502 /* analytics.m in Sources */,
 				DA000D561CC29FC100A82EC0 /* mcdmapitemiztapa.m in Sources */,
 				DA000D531CC29FB600A82EC0 /* mcdmapitemcoyo.m in Sources */,
+				DA000D881CC4737800A82EC0 /* mstationsannotation.m in Sources */,
 				DA8708561CBE9F5D000C08E1 /* mstationsreadinguvindexmid.m in Sources */,
 				DA8708311CBE8532000C08E1 /* aparser.m in Sources */,
 				DA8708661CBEBE1F000C08E1 /* mstationsreadingitemindexgood.m in Sources */,

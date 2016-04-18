@@ -5,11 +5,12 @@ static CGFloat const annheight = 105;
 
 @implementation vairgeomapann
 
--(instancetype)init
+-(instancetype)init:(mstationsannotation*)annotation
 {
     self = [super initWithFrame:CGRectMake(0, 0, annwidth, annheight)];
     [self setClipsToBounds:NO];
     [self setBackgroundColor:[UIColor clearColor]];
+    [self setUserInteractionEnabled:NO];
     
     UIImageView *image = [[UIImageView alloc] init];
     [image setClipsToBounds:YES];

@@ -102,24 +102,28 @@ static CGFloat const mapspansize = 0.1;
         
         for(mstationsreadingitem *item in items)
         {
-            MKPointAnnotation *point;
+            mstationsannotation *annotation;
             
             if(item.location)
             {
-                point = [[MKPointAnnotation alloc] init];
-                point.coordinate = [item.location coordinates];
-                point.title = item.name;
+                NSString *title = item.name;
+                mstationsreadingitemindex *index = item.index;
+                CLLocationCoordinate2D coord = [item.location coordinates];
+                
+                annotation = [[mstationsannotation alloc] init:title index:index coord:coord];
             }
             else if(item.station.location)
             {
-                point = [[MKPointAnnotation alloc] init];
-                point.coordinate = [item.station.location coordinates];
-                point.title = item.station.name;
+                NSString *title = item.name;
+                mstationsreadingitemindex *index = item.index;
+                CLLocationCoordinate2D coord = [item.station.location coordinates];
+                
+                annotation = [[mstationsannotation alloc] init:title index:index coord:coord];
             }
             
-            if(point)
+            if(annotation)
             {
-                [self.map addAnnotation:point];
+                [self.map addAnnotation:annotation];
                 
                 if(first)
                 {
@@ -127,9 +131,8 @@ static CGFloat const mapspansize = 0.1;
                     
                     if(!userfound)
                     {
-                        MKCoordinateRegion region = MKCoordinateRegionMake(point.coordinate, self.mapspan);
+                        MKCoordinateRegion region = MKCoordinateRegionMake(annotation.coordinate, self.mapspan);
                         [self.map setRegion:region animated:YES];
-                        [self.map selectAnnotation:point animated:YES];
                     }
                 }
             }
@@ -184,7 +187,7 @@ static CGFloat const mapspansize = 0.1;
     }
     else
     {
-        anview = [[vairgeomapann alloc] init];
+        anview = [[vairgeomapann alloc] init:annotation];
     }
     
     return anview;
