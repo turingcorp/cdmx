@@ -1,7 +1,7 @@
 #import "vairgeomapann.h"
 
-static CGFloat const annwidth = 200;
-static CGFloat const annheight = 105;
+static CGFloat const annwidth = 161;
+static CGFloat const annheight = 99;
 
 @implementation vairgeomapann
 
@@ -24,7 +24,8 @@ static CGFloat const annheight = 105;
     [stick setContentMode:UIViewContentModeScaleAspectFit];
     [stick setUserInteractionEnabled:NO];
     [stick setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [stick setImage:[UIImage imageNamed:@"stations_annotationstick"]];
+    [stick setImage:[[UIImage imageNamed:@"stations_annotationstick"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+    [stick setTintColor:annotation.index.color];
     
     [self addSubview:stick];
     [self addSubview:image];
