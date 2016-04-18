@@ -2,7 +2,7 @@
 #import "vairgeobar.h"
 #import "mstations.h"
 
-static CGFloat const mapspansize = 0.15;
+static CGFloat const mapspansize = 0.075;
 
 @implementation vairgeo
 {

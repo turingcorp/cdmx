@@ -40,7 +40,7 @@ static CGFloat const annheight = 99;
     [labeltitle setTextAlignment:NSTextAlignmentCenter];
     [labeltitle setTranslatesAutoresizingMaskIntoConstraints:NO];
     [labeltitle setBackgroundColor:[UIColor clearColor]];
-    [labeltitle setTextColor:[UIColor colorWithWhite:0 alpha:0.75]];
+    [labeltitle setTextColor:[UIColor colorWithWhite:0 alpha:0.7]];
     [labeltitle setFont:[UIFont regularsize:12]];
     [labeltitle setText:annotation.title];
     
@@ -68,7 +68,7 @@ static CGFloat const annheight = 99;
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(minushalf)-[image]-(half)-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[stick]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(minushalf)-[stick]-(half)-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(minushalf)-[index(40)]-(-8)-[title]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(minushalf)-[index(42)]-(-12)-[title]" options:0 metrics:metrics views:views]];
     
     return self;
 }
