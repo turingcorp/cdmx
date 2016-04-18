@@ -12,7 +12,6 @@ static CGFloat const annheight = 99;
     [self setClipsToBounds:NO];
     [self setBackgroundColor:[UIColor clearColor]];
     [self setUserInteractionEnabled:NO];
-    
     self.annotation = annotation;
     NSString *stringindex = @"";
     
@@ -28,6 +27,7 @@ static CGFloat const annheight = 99;
     [image setTranslatesAutoresizingMaskIntoConstraints:NO];
     [image setImage:[[UIImage imageNamed:@"stations_annotation"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
     [image setTintColor:annotation.model.index.color];
+    self.image = image;
     
     UIImageView *stick = [[UIImageView alloc] init];
     [stick setClipsToBounds:YES];
@@ -44,6 +44,7 @@ static CGFloat const annheight = 99;
     [labeltitle setTextColor:[UIColor colorWithWhite:0 alpha:0.7]];
     [labeltitle setFont:[UIFont regularsize:12]];
     [labeltitle setText:annotation.title];
+    self.labeltitle = labeltitle;
     
     UILabel *labelindex = [[UILabel alloc] init];
     [labelindex setUserInteractionEnabled:NO];
@@ -53,24 +54,59 @@ static CGFloat const annheight = 99;
     [labelindex setTextColor:[UIColor blackColor]];
     [labelindex setFont:[UIFont regularsize:25]];
     [labelindex setText:stringindex];
+    self.labelindex = labelindex;
     
     [self addSubview:stick];
     [self addSubview:image];
     [self addSubview:labeltitle];
     [self addSubview:labelindex];
     
-    CGFloat halfheight = annheight / 2.0;
     NSDictionary *views = @{@"image":image, @"stick":stick, @"title":labeltitle, @"index":labelindex};
-    NSDictionary *metrics = @{@"half":@(halfheight), @"minushalf":@(-halfheight)};
+    NSDictionary *metrics = @{};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[image]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[title]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[index]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(minushalf)-[image]-(half)-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[image]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[stick]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(minushalf)-[stick]-(half)-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(minushalf)-[index(42)]-(-14)-[title]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[stick]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[index(42)]-(-14)-[title]" options:0 metrics:metrics views:views]];
+    
+    [self hover];
     
     return self;
 }
+
+-(void)setSelected:(BOOL)selected
+{
+    [super setSelected:selected];
+    [self hover];
+}
+
+-(void)setHighlighted:(BOOL)highlighted
+{
+    [super setHighlighted:highlighted];
+    [self hover];
+}
+
+#pragma mark functionality
+
+-(void)hover
+{
+    CGFloat alpha;
+    
+    if(self.isSelected || self.isHighlighted)
+    {
+        alpha = 1;
+    }
+    else
+    {
+        alpha = 0.4;
+    }
+    
+    [self.image setAlpha:alpha];
+    [self.labeltitle setAlpha:alpha];
+    [self.labelindex setAlpha:alpha];
+}
+
 @end
