@@ -5,6 +5,8 @@
 @interface vairgeo:UIView<MKMapViewDelegate, CLLocationManagerDelegate>
 
 -(instancetype)init:(cairgeo*)controller;
+-(void)loadmap;
+-(void)centeruser;
 
 @property(weak, nonatomic)cairgeo *controller;
 @property(weak, nonatomic)vairgeomap *map;

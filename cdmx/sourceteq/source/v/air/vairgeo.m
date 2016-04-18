@@ -1,7 +1,7 @@
 #import "vairgeo.h"
 #import "vairgeobar.h"
 
-static CGFloat const mapsansize = 0.025;
+static CGFloat const mapspansize = 0.025;
 
 @implementation vairgeo
 
@@ -12,6 +12,7 @@ static CGFloat const mapsansize = 0.025;
     [self setBackgroundColor:[UIColor whiteColor]];
     self.controller = controller;
     
+    self.mapspan = MKCoordinateSpanMake(mapspansize, mapspansize);
     vairgeobar *bar = [[vairgeobar alloc] init:controller];
     
     vairgeomap *map = [[vairgeomap alloc] init];
@@ -36,5 +37,115 @@ static CGFloat const mapsansize = 0.025;
     [self.map setShowsUserLocation:NO];
 }
 
+#pragma mark functionality
+
+-(void)locationscheck
+{
+    switch([CLLocationManager authorizationStatus])
+    {
+        case kCLAuthorizationStatusAuthorizedAlways:
+        case kCLAuthorizationStatusAuthorizedWhenInUse:
+            
+            [self.map setShowsUserLocation:YES];
+//            [self.menu showuserbutton];
+            
+            break;
+            
+        case kCLAuthorizationStatusNotDetermined:
+            
+            self.locationmanager = [[CLLocationManager alloc] init];
+            [self.locationmanager setDesiredAccuracy:kCLLocationAccuracyNearestTenMeters];
+            [self.locationmanager setDistanceFilter:20];
+            [self.locationmanager setDelegate:self];
+            
+            if([self.locationmanager respondsToSelector:@selector(requestWhenInUseAuthorization)])
+            {
+                [self.locationmanager requestWhenInUseAuthorization];
+            }
+            else
+            {
+                [self.locationmanager startUpdatingLocation];
+            }
+            
+            if(![UIVisualEffectView class])
+            {
+//                [self.menu showuserbutton];
+                [self.map setShowsUserLocation:YES];
+            }
+            
+            break;
+            
+        case kCLAuthorizationStatusDenied:
+            
+            [self afterfocusoncenter];
+            
+            break;
+        case kCLAuthorizationStatusRestricted:
+            break;
+    }
+}
+
+-(void)afterfocusoncenter
+{
+    __weak typeof(self) welf = self;
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_MSEC * 500), dispatch_get_main_queue(),
+                   ^
+                   {
+//                       [weakself.map focusoncenter];
+                   });
+}
+
+
+#pragma mark public
+
+-(void)loadmap
+{
+    [self.map setDelegate:self];
+    [self locationscheck];
+}
+
+-(void)centeruser
+{
+    MKCoordinateRegion region = MKCoordinateRegionMake(self.userlocation, self.mapspan);
+    [self.map setRegion:region animated:YES];
+}
+
+#pragma mark -
+#pragma mark location delegate
+
+-(void)mapView:(MKMapView*)mapview didUpdateUserLocation:(MKUserLocation*)userlocation
+{
+    self.userlocation = userlocation.coordinate;
+}
+
+-(void)locationManager:(CLLocationManager*)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
+{
+    if(status == kCLAuthorizationStatusAuthorizedAlways || status == kCLAuthorizationStatusAuthorizedWhenInUse)
+    {
+//        [self.menu showbuttonuser];
+        [self.map setShowsUserLocation:YES];
+    }
+    else
+    {
+//        [self.map focusoncenter];
+    }
+}
+
+-(MKAnnotationView*)mapView:(MKMapView*)mapview viewForAnnotation:(id<MKAnnotation>)annotation
+{
+    MKAnnotationView *anview;
+    
+    if(annotation == self.annotation)
+    {
+        anview = [[vitemlocationannotation alloc] init];
+    }
+    else
+    {
+        anview = [mapview viewForAnnotation:annotation];
+    }
+    
+    return anview;
+}
 
 @end
