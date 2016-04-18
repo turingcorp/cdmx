@@ -5,4 +5,6 @@
 
 -(instancetype)init:(mstationsannotation*)annotation;
 
+@property(weak, nonatomic)mstationsannotation *annotation;
+
 @end

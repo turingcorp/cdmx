@@ -13,11 +13,12 @@ static CGFloat const annheight = 99;
     [self setBackgroundColor:[UIColor clearColor]];
     [self setUserInteractionEnabled:NO];
     
+    self.annotation = annotation;
     NSString *stringindex = @"";
     
-    if(annotation.index.points > 0)
+    if(annotation.model.index.points > 0)
     {
-        stringindex = [NSString stringWithFormat:@"%@", @(annotation.index.points)];
+        stringindex = [NSString stringWithFormat:@"%@", @(annotation.model.index.points)];
     }
     
     UIImageView *image = [[UIImageView alloc] init];
@@ -26,7 +27,7 @@ static CGFloat const annheight = 99;
     [image setUserInteractionEnabled:NO];
     [image setTranslatesAutoresizingMaskIntoConstraints:NO];
     [image setImage:[[UIImage imageNamed:@"stations_annotation"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
-    [image setTintColor:annotation.index.color];
+    [image setTintColor:annotation.model.index.color];
     
     UIImageView *stick = [[UIImageView alloc] init];
     [stick setClipsToBounds:YES];
@@ -68,7 +69,7 @@ static CGFloat const annheight = 99;
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(minushalf)-[image]-(half)-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[stick]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(minushalf)-[stick]-(half)-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(minushalf)-[index(42)]-(-12)-[title]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(minushalf)-[index(42)]-(-14)-[title]" options:0 metrics:metrics views:views]];
     
     return self;
 }

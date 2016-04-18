@@ -31,6 +31,7 @@
     [buttonuser.imageView setContentMode:UIViewContentModeScaleAspectFit];
     [buttonuser addTarget:self action:@selector(actionuser:) forControlEvents:UIControlEventTouchUpInside];
     [buttonuser setHidden:YES];
+    self.buttonuser = buttonuser;
     
     UILabel *label = [[UILabel alloc] init];
     [label setBackgroundColor:[UIColor clearColor]];

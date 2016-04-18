@@ -108,18 +108,18 @@ static CGFloat const mapspansize = 0.075;
             if(item.location)
             {
                 NSString *title = item.name;
-                mstationsreadingitemindex *index = item.index;
+                mstationsreadingitem *model = item;
                 CLLocationCoordinate2D coord = [item.location coordinates];
                 
-                annotation = [[mstationsannotation alloc] init:title index:index coord:coord];
+                annotation = [[mstationsannotation alloc] init:title model:model coord:coord];
             }
             else if(item.station.location)
             {
                 NSString *title = item.name;
-                mstationsreadingitemindex *index = item.index;
+                mstationsreadingitem *model = item;
                 CLLocationCoordinate2D coord = [item.station.location coordinates];
                 
-                annotation = [[mstationsannotation alloc] init:title index:index coord:coord];
+                annotation = [[mstationsannotation alloc] init:title model:model coord:coord];
             }
             
             if(annotation)
@@ -192,6 +192,11 @@ static CGFloat const mapspansize = 0.075;
     }
     
     return anview;
+}
+
+-(void)mapView:(MKMapView*)mapView didSelectAnnotationView:(MKAnnotationView*)view
+{
+    NSLog(@"selected");
 }
 
 @end

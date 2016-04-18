@@ -5,12 +5,12 @@
 @synthesize title;
 @synthesize coordinate;
 
--(instancetype)init:(NSString*)newtitle index:(mstationsreadingitemindex*)index coord:(CLLocationCoordinate2D)coord
+-(instancetype)init:(NSString*)newtitle model:(mstationsreadingitem*)model coord:(CLLocationCoordinate2D)coord
 {
     self = [super init];
     title = newtitle;
     coordinate = coord;
-    self.index = index;
+    self.model = model;
     
     return self;
 }
