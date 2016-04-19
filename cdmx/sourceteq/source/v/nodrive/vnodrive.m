@@ -128,7 +128,7 @@ static NSInteger const hologramsheight = 80;
     [labelholograms setBackgroundColor:[UIColor clearColor]];
     [labelholograms setUserInteractionEnabled:NO];
     [labelholograms setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [labelholograms setFont:[UIFont regularsize:16]];
+    [labelholograms setFont:[UIFont regularsize:18]];
     [labelholograms setTextAlignment:NSTextAlignmentCenter];
     [labelholograms setTextColor:[UIColor main]];
     [labelholograms setText:NSLocalizedString(@"cars_nodrive_holograms_title", nil)];
@@ -137,7 +137,7 @@ static NSInteger const hologramsheight = 80;
     [labelplates setBackgroundColor:[UIColor clearColor]];
     [labelplates setUserInteractionEnabled:NO];
     [labelplates setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [labelplates setFont:[UIFont regularsize:16]];
+    [labelplates setFont:[UIFont regularsize:18]];
     [labelplates setTextAlignment:NSTextAlignmentCenter];
     [labelplates setTextColor:[UIColor main]];
     [labelplates setText:NSLocalizedString(@"cars_nodrive_plates_title", nil)];
@@ -156,7 +156,7 @@ static NSInteger const hologramsheight = 80;
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[labeltitle]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[labelplates]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[labelholograms]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[bar]-20-[labeltitle(35)]-20-[labelholograms(20)]-6-[holo(holoheight)]-20-[labelplates(20)]-6-[colplates]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[bar]-20-[labeltitle(35)]-20-[labelholograms(20)]-6-[holo(holoheight)]-25-[labelplates(20)]-6-[colplates]-0-|" options:0 metrics:metrics views:views]];
 }
 
 @end
