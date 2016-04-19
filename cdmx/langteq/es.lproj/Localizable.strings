@@ -30,6 +30,8 @@
 "air_detail_header_wind"="Direccion del viento";
 "air_detail_header_temp"="%@ °C";
 "air_detail_header_altitude"="Altura\n%@ m";
+"air_detail_info_quality"="Calidad del aire ";
+"air_detail_info_pollutant"="\nContaminante ";
 
 "map_district_alv"="Alvaro Obregon";
 "map_district_azc"="Azcapotzalco";
