@@ -35,20 +35,22 @@
     [sw setTranslatesAutoresizingMaskIntoConstraints:NO];
     [sw setOnTintColor:[UIColor main]];
     [sw setOn:[msettings singleton].notifications];
+    [sw addTarget:self action:@selector(actionswitch:) forControlEvents:UIControlEventTouchUpInside];
     
     [self addSubview:bar];
     [self addSubview:title];
-    [self addSubview:sw];
     [self addSubview:descr];
+    [self addSubview:sw];
     
     NSDictionary *views = @{@"bar":bar, @"title":title, @"sw":sw, @"descr":descr};
     NSDictionary *metrics = @{@"barheight":@(navbarheight)};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[bar]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[bar(barheight)]" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[title(250)]-10-[sw]" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[descr(250)]" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[bar]-30-[sw]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[title(200)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[sw]-20-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[descr(200)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[bar]-35-[sw]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[bar]-30-[title]-4-[descr]" options:0 metrics:metrics views:views]];
     
     return self;
@@ -56,6 +58,10 @@
 
 #pragma mark actions
 
-
+-(void)actionswitch:(UISwitch*)sw
+{
+    [msettings singleton].notifications = sw.isOn;
+    [[msettings singleton] save];
+}
 
 @end
