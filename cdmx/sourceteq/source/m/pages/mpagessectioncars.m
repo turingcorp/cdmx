@@ -1,13 +1,17 @@
-//
-//  mpagessectioncars.m
-//  cdmx
-//
-//  Created by zero on 4/19/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
-
 #import "mpagessectioncars.h"
+#import "mpagesitemnodrive.h"
 
 @implementation mpagessectioncars
+
+-(instancetype)init
+{
+    self = [super init];
+    self.name = NSLocalizedString(@"pages_section_stats", nil);
+    self.items = @[
+                   [[mpagesitemnodrive alloc] init]
+                   ];
+    
+    return self;
+}
 
 @end

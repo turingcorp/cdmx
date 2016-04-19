@@ -1,13 +1,25 @@
-//
-//  mpagesitemnodrive.m
-//  cdmx
-//
-//  Created by zero on 4/19/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
-
 #import "mpagesitemnodrive.h"
 
 @implementation mpagesitemnodrive
+
+-(instancetype)init
+{
+    self = [super init];
+    self.name = NSLocalizedString(@"pages_item_air_name", nil);
+    self.descr = NSLocalizedString(@"pages_item_air_descr", nil);
+    self.asset = @"general_environment";
+    
+    return self;
+}
+
+#pragma mark
+#pragma mark pages item
+
+-(UIViewController*)controller
+{
+    cair *controller = [[cair alloc] init];
+    
+    return controller;
+}
 
 @end
