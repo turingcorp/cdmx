@@ -1,6 +1,7 @@
 #import "appdel.h"
 #import "updater.h"
 #import "cmain.h"
+#import "notificationspollution.h"
 
 @implementation appdel
 {
@@ -21,17 +22,17 @@
 
 -(void)applicationDidEnterBackground:(UIApplication*)app
 {
-    
+    [app scheduleLocalNotification:[[notificationspollution alloc] init]];
 }
 
 -(void)applicationWillTerminate:(UIApplication*)app
 {
-    [app scheduleLocalNotification:];
-    
-    UILocalNotification *notification = [[UILocalNotification alloc] init];
-    notification.fireDate = [NSDate dateWithTimeIntervalSinceNow:10];
-    notification.alertBody = @"24 hours passed since last visit :(";
-    [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+    [app scheduleLocalNotification:[[notificationspollution alloc] init]];
+}
+
+-(void)applicationDidBecomeActive:(UIApplication*)app
+{
+    [app cancelAllLocalNotifications];
 }
 
 @end
