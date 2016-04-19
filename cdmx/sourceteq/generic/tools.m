@@ -1,7 +1,7 @@
 #import "tools.h"
 #import "cmain.h"
 
-static NSString* const shareurl = @"itms-apps://itunes.apple.com/app/id%@";
+static NSString* const shareurl = @"https://itunes.apple.com/us/app/cdmx/id%@";
 static NSString* const rateurl = @"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=%@";
 
 @implementation tools
