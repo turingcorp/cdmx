@@ -10,5 +10,6 @@
 +(NSString*)cleanlatin:(NSString*)string;
 -(NSString*)urlencode:(NSString*)string;
 -(NSString*)numbertostring:(NSNumber*)number;
+-(NSDate*)stringtodate:(NSString*)string;
 
 @end

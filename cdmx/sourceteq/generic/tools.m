@@ -7,6 +7,7 @@ static NSString* const rateurl = @"itms-apps://itunes.apple.com/WebObjects/MZSto
 @implementation tools
 {
     NSNumberFormatter *numformatter;
+    NSDateFormatter *dateformatter;
     CFStringRef stringref;
 }
 
@@ -101,8 +102,6 @@ static NSString* const rateurl = @"itms-apps://itunes.apple.com/WebObjects/MZSto
     
     numformatter = [[NSNumberFormatter alloc] init];
     [numformatter setNumberStyle:NSNumberFormatterDecimalStyle];
-    priceformatter = [[NSNumberFormatter alloc] init];
-    [priceformatter setNumberStyle:NSNumberFormatterCurrencyStyle];
     stringref = (CFStringRef)@"!*'();:@&=+$,/?%#[]";
     dateformatter = [[NSDateFormatter alloc] init];
     [dateformatter setDateFormat:@"yyyy-MM-dd"];
@@ -124,6 +123,11 @@ static NSString* const rateurl = @"itms-apps://itunes.apple.com/WebObjects/MZSto
     NSString *string = [numformatter stringFromNumber:number];
     
     return string;
+}
+
+-(NSDate*)stringtodate:(NSString*)string
+{
+    return [dateformatter dateFromString:string];
 }
 
 @end
