@@ -28,7 +28,7 @@ static NSInteger const cellheight = 70;
     [flow setMinimumLineSpacing:linespacing];
     [flow setMinimumInteritemSpacing:0];
     [flow setScrollDirection:UICollectionViewScrollDirectionVertical];
-    [flow setSectionInset:UIEdgeInsetsZero];
+    [flow setSectionInset:UIEdgeInsetsMake(linespacing, 0, 0, 0)];
     
     UICollectionView *collection = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flow];
     [collection setBackgroundColor:[UIColor clearColor]];
