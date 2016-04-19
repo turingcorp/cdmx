@@ -1,10 +1,10 @@
 #import <UIKit/UIKit.h>
-#import "mstationsreadingitem.h"
+#import "mstationsreadingitemindex.h"
 
 @interface vairdetailpay:UIView
 
--(instancetype)init:(mstationsreadingitem*)model;
+-(instancetype)init:(mstationsreadingitemindex*)model;
 
-@property(weak, nonatomic)mstationsreadingitem *model;
+@property(weak, nonatomic)mstationsreadingitemindex *model;
 
 @end
