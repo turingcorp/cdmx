@@ -22,17 +22,20 @@
 
 -(void)applicationDidEnterBackground:(UIApplication*)app
 {
-    [app scheduleLocalNotification:[[notificationspollution alloc] init]];
+    UILocalNotification *not = [[UILocalNotification alloc] init];
+    not.alertBody  =NSLocalizedString(@"notification_pollution", nil);
+    
+    [[UIApplication sharedApplication] scheduleLocalNotification:not];
 }
 
 -(void)applicationWillTerminate:(UIApplication*)app
 {
-    [app scheduleLocalNotification:[[notificationspollution alloc] init]];
+    [[UIApplication sharedApplication] scheduleLocalNotification:[[notificationspollution alloc] init]];
 }
 
 -(void)applicationDidBecomeActive:(UIApplication*)app
 {
-    [app cancelAllLocalNotifications];
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
 }
 
 @end
