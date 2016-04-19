@@ -47,10 +47,12 @@
 	<key>xil</key>
 	<string>Xileno</string>
 	<key>pm10</key>
-	<string>Particulas de polvo</string>
+	<string>Partículas de polvo</string>
 	<key>pm2.5</key>
-	<string>Particulas de polvo</string>
+	<string>Partículas de polvo</string>
 	<key>pmco</key>
-	<string>Particulas de polvo</string>
+	<string>Partículas de polvo</string>
+	<key>pst</key>
+	<string>Partículas de polvo</string>
 </dict>
 </plist>

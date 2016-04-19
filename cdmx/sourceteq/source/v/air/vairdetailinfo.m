@@ -12,8 +12,8 @@
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self setUserInteractionEnabled:NO];
     
-    NSDictionary *dicttitle = @{NSFontAttributeName:[UIFont boldsize:14], NSForegroundColorAttributeName:[UIColor colorWithWhite:0.2 alpha:1]};
-    NSDictionary *dictdescr = @{NSFontAttributeName:[UIFont regularsize:18], NSForegroundColorAttributeName:[UIColor colorWithWhite:0.5 alpha:1]};
+    NSDictionary *dicttitle = @{NSFontAttributeName:[UIFont boldsize:13], NSForegroundColorAttributeName:[UIColor colorWithWhite:0.7 alpha:1]};
+    NSDictionary *dictdescr = @{NSFontAttributeName:[UIFont regularsize:16], NSForegroundColorAttributeName:[UIColor colorWithWhite:0.4 alpha:1]};
     
     NSString *stringquality = model.index.name;
     NSString *stringpollutant = model.pollutant;

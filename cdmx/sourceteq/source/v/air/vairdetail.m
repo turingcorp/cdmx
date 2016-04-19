@@ -3,7 +3,7 @@
 #import "vairdetailpay.h"
 #import "vairdetailinfo.h"
 
-static NSInteger const infoheight = 100;
+static NSInteger const infoheight = 80;
 
 @implementation vairdetail
 
