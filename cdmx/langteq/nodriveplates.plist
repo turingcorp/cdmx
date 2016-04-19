@@ -2,30 +2,30 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>amarillo</key>
-    <array>
-        <integer>5</integer>
-        <string>6</string>
-    </array>
-    <key>rosa</key>
-    <array>
-        <integer>7</integer>
-        <string>8</string>
-    </array>
-    <key>rojo</key>
-    <array>
-        <integer>3</integer>
-        <string>4</string>
-    </array>
+	<key>amarillo</key>
+	<array>
+		<integer>5</integer>
+		<integer>6</integer>
+	</array>
+	<key>rosa</key>
+	<array>
+		<integer>7</integer>
+		<integer>8</integer>
+	</array>
+	<key>rojo</key>
+	<array>
+		<integer>3</integer>
+		<integer>4</integer>
+	</array>
 	<key>verde</key>
 	<array>
 		<integer>1</integer>
-		<string>2</string>
+		<integer>2</integer>
 	</array>
-    <key>azul</key>
-    <array>
-        <integer>9</integer>
-        <string>0</string>
-    </array>
+	<key>azul</key>
+	<array>
+		<integer>9</integer>
+		<integer>0</integer>
+	</array>
 </dict>
 </plist>

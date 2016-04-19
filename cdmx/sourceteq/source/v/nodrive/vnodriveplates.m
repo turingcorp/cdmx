@@ -2,9 +2,9 @@
 #import "vnodriveplatescell.h"
 
 static NSString* const platescellid = @"platescell";
-static NSInteger const linespacing = 2;
-static NSInteger const cellwidth = 60;
-static NSInteger const cellheight = 60;
+static NSInteger const linespacing = 6;
+static NSInteger const cellwidth = 70;
+static NSInteger const cellheight = 70;
 
 @implementation vnodriveplates
 
@@ -58,7 +58,7 @@ static NSInteger const cellheight = 60;
     CGFloat remain = width - totalcellswidth;
     CGFloat margin = remain / 2.0;
     
-    UIEdgeInsets insets = UIEdgeInsetsMake(0, margin, 0, margin);
+    UIEdgeInsets insets = UIEdgeInsetsMake(0, margin, linespacing, margin);
     
     return insets;
 }

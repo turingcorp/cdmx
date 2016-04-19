@@ -276,14 +276,14 @@
                         NSMutableArray<mstationsnodrivehologram*> *mutholograms = [NSMutableArray array];
                         NSMutableArray<mstationsnodriveplate*> *mutplates = [NSMutableArray array];
                         
-                        NSString *rawplatecolor = rawinfo[@"color"];
-                        NSString *rawplatecolor2 = rawinfo[@"color2"];
+                        NSString *rawplatecolor;
+                        NSString *rawplatecolor2;
                         NSString *rawholograms = rawinfo[@"txtsemana"];
                         
                         if(datecomponent < 7)
                         {
                             rawplatecolor = rawinfo[@"color"];
-                            rawplatecolor2 = rawinfo[@"color2"];
+                            rawplatecolor2 = rawinfo[@"colorsg"];
                         }
                         else
                         {
