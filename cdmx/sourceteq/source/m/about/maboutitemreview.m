@@ -5,7 +5,7 @@
 -(instancetype)init
 {
     self = [super init];
-    self.name = NSLocalizedString(@"", nil);
+    self.name = NSLocalizedString(@"about_item_review", nil);
     
     return self;
 }
