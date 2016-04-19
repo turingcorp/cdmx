@@ -13,7 +13,7 @@
     
     vairdetailheader *header = [[vairdetailheader alloc] init:controller];
     
-    vairdetailpay *pay = [[vairdetailpay alloc] init];
+    vairdetailpay *pay = [[vairdetailpay alloc] init:controller.model.index];
     
     [self addSubview:header];
     [self addSubview:pay];

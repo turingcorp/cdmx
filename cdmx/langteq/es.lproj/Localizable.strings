@@ -1,0 +1,49 @@
+"app_name"="CDMX";
+
+"pages_section_stats"="Estadisticas";
+"pages_item_air_name"="Calidad del aire";
+"pages_item_air_descr"="\nCalidad del aire actual";
+
+"api_error_nodata"="Error al conectarse al servidor, intenta de nuevo";
+"api_error_invalidjson"="Problemas de coneccion, intenta de nuevo";
+
+"hologram_exento"="Exento";
+"hologram_00"="Double cero";
+"hologram_0"="Cero";
+"hologram_1"="Uno";
+"hologram_2"="Dos";
+
+"air_index_nodata"="Sin informacion";
+"air_index_good"="Buena";
+"air_index_regular"="Regular";
+"air_index_bad"="Mala";
+"air_index_verybad"="Muy mala";
+"air_index_extreme"="Extrema";
+
+"air_button_map"="Localizacion";
+"air_button_retry"="Intenta de nuevo";
+"air_main_uvlabel"="Indice UV";
+"air_main_temp"="%@ °C";
+"air_main_hum"="%@ %%";
+"air_map_title"="Estaciones";
+
+"air_detail_header_wind"="Direccion del viento";
+"air_detail_header_temp"="%@ °C";
+"air_detail_header_altitude"="Altura\n%@ m";
+
+"map_district_alv"="Alvaro Obregon";
+"map_district_azc"="Azcapotzalco";
+"map_district_bj"="Benito Juarez";
+"map_district_coyo"="Coyoacan";
+"map_district_cuaji"="Cuajimalpa";
+"map_district_cuau"="Cuauhtemoc";
+"map_district_gam"="Gustavo A Madero";
+"map_district_iztaca"="Iztacalco";
+"map_district_iztapa"="Iztapalapa";
+"map_district_mag"="Magdalena Contreras";
+"map_district_mh"="Miguel Hidalgo";
+"map_district_milp"="Milpa Alta";
+"map_district_tlahu"="Tlahuac";
+"map_district_tlal"="Tlalpan";
+"map_district_ven"="Venustiano Carranza";
+"map_district_xochi"="Xochimilco";
