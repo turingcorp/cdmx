@@ -98,6 +98,8 @@
 		DA8A40431CC6DAFD008FECF2 /* vaboutbar.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8A40421CC6DAFD008FECF2 /* vaboutbar.m */; };
 		DA8A40461CC6DEEF008FECF2 /* vaboutcell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8A40451CC6DEEF008FECF2 /* vaboutcell.m */; };
 		DA8A40491CC6DF8E008FECF2 /* vaboutheader.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8A40481CC6DF8E008FECF2 /* vaboutheader.m */; };
+		DA8A404D1CC6E0BC008FECF2 /* mabout.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8A404C1CC6E0BC008FECF2 /* mabout.m */; };
+		DA8A40501CC6E0D6008FECF2 /* maboutitem.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8A404F1CC6E0D6008FECF2 /* maboutitem.m */; };
 		DA8F033C1CC1491C0007596C /* cairdetail.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8F033B1CC1491C0007596C /* cairdetail.m */; };
 		DA8F033F1CC151570007596C /* vaircellmain.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8F033E1CC151570007596C /* vaircellmain.m */; };
 		DA8F03421CC17AAE0007596C /* vaircellmaincell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8F03411CC17AAE0007596C /* vaircellmaincell.m */; };
@@ -336,6 +338,10 @@
 		DA8A40451CC6DEEF008FECF2 /* vaboutcell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vaboutcell.m; sourceTree = "<group>"; };
 		DA8A40471CC6DF8E008FECF2 /* vaboutheader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vaboutheader.h; sourceTree = "<group>"; };
 		DA8A40481CC6DF8E008FECF2 /* vaboutheader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vaboutheader.m; sourceTree = "<group>"; };
+		DA8A404B1CC6E0BC008FECF2 /* mabout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mabout.h; sourceTree = "<group>"; };
+		DA8A404C1CC6E0BC008FECF2 /* mabout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mabout.m; sourceTree = "<group>"; };
+		DA8A404E1CC6E0D6008FECF2 /* maboutitem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = maboutitem.h; sourceTree = "<group>"; };
+		DA8A404F1CC6E0D6008FECF2 /* maboutitem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = maboutitem.m; sourceTree = "<group>"; };
 		DA8F033A1CC1491C0007596C /* cairdetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cairdetail.h; sourceTree = "<group>"; };
 		DA8F033B1CC1491C0007596C /* cairdetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cairdetail.m; sourceTree = "<group>"; };
 		DA8F033D1CC151570007596C /* vaircellmain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vaircellmain.h; sourceTree = "<group>"; };
@@ -619,6 +625,17 @@
 			path = about;
 			sourceTree = "<group>";
 		};
+		DA8A404A1CC6E0B1008FECF2 /* about */ = {
+			isa = PBXGroup;
+			children = (
+				DA8A404B1CC6E0BC008FECF2 /* mabout.h */,
+				DA8A404C1CC6E0BC008FECF2 /* mabout.m */,
+				DA8A404E1CC6E0D6008FECF2 /* maboutitem.h */,
+				DA8A404F1CC6E0D6008FECF2 /* maboutitem.m */,
+			);
+			path = about;
+			sourceTree = "<group>";
+		};
 		DACEDEDF1CBC895B0088AA8B /* main */ = {
 			isa = PBXGroup;
 			children = (
@@ -791,6 +808,7 @@
 		DAD33FD41CBC83E300C87502 /* m */ = {
 			isa = PBXGroup;
 			children = (
+				DA8A404A1CC6E0B1008FECF2 /* about */,
 				DA000D291CC29D1700A82EC0 /* map */,
 				DAD876181CBDBB7700A4F91C /* stations */,
 				DAD875E11CBD5B1300A4F91C /* pages */,
@@ -1245,6 +1263,7 @@
 				DA188B0D1CC5C18A00C91AF2 /* vairdetailpay.m in Sources */,
 				DA87086C1CBEBE4A000C08E1 /* mstationsreadingitemindexbad.m in Sources */,
 				DAD876061CBD6F7600A4F91C /* vmenu.m in Sources */,
+				DA8A404D1CC6E0BC008FECF2 /* mabout.m in Sources */,
 				DAD875D61CBD312900A4F91C /* vloading.m in Sources */,
 				DA000D6E1CC2B63900A82EC0 /* vaircellerror.m in Sources */,
 				DA000D621CC2A00600A82EC0 /* mcdmapitemtlahu.m in Sources */,
@@ -1314,6 +1333,7 @@
 				DAD876121CBD72F400A4F91C /* vmenucell.m in Sources */,
 				DA8708721CBEBE72000C08E1 /* mstationsreadingitemindexextreme.m in Sources */,
 				DA8A40401CC6D809008FECF2 /* vabout.m in Sources */,
+				DA8A40501CC6E0D6008FECF2 /* maboutitem.m in Sources */,
 				DA8A40221CC6B7C5008FECF2 /* cabout.m in Sources */,
 				DA000D4D1CC29F9200A82EC0 /* mcdmapitemalv.m in Sources */,
 				DAD340001CBC83E300C87502 /* mdbcreate.m in Sources */,
