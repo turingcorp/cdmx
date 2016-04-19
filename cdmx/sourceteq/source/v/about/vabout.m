@@ -112,4 +112,18 @@ static NSInteger const cellheight = 70;
     return cell;
 }
 
+-(void)collectionView:(UICollectionView*)col didSelectItemAtIndexPath:(NSIndexPath*)index
+{
+    maboutitem *model = [self modelforindex:index];
+    [model activate];
+    
+    __weak typeof(col) wol = col;
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC * 2), dispatch_get_main_queue(),
+                   ^
+                   {
+                       [wol selectItemAtIndexPath:[NSIndexPath indexPathForItem:-1 inSection:0] animated:NO scrollPosition:UICollectionViewScrollPositionNone];
+                   });
+}
+
 @end
