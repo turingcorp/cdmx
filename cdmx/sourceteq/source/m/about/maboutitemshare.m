@@ -1,4 +1,5 @@
 #import "maboutitemshare.h"
+#import "tools.h"
 
 @implementation maboutitemshare
 
@@ -15,7 +16,7 @@
 
 -(void)activate
 {
-    
+    [tools shareapp];
 }
 
 @end

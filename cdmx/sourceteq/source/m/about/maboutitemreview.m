@@ -1,4 +1,5 @@
 #import "maboutitemreview.h"
+#import "tools.h"
 
 @implementation maboutitemreview
 
@@ -15,7 +16,7 @@
 
 -(void)activate
 {
-    
+    [tools rateapp];
 }
 
 @end

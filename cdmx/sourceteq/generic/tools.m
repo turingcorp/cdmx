@@ -1,14 +1,12 @@
 #import "tools.h"
+#import "cmain.h"
 
-static NSUInteger const dayseconds = 86400;
-static NSUInteger const hourseconds = 3600;
-static NSUInteger const minuteseconds = 60;
+static NSString* const shareurl = @"itms-apps://itunes.apple.com/app/id%@";
+static NSString* const rateurl = @"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=%@";
 
 @implementation tools
 {
     NSNumberFormatter *numformatter;
-    NSNumberFormatter *priceformatter;
-    NSDateFormatter *dateformatter;
     CFStringRef stringref;
 }
 
@@ -24,9 +22,33 @@ static NSUInteger const minuteseconds = 60;
 +(void)rateapp
 {
     NSUserDefaults *properties = [NSUserDefaults standardUserDefaults];
+    NSString *string = [NSString stringWithFormat:rateurl, [properties valueForKey:@"appid"]];
+    NSURL *url = [NSURL URLWithString:string];
+                        
+    [[UIApplication sharedApplication] openURL:url];
+}
+
++(void)shareapp
+{
+    NSUserDefaults *properties = [NSUserDefaults standardUserDefaults];
+    NSString *string = [NSString stringWithFormat:shareurl, [properties valueForKey:@"appid"]];
+    NSURL *url = [NSURL URLWithString:string];
     
-    [[UIApplication sharedApplication] openURL:
-     [NSURL URLWithString:[NSString stringWithFormat:@"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=%@", [properties valueForKey:@"appid"]]]];
+    UIActivityViewController *act = [[UIActivityViewController alloc] initWithActivityItems:@[url] applicationActivities:nil];
+    
+    if([UIPopoverPresentationController class])
+    {
+        act.popoverPresentationController.sourceView = [cmain singleton].view;
+        act.popoverPresentationController.sourceRect = CGRectMake(([cmain singleton].view.bounds.size.width / 2.0) - 2, [cmain singleton].view.bounds.size.height - 100, 1, 1);
+        act.popoverPresentationController.permittedArrowDirections = UIPopoverArrowDirectionUp | UIPopoverArrowDirectionDown;
+    }
+    
+    [[cmain singleton] presentViewController:act animated:YES completion:
+     ^
+     {
+#warning "analytics"
+//         [[analytics singleton] trackscreen:ga_screen_detail_share];
+     }];
 }
 
 +(NSDictionary*)defaultdict
@@ -34,13 +56,6 @@ static NSUInteger const minuteseconds = 60;
     NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"defs" withExtension:@"plist"]];
     
     return dictionary;
-}
-
-+(NSInteger)timestamp
-{
-    NSInteger now = [NSDate date].timeIntervalSince1970;
-    
-    return now;
 }
 
 +(UIImage*)qrcode:(NSString*)string
@@ -78,35 +93,6 @@ static NSUInteger const minuteseconds = 60;
     return str;
 }
 
-+(NSString*)elapsedtimefrom:(NSUInteger)timestamp
-{
-    NSString *string;
-    NSUInteger currenttime = [NSDate date].timeIntervalSince1970;
-    NSUInteger elapsedtime = currenttime - timestamp;
-    NSUInteger days = elapsedtime / dayseconds;
-    
-    if(days)
-    {
-        string = [NSString stringWithFormat:NSLocalizedString(@"elapsedtime_days", nil), @(days)];
-    }
-    else
-    {
-        NSUInteger hours = (elapsedtime % dayseconds) / hourseconds;
-        
-        if(hours)
-        {
-            string = [NSString stringWithFormat:NSLocalizedString(@"elapsedtime_minutes", nil), @(hours)];
-        }
-        else
-        {
-            NSUInteger minutes = (elapsedtime % hourseconds) / minuteseconds;
-            string = [NSString stringWithFormat:NSLocalizedString(@"elapsedtime_minutes", nil), @(minutes)];
-        }
-    }
-    
-    return string;
-}
-
 #pragma mark -
 
 -(instancetype)init
@@ -138,26 +124,6 @@ static NSUInteger const minuteseconds = 60;
     NSString *string = [numformatter stringFromNumber:number];
     
     return string;
-}
-
--(NSString*)pricetostring:(NSNumber*)number currency:(NSString*)currency
-{
-    [priceformatter setCurrencyCode:currency];
-    NSString *string = [priceformatter stringFromNumber:number];
-    
-    return string;
-}
-
--(NSNumber*)stringtonumber:(NSString*)string
-{
-    NSNumber *number = [numformatter numberFromString:string];
-    
-    return number;
-}
-
--(NSDate*)stringtodate:(NSString*)string
-{
-    return [dateformatter dateFromString:string];
 }
 
 @end
