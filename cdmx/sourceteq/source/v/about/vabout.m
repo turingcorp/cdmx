@@ -8,8 +8,8 @@ static NSString* const aboutheaderid = @"headerid";
 static NSString* const aboutcellid = @"cellid";
 static NSInteger const barheight = 150;
 static NSInteger const linespacing = 1;
-static NSInteger const headerheight = 100;
-static NSInteger const cellheight = 60;
+static NSInteger const headerheight = 150;
+static NSInteger const cellheight = 70;
 
 @implementation vabout
 

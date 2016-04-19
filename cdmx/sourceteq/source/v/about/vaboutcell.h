@@ -3,6 +3,8 @@
 
 @interface vaboutcell:UICollectionViewCell
 
--(instancetype)config:(maboutitem*)model;
+-(void)config:(maboutitem*)model;
+
+@property(weak, nonatomic)UILabel *label;
 
 @end
