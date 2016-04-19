@@ -204,6 +204,9 @@
             
             if(rawinfoarr && rawinfoarr.count)
             {
+                NSCalendar *calendar = [NSCalendar currentCalendar];
+                NSInteger datecomponent = [calendar component:NSCalendarUnitWeekday fromDate:date];
+                
                 NSDictionary *rawinfo = rawinfoarr[0];
                 NSString *rawuvindex = [rawinfo[@"indiceradiacion"] lowercaseString];
                 NSString *rawuvtitle = rawinfo[@"riesgouv"];
@@ -268,48 +271,66 @@
                     mstationsnodrive *newnodrive = [[mstationsnodrive alloc] init];
                     newnodrive.date = date;
                     
-                    NSMutableArray<mstationsnodrivehologram*> *mutholograms = [NSMutableArray array];
-                    NSMutableArray<mstationsnodriveplate*> *mutplates = [NSMutableArray array];
-                    
-                    NSString *rawplatecolor = rawinfo[@"color"];
-                    NSString *rawplatecolor2 = rawinfo[@"color2"];
-                    NSString *rawholograms = rawinfo[@"txtsemana"];
-                    
-                    if(rawplatecolor && rawplatecolor.length > 1)
+                    if(datecomponent > 1)
                     {
-                        mstationsnodriveplate *maincolor = [[mstationsnodriveplate alloc] init:rawplatecolor];
-                        [mutplates addObject:maincolor];
-                    }
-                    
-                    if(rawplatecolor2 && rawplatecolor2.length > 1)
-                    {
-                        mstationsnodriveplate *secondcolor = [[mstationsnodriveplate alloc] init:rawplatecolor2];
-                        [mutplates addObject:secondcolor];
-                    }
-                    
-                    if(rawholograms && rawholograms.length)
-                    {
-                        NSString *cleanhg = rawholograms.lowercaseString;
-                        cleanhg = [cleanhg stringByReplacingOccurrencesOfString:@"," withString:@""];
-                        cleanhg = [cleanhg stringByReplacingOccurrencesOfString:@"." withString:@""];
-                        NSArray *splithg = [cleanhg componentsSeparatedByString:@" "];
+                        NSMutableArray<mstationsnodrivehologram*> *mutholograms = [NSMutableArray array];
+                        NSMutableArray<mstationsnodriveplate*> *mutplates = [NSMutableArray array];
                         
-                        NSUInteger countsplit = splithg.count;
+                        NSString *rawplatecolor = rawinfo[@"color"];
+                        NSString *rawplatecolor2 = rawinfo[@"color2"];
+                        NSString *rawholograms = rawinfo[@"txtsemana"];
                         
-                        for(NSUInteger i = 0; i < countsplit; i++)
+                        if(datecomponent < 7)
                         {
-                            NSString *insplithg = splithg[i];
-                            mstationsnodrivehologram *hologram = [mstationsnodrivehologram hologramforstring:insplithg];
+                            rawplatecolor = rawinfo[@"color"];
+                            rawplatecolor2 = rawinfo[@"color2"];
+                        }
+                        else
+                        {
+                            rawplatecolor = rawinfo[@"colorsg"];
+                        }
+                        
+                        if(rawplatecolor && rawplatecolor.length > 1)
+                        {
+                            mstationsnodriveplate *maincolor = [[mstationsnodriveplate alloc] init:rawplatecolor];
+                            [mutplates addObject:maincolor];
+                        }
+                        
+                        if(rawplatecolor2 && rawplatecolor2.length > 1)
+                        {
+                            mstationsnodriveplate *secondcolor = [[mstationsnodriveplate alloc] init:rawplatecolor2];
+                            [mutplates addObject:secondcolor];
+                        }
+                        
+                        if(rawholograms && rawholograms.length)
+                        {
+                            NSString *cleanhg = rawholograms.lowercaseString;
+                            cleanhg = [cleanhg stringByReplacingOccurrencesOfString:@"," withString:@""];
+                            cleanhg = [cleanhg stringByReplacingOccurrencesOfString:@"." withString:@""];
+                            NSArray *splithg = [cleanhg componentsSeparatedByString:@" "];
                             
-                            if(hologram)
+                            NSUInteger countsplit = splithg.count;
+                            
+                            for(NSUInteger i = 0; i < countsplit; i++)
                             {
-                                [mutholograms addObject:hologram];
+                                NSString *insplithg = splithg[i];
+                                mstationsnodrivehologram *hologram = [mstationsnodrivehologram hologramforstring:insplithg];
+                                
+                                if(hologram)
+                                {
+                                    [mutholograms addObject:hologram];
+                                }
                             }
                         }
+                        
+                        newnodrive.plates = mutplates;
+                        newnodrive.holograms = mutholograms;
+                    }
+                    else
+                    {
+                        newnodrive.explanation = NSLocalizedString(@"nodrive_sunday", nil);
                     }
                     
-                    newnodrive.plates = mutplates;
-                    newnodrive.holograms = mutholograms;
                     [mstations singleton].nodrive = newnodrive;
                 }
                 

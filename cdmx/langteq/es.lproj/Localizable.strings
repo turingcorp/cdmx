@@ -10,6 +10,7 @@
 "api_error_nodata"="Error al conectarse al servidor, intenta de nuevo";
 "api_error_invalidjson"="Problemas de conexión, intenta de nuevo";
 
+"nodrive_sunday"="Todos circulan los domingos";
 "hologram_exento"="Exento";
 "hologram_00"="Double cero";
 "hologram_0"="Cero";

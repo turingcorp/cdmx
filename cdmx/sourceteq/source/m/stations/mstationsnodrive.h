@@ -7,5 +7,6 @@
 @property(strong, nonatomic)NSArray<mstationsnodrivehologram*> *holograms;
 @property(strong, nonatomic)NSArray<mstationsnodriveplate*> *plates;
 @property(strong, nonatomic)NSDate *date;
+@property(copy, nonatomic)NSString *explanation;
 
 @end
