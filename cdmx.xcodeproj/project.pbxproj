@@ -90,6 +90,7 @@
 		DA8A40181CC6AAFB008FECF2 /* mpagessectionapp.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8A40171CC6AAFB008FECF2 /* mpagessectionapp.m */; };
 		DA8A401E1CC6B780008FECF2 /* mpagesitemabout.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8A401D1CC6B780008FECF2 /* mpagesitemabout.m */; };
 		DA8A40221CC6B7C5008FECF2 /* cabout.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8A40211CC6B7C5008FECF2 /* cabout.m */; };
+		DA8A402A1CC6C9EA008FECF2 /* snotpollution.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8A40291CC6C9EA008FECF2 /* snotpollution.m */; };
 		DA8F033C1CC1491C0007596C /* cairdetail.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8F033B1CC1491C0007596C /* cairdetail.m */; };
 		DA8F033F1CC151570007596C /* vaircellmain.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8F033E1CC151570007596C /* vaircellmain.m */; };
 		DA8F03421CC17AAE0007596C /* vaircellmaincell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8F03411CC17AAE0007596C /* vaircellmaincell.m */; };
@@ -312,6 +313,8 @@
 		DA8A401D1CC6B780008FECF2 /* mpagesitemabout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mpagesitemabout.m; sourceTree = "<group>"; };
 		DA8A40201CC6B7C5008FECF2 /* cabout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cabout.h; sourceTree = "<group>"; };
 		DA8A40211CC6B7C5008FECF2 /* cabout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cabout.m; sourceTree = "<group>"; };
+		DA8A40281CC6C9EA008FECF2 /* snotpollution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = snotpollution.h; sourceTree = "<group>"; };
+		DA8A40291CC6C9EA008FECF2 /* snotpollution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = snotpollution.m; sourceTree = "<group>"; };
 		DA8F033A1CC1491C0007596C /* cairdetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cairdetail.h; sourceTree = "<group>"; };
 		DA8F033B1CC1491C0007596C /* cairdetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cairdetail.m; sourceTree = "<group>"; };
 		DA8F033D1CC151570007596C /* vaircellmain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vaircellmain.h; sourceTree = "<group>"; };
@@ -560,6 +563,15 @@
 			path = app;
 			sourceTree = "<group>";
 		};
+		DA8A40271CC6C9D6008FECF2 /* not */ = {
+			isa = PBXGroup;
+			children = (
+				DA8A40281CC6C9EA008FECF2 /* snotpollution.h */,
+				DA8A40291CC6C9EA008FECF2 /* snotpollution.m */,
+			);
+			path = not;
+			sourceTree = "<group>";
+		};
 		DACEDEDF1CBC895B0088AA8B /* main */ = {
 			isa = PBXGroup;
 			children = (
@@ -775,6 +787,7 @@
 		DAD33FE21CBC83E300C87502 /* s */ = {
 			isa = PBXGroup;
 			children = (
+				DA8A40271CC6C9D6008FECF2 /* not */,
 			);
 			path = s;
 			sourceTree = "<group>";
@@ -1206,6 +1219,7 @@
 				DA8A40151CC694B0008FECF2 /* vnodriveplatescell.m in Sources */,
 				DAD875E41CBD5B1D00A4F91C /* mpages.m in Sources */,
 				DA87086F1CBEBE63000C08E1 /* mstationsreadingitemindexverybad.m in Sources */,
+				DA8A402A1CC6C9EA008FECF2 /* snotpollution.m in Sources */,
 				DA000D471CC29F6E00A82EC0 /* mcdmapitemiztaca.m in Sources */,
 				DA8708991CBF0BC6000C08E1 /* mstationsnodrivehologramdoubleo.m in Sources */,
 				DA87083B1CBE9297000C08E1 /* mstationsreading.m in Sources */,

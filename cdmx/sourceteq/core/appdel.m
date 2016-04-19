@@ -1,6 +1,7 @@
 #import "appdel.h"
 #import "updater.h"
 #import "cmain.h"
+#import "snotpollution.h"
 
 @implementation appdel
 {
@@ -40,10 +41,7 @@
 {
     [[UIApplication sharedApplication] cancelAllLocalNotifications];
     
-    UILocalNotification *notification = [[UILocalNotification alloc] init];
-    [notification setAlertBody:NSLocalizedString(@"notification_pollution", nil)];
-    [notification setFireDate:[NSDate dateWithTimeIntervalSinceNow:10]];
-    
+    UILocalNotification *notification = [snotpollution notification];
     [[UIApplication sharedApplication] scheduleLocalNotification:notification];
 }
 
