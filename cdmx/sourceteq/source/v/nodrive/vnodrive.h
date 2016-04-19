@@ -8,6 +8,7 @@
 
 @property(weak, nonatomic)cnodrive *controller;
 @property(weak, nonatomic)vnodrivebar *bar;
-@property(weak, nonatomic)NSLayoutConstraint *layoutbarheight;
+@property(weak, nonatomic)UIButton *buttontry;
+@property(weak, nonatomic)UILabel *labelerror;
 
 @end

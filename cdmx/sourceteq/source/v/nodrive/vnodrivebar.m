@@ -14,7 +14,6 @@
     
     vmenubutton *menubutton = [[vmenubutton alloc] init];
     [menubutton addTarget:self action:@selector(actionmenu:) forControlEvents:UIControlEventTouchUpInside];
-    self.menubutton = menubutton;
     
     UIImageView *icon = [[UIImageView alloc] init];
     [icon setImage:[UIImage imageNamed:@"general_nodrive"]];
@@ -22,7 +21,6 @@
     [icon setUserInteractionEnabled:NO];
     [icon setClipsToBounds:YES];
     [icon setContentMode:UIViewContentModeScaleAspectFit];
-    self.icon = icon;
     
     [self addSubview:icon];
     [self addSubview:menubutton];
@@ -43,27 +41,6 @@
     CGSize size = CGSizeMake(navbarintrinsicwidth, navbarheight);
     
     return size;
-}
-
--(void)layoutSubviews
-{
-    __weak typeof(self) welf = self;
-    CGFloat delta = (navbarheight - welf.bounds.size.height) / 35.0;
-    CGFloat alpha = 1 - delta;
-    
-    if(alpha < 0)
-    {
-        alpha = 0;
-    }
-    
-    dispatch_async(dispatch_get_main_queue(),
-                   ^
-                   {
-                       [welf.menubutton setAlpha:alpha];
-                       [welf.icon setAlpha:alpha];
-                   });
-    
-    [super layoutSubviews];
 }
 
 #pragma mark actions

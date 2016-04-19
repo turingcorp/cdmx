@@ -7,7 +7,5 @@
 -(instancetype)init:(cnodrive*)controller;
 
 @property(weak, nonatomic)cnodrive *controller;
-@property(weak, nonatomic)vmenubutton *menubutton;
-@property(weak, nonatomic)UIImageView *icon;
 
 @end
