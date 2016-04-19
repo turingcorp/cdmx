@@ -82,6 +82,7 @@
 		DA8A3FFA1CC681E4008FECF2 /* mpagesitemnodrive.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8A3FF91CC681E4008FECF2 /* mpagesitemnodrive.m */; };
 		DA8A40021CC68A50008FECF2 /* cnodrive.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8A40011CC68A50008FECF2 /* cnodrive.m */; };
 		DA8A40061CC68ABB008FECF2 /* vnodrive.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8A40051CC68ABB008FECF2 /* vnodrive.m */; };
+		DA8A40091CC68BC1008FECF2 /* vnodrivebar.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8A40081CC68BC1008FECF2 /* vnodrivebar.m */; };
 		DA8F033C1CC1491C0007596C /* cairdetail.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8F033B1CC1491C0007596C /* cairdetail.m */; };
 		DA8F033F1CC151570007596C /* vaircellmain.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8F033E1CC151570007596C /* vaircellmain.m */; };
 		DA8F03421CC17AAE0007596C /* vaircellmaincell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8F03411CC17AAE0007596C /* vaircellmaincell.m */; };
@@ -288,6 +289,8 @@
 		DA8A40011CC68A50008FECF2 /* cnodrive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cnodrive.m; sourceTree = "<group>"; };
 		DA8A40041CC68ABB008FECF2 /* vnodrive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vnodrive.h; sourceTree = "<group>"; };
 		DA8A40051CC68ABB008FECF2 /* vnodrive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vnodrive.m; sourceTree = "<group>"; };
+		DA8A40071CC68BC1008FECF2 /* vnodrivebar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vnodrivebar.h; sourceTree = "<group>"; };
+		DA8A40081CC68BC1008FECF2 /* vnodrivebar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vnodrivebar.m; sourceTree = "<group>"; };
 		DA8F033A1CC1491C0007596C /* cairdetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cairdetail.h; sourceTree = "<group>"; };
 		DA8F033B1CC1491C0007596C /* cairdetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cairdetail.m; sourceTree = "<group>"; };
 		DA8F033D1CC151570007596C /* vaircellmain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vaircellmain.h; sourceTree = "<group>"; };
@@ -513,6 +516,8 @@
 			children = (
 				DA8A40041CC68ABB008FECF2 /* vnodrive.h */,
 				DA8A40051CC68ABB008FECF2 /* vnodrive.m */,
+				DA8A40071CC68BC1008FECF2 /* vnodrivebar.h */,
+				DA8A40081CC68BC1008FECF2 /* vnodrivebar.m */,
 			);
 			path = nodrive;
 			sourceTree = "<group>";
@@ -1100,6 +1105,7 @@
 				DAD340021CBC83E300C87502 /* msettings.m in Sources */,
 				DA87082D1CBE844A000C08E1 /* acall.m in Sources */,
 				DAD33FF61CBC83E300C87502 /* main.m in Sources */,
+				DA8A40091CC68BC1008FECF2 /* vnodrivebar.m in Sources */,
 				DA87085C1CBE9F74000C08E1 /* mstationsreadinguvindexveryhigh.m in Sources */,
 				DAD875D21CBD30E100A4F91C /* cloading.m in Sources */,
 				DA8708621CBEBD11000C08E1 /* mstationsreadingitemindex.m in Sources */,
