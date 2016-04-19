@@ -83,6 +83,8 @@
 		DA8A40021CC68A50008FECF2 /* cnodrive.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8A40011CC68A50008FECF2 /* cnodrive.m */; };
 		DA8A40061CC68ABB008FECF2 /* vnodrive.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8A40051CC68ABB008FECF2 /* vnodrive.m */; };
 		DA8A40091CC68BC1008FECF2 /* vnodrivebar.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8A40081CC68BC1008FECF2 /* vnodrivebar.m */; };
+		DA8A400C1CC68DD2008FECF2 /* vnodriveholograms.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8A400B1CC68DD2008FECF2 /* vnodriveholograms.m */; };
+		DA8A400F1CC68DDC008FECF2 /* vnodriveplates.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8A400E1CC68DDC008FECF2 /* vnodriveplates.m */; };
 		DA8F033C1CC1491C0007596C /* cairdetail.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8F033B1CC1491C0007596C /* cairdetail.m */; };
 		DA8F033F1CC151570007596C /* vaircellmain.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8F033E1CC151570007596C /* vaircellmain.m */; };
 		DA8F03421CC17AAE0007596C /* vaircellmaincell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8F03411CC17AAE0007596C /* vaircellmaincell.m */; };
@@ -291,6 +293,10 @@
 		DA8A40051CC68ABB008FECF2 /* vnodrive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vnodrive.m; sourceTree = "<group>"; };
 		DA8A40071CC68BC1008FECF2 /* vnodrivebar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vnodrivebar.h; sourceTree = "<group>"; };
 		DA8A40081CC68BC1008FECF2 /* vnodrivebar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vnodrivebar.m; sourceTree = "<group>"; };
+		DA8A400A1CC68DD2008FECF2 /* vnodriveholograms.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vnodriveholograms.h; sourceTree = "<group>"; };
+		DA8A400B1CC68DD2008FECF2 /* vnodriveholograms.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vnodriveholograms.m; sourceTree = "<group>"; };
+		DA8A400D1CC68DDC008FECF2 /* vnodriveplates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vnodriveplates.h; sourceTree = "<group>"; };
+		DA8A400E1CC68DDC008FECF2 /* vnodriveplates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vnodriveplates.m; sourceTree = "<group>"; };
 		DA8F033A1CC1491C0007596C /* cairdetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cairdetail.h; sourceTree = "<group>"; };
 		DA8F033B1CC1491C0007596C /* cairdetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cairdetail.m; sourceTree = "<group>"; };
 		DA8F033D1CC151570007596C /* vaircellmain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vaircellmain.h; sourceTree = "<group>"; };
@@ -518,6 +524,10 @@
 				DA8A40051CC68ABB008FECF2 /* vnodrive.m */,
 				DA8A40071CC68BC1008FECF2 /* vnodrivebar.h */,
 				DA8A40081CC68BC1008FECF2 /* vnodrivebar.m */,
+				DA8A400A1CC68DD2008FECF2 /* vnodriveholograms.h */,
+				DA8A400B1CC68DD2008FECF2 /* vnodriveholograms.m */,
+				DA8A400D1CC68DDC008FECF2 /* vnodriveplates.h */,
+				DA8A400E1CC68DDC008FECF2 /* vnodriveplates.m */,
 			);
 			path = nodrive;
 			sourceTree = "<group>";
@@ -1145,6 +1155,7 @@
 				DA000D851CC461D600A82EC0 /* vairgeomapann.m in Sources */,
 				DA000D351CC29DD800A82EC0 /* mcdmapitem.m in Sources */,
 				DA8708591CBE9F67000C08E1 /* mstationsreadinguvindexhigh.m in Sources */,
+				DA8A400C1CC68DD2008FECF2 /* vnodriveholograms.m in Sources */,
 				DA000D441CC29F0A00A82EC0 /* mcdmapitemven.m in Sources */,
 				DAD875F61CBD645500A4F91C /* vairbar.m in Sources */,
 				DAD33FF41CBC83E300C87502 /* appdel.m in Sources */,
@@ -1167,6 +1178,7 @@
 				DA87087E1CBEC829000C08E1 /* mstationsreadingitemindexactivityperfect.m in Sources */,
 				DA000D321CC29DCE00A82EC0 /* mcdmap.m in Sources */,
 				DA8708371CBE87F7000C08E1 /* aparserstations.m in Sources */,
+				DA8A400F1CC68DDC008FECF2 /* vnodriveplates.m in Sources */,
 				DA8708811CBEC874000C08E1 /* mstationsreadingitemindexactivityverylimited.m in Sources */,
 				DA8A40021CC68A50008FECF2 /* cnodrive.m in Sources */,
 				DACEDEE21CBC89630088AA8B /* cmain.m in Sources */,
