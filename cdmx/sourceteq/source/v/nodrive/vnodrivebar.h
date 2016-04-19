@@ -1,6 +1,5 @@
 #import <UIKit/UIKit.h>
 #import "cnodrive.h"
-#import "vmenubutton.h"
 
 @interface vnodrivebar:UIView
 

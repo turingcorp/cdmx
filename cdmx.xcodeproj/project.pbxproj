@@ -95,6 +95,7 @@
 		DA8A40301CC6D148008FECF2 /* csettings.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8A402F1CC6D148008FECF2 /* csettings.m */; };
 		DA8A403C1CC6D6E7008FECF2 /* vsettings.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8A403B1CC6D6E7008FECF2 /* vsettings.m */; };
 		DA8A40401CC6D809008FECF2 /* vabout.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8A403F1CC6D809008FECF2 /* vabout.m */; };
+		DA8A40431CC6DAFD008FECF2 /* vaboutbar.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8A40421CC6DAFD008FECF2 /* vaboutbar.m */; };
 		DA8F033C1CC1491C0007596C /* cairdetail.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8F033B1CC1491C0007596C /* cairdetail.m */; };
 		DA8F033F1CC151570007596C /* vaircellmain.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8F033E1CC151570007596C /* vaircellmain.m */; };
 		DA8F03421CC17AAE0007596C /* vaircellmaincell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8F03411CC17AAE0007596C /* vaircellmaincell.m */; };
@@ -327,6 +328,8 @@
 		DA8A403B1CC6D6E7008FECF2 /* vsettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vsettings.m; sourceTree = "<group>"; };
 		DA8A403E1CC6D809008FECF2 /* vabout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vabout.h; sourceTree = "<group>"; };
 		DA8A403F1CC6D809008FECF2 /* vabout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vabout.m; sourceTree = "<group>"; };
+		DA8A40411CC6DAFD008FECF2 /* vaboutbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vaboutbar.h; sourceTree = "<group>"; };
+		DA8A40421CC6DAFD008FECF2 /* vaboutbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vaboutbar.m; sourceTree = "<group>"; };
 		DA8F033A1CC1491C0007596C /* cairdetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cairdetail.h; sourceTree = "<group>"; };
 		DA8F033B1CC1491C0007596C /* cairdetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cairdetail.m; sourceTree = "<group>"; };
 		DA8F033D1CC151570007596C /* vaircellmain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vaircellmain.h; sourceTree = "<group>"; };
@@ -600,6 +603,8 @@
 			children = (
 				DA8A403E1CC6D809008FECF2 /* vabout.h */,
 				DA8A403F1CC6D809008FECF2 /* vabout.m */,
+				DA8A40411CC6DAFD008FECF2 /* vaboutbar.h */,
+				DA8A40421CC6DAFD008FECF2 /* vaboutbar.m */,
 			);
 			path = about;
 			sourceTree = "<group>";
@@ -1283,6 +1288,7 @@
 				DAD8761B1CBDBB8300A4F91C /* mstations.m in Sources */,
 				DA000D771CC447C200A82EC0 /* vairgeo.m in Sources */,
 				DAD875CF1CBD2F0400A4F91C /* cpages.m in Sources */,
+				DA8A40431CC6DAFD008FECF2 /* vaboutbar.m in Sources */,
 				DAD33FF71CBC83E300C87502 /* analytics.m in Sources */,
 				DA000D561CC29FC100A82EC0 /* mcdmapitemiztapa.m in Sources */,
 				DA000D531CC29FB600A82EC0 /* mcdmapitemcoyo.m in Sources */,

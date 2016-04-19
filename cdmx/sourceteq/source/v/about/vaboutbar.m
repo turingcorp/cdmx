@@ -1,15 +1,13 @@
-#import "vnodrivebar.h"
-#import "uicolor+uicolormain.h"
-#import "genericconstants.h"
+#import "vaboutbar.h"
 #import "vmenubutton.h"
 
-@implementation vnodrivebar
+@implementation vaboutbar
 
--(instancetype)init:(cnodrive*)controller
+-(instancetype)init:(csettings*)controller
 {
     self = [super init];
     [self setClipsToBounds:YES];
-    [self setBackgroundColor:[UIColor main]];
+    [self setBackgroundColor:[UIColor blackColor]];
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
     self.controller = controller;
     
@@ -17,11 +15,11 @@
     [menubutton addTarget:self action:@selector(actionmenu:) forControlEvents:UIControlEventTouchUpInside];
     
     UIImageView *icon = [[UIImageView alloc] init];
-    [icon setImage:[UIImage imageNamed:@"general_nodrive"]];
+    [icon setImage:[UIImage imageNamed:@"general_logo"]];
     [icon setTranslatesAutoresizingMaskIntoConstraints:NO];
     [icon setUserInteractionEnabled:NO];
     [icon setClipsToBounds:YES];
-    [icon setContentMode:UIViewContentModeScaleAspectFit];
+    [icon setContentMode:UIViewContentModeCenter];
     
     [self addSubview:icon];
     [self addSubview:menubutton];
@@ -31,17 +29,10 @@
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[menubutton]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[menubutton]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-100-[icon]-100-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[icon(30)]-8-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[icon]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-20-[icon]-0-|" options:0 metrics:metrics views:views]];
     
     return self;
-}
-
--(CGSize)intrinsicContentSize
-{
-    CGSize size = CGSizeMake(navbarintrinsicwidth, navbarheight);
-    
-    return size;
 }
 
 #pragma mark actions
