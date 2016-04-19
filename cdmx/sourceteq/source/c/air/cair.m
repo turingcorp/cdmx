@@ -27,6 +27,10 @@
     {
         [self.view viewappear];
     }
+    else
+    {
+        [self.view.collection selectItemAtIndexPath:[NSIndexPath indexPathForItem:-1 inSection:0] animated:NO scrollPosition:UICollectionViewScrollPositionNone];
+    }
 }
 
 #pragma mark public
