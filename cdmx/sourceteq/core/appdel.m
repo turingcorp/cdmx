@@ -26,7 +26,12 @@
 
 -(void)applicationWillTerminate:(UIApplication*)app
 {
+    [app scheduleLocalNotification:];
     
+    UILocalNotification *notification = [[UILocalNotification alloc] init];
+    notification.fireDate = [NSDate dateWithTimeIntervalSinceNow:10];
+    notification.alertBody = @"24 hours passed since last visit :(";
+    [[UIApplication sharedApplication] scheduleLocalNotification:notification];
 }
 
 @end

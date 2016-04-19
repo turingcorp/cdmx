@@ -61,3 +61,5 @@
 "map_district_tlal"="Tlalpan";
 "map_district_ven"="Venustiano Carranza";
 "map_district_xochi"="Xochimilco";
+
+"notification_pollution"="Revisa las condiciones atmosfericas antes de salir";
