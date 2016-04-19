@@ -1,7 +1,6 @@
 #import "appdel.h"
 #import "updater.h"
 #import "cmain.h"
-#import "notificationspollution.h"
 
 @implementation appdel
 {
@@ -22,20 +21,30 @@
 
 -(void)applicationDidEnterBackground:(UIApplication*)app
 {
-    UILocalNotification *not = [[UILocalNotification alloc] init];
-    not.alertBody  =NSLocalizedString(@"notification_pollution", nil);
-    
-    [[UIApplication sharedApplication] scheduleLocalNotification:not];
+    [self pollutionnotification];
 }
 
 -(void)applicationWillTerminate:(UIApplication*)app
 {
-    [[UIApplication sharedApplication] scheduleLocalNotification:[[notificationspollution alloc] init]];
+    [self pollutionnotification];
 }
 
 -(void)applicationDidBecomeActive:(UIApplication*)app
 {
     [[UIApplication sharedApplication] cancelAllLocalNotifications];
+}
+
+#pragma mark functionality
+
+-(void)pollutionnotification
+{
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
+    
+    UILocalNotification *notification = [[UILocalNotification alloc] init];
+    [notification setAlertBody:NSLocalizedString(@"notification_pollution", nil)];
+    [notification setFireDate:[NSDate dateWithTimeIntervalSinceNow:10]];
+    
+    [[UIApplication sharedApplication] scheduleLocalNotification:notification];
 }
 
 @end
