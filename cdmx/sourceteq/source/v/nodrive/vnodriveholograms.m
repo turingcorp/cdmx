@@ -3,7 +3,7 @@
 
 static NSString* const hologramcellid = @"hologramcell";
 static NSInteger const linespacing = 2;
-static NSInteger const cellwidth = 70;
+static NSInteger const cellwidth = 76;
 
 @implementation vnodriveholograms
 

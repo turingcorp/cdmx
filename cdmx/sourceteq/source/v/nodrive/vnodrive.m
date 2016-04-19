@@ -114,13 +114,46 @@ static NSInteger const hologramsheight = 80;
     mstationsnodrive *nodrive = [mstations singleton].nodrive;
     vnodriveholograms *colholograms = [[vnodriveholograms alloc] init:nodrive];
     
-    [self addSubview:colholograms];
+    UILabel *labeltitle = [[UILabel alloc] init];
+    [labeltitle setBackgroundColor:[UIColor clearColor]];
+    [labeltitle setFont:[UIFont regularsize:20]];
+    [labeltitle setTextColor:[UIColor colorWithWhite:0 alpha:0.4]];
+    [labeltitle setTextAlignment:NSTextAlignmentCenter];
+    [labeltitle setText:NSLocalizedString(@"cars_nodrive_title", nil)];
+    [labeltitle setUserInteractionEnabled:NO];
+    [labeltitle setTranslatesAutoresizingMaskIntoConstraints:NO];
     
-    NSDictionary *views = @{@"bar":self.bar, @"holo":colholograms};
+    UILabel *labelholograms = [[UILabel alloc] init];
+    [labelholograms setBackgroundColor:[UIColor clearColor]];
+    [labelholograms setUserInteractionEnabled:NO];
+    [labelholograms setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [labelholograms setFont:[UIFont regularsize:18]];
+    [labelholograms setTextAlignment:NSTextAlignmentCenter];
+    [labelholograms setTextColor:[UIColor main]];
+    [labelholograms setText:NSLocalizedString(@"cars_nodrive_holograms_title", nil)];
+    
+    UILabel *labelplates = [[UILabel alloc] init];
+    [labelplates setBackgroundColor:[UIColor clearColor]];
+    [labelplates setUserInteractionEnabled:NO];
+    [labelplates setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [labelplates setFont:[UIFont regularsize:18]];
+    [labelplates setTextAlignment:NSTextAlignmentCenter];
+    [labelplates setTextColor:[UIColor main]];
+    [labelplates setText:NSLocalizedString(@"cars_nodrive_plates_title", nil)];
+    
+    [self addSubview:colholograms];
+    [self addSubview:labeltitle];
+    [self addSubview:labelholograms];
+    [self addSubview:labelplates];
+    
+    NSDictionary *views = @{@"bar":self.bar, @"holo":colholograms, @"labeltitle":labeltitle, @"labelholograms":labelholograms, @"labelplates":labelplates};
     NSDictionary *metrics = @{@"holoheight":@(hologramsheight)};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[holo]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[bar]-20-[holo(holoheight)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[labeltitle]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[labelplates]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[labelholograms]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[bar]-30-[labeltitle(24)]-30-[labelholograms(22)]-10-[holo(holoheight)]-50-[labelplates(22)]" options:0 metrics:metrics views:views]];
 }
 
 @end

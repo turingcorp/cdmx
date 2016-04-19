@@ -12,7 +12,7 @@
 
 "nodrive_sunday"="Todos circulan los domingos";
 "hologram_exento"="Exento";
-"hologram_00"="Double cero";
+"hologram_00"="Doble cero";
 "hologram_0"="Cero";
 "hologram_1"="Uno";
 "hologram_2"="Dos";
@@ -38,6 +38,9 @@
 "air_detail_info_pollutant"="\nContaminante  ";
 
 "cars_nodrive_button_retry"="Reintentar";
+"cars_nodrive_title"="Hoy no circulan";
+"cars_nodrive_holograms_title"="Hologramas";
+"cars_nodrive_plates_title"="Calcomanias";
 
 "map_district_alv"="Alvaro Obregon";
 "map_district_azc"="Azcapotzalco";

@@ -38,6 +38,9 @@
 "air_detail_info_pollutant"="\nPollutant  ";
 
 "cars_nodrive_button_retry"="Try again";
+"cars_nodrive_title"="Driving restriction for";
+"cars_nodrive_holograms_title"="Holograms";
+"cars_nodrive_plates_title"="Plates";
 
 "map_district_alv"="Alvaro Obregon";
 "map_district_azc"="Azcapotzalco";
