@@ -37,6 +37,8 @@
 "air_detail_info_quality"="Calidad del aire  ";
 "air_detail_info_pollutant"="\nContaminante  ";
 
+"cars_nodrive_button_retry"="Reintentar";
+
 "map_district_alv"="Alvaro Obregon";
 "map_district_azc"="Azcapotzalco";
 "map_district_bj"="Benito Juarez";
