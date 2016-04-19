@@ -1,6 +1,7 @@
 #import "vairdetailheader.h"
 #import "uicolor+uicolormain.h"
 #import "uifont+uifontmain.h"
+#import "tools.h"
 
 @implementation vairdetailheader
 
@@ -59,28 +60,40 @@
     [labelrose setTranslatesAutoresizingMaskIntoConstraints:NO];
     [labelrose setTextAlignment:NSTextAlignmentCenter];
     [labelrose setUserInteractionEnabled:NO];
-    [labelrose setFont:[UIFont regularsize:15]];
+    [labelrose setFont:[UIFont regularsize:13]];
     [labelrose setTextColor:[UIColor whiteColor]];
     [labelrose setBackgroundColor:[UIColor clearColor]];
-    [labelrose setText:NSLocalizedString(@"", nil)];
+    [labelrose setText:NSLocalizedString(@"air_detail_header_wind", nil)];
+    
+    UILabel *labeltemp = [[UILabel alloc] init];
+    [labeltemp setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [labeltemp setUserInteractionEnabled:NO];
+    [labeltemp setFont:[UIFont regularsize:16]];
+    [labeltemp setTextColor:[UIColor whiteColor]];
+    [labeltemp setBackgroundColor:[UIColor clearColor]];
     
     [self addSubview:label];
     [self addSubview:imagetemp];
     [self addSubview:rosewind];
     [self addSubview:rosewindpointer];
+    [self addSubview:labelrose];
+    [self addSubview:labeltemp];
     [self addSubview:buttonback];
     
-    NSDictionary *views = @{@"label":label, @"imagetemp":imagetemp, @"rosewind":rosewind, @"rosewindpointer":rosewindpointer, @"buttonback":buttonback};
+    NSDictionary *views = @{@"label":label, @"imagetemp":imagetemp, @"rosewind":rosewind, @"rosewindpointer":rosewindpointer, @"buttonback":buttonback, @"labelrose":labelrose, @"labeltemp":labeltemp};
     NSDictionary *metrics = @{};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-40-[label]-40-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-30-[label]" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-12-[imagetemp(22)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[imagetemp(22)]-4-[labeltemp]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[imagetemp(22)]-20-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-100-[rosewind]-100-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-100-[rosewindpointer]-100-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[rosewind(80)]-60-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[rosewindpointer(80)]-60-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[labelrose]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[labelrose]-46-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[labeltemp(22)]-20-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[buttonback(60)]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-20-[buttonback(45)]" options:0 metrics:metrics views:views]];
     
@@ -93,6 +106,18 @@
     {
         [rosewindpointer setHidden:YES];
         [rosewind setHidden:YES];
+        [labelrose setHidden:YES];
+    }
+    
+    if(controller.model.conditions)
+    {
+        NSString *strtemp = [NSString stringWithFormat:NSLocalizedString(@"air_detail_header_temp", nil), [[tools singleton] numbertostring:@(controller.model.conditions.temperature)]];
+        [labeltemp setText:strtemp];
+    }
+    else
+    {
+        [labeltemp setHidden:YES];
+        [imagetemp setHidden:YES];
     }
     
     return self;

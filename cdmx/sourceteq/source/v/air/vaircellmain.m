@@ -2,6 +2,7 @@
 #import "mstations.h"
 #import "uifont+uifontmain.h"
 #import "vaircellmaincell.h"
+#import "tools.h"
 
 static NSString* const uvindexcellid = @"uvcell";
 static NSInteger const uvwidth = 250;
@@ -190,8 +191,8 @@ static NSInteger const uvmax = 11;
     
     if([mstations singleton].generalconditions)
     {
-        NSString *stringtemp = [NSString stringWithFormat:NSLocalizedString(@"air_main_temp", nil), @([mstations singleton].generalconditions.temperature)];
-        NSString *stringhum = [NSString stringWithFormat:NSLocalizedString(@"air_main_hum", nil), @([mstations singleton].generalconditions.humidity)];
+        NSString *stringtemp = [NSString stringWithFormat:NSLocalizedString(@"air_main_temp", nil), [[tools singleton] numbertostring:@([mstations singleton].generalconditions.temperature)]];
+        NSString *stringhum = [NSString stringWithFormat:NSLocalizedString(@"air_main_hum", nil), [[tools singleton] numbertostring:@([mstations singleton].generalconditions.humidity)]];
         
         [self.labeltemp setText:stringtemp];
         [self.labelhumidity setText:stringhum];
