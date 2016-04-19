@@ -8,7 +8,7 @@
     self = [super init];
     self.name = NSLocalizedString(@"pages_item_settings_name", nil);
     self.descr = NSLocalizedString(@"pages_item_settings_descr", nil);
-    self.asset = @"general_logo";
+    self.asset = @"general_settings";
     
     return self;
 }
