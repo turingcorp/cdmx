@@ -1,14 +1,14 @@
 #import "mpagesitemabout.h"
-#import "<#header#>"
+#import "cabout.h"
 
 @implementation mpagesitemabout
 
 -(instancetype)init
 {
     self = [super init];
-    self.name = NSLocalizedString(@"pages_item_nodrive_name", nil);
-    self.descr = NSLocalizedString(@"pages_item_nodrive_descr", nil);
-    self.asset = @"general_nodrive";
+    self.name = NSLocalizedString(@"pages_item_about_name", nil);
+    self.descr = NSLocalizedString(@"pages_item_about_descr", nil);
+    self.asset = @"general_logo";
     
     return self;
 }
@@ -18,7 +18,7 @@
 
 -(UIViewController*)controller
 {
-    cnodrive *controller = [[cnodrive alloc] init];
+    cabout *controller = [[cabout alloc] init];
     
     return controller;
 }

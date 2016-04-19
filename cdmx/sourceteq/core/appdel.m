@@ -19,4 +19,14 @@
     return YES;
 }
 
+-(void)applicationDidEnterBackground:(UIApplication*)app
+{
+    
+}
+
+-(void)applicationWillTerminate:(UIApplication*)app
+{
+    
+}
+
 @end

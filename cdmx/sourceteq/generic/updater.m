@@ -27,6 +27,7 @@ NSString *documents;
                                       {
                                           [[analytics singleton] start];
                                           [[cmain singleton].pages loadfinished:modelpages];
+                                          [updater registernotifications];
                                       });
                    });
 }
@@ -65,6 +66,15 @@ NSString *documents;
     [userdef removePersistentDomainForName:NSRegistrationDomain];
     [userdef setValue:appid forKey:@"appid"];
     [userdef synchronize];
+}
+
++(void)registernotifications
+{
+    if([[UIApplication sharedApplication] respondsToSelector:@selector(registerUserNotificationSettings:)])
+    {
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert categories:nil];
+        [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+    }
 }
 
 @end
