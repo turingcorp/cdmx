@@ -1,8 +1,8 @@
 "app_name"="CDMX";
 
-"pages_section_stats"="Estadisticas";
-"pages_item_air_name"="Calidad del aire";
-"pages_item_air_descr"="\nCalidad del aire actual";
+"pages_section_stats"="Ciudad";
+"pages_item_air_name"="Medio ambiente";
+"pages_item_air_descr"="\nContaminación, radiación y temperatura";
 
 "api_error_nodata"="Error al conectarse al servidor, intenta de nuevo";
 "api_error_invalidjson"="Problemas de conexión, intenta de nuevo";
