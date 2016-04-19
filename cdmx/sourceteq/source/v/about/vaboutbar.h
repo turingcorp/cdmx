@@ -1,10 +1,10 @@
 #import <UIKit/UIKit.h>
-#import "csettings.h"
+#import "cabout.h"
 
 @interface vaboutbar:UIView
 
--(instancetype)init:(csettings*)controller;
+-(instancetype)init:(cabout*)controller;
 
-@property(weak, nonatomic)csettings *controller;
+@property(weak, nonatomic)cabout *controller;
 
 @end

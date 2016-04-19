@@ -3,7 +3,7 @@
 
 @implementation vaboutbar
 
--(instancetype)init:(csettings*)controller
+-(instancetype)init:(cabout*)controller
 {
     self = [super init];
     [self setClipsToBounds:YES];
