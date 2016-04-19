@@ -1,4 +1,5 @@
 #import "mpagesitemnodrive.h"
+#import "ccars.h"
 
 @implementation mpagesitemnodrive
 
@@ -7,7 +8,7 @@
     self = [super init];
     self.name = NSLocalizedString(@"pages_item_air_name", nil);
     self.descr = NSLocalizedString(@"pages_item_air_descr", nil);
-    self.asset = @"general_environment";
+    self.asset = @"general_cars";
     
     return self;
 }
@@ -17,7 +18,7 @@
 
 -(UIViewController*)controller
 {
-    cair *controller = [[cair alloc] init];
+    ccars *controller = [[ccars alloc] init];
     
     return controller;
 }

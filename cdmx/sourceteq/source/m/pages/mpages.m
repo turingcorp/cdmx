@@ -1,5 +1,6 @@
 #import "mpages.h"
 #import "mpagessectionstats.h"
+#import "mpagessectioncars.h"
 
 @implementation mpages
 
@@ -7,7 +8,8 @@
 {
     self = [super init];
     self.sections = @[
-                      [[mpagessectionstats alloc] init]
+                      [[mpagessectionstats alloc] init],
+                      [[mpagessectioncars alloc] init]
                       ];
     
     return self;
