@@ -3,7 +3,7 @@
 
 static NSString* const hologramcellid = @"hologramcell";
 static NSInteger const linespacing = 2;
-static NSInteger const cellwidth = 50;
+static NSInteger const cellwidth = 70;
 
 @implementation vnodriveholograms
 
@@ -82,6 +82,7 @@ static NSInteger const cellwidth = 50;
 -(UICollectionViewCell*)collectionView:(UICollectionView*)col cellForItemAtIndexPath:(NSIndexPath*)index
 {
     vnodrivehologramscell *cell = [col dequeueReusableCellWithReuseIdentifier:hologramcellid forIndexPath:index];
+    [cell config:self.model.holograms[index.item]];
     
     return cell;
 }

@@ -6,5 +6,6 @@
 -(void)config:(mstationsnodrivehologram*)model;
 
 @property(weak, nonatomic)UILabel *label;
+@property(weak, nonatomic)UILabel *labelname;
 
 @end

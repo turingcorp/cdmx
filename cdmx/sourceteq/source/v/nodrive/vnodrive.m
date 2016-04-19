@@ -7,7 +7,7 @@
 #import "uifont+uifontmain.h"
 #import "uicolor+uicolormain.h"
 
-static NSInteger const hologramsheight = 100;
+static NSInteger const hologramsheight = 80;
 
 @implementation vnodrive
 

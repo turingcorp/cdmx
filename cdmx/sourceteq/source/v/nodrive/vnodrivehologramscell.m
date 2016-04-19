@@ -16,20 +16,33 @@ static CGFloat const cornerradius = 6.0;
     
     UILabel *label = [[UILabel alloc] init];
     [label setBackgroundColor:[UIColor clearColor]];
-    [label setFont:[UIFont boldsize:20]];
+    [label setFont:[UIFont boldsize:30]];
     [label setTextAlignment:NSTextAlignmentCenter];
     [label setTextColor:[UIColor whiteColor]];
     [label setUserInteractionEnabled:NO];
     [label setTranslatesAutoresizingMaskIntoConstraints:NO];
     self.label = label;
     
+    UILabel *labelname = [[UILabel alloc] init];
+    [labelname setBackgroundColor:[UIColor clearColor]];
+    [labelname setFont:[UIFont regularsize:14]];
+    [labelname setTextAlignment:NSTextAlignmentCenter];
+    [labelname setTextColor:[UIColor whiteColor]];
+    [labelname setUserInteractionEnabled:NO];
+    [labelname setNumberOfLines:0];
+    [labelname setTranslatesAutoresizingMaskIntoConstraints:NO];
+    self.labelname = labelname;
+    
+    [self addSubview:labelname];
     [self addSubview:label];
     
-    NSDictionary *views = @{@"label":label};
+    NSDictionary *views = @{@"label":label, @"labelname":labelname};
     NSDictionary *metrics = @{};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[label]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[label]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-4-[labelname]-4-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-20-[label(30)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[labelname(30)]-10-|" options:0 metrics:metrics views:views]];
     
     return self;
 }
@@ -38,7 +51,8 @@ static CGFloat const cornerradius = 6.0;
 
 -(void)config:(mstationsnodrivehologram*)model
 {
-    [self.label setText:model.name];
+    [self.label setText:model.symbol];
+    [self.labelname setText:model.name];
 }
 
 @end
