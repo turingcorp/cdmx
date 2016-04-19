@@ -18,6 +18,7 @@ static CGFloat const startrad = -M_PI_2;
     [self setClipsToBounds:YES];
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self setBackgroundColor:[UIColor clearColor]];
+    [self setUserInteractionEnabled:NO];
     self.model = model;
     
     NSString *strpoints = [[tools singleton] numbertostring:@(model.points)];
