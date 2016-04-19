@@ -8,12 +8,22 @@
 	<string>Toluene</string>
 	<key>so4</key>
 	<string>Sulfate</string>
+	<key>so2</key>
+	<string>Sulfur dioxide</string>
 	<key>no3</key>
 	<string>Nitrate</string>
+	<key>no2</key>
+	<string>Nitrogen dioxide</string>
+	<key>no</key>
+	<string>Nitric oxide</string>
+	<key>nox</key>
+	<string>Nitrogen oxides</string>
 	<key>cl</key>
 	<string>Chloride</string>
 	<key>co3</key>
 	<string>Carbonate</string>
+	<key>co</key>
+	<string>Carbon monoxide</string>
 	<key>h</key>
 	<string>Hydrogen</string>
 	<key>nh4</key>
@@ -26,6 +36,8 @@
 	<string>Sodium</string>
 	<key>k</key>
 	<string>Potassium</string>
+	<key>o3</key>
+	<string>Ozone</string>
 	<key>pbpst</key>
 	<string>Lead</string>
 	<key>pbpm</key>
@@ -34,5 +46,11 @@
 	<string>Ethylbenzene</string>
 	<key>xil</key>
 	<string>Xylene</string>
+	<key>pm10</key>
+	<string>Dust particles</string>
+	<key>pm2.5</key>
+	<string>Dust particles</string>
+	<key>pmco</key>
+	<string>Dust particles</string>
 </dict>
 </plist>

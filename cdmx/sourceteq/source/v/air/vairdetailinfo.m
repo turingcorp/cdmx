@@ -12,8 +12,8 @@
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self setUserInteractionEnabled:NO];
     
-    NSDictionary *dicttitle = @{NSFontAttributeName:[UIFont boldsize:14], NSForegroundColorAttributeName:[UIColor colorWithWhite:0.3 alpha:1]};
-    NSDictionary *dictdescr = @{NSFontAttributeName:[UIFont regularsize:18], NSForegroundColorAttributeName:[UIColor colorWithWhite:0.6 alpha:1]};
+    NSDictionary *dicttitle = @{NSFontAttributeName:[UIFont boldsize:14], NSForegroundColorAttributeName:[UIColor colorWithWhite:0.2 alpha:1]};
+    NSDictionary *dictdescr = @{NSFontAttributeName:[UIFont regularsize:18], NSForegroundColorAttributeName:[UIColor colorWithWhite:0.5 alpha:1]};
     
     NSString *stringquality = model.index.name;
     NSString *stringpollutant = model.pollutant;
@@ -54,13 +54,14 @@
     [label setAttributedText:mutstring];
     
     [self addSubview:border];
+    [self addSubview:label];
     
     NSDictionary *views = @{@"border":border, @"label":label};
     NSDictionary *metrics = @{};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[border]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[border(1)]-10-[label]" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[label]-20-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[label]-10-|" options:0 metrics:metrics views:views]];
     
     return self;
 }
