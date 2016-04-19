@@ -1,13 +1,6 @@
-//
-//  maboutitemreview.h
-//  cdmx
-//
-//  Created by zero on 4/19/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
+#import <UIKit/UIKit.h>
+#import "maboutitem.h"
 
-#import <Foundation/Foundation.h>
-
-@interface maboutitemreview : NSObject
+@interface maboutitemreview:maboutitem
 
 @end
