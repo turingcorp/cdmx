@@ -27,7 +27,7 @@
 "air_main_hum"="%@ %%";
 "air_map_title"="Estaciones";
 
-"air_detail_header_wind"="Direccion del viento";
+"air_detail_header_wind"="Dirección del viento";
 "air_detail_header_temp"="%@ °C";
 "air_detail_header_altitude"="Altura\n%@ m";
 "air_detail_info_quality"="Calidad del aire  ";
