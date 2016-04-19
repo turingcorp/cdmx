@@ -5,7 +5,7 @@
 "pages_item_air_descr"="\nCalidad del aire actual";
 
 "api_error_nodata"="Error al conectarse al servidor, intenta de nuevo";
-"api_error_invalidjson"="Problemas de coneccion, intenta de nuevo";
+"api_error_invalidjson"="Problemas de conexión, intenta de nuevo";
 
 "hologram_exento"="Exento";
 "hologram_00"="Double cero";
@@ -13,14 +13,14 @@
 "hologram_1"="Uno";
 "hologram_2"="Dos";
 
-"air_index_nodata"="Sin informacion";
+"air_index_nodata"="Sin información";
 "air_index_good"="Buena";
 "air_index_regular"="Regular";
 "air_index_bad"="Mala";
 "air_index_verybad"="Muy mala";
 "air_index_extreme"="Extrema";
 
-"air_button_map"="Localizacion";
+"air_button_map"="Localización";
 "air_button_retry"="Intenta de nuevo";
 "air_main_uvlabel"="Indice UV";
 "air_main_temp"="%@ °C";

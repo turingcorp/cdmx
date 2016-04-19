@@ -1,11 +1,12 @@
 #import "vairdetailpay.h"
 
-static NSInteger const margin = 50;
-static NSInteger const linewidth = 10;
+static NSInteger const margin = 100;
+static NSInteger const linewidth = 24;
 static NSInteger const minpoints = 0;
 static NSInteger const degrees = 360;
 static CGFloat const maxpoints = 200.0;
 static CGFloat const degradian = 180.0;
+static CGFloat const startrad = -M_PI_2;
 
 @implementation vairdetailpay
 
@@ -29,6 +30,7 @@ static CGFloat const degradian = 180.0;
     CGFloat min = MIN(width, height);
     CGFloat min_2 = min / 2.0;
     CGFloat radius = min_2 - margin;
+    CGFloat linewidth_2 = linewidth / 2.0;
     NSInteger points = self.model.points;
     
     if(points < minpoints)
@@ -45,11 +47,21 @@ static CGFloat const degradian = 180.0;
     CGFloat radians = degs * M_PI / degradian;
     
     CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextSetStrokeColorWithColor(context, self.model.color.CGColor);
-    CGContextSetFillColorWithColor(context, self.model.color.CGColor);
     CGContextSetLineWidth(context, linewidth);
-    CGContextAddArc(context, width_2, height_2, radius, 0, radians, 0);
+    CGContextSetStrokeColorWithColor(context, [UIColor colorWithWhite:0.97 alpha:1].CGColor);
+    CGContextAddArc(context, width_2, height_2, radius, 0.0001, 0, 0);
     CGContextDrawPath(context, kCGPathStroke);
+    CGContextSetStrokeColorWithColor(context, self.model.color.CGColor);
+    CGContextAddArc(context, width_2, height_2, radius, startrad, radians + startrad, 0);
+    
+    CGPoint point = CGContextGetPathCurrentPoint(context);
+    
+    CGContextDrawPath(context, kCGPathStroke);
+    CGContextSetFillColorWithColor(context, self.model.color.CGColor);
+    CGContextAddArc(context, width_2, height_2 - radius, linewidth_2, 0.00001, 0, 0);
+    CGContextDrawPath(context, kCGPathFill);
+    CGContextAddArc(context, point.x, point.y, linewidth_2, 0.00001, 0, 0);
+    CGContextDrawPath(context, kCGPathFill);
 }
 
 @end
