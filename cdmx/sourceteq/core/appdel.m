@@ -2,6 +2,7 @@
 #import "updater.h"
 #import "cmain.h"
 #import "snotpollution.h"
+#import "msettings.h"
 
 @implementation appdel
 {
@@ -41,8 +42,11 @@
 {
     [[UIApplication sharedApplication] cancelAllLocalNotifications];
     
-    UILocalNotification *notification = [snotpollution notification];
-    [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+    if([msettings singleton].notifications)
+    {
+        UILocalNotification *notification = [snotpollution notification];
+        [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+    }
 }
 
 @end
