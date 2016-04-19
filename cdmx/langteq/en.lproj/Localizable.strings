@@ -27,6 +27,8 @@
 "air_main_hum"="%@ %%";
 "air_map_title"="Stations";
 
+"air_detail_header_wind"="Wind direction";
+
 "map_district_alv"="Alvaro Obregon";
 "map_district_azc"="Azcapotzalco";
 "map_district_bj"="Benito Juarez";

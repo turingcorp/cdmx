@@ -55,6 +55,15 @@
     [rosewindpointer setClipsToBounds:YES];
     [rosewindpointer setContentMode:UIViewContentModeScaleAspectFit];
     
+    UILabel *labelrose = [[UILabel alloc] init];
+    [labelrose setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [labelrose setTextAlignment:NSTextAlignmentCenter];
+    [labelrose setUserInteractionEnabled:NO];
+    [labelrose setFont:[UIFont regularsize:15]];
+    [labelrose setTextColor:[UIColor whiteColor]];
+    [labelrose setBackgroundColor:[UIColor clearColor]];
+    [labelrose setText:NSLocalizedString(@"", nil)];
+    
     [self addSubview:label];
     [self addSubview:imagetemp];
     [self addSubview:rosewind];
@@ -65,7 +74,7 @@
     NSDictionary *metrics = @{};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-40-[label]-40-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-28-[label]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-30-[label]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-12-[imagetemp(22)]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[imagetemp(22)]-20-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-100-[rosewind]-100-|" options:0 metrics:metrics views:views]];
