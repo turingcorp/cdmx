@@ -1,6 +1,7 @@
 #import "snotpollution.h"
 
-static NSInteger const secondsinterval = 3600;
+//static NSInteger const secondsinterval = 3600;
+static NSInteger const secondsinterval = 3;
 static NSInteger const endinghour = 18;
 static NSInteger const startinghour = 9;
 
