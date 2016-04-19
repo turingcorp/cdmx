@@ -41,6 +41,7 @@
     self.buttontry = buttontry;
     
     [self addSubview:bar];
+    [self addSubview:labelerror];
     [self addSubview:buttontry];
     
     NSDictionary *views = @{@"bar":bar, @"buttontry":buttontry, @"labelerror":labelerror};
@@ -86,14 +87,7 @@
 
 -(void)tryload
 {
-    if([mstations singleton].error || [mstations singleton].nodrive)
-    {
-        [self.labelerror setHidden:YES];
-        [self.buttontry setHidden:YES];
-        
-        [self showcollections];
-    }
-    else
+    if([mstations singleton].error || ![mstations singleton].nodrive)
     {
         [self.buttontry setHidden:NO];
         
@@ -103,6 +97,13 @@
         {
             [self.labelerror setText:stringerror];
         }
+    }
+    else
+    {
+        [self.labelerror setHidden:YES];
+        [self.buttontry setHidden:YES];
+        
+        [self showcollections];
     }
 }
 
