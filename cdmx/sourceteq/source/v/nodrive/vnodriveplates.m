@@ -3,8 +3,8 @@
 
 static NSString* const platescellid = @"platescell";
 static NSInteger const linespacing = 2;
-static NSInteger const cellwidth = 80;
-static NSInteger const cellheight = 80;
+static NSInteger const cellwidth = 60;
+static NSInteger const cellheight = 60;
 
 @implementation vnodriveplates
 
@@ -52,8 +52,10 @@ static NSInteger const cellheight = 80;
 
 -(UIEdgeInsets)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout insetForSectionAtIndex:(NSInteger)section
 {
+    NSInteger cells = self.model.plates[section].numbers.count;
+    NSInteger totalcellswidth = (cellwidth * cells) + (linespacing * (cells - 1));
     CGFloat width = col.bounds.size.width;
-    CGFloat remain = width - cellwidth;
+    CGFloat remain = width - totalcellswidth;
     CGFloat margin = remain / 2.0;
     
     UIEdgeInsets insets = UIEdgeInsetsMake(0, margin, 0, margin);

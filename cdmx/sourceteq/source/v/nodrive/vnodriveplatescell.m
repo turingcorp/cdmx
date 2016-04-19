@@ -6,6 +6,7 @@
 {
     self = [super initWithFrame:frame];
     [self setClipsToBounds:YES];
+    [self.layer setCornerRadius:10];
     
     return self;
 }
