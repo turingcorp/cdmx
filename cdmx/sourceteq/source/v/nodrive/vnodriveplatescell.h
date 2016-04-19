@@ -3,7 +3,7 @@
 
 @interface vnodriveplatescell:UICollectionViewCell
 
--(void)config:(mstationsnodriveplate*)model;
+-(void)config:(mstationsnodriveplate*)model number:(NSNumber*)number;
 
 @property(weak, nonatomic)UILabel *label;
 

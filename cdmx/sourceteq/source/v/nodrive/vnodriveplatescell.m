@@ -12,7 +12,7 @@
 
 #pragma mark public
 
--(void)config:(mstationsnodriveplate*)model
+-(void)config:(mstationsnodriveplate*)model number:(NSNumber*)number
 {
     [self setBackgroundColor:model.color];
 }

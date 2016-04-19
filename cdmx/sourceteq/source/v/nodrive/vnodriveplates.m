@@ -3,8 +3,8 @@
 
 static NSString* const platescellid = @"platescell";
 static NSInteger const linespacing = 2;
-static NSInteger const cellwidth = 60;
-static NSInteger const cellheight = 60;
+static NSInteger const cellwidth = 80;
+static NSInteger const cellheight = 80;
 
 @implementation vnodriveplates
 
@@ -63,18 +63,25 @@ static NSInteger const cellheight = 60;
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView*)col
 {
-    return 1;
+    NSInteger count = self.model.plates.count;
+    
+    return count;
 }
 
 -(NSInteger)collectionView:(UICollectionView*)col numberOfItemsInSection:(NSInteger)section
 {
-    return self.model.holograms.count;
+    NSInteger count = self.model.plates[section].numbers.count;
+    
+    return count;
 }
 
 -(UICollectionViewCell*)collectionView:(UICollectionView*)col cellForItemAtIndexPath:(NSIndexPath*)index
 {
+    mstationsnodriveplate *plate = self.model.plates[index.section];
+    NSNumber *number = plate.numbers[index.item];
+    
     vnodriveplatescell *cell = [col dequeueReusableCellWithReuseIdentifier:platescellid forIndexPath:index];
-    [cell config:self.model.plates[index.item]];
+    [cell config:plate number:number];
     
     return cell;
 }
