@@ -1,8 +1,8 @@
-#import "vsettings.h"
+#import "vabout.h"
 
-@implementation vsettings
+@implementation vabout
 
--(instancetype)init:(csettings*)controller
+-(instancetype)init:(cabout*)controller
 {
     self = [super init];
     [self setClipsToBounds:YES];

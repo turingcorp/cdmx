@@ -2,4 +2,6 @@
 
 @interface csettings:UIViewController
 
+-(void)openmenu;
+
 @end
