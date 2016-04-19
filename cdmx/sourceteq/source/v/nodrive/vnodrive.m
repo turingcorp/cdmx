@@ -7,6 +7,8 @@
 #import "uifont+uifontmain.h"
 #import "uicolor+uicolormain.h"
 
+static NSInteger const hologramsheight = 100;
+
 @implementation vnodrive
 
 -(instancetype)init:(cnodrive*)controller
@@ -109,7 +111,16 @@
 
 -(void)showcollections
 {
+    mstationsnodrive *nodrive = [mstations singleton].nodrive;
+    vnodriveholograms *colholograms = [[vnodriveholograms alloc] init:nodrive];
     
+    [self addSubview:colholograms];
+    
+    NSDictionary *views = @{@"bar":self.bar, @"holo":colholograms};
+    NSDictionary *metrics = @{@"holoheight":@(hologramsheight)};
+    
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[holo]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[bar]-20-[holo(holoheight)]" options:0 metrics:metrics views:views]];
 }
 
 @end
