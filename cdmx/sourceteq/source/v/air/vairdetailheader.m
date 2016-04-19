@@ -2,6 +2,7 @@
 #import "uicolor+uicolormain.h"
 #import "uifont+uifontmain.h"
 #import "tools.h"
+#import "mstationsitem.h"
 
 @implementation vairdetailheader
 
@@ -72,15 +73,25 @@
     [labeltemp setTextColor:[UIColor whiteColor]];
     [labeltemp setBackgroundColor:[UIColor clearColor]];
     
+    UILabel *labelaltitude = [[UILabel alloc] init];
+    [labelaltitude setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [labelaltitude setUserInteractionEnabled:NO];
+    [labelaltitude setFont:[UIFont regularsize:16]];
+    [labelaltitude setTextColor:[UIColor whiteColor]];
+    [labelaltitude setBackgroundColor:[UIColor clearColor]];
+    [labelaltitude setNumberOfLines:0];
+    [labelaltitude setTextAlignment:NSTextAlignmentRight];
+    
     [self addSubview:label];
     [self addSubview:imagetemp];
     [self addSubview:rosewind];
     [self addSubview:rosewindpointer];
     [self addSubview:labelrose];
     [self addSubview:labeltemp];
+    [self addSubview:labelaltitude];
     [self addSubview:buttonback];
     
-    NSDictionary *views = @{@"label":label, @"imagetemp":imagetemp, @"rosewind":rosewind, @"rosewindpointer":rosewindpointer, @"buttonback":buttonback, @"labelrose":labelrose, @"labeltemp":labeltemp};
+    NSDictionary *views = @{@"label":label, @"imagetemp":imagetemp, @"rosewind":rosewind, @"rosewindpointer":rosewindpointer, @"buttonback":buttonback, @"labelrose":labelrose, @"labeltemp":labeltemp, @"labelaltitude":labelaltitude};
     NSDictionary *metrics = @{};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-40-[label]-40-|" options:0 metrics:metrics views:views]];
@@ -89,11 +100,13 @@
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[imagetemp(22)]-20-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-100-[rosewind]-100-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-100-[rosewindpointer]-100-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[rosewind(80)]-60-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[rosewindpointer(80)]-60-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[rosewind(80)]-70-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[rosewindpointer(80)]-70-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[labelrose]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[labelrose]-46-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[labelrose]-56-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[labeltemp(22)]-20-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[labelaltitude]-10-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[labelaltitude]-15-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[buttonback(60)]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-20-[buttonback(45)]" options:0 metrics:metrics views:views]];
     
@@ -118,6 +131,16 @@
     {
         [labeltemp setHidden:YES];
         [imagetemp setHidden:YES];
+    }
+    
+    if(controller.model.station)
+    {
+        NSString *stralt = [NSString stringWithFormat:NSLocalizedString(@"air_detail_header_altitude", nil), [[tools singleton] numbertostring:@(controller.model.station.altitude)]];
+        [labelaltitude setText:stralt];
+    }
+    else
+    {
+        [labelaltitude setHidden:YES];
     }
     
     return self;
