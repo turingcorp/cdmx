@@ -85,6 +85,8 @@
 		DA8A40091CC68BC1008FECF2 /* vnodrivebar.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8A40081CC68BC1008FECF2 /* vnodrivebar.m */; };
 		DA8A400C1CC68DD2008FECF2 /* vnodriveholograms.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8A400B1CC68DD2008FECF2 /* vnodriveholograms.m */; };
 		DA8A400F1CC68DDC008FECF2 /* vnodriveplates.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8A400E1CC68DDC008FECF2 /* vnodriveplates.m */; };
+		DA8A40121CC69495008FECF2 /* vnodrivehologramscell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8A40111CC69495008FECF2 /* vnodrivehologramscell.m */; };
+		DA8A40151CC694B0008FECF2 /* vnodriveplatescell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8A40141CC694B0008FECF2 /* vnodriveplatescell.m */; };
 		DA8F033C1CC1491C0007596C /* cairdetail.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8F033B1CC1491C0007596C /* cairdetail.m */; };
 		DA8F033F1CC151570007596C /* vaircellmain.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8F033E1CC151570007596C /* vaircellmain.m */; };
 		DA8F03421CC17AAE0007596C /* vaircellmaincell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8F03411CC17AAE0007596C /* vaircellmaincell.m */; };
@@ -297,6 +299,10 @@
 		DA8A400B1CC68DD2008FECF2 /* vnodriveholograms.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vnodriveholograms.m; sourceTree = "<group>"; };
 		DA8A400D1CC68DDC008FECF2 /* vnodriveplates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vnodriveplates.h; sourceTree = "<group>"; };
 		DA8A400E1CC68DDC008FECF2 /* vnodriveplates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vnodriveplates.m; sourceTree = "<group>"; };
+		DA8A40101CC69495008FECF2 /* vnodrivehologramscell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vnodrivehologramscell.h; sourceTree = "<group>"; };
+		DA8A40111CC69495008FECF2 /* vnodrivehologramscell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vnodrivehologramscell.m; sourceTree = "<group>"; };
+		DA8A40131CC694B0008FECF2 /* vnodriveplatescell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vnodriveplatescell.h; sourceTree = "<group>"; };
+		DA8A40141CC694B0008FECF2 /* vnodriveplatescell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vnodriveplatescell.m; sourceTree = "<group>"; };
 		DA8F033A1CC1491C0007596C /* cairdetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cairdetail.h; sourceTree = "<group>"; };
 		DA8F033B1CC1491C0007596C /* cairdetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cairdetail.m; sourceTree = "<group>"; };
 		DA8F033D1CC151570007596C /* vaircellmain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vaircellmain.h; sourceTree = "<group>"; };
@@ -526,8 +532,12 @@
 				DA8A40081CC68BC1008FECF2 /* vnodrivebar.m */,
 				DA8A400A1CC68DD2008FECF2 /* vnodriveholograms.h */,
 				DA8A400B1CC68DD2008FECF2 /* vnodriveholograms.m */,
+				DA8A40101CC69495008FECF2 /* vnodrivehologramscell.h */,
+				DA8A40111CC69495008FECF2 /* vnodrivehologramscell.m */,
 				DA8A400D1CC68DDC008FECF2 /* vnodriveplates.h */,
 				DA8A400E1CC68DDC008FECF2 /* vnodriveplates.m */,
+				DA8A40131CC694B0008FECF2 /* vnodriveplatescell.h */,
+				DA8A40141CC694B0008FECF2 /* vnodriveplatescell.m */,
 			);
 			path = nodrive;
 			sourceTree = "<group>";
@@ -1166,9 +1176,11 @@
 				DA87082A1CBE840F000C08E1 /* amanager.m in Sources */,
 				DA87084D1CBE9D66000C08E1 /* mstationsreadinguv.m in Sources */,
 				DAD875F31CBD603D00A4F91C /* mpagesitemair.m in Sources */,
+				DA8A40121CC69495008FECF2 /* vnodrivehologramscell.m in Sources */,
 				DA87088E1CBEDC73000C08E1 /* mstationsreadingitemconditions.m in Sources */,
 				DA000D741CC4477800A82EC0 /* cairgeo.m in Sources */,
 				DA000D501CC29FA200A82EC0 /* mcdmapitemcuaji.m in Sources */,
+				DA8A40151CC694B0008FECF2 /* vnodriveplatescell.m in Sources */,
 				DAD875E41CBD5B1D00A4F91C /* mpages.m in Sources */,
 				DA87086F1CBEBE63000C08E1 /* mstationsreadingitemindexverybad.m in Sources */,
 				DA000D471CC29F6E00A82EC0 /* mcdmapitemiztaca.m in Sources */,
