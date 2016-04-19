@@ -151,10 +151,11 @@ static NSInteger const hologramsheight = 80;
     NSDictionary *metrics = @{@"holoheight":@(hologramsheight)};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[holo]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[colplates]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[labeltitle]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[labelplates]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[labelholograms]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[bar]-20-[labeltitle(35)]-20-[labelholograms(20)]-6-[holo(holoheight)]-20-[labelplates(20)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[bar]-20-[labeltitle(35)]-20-[labelholograms(20)]-6-[holo(holoheight)]-20-[labelplates(20)]-6-[colplates]-0-|" options:0 metrics:metrics views:views]];
 }
 
 @end

@@ -1,13 +1,20 @@
-//
-//  vnodriveplatescell.m
-//  cdmx
-//
-//  Created by zero on 4/19/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
-
 #import "vnodriveplatescell.h"
 
 @implementation vnodriveplatescell
+
+-(instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    [self setClipsToBounds:YES];
+    
+    return self;
+}
+
+#pragma mark public
+
+-(void)config:(mstationsnodriveplate*)model
+{
+    [self setBackgroundColor:model.color];
+}
 
 @end

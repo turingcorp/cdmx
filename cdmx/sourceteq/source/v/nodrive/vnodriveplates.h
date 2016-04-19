@@ -1,7 +1,10 @@
 #import <UIKit/UIKit.h>
+#import "mstationsnodrive.h"
 
-@interface vnodriveplates:UIView<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
+@interface vnodriveplates:UIView<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
-@property(weak, nonatomic)UICollectionView *collection;
+-(instancetype)init:(mstationsnodrive*)model;
+
+@property(weak, nonatomic)mstationsnodrive *model;
 
 @end
