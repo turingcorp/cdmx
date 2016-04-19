@@ -2,6 +2,7 @@
 
 "pages_section_stats"="City";
 "pages_section_cars"="Cars";
+"pages_section_app"="App";
 "pages_item_air_name"="Environment";
 "pages_item_air_descr"="\nPollution, radiation and temperature";
 "pages_item_nodrive_name"="No drive";

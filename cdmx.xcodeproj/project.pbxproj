@@ -87,6 +87,8 @@
 		DA8A400F1CC68DDC008FECF2 /* vnodriveplates.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8A400E1CC68DDC008FECF2 /* vnodriveplates.m */; };
 		DA8A40121CC69495008FECF2 /* vnodrivehologramscell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8A40111CC69495008FECF2 /* vnodrivehologramscell.m */; };
 		DA8A40151CC694B0008FECF2 /* vnodriveplatescell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8A40141CC694B0008FECF2 /* vnodriveplatescell.m */; };
+		DA8A40181CC6AAFB008FECF2 /* mpagessectionapp.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8A40171CC6AAFB008FECF2 /* mpagessectionapp.m */; };
+		DA8A401B1CC6AC1A008FECF2 /* mpagesitemreview.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8A401A1CC6AC1A008FECF2 /* mpagesitemreview.m */; };
 		DA8F033C1CC1491C0007596C /* cairdetail.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8F033B1CC1491C0007596C /* cairdetail.m */; };
 		DA8F033F1CC151570007596C /* vaircellmain.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8F033E1CC151570007596C /* vaircellmain.m */; };
 		DA8F03421CC17AAE0007596C /* vaircellmaincell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8F03411CC17AAE0007596C /* vaircellmaincell.m */; };
@@ -303,6 +305,10 @@
 		DA8A40111CC69495008FECF2 /* vnodrivehologramscell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vnodrivehologramscell.m; sourceTree = "<group>"; };
 		DA8A40131CC694B0008FECF2 /* vnodriveplatescell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vnodriveplatescell.h; sourceTree = "<group>"; };
 		DA8A40141CC694B0008FECF2 /* vnodriveplatescell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vnodriveplatescell.m; sourceTree = "<group>"; };
+		DA8A40161CC6AAFB008FECF2 /* mpagessectionapp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpagessectionapp.h; sourceTree = "<group>"; };
+		DA8A40171CC6AAFB008FECF2 /* mpagessectionapp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mpagessectionapp.m; sourceTree = "<group>"; };
+		DA8A40191CC6AC1A008FECF2 /* mpagesitemreview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpagesitemreview.h; sourceTree = "<group>"; };
+		DA8A401A1CC6AC1A008FECF2 /* mpagesitemreview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mpagesitemreview.m; sourceTree = "<group>"; };
 		DA8F033A1CC1491C0007596C /* cairdetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cairdetail.h; sourceTree = "<group>"; };
 		DA8F033B1CC1491C0007596C /* cairdetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cairdetail.m; sourceTree = "<group>"; };
 		DA8F033D1CC151570007596C /* vaircellmain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vaircellmain.h; sourceTree = "<group>"; };
@@ -863,16 +869,20 @@
 				DAD875E31CBD5B1D00A4F91C /* mpages.m */,
 				DAD875E51CBD5F1600A4F91C /* mpagessection.h */,
 				DAD875E61CBD5F1600A4F91C /* mpagessection.m */,
+				DA8A3FF51CC681D3008FECF2 /* mpagessectioncars.h */,
+				DA8A3FF61CC681D3008FECF2 /* mpagessectioncars.m */,
 				DAD875EB1CBD5F9600A4F91C /* mpagessectionstats.h */,
 				DAD875EC1CBD5F9600A4F91C /* mpagessectionstats.m */,
+				DA8A40161CC6AAFB008FECF2 /* mpagessectionapp.h */,
+				DA8A40171CC6AAFB008FECF2 /* mpagessectionapp.m */,
 				DAD875EE1CBD5FB700A4F91C /* mpagesitem.h */,
 				DAD875EF1CBD5FB700A4F91C /* mpagesitem.m */,
 				DAD875F11CBD603D00A4F91C /* mpagesitemair.h */,
 				DAD875F21CBD603D00A4F91C /* mpagesitemair.m */,
-				DA8A3FF51CC681D3008FECF2 /* mpagessectioncars.h */,
-				DA8A3FF61CC681D3008FECF2 /* mpagessectioncars.m */,
 				DA8A3FF81CC681E4008FECF2 /* mpagesitemnodrive.h */,
 				DA8A3FF91CC681E4008FECF2 /* mpagesitemnodrive.m */,
+				DA8A40191CC6AC1A008FECF2 /* mpagesitemreview.h */,
+				DA8A401A1CC6AC1A008FECF2 /* mpagesitemreview.m */,
 			);
 			path = pages;
 			sourceTree = "<group>";
@@ -1170,6 +1180,7 @@
 				DAD875F61CBD645500A4F91C /* vairbar.m in Sources */,
 				DAD33FF41CBC83E300C87502 /* appdel.m in Sources */,
 				DAD33FFA1CBC83E300C87502 /* uicolor+uicolormain.m in Sources */,
+				DA8A401B1CC6AC1A008FECF2 /* mpagesitemreview.m in Sources */,
 				DA8A3FF41CC6753F008FECF2 /* vairdetailinfo.m in Sources */,
 				DA8A3FF71CC681D3008FECF2 /* mpagessectioncars.m in Sources */,
 				DAD340011CBC83E300C87502 /* mdirs.m in Sources */,
@@ -1230,6 +1241,7 @@
 				DA188B041CC59EB300C91AF2 /* vairdetail.m in Sources */,
 				DA8708A81CBF0C16000C08E1 /* mstationsnodrivehologramtwice.m in Sources */,
 				DA000D4A1CC29F7A00A82EC0 /* mcdmapitembj.m in Sources */,
+				DA8A40181CC6AAFB008FECF2 /* mpagessectionapp.m in Sources */,
 				DAD875FC1CBD6CF200A4F91C /* vmenubutton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
