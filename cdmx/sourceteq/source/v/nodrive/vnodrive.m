@@ -143,11 +143,12 @@ static NSInteger const hologramsheight = 80;
     [labelplates setText:NSLocalizedString(@"cars_nodrive_plates_title", nil)];
     
     [self addSubview:colholograms];
+    [self addSubview:colplates];
     [self addSubview:labeltitle];
     [self addSubview:labelholograms];
     [self addSubview:labelplates];
     
-    NSDictionary *views = @{@"bar":self.bar, @"holo":colholograms, @"labeltitle":labeltitle, @"labelholograms":labelholograms, @"labelplates":labelplates, @"colplages":colplates};
+    NSDictionary *views = @{@"bar":self.bar, @"holo":colholograms, @"labeltitle":labeltitle, @"labelholograms":labelholograms, @"labelplates":labelplates, @"colplates":colplates};
     NSDictionary *metrics = @{@"holoheight":@(hologramsheight)};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[holo]-0-|" options:0 metrics:metrics views:views]];
