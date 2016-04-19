@@ -1,12 +1,13 @@
 #import "mpagesitemsettings.h"
+#import "csettings.h"
 
 @implementation mpagesitemsettings
 
 -(instancetype)init
 {
     self = [super init];
-    self.name = NSLocalizedString(@"pages_item_about_name", nil);
-    self.descr = NSLocalizedString(@"pages_item_about_descr", nil);
+    self.name = NSLocalizedString(@"pages_item_settings_name", nil);
+    self.descr = NSLocalizedString(@"pages_item_settings_descr", nil);
     self.asset = @"general_logo";
     
     return self;
@@ -17,7 +18,7 @@
 
 -(UIViewController*)controller
 {
-    cabout *controller = [[cabout alloc] init];
+    csettings *controller = [[csettings alloc] init];
     
     return controller;
 }

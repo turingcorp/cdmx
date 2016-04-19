@@ -7,6 +7,8 @@
 "pages_item_air_descr"="\nContaminación, radiación y temperatura";
 "pages_item_nodrive_name"="Hoy no circula";
 "pages_item_nodrive_descr"="\nRevisa si puedes circular";
+"pages_item_settings_name"="Opciones";
+"pages_item_settings_descr"="\nConfigura la aplicación";
 "pages_item_about_name"="Acerca";
 "pages_item_about_descr"="\nConoce más de la aplicación";
 
