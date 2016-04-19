@@ -1,13 +1,9 @@
-//
-//  maboutitem.h
-//  cdmx
-//
-//  Created by zero on 4/19/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
+#import <UIKit/UIKit.h>
 
-#import <Foundation/Foundation.h>
+@interface maboutitem:NSObject
 
-@interface maboutitem : NSObject
+-(void)activate;
+
+@property(copy, nonatomic)NSString *name;
 
 @end
