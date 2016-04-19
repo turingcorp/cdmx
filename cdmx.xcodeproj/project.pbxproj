@@ -97,6 +97,7 @@
 		DA8A40401CC6D809008FECF2 /* vabout.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8A403F1CC6D809008FECF2 /* vabout.m */; };
 		DA8A40431CC6DAFD008FECF2 /* vaboutbar.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8A40421CC6DAFD008FECF2 /* vaboutbar.m */; };
 		DA8A40461CC6DEEF008FECF2 /* vaboutcell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8A40451CC6DEEF008FECF2 /* vaboutcell.m */; };
+		DA8A40491CC6DF8E008FECF2 /* vaboutheader.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8A40481CC6DF8E008FECF2 /* vaboutheader.m */; };
 		DA8F033C1CC1491C0007596C /* cairdetail.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8F033B1CC1491C0007596C /* cairdetail.m */; };
 		DA8F033F1CC151570007596C /* vaircellmain.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8F033E1CC151570007596C /* vaircellmain.m */; };
 		DA8F03421CC17AAE0007596C /* vaircellmaincell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8F03411CC17AAE0007596C /* vaircellmaincell.m */; };
@@ -333,6 +334,8 @@
 		DA8A40421CC6DAFD008FECF2 /* vaboutbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vaboutbar.m; sourceTree = "<group>"; };
 		DA8A40441CC6DEEF008FECF2 /* vaboutcell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vaboutcell.h; sourceTree = "<group>"; };
 		DA8A40451CC6DEEF008FECF2 /* vaboutcell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vaboutcell.m; sourceTree = "<group>"; };
+		DA8A40471CC6DF8E008FECF2 /* vaboutheader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vaboutheader.h; sourceTree = "<group>"; };
+		DA8A40481CC6DF8E008FECF2 /* vaboutheader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vaboutheader.m; sourceTree = "<group>"; };
 		DA8F033A1CC1491C0007596C /* cairdetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cairdetail.h; sourceTree = "<group>"; };
 		DA8F033B1CC1491C0007596C /* cairdetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cairdetail.m; sourceTree = "<group>"; };
 		DA8F033D1CC151570007596C /* vaircellmain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vaircellmain.h; sourceTree = "<group>"; };
@@ -608,6 +611,8 @@
 				DA8A403F1CC6D809008FECF2 /* vabout.m */,
 				DA8A40411CC6DAFD008FECF2 /* vaboutbar.h */,
 				DA8A40421CC6DAFD008FECF2 /* vaboutbar.m */,
+				DA8A40471CC6DF8E008FECF2 /* vaboutheader.h */,
+				DA8A40481CC6DF8E008FECF2 /* vaboutheader.m */,
 				DA8A40441CC6DEEF008FECF2 /* vaboutcell.h */,
 				DA8A40451CC6DEEF008FECF2 /* vaboutcell.m */,
 			);
@@ -1218,6 +1223,7 @@
 				DA8708A51CBF0C0C000C08E1 /* mstationsnodrivehologramonce.m in Sources */,
 				DA8708691CBEBE37000C08E1 /* mstationsreadingitemindexregular.m in Sources */,
 				DA8A40301CC6D148008FECF2 /* csettings.m in Sources */,
+				DA8A40491CC6DF8E008FECF2 /* vaboutheader.m in Sources */,
 				DA000D381CC29E6A00A82EC0 /* mcdmapitemgam.m in Sources */,
 				DA8A40061CC68ABB008FECF2 /* vnodrive.m in Sources */,
 				DA87089C1CBF0BD1000C08E1 /* mstationsnodrivehologramo.m in Sources */,
