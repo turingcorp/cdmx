@@ -102,22 +102,30 @@
                                 initem.index = newindex;
                             }
                             
-                            if(!initem.conditions && rawtemperature && rawhumidity)
+                            if(!initem.conditions && rawtemperature && rawhumidity && rawtemperature.length && rawhumidity.length)
                             {
                                 CGFloat scalartemperature = rawtemperature.floatValue;
                                 CGFloat scalarhumidity = rawhumidity.floatValue;
-                                mstationsreadingitemconditions *newconditions = [[mstationsreadingitemconditions alloc] init:scalartemperature humidity:scalarhumidity];
                                 
-                                initem.conditions = newconditions;
+                                if(scalartemperature > -99 && scalarhumidity > -99)
+                                {
+                                    mstationsreadingitemconditions *newconditions = [[mstationsreadingitemconditions alloc] init:scalartemperature humidity:scalarhumidity];
+                                    
+                                    initem.conditions = newconditions;
+                                }
                             }
                             
                             if(!initem.wind && rawwinddirection && rawwindspeed && rawwinddirection.length)
                             {
-                                NSInteger scalarwinddirection = rawtemperature.integerValue;
-                                NSInteger scalarwindspeed = rawhumidity.integerValue;
-                                mstationsreadingitemwind *newwind = [[mstationsreadingitemwind alloc] init:scalarwinddirection speed:scalarwindspeed];
+                                NSInteger scalarwinddirection = rawwinddirection.integerValue;
+                                NSInteger scalarwindspeed = rawwindspeed.integerValue;
                                 
-                                initem.wind = newwind;
+                                if(scalarwinddirection >= 0)
+                                {
+                                    mstationsreadingitemwind *newwind = [[mstationsreadingitemwind alloc] init:scalarwinddirection speed:scalarwindspeed];
+                                    
+                                    initem.wind = newwind;
+                                }
                             }
                             
                             add = NO;
@@ -147,22 +155,30 @@
                             }
                         }
                         
-                        if(rawtemperature && rawhumidity)
+                        if(rawtemperature && rawhumidity && rawtemperature.length && rawhumidity.length)
                         {
                             CGFloat scalartemperature = rawtemperature.floatValue;
                             CGFloat scalarhumidity = rawhumidity.floatValue;
-                            mstationsreadingitemconditions *newconditions = [[mstationsreadingitemconditions alloc] init:scalartemperature humidity:scalarhumidity];
                             
-                            newitem.conditions = newconditions;
+                            if(scalartemperature > -99 && scalarhumidity > -99)
+                            {
+                                mstationsreadingitemconditions *newconditions = [[mstationsreadingitemconditions alloc] init:scalartemperature humidity:scalarhumidity];
+                                
+                                newitem.conditions = newconditions;
+                            }
                         }
                         
                         if(rawwinddirection && rawwindspeed && rawwinddirection.length)
                         {
-                            NSInteger scalarwinddirection = rawtemperature.integerValue;
-                            NSInteger scalarwindspeed = rawhumidity.integerValue;
-                            mstationsreadingitemwind *newwind = [[mstationsreadingitemwind alloc] init:scalarwinddirection speed:scalarwindspeed];
+                            NSInteger scalarwinddirection = rawwinddirection.integerValue;
+                            NSInteger scalarwindspeed = rawwindspeed.integerValue;
                             
-                            newitem.wind = newwind;
+                            if(scalarwinddirection >= 0)
+                            {
+                                mstationsreadingitemwind *newwind = [[mstationsreadingitemwind alloc] init:scalarwinddirection speed:scalarwindspeed];
+                                
+                                newitem.wind = newwind;
+                            }
                         }
                         
                         [mutarray addObject:newitem];
@@ -309,8 +325,11 @@
                     CGFloat temperaturenumber = rawtemperature.floatValue;
                     CGFloat humiditynumber = rawhumidity.floatValue;
                     
-                    mstationsreadingitemconditions *newconditions = [[mstationsreadingitemconditions alloc] init:temperaturenumber humidity:humiditynumber];
-                    [mstations singleton].generalconditions = newconditions;
+                    if(temperaturenumber > -99 && humiditynumber > -99)
+                    {
+                        mstationsreadingitemconditions *newconditions = [[mstationsreadingitemconditions alloc] init:temperaturenumber humidity:humiditynumber];
+                        [mstations singleton].generalconditions = newconditions;
+                    }
                 }
             }
         }

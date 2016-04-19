@@ -68,7 +68,7 @@
     UILabel *labeltemp = [[UILabel alloc] init];
     [labeltemp setTranslatesAutoresizingMaskIntoConstraints:NO];
     [labeltemp setUserInteractionEnabled:NO];
-    [labeltemp setFont:[UIFont regularsize:16]];
+    [labeltemp setFont:[UIFont regularsize:17]];
     [labeltemp setTextColor:[UIColor whiteColor]];
     [labeltemp setBackgroundColor:[UIColor clearColor]];
     
@@ -85,7 +85,7 @@
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-40-[label]-40-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-30-[label]" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[imagetemp(22)]-4-[labeltemp]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[imagetemp(22)]-0-[labeltemp]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[imagetemp(22)]-20-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-100-[rosewind]-100-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-100-[rosewindpointer]-100-|" options:0 metrics:metrics views:views]];
