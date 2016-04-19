@@ -11,4 +11,11 @@
     return self;
 }
 
+#pragma mark public
+
+-(instancetype)config:(maboutitem*)model
+{
+    
+}
+
 @end

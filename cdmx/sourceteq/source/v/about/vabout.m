@@ -19,6 +19,7 @@ static NSInteger const cellheight = 60;
     [self setClipsToBounds:YES];
     [self setBackgroundColor:[UIColor collection]];
     self.controller = controller;
+    self.model = [[mabout alloc] init];
     
     vaboutbar *bar = [[vaboutbar alloc] init:controller];
     
@@ -55,6 +56,15 @@ static NSInteger const cellheight = 60;
     return self;
 }
 
+#pragma mark functionality
+
+-(maboutitem*)modelforindex:(NSIndexPath*)indexpath
+{
+    maboutitem *model = self.model.items[indexpath.item];
+    
+    return model;
+}
+
 #pragma mark -
 #pragma mark col del
 
@@ -81,17 +91,25 @@ static NSInteger const cellheight = 60;
 
 -(NSInteger)collectionView:(UICollectionView*)col numberOfItemsInSection:(NSInteger)section
 {
-    return 0;
+    NSInteger count = self.model.items.count;
+    
+    return count;
 }
 
--(UICollectionReusableView*)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+-(UICollectionReusableView*)collectionView:(UICollectionView*)col viewForSupplementaryElementOfKind:(NSString*)kind atIndexPath:(NSIndexPath*)index
 {
+    vaboutheader *header = [col dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:aboutheaderid forIndexPath:index];
     
+    return header;
 }
 
--(UICollectionViewCell*)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+-(UICollectionViewCell*)collectionView:(UICollectionView*)col cellForItemAtIndexPath:(NSIndexPath*)index
 {
+    maboutitem *model = [self modelforindex:index];
+    vaboutcell *cell = [col dequeueReusableCellWithReuseIdentifier:aboutcellid forIndexPath:index];
+    [cell config:model];
     
+    return cell;
 }
 
 @end
