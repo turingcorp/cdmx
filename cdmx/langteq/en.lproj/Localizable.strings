@@ -7,6 +7,8 @@
 "pages_item_air_descr"="\nPollution, radiation and temperature";
 "pages_item_nodrive_name"="No drive";
 "pages_item_nodrive_descr"="\nTodays driving restriction";
+"pages_item_review_name"="Review";
+"pages_item_review_descr"="\nWrite a review in the App store";
 
 "api_error_nodata"="Error connecting to server, try again";
 "api_error_invalidjson"="Problems with connection, try again";

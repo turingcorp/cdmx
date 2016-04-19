@@ -6,7 +6,9 @@
 "pages_item_air_name"="Medio ambiente";
 "pages_item_air_descr"="\nContaminación, radiación y temperatura";
 "pages_item_nodrive_name"="Hoy no circula";
-"pages_item_nodrive_descr"="\nQuien no puede circular hoy";
+"pages_item_nodrive_descr"="\nRevisa si puedes circular";
+"pages_item_review_name"="Reseña";
+"pages_item_review_descr"="\nEscribe una reseña sobre la app";
 
 "api_error_nodata"="Error al conectarse al servidor, intenta de nuevo";
 "api_error_invalidjson"="Problemas de conexión, intenta de nuevo";

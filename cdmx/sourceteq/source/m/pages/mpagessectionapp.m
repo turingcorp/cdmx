@@ -1,5 +1,5 @@
 #import "mpagessectionapp.h"
-#import "mpagesitemreview.h"
+#import "mpagesitemabout.h"
 
 @implementation mpagessectionapp
 
@@ -8,7 +8,7 @@
     self = [super init];
     self.name = NSLocalizedString(@"pages_section_app", nil);
     self.items = @[
-                   [[mpagesitemnodrive alloc] init]
+                   [[mpagesitemabout alloc] init]
                    ];
     
     return self;

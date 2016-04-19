@@ -283,7 +283,7 @@
                         if(datecomponent < 7)
                         {
                             rawplatecolor = rawinfo[@"color"];
-                            rawplatecolor2 = rawinfo[@"colorsg"];
+                            rawplatecolor2 = rawinfo[@"color2"];
                         }
                         else
                         {
