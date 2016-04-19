@@ -1,8 +1,11 @@
 "app_name"="CDMX";
 
 "pages_section_stats"="City";
+"pages_section_cars"="Cars";
 "pages_item_air_name"="Environment";
 "pages_item_air_descr"="\nPollution, radiation and temperature";
+"pages_item_nodrive_name"="No drive";
+"pages_item_nodrive_descr"="\nTodays driving restriction";
 
 "api_error_nodata"="Error connecting to server, try again";
 "api_error_invalidjson"="Problems with connection, try again";
