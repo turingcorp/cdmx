@@ -38,9 +38,9 @@
 "air_detail_info_pollutant"="\nContaminante  ";
 
 "cars_nodrive_button_retry"="Reintentar";
-"cars_nodrive_title"="Hoy no circulan";
+"cars_nodrive_title"="Hoy no circula";
 "cars_nodrive_holograms_title"="Hologramas";
-"cars_nodrive_plates_title"="Calcomanias";
+"cars_nodrive_plates_title"="Placas";
 
 "map_district_alv"="Alvaro Obregon";
 "map_district_azc"="Azcapotzalco";
