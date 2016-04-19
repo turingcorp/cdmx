@@ -46,4 +46,11 @@
     self.view = [[vairdetail alloc] init:self];
 }
 
+#pragma mark public
+
+-(void)back
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 @end

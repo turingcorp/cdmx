@@ -12,6 +12,15 @@
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
     self.controller = controller;
     
+    UIButton *buttonback = [[UIButton alloc] init];
+    [buttonback setClipsToBounds:YES];
+    [buttonback setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [buttonback setImage:[[UIImage imageNamed:@"general_backbutton"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];
+    [buttonback setImage:[[UIImage imageNamed:@"general_backbutton"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateHighlighted];
+    [buttonback.imageView setTintColor:[UIColor colorWithWhite:1 alpha:0.2]];
+    [buttonback.imageView setContentMode:UIViewContentModeScaleAspectFit];
+    [buttonback addTarget:self action:@selector(actionback:) forControlEvents:UIControlEventTouchUpInside];
+    
     UILabel *label = [[UILabel alloc] init];
     [label setTranslatesAutoresizingMaskIntoConstraints:NO];
     [label setNumberOfLines:0];
@@ -50,20 +59,41 @@
     [self addSubview:imagetemp];
     [self addSubview:rosewind];
     [self addSubview:rosewindpointer];
+    [self addSubview:buttonback];
     
-    NSDictionary *views = @{@"label":label, @"imagetemp":imagetemp, @"rosewind":rosewindpointer, @"rosewindpointer":rosewindpointer};
+    NSDictionary *views = @{@"label":label, @"imagetemp":imagetemp, @"rosewind":rosewind, @"rosewindpointer":rosewindpointer, @"buttonback":buttonback};
     NSDictionary *metrics = @{};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-40-[label]-40-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-30-[label]" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[imagetemp(26)]" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[imagetemp(26)]-20-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-28-[label]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-12-[imagetemp(22)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[imagetemp(22)]-20-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-100-[rosewind]-100-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-100-[rosewindpointer]-100-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[rosewind(40)]-50-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[rosewindpointer(40)]-50-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[rosewind(80)]-60-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[rosewindpointer(80)]-60-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[buttonback(60)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-20-[buttonback(45)]" options:0 metrics:metrics views:views]];
+    
+    if(controller.model.wind)
+    {
+        CGFloat rads = controller.model.wind.direction * M_PI / 180.0;
+        [rosewindpointer setTransform:CGAffineTransformMakeRotation(rads)];
+    }
+    else
+    {
+        [rosewindpointer setHidden:YES];
+        [rosewind setHidden:YES];
+    }
     
     return self;
+}
+
+#pragma mark actions
+
+-(void)actionback:(UIButton*)button
+{
+    [self.controller back];
 }
 
 @end

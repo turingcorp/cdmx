@@ -4,6 +4,7 @@
 @interface cairdetail:UIViewController<UIGestureRecognizerDelegate>
 
 -(instancetype)init:(mstationsreadingitem*)model;
+-(void)back;
 
 @property(weak, nonatomic)mstationsreadingitem *model;
 

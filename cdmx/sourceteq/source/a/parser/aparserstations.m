@@ -111,7 +111,7 @@
                                 initem.conditions = newconditions;
                             }
                             
-                            if(!initem.wind && rawwinddirection && rawwindspeed)
+                            if(!initem.wind && rawwinddirection && rawwindspeed && rawwinddirection.length)
                             {
                                 NSInteger scalarwinddirection = rawtemperature.integerValue;
                                 NSInteger scalarwindspeed = rawhumidity.integerValue;
@@ -156,7 +156,7 @@
                             newitem.conditions = newconditions;
                         }
                         
-                        if(rawwinddirection && rawwindspeed)
+                        if(rawwinddirection && rawwindspeed && rawwinddirection.length)
                         {
                             NSInteger scalarwinddirection = rawtemperature.integerValue;
                             NSInteger scalarwindspeed = rawhumidity.integerValue;
