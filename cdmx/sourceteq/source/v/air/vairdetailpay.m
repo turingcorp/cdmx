@@ -1,6 +1,5 @@
 #import "vairdetailpay.h"
 #import "uifont+uifontmain.h"
-#import "uicolor+uicolormain.h"
 #import "tools.h"
 
 static NSInteger const size_2 = 65;
