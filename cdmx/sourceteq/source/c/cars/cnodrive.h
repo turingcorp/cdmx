@@ -2,4 +2,6 @@
 
 @interface cnodrive:UIViewController
 
+-(void)openmenu;
+
 @end
