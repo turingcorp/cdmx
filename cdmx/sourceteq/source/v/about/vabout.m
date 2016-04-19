@@ -2,6 +2,7 @@
 #import "vaboutbar.h"
 
 static NSInteger const barheight = 150;
+static NSInteger const linespacing = 1;
 
 @implementation vabout
 
@@ -13,6 +14,24 @@ static NSInteger const barheight = 150;
     self.controller = controller;
     
     vaboutbar *bar = [[vaboutbar alloc] init:controller];
+    
+    UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
+    [flow setFooterReferenceSize:CGSizeZero];
+    [flow setMinimumLineSpacing:linespacing];
+    [flow setMinimumInteritemSpacing:0];
+    [flow setScrollDirection:UICollectionViewScrollDirectionVertical];
+    [flow setSectionInset:UIEdgeInsetsZero];
+    
+    UICollectionView *collection = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flow];
+    [collection setBackgroundColor:[UIColor clearColor]];
+    [collection setClipsToBounds:YES];
+    [collection setScrollEnabled:NO];
+    [collection setBounces:NO];
+    [collection setShowsVerticalScrollIndicator:NO];
+    [collection setShowsHorizontalScrollIndicator:NO];
+    [collection setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [collection setDelegate:self];
+    [collection setDataSource:self];
     
     [self addSubview:bar];
     

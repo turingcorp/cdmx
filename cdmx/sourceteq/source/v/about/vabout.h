@@ -1,7 +1,7 @@
 #import <UIKit/UIKit.h>
 #import "cabout.h"
 
-@interface vabout:UIView
+@interface vabout:UIView<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
 -(instancetype)init:(cabout*)controller;
 
