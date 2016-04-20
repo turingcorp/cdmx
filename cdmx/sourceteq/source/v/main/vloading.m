@@ -1,4 +1,6 @@
 #import "vloading.h"
+#import "uicolor+uicolormain.h"
+#import "genericconstants.h"
 
 @implementation vloading
 
@@ -10,14 +12,24 @@
 
     vspinner *spinner = [[vspinner alloc] init];
     self.spinner = spinner;
+    
+    UIView *topbar = [[UIView alloc] init];
+    [topbar setUserInteractionEnabled:NO];
+    [topbar setClipsToBounds:YES];
+    [topbar setBackgroundColor:[[UIColor main] colorWithAlphaComponent:0.5]];
+    [topbar setTranslatesAutoresizingMaskIntoConstraints:NO];
+    
+    [self addSubview:topbar];
     [self addSubview:spinner];
     
-    NSDictionary *views = @{@"spinner":spinner};
-    NSDictionary *metrics = @{};
+    NSDictionary *views = @{@"spinner":spinner, @"topbar":topbar};
+    NSDictionary *metrics = @{@"barheight":@(navbarheightmin)};
     
     self.layoutmargintop = [NSLayoutConstraint constraintWithItem:spinner attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1 constant:0];
     [self addConstraint:self.layoutmargintop];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[spinner]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[topbar]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[topbar(barheight)]" options:0 metrics:metrics views:views]];
 
     
     return self;
