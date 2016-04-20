@@ -93,7 +93,6 @@
 		DA8A402A1CC6C9EA008FECF2 /* snotpollution.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8A40291CC6C9EA008FECF2 /* snotpollution.m */; };
 		DA8A402D1CC6D11B008FECF2 /* mpagesitemsettings.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8A402C1CC6D11B008FECF2 /* mpagesitemsettings.m */; };
 		DA8A40301CC6D148008FECF2 /* csettings.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8A402F1CC6D148008FECF2 /* csettings.m */; };
-		DA8A403C1CC6D6E7008FECF2 /* vsettings.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8A403B1CC6D6E7008FECF2 /* vsettings.m */; };
 		DA8A40401CC6D809008FECF2 /* vabout.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8A403F1CC6D809008FECF2 /* vabout.m */; };
 		DA8A40431CC6DAFD008FECF2 /* vaboutbar.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8A40421CC6DAFD008FECF2 /* vaboutbar.m */; };
 		DA8A40461CC6DEEF008FECF2 /* vaboutcell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8A40451CC6DEEF008FECF2 /* vaboutcell.m */; };
@@ -127,7 +126,6 @@
 		DAD340001CBC83E300C87502 /* mdbcreate.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD33FD91CBC83E300C87502 /* mdbcreate.m */; };
 		DAD340011CBC83E300C87502 /* mdirs.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD33FDC1CBC83E300C87502 /* mdirs.m */; };
 		DAD340021CBC83E300C87502 /* msettings.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD33FE01CBC83E300C87502 /* msettings.m */; };
-		DAD340031CBC83E300C87502 /* valert.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD33FE71CBC83E300C87502 /* valert.m */; };
 		DAD340041CBC83E300C87502 /* vblur.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD33FE91CBC83E300C87502 /* vblur.m */; };
 		DAD340051CBC83E300C87502 /* vspinner.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD33FEB1CBC83E300C87502 /* vspinner.m */; };
 		DAD3400B1CBC858A00C87502 /* brand.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAD3400A1CBC858A00C87502 /* brand.xcassets */; };
@@ -332,7 +330,6 @@
 		DA8A402E1CC6D148008FECF2 /* csettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = csettings.h; sourceTree = "<group>"; };
 		DA8A402F1CC6D148008FECF2 /* csettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = csettings.m; sourceTree = "<group>"; };
 		DA8A403A1CC6D6E7008FECF2 /* vsettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vsettings.h; sourceTree = "<group>"; };
-		DA8A403B1CC6D6E7008FECF2 /* vsettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vsettings.m; sourceTree = "<group>"; };
 		DA8A403E1CC6D809008FECF2 /* vabout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vabout.h; sourceTree = "<group>"; };
 		DA8A403F1CC6D809008FECF2 /* vabout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vabout.m; sourceTree = "<group>"; };
 		DA8A40411CC6DAFD008FECF2 /* vaboutbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vaboutbar.h; sourceTree = "<group>"; };
@@ -395,8 +392,6 @@
 		DAD33FDE1CBC83E300C87502 /* mgeneral.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mgeneral.h; sourceTree = "<group>"; };
 		DAD33FDF1CBC83E300C87502 /* msettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = msettings.h; sourceTree = "<group>"; };
 		DAD33FE01CBC83E300C87502 /* msettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = msettings.m; sourceTree = "<group>"; };
-		DAD33FE61CBC83E300C87502 /* valert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = valert.h; sourceTree = "<group>"; };
-		DAD33FE71CBC83E300C87502 /* valert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = valert.m; sourceTree = "<group>"; };
 		DAD33FE81CBC83E300C87502 /* vblur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vblur.h; sourceTree = "<group>"; };
 		DAD33FE91CBC83E300C87502 /* vblur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vblur.m; sourceTree = "<group>"; };
 		DAD33FEA1CBC83E300C87502 /* vspinner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vspinner.h; sourceTree = "<group>"; };
@@ -614,7 +609,6 @@
 			isa = PBXGroup;
 			children = (
 				DA8A403A1CC6D6E7008FECF2 /* vsettings.h */,
-				DA8A403B1CC6D6E7008FECF2 /* vsettings.m */,
 				DA8A40571CC6F081008FECF2 /* vsettingsbar.h */,
 				DA8A40581CC6F081008FECF2 /* vsettingsbar.m */,
 			);
@@ -889,8 +883,6 @@
 		DAD33FE51CBC83E300C87502 /* general */ = {
 			isa = PBXGroup;
 			children = (
-				DAD33FE61CBC83E300C87502 /* valert.h */,
-				DAD33FE71CBC83E300C87502 /* valert.m */,
 				DAD33FE81CBC83E300C87502 /* vblur.h */,
 				DAD33FE91CBC83E300C87502 /* vblur.m */,
 				DAD33FEA1CBC83E300C87502 /* vspinner.h */,
@@ -1315,7 +1307,6 @@
 				DA87087E1CBEC829000C08E1 /* mstationsreadingitemindexactivityperfect.m in Sources */,
 				DA000D321CC29DCE00A82EC0 /* mcdmap.m in Sources */,
 				DA8A40461CC6DEEF008FECF2 /* vaboutcell.m in Sources */,
-				DA8A403C1CC6D6E7008FECF2 /* vsettings.m in Sources */,
 				DA8708371CBE87F7000C08E1 /* aparserstations.m in Sources */,
 				DA8A401E1CC6B780008FECF2 /* mpagesitemabout.m in Sources */,
 				DA8A400F1CC68DDC008FECF2 /* vnodriveplates.m in Sources */,
@@ -1329,7 +1320,6 @@
 				DAD33FF91CBC83E300C87502 /* tools.m in Sources */,
 				DA8708531CBE9F50000C08E1 /* mstationsreadinguvindexlow.m in Sources */,
 				DA8708AD1CBF3517000C08E1 /* mstationsreadingitemindexnodata.m in Sources */,
-				DAD340031CBC83E300C87502 /* valert.m in Sources */,
 				DA000D5C1CC29FE600A82EC0 /* mcdmapitemxochi.m in Sources */,
 				DA188B071CC59F2600C91AF2 /* vairdetailheader.m in Sources */,
 				DAD8761E1CBDBBD100A4F91C /* mstationsitem.m in Sources */,
