@@ -4,24 +4,28 @@
 <dict>
 	<key>screens</key>
 	<array>
-		<string>stats</string>
-        <string>options</string>
-        <string>options/contact</string>
-        <string>store</string>
-        <string>play</string>
-        <string>play/finish</string>
+		<string>environment</string>
+        <string>environment/geo</string>
+        <string>environment/detail</string>
+        <string>nodrive</string>
+        <string>settings</string>
+        <string>about</string>
+        <string>menu</string>
 	</array>
 	<key>events</key>
 	<array>
-		<string>purchase</string>
-        <string>rate</string>
-        <string>review</string>
-        <string>email</string>
-        <string>message</string>
+		<string>environment/station</string>
+        <string>about/app</string>
+        <string>settings/notifications</string>
 	</array>
 	<key>actions</key>
 	<array>
-        <string>optin</string>
+        <string>geo</string>
+        <string>detail</string>
+        <string>review</string>
+        <string>share</string>
+        <string>on</string>
+        <string>off</string>
 	</array>
 </dict>
 </plist>
