@@ -9,5 +9,6 @@
 @property(weak, nonatomic)cmenu *controller;
 @property(weak, nonatomic)mpages *model;
 @property(weak, nonatomic)UICollectionView *collection;
+@property(weak, nonatomic)NSLayoutConstraint *layoutbannerheight;
 
 @end
