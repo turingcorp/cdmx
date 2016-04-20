@@ -1,6 +1,8 @@
 #import "analytics.h"
 #import "privateconstants.h"
 
+static NSInteger const analyticsrate = 10;
+
 @implementation analytics
 {
     NSArray *screens;
@@ -35,7 +37,7 @@
 {
     self.tracker = [[GAI sharedInstance] trackerWithTrackingId:analyticsid];
     [[GAI sharedInstance] setTrackUncaughtExceptions:YES];
-    [[GAI sharedInstance] setDispatchInterval:30];
+    [[GAI sharedInstance] setDispatchInterval:analyticsrate];
     [[GAI sharedInstance].logger setLogLevel:kGAILogLevelNone];
     
 #if DEBUG
