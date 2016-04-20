@@ -46,7 +46,7 @@ NSString *documents;
     {
         [properties setValue:@(def_version) forKeyPath:@"version"];        
         
-        if(pro_version < 10)
+        if(pro_version != 20)
         {
             [updater firsttime:defaults];
             [mdb updatedb];
