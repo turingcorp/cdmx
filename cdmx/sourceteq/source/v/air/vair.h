@@ -9,6 +9,7 @@
 -(instancetype)init:(cair*)controller;
 -(void)viewappear;
 -(void)retry;
+-(void)refetch;
 
 @property(weak, nonatomic)cair *controller;
 @property(weak, nonatomic)mstationsreading *lastreading;

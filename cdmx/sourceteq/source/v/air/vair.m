@@ -162,6 +162,13 @@ static NSInteger const labelmaincellbottom = 20;
     [[mstations singleton] fetch];
 }
 
+-(void)refetch
+{
+    [self.collection selectItemAtIndexPath:[NSIndexPath indexPathForItem:-1 inSection:0] animated:NO scrollPosition:UICollectionViewScrollPositionNone];
+    
+    [[mstations singleton] fetch];
+}
+
 #pragma mark -
 #pragma mark col del
 
