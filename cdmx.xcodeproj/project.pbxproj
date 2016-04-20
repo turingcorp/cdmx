@@ -102,6 +102,7 @@
 		DA8A40531CC6E106008FECF2 /* maboutitemreview.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8A40521CC6E106008FECF2 /* maboutitemreview.m */; };
 		DA8A40561CC6E112008FECF2 /* maboutitemshare.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8A40551CC6E112008FECF2 /* maboutitemshare.m */; };
 		DA8A40591CC6F081008FECF2 /* vsettingsbar.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8A40581CC6F081008FECF2 /* vsettingsbar.m */; };
+		DA8A405B1CC70552008FECF2 /* vsettings.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8A405A1CC70552008FECF2 /* vsettings.m */; };
 		DA8F033C1CC1491C0007596C /* cairdetail.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8F033B1CC1491C0007596C /* cairdetail.m */; };
 		DA8F033F1CC151570007596C /* vaircellmain.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8F033E1CC151570007596C /* vaircellmain.m */; };
 		DA8F03421CC17AAE0007596C /* vaircellmaincell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8F03411CC17AAE0007596C /* vaircellmaincell.m */; };
@@ -112,7 +113,6 @@
 		DAD33FF21CBC83E300C87502 /* defs.plist in Resources */ = {isa = PBXBuildFile; fileRef = DAD33FAF1CBC83E300C87502 /* defs.plist */; };
 		DAD33FF31CBC83E300C87502 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DAD33FB01CBC83E300C87502 /* Localizable.strings */; };
 		DAD33FF41CBC83E300C87502 /* appdel.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD33FB61CBC83E300C87502 /* appdel.m */; };
-		DAD33FF51CBC83E300C87502 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DAD33FB71CBC83E300C87502 /* Info.plist */; };
 		DAD33FF61CBC83E300C87502 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD33FB81CBC83E300C87502 /* main.m */; };
 		DAD33FF71CBC83E300C87502 /* analytics.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD33FBB1CBC83E300C87502 /* analytics.m */; };
 		DAD33FF81CBC83E300C87502 /* nsnotification+nsnotificationmain.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD33FBE1CBC83E300C87502 /* nsnotification+nsnotificationmain.m */; };
@@ -348,6 +348,7 @@
 		DA8A40551CC6E112008FECF2 /* maboutitemshare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = maboutitemshare.m; sourceTree = "<group>"; };
 		DA8A40571CC6F081008FECF2 /* vsettingsbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vsettingsbar.h; sourceTree = "<group>"; };
 		DA8A40581CC6F081008FECF2 /* vsettingsbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vsettingsbar.m; sourceTree = "<group>"; };
+		DA8A405A1CC70552008FECF2 /* vsettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vsettings.m; sourceTree = "<group>"; };
 		DA8F033A1CC1491C0007596C /* cairdetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cairdetail.h; sourceTree = "<group>"; };
 		DA8F033B1CC1491C0007596C /* cairdetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cairdetail.m; sourceTree = "<group>"; };
 		DA8F033D1CC151570007596C /* vaircellmain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vaircellmain.h; sourceTree = "<group>"; };
@@ -608,6 +609,7 @@
 		DA8A40361CC6D69A008FECF2 /* settings */ = {
 			isa = PBXGroup;
 			children = (
+				DA8A405A1CC70552008FECF2 /* vsettings.m */,
 				DA8A403A1CC6D6E7008FECF2 /* vsettings.h */,
 				DA8A40571CC6F081008FECF2 /* vsettingsbar.h */,
 				DA8A40581CC6F081008FECF2 /* vsettingsbar.m */,
@@ -1165,7 +1167,6 @@
 				DA8708931CBEFF1A000C08E1 /* nodriveplates.plist in Resources */,
 				DA8708AA1CBF2CCD000C08E1 /* stations.xcassets in Resources */,
 				DAD33FF21CBC83E300C87502 /* defs.plist in Resources */,
-				DAD33FF51CBC83E300C87502 /* Info.plist in Resources */,
 				DAD33FF11CBC83E300C87502 /* analytics.plist in Resources */,
 				DAD3400B1CBC858A00C87502 /* brand.xcassets in Resources */,
 				DAD875D81CBD33FB00A4F91C /* spinner.xcassets in Resources */,
@@ -1232,6 +1233,7 @@
 				DA87084A1CBE9A0A000C08E1 /* mstationsnodriveplate.m in Sources */,
 				DA8708841CBEC87E000C08E1 /* mstationsreadingitemindexactivitynone.m in Sources */,
 				DA000D801CC4596400A82EC0 /* vairgeomap.m in Sources */,
+				DA8A405B1CC70552008FECF2 /* vsettings.m in Sources */,
 				DA000D5F1CC29FF700A82EC0 /* mcdmapitemtlal.m in Sources */,
 				DA8A40561CC6E112008FECF2 /* maboutitemshare.m in Sources */,
 				DAD875DC1CBD415300A4F91C /* cair.m in Sources */,
