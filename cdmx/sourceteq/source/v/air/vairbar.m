@@ -47,7 +47,7 @@
 
 -(CGSize)intrinsicContentSize
 {
-    CGSize size = CGSizeMake(navbarintrinsicwidth, navbarheight);
+    CGSize size = CGSizeMake(UIViewNoIntrinsicMetric, navbarheight);
     
     return size;
 }
