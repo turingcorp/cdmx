@@ -26,7 +26,7 @@ NSString *documents;
                                       ^
                                       {
                                           [[analytics singleton] start];
-                                          [[cmain singleton].pages loadfinished:modelpages];
+                                          //[[cmain singleton].pages loadfinished:modelpages];
                                           [updater registernotifications];
                                       });
                    });

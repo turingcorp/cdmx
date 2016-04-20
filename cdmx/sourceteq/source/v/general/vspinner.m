@@ -1,6 +1,6 @@
 #import "vspinner.h"
 
-static CGFloat const animationduration = 3.0;
+static CGFloat const animationduration = 2.0;
 
 @implementation vspinner
 
