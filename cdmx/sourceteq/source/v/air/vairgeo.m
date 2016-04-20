@@ -1,5 +1,6 @@
 #import "vairgeo.h"
 #import "mstations.h"
+#import "analytics.h"
 
 static CGFloat const mapspansize = 0.075;
 
@@ -199,6 +200,8 @@ static CGFloat const mapspansize = 0.075;
     if([view isKindOfClass:[vairgeomapann class]])
     {
         [self.controller selectitem:((vairgeomapann*)view).annotation.model];
+        
+        [[analytics singleton] trackevent:ga_event_environment_station action:ga_action_geo label:((vairgeomapann*)view).annotation.model.name];
     }
 }
 

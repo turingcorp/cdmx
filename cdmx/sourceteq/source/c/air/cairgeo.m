@@ -1,6 +1,7 @@
 #import "cairgeo.h"
 #import "vairgeo.h"
 #import "cairdetail.h"
+#import "analytics.h"
 
 @interface cairgeo ()
 
@@ -11,6 +12,13 @@
 @implementation cairgeo
 
 @dynamic view;
+
+-(void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    [[analytics singleton] trackscreen:ga_screen_environment_geo];
+}
 
 -(void)viewDidAppear:(BOOL)animated
 {

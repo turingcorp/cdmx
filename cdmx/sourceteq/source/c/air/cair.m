@@ -3,6 +3,7 @@
 #import "cmain.h"
 #import "cairgeo.h"
 #import "cairdetail.h"
+#import "analytics.h"
 
 @interface cair ()
 
@@ -31,6 +32,8 @@
     {
         [self.view refetch];
     }
+    
+    [[analytics singleton] trackscreen:ga_screen_environment];
 }
 
 #pragma mark public

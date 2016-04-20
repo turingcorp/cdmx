@@ -1,5 +1,6 @@
 #import "maboutitemreview.h"
 #import "tools.h"
+#import "analytics.h"
 
 @implementation maboutitemreview
 
@@ -17,6 +18,7 @@
 -(void)activate
 {
     [tools rateapp];
+    [[analytics singleton] trackevent:ga_event_about_app action:ga_action_review label:nil];
 }
 
 @end

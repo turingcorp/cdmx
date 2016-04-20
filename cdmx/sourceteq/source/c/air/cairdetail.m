@@ -1,5 +1,6 @@
 #import "cairdetail.h"
 #import "vairdetail.h"
+#import "analytics.h"
 
 @interface cairdetail ()
 
@@ -17,6 +18,12 @@
     self.model = model;
     
     return self;
+}
+
+-(void)viewDidLoad
+{
+    [super viewDidLoad];
+    [[analytics singleton] trackscreen:ga_screen_environment_detail];
 }
 
 -(void)viewDidAppear:(BOOL)animated

@@ -1,6 +1,7 @@
 #import "csettings.h"
 #import "vsettings.h"
 #import "cmain.h"
+#import "analytics.h"
 
 @interface csettings ()
 
@@ -11,6 +12,12 @@
 @implementation csettings
 
 @dynamic view;
+
+-(void)viewDidLoad
+{
+    [super viewDidLoad];
+    [[analytics singleton] trackscreen:ga_screen_settings];
+}
 
 -(void)loadView
 {

@@ -1,6 +1,7 @@
 #import "cabout.h"
 #import "vabout.h"
 #import "cmain.h"
+#import "analytics.h"
 
 @interface cabout ()
 
@@ -11,6 +12,12 @@
 @implementation cabout
 
 @dynamic view;
+
+-(void)viewDidLoad
+{
+    [super viewDidLoad];
+    [[analytics singleton] trackscreen:ga_screen_about];
+}
 
 -(void)loadView
 {

@@ -1,5 +1,6 @@
 #import "maboutitemshare.h"
 #import "tools.h"
+#import "analytics.h"
 
 @implementation maboutitemshare
 
@@ -17,6 +18,7 @@
 -(void)activate
 {
     [tools shareapp];
+    [[analytics singleton] trackevent:ga_event_about_app action:ga_action_share label:nil];
 }
 
 @end

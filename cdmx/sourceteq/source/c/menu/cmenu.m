@@ -1,5 +1,6 @@
 #import "cmenu.h"
 #import "vmenu.h"
+#import "analytics.h"
 
 @interface cmenu ()
 
@@ -10,6 +11,12 @@
 @implementation cmenu
 
 @dynamic view;
+
+-(void)viewDidLoad
+{
+    [super viewDidLoad];
+    [[analytics singleton] trackscreen:ga_screen_menu];
+}
 
 -(void)loadView
 {

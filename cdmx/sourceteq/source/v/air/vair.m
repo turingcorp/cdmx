@@ -7,6 +7,7 @@
 #import "nsnotification+nsnotificationmain.h"
 #import "mstations.h"
 #import "uifont+uifontmain.h"
+#import "analytics.h"
 
 static NSString* const cellairerrorid = @"cellairerror";
 static NSString* const cellairmainid = @"cellairmain";
@@ -342,6 +343,8 @@ static NSInteger const labelmaincellbottom = 20;
 {
     mstationsreadingitem *item = [self itemforindex:index.item];
     [self.controller selectitem:item];
+    
+    [[analytics singleton] trackevent:ga_event_environment_station action:ga_action_detail label:item.name];
 }
 
 @end

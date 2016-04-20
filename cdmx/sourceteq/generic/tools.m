@@ -44,12 +44,7 @@ static NSString* const rateurl = @"itms-apps://itunes.apple.com/WebObjects/MZSto
         act.popoverPresentationController.permittedArrowDirections = UIPopoverArrowDirectionUp | UIPopoverArrowDirectionDown;
     }
     
-    [[cmain singleton] presentViewController:act animated:YES completion:
-     ^
-     {
-#warning "analytics"
-//         [[analytics singleton] trackscreen:ga_screen_detail_share];
-     }];
+    [[cmain singleton] presentViewController:act animated:YES completion:nil];
 }
 
 +(NSDictionary*)defaultdict

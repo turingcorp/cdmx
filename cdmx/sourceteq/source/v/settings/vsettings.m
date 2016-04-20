@@ -4,6 +4,7 @@
 #import "uicolor+uicolormain.h"
 #import "uifont+uifontmain.h"
 #import "msettings.h"
+#import "analytics.h"
 
 @implementation vsettings
 
@@ -62,6 +63,15 @@
 {
     [msettings singleton].notifications = sw.isOn;
     [[msettings singleton] save];
+    
+    if(sw.isOn)
+    {
+        [[analytics singleton] trackevent:ga_event_settings_notifications action:ga_action_on label:nil];
+    }
+    else
+    {
+        [[analytics singleton] trackevent:ga_event_settings_notifications action:ga_action_off label:nil];
+    }
 }
 
 @end

@@ -1,6 +1,7 @@
 #import "cnodrive.h"
 #import "vnodrive.h"
 #import "cmain.h"
+#import "analytics.h"
 
 @interface cnodrive ()
 
@@ -11,6 +12,12 @@
 @implementation cnodrive
 
 @dynamic view;
+
+-(void)viewDidLoad
+{
+    [super viewDidLoad];
+    [[analytics singleton] trackscreen:ga_screen_nodrive];
+}
 
 -(void)loadView
 {
