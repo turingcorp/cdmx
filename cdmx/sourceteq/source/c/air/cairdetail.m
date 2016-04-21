@@ -35,7 +35,7 @@
 -(void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    self.navigationController.interactivePopGestureRecognizer.delegate = self;
+    self.navigationController.interactivePopGestureRecognizer.delegate = nil;
 }
 
 -(UIStatusBarStyle)preferredStatusBarStyle
