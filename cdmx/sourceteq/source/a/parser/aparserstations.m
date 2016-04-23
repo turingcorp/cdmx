@@ -208,8 +208,6 @@
                 NSDateComponents *components = [calendar components:NSCalendarUnitWeekday fromDate:date];
                 NSInteger datecomponent = components.weekday;
                 
-                NSLog(@"%@", @(datecomponent));
-                
                 NSDictionary *rawinfo = rawinfoarr[0];
                 NSString *rawuvindex = [rawinfo[@"indiceradiacion"] lowercaseString];
                 NSString *rawuvtitle = rawinfo[@"riesgouv"];

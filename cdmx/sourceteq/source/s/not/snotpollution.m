@@ -15,9 +15,16 @@ static NSInteger const startinghour = 9;
     NSDateComponents *components = [calendar components:NSCalendarUnitHour fromDate:now];
     NSInteger currenthour = components.hour;
     
-    if(currenthour > endinghour || currenthour < startinghour)
+    if(currenthour > endinghour)
     {
         date = [snotpollution tomorrowdate];
+    }
+    else if(currenthour < startinghour)
+    {
+        NSInteger remainhours = startinghour - currenthour;
+        NSInteger secondstonext = remainhours * secondsinterval;
+        
+        date = [NSDate dateWithTimeIntervalSinceNow:secondstonext];
     }
     else
     {
