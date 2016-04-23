@@ -13,23 +13,10 @@ NSString *documents;
 
 +(void)launch
 {
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
-                   ^
-                   {
-                       [updater update];
-                       [[msettings singleton] load];
-                       
-                       mpages *modelpages = [[mpages alloc] init];
-                       [[mstations singleton] load];
-                       
-                       dispatch_async(dispatch_get_main_queue(),
-                                      ^
-                                      {
-                                          [[analytics singleton] start];
-                                          [[cmain singleton].pages loadfinished:modelpages];
-                                          [updater registernotifications];
-                                      });
-                   });
+    [[analytics singleton] start];
+    [updater update];
+    [[msettings singleton] load];
+    [updater registernotifications];
 }
 
 #pragma mark private
@@ -70,11 +57,15 @@ NSString *documents;
 
 +(void)registernotifications
 {
-    if([[UIApplication sharedApplication] respondsToSelector:@selector(registerUserNotificationSettings:)])
-    {
-        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert categories:nil];
-        [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
-    }
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC * 5), dispatch_get_main_queue(),
+                   ^
+                   {
+                       if([[UIApplication sharedApplication] respondsToSelector:@selector(registerUserNotificationSettings:)])
+                       {
+                           UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert categories:nil];
+                           [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+                       }
+                   });
 }
 
 @end
