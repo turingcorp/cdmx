@@ -100,6 +100,11 @@ static NSInteger const hologramsheight = 80;
             [self.labelerror setText:stringerror];
         }
     }
+    else if([mstations singleton].nodrive.explanation)
+    {
+        [self.buttontry setHidden:YES];
+        [self.labelerror setText:[mstations singleton].nodrive.explanation];
+    }
     else
     {
         [self.labelerror setHidden:YES];
