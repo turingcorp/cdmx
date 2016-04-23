@@ -19,6 +19,7 @@
 {
     self = [super init];
     self.readings = [NSMutableArray array];
+    self.items = [mdb loadstations];
     
     return self;
 }
@@ -28,12 +29,6 @@
 -(void)fetch
 {
     [amanager call:[[acallstations alloc] init] delegate:self];
-}
-
--(void)load
-{
-    self.items = [mdb loadstations];
-    [self fetch];
 }
 
 #pragma mark -

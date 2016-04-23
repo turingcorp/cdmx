@@ -9,7 +9,6 @@
 
 +(instancetype)singleton;
 -(void)fetch;
--(void)load;
 
 @property(strong, nonatomic)mstationsnodrive *nodrive;
 @property(strong, nonatomic)mstationsreadinguv *uv;
