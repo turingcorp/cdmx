@@ -15,7 +15,6 @@ static NSString* const cellairmainid = @"cellairmain";
 static NSString* const cellairid = @"cellair";
 static NSInteger const cellerrorheight = 200;
 static NSInteger const cellheight = 65;
-static NSInteger const interitem = 1;
 static NSInteger const labelmaincelltop = 210;
 static NSInteger const labelmaincellbottom = 20;
 
@@ -29,7 +28,7 @@ static NSInteger const labelmaincellbottom = 20;
 {
     self = [super init];
     [self setClipsToBounds:YES];
-    [self setBackgroundColor:[UIColor collection]];
+    [self setBackgroundColor:[UIColor whiteColor]];
     self.controller = controller;
     
     vairbar *bar = [[vairbar alloc] init:self.controller];
@@ -126,7 +125,7 @@ static NSInteger const labelmaincellbottom = 20;
     [flow setHeaderReferenceSize:CGSizeZero];
     [flow setFooterReferenceSize:CGSizeZero];
     [flow setMinimumInteritemSpacing:0];
-    [flow setMinimumLineSpacing:interitem];
+    [flow setMinimumLineSpacing:0];
     [flow setScrollDirection:UICollectionViewScrollDirectionVertical];
     
     UICollectionView *collection = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flow];
@@ -212,7 +211,7 @@ static NSInteger const labelmaincellbottom = 20;
     }
     else
     {
-        insets = UIEdgeInsetsMake(airmapheight + interitem, 0, interitem, 0);
+        insets = UIEdgeInsetsMake(airmapheight, 0, 0, 0);
     }
     
     return insets;
