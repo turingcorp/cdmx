@@ -15,9 +15,7 @@ static NSInteger const infoheight = 60;
     self.controller = controller;
     
     vairdetailheader *header = [[vairdetailheader alloc] init:controller];
-    
     vairdetailpay *pay = [[vairdetailpay alloc] init:controller.model.index];
-    
     vairdetailinfo *info = [[vairdetailinfo alloc] init:controller.model];
     
     [self addSubview:header];
