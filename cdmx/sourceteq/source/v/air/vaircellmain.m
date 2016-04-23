@@ -2,6 +2,7 @@
 #import "mstations.h"
 #import "uifont+uifontmain.h"
 #import "vaircellmaincell.h"
+#import "uicolor+uicolormain.h"
 #import "tools.h"
 
 static NSString* const uvindexcellid = @"uvcell";
@@ -24,6 +25,11 @@ static NSInteger const uvmax = 11;
     CGFloat remain = width - (uvpadding * 2);
     CGFloat itemwidthspace = (remain + uvinteritem) / uvmax;
     CGFloat itemwidth = itemwidthspace - uvinteritem;
+    
+    UIView *bordertop = [[UIView alloc] init];
+    [bordertop setUserInteractionEnabled:NO];
+    [bordertop setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [bordertop setBackgroundColor:[UIColor collection]];
     
     UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
     [flow setHeaderReferenceSize:CGSizeZero];
@@ -131,6 +137,7 @@ static NSInteger const uvmax = 11;
     self.baseindex = baseindex;
     
     [baseindex addSubview:labelindex];
+    [self addSubview:bordertop];
     [self addSubview:labeluv];
     [self addSubview:labeluvindex];
     [self addSubview:label];
@@ -143,7 +150,7 @@ static NSInteger const uvmax = 11;
     [self addSubview:baseindex];
     [self addSubview:collection];
     
-    NSDictionary *views = @{@"icontemp":icontemp, @"iconhum":iconhum, @"label":label, @"labeltemp":labeltemp, @"labelhumidity":labelhumidity, @"labeluv":labeluv, @"labeluvindex":labeluvindex, @"col":collection, @"iconfactory":iconfactory, @"baseindex":baseindex, @"labelindex":labelindex, @"labelindexname":labelindexname};
+    NSDictionary *views = @{@"icontemp":icontemp, @"iconhum":iconhum, @"label":label, @"labeltemp":labeltemp, @"labelhumidity":labelhumidity, @"labeluv":labeluv, @"labeluvindex":labeluvindex, @"col":collection, @"iconfactory":iconfactory, @"baseindex":baseindex, @"labelindex":labelindex, @"labelindexname":labelindexname, @"bordertop":bordertop};
     NSDictionary *metrics = @{@"colwidth":@(uvwidth), @"colheight":@(uvheight)};
     
     self.layoutlabelheight = [NSLayoutConstraint constraintWithItem:label attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:0];
@@ -164,6 +171,8 @@ static NSInteger const uvmax = 11;
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[col(colwidth)]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-155-[col(colheight)]-6-[labeluv]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[col]-2-[labeluvindex]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-5-[bordertop]-5-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[bordertop(1)]" options:0 metrics:metrics views:views]];
     [self addConstraint:self.layoutlabelheight];
     [self addConstraint:self.layoutlabeltop];
     

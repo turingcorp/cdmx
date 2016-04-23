@@ -11,7 +11,7 @@ static NSString* const menucellid = @"cellid";
 static NSInteger const bannerheight = 200;
 static NSInteger const headerheight = 55;
 static NSInteger const cellheight = 90;
-static NSInteger const interitem = 1;
+static NSInteger const interitem = -1;
 
 @implementation vmenu
 
@@ -19,7 +19,7 @@ static NSInteger const interitem = 1;
 {
     self = [super init];
     [self setClipsToBounds:YES];
-    [self setBackgroundColor:[UIColor collection]];
+    [self setBackgroundColor:[UIColor whiteColor]];
     self.controller = controller;
     self.model = [cmain singleton].pages.model;
     
