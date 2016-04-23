@@ -205,7 +205,10 @@
             if(rawinfoarr && rawinfoarr.count)
             {
                 NSCalendar *calendar = [NSCalendar currentCalendar];
-                NSInteger datecomponent = [calendar component:NSCalendarUnitWeekday fromDate:date];
+                NSDateComponents *components = [calendar components:NSCalendarUnitWeekday fromDate:date];
+                NSInteger datecomponent = components.weekday;
+                
+                NSLog(@"%@", @(datecomponent));
                 
                 NSDictionary *rawinfo = rawinfoarr[0];
                 NSString *rawuvindex = [rawinfo[@"indiceradiacion"] lowercaseString];

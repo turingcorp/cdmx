@@ -12,7 +12,8 @@ static NSInteger const startinghour = 9;
     NSDate *date;
     NSDate *now = [NSDate date];
     NSCalendar *calendar = [NSCalendar currentCalendar];
-    NSInteger currenthour = [calendar component:NSCalendarUnitHour fromDate:now];
+    NSDateComponents *components = [calendar components:NSCalendarUnitHour fromDate:now];
+    NSInteger currenthour = components.hour;
     
     if(currenthour > endinghour || currenthour < startinghour)
     {
@@ -38,10 +39,11 @@ static NSInteger const startinghour = 9;
     NSDate* now = [NSDate date];
     NSDateComponents *components = [[NSDateComponents alloc] init];
     NSDateComponents *componentstomorrow;
+    NSCalendarUnit units = NSEraCalendarUnit|NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit;
     
-    components.day = 1 ;
+    components.day = 1;
     tomorrow = [calendar dateByAddingComponents:components toDate:now options:0];
-    componentstomorrow = [calendar components:(NSEraCalendarUnit|NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit) fromDate:tomorrow];
+    componentstomorrow = [calendar components:units fromDate:tomorrow];
     componentstomorrow.hour = startinghour;
     tomorrow = [calendar dateFromComponents:componentstomorrow];
     
