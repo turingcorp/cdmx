@@ -4,6 +4,8 @@
 #import "tools.h"
 #import "mstationsitem.h"
 
+static NSInteger const rosewindsize = 80;
+
 @implementation vairdetailheader
 
 -(instancetype)init:(cairdetail*)controller
@@ -41,21 +43,21 @@
     [imagetemp setClipsToBounds:YES];
     [imagetemp setContentMode:UIViewContentModeScaleAspectFit];
     
-    UIImageView *rosewind = [[UIImageView alloc] init];
+    UIImageView *rosewind = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, rosewindsize, rosewindsize)];
     [rosewind setImage:[[UIImage imageNamed:@"stations_rosewind"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
     [rosewind setTintColor:[UIColor whiteColor]];
     [rosewind setUserInteractionEnabled:NO];
-    [rosewind setTranslatesAutoresizingMaskIntoConstraints:NO];
     [rosewind setClipsToBounds:YES];
     [rosewind setContentMode:UIViewContentModeScaleAspectFit];
+    self.rosewind = rosewind;
     
-    UIImageView *rosewindpointer = [[UIImageView alloc] init];
+    UIImageView *rosewindpointer = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, rosewindsize, rosewindsize)];
     [rosewindpointer setImage:[[UIImage imageNamed:@"stations_rosewindpointer"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
     [rosewindpointer setTintColor:[UIColor whiteColor]];
     [rosewindpointer setUserInteractionEnabled:NO];
-    [rosewindpointer setTranslatesAutoresizingMaskIntoConstraints:NO];
     [rosewindpointer setClipsToBounds:YES];
     [rosewindpointer setContentMode:UIViewContentModeScaleAspectFit];
+    self.rosewindpointer = rosewindpointer;
     
     UILabel *labelrose = [[UILabel alloc] init];
     [labelrose setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -91,17 +93,13 @@
     [self addSubview:labelaltitude];
     [self addSubview:buttonback];
     
-    NSDictionary *views = @{@"label":label, @"imagetemp":imagetemp, @"rosewind":rosewind, @"rosewindpointer":rosewindpointer, @"buttonback":buttonback, @"labelrose":labelrose, @"labeltemp":labeltemp, @"labelaltitude":labelaltitude};
+    NSDictionary *views = @{@"label":label, @"imagetemp":imagetemp, @"buttonback":buttonback, @"labelrose":labelrose, @"labeltemp":labeltemp, @"labelaltitude":labelaltitude};
     NSDictionary *metrics = @{};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-40-[label]-40-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-30-[label]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[imagetemp(22)]-0-[labeltemp]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[imagetemp(22)]-20-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[rosewind]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[rosewindpointer]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[rosewind(80)]-70-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[rosewindpointer(80)]-70-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[labelrose]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[labelrose]-56-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[labeltemp(22)]-20-|" options:0 metrics:metrics views:views]];
@@ -144,6 +142,25 @@
     }
     
     return self;
+}
+
+-(void)layoutSubviews
+{
+    CGFloat width = self.bounds.size.width;
+    CGFloat height = self.bounds.size.height;
+    CGFloat width_2 = width / 2.0;
+    CGFloat height_2 = height / 2.0;
+    CGPoint center = CGPointMake(width_2, height_2);
+    __weak typeof(self) welf = self;
+    
+    dispatch_async(dispatch_get_main_queue(),
+                   ^
+                   {
+                       [welf.rosewind setCenter:center];
+                       [welf.rosewindpointer setCenter:center];
+                   });
+    
+    [super layoutSubviews];
 }
 
 #pragma mark actions

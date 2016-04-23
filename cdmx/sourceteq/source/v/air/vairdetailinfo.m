@@ -8,12 +8,12 @@
 {
     self = [super init];
     [self setClipsToBounds:YES];
-    [self setBackgroundColor:[UIColor collection]];
+    [self setBackgroundColor:[UIColor clearColor]];
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self setUserInteractionEnabled:NO];
     
-    NSDictionary *dicttitle = @{NSFontAttributeName:[UIFont boldsize:13], NSForegroundColorAttributeName:[UIColor colorWithWhite:0.7 alpha:1]};
-    NSDictionary *dictdescr = @{NSFontAttributeName:[UIFont regularsize:16], NSForegroundColorAttributeName:[UIColor colorWithWhite:0.4 alpha:1]};
+    NSDictionary *dicttitle = @{NSFontAttributeName:[UIFont boldsize:13], NSForegroundColorAttributeName:[UIColor main]};
+    NSDictionary *dictdescr = @{NSFontAttributeName:[UIFont regularsize:15], NSForegroundColorAttributeName:[UIColor second]};
     
     NSString *stringquality = model.index.name;
     NSString *stringpollutant = model.pollutant;
@@ -43,7 +43,7 @@
     UIView *border = [[UIView alloc] init];
     [border setUserInteractionEnabled:NO];
     [border setClipsToBounds:YES];
-    [border setBackgroundColor:[UIColor colorWithWhite:0 alpha:0.1]];
+    [border setBackgroundColor:[UIColor collection]];
     [border setTranslatesAutoresizingMaskIntoConstraints:NO];
     
     UILabel *label = [[UILabel alloc] init];
@@ -59,7 +59,7 @@
     NSDictionary *views = @{@"border":border, @"label":label};
     NSDictionary *metrics = @{};
     
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[border]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-5-[border]-5-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[border(1)]-5-[label]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[label]-10-|" options:0 metrics:metrics views:views]];
     
