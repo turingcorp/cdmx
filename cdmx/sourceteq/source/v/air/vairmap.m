@@ -65,46 +65,46 @@ static NSInteger const marginvr = 50;
     
     [self addSubview:overview];
     
-//    NSDictionary *views = @{@"over":overview};
-//    NSDictionary *metrics = @{@"height":@(height), @"marginvr":@(marginvr)};
+    NSDictionary *views = @{@"over":overview};
+    NSDictionary *metrics = @{@"height":@(height), @"marginvr":@(marginvr)};
     
-//    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[over]-0-|" options:0 metrics:metrics views:views]];
-//    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(marginvr)-[over(height)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[over]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(marginvr)-[over(height)]" options:0 metrics:metrics views:views]];
     
     NSArray<mcdmapitem*> *items = self.model.items;
     CGFloat animationseconds = animationaddseconds;
     
     for(mcdmapitem *item in items)
     {
-//        UIImageView *view = [[UIImageView alloc] init];
-//        [view setUserInteractionEnabled:NO];
-//        [view setClipsToBounds:YES];
-//        [view setTranslatesAutoresizingMaskIntoConstraints:NO];
-//        [view setContentMode:UIViewContentModeCenter];
-//        [view setTintColor:item.readingmodel.index.color];
-//        [view setAlpha:0];
-//        
-//        __weak typeof(view) wiew = view;
-//        
-//        [overview addSubview:view];
-//        
-//        views = @{@"view":view};
-//        
-//        [overview addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[view]-0-|" options:0 metrics:metrics views:views]];
-//        [overview addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[view]-0-|" options:0 metrics:metrics views:views]];
-//        animationseconds += animationaddseconds;
-//        
-//        dispatch_async(dispatch_get_main_queue(),
-//                       ^
-//                       {
-//                           [wiew setImage:item.asset];
-//                           
-//                           [UIView animateWithDuration:animationseconds animations:
-//                            ^
-//                            {
-//                                [wiew setAlpha:1];
-//                            }];
-//                       });
+        UIImageView *view = [[UIImageView alloc] init];
+        [view setUserInteractionEnabled:NO];
+        [view setClipsToBounds:YES];
+        [view setTranslatesAutoresizingMaskIntoConstraints:NO];
+        [view setContentMode:UIViewContentModeCenter];
+        [view setTintColor:item.readingmodel.index.color];
+        [view setAlpha:0];
+        
+        __weak typeof(view) wiew = view;
+        
+        [overview addSubview:view];
+        
+        views = @{@"view":view};
+        
+        [overview addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[view]-0-|" options:0 metrics:metrics views:views]];
+        [overview addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[view]-0-|" options:0 metrics:metrics views:views]];
+        animationseconds += animationaddseconds;
+        
+        dispatch_async(dispatch_get_main_queue(),
+                       ^
+                       {
+                           [wiew setImage:item.asset];
+                           
+                           [UIView animateWithDuration:animationseconds animations:
+                            ^
+                            {
+                                [wiew setAlpha:1];
+                            }];
+                       });
     }
 }
 
@@ -112,11 +112,7 @@ static NSInteger const marginvr = 50;
 
 -(void)refresh
 {
-    NSLog(@"%@", @(self.overview.subviews.count));
     [self clean];
-    
-    NSLog(@"should be nil %@", self.overview);
-    NSLog(@"should be empty %@", @(self.overview.subviews.count));
     
     __weak typeof(self) welf = self;
     
@@ -124,7 +120,6 @@ static NSInteger const marginvr = 50;
                    ^
                    {
                        [welf loadmap];
-                       NSLog(@"%@", @(self.overview.subviews.count));
                    });
 }
 
