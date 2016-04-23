@@ -17,6 +17,7 @@ static NSInteger const cellerrorheight = 200;
 static NSInteger const cellheight = 65;
 static NSInteger const labelmaincelltop = 210;
 static NSInteger const labelmaincellbottom = 20;
+static NSInteger const interitem = -1;
 
 @implementation vair
 {
@@ -46,7 +47,7 @@ static NSInteger const labelmaincellbottom = 20;
     self.layoutbarheight = [NSLayoutConstraint constraintWithItem:bar attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:navbarheight];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[bar]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[spinner]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[bar]-100-[spinner]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[bar]-120-[spinner]" options:0 metrics:metrics views:views]];
     [self addConstraint:self.layoutbarheight];
     
     return self;
@@ -125,7 +126,7 @@ static NSInteger const labelmaincellbottom = 20;
     [flow setHeaderReferenceSize:CGSizeZero];
     [flow setFooterReferenceSize:CGSizeZero];
     [flow setMinimumInteritemSpacing:0];
-    [flow setMinimumLineSpacing:0];
+    [flow setMinimumLineSpacing:interitem];
     [flow setScrollDirection:UICollectionViewScrollDirectionVertical];
     
     UICollectionView *collection = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flow];
