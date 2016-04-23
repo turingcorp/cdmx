@@ -27,9 +27,13 @@
     {
         NSString *rawline = rawlines[i];
         NSArray *rawrows = [rawline componentsSeparatedByString:@","];
-        NSUInteger countrows = rawrows.count;
         
+#if DEBUG
+        
+        NSUInteger countrows = rawrows.count;
         NSAssert(countrows == 7, @"Cannot load stations from csv file", raw);
+        
+#endif
         
         NSString *rawstationid = rawrows[6];
         double rawlatitude = [rawrows[3] doubleValue];
