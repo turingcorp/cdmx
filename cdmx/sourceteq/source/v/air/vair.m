@@ -8,6 +8,7 @@
 #import "mstations.h"
 #import "uifont+uifontmain.h"
 #import "analytics.h"
+#import "mstationsreadingitemindexnodata.h"
 
 static NSString* const cellairerrorid = @"cellairerror";
 static NSString* const cellairmainid = @"cellairmain";
@@ -321,19 +322,12 @@ static NSInteger const labelmaincellbottom = 20;
     
     if(index.section)
     {
-        should = YES;
-    }
-    
-    return should;
-}
-
--(BOOL)collectionView:(UICollectionView*)col shouldHighlightItemAtIndexPath:(NSIndexPath*)index
-{
-    BOOL should = NO;
-    
-    if(index.section)
-    {
-        should = YES;
+        mstationsreadingitem *item = [self itemforindex:index.item];
+        
+        if(![item.index isKindOfClass:[mstationsreadingitemindexnodata class]])
+        {
+            should = YES;
+        }
     }
     
     return should;
