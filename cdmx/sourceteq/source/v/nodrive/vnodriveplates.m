@@ -3,8 +3,8 @@
 
 static NSString* const platescellid = @"platescell";
 static NSInteger const linespacing = 6;
-static NSInteger const cellwidth = 70;
-static NSInteger const cellheight = 70;
+static NSInteger const cellwidth = 60;
+static NSInteger const cellheight = 60;
 
 @implementation vnodriveplates
 

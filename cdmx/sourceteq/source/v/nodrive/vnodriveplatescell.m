@@ -12,7 +12,7 @@
     
     UILabel *label = [[UILabel alloc] init];
     [label setBackgroundColor:[UIColor clearColor]];
-    [label setFont:[UIFont boldsize:38]];
+    [label setFont:[UIFont boldsize:30]];
     [label setTextAlignment:NSTextAlignmentCenter];
     [label setTextColor:[UIColor blackColor]];
     [label setUserInteractionEnabled:NO];
