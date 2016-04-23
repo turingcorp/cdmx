@@ -45,8 +45,6 @@ static NSInteger const labelmaincellbottom = 20;
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[bar]" options:0 metrics:metrics views:views]];
     [self addConstraint:self.layoutbarheight];
     
-    [NSNotification observe:self stationsloaded:@selector(notifiedstationsloaded:)];
-    
     return self;
 }
 
