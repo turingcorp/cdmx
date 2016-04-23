@@ -7,4 +7,6 @@
 -(void)centeruser;
 -(void)selectitem:(mstationsreadingitem*)item;
 
+@property(weak, nonatomic)id<UIGestureRecognizerDelegate> prevgesturedelegate;
+
 @end

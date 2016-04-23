@@ -7,5 +7,6 @@
 -(void)back;
 
 @property(weak, nonatomic)mstationsreadingitem *model;
+@property(weak, nonatomic)id<UIGestureRecognizerDelegate> prevgesturedelegate;
 
 @end
