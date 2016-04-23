@@ -35,14 +35,19 @@ static NSInteger const labelmaincellbottom = 20;
     vairbar *bar = [[vairbar alloc] init:self.controller];
     self.bar = bar;
     
-    [self addSubview:bar];
+    vspinner *spinner = [[vspinner alloc] init];
+    self.spinner = spinner;
     
-    NSDictionary *views = @{@"bar":bar};
+    [self addSubview:bar];
+    [self addSubview:spinner];
+    
+    NSDictionary *views = @{@"bar":bar, @"spinner":spinner};
     NSDictionary *metrics = @{};
     
     self.layoutbarheight = [NSLayoutConstraint constraintWithItem:bar attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:navbarheight];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[bar]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[bar]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[spinner]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[bar]-100-[spinner]" options:0 metrics:metrics views:views]];
     [self addConstraint:self.layoutbarheight];
     
     return self;
@@ -68,6 +73,7 @@ static NSInteger const labelmaincellbottom = 20;
 
 -(void)checkcontent
 {
+    [self.spinner removeFromSuperview];
     self.error = [mstations singleton].error;
     
     if(self.error || ![mstations singleton].readings.count)
@@ -151,8 +157,7 @@ static NSInteger const labelmaincellbottom = 20;
     [self addConstraint:self.layoutmapheight];
     
     [NSNotification observe:self stationsloaded:@selector(notifiedstationsloaded:)];
-    
-    [self checkcontent];
+    [[mstations singleton] fetch];
 }
 
 -(void)retry
