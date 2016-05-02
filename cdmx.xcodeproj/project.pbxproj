@@ -39,6 +39,12 @@
 		DA188B0D1CC5C18A00C91AF2 /* vairdetailpay.m in Sources */ = {isa = PBXBuildFile; fileRef = DA188B0C1CC5C18A00C91AF2 /* vairdetailpay.m */; };
 		DA20ACDC1CD7E7BA00754956 /* ccity.m in Sources */ = {isa = PBXBuildFile; fileRef = DA20ACDB1CD7E7BA00754956 /* ccity.m */; };
 		DA20ACDF1CD7E80200754956 /* ccdmx.m in Sources */ = {isa = PBXBuildFile; fileRef = DA20ACDE1CD7E80200754956 /* ccdmx.m */; };
+		DA20ACE31CD7F80200754956 /* vcity.m in Sources */ = {isa = PBXBuildFile; fileRef = DA20ACE21CD7F80200754956 /* vcity.m */; };
+		DA20ACE71CD7FBC700754956 /* cpollution.m in Sources */ = {isa = PBXBuildFile; fileRef = DA20ACE61CD7FBC700754956 /* cpollution.m */; };
+		DA20ACEB1CD7FC9100754956 /* vpollution.m in Sources */ = {isa = PBXBuildFile; fileRef = DA20ACEA1CD7FC9100754956 /* vpollution.m */; };
+		DA20ACEF1CD8006C00754956 /* mpollutiontextures.m in Sources */ = {isa = PBXBuildFile; fileRef = DA20ACEE1CD8006C00754956 /* mpollutiontextures.m */; };
+		DA20ACF21CD800C500754956 /* mpollutiontexturesitem.m in Sources */ = {isa = PBXBuildFile; fileRef = DA20ACF11CD800C500754956 /* mpollutiontexturesitem.m */; };
+		DA20ACF51CD800F200754956 /* mpollutiontexturesitembenitojuarez.m in Sources */ = {isa = PBXBuildFile; fileRef = DA20ACF41CD800F200754956 /* mpollutiontexturesitembenitojuarez.m */; };
 		DA87082A1CBE840F000C08E1 /* amanager.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8708291CBE840F000C08E1 /* amanager.m */; };
 		DA87082D1CBE844A000C08E1 /* acall.m in Sources */ = {isa = PBXBuildFile; fileRef = DA87082C1CBE844A000C08E1 /* acall.m */; };
 		DA8708311CBE8532000C08E1 /* aparser.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8708301CBE8532000C08E1 /* aparser.m */; };
@@ -221,6 +227,18 @@
 		DA20ACDB1CD7E7BA00754956 /* ccity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ccity.m; sourceTree = "<group>"; };
 		DA20ACDD1CD7E80200754956 /* ccdmx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccdmx.h; sourceTree = "<group>"; };
 		DA20ACDE1CD7E80200754956 /* ccdmx.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ccdmx.m; sourceTree = "<group>"; };
+		DA20ACE11CD7F80200754956 /* vcity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vcity.h; sourceTree = "<group>"; };
+		DA20ACE21CD7F80200754956 /* vcity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vcity.m; sourceTree = "<group>"; };
+		DA20ACE51CD7FBC700754956 /* cpollution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpollution.h; sourceTree = "<group>"; };
+		DA20ACE61CD7FBC700754956 /* cpollution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cpollution.m; sourceTree = "<group>"; };
+		DA20ACE91CD7FC9100754956 /* vpollution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vpollution.h; sourceTree = "<group>"; };
+		DA20ACEA1CD7FC9100754956 /* vpollution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vpollution.m; sourceTree = "<group>"; };
+		DA20ACED1CD8006C00754956 /* mpollutiontextures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpollutiontextures.h; sourceTree = "<group>"; };
+		DA20ACEE1CD8006C00754956 /* mpollutiontextures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mpollutiontextures.m; sourceTree = "<group>"; };
+		DA20ACF01CD800C500754956 /* mpollutiontexturesitem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpollutiontexturesitem.h; sourceTree = "<group>"; };
+		DA20ACF11CD800C500754956 /* mpollutiontexturesitem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mpollutiontexturesitem.m; sourceTree = "<group>"; };
+		DA20ACF31CD800F200754956 /* mpollutiontexturesitembenitojuarez.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpollutiontexturesitembenitojuarez.h; sourceTree = "<group>"; };
+		DA20ACF41CD800F200754956 /* mpollutiontexturesitembenitojuarez.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mpollutiontexturesitembenitojuarez.m; sourceTree = "<group>"; };
 		DA8708281CBE840F000C08E1 /* amanager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = amanager.h; sourceTree = "<group>"; };
 		DA8708291CBE840F000C08E1 /* amanager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = amanager.m; sourceTree = "<group>"; };
 		DA87082B1CBE844A000C08E1 /* acall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = acall.h; sourceTree = "<group>"; };
@@ -533,6 +551,46 @@
 			path = city;
 			sourceTree = "<group>";
 		};
+		DA20ACE01CD7F7F600754956 /* city */ = {
+			isa = PBXGroup;
+			children = (
+				DA20ACE11CD7F80200754956 /* vcity.h */,
+				DA20ACE21CD7F80200754956 /* vcity.m */,
+			);
+			path = city;
+			sourceTree = "<group>";
+		};
+		DA20ACE41CD7FBBF00754956 /* pollution */ = {
+			isa = PBXGroup;
+			children = (
+				DA20ACE51CD7FBC700754956 /* cpollution.h */,
+				DA20ACE61CD7FBC700754956 /* cpollution.m */,
+			);
+			path = pollution;
+			sourceTree = "<group>";
+		};
+		DA20ACE81CD7FC8600754956 /* pollution */ = {
+			isa = PBXGroup;
+			children = (
+				DA20ACE91CD7FC9100754956 /* vpollution.h */,
+				DA20ACEA1CD7FC9100754956 /* vpollution.m */,
+			);
+			path = pollution;
+			sourceTree = "<group>";
+		};
+		DA20ACEC1CD8005C00754956 /* mpollution */ = {
+			isa = PBXGroup;
+			children = (
+				DA20ACED1CD8006C00754956 /* mpollutiontextures.h */,
+				DA20ACEE1CD8006C00754956 /* mpollutiontextures.m */,
+				DA20ACF01CD800C500754956 /* mpollutiontexturesitem.h */,
+				DA20ACF11CD800C500754956 /* mpollutiontexturesitem.m */,
+				DA20ACF31CD800F200754956 /* mpollutiontexturesitembenitojuarez.h */,
+				DA20ACF41CD800F200754956 /* mpollutiontexturesitembenitojuarez.m */,
+			);
+			path = mpollution;
+			sourceTree = "<group>";
+		};
 		DA8708251CBE8245000C08E1 /* a */ = {
 			isa = PBXGroup;
 			children = (
@@ -816,6 +874,7 @@
 		DAD33FD21CBC83E300C87502 /* c */ = {
 			isa = PBXGroup;
 			children = (
+				DA20ACE41CD7FBBF00754956 /* pollution */,
 				DA20ACD91CD7E7A500754956 /* city */,
 				DA8A401F1CC6B7BB008FECF2 /* app */,
 				DA8A3FFC1CC682F5008FECF2 /* cars */,
@@ -829,6 +888,7 @@
 		DAD33FD41CBC83E300C87502 /* m */ = {
 			isa = PBXGroup;
 			children = (
+				DA20ACEC1CD8005C00754956 /* mpollution */,
 				DA8A404A1CC6E0B1008FECF2 /* about */,
 				DA000D291CC29D1700A82EC0 /* map */,
 				DAD876181CBDBB7700A4F91C /* stations */,
@@ -881,6 +941,8 @@
 		DAD33FE41CBC83E300C87502 /* v */ = {
 			isa = PBXGroup;
 			children = (
+				DA20ACE81CD7FC8600754956 /* pollution */,
+				DA20ACE01CD7F7F600754956 /* city */,
 				DA8A403D1CC6D7FF008FECF2 /* about */,
 				DA8A40361CC6D69A008FECF2 /* settings */,
 				DA8A40031CC68AB2008FECF2 /* nodrive */,
@@ -1250,6 +1312,7 @@
 				DAD876021CBD6F4000A4F91C /* cmenu.m in Sources */,
 				DA8708A51CBF0C0C000C08E1 /* mstationsnodrivehologramonce.m in Sources */,
 				DA8708691CBEBE37000C08E1 /* mstationsreadingitemindexregular.m in Sources */,
+				DA20ACE31CD7F80200754956 /* vcity.m in Sources */,
 				DA8A40301CC6D148008FECF2 /* csettings.m in Sources */,
 				DA8A40491CC6DF8E008FECF2 /* vaboutheader.m in Sources */,
 				DA000D381CC29E6A00A82EC0 /* mcdmapitemgam.m in Sources */,
@@ -1287,6 +1350,7 @@
 				DAD875F61CBD645500A4F91C /* vairbar.m in Sources */,
 				DAD33FF41CBC83E300C87502 /* appdel.m in Sources */,
 				DAD33FFA1CBC83E300C87502 /* uicolor+uicolormain.m in Sources */,
+				DA20ACEB1CD7FC9100754956 /* vpollution.m in Sources */,
 				DA8A3FF41CC6753F008FECF2 /* vairdetailinfo.m in Sources */,
 				DA8A3FF71CC681D3008FECF2 /* mpagessectioncars.m in Sources */,
 				DAD340011CBC83E300C87502 /* mdirs.m in Sources */,
@@ -1300,6 +1364,7 @@
 				DA8A40151CC694B0008FECF2 /* vnodriveplatescell.m in Sources */,
 				DAD875E41CBD5B1D00A4F91C /* mpages.m in Sources */,
 				DA87086F1CBEBE63000C08E1 /* mstationsreadingitemindexverybad.m in Sources */,
+				DA20ACF21CD800C500754956 /* mpollutiontexturesitem.m in Sources */,
 				DA8A402A1CC6C9EA008FECF2 /* snotpollution.m in Sources */,
 				DA000D471CC29F6E00A82EC0 /* mcdmapitemiztaca.m in Sources */,
 				DA8708991CBF0BC6000C08E1 /* mstationsnodrivehologramdoubleo.m in Sources */,
@@ -1331,6 +1396,7 @@
 				DAD33FF71CBC83E300C87502 /* analytics.m in Sources */,
 				DA000D561CC29FC100A82EC0 /* mcdmapitemiztapa.m in Sources */,
 				DA000D531CC29FB600A82EC0 /* mcdmapitemcoyo.m in Sources */,
+				DA20ACF51CD800F200754956 /* mpollutiontexturesitembenitojuarez.m in Sources */,
 				DA000D881CC4737800A82EC0 /* mstationsannotation.m in Sources */,
 				DA8708561CBE9F5D000C08E1 /* mstationsreadinguvindexmid.m in Sources */,
 				DA8708311CBE8532000C08E1 /* aparser.m in Sources */,
@@ -1351,6 +1417,7 @@
 				DA000D711CC3138600A82EC0 /* vairbargeobutton.m in Sources */,
 				DA000D7A1CC4492700A82EC0 /* vairgeobar.m in Sources */,
 				DA000D3B1CC29E8800A82EC0 /* mcdmapitemazc.m in Sources */,
+				DA20ACE71CD7FBC700754956 /* cpollution.m in Sources */,
 				DA8708501CBE9F0D000C08E1 /* mstationsreadinguvindex.m in Sources */,
 				DAD8760F1CBD72A200A4F91C /* vmenuheader.m in Sources */,
 				DA188B041CC59EB300C91AF2 /* vairdetail.m in Sources */,
@@ -1358,6 +1425,7 @@
 				DA000D4A1CC29F7A00A82EC0 /* mcdmapitembj.m in Sources */,
 				DA8A40181CC6AAFB008FECF2 /* mpagessectionapp.m in Sources */,
 				DA20ACDC1CD7E7BA00754956 /* ccity.m in Sources */,
+				DA20ACEF1CD8006C00754956 /* mpollutiontextures.m in Sources */,
 				DAD875FC1CBD6CF200A4F91C /* vmenubutton.m in Sources */,
 				DA20ACDF1CD7E80200754956 /* ccdmx.m in Sources */,
 			);

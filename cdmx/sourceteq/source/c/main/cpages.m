@@ -1,6 +1,6 @@
 #import "cpages.h"
 #import "cmenu.h"
-#import "ccity.h"
+#import "cpollution.h"
 
 @implementation cpages
 
@@ -8,9 +8,8 @@
 {
     self = [super initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
 
-    ccity *controller = [[ccity alloc] init];
+    cpollution *controller = [[cpollution alloc] init];
     [self changecontroller:controller direction:UIPageViewControllerNavigationDirectionForward animated:NO];
-    
     
     return self;
 }

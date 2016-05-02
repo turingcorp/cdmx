@@ -1,9 +1,18 @@
-#import "ccity.h"
+#import "cpollution.h"
 #import "nsnotification+nsnotificationmain.h"
+#import "vpollution.h"
 
 static NSInteger const framespersecond = 60;
 
-@implementation ccity
+@interface cpollution ()
+
+@property(strong, nonatomic)vpollution *view;
+
+@end
+
+@implementation cpollution
+
+@dynamic view;
 
 -(UIStatusBarStyle)preferredStatusBarStyle
 {
@@ -26,6 +35,17 @@ static NSInteger const framespersecond = 60;
     [self setResumeOnDidBecomeActive:NO];
     [self setDelegate:self];
     
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self.view viewdidappear];
+}
+
+-(void)loadView
+{
+    self.view = [[vpollution alloc] init:self];
 }
 
 #pragma mark -

@@ -2,7 +2,7 @@
 
 @interface NSNotification (nsnotificationmain)
 
-+(void)stationsloaded;
-+(void)observe:(id)observer stationsloaded:(SEL)selector;
++(void)glkmove;
++(void)observe:(id)observer glkmove:(SEL)selector;
 
 @end

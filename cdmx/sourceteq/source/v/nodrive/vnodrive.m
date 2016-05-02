@@ -54,7 +54,7 @@ static NSInteger const hologramsheight = 80;
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-50-[buttontry]-50-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[labelerror]-20-|" options:0 metrics:metrics views:views]];
     
-    [NSNotification observe:self stationsloaded:@selector(notifiedstationsloaded:)];
+//    [NSNotification observe:self stationsloaded:@selector(notifiedstationsloaded:)];
     
     [self tryload];
     

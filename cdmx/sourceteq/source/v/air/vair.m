@@ -156,7 +156,7 @@ static NSInteger const interitem = -1;
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[bar]-0-[map]" options:0 metrics:metrics views:views]];
     [self addConstraint:self.layoutmapheight];
     
-    [NSNotification observe:self stationsloaded:@selector(notifiedstationsloaded:)];
+//    [NSNotification observe:self stationsloaded:@selector(notifiedstationsloaded:)];
     [[mstations singleton] fetch];
 }
 

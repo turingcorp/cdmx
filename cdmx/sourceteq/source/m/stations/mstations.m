@@ -37,13 +37,13 @@
 -(void)callsuccess:(amanager*)manager
 {
     self.error = nil;
-    [NSNotification stationsloaded];
+//    [NSNotification stationsloaded];
 }
 
 -(void)call:(amanager*)manager error:(NSString*)error
 {
     self.error = error;
-    [NSNotification stationsloaded];
+//    [NSNotification stationsloaded];
 }
 
 @end
