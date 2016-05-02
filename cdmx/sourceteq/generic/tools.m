@@ -1,5 +1,6 @@
 #import "tools.h"
 #import "cmain.h"
+#import "genericconstants.h"
 
 static NSString* const shareurl = @"https://itunes.apple.com/us/app/cdmx/id%@";
 static NSString* const rateurl = @"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=%@";
@@ -23,7 +24,7 @@ static NSString* const rateurl = @"itms-apps://itunes.apple.com/WebObjects/MZSto
 +(void)rateapp
 {
     NSUserDefaults *properties = [NSUserDefaults standardUserDefaults];
-    NSString *string = [NSString stringWithFormat:rateurl, [properties valueForKey:@"appid"]];
+    NSString *string = [NSString stringWithFormat:rateurl, [properties valueForKey:appid_key]];
     NSURL *url = [NSURL URLWithString:string];
                         
     [[UIApplication sharedApplication] openURL:url];
@@ -32,7 +33,7 @@ static NSString* const rateurl = @"itms-apps://itunes.apple.com/WebObjects/MZSto
 +(void)shareapp
 {
     NSUserDefaults *properties = [NSUserDefaults standardUserDefaults];
-    NSString *string = [NSString stringWithFormat:shareurl, [properties valueForKey:@"appid"]];
+    NSString *string = [NSString stringWithFormat:shareurl, [properties valueForKey:appid_key]];
     NSURL *url = [NSURL URLWithString:string];
     
     UIActivityViewController *act = [[UIActivityViewController alloc] initWithActivityItems:@[url] applicationActivities:nil];

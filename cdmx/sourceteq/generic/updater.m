@@ -5,7 +5,7 @@
 #import "db.h"
 #import "analytics.h"
 #import "cmain.h"
-#import "mstations.h"
+#import "genericconstants.h"
 
 @implementation updater
 
@@ -36,8 +36,9 @@ NSString *documents;
         if(pro_version != 20)
         {
             [updater firsttime:defaults];
-            [mdb updatedb];
         }
+        
+        [mdb updatedb];
     }
     
     dbname = [documents stringByAppendingPathComponent:[properties valueForKey:@"dbname"]];
@@ -45,19 +46,19 @@ NSString *documents;
 
 +(void)firsttime:(NSDictionary*)plist
 {
-    NSNumber *appid = plist[@"appid"];
+    NSNumber *appid = plist[appid_key];
     NSUserDefaults *userdef = [NSUserDefaults standardUserDefaults];
     
     [userdef removePersistentDomainForName:NSGlobalDomain];
     [userdef removePersistentDomainForName:NSArgumentDomain];
     [userdef removePersistentDomainForName:NSRegistrationDomain];
-    [userdef setValue:appid forKey:@"appid"];
+    [userdef setValue:appid forKey:appid_key];
     [userdef synchronize];
 }
 
 +(void)registernotifications
 {
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC * 5), dispatch_get_main_queue(),
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC * 10), dispatch_get_main_queue(),
                    ^
                    {
                        if([[UIApplication sharedApplication] respondsToSelector:@selector(registerUserNotificationSettings:)])
