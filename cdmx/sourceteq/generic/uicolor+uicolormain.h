@@ -4,7 +4,7 @@
 
 +(instancetype)main;
 +(instancetype)second;
-+(instancetype)collection;
++(instancetype)background;
 +(instancetype)pollution_green;
 +(instancetype)pollution_yellow;
 +(instancetype)pollution_orange;

@@ -29,7 +29,7 @@ static NSInteger const uvmax = 11;
     UIView *bordertop = [[UIView alloc] init];
     [bordertop setUserInteractionEnabled:NO];
     [bordertop setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [bordertop setBackgroundColor:[UIColor collection]];
+    [bordertop setBackgroundColor:[UIColor background]];
     
     UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
     [flow setHeaderReferenceSize:CGSizeZero];

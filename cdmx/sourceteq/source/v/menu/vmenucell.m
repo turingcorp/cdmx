@@ -34,12 +34,12 @@
     UIView *bordertop = [[UIView alloc] init];
     [bordertop setUserInteractionEnabled:NO];
     [bordertop setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [bordertop setBackgroundColor:[UIColor collection]];
+    [bordertop setBackgroundColor:[UIColor background]];
     
     UIView *borderbottom = [[UIView alloc] init];
     [borderbottom setUserInteractionEnabled:NO];
     [borderbottom setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [borderbottom setBackgroundColor:[UIColor collection]];
+    [borderbottom setBackgroundColor:[UIColor background]];
     
     [self addSubview:bordertop];
     [self addSubview:borderbottom];

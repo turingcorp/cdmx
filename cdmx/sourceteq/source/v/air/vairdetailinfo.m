@@ -43,7 +43,7 @@
     UIView *border = [[UIView alloc] init];
     [border setUserInteractionEnabled:NO];
     [border setClipsToBounds:YES];
-    [border setBackgroundColor:[UIColor collection]];
+    [border setBackgroundColor:[UIColor background]];
     [border setTranslatesAutoresizingMaskIntoConstraints:NO];
     
     UILabel *label = [[UILabel alloc] init];

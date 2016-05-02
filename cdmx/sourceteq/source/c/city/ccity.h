@@ -1,13 +1,6 @@
-//
-//  ccity.h
-//  cdmx
-//
-//  Created by zero on 5/2/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
+#import <UIKit/UIKit.h>
+#import "ccdmx.h"
 
-#import <Foundation/Foundation.h>
-
-@interface ccity : NSObject
+@interface ccity:ccdmx
 
 @end

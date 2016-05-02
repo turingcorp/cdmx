@@ -12,9 +12,9 @@
     return [UIColor colorWithRed:0.18039 green:0.33725 blue:0.54117 alpha:1];
 }
 
-+(instancetype)collection
++(instancetype)background
 {
-    return [UIColor colorWithWhite:0.95 alpha:1];
+    return [UIColor colorWithRed:0.92 green:0.94 blue:0.97 alpha:1];
 }
 
 +(instancetype)pollution_green

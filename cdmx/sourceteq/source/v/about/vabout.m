@@ -17,7 +17,7 @@ static NSInteger const cellheight = 70;
 {
     self = [super init];
     [self setClipsToBounds:YES];
-    [self setBackgroundColor:[UIColor collection]];
+    [self setBackgroundColor:[UIColor background]];
     self.controller = controller;
     self.model = [[mabout alloc] init];
     
