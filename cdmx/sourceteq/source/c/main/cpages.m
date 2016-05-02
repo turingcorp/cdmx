@@ -1,5 +1,6 @@
 #import "cpages.h"
 #import "cmenu.h"
+#import "ccity.h"
 
 @implementation cpages
 
@@ -7,8 +8,9 @@
 {
     self = [super initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
 
-    self.model = [[mpages alloc] init];
-    [self page:self.model.sections[0].items[0] animated:YES direction:UIPageViewControllerNavigationDirectionForward];
+    ccity *controller = [[ccity alloc] init];
+    [self changecontroller:controller direction:UIPageViewControllerNavigationDirectionForward animated:NO];
+    
     
     return self;
 }
@@ -40,12 +42,6 @@
 }
 
 #pragma mark public
-
--(void)page:(mpagesitem*)model animated:(BOOL)animated direction:(UIPageViewControllerNavigationDirection)direction
-{
-    UIViewController *controller = [model controller];
-    [self changecontroller:controller direction:direction animated:animated];
-}
 
 -(void)pagemenu
 {

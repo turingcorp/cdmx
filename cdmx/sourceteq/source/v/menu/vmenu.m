@@ -21,7 +21,7 @@ static NSInteger const interitem = -1;
     [self setClipsToBounds:YES];
     [self setBackgroundColor:[UIColor whiteColor]];
     self.controller = controller;
-    self.model = [cmain singleton].pages.model;
+//    self.model = [cmain singleton].pages.model;
     
     vmenubanner *banner = [[vmenubanner alloc] init];
     
@@ -163,7 +163,7 @@ static NSInteger const interitem = -1;
 -(void)collectionView:(UICollectionView*)col didSelectItemAtIndexPath:(NSIndexPath*)index
 {
     mpagesitem *model = [self modelatindex:index];
-    [[cmain singleton].pages page:model animated:YES direction:UIPageViewControllerNavigationDirectionForward];
+//    [[cmain singleton].pages page:model animated:YES direction:UIPageViewControllerNavigationDirectionForward];
 }
 
 @end

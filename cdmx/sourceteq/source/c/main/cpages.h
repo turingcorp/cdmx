@@ -1,11 +1,8 @@
 #import <UIKit/UIKit.h>
-#import "mpages.h"
 
 @interface cpages:UIPageViewController
 
--(void)page:(mpagesitem*)model animated:(BOOL)animated direction:(UIPageViewControllerNavigationDirection)direction;
+-(void)changecontroller:(UIViewController*)controller direction:(UIPageViewControllerNavigationDirection)direction animated:(BOOL)animated;
 -(void)pagemenu;
-
-@property(strong, nonatomic)mpages *model;
 
 @end
