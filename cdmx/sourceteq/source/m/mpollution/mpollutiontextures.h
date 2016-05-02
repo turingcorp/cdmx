@@ -1,13 +1,10 @@
-//
-//  mpollutiontextures.h
-//  cdmx
-//
-//  Created by zero on 5/2/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
+#import "mpollutiontexturesitem.h"
+#import "mpollutiontexturesitembenitojuarez.h"
 
-@interface mpollutiontextures : NSObject
+@interface mpollutiontextures:NSObject
+
+@property(strong, nonatomic)NSArray<mpollutiontexturesitem*> *items;
+@property(weak, nonatomic)mpollutiontexturesitembenitojuarez *itembenitojuarez;
 
 @end

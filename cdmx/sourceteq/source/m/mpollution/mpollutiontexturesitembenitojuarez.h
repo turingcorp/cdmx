@@ -1,5 +1,6 @@
 #import <Foundation/Foundation.h>
+#import "mpollutiontexturesitem.h"
 
-@interface mpollutiontexturesitembenitojuarez : NSObject
+@interface mpollutiontexturesitembenitojuarez:mpollutiontexturesitem
 
 @end

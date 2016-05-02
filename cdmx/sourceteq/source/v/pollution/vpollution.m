@@ -12,81 +12,26 @@
     return self;
 }
 
-#pragma mark public
+#pragma mark functionality
 
--(void)viewdidappear
+-(void)glkstart
 {
     EAGLContext *context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
     [EAGLContext setCurrentContext:context];
     
-    globaleffect = [[GLKBaseEffect alloc] init];
-    globaltransform = globaleffect.transform;
-    globaltexture = globaleffect.texture2d0;
-    
-    globaltransform.projectionMatrix = projectionbase;
-    globaltexture.target = GLKTextureTarget2D;
-}
-
-@end
-
-
-GLKBaseEffect *globaleffect;
-GLKEffectPropertyTexture *globaltexture;
-GLKEffectPropertyTransform *globaltransform;
-
-@implementation vgame
-
--(instancetype)init:(cgame*)controller
-{
-    self = [super init];
-    [self setBackgroundColor:[UIColor blackColor]];
-    [self setContext:controller.model.context];
-    [EAGLContext setCurrentContext:controller.model.context];
-    [self setDelegate:self];
-    self.controller = controller;
-    [self starteffect];
-    
-    vgamehub *hub = [[vgamehub alloc] init:controller];
-    self.hub = hub;
-    
-    [self addSubview:hub];
-    
-    NSDictionary *views = @{@"hub":hub};
-    NSDictionary *metrics = @{};
-    
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[hub]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[hub]-0-|" options:0 metrics:metrics views:views]];
-    
-    return self;
-}
-
-#pragma mark functionality
-
--(void)starteffect
-{
-    globaleffect = [[GLKBaseEffect alloc] init];
-    globaltransform = globaleffect.transform;
-    globaltexture = globaleffect.texture2d0;
-    
-    globaltransform.projectionMatrix = projectionbase;
-    globaltexture.target = GLKTextureTarget2D;
+    self.modeltextures = [[mpollutiontextures alloc] init];
+    self.baseeffect = [[GLKBaseEffect alloc] init];
+    self.baseeffect.transform.projectionMatrix = GLKMatrix4MakeOrtho(0, 300, 300, 0, 1, -1);
+    self.baseeffect.texture2d0.target = GLKTextureTarget2D;
 }
 
 #pragma mark public
 
--(void)pause
+-(void)viewdidappear
 {
-    if(!self.viewpause)
+    if(!self.modeltextures)
     {
-        vgamepause *viewpause = [[vgamepause alloc] init:self.controller];
-        self.viewpause = viewpause;
-        [self addSubview:viewpause];
-        
-        NSDictionary *views = @{@"viewpause":viewpause};
-        NSDictionary *metrics = @{};
-        
-        [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[viewpause]-0-|" options:0 metrics:metrics views:views]];
-        [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[viewpause]-0-|" options:0 metrics:metrics views:views]];
+        [self glkstart];
     }
 }
 
@@ -107,3 +52,5 @@ GLKEffectPropertyTransform *globaltransform;
     glDisableVertexAttribArray(GLKVertexAttribPosition);
     glDisable(GL_BLEND);
 }
+
+@end

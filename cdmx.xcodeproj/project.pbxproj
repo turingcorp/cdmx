@@ -45,6 +45,8 @@
 		DA20ACEF1CD8006C00754956 /* mpollutiontextures.m in Sources */ = {isa = PBXBuildFile; fileRef = DA20ACEE1CD8006C00754956 /* mpollutiontextures.m */; };
 		DA20ACF21CD800C500754956 /* mpollutiontexturesitem.m in Sources */ = {isa = PBXBuildFile; fileRef = DA20ACF11CD800C500754956 /* mpollutiontexturesitem.m */; };
 		DA20ACF51CD800F200754956 /* mpollutiontexturesitembenitojuarez.m in Sources */ = {isa = PBXBuildFile; fileRef = DA20ACF41CD800F200754956 /* mpollutiontexturesitembenitojuarez.m */; };
+		DA20ACF91CD806D600754956 /* nsnotification+nsnotificationcdmx.m in Sources */ = {isa = PBXBuildFile; fileRef = DA20ACF81CD806D600754956 /* nsnotification+nsnotificationcdmx.m */; };
+		DA20ACFC1CD806FF00754956 /* mnotificationglkdraw.m in Sources */ = {isa = PBXBuildFile; fileRef = DA20ACFB1CD806FF00754956 /* mnotificationglkdraw.m */; };
 		DA87082A1CBE840F000C08E1 /* amanager.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8708291CBE840F000C08E1 /* amanager.m */; };
 		DA87082D1CBE844A000C08E1 /* acall.m in Sources */ = {isa = PBXBuildFile; fileRef = DA87082C1CBE844A000C08E1 /* acall.m */; };
 		DA8708311CBE8532000C08E1 /* aparser.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8708301CBE8532000C08E1 /* aparser.m */; };
@@ -123,7 +125,6 @@
 		DAD33FF41CBC83E300C87502 /* appdel.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD33FB61CBC83E300C87502 /* appdel.m */; };
 		DAD33FF61CBC83E300C87502 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD33FB81CBC83E300C87502 /* main.m */; };
 		DAD33FF71CBC83E300C87502 /* analytics.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD33FBB1CBC83E300C87502 /* analytics.m */; };
-		DAD33FF81CBC83E300C87502 /* nsnotification+nsnotificationmain.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD33FBE1CBC83E300C87502 /* nsnotification+nsnotificationmain.m */; };
 		DAD33FF91CBC83E300C87502 /* tools.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD33FC01CBC83E300C87502 /* tools.m */; };
 		DAD33FFA1CBC83E300C87502 /* uicolor+uicolormain.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD33FC21CBC83E300C87502 /* uicolor+uicolormain.m */; };
 		DAD33FFB1CBC83E300C87502 /* uifont+uifontmain.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD33FC41CBC83E300C87502 /* uifont+uifontmain.m */; };
@@ -239,6 +240,10 @@
 		DA20ACF11CD800C500754956 /* mpollutiontexturesitem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mpollutiontexturesitem.m; sourceTree = "<group>"; };
 		DA20ACF31CD800F200754956 /* mpollutiontexturesitembenitojuarez.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpollutiontexturesitembenitojuarez.h; sourceTree = "<group>"; };
 		DA20ACF41CD800F200754956 /* mpollutiontexturesitembenitojuarez.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mpollutiontexturesitembenitojuarez.m; sourceTree = "<group>"; };
+		DA20ACF71CD806D600754956 /* nsnotification+nsnotificationcdmx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "nsnotification+nsnotificationcdmx.h"; sourceTree = "<group>"; };
+		DA20ACF81CD806D600754956 /* nsnotification+nsnotificationcdmx.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "nsnotification+nsnotificationcdmx.m"; sourceTree = "<group>"; };
+		DA20ACFA1CD806FF00754956 /* mnotificationglkdraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mnotificationglkdraw.h; sourceTree = "<group>"; };
+		DA20ACFB1CD806FF00754956 /* mnotificationglkdraw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mnotificationglkdraw.m; sourceTree = "<group>"; };
 		DA8708281CBE840F000C08E1 /* amanager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = amanager.h; sourceTree = "<group>"; };
 		DA8708291CBE840F000C08E1 /* amanager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = amanager.m; sourceTree = "<group>"; };
 		DA87082B1CBE844A000C08E1 /* acall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = acall.h; sourceTree = "<group>"; };
@@ -392,8 +397,6 @@
 		DAD33FB81CBC83E300C87502 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DAD33FBA1CBC83E300C87502 /* analytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = analytics.h; sourceTree = "<group>"; };
 		DAD33FBB1CBC83E300C87502 /* analytics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = analytics.m; sourceTree = "<group>"; };
-		DAD33FBD1CBC83E300C87502 /* nsnotification+nsnotificationmain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "nsnotification+nsnotificationmain.h"; sourceTree = "<group>"; };
-		DAD33FBE1CBC83E300C87502 /* nsnotification+nsnotificationmain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "nsnotification+nsnotificationmain.m"; sourceTree = "<group>"; };
 		DAD33FBF1CBC83E300C87502 /* tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tools.h; sourceTree = "<group>"; };
 		DAD33FC01CBC83E300C87502 /* tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tools.m; sourceTree = "<group>"; };
 		DAD33FC11CBC83E300C87502 /* uicolor+uicolormain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "uicolor+uicolormain.h"; sourceTree = "<group>"; };
@@ -589,6 +592,17 @@
 				DA20ACF41CD800F200754956 /* mpollutiontexturesitembenitojuarez.m */,
 			);
 			path = mpollution;
+			sourceTree = "<group>";
+		};
+		DA20ACF61CD806AD00754956 /* notifications */ = {
+			isa = PBXGroup;
+			children = (
+				DA20ACF71CD806D600754956 /* nsnotification+nsnotificationcdmx.h */,
+				DA20ACF81CD806D600754956 /* nsnotification+nsnotificationcdmx.m */,
+				DA20ACFA1CD806FF00754956 /* mnotificationglkdraw.h */,
+				DA20ACFB1CD806FF00754956 /* mnotificationglkdraw.m */,
+			);
+			path = notifications;
 			sourceTree = "<group>";
 		};
 		DA8708251CBE8245000C08E1 /* a */ = {
@@ -817,8 +831,6 @@
 			children = (
 				DAD33FBA1CBC83E300C87502 /* analytics.h */,
 				DAD33FBB1CBC83E300C87502 /* analytics.m */,
-				DAD33FBD1CBC83E300C87502 /* nsnotification+nsnotificationmain.h */,
-				DAD33FBE1CBC83E300C87502 /* nsnotification+nsnotificationmain.m */,
 				DAD33FBF1CBC83E300C87502 /* tools.h */,
 				DAD33FC01CBC83E300C87502 /* tools.m */,
 				DAD33FC11CBC83E300C87502 /* uicolor+uicolormain.h */,
@@ -888,6 +900,7 @@
 		DAD33FD41CBC83E300C87502 /* m */ = {
 			isa = PBXGroup;
 			children = (
+				DA20ACF61CD806AD00754956 /* notifications */,
 				DA20ACEC1CD8005C00754956 /* mpollution */,
 				DA8A404A1CC6E0B1008FECF2 /* about */,
 				DA000D291CC29D1700A82EC0 /* map */,
@@ -1321,6 +1334,7 @@
 				DAD33FFB1CBC83E300C87502 /* uifont+uifontmain.m in Sources */,
 				DAD340051CBC83E300C87502 /* vspinner.m in Sources */,
 				DA000D681CC2A03500A82EC0 /* mcdmapitemmag.m in Sources */,
+				DA20ACF91CD806D600754956 /* nsnotification+nsnotificationcdmx.m in Sources */,
 				DA000D651CC2A02800A82EC0 /* mcdmapitemcuau.m in Sources */,
 				DA8708341CBE8717000C08E1 /* acallstations.m in Sources */,
 				DA87088B1CBED74E000C08E1 /* mstationsitemlocation.m in Sources */,
@@ -1333,6 +1347,7 @@
 				DA8708411CBE96BC000C08E1 /* mstationsnodrive.m in Sources */,
 				DAD875E71CBD5F1600A4F91C /* mpagessection.m in Sources */,
 				DAD340041CBC83E300C87502 /* vblur.m in Sources */,
+				DA20ACFC1CD806FF00754956 /* mnotificationglkdraw.m in Sources */,
 				DA188B0D1CC5C18A00C91AF2 /* vairdetailpay.m in Sources */,
 				DA87086C1CBEBE4A000C08E1 /* mstationsreadingitemindexbad.m in Sources */,
 				DAD876061CBD6F7600A4F91C /* vmenu.m in Sources */,
@@ -1380,7 +1395,6 @@
 				DA8A40021CC68A50008FECF2 /* cnodrive.m in Sources */,
 				DACEDEE21CBC89630088AA8B /* cmain.m in Sources */,
 				DA8A402D1CC6D11B008FECF2 /* mpagesitemsettings.m in Sources */,
-				DAD33FF81CBC83E300C87502 /* nsnotification+nsnotificationmain.m in Sources */,
 				DA8A40531CC6E106008FECF2 /* maboutitemreview.m in Sources */,
 				DA8708441CBE99E4000C08E1 /* mstationsnodrivehologram.m in Sources */,
 				DAD33FF91CBC83E300C87502 /* tools.m in Sources */,

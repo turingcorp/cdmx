@@ -1,8 +1,8 @@
-#import "nsnotification+nsnotificationmain.h"
+#import "nsnotification+nsnotificationcdmx.h"
 
 static NSString* const notification_glkmove =           @"glkmove";
 
-@implementation NSNotification (nsnotificationmain)
+@implementation NSNotification (nsnotificationcdmx)
 
 +(void)glkmove
 {

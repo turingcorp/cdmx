@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 
-@interface NSNotification (nsnotificationmain)
+@interface NSNotification (nsnotificationcdmx)
 
 +(void)glkmove;
 +(void)observe:(id)observer glkmove:(SEL)selector;
