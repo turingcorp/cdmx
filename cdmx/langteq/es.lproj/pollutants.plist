@@ -38,6 +38,10 @@
 	<string>Potasio</string>
 	<key>o3</key>
 	<string>Ozono</string>
+	<key>o\u2083</key>
+	<string>Ozono</string>
+	<key>o₃</key>
+	<string>Ozono</string>
 	<key>pbpst</key>
 	<string>Plomo</string>
 	<key>pbpm</key>
@@ -47,6 +51,8 @@
 	<key>xil</key>
 	<string>Xileno</string>
 	<key>pm10</key>
+	<string>Partículas de polvo</string>
+	<key>pm₁₀</key>
 	<string>Partículas de polvo</string>
 	<key>pm2.5</key>
 	<string>Partículas de polvo</string>

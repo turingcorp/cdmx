@@ -38,6 +38,10 @@
 	<string>Potassium</string>
 	<key>o3</key>
 	<string>Ozone</string>
+	<key>o\u2083</key>
+	<string>Ozone</string>
+	<key>o₃</key>
+	<string>Ozone</string>
 	<key>pbpst</key>
 	<string>Lead</string>
 	<key>pbpm</key>
@@ -47,6 +51,8 @@
 	<key>xil</key>
 	<string>Xylene</string>
 	<key>pm10</key>
+	<string>Dust particles</string>
+	<key>pm₁₀</key>
 	<string>Dust particles</string>
 	<key>pm2.5</key>
 	<string>Dust particles</string>

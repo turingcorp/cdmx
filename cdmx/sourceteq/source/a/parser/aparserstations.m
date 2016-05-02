@@ -66,6 +66,8 @@
                     NSString *rawwindspeed = rawitem[@"windSpeed"];
                     NSInteger rawpoints = [rawitem[@"imecaPoints"] integerValue];
                     
+                    NSLog(@"%@", rawpollutant);
+                    
                     BOOL add = YES;
                     NSUInteger countmut = mutarray.count;
                     
