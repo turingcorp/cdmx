@@ -1,5 +1,0 @@
-#import "mstationsreadingitemindexactivityverylimited.h"
-
-@implementation mstationsreadingitemindexactivityverylimited
-
-@end

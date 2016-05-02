@@ -1,7 +1,6 @@
 #import "appdel.h"
 #import "updater.h"
 #import "cmain.h"
-#import "snotpollution.h"
 #import "msettings.h"
 
 @implementation appdel
@@ -19,34 +18,6 @@
     [window setRootViewController:[cmain singleton]];
     
     return YES;
-}
-
--(void)applicationDidEnterBackground:(UIApplication*)app
-{
-    [self pollutionnotification];
-}
-
--(void)applicationWillTerminate:(UIApplication*)app
-{
-    [self pollutionnotification];
-}
-
--(void)applicationDidBecomeActive:(UIApplication*)app
-{
-    [[UIApplication sharedApplication] cancelAllLocalNotifications];
-}
-
-#pragma mark functionality
-
--(void)pollutionnotification
-{
-    [[UIApplication sharedApplication] cancelAllLocalNotifications];
-    
-    if([msettings singleton].notifications)
-    {
-        UILocalNotification *notification = [snotpollution notification];
-        [[UIApplication sharedApplication] scheduleLocalNotification:notification];
-    }
 }
 
 @end

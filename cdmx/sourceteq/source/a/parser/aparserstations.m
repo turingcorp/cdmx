@@ -1,9 +1,8 @@
 #import "aparserstations.h"
 #import "tools.h"
-#import "mstations.h"
 
 @implementation aparserstations
-
+/*
 -(void)parse:(NSDictionary*)json
 {
     [super parse:json];
@@ -388,6 +387,6 @@
     }
     
     return location;
-}
+}*/
 
 @end

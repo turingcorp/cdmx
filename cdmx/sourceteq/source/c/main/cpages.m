@@ -1,5 +1,4 @@
 #import "cpages.h"
-#import "cmenu.h"
 #import "cpollution.h"
 
 @implementation cpages
@@ -41,20 +40,12 @@
     return NO;
 }
 
-#pragma mark functionality
+#pragma mark public
 
 -(void)changecontroller:(UIViewController*)controller direction:(UIPageViewControllerNavigationDirection)direction animated:(BOOL)animated
 {
     NSArray *array = @[controller];
     [self setViewControllers:array direction:direction animated:animated completion:nil];
-}
-
-#pragma mark public
-
--(void)pagemenu
-{
-    cmenu *controller = [[cmenu alloc] init];
-    [self changecontroller:controller direction:UIPageViewControllerNavigationDirectionReverse animated:YES];
 }
 
 @end

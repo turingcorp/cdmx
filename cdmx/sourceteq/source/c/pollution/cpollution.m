@@ -1,6 +1,6 @@
 #import "cpollution.h"
-#import "nsnotification+nsnotificationmain.h"
 #import "vpollution.h"
+#import "enotification.h"
 
 static NSInteger const framespersecond = 60;
 

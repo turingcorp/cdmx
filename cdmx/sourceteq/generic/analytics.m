@@ -1,7 +1,7 @@
 #import "analytics.h"
 #import "privateconstants.h"
 
-static NSInteger const analyticsrate = 10;
+static NSInteger const analyticsrate = 15;
 
 @implementation analytics
 {
@@ -49,16 +49,16 @@ static NSInteger const analyticsrate = 10;
     
 }
 
--(void)trackscreen:(ga_screen)screen
+-(void)trackscreen:(UIViewController*)controller
 {
-    [self.tracker send:[[[GAIDictionaryBuilder createScreenView] set:screens[screen] forKey:kGAIScreenName] build]];
+    NSString *screenname = NSStringFromClass(controller.class);
+    [self.tracker send:[[[GAIDictionaryBuilder createScreenView] set:screenname forKey:kGAIScreenName] build]];
 }
 
--(void)trackevent:(ga_event)event action:(ga_action)action label:(NSString*)label
+-(void)trackevent:(UIViewController*)controller action:(NSString*)action label:(NSString*)label
 {
-    NSString *eventname = events[event];
-    NSString *eventaction = actions[action];
-    [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:eventname action:eventaction label:label value:@(1)] build]];
+    NSString *screenname = NSStringFromClass(controller.class);
+    [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:screenname action:action label:label value:@(1)] build]];
 }
 
 @end

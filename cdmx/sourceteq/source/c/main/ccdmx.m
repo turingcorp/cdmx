@@ -45,7 +45,7 @@
 
 -(void)menu
 {
-    [[cmain singleton].pages pagemenu];
+//    [[cmain singleton].pages pagemenu];
 }
 
 @end

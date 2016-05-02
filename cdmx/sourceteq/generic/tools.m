@@ -9,7 +9,6 @@ static NSString* const rateurl = @"itms-apps://itunes.apple.com/WebObjects/MZSto
 {
     NSNumberFormatter *numformatter;
     NSDateFormatter *dateformatter;
-    CFStringRef stringref;
 }
 
 +(instancetype)singleton
@@ -48,48 +47,6 @@ static NSString* const rateurl = @"itms-apps://itunes.apple.com/WebObjects/MZSto
     [[cmain singleton] presentViewController:act animated:YES completion:nil];
 }
 
-+(NSDictionary*)defaultdict
-{
-    NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"defs" withExtension:@"plist"]];
-    
-    return dictionary;
-}
-
-+(UIImage*)qrcode:(NSString*)string
-{
-    NSData *data = [string dataUsingEncoding:NSUTF8StringEncoding];
-    
-    CIFilter *filter = [CIFilter filterWithName:@"CIQRCodeGenerator"];
-    [filter setValue:@"H" forKey:@"inputCorrectionLevel"];
-    [filter setValue:data forKey:@"inputMessage"];
-    CIImage *ciimage = filter.outputImage;
-    CIImage *scaleimage = [ciimage imageByApplyingTransform:CGAffineTransformMakeScale(10, 10)];
-    CIContext *context = [CIContext contextWithOptions:nil];
-    CGImageRef cgimage = [context createCGImage:scaleimage fromRect:scaleimage.extent];
-    UIImage *uiimage = [UIImage imageWithCGImage:cgimage scale:1 orientation:UIImageOrientationUp];
-    CFRelease(cgimage);
-    
-    return uiimage;
-}
-
-+(NSString*)cleanlatin:(NSString*)string
-{
-    NSString *str = [string stringByReplacingOccurrencesOfString:@"&ntilde;" withString:@"ñ"];
-    str = [str stringByReplacingOccurrencesOfString:@"&aacute;" withString:@"á"];
-    str = [str stringByReplacingOccurrencesOfString:@"&Aacute;" withString:@"Á"];
-    str = [str stringByReplacingOccurrencesOfString:@"&eacute;" withString:@"é"];
-    str = [str stringByReplacingOccurrencesOfString:@"&Eacute;" withString:@"É"];
-    str = [str stringByReplacingOccurrencesOfString:@"&iacute;" withString:@"í"];
-    str = [str stringByReplacingOccurrencesOfString:@"&Iacute;" withString:@"Í"];
-    str = [str stringByReplacingOccurrencesOfString:@"&oacute;" withString:@"ó"];
-    str = [str stringByReplacingOccurrencesOfString:@"&Oacute;" withString:@"Ó"];
-    str = [str stringByReplacingOccurrencesOfString:@"&uacute;" withString:@"ú"];
-    str = [str stringByReplacingOccurrencesOfString:@"&Uacute;" withString:@"Ú"];
-    str = [str stringByReplacingOccurrencesOfString:@"&#34;" withString:@"\""];
-    
-    return str;
-}
-
 #pragma mark -
 
 -(instancetype)init
@@ -98,7 +55,6 @@ static NSString* const rateurl = @"itms-apps://itunes.apple.com/WebObjects/MZSto
     
     numformatter = [[NSNumberFormatter alloc] init];
     [numformatter setNumberStyle:NSNumberFormatterDecimalStyle];
-    stringref = (CFStringRef)@"!*'();:@&=+$,/?%#[]";
     dateformatter = [[NSDateFormatter alloc] init];
     [dateformatter setDateFormat:@"yyyy-MM-dd"];
     
@@ -106,13 +62,6 @@ static NSString* const rateurl = @"itms-apps://itunes.apple.com/WebObjects/MZSto
 }
 
 #pragma mark public
-
--(NSString*)urlencode:(NSString*)string
-{
-    NSString *newstring = (__bridge_transfer NSString*)CFURLCreateStringByAddingPercentEscapes(nil, (__bridge CFStringRef)string, nil, stringref, kCFStringEncodingUTF8);
-    
-    return newstring;
-}
 
 -(NSString*)numbertostring:(NSNumber*)number
 {
