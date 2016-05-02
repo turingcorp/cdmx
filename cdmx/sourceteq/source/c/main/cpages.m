@@ -25,7 +25,16 @@
 
 -(UIStatusBarStyle)preferredStatusBarStyle
 {
-    return UIStatusBarStyleLightContent;
+    UIStatusBarStyle style = UIStatusBarStyleLightContent;
+    
+    if(self.viewControllers.count)
+    {
+        UIViewController *controller = self.viewControllers[0];
+        
+        style = controller.preferredStatusBarStyle;
+    }
+    
+    return style;
 }
 
 -(BOOL)prefersStatusBarHidden
