@@ -1,4 +1,5 @@
 #import "vpollution.h"
+#import "enotification.h"
 
 @implementation vpollution
 

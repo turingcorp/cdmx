@@ -1,6 +1,7 @@
 #import "enotification.h"
 
-static NSString* const notification_glkmove =           @"glkmove";
+static NSString* const notification_glkmove =               @"glkmove";
+static NSString* const notification_glkdraw =               @"glkdraw";
 
 @implementation NSNotification (enotification)
 
@@ -12,6 +13,16 @@ static NSString* const notification_glkmove =           @"glkmove";
 +(void)observe:(id)observer glkmove:(SEL)selector
 {
     [[NSNotificationCenter defaultCenter] addObserver:observer selector:selector name:notification_glkmove object:nil];
+}
+
++(void)glkdraw:(mpollutionnotificationdraw*)userinfo
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:notification_glkdraw object:nil userInfo:userinfo];
+}
+
++(void)observe:(id)observer glkdraw:(SEL)selector
+{
+    [[NSNotificationCenter defaultCenter] addObserver:observer selector:selector name:notification_glkdraw object:nil];
 }
 
 @end

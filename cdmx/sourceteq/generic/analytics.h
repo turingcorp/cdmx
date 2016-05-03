@@ -1,4 +1,4 @@
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import <Google/Analytics.h>
 
 @interface analytics:NSObject

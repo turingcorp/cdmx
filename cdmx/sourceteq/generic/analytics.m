@@ -4,11 +4,6 @@
 static NSInteger const analyticsrate = 15;
 
 @implementation analytics
-{
-    NSArray *screens;
-    NSArray *events;
-    NSArray *actions;
-}
 
 +(instancetype)singleton
 {
