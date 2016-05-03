@@ -1,7 +1,5 @@
 #import "updater.h"
 #import "msettings.h"
-#import "mdb.h"
-#import "db.h"
 #import "analytics.h"
 #import "cmain.h"
 #import "genericconstants.h"
@@ -19,6 +17,8 @@
 
 +(void)update
 {
+    NSString *appversion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+    
     NSString *documents = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
     NSDictionary *defaults = [NSDictionary dictionaryWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"def" withExtension:@"plist"]];
     NSUserDefaults *properties = [NSUserDefaults standardUserDefaults];
