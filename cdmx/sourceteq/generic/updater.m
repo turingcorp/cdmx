@@ -17,39 +17,40 @@
 
 +(void)update
 {
-    NSString *appversion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+    NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];
+    NSString *appversion = [[[NSBundle mainBundle] infoDictionary] objectForKey:appversion_key];
+    NSString *currentversion = [userdefaults valueForKey:appversion_key];
     
-    NSString *documents = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
-    NSDictionary *defaults = [NSDictionary dictionaryWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"def" withExtension:@"plist"]];
-    NSUserDefaults *properties = [NSUserDefaults standardUserDefaults];
-    NSInteger def_version = [defaults[@"version"] integerValue];
-    NSInteger pro_version = [[properties valueForKey:@"version"] integerValue];
-    
-    if(def_version != pro_version)
+    if(currentversion)
     {
-        [properties setValue:@(def_version) forKeyPath:@"version"];        
+        CGFloat appversionscalar = appversion.floatValue;
+        CGFloat currentversionscalar = currentversion.floatValue;
         
-        if(pro_version < 10)
+        if(appversionscalar != currentversionscalar)
         {
-            [updater firsttime:defaults];
+            [userdefaults setValue:appversion forKey:appversion_key];
+            [updater updateversion];
         }
-        
-        [mdb updatedb];
     }
-    
-//    dbname = [documents stringByAppendingPathComponent:[properties valueForKey:@"dbname"]];
+    else
+    {
+        [updater firsttime];
+    }
 }
 
-+(void)firsttime:(NSDictionary*)plist
++(void)firsttime
 {
-    NSNumber *appid = plist[appid_key];
-    NSUserDefaults *userdef = [NSUserDefaults standardUserDefaults];
+    NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];
     
-    [userdef removePersistentDomainForName:NSGlobalDomain];
-    [userdef removePersistentDomainForName:NSArgumentDomain];
-    [userdef removePersistentDomainForName:NSRegistrationDomain];
-    [userdef setValue:appid forKey:appid_key];
-    [userdef synchronize];
+    [userdefaults removePersistentDomainForName:NSGlobalDomain];
+    [userdefaults removePersistentDomainForName:NSArgumentDomain];
+    [userdefaults removePersistentDomainForName:NSRegistrationDomain];
+    [userdefaults synchronize];
+}
+
++(void)updateversion
+{
+    
 }
 
 @end

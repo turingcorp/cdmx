@@ -30,7 +30,6 @@
 		DA8F03441CC1C6B10007596C /* districts.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA8F03431CC1C6B10007596C /* districts.xcassets */; };
 		DACEDEE21CBC89630088AA8B /* cmain.m in Sources */ = {isa = PBXBuildFile; fileRef = DACEDEE11CBC89630088AA8B /* cmain.m */; };
 		DAD33FF11CBC83E300C87502 /* analytics.plist in Resources */ = {isa = PBXBuildFile; fileRef = DAD33FAE1CBC83E300C87502 /* analytics.plist */; };
-		DAD33FF21CBC83E300C87502 /* defs.plist in Resources */ = {isa = PBXBuildFile; fileRef = DAD33FAF1CBC83E300C87502 /* defs.plist */; };
 		DAD33FF31CBC83E300C87502 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DAD33FB01CBC83E300C87502 /* Localizable.strings */; };
 		DAD33FF41CBC83E300C87502 /* appdel.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD33FB61CBC83E300C87502 /* appdel.m */; };
 		DAD33FF61CBC83E300C87502 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD33FB81CBC83E300C87502 /* main.m */; };
@@ -95,7 +94,6 @@
 		DACEDEE11CBC89630088AA8B /* cmain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cmain.m; sourceTree = "<group>"; };
 		DAD33F901CBC825900C87502 /* cdmx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cdmx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAD33FAE1CBC83E300C87502 /* analytics.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = analytics.plist; sourceTree = "<group>"; };
-		DAD33FAF1CBC83E300C87502 /* defs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = defs.plist; sourceTree = "<group>"; };
 		DAD33FB11CBC83E300C87502 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DAD33FB21CBC83E300C87502 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DAD33FB51CBC83E300C87502 /* appdel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = appdel.h; sourceTree = "<group>"; };
@@ -305,7 +303,6 @@
 			children = (
 				DA8708851CBECFB6000C08E1 /* pollutants.plist */,
 				DAD33FAE1CBC83E300C87502 /* analytics.plist */,
-				DAD33FAF1CBC83E300C87502 /* defs.plist */,
 				DAD33FB01CBC83E300C87502 /* Localizable.strings */,
 				DAD876161CBDA75100A4F91C /* stations.csv */,
 				DA8708921CBEFF1A000C08E1 /* nodriveplates.plist */,
@@ -501,7 +498,6 @@
 				DAD876171CBDA75100A4F91C /* stations.csv in Resources */,
 				DA8708931CBEFF1A000C08E1 /* nodriveplates.plist in Resources */,
 				DA8708AA1CBF2CCD000C08E1 /* stations.xcassets in Resources */,
-				DAD33FF21CBC83E300C87502 /* defs.plist in Resources */,
 				DAD33FF11CBC83E300C87502 /* analytics.plist in Resources */,
 				DAD3400B1CBC858A00C87502 /* brand.xcassets in Resources */,
 				DAD875D81CBD33FB00A4F91C /* spinner.xcassets in Resources */,
@@ -713,10 +709,7 @@
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/cdmx/sourceteq/core/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/cdmx/sourceteq/lib",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = iturbide.cdmx;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "adef29ab-7ffd-49ca-9ac1-8eace1b7eceb";
@@ -734,10 +727,7 @@
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/cdmx/sourceteq/core/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/cdmx/sourceteq/lib",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = iturbide.cdmx;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
