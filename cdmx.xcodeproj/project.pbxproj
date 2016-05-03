@@ -37,8 +37,6 @@
 		DAD33FF71CBC83E300C87502 /* analytics.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD33FBB1CBC83E300C87502 /* analytics.m */; };
 		DAD33FF91CBC83E300C87502 /* tools.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD33FC01CBC83E300C87502 /* tools.m */; };
 		DAD33FFC1CBC83E300C87502 /* updater.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD33FC61CBC83E300C87502 /* updater.m */; };
-		DAD33FFF1CBC83E300C87502 /* mdb.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD33FD71CBC83E300C87502 /* mdb.m */; };
-		DAD340001CBC83E300C87502 /* mdbcreate.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD33FD91CBC83E300C87502 /* mdbcreate.m */; };
 		DAD340011CBC83E300C87502 /* mdirs.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD33FDC1CBC83E300C87502 /* mdirs.m */; };
 		DAD340041CBC83E300C87502 /* vblur.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD33FE91CBC83E300C87502 /* vblur.m */; };
 		DAD340051CBC83E300C87502 /* vspinner.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD33FEB1CBC83E300C87502 /* vspinner.m */; };
@@ -110,10 +108,6 @@
 		DAD33FC01CBC83E300C87502 /* tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tools.m; sourceTree = "<group>"; };
 		DAD33FC51CBC83E300C87502 /* updater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = updater.h; sourceTree = "<group>"; };
 		DAD33FC61CBC83E300C87502 /* updater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = updater.m; sourceTree = "<group>"; };
-		DAD33FD61CBC83E300C87502 /* mdb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mdb.h; sourceTree = "<group>"; };
-		DAD33FD71CBC83E300C87502 /* mdb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mdb.m; sourceTree = "<group>"; };
-		DAD33FD81CBC83E300C87502 /* mdbcreate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mdbcreate.h; sourceTree = "<group>"; };
-		DAD33FD91CBC83E300C87502 /* mdbcreate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mdbcreate.m; sourceTree = "<group>"; };
 		DAD33FDB1CBC83E300C87502 /* mdirs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mdirs.h; sourceTree = "<group>"; };
 		DAD33FDC1CBC83E300C87502 /* mdirs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mdirs.m; sourceTree = "<group>"; };
 		DAD33FE81CBC83E300C87502 /* vblur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vblur.h; sourceTree = "<group>"; };
@@ -382,21 +376,9 @@
 			children = (
 				DA20AD1A1CD80D7700754956 /* settings */,
 				DA20AD0D1CD80D5400754956 /* pollution */,
-				DAD33FD51CBC83E300C87502 /* db */,
 				DAD33FDA1CBC83E300C87502 /* dirs */,
 			);
 			path = m;
-			sourceTree = "<group>";
-		};
-		DAD33FD51CBC83E300C87502 /* db */ = {
-			isa = PBXGroup;
-			children = (
-				DAD33FD61CBC83E300C87502 /* mdb.h */,
-				DAD33FD71CBC83E300C87502 /* mdb.m */,
-				DAD33FD81CBC83E300C87502 /* mdbcreate.h */,
-				DAD33FD91CBC83E300C87502 /* mdbcreate.m */,
-			);
-			path = db;
 			sourceTree = "<group>";
 		};
 		DAD33FDA1CBC83E300C87502 /* dirs */ = {
@@ -590,7 +572,6 @@
 				DA8708341CBE8717000C08E1 /* acallstations.m in Sources */,
 				DA20AD061CD80B5A00754956 /* ecolor.m in Sources */,
 				DA20AD091CD80B6000754956 /* efont.m in Sources */,
-				DAD33FFF1CBC83E300C87502 /* mdb.m in Sources */,
 				DAD340041CBC83E300C87502 /* vblur.m in Sources */,
 				DAD33FF41CBC83E300C87502 /* appdel.m in Sources */,
 				DA20ACEB1CD7FC9100754956 /* vpollution.m in Sources */,
@@ -605,7 +586,6 @@
 				DAD875CF1CBD2F0400A4F91C /* cpages.m in Sources */,
 				DAD33FF71CBC83E300C87502 /* analytics.m in Sources */,
 				DA8708311CBE8532000C08E1 /* aparser.m in Sources */,
-				DAD340001CBC83E300C87502 /* mdbcreate.m in Sources */,
 				DA20ACE71CD7FBC700754956 /* cpollution.m in Sources */,
 				DA20AD161CD80D5400754956 /* mpollutionnotificationdraw.m in Sources */,
 				DAD875FC1CBD6CF200A4F91C /* vmenubutton.m in Sources */,
