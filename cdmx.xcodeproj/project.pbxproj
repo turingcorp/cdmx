@@ -24,12 +24,9 @@
 		DA8708311CBE8532000C08E1 /* aparser.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8708301CBE8532000C08E1 /* aparser.m */; };
 		DA8708341CBE8717000C08E1 /* acallstations.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8708331CBE8717000C08E1 /* acallstations.m */; };
 		DA8708371CBE87F7000C08E1 /* aparserstations.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8708361CBE87F7000C08E1 /* aparserstations.m */; };
-		DA8708871CBECFB6000C08E1 /* pollutants.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA8708851CBECFB6000C08E1 /* pollutants.plist */; };
-		DA8708931CBEFF1A000C08E1 /* nodriveplates.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA8708921CBEFF1A000C08E1 /* nodriveplates.plist */; };
 		DA8708AA1CBF2CCD000C08E1 /* stations.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA8708A91CBF2CCD000C08E1 /* stations.xcassets */; };
 		DA8F03441CC1C6B10007596C /* districts.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA8F03431CC1C6B10007596C /* districts.xcassets */; };
 		DACEDEE21CBC89630088AA8B /* cmain.m in Sources */ = {isa = PBXBuildFile; fileRef = DACEDEE11CBC89630088AA8B /* cmain.m */; };
-		DAD33FF11CBC83E300C87502 /* analytics.plist in Resources */ = {isa = PBXBuildFile; fileRef = DAD33FAE1CBC83E300C87502 /* analytics.plist */; };
 		DAD33FF31CBC83E300C87502 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DAD33FB01CBC83E300C87502 /* Localizable.strings */; };
 		DAD33FF41CBC83E300C87502 /* appdel.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD33FB61CBC83E300C87502 /* appdel.m */; };
 		DAD33FF61CBC83E300C87502 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD33FB81CBC83E300C87502 /* main.m */; };
@@ -44,7 +41,6 @@
 		DAD875D81CBD33FB00A4F91C /* spinner.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAD875D71CBD33FB00A4F91C /* spinner.xcassets */; };
 		DAD875FC1CBD6CF200A4F91C /* vmenubutton.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD875FB1CBD6CF200A4F91C /* vmenubutton.m */; };
 		DAD875FE1CBD6E7800A4F91C /* general.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAD875FD1CBD6E7800A4F91C /* general.xcassets */; };
-		DAD876171CBDA75100A4F91C /* stations.csv in Resources */ = {isa = PBXBuildFile; fileRef = DAD876161CBDA75100A4F91C /* stations.csv */; };
 		E99EDB84D6293E5D839C08A5 /* libPods-cdmx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E47528F2CEFA76F37D95E3 /* libPods-cdmx.a */; };
 /* End PBXBuildFile section */
 
@@ -85,15 +81,11 @@
 		DA8708351CBE87F7000C08E1 /* aparserstations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aparserstations.h; sourceTree = "<group>"; };
 		DA8708361CBE87F7000C08E1 /* aparserstations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = aparserstations.m; sourceTree = "<group>"; };
 		DA8708631CBEBD5C000C08E1 /* genericconstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = genericconstants.h; sourceTree = "<group>"; };
-		DA8708861CBECFB6000C08E1 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = es; path = es.lproj/pollutants.plist; sourceTree = "<group>"; };
-		DA8708881CBED130000C08E1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/pollutants.plist; sourceTree = "<group>"; };
-		DA8708921CBEFF1A000C08E1 /* nodriveplates.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = nodriveplates.plist; sourceTree = "<group>"; };
 		DA8708A91CBF2CCD000C08E1 /* stations.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = stations.xcassets; sourceTree = "<group>"; };
 		DA8F03431CC1C6B10007596C /* districts.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = districts.xcassets; sourceTree = "<group>"; };
 		DACEDEE01CBC89630088AA8B /* cmain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cmain.h; sourceTree = "<group>"; };
 		DACEDEE11CBC89630088AA8B /* cmain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cmain.m; sourceTree = "<group>"; };
 		DAD33F901CBC825900C87502 /* cdmx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cdmx.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		DAD33FAE1CBC83E300C87502 /* analytics.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = analytics.plist; sourceTree = "<group>"; };
 		DAD33FB11CBC83E300C87502 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DAD33FB21CBC83E300C87502 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DAD33FB51CBC83E300C87502 /* appdel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = appdel.h; sourceTree = "<group>"; };
@@ -120,7 +112,6 @@
 		DAD875FA1CBD6CF200A4F91C /* vmenubutton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vmenubutton.h; sourceTree = "<group>"; };
 		DAD875FB1CBD6CF200A4F91C /* vmenubutton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vmenubutton.m; sourceTree = "<group>"; };
 		DAD875FD1CBD6E7800A4F91C /* general.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = general.xcassets; sourceTree = "<group>"; };
-		DAD876161CBDA75100A4F91C /* stations.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stations.csv; sourceTree = "<group>"; };
 		EFFF53693CD2BFB9D79DACFE /* Pods-cdmx.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cdmx.release.xcconfig"; path = "Pods/Target Support Files/Pods-cdmx/Pods-cdmx.release.xcconfig"; sourceTree = "<group>"; };
 		FB216D6F4F8C21A7E0923298 /* Pods-cdmx.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cdmx.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cdmx/Pods-cdmx.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -301,11 +292,7 @@
 		DAD33FAD1CBC83E300C87502 /* langteq */ = {
 			isa = PBXGroup;
 			children = (
-				DA8708851CBECFB6000C08E1 /* pollutants.plist */,
-				DAD33FAE1CBC83E300C87502 /* analytics.plist */,
 				DAD33FB01CBC83E300C87502 /* Localizable.strings */,
-				DAD876161CBDA75100A4F91C /* stations.csv */,
-				DA8708921CBEFF1A000C08E1 /* nodriveplates.plist */,
 			);
 			path = langteq;
 			sourceTree = "<group>";
@@ -493,12 +480,8 @@
 			files = (
 				DA8F03441CC1C6B10007596C /* districts.xcassets in Resources */,
 				DAD33FF31CBC83E300C87502 /* Localizable.strings in Resources */,
-				DA8708871CBECFB6000C08E1 /* pollutants.plist in Resources */,
 				DAD875FE1CBD6E7800A4F91C /* general.xcassets in Resources */,
-				DAD876171CBDA75100A4F91C /* stations.csv in Resources */,
-				DA8708931CBEFF1A000C08E1 /* nodriveplates.plist in Resources */,
 				DA8708AA1CBF2CCD000C08E1 /* stations.xcassets in Resources */,
-				DAD33FF11CBC83E300C87502 /* analytics.plist in Resources */,
 				DAD3400B1CBC858A00C87502 /* brand.xcassets in Resources */,
 				DAD875D81CBD33FB00A4F91C /* spinner.xcassets in Resources */,
 			);
@@ -592,15 +575,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		DA8708851CBECFB6000C08E1 /* pollutants.plist */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DA8708861CBECFB6000C08E1 /* es */,
-				DA8708881CBED130000C08E1 /* en */,
-			);
-			name = pollutants.plist;
-			sourceTree = "<group>";
-		};
 		DAD33FB01CBC83E300C87502 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
