@@ -2,6 +2,8 @@
 
 @implementation mdbcreate
 
+/*
+
 +(void)create
 {
     NSString *query;
@@ -61,5 +63,5 @@
         [dbcon query:query];
     }
 }
-
+*/
 @end

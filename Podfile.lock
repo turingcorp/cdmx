@@ -27,7 +27,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   zql:
-    :commit: 919b6619e81efe108ffe292f090fe806f7865256
+    :commit: 7c4283f3b22c29bc9b4eb244b13ce451e7a7454e
     :git: https://github.com/iturb/zql.git
 
 SPEC CHECKSUMS:
@@ -37,6 +37,6 @@ SPEC CHECKSUMS:
   GoogleNetworkingUtilities: 292992ab31b7b4ba32809a0e8b40e324cdfb2c0c
   GoogleSymbolUtilities: 82ad9f93d3615244b3f4ce440f5ab2515e8b4f56
   GoogleUtilities: 8ed9134debe11719097881711464752900668f10
-  zql: 7a17b558f1d972f7a0f3eeaae36ac7e5f42579b8
+  zql: 394339bd41e493f48bc4d201beff5f5d6fc62f0e
 
 COCOAPODS: 0.39.0

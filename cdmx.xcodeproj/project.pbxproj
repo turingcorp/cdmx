@@ -38,8 +38,6 @@
 		DAD33FF71CBC83E300C87502 /* analytics.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD33FBB1CBC83E300C87502 /* analytics.m */; };
 		DAD33FF91CBC83E300C87502 /* tools.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD33FC01CBC83E300C87502 /* tools.m */; };
 		DAD33FFC1CBC83E300C87502 /* updater.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD33FC61CBC83E300C87502 /* updater.m */; };
-		DAD33FFD1CBC83E300C87502 /* libdb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DAD33FCA1CBC83E300C87502 /* libdb.a */; };
-		DAD33FFE1CBC83E300C87502 /* libtimerbg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DAD33FCB1CBC83E300C87502 /* libtimerbg.a */; };
 		DAD33FFF1CBC83E300C87502 /* mdb.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD33FD71CBC83E300C87502 /* mdb.m */; };
 		DAD340001CBC83E300C87502 /* mdbcreate.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD33FD91CBC83E300C87502 /* mdbcreate.m */; };
 		DAD340011CBC83E300C87502 /* mdirs.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD33FDC1CBC83E300C87502 /* mdirs.m */; };
@@ -114,10 +112,6 @@
 		DAD33FC01CBC83E300C87502 /* tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tools.m; sourceTree = "<group>"; };
 		DAD33FC51CBC83E300C87502 /* updater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = updater.h; sourceTree = "<group>"; };
 		DAD33FC61CBC83E300C87502 /* updater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = updater.m; sourceTree = "<group>"; };
-		DAD33FC91CBC83E300C87502 /* db.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = db.h; sourceTree = "<group>"; };
-		DAD33FCA1CBC83E300C87502 /* libdb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libdb.a; sourceTree = "<group>"; };
-		DAD33FCB1CBC83E300C87502 /* libtimerbg.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libtimerbg.a; sourceTree = "<group>"; };
-		DAD33FCD1CBC83E300C87502 /* timerbg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = timerbg.h; sourceTree = "<group>"; };
 		DAD33FD61CBC83E300C87502 /* mdb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mdb.h; sourceTree = "<group>"; };
 		DAD33FD71CBC83E300C87502 /* mdb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mdb.m; sourceTree = "<group>"; };
 		DAD33FD81CBC83E300C87502 /* mdbcreate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mdbcreate.h; sourceTree = "<group>"; };
@@ -146,8 +140,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAD33FFE1CBC83E300C87502 /* libtimerbg.a in Frameworks */,
-				DAD33FFD1CBC83E300C87502 /* libdb.a in Frameworks */,
 				DA000D821CC459D100A82EC0 /* MapKit.framework in Frameworks */,
 				E99EDB84D6293E5D839C08A5 /* libPods-cdmx.a in Frameworks */,
 			);
@@ -344,7 +336,6 @@
 				DAD340071CBC84A700C87502 /* private */,
 				DAD33FB41CBC83E300C87502 /* core */,
 				DAD33FB91CBC83E300C87502 /* generic */,
-				DAD33FC71CBC83E300C87502 /* lib */,
 				DAD33FD11CBC83E300C87502 /* source */,
 			);
 			path = sourceteq;
@@ -373,33 +364,6 @@
 				DA8708631CBEBD5C000C08E1 /* genericconstants.h */,
 			);
 			path = generic;
-			sourceTree = "<group>";
-		};
-		DAD33FC71CBC83E300C87502 /* lib */ = {
-			isa = PBXGroup;
-			children = (
-				DAD33FC81CBC83E300C87502 /* db */,
-				DAD33FCA1CBC83E300C87502 /* libdb.a */,
-				DAD33FCB1CBC83E300C87502 /* libtimerbg.a */,
-				DAD33FCC1CBC83E300C87502 /* timerbg */,
-			);
-			path = lib;
-			sourceTree = "<group>";
-		};
-		DAD33FC81CBC83E300C87502 /* db */ = {
-			isa = PBXGroup;
-			children = (
-				DAD33FC91CBC83E300C87502 /* db.h */,
-			);
-			path = db;
-			sourceTree = "<group>";
-		};
-		DAD33FCC1CBC83E300C87502 /* timerbg */ = {
-			isa = PBXGroup;
-			children = (
-				DAD33FCD1CBC83E300C87502 /* timerbg.h */,
-			);
-			path = timerbg;
 			sourceTree = "<group>";
 		};
 		DAD33FD11CBC83E300C87502 /* source */ = {

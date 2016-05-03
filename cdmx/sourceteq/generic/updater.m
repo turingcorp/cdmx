@@ -37,7 +37,7 @@
         [mdb updatedb];
     }
     
-    dbname = [documents stringByAppendingPathComponent:[properties valueForKey:@"dbname"]];
+//    dbname = [documents stringByAppendingPathComponent:[properties valueForKey:@"dbname"]];
 }
 
 +(void)firsttime:(NSDictionary*)plist
