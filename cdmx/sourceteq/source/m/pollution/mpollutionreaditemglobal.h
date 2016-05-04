@@ -1,13 +1,6 @@
-//
-//  mpollutionreaditemglobal.h
-//  cdmx
-//
-//  Created by zero on 5/4/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
+#import "mpollutionreaditem.h"
 
-@interface mpollutionreaditemglobal : NSObject
+@interface mpollutionreaditemglobal:mpollutionreaditem
 
 @end

@@ -1,13 +1,11 @@
-//
-//  mpollutionreaditemdist.h
-//  cdmx
-//
-//  Created by zero on 5/4/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
+#import "mpollutionreaditem.h"
+#import "mpollutiondistitem.h"
 
-@interface mpollutionreaditemdist : NSObject
+@interface mpollutionreaditemdist:mpollutionreaditem
+
+-(instancetype)init:(mpollutiondistitem*)dist;
+
+@property(weak, nonatomic)mpollutiondistitem *dist;
 
 @end

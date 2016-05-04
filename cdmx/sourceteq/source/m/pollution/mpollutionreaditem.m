@@ -1,13 +1,21 @@
-//
-//  mpollutionreaditem.m
-//  cdmx
-//
-//  Created by zero on 5/4/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
-
 #import "mpollutionreaditem.h"
+#import "mpollutionreaditemdist.h"
+#import "mpollutionreaditemglobal.h"
 
 @implementation mpollutionreaditem
+
++(instancetype)dist:(mpollutiondistitem*)dist
+{
+    mpollutionreaditemdist *item = [[mpollutionreaditemdist alloc] init];
+    
+    return item;
+}
+
++(instancetype)global
+{
+    mpollutionreaditemglobal *item = [[mpollutionreaditemglobal alloc] init];
+    
+    return item;
+}
 
 @end
