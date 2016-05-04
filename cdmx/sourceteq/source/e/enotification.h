@@ -6,6 +6,7 @@
 +(void)glkmove;
 +(void)observe:(id)observer glkmove:(SEL)selector;
 +(void)glkdraw:(mpollutionnotificationdraw*)userinfo;
++(void)glkdrawremove:(id)observer;
 +(void)observe:(id)observer glkdraw:(SEL)selector;
 
 @end

@@ -20,6 +20,11 @@ static NSString* const notification_glkdraw =               @"glkdraw";
     [[NSNotificationCenter defaultCenter] postNotificationName:notification_glkdraw object:nil userInfo:userinfo];
 }
 
++(void)glkdrawremove:(id)observer
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:observer name:notification_glkdraw object:nil];
+}
+
 +(void)observe:(id)observer glkdraw:(SEL)selector
 {
     [[NSNotificationCenter defaultCenter] addObserver:observer selector:selector name:notification_glkdraw object:nil];
