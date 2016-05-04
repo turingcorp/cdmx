@@ -1,9 +1,10 @@
 #import <UIKit/UIKit.h>
-#import "vradiochart.h"
+#import "vpollutionradiochart.h"
+#import "mpollutiondistitem.h"
 
 @interface vpollutionfrontheader:UICollectionReusableView
 
-@property(weak, nonatomic)vradiochart *radiochart;
+@property(weak, nonatomic)vpollutionradiochart *radiochart;
 @property(weak, nonatomic)UILabel *labeltitle;
 
 @end

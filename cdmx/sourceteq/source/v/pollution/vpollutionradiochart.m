@@ -1,22 +1,21 @@
 #import "vpollutionradiochart.h"
 #import "ecolor.h"
+#import "efont.h"
 
 static NSInteger const radiochartwidth_2 = 80;
 static NSInteger const radiochartlinewidth = 10;
 
 @implementation vpollutionradiochart
 
--(instancetype)init
+-(instancetype)init:(mpollutionindex*)index
 {
     self = [super init];
     self.basecolor = [UIColor background];
-    radiochart.higlightcolor = [UIColor pollution_red];
-    radiochart.size_2 = radiocharwidth_2;
-    radiochart.linewidth = radiochartlinewidth;
-    radiochart.currentpoints = 150;
-    radiochart.maxpoints = 200;
-    [radiochart render];
-    self.radiochart = radiochart;
+    self.higlightcolor = index.color;
+    self.size_2 = radiochartwidth_2;
+    self.linewidth = radiochartlinewidth;
+    self.currentpoints = index.points;
+    self.maxpoints = [mpollutionindex maxpoints];
     [self render];
     
     return self;

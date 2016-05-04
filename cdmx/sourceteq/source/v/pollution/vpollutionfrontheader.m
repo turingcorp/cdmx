@@ -3,9 +3,6 @@
 #import "ecolor.h"
 #import "efont.h"
 
-static NSInteger const radiochartwidth_2 = 80;
-static NSInteger const radiochartlinewidth = 10;
-
 @implementation vpollutionfrontheader
 
 -(instancetype)initWithFrame:(CGRect)frame
@@ -33,14 +30,9 @@ static NSInteger const radiochartlinewidth = 10;
     [labeltitle setText:@"Resumen general"];
     self.labeltitle = labeltitle;
     
-    vradiochart *radiochart = [[vradiochart alloc] init];
-    radiochart.basecolor = [UIColor background];
-    radiochart.higlightcolor = [UIColor pollution_red];
-    radiochart.size_2 = radiocharwidth_2;
-    radiochart.linewidth = radiochartlinewidth;
-    radiochart.currentpoints = 150;
-    radiochart.maxpoints = 200;
-    [radiochart render];
+    
+    
+    vpollutionradiochart *radiochart = [[vpollutionradiochart alloc] init];
     self.radiochart = radiochart;
     
     [self addSubview:bordertop];

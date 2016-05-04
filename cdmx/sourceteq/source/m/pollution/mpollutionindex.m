@@ -46,4 +46,9 @@ static NSInteger const maxpointsdisaster = 200;
     return index;
 }
 
++(NSInteger)maxpoints
+{
+    return maxpointsdisaster;
+}
+
 @end

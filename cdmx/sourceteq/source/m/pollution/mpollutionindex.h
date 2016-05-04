@@ -2,6 +2,9 @@
 
 @interface mpollutionindex:NSObject
 
++(instancetype)points:(NSInteger)points;
++(NSInteger)maxpoints;
+
 @property(strong, nonatomic)UIColor *color;
 @property(copy, nonatomic)NSString *name;
 @property(assign, nonatomic)NSInteger points;
