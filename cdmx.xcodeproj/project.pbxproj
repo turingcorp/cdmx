@@ -38,6 +38,8 @@
 		DA8E6B181CDA3C15009100EE /* mpollutiondistitemvenustianocarranza.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8E6B171CDA3C15009100EE /* mpollutiondistitemvenustianocarranza.m */; };
 		DA8E6B1B1CDA3C26009100EE /* mpollutiondistitemmiguelhidalgo.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8E6B1A1CDA3C26009100EE /* mpollutiondistitemmiguelhidalgo.m */; };
 		DA8E6B1E1CDA50FA009100EE /* vpollutionfront.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8E6B1D1CDA50FA009100EE /* vpollutionfront.m */; };
+		DA8E6B821CDA76BC009100EE /* vpollutionfrontcell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8E6B811CDA76BC009100EE /* vpollutionfrontcell.m */; };
+		DA8E6B851CDA76D3009100EE /* vpollutionfrontheader.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8E6B841CDA76D3009100EE /* vpollutionfrontheader.m */; };
 		DA8F03441CC1C6B10007596C /* districts.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA8F03431CC1C6B10007596C /* districts.xcassets */; };
 		DAA0C6681CD96D4A00880D3E /* mpollutiondist.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA0C6671CD96D4A00880D3E /* mpollutiondist.m */; };
 		DAA0C66B1CD96D5700880D3E /* mpollutiondistitem.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA0C66A1CD96D5700880D3E /* mpollutiondistitem.m */; };
@@ -128,6 +130,10 @@
 		DA8E6B1A1CDA3C26009100EE /* mpollutiondistitemmiguelhidalgo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mpollutiondistitemmiguelhidalgo.m; sourceTree = "<group>"; };
 		DA8E6B1C1CDA50FA009100EE /* vpollutionfront.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vpollutionfront.h; sourceTree = "<group>"; };
 		DA8E6B1D1CDA50FA009100EE /* vpollutionfront.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vpollutionfront.m; sourceTree = "<group>"; };
+		DA8E6B801CDA76BC009100EE /* vpollutionfrontcell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vpollutionfrontcell.h; sourceTree = "<group>"; };
+		DA8E6B811CDA76BC009100EE /* vpollutionfrontcell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vpollutionfrontcell.m; sourceTree = "<group>"; };
+		DA8E6B831CDA76D3009100EE /* vpollutionfrontheader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vpollutionfrontheader.h; sourceTree = "<group>"; };
+		DA8E6B841CDA76D3009100EE /* vpollutionfrontheader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vpollutionfrontheader.m; sourceTree = "<group>"; };
 		DA8F03431CC1C6B10007596C /* districts.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = districts.xcassets; sourceTree = "<group>"; };
 		DAA0C6661CD96D4A00880D3E /* mpollutiondist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpollutiondist.h; sourceTree = "<group>"; };
 		DAA0C6671CD96D4A00880D3E /* mpollutiondist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mpollutiondist.m; sourceTree = "<group>"; };
@@ -223,6 +229,10 @@
 				DA20ACEA1CD7FC9100754956 /* vpollution.m */,
 				DA8E6B1C1CDA50FA009100EE /* vpollutionfront.h */,
 				DA8E6B1D1CDA50FA009100EE /* vpollutionfront.m */,
+				DA8E6B831CDA76D3009100EE /* vpollutionfrontheader.h */,
+				DA8E6B841CDA76D3009100EE /* vpollutionfrontheader.m */,
+				DA8E6B801CDA76BC009100EE /* vpollutionfrontcell.h */,
+				DA8E6B811CDA76BC009100EE /* vpollutionfrontcell.m */,
 			);
 			path = pollution;
 			sourceTree = "<group>";
@@ -671,6 +681,7 @@
 				DAD33FF61CBC83E300C87502 /* main.m in Sources */,
 				DA8E6AFA1CDA3A6B009100EE /* mpollutiondistitemazcapozalco.m in Sources */,
 				DAD33FFC1CBC83E300C87502 /* updater.m in Sources */,
+				DA8E6B821CDA76BC009100EE /* vpollutionfrontcell.m in Sources */,
 				DAA0C66E1CD96D6800880D3E /* mpollutiondistitembenitojuarez.m in Sources */,
 				DA8E6B181CDA3C15009100EE /* mpollutiondistitemvenustianocarranza.m in Sources */,
 				DAD340051CBC83E300C87502 /* vspinner.m in Sources */,
@@ -696,6 +707,7 @@
 				DA8E6B151CDA3C01009100EE /* mpollutiondistitemcuauhtemoc.m in Sources */,
 				DAA0C67A1CD978BD00880D3E /* gtexture.m in Sources */,
 				DA8708371CBE87F7000C08E1 /* aparserstations.m in Sources */,
+				DA8E6B851CDA76D3009100EE /* vpollutionfrontheader.m in Sources */,
 				DACEDEE21CBC89630088AA8B /* cmain.m in Sources */,
 				DAA0C66B1CD96D5700880D3E /* mpollutiondistitem.m in Sources */,
 				DA8E6B1E1CDA50FA009100EE /* vpollutionfront.m in Sources */,

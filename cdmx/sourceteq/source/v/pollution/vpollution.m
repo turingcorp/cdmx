@@ -1,5 +1,6 @@
 #import "vpollution.h"
 #import "enotification.h"
+#import "vpollutionfront.h"
 
 static NSInteger const millisecondswait = 300;
 static NSInteger const texturecorners = 6;
@@ -49,6 +50,15 @@ static NSInteger const texturecorners = 6;
 {
     if(!self.modeldist)
     {
+        vpollutionfront *front = [[vpollutionfront alloc] init:self.controller];
+        [self addSubview:front];
+        
+        NSDictionary *views = @{@"front":front};
+        NSDictionary *metrics = @{};
+        
+        [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[front]-0-|" options:0 metrics:metrics views:views]];
+        [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[front]-0-|" options:0 metrics:metrics views:views]];
+        
         __weak typeof(self) welf = self;
         
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_MSEC * millisecondswait),
