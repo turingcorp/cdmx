@@ -1,9 +1,9 @@
 #import "gpollutiondist.h"
 
-static NSInteger const distx = 10;
-static NSInteger const disty = 10;
-static NSInteger const distwidth = 100;
-static NSInteger const distheight = 100;
+static NSInteger const distx = 0;
+static NSInteger const disty = 0;
+static NSInteger const distwidth = 320;
+static NSInteger const distheight = 320;
 static BOOL const srgb = YES;
 
 @implementation gpollutiondist

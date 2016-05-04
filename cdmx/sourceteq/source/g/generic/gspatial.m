@@ -36,12 +36,15 @@ static NSInteger const vectorcorners = 6;
 
 -(void)render
 {
-    NSInteger minx = self.x;
-    NSInteger maxx = minx + self.width;
-    NSInteger miny = self.y;
-    NSInteger maxy = miny + self.height;
+    CGFloat minx = self.x;
+    CGFloat maxx = minx + self.width;
+    CGFloat miny = self.y;
+    CGFloat maxy = miny + self.height;
+    CGSize screensize = [UIScreen mainScreen].bounds.size;
+    CGFloat screenwidth = screensize.width;
+    CGFloat screenheight = screensize.height;
     
-    self.projection = GLKMatrix4MakeOrtho(0, 300, 300, 0, 1, -1);
+    self.projection = GLKMatrix4MakeOrtho(0, screenwidth, screenheight, 0, 1, -1);
     self.dataposition = [NSMutableData dataWithLength:vectorcorners * sizeof(GLKVector2)];
     self.pointerposition = self.dataposition.mutableBytes;
     self.pointerposition[0] = GLKVector2Make(minx, miny);

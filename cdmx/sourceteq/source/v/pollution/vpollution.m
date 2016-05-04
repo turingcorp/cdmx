@@ -34,7 +34,6 @@ static NSInteger const texturecorners = 6;
     
     self.modeldist = [[mpollutiondist alloc] init];
     self.baseeffect = [[GLKBaseEffect alloc] init];
-    self.baseeffect.transform.projectionMatrix = GLKMatrix4MakeOrtho(0, 300, 300, 0, 1, -1);
     self.baseeffect.texture2d0.target = GLKTextureTarget2D;
 }
 

@@ -1,6 +1,6 @@
 #import "mpollutiondistitembenitojuarez.h"
 
-static NSString* const texturename = @"distritcs_bj";
+static NSString* const texturename = @"districts_bj";
 
 @implementation mpollutiondistitembenitojuarez
 
