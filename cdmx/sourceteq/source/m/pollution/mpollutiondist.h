@@ -1,13 +1,9 @@
-//
-//  mpollutiondist.h
-//  cdmx
-//
-//  Created by zero on 5/3/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
+#import "mpollutiondistitem.h"
 
-@interface mpollutiondist : NSObject
+@interface mpollutiondist:NSObject
+
+@property(strong, nonatomic)NSArray<mpollutiondistitem*> *items;
+@property(weak, nonatomic)mpollutiondistitem *itembenitojuarez;
 
 @end

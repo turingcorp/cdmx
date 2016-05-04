@@ -1,13 +1,20 @@
-//
-//  mpollutiondist.m
-//  cdmx
-//
-//  Created by zero on 5/3/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
-
 #import "mpollutiondist.h"
+#import "mpollutiondistitembenitojuarez.h"
 
 @implementation mpollutiondist
+
+-(instancetype)init
+{
+    self = [super init];
+    
+    mpollutiondistitembenitojuarez *itembenitojuarez = [[mpollutiondistitembenitojuarez alloc] init];
+    self.itembenitojuarez = itembenitojuarez;
+    
+    self.items = @[
+                   itembenitojuarez
+                   ];
+    
+    return self;
+}
 
 @end

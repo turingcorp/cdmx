@@ -26,7 +26,9 @@
 		DAA0C6681CD96D4A00880D3E /* mpollutiondist.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA0C6671CD96D4A00880D3E /* mpollutiondist.m */; };
 		DAA0C66B1CD96D5700880D3E /* mpollutiondistitem.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA0C66A1CD96D5700880D3E /* mpollutiondistitem.m */; };
 		DAA0C66E1CD96D6800880D3E /* mpollutiondistitembenitojuarez.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA0C66D1CD96D6800880D3E /* mpollutiondistitembenitojuarez.m */; };
-		DAA0C6721CD974DD00880D3E /* mglktexture.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA0C6711CD974DD00880D3E /* mglktexture.m */; };
+		DAA0C67A1CD978BD00880D3E /* gtexture.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA0C6791CD978BD00880D3E /* gtexture.m */; };
+		DAA0C67D1CD978C600880D3E /* gspatial.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA0C67C1CD978C600880D3E /* gspatial.m */; };
+		DAA0C6801CD978CF00880D3E /* gspatialtexture.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA0C67F1CD978CF00880D3E /* gspatialtexture.m */; };
 		DACEDEE21CBC89630088AA8B /* cmain.m in Sources */ = {isa = PBXBuildFile; fileRef = DACEDEE11CBC89630088AA8B /* cmain.m */; };
 		DAD33FF31CBC83E300C87502 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DAD33FB01CBC83E300C87502 /* Localizable.strings */; };
 		DAD33FF41CBC83E300C87502 /* appdel.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD33FB61CBC83E300C87502 /* appdel.m */; };
@@ -84,8 +86,12 @@
 		DAA0C66A1CD96D5700880D3E /* mpollutiondistitem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mpollutiondistitem.m; sourceTree = "<group>"; };
 		DAA0C66C1CD96D6800880D3E /* mpollutiondistitembenitojuarez.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpollutiondistitembenitojuarez.h; sourceTree = "<group>"; };
 		DAA0C66D1CD96D6800880D3E /* mpollutiondistitembenitojuarez.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mpollutiondistitembenitojuarez.m; sourceTree = "<group>"; };
-		DAA0C6701CD974DD00880D3E /* mglktexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mglktexture.h; sourceTree = "<group>"; };
-		DAA0C6711CD974DD00880D3E /* mglktexture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mglktexture.m; sourceTree = "<group>"; };
+		DAA0C6781CD978BD00880D3E /* gtexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gtexture.h; sourceTree = "<group>"; };
+		DAA0C6791CD978BD00880D3E /* gtexture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gtexture.m; sourceTree = "<group>"; };
+		DAA0C67B1CD978C600880D3E /* gspatial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gspatial.h; sourceTree = "<group>"; };
+		DAA0C67C1CD978C600880D3E /* gspatial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gspatial.m; sourceTree = "<group>"; };
+		DAA0C67E1CD978CF00880D3E /* gspatialtexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gspatialtexture.h; sourceTree = "<group>"; };
+		DAA0C67F1CD978CF00880D3E /* gspatialtexture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gspatialtexture.m; sourceTree = "<group>"; };
 		DACEDEE01CBC89630088AA8B /* cmain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cmain.h; sourceTree = "<group>"; };
 		DACEDEE11CBC89630088AA8B /* cmain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cmain.m; sourceTree = "<group>"; };
 		DAD33F901CBC825900C87502 /* cdmx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cdmx.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -239,13 +245,25 @@
 			path = parser;
 			sourceTree = "<group>";
 		};
-		DAA0C66F1CD974D300880D3E /* glk */ = {
+		DAA0C6761CD9789F00880D3E /* g */ = {
 			isa = PBXGroup;
 			children = (
-				DAA0C6701CD974DD00880D3E /* mglktexture.h */,
-				DAA0C6711CD974DD00880D3E /* mglktexture.m */,
+				DAA0C6771CD978B100880D3E /* generic */,
 			);
-			path = glk;
+			path = g;
+			sourceTree = "<group>";
+		};
+		DAA0C6771CD978B100880D3E /* generic */ = {
+			isa = PBXGroup;
+			children = (
+				DAA0C6781CD978BD00880D3E /* gtexture.h */,
+				DAA0C6791CD978BD00880D3E /* gtexture.m */,
+				DAA0C67B1CD978C600880D3E /* gspatial.h */,
+				DAA0C67C1CD978C600880D3E /* gspatial.m */,
+				DAA0C67E1CD978CF00880D3E /* gspatialtexture.h */,
+				DAA0C67F1CD978CF00880D3E /* gspatialtexture.m */,
+			);
+			path = generic;
 			sourceTree = "<group>";
 		};
 		DACEDEDF1CBC895B0088AA8B /* main */ = {
@@ -348,6 +366,7 @@
 		DAD33FD11CBC83E300C87502 /* source */ = {
 			isa = PBXGroup;
 			children = (
+				DAA0C6761CD9789F00880D3E /* g */,
 				DA20ACFD1CD80B1400754956 /* e */,
 				DA8708251CBE8245000C08E1 /* a */,
 				DAD33FD21CBC83E300C87502 /* c */,
@@ -370,7 +389,6 @@
 		DAD33FD41CBC83E300C87502 /* m */ = {
 			isa = PBXGroup;
 			children = (
-				DAA0C66F1CD974D300880D3E /* glk */,
 				DA20AD1A1CD80D7700754956 /* settings */,
 				DA20AD0D1CD80D5400754956 /* pollution */,
 				DAD33FDA1CBC83E300C87502 /* dirs */,
@@ -562,7 +580,6 @@
 				DAA0C66E1CD96D6800880D3E /* mpollutiondistitembenitojuarez.m in Sources */,
 				DAD340051CBC83E300C87502 /* vspinner.m in Sources */,
 				DAA0C6681CD96D4A00880D3E /* mpollutiondist.m in Sources */,
-				DAA0C6721CD974DD00880D3E /* mglktexture.m in Sources */,
 				DA8708341CBE8717000C08E1 /* acallstations.m in Sources */,
 				DA20AD061CD80B5A00754956 /* ecolor.m in Sources */,
 				DA20AD091CD80B6000754956 /* efont.m in Sources */,
@@ -571,7 +588,10 @@
 				DA20ACEB1CD7FC9100754956 /* vpollution.m in Sources */,
 				DAD340011CBC83E300C87502 /* mdirs.m in Sources */,
 				DA87082A1CBE840F000C08E1 /* amanager.m in Sources */,
+				DAA0C67D1CD978C600880D3E /* gspatial.m in Sources */,
 				DA20AD031CD80B5100754956 /* enotification.m in Sources */,
+				DAA0C6801CD978CF00880D3E /* gspatialtexture.m in Sources */,
+				DAA0C67A1CD978BD00880D3E /* gtexture.m in Sources */,
 				DA8708371CBE87F7000C08E1 /* aparserstations.m in Sources */,
 				DACEDEE21CBC89630088AA8B /* cmain.m in Sources */,
 				DAA0C66B1CD96D5700880D3E /* mpollutiondistitem.m in Sources */,
