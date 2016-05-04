@@ -5,7 +5,6 @@
 +(instancetype)singleton;
 +(void)rateapp;
 +(void)shareapp;
--(NSString*)numbertostring:(NSNumber*)number;
--(NSDate*)stringtodate:(NSString*)string;
++(UIImage*)bufferimage:(UIImage*)image;
 
 @end

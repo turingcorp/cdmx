@@ -1,6 +1,7 @@
 #import "vpollution.h"
 #import "enotification.h"
 
+static NSInteger const millisecondswait = 300;
 static NSInteger const texturecorners = 6;
 
 @implementation vpollution
@@ -19,22 +20,27 @@ static NSInteger const texturecorners = 6;
 -(void)glkstart
 {
     EAGLContext *context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
-    [EAGLContext setCurrentContext:context];
-    [self setContext:context];
-    [self setDelegate:self];
-
-    self.datatexture = [NSMutableData dataWithLength:texturecorners * sizeof(GLKVector2)];
-    self.pointertexture = self.datatexture.mutableBytes;
-    self.pointertexture[0] = GLKVector2Make(0, 0);
-    self.pointertexture[1] = GLKVector2Make(0, 1);
-    self.pointertexture[2] = GLKVector2Make(1, 1);
-    self.pointertexture[3] = GLKVector2Make(1, 1);
-    self.pointertexture[4] = GLKVector2Make(1, 0);
-    self.pointertexture[5] = GLKVector2Make(0, 0);
     
-    self.modeldist = [[mpollutiondist alloc] init];
-    self.baseeffect = [[GLKBaseEffect alloc] init];
-    self.baseeffect.texture2d0.target = GLKTextureTarget2D;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
+                   ^
+                   {
+                       [EAGLContext setCurrentContext:context];
+                       [self setContext:context];
+                       [self setDelegate:self];
+                       
+                       self.datatexture = [NSMutableData dataWithLength:texturecorners * sizeof(GLKVector2)];
+                       self.pointertexture = self.datatexture.mutableBytes;
+                       self.pointertexture[0] = GLKVector2Make(0, 0);
+                       self.pointertexture[1] = GLKVector2Make(0, 1);
+                       self.pointertexture[2] = GLKVector2Make(1, 1);
+                       self.pointertexture[3] = GLKVector2Make(1, 1);
+                       self.pointertexture[4] = GLKVector2Make(1, 0);
+                       self.pointertexture[5] = GLKVector2Make(0, 0);
+                       
+                       self.modeldist = [[mpollutiondist alloc] init];
+                       self.baseeffect = [[GLKBaseEffect alloc] init];
+                       self.baseeffect.texture2d0.target = GLKTextureTarget2D;
+                   });
 }
 
 #pragma mark public
@@ -43,7 +49,14 @@ static NSInteger const texturecorners = 6;
 {
     if(!self.modeldist)
     {
-        [self glkstart];
+        __weak typeof(self) welf = self;
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_MSEC * millisecondswait),
+                       dispatch_get_main_queue(),
+                       ^
+                       {
+                           [welf glkstart];
+                       });
     }
 }
 

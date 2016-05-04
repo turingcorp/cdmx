@@ -6,10 +6,6 @@ static NSString* const shareurl = @"https://itunes.apple.com/us/app/cdmx/id%@";
 static NSString* const rateurl = @"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=%@";
 
 @implementation tools
-{
-    NSNumberFormatter *numformatter;
-    NSDateFormatter *dateformatter;
-}
 
 +(instancetype)singleton
 {
@@ -47,32 +43,33 @@ static NSString* const rateurl = @"itms-apps://itunes.apple.com/WebObjects/MZSto
     [[cmain singleton] presentViewController:act animated:YES completion:nil];
 }
 
++(UIImage*)bufferimage:(UIImage*)image
+{
+    CGImageRef cgimage = image.CGImage;
+    NSInteger width = CGImageGetWidth(cgimage);
+    NSInteger height = CGImageGetHeight(cgimage);
+    UIGraphicsBeginImageContext(CGSizeMake(width, height));
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextTranslateCTM(context, 0, height);
+    CGContextScaleCTM(context, 1.0, -1.0);
+    CGContextDrawImage(context, CGRectMake(0, 0, width, height), cgimage);
+    CGImageRef newcgimage = CGBitmapContextCreateImage(context);
+    UIGraphicsEndImageContext();
+    UIImage *bufferedimage = [UIImage imageWithCGImage:newcgimage scale:1 orientation:image.imageOrientation];
+    CGImageRelease(newcgimage);
+    
+    return bufferedimage;
+}
+
 #pragma mark -
 
 -(instancetype)init
 {
     self = [super init];
     
-    numformatter = [[NSNumberFormatter alloc] init];
-    [numformatter setNumberStyle:NSNumberFormatterDecimalStyle];
-    dateformatter = [[NSDateFormatter alloc] init];
-    [dateformatter setDateFormat:@"yyyy-MM-dd"];
-    
     return self;
 }
 
 #pragma mark public
-
--(NSString*)numbertostring:(NSNumber*)number
-{
-    NSString *string = [numformatter stringFromNumber:number];
-    
-    return string;
-}
-
--(NSDate*)stringtodate:(NSString*)string
-{
-    return [dateformatter dateFromString:string];
-}
 
 @end
