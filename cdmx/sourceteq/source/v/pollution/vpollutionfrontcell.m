@@ -1,13 +1,14 @@
-//
-//  vpollutionfrontcell.m
-//  cdmx
-//
-//  Created by zero on 5/4/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
-
 #import "vpollutionfrontcell.h"
 
 @implementation vpollutionfrontcell
+
+-(instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    [self setClipsToBounds:YES];
+    [self setBackgroundColor:[UIColor whiteColor]];
+    
+    return self;
+}
 
 @end

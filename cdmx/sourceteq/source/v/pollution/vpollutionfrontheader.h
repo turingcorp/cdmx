@@ -1,13 +1,5 @@
-//
-//  vpollutionfrontheader.h
-//  cdmx
-//
-//  Created by zero on 5/4/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
+#import <UIKit/UIKit.h>
 
-#import <Foundation/Foundation.h>
-
-@interface vpollutionfrontheader : NSObject
+@interface vpollutionfrontheader:UICollectionReusableView
 
 @end
