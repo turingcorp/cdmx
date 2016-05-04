@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 #import "mpollutionindex.h"
 
-@interface mpollutionindexacceptable:mpollutionindex
+@interface mpollutionindexfallout:mpollutionindex
 
 @end
