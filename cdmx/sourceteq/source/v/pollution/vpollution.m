@@ -48,7 +48,8 @@
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     glEnableVertexAttribArray(GLKVertexAttribPosition);
     
-//    [[NSNotificationCenter defaultCenter] postNotificationName:notification_glkdraw object:nil];
+    mpollutionnotificationdraw *userinfo = [[mpollutionnotificationdraw alloc] init:self.baseeffect];
+    [NSNotification glkdraw:userinfo];
     
     glDisableVertexAttribArray(GLKVertexAttribPosition);
     glDisable(GL_BLEND);

@@ -2,10 +2,8 @@
 
 @interface mpollutiontexturesitem:NSObject
 
--(instancetype)init:(NSString*)name assetname:(NSString*)assetname;
+-(instancetype)init:(NSString*)texturename;
 
-@property(copy, nonatomic)NSString *name;
-@property(copy, nonatomic)NSString *assetname;
 @property(assign, nonatomic)NSInteger textureid;
 
 @end
