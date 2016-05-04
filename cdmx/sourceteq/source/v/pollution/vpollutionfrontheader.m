@@ -20,13 +20,26 @@
     [bordertop setBackgroundColor:[UIColor background]];
     [bordertop setTranslatesAutoresizingMaskIntoConstraints:NO];
     
-    [self addSubview:bordertop];
+    UILabel *labeltitle = [[UILabel alloc] init];
+    [labeltitle setBackgroundColor:[UIColor clearColor]];
+    [labeltitle setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [labeltitle setUserInteractionEnabled:NO];
+    [labeltitle setTextAlignment:NSTextAlignmentCenter];
+    [labeltitle setFont:[UIFont boldsize:15]];
+    [labeltitle setTextColor:[UIColor main]];
+    [labeltitle setText:@"Resumen general"];
+    self.labeltitle = labeltitle;
     
-    NSDictionary *views = @{@"bordertop":bordertop};
+    [self addSubview:bordertop];
+    [self addSubview:labeltitle];
+    
+    NSDictionary *views = @{@"bordertop":bordertop, @"labeltitle":labeltitle};
     NSDictionary *metrics = @{@"bordery":@(bordery)};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-5-[bordertop]-5-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V|-(bordery)-[bordertop(1)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(bordery)-[bordertop(1)]-0-[labeltitle(40)]" options:0 metrics:metrics views:views]
+     ];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[labeltitle]-10-|" options:0 metrics:metrics views:views]];
     
     return self;
 }

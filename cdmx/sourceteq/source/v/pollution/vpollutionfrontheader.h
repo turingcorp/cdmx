@@ -2,4 +2,6 @@
 
 @interface vpollutionfrontheader:UICollectionReusableView
 
+@property(weak, nonatomic)UILabel *labeltitle;
+
 @end
