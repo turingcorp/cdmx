@@ -5,6 +5,7 @@
 
 -(instancetype)init:(NSString*)texturename;
 
+@property(assign, nonatomic)GLKVector4 color;
 @property(assign, nonatomic)CGFloat initialx;
 
 @end

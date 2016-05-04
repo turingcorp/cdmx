@@ -57,4 +57,17 @@
     return [UIColor colorWithWhite:0.9 alpha:1];
 }
 
+-(GLKVector4)asvector
+{
+    GLKVector4 vector;
+    CGFloat redcomponent;
+    CGFloat greencomponent;
+    CGFloat bluecomponent;
+    CGFloat alphacomponent;
+    [self getRed:&redcomponent green:&greencomponent blue:&bluecomponent alpha:&alphacomponent];
+    vector = GLKVector4Make(redcomponent, greencomponent, bluecomponent, alphacomponent);
+    
+    return vector;
+}
+
 @end

@@ -1,4 +1,5 @@
 #import "gpollutiondist.h"
+#import "ecolor.h"
 #import "genericconstants.h"
 
 static BOOL const srgb = NO;
@@ -16,6 +17,7 @@ static BOOL const srgb = NO;
     self.y = navbarheightmin;
     self.width = pollution_distinitialsize;
     self.height = pollution_distinitialsize;
+    self.color = [[UIColor background] asvector];
     
     [self render];
     
@@ -28,7 +30,7 @@ static BOOL const srgb = NO;
 -(void)drawwithuserinfo:(mpollutionnotificationdraw*)userinfo
 {
     GLKBaseEffect *baseeffect = userinfo.baseeffect;
-    baseeffect.constantColor = GLKVector4Make(1, 0, 0, 1);
+    baseeffect.constantColor = self.color;
     [super drawwithuserinfo:userinfo];
 }
 
