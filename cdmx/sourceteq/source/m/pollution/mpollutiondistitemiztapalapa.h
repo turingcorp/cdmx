@@ -1,13 +1,6 @@
-//
-//  mpollutiondistitemiztapalapa.h
-//  cdmx
-//
-//  Created by zero on 5/4/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
+#import "mpollutiondistitem.h"
 
-@interface mpollutiondistitemiztapalapa : NSObject
+@interface mpollutiondistitemiztapalapa:mpollutiondistitem
 
 @end
