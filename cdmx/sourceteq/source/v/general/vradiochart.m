@@ -54,7 +54,7 @@ static CGFloat const endplainrad = 0;
 {
     linewidth_2 = self.linewidth / 2.0;
     
-    CGFloat percent = self.currentpoints / self.maxpoints;
+    CGFloat percent = self.currentpoints / (CGFloat)self.maxpoints;
     CGFloat degs = percent * degrees;
     radians = degs * M_PI / degradian;
     
