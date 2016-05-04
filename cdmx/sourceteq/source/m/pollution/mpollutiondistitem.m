@@ -8,8 +8,6 @@ static BOOL const srgb = YES;
 {
     self = [super init];
     self.name = name;
-    self.texture = [[gtexture alloc] init];
-    [self.texture loadtexture:texturename srgb:srgb];
     
     return self;
 }

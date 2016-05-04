@@ -1,8 +1,10 @@
 #import <UIKit/UIKit.h>
 #import <GLKit/GLKit.h>
+#import "enotification.h"
 
 @interface gspatial:NSObject
 
+-(void)drawwithuserinfo:(mpollutionnotificationdraw*)userinfo;
 -(void)draw:(NSNotification*)notification;
 -(void)movedx:(CGFloat)dx dy:(CGFloat)dy;
 -(void)render;

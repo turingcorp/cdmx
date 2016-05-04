@@ -1,13 +1,11 @@
-//
-//  gspatialtexture.h
-//  cdmx
-//
-//  Created by zero on 5/3/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
+#import "gspatial.h"
+#import "gtexture.h"
 
-@interface gspatialtexture : NSObject
+@interface gspatialtexture:gspatial
+
+-(instancetype)init:(NSString*)texturename srgb:(BOOL)srgb;
+
+@property(strong, nonatomic)gtexture *texture;
 
 @end

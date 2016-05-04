@@ -5,6 +5,6 @@
 
 -(void)loadtexture:(NSString*)texturename srgb:(BOOL)srgb;
 
-@property(assign, nonatomic)NSInteger textureid;
+@property(assign, nonatomic)GLuint textureid;
 
 @end

@@ -12,10 +12,8 @@ static NSInteger const vectorcorners = 6;
 
 #pragma mark public
 
--(void)draw:(NSNotification*)notification
+-(void)drawwithuserinfo:(mpollutionnotificationdraw*)userinfo
 {
-    mpollutionnotificationdraw *userinfo = (mpollutionnotificationdraw*)notification.userInfo;
-    
     GLKBaseEffect *baseeffect = userinfo.baseeffect;
     baseeffect.transform.projectionMatrix = self.projection;
     glVertexAttribPointer(GLKVertexAttribPosition, 2, GL_FLOAT, GL_FALSE, 0, self.pointerposition);
@@ -23,6 +21,12 @@ static NSInteger const vectorcorners = 6;
     [baseeffect prepareToDraw];
     
     glDrawArrays(GL_TRIANGLES, 0, vectorcorners);
+}
+
+-(void)draw:(NSNotification*)notification
+{
+    mpollutionnotificationdraw *userinfo = (mpollutionnotificationdraw*)notification.userInfo;
+    [self drawwithuserinfo:userinfo];
 }
 
 -(void)movedx:(CGFloat)dx dy:(CGFloat)dy
