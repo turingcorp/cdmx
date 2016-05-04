@@ -1,6 +1,20 @@
 #import "mpollutiondist.h"
 #import "mpollutiondistitembenitojuarez.h"
 #import "mpollutiondistitemcoyoacan.h"
+#import "mpollutiondistitemxochimilco.h"
+#import "mpollutiondistitemalvaroobregon.h"
+#import "mpollutiondistitemazcapozalco.h"
+#import "mpollutiondistitemiztapalapa.h"
+#import "mpollutiondistitemiztacalco.h"
+#import "mpollutiondistitemtlalpan.h"
+#import "mpollutiondistitemtlahuac.h"
+#import "mpollutiondistitemmilpaalta.h"
+#import "mpollutiondistitemmagdalenacontreras.h"
+#import "mpollutiondistitemgustavoamadero.h"
+#import "mpollutiondistitemcuajimalpa.h"
+#import "mpollutiondistitemcuauhtemoc.h"
+#import "mpollutiondistitemvenustianocarranza.h"
+#import "mpollutiondistitemmiguelhidalgo.h"
 
 @implementation mpollutiondist
 
