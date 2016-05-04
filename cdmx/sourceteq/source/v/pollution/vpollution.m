@@ -9,7 +9,6 @@ static NSInteger const texturecorners = 6;
 {
     self = [super init];
     [self setBackgroundColor:[UIColor whiteColor]];
-    [self setDelegate:self];
     self.controller = controller;
     
     return self;
@@ -21,6 +20,8 @@ static NSInteger const texturecorners = 6;
 {
     EAGLContext *context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
     [EAGLContext setCurrentContext:context];
+    [self setContext:context];
+    [self setDelegate:self];
 
     self.datatexture = [NSMutableData dataWithLength:texturecorners * sizeof(GLKVector2)];
     self.pointertexture = self.datatexture.mutableBytes;
@@ -53,7 +54,7 @@ static NSInteger const texturecorners = 6;
 -(void)glkView:(GLKView*)view drawInRect:(CGRect)rect
 {
     glDisable(GL_DEPTH_TEST);
-    glClearColor(0,0,0,0);
+    glClearColor(1,1,1,1);
     glClear(GL_COLOR_BUFFER_BIT);
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);

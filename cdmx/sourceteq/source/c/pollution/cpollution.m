@@ -32,7 +32,7 @@ static NSInteger const framespersecond = 60;
     [self setAutomaticallyAdjustsScrollViewInsets:NO];
     [self setPauseOnWillResignActive:YES];
     [self setPreferredFramesPerSecond:framespersecond];
-    [self setResumeOnDidBecomeActive:NO];
+    [self setResumeOnDidBecomeActive:YES];
     [self setDelegate:self];
     
 }
