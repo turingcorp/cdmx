@@ -5,5 +5,6 @@
 
 @property(strong, nonatomic)NSArray<mpollutiondistitem*> *items;
 @property(weak, nonatomic)mpollutiondistitem *itembenitojuarez;
+@property(weak, nonatomic)mpollutiondistitem *itemcoyoacan;
 
 @end
