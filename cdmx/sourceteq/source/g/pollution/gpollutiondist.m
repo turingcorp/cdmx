@@ -1,9 +1,7 @@
 #import "gpollutiondist.h"
+#import "genericconstants.h"
 
-static NSInteger const distx = -300;
-static NSInteger const disty = 0;
-static NSInteger const distwidth = 1000;
-static NSInteger const distheight = 1000;
+static NSInteger const distsize = 320;
 static BOOL const srgb = NO;
 
 @implementation gpollutiondist
@@ -11,10 +9,14 @@ static BOOL const srgb = NO;
 -(instancetype)init:(NSString*)texturename
 {
     self = [super init:texturename srgb:srgb];
-    self.x = distx;
-    self.y = disty;
-    self.width = distwidth;
-    self.height = distheight;
+    
+    CGFloat screenwidth = [UIScreen mainScreen].bounds.size.width;
+    CGFloat remainwidth = screenwidth - distsize;
+    self.initialx = remainwidth / 2.0;
+    self.x = self.initialx;
+    self.y = navbarheightmin;
+    self.width = distsize;
+    self.height = distsize;
     
     [self render];
     

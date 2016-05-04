@@ -5,4 +5,6 @@
 
 -(instancetype)init:(NSString*)texturename;
 
+@property(assign, nonatomic)CGFloat initialx;
+
 @end
