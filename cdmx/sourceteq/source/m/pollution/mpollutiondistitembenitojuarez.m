@@ -6,8 +6,7 @@ static NSString* const texturename = @"distritcs_bj";
 
 -(instancetype)init
 {
-    self = [super init:NSLocalizedString(@"mpollution_district_benitojuarez_name", nil)];
-    self.texturename = texturename;
+    self = [super init:NSLocalizedString(@"mpollution_district_benitojuarez_name", nil) texturename:texturename];
     
     return self;
 }

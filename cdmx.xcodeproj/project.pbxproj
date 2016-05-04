@@ -15,8 +15,6 @@
 		DA20AD061CD80B5A00754956 /* ecolor.m in Sources */ = {isa = PBXBuildFile; fileRef = DA20AD051CD80B5A00754956 /* ecolor.m */; };
 		DA20AD091CD80B6000754956 /* efont.m in Sources */ = {isa = PBXBuildFile; fileRef = DA20AD081CD80B6000754956 /* efont.m */; };
 		DA20AD161CD80D5400754956 /* mpollutionnotificationdraw.m in Sources */ = {isa = PBXBuildFile; fileRef = DA20AD0F1CD80D5400754956 /* mpollutionnotificationdraw.m */; };
-		DA20AD171CD80D5400754956 /* mpollutiontextures.m in Sources */ = {isa = PBXBuildFile; fileRef = DA20AD111CD80D5400754956 /* mpollutiontextures.m */; };
-		DA20AD181CD80D5400754956 /* mpollutiontexturesitem.m in Sources */ = {isa = PBXBuildFile; fileRef = DA20AD131CD80D5400754956 /* mpollutiontexturesitem.m */; };
 		DA20AD1D1CD80D8100754956 /* msettings.m in Sources */ = {isa = PBXBuildFile; fileRef = DA20AD1C1CD80D8100754956 /* msettings.m */; };
 		DA87082A1CBE840F000C08E1 /* amanager.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8708291CBE840F000C08E1 /* amanager.m */; };
 		DA87082D1CBE844A000C08E1 /* acall.m in Sources */ = {isa = PBXBuildFile; fileRef = DA87082C1CBE844A000C08E1 /* acall.m */; };
@@ -64,10 +62,6 @@
 		DA20AD081CD80B6000754956 /* efont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = efont.m; sourceTree = "<group>"; };
 		DA20AD0E1CD80D5400754956 /* mpollutionnotificationdraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpollutionnotificationdraw.h; sourceTree = "<group>"; };
 		DA20AD0F1CD80D5400754956 /* mpollutionnotificationdraw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mpollutionnotificationdraw.m; sourceTree = "<group>"; };
-		DA20AD101CD80D5400754956 /* mpollutiontextures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpollutiontextures.h; sourceTree = "<group>"; };
-		DA20AD111CD80D5400754956 /* mpollutiontextures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mpollutiontextures.m; sourceTree = "<group>"; };
-		DA20AD121CD80D5400754956 /* mpollutiontexturesitem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpollutiontexturesitem.h; sourceTree = "<group>"; };
-		DA20AD131CD80D5400754956 /* mpollutiontexturesitem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mpollutiontexturesitem.m; sourceTree = "<group>"; };
 		DA20AD1B1CD80D8100754956 /* msettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = msettings.h; sourceTree = "<group>"; };
 		DA20AD1C1CD80D8100754956 /* msettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = msettings.m; sourceTree = "<group>"; };
 		DA8708281CBE840F000C08E1 /* amanager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = amanager.h; sourceTree = "<group>"; };
@@ -192,10 +186,6 @@
 			children = (
 				DA20AD0E1CD80D5400754956 /* mpollutionnotificationdraw.h */,
 				DA20AD0F1CD80D5400754956 /* mpollutionnotificationdraw.m */,
-				DA20AD101CD80D5400754956 /* mpollutiontextures.h */,
-				DA20AD111CD80D5400754956 /* mpollutiontextures.m */,
-				DA20AD121CD80D5400754956 /* mpollutiontexturesitem.h */,
-				DA20AD131CD80D5400754956 /* mpollutiontexturesitem.m */,
 				DAA0C6661CD96D4A00880D3E /* mpollutiondist.h */,
 				DAA0C6671CD96D4A00880D3E /* mpollutiondist.m */,
 				DAA0C6691CD96D5700880D3E /* mpollutiondistitem.h */,
@@ -570,7 +560,6 @@
 				DAD33FF61CBC83E300C87502 /* main.m in Sources */,
 				DAD33FFC1CBC83E300C87502 /* updater.m in Sources */,
 				DAA0C66E1CD96D6800880D3E /* mpollutiondistitembenitojuarez.m in Sources */,
-				DA20AD181CD80D5400754956 /* mpollutiontexturesitem.m in Sources */,
 				DAD340051CBC83E300C87502 /* vspinner.m in Sources */,
 				DAA0C6681CD96D4A00880D3E /* mpollutiondist.m in Sources */,
 				DAA0C6721CD974DD00880D3E /* mglktexture.m in Sources */,
@@ -583,7 +572,6 @@
 				DAD340011CBC83E300C87502 /* mdirs.m in Sources */,
 				DA87082A1CBE840F000C08E1 /* amanager.m in Sources */,
 				DA20AD031CD80B5100754956 /* enotification.m in Sources */,
-				DA20AD171CD80D5400754956 /* mpollutiontextures.m in Sources */,
 				DA8708371CBE87F7000C08E1 /* aparserstations.m in Sources */,
 				DACEDEE21CBC89630088AA8B /* cmain.m in Sources */,
 				DAA0C66B1CD96D5700880D3E /* mpollutiondistitem.m in Sources */,

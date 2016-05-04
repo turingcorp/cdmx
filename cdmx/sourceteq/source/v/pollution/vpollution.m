@@ -20,7 +20,7 @@
     EAGLContext *context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
     [EAGLContext setCurrentContext:context];
     
-    self.modeltextures = [[mpollutiontextures alloc] init];
+    self.modeldist = [[mpollutiondist alloc] init];
     self.baseeffect = [[GLKBaseEffect alloc] init];
     self.baseeffect.transform.projectionMatrix = GLKMatrix4MakeOrtho(0, 300, 300, 0, 1, -1);
     self.baseeffect.texture2d0.target = GLKTextureTarget2D;
@@ -30,7 +30,7 @@
 
 -(void)viewdidappear
 {
-    if(!self.modeltextures)
+    if(!self.modeldist)
     {
         [self glkstart];
     }
