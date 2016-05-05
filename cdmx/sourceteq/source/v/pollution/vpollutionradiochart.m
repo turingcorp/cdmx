@@ -21,4 +21,12 @@ static NSInteger const radiochartlinewidth = 8;
     return self;
 }
 
+-(CGSize)intrinsicContentSize
+{
+    NSInteger height = (radiochartwidth_2 + radiochartlinewidth) * 2;
+    CGSize size = CGSizeMake(UIViewNoIntrinsicMetric, height);
+    
+    return size;
+}
+
 @end
