@@ -1,7 +1,7 @@
-#import "ccdmx.h"
+#import "ccontroller.h"
 #import "cmain.h"
 
-@implementation ccdmx
+@implementation ccontroller
 
 -(UIStatusBarStyle)preferredStatusBarStyle
 {
@@ -20,7 +20,7 @@
     [self setExtendedLayoutIncludesOpaqueBars:NO];
     [self setAutomaticallyAdjustsScrollViewInsets:NO];
     
-//    [[analytics singleton] trackscreen:self];
+    //    [[analytics singleton] trackscreen:self];
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -45,7 +45,7 @@
 
 -(void)menu
 {
-//    [[cmain singleton].pages pagemenu];
+    //    [[cmain singleton].pages pagemenu];
 }
 
 @end

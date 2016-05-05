@@ -1,6 +1,6 @@
 #import <UIKit/UIKit.h>
 
-@interface ccdmx:UIViewController<UIGestureRecognizerDelegate>
+@interface ccontroller:UIViewController<UIGestureRecognizerDelegate>
 
 -(void)back;
 -(void)menu;
