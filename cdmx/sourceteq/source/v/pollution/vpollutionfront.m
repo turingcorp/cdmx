@@ -13,6 +13,7 @@ static NSInteger const frontbottomedge = 40;
 {
     NSInteger currentcellheight;
     NSInteger currentheadermultiplier;
+    NSInteger currentheaderaddheight;
     NSInteger currenttopedge;
 }
 
@@ -62,7 +63,8 @@ static NSInteger const frontbottomedge = 40;
 
 -(void)showdetail
 {
-    currentheadermultiplier = 2;
+    currentheadermultiplier = 1;
+    currentheaderaddheight = pollution_distminsize + pollution_distposy + pollution_distposy - navbarheightmin;
     currentcellheight = 0;
     currenttopedge = 0;
     
@@ -72,6 +74,7 @@ static NSInteger const frontbottomedge = 40;
 -(void)showlist
 {
     currentheadermultiplier = 0;
+    currentheaderaddheight = 0;
     currentcellheight = frontcellheight;
     currenttopedge = pollution_distposy + pollution_distminsize;
     
@@ -94,6 +97,7 @@ static NSInteger const frontbottomedge = 40;
     CGFloat width = col.bounds.size.width;
     CGFloat height = col.bounds.size.height;
     CGFloat useheight = height * currentheadermultiplier;
+    useheight += currentheaderaddheight;
     CGSize size = CGSizeMake(width, useheight);
     
     return size;
