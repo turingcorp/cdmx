@@ -25,6 +25,9 @@ static NSInteger const frontbottomedge = 40;
     self.controller = controller;
     [self showdetail];
     
+    self.model = [mpollutionread lastread];
+    self.currentreaditem = self.model.items[0];
+    
     UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
     [flow setFooterReferenceSize:CGSizeZero];
     [flow setMinimumInteritemSpacing:0];
@@ -119,6 +122,7 @@ static NSInteger const frontbottomedge = 40;
 -(UICollectionReusableView*)collectionView:(UICollectionView*)col viewForSupplementaryElementOfKind:(NSString*)kind atIndexPath:(NSIndexPath*)index
 {
     vpollutionfrontheader *header = [col dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:frontheaderid forIndexPath:index];
+    [header config:self.currentreaditem];
     
     return header;
 }

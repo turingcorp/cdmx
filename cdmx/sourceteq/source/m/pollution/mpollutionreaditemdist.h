@@ -4,7 +4,7 @@
 
 @interface mpollutionreaditemdist:mpollutionreaditem
 
--(instancetype)init:(mpollutiondistitem*)dist;
+-(instancetype)init:(mpollutiondistitem*)dist index:(mpollutionindex*)index;
 
 @property(weak, nonatomic)mpollutiondistitem *dist;
 

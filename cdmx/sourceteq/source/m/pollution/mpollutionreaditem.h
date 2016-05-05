@@ -4,8 +4,9 @@
 
 @interface mpollutionreaditem:NSObject
 
-+(instancetype)dist:(mpollutiondistitem*)dist;
-+(instancetype)global;
++(instancetype)dist:(mpollutiondistitem*)dist index:(mpollutionindex*)index;
++(instancetype)global:(mpollutionindex*)index;
+-(instancetype)init:(mpollutionindex*)index;
 
 @property(strong, nonatomic)mpollutionindex *index;
 @property(copy, nonatomic)NSString *name;
