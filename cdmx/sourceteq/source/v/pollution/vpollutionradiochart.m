@@ -7,16 +7,11 @@ static NSInteger const radiochartlinewidth = 8;
 
 @implementation vpollutionradiochart
 
--(instancetype)init:(mpollutionindex*)index
+-(instancetype)init
 {
     self = [super init];
-    self.basecolor = [UIColor background];
-    self.higlightcolor = index.color;
     self.size_2 = radiochartwidth_2;
     self.linewidth = radiochartlinewidth;
-    self.currentpoints = index.points;
-    self.maxpoints = [mpollutionindex maxpoints];
-    [self render];
     
     UILabel *labelpoints = [[UILabel alloc] init];
     [labelpoints setUserInteractionEnabled:NO];
@@ -24,17 +19,17 @@ static NSInteger const radiochartlinewidth = 8;
     [labelpoints setTextAlignment:NSTextAlignmentCenter];
     [labelpoints setFont:[UIFont numericsize:50]];
     [labelpoints setTextColor:[UIColor blackColor]];
-    [labelpoints setText:index.description];
     [labelpoints setBackgroundColor:[UIColor clearColor]];
+    self.labelpoints = labelpoints;
     
     UILabel *labeltitle = [[UILabel alloc] init];
     [labeltitle setUserInteractionEnabled:NO];
     [labeltitle setTranslatesAutoresizingMaskIntoConstraints:NO];
     [labeltitle setTextAlignment:NSTextAlignmentCenter];
     [labeltitle setFont:[UIFont boldsize:12]];
-    [labeltitle setTextColor:index.color];
     [labeltitle setText:NSLocalizedString(@"vpollution_radio_chart_title", nil)];
     [labeltitle setBackgroundColor:[UIColor clearColor]];
+    self.labeltitle = labeltitle;
     
     [self addSubview:labelpoints];
     [self addSubview:labeltitle];
@@ -56,6 +51,20 @@ static NSInteger const radiochartlinewidth = 8;
     CGSize size = CGSizeMake(UIViewNoIntrinsicMetric, height);
     
     return size;
+}
+
+#pragma mark public
+
+-(void)render:(mpollutionindex*)index
+{
+    self.basecolor = [UIColor background];
+    self.higlightcolor = index.color;
+    self.currentpoints = index.points;
+    self.maxpoints = [mpollutionindex maxpoints];
+    [self render];
+    
+    [self.labelpoints setText:index.description];
+    [self.labeltitle setTextColor:index.color];
 }
 
 @end

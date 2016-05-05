@@ -11,5 +11,7 @@
 @property(weak, nonatomic)UILabel *labeltitle;
 @property(weak, nonatomic)UILabel *labelindextitle;
 @property(weak, nonatomic)UILabel *labelindexinfo;
+@property(weak, nonatomic)NSLayoutConstraint *layoutinfoheight;
+@property(strong, nonatomic)NSDictionary *attrinfo;
 
 @end

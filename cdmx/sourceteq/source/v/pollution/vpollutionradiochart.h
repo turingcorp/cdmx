@@ -4,7 +4,7 @@
 
 @interface vpollutionradiochart:vradiochart
 
--(instancetype)init:(mpollutionindex*)index;
+-(void)render:(mpollutionindex*)index;
 
 @property(weak, nonatomic)UILabel *labelpoints;
 @property(weak, nonatomic)UILabel *labeltitle;
