@@ -3,7 +3,7 @@
 #import "efont.h"
 
 static NSInteger const radiochartwidth_2 = 80;
-static NSInteger const radiochartlinewidth = 10;
+static NSInteger const radiochartlinewidth = 8;
 
 @implementation vpollutionradiochart
 

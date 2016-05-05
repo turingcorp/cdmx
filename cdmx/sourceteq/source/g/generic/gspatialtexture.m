@@ -16,18 +16,21 @@
 
 -(void)drawwithuserinfo:(mpollutionnotificationdraw*)userinfo
 {
-    GLKBaseEffect *baseeffect = userinfo.baseeffect;
-    GLKVector2 *pointertexture = userinfo.pointertexture;
-    
-    baseeffect.texture2d0.enabled = YES;
-    baseeffect.texture2d0.envMode = GLKTextureEnvModeModulate;
-    baseeffect.texture2d0.name = self.texture.textureid;
-    glEnableVertexAttribArray(GLKVertexAttribTexCoord0);
-    glVertexAttribPointer(GLKVertexAttribTexCoord0, 2, GL_FLOAT, GL_FALSE, 0, pointertexture);
-    
-    [super drawwithuserinfo:userinfo];
-    
-    glDisableVertexAttribArray(GLKVertexAttribTexCoord0);
+    if(self.texture.textureid)
+    {
+        GLKBaseEffect *baseeffect = userinfo.baseeffect;
+        GLKVector2 *pointertexture = userinfo.pointertexture;
+        
+        baseeffect.texture2d0.enabled = YES;
+        baseeffect.texture2d0.envMode = GLKTextureEnvModeModulate;
+        baseeffect.texture2d0.name = self.texture.textureid;
+        glEnableVertexAttribArray(GLKVertexAttribTexCoord0);
+        glVertexAttribPointer(GLKVertexAttribTexCoord0, 2, GL_FLOAT, GL_FALSE, 0, pointertexture);
+        
+        [super drawwithuserinfo:userinfo];
+        
+        glDisableVertexAttribArray(GLKVertexAttribTexCoord0);
+    }
 }
 
 @end

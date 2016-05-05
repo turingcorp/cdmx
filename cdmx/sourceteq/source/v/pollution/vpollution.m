@@ -20,11 +20,10 @@ static NSInteger const texturecorners = 6;
 
 -(void)glkstart
 {
-    EAGLContext *context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
-    
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
                    ^
                    {
+                       EAGLContext *context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
                        [EAGLContext setCurrentContext:context];
                        [self setContext:context];
                        [self setDelegate:self];

@@ -40,6 +40,7 @@ static NSInteger const frontbottomedge = 40;
     [collection setTranslatesAutoresizingMaskIntoConstraints:NO];
     [collection setShowsVerticalScrollIndicator:NO];
     [collection setShowsHorizontalScrollIndicator:NO];
+    [collection setAlwaysBounceVertical:YES];
     [collection registerClass:[vpollutionfrontheader class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:frontheaderid];
     [collection registerClass:[vpollutionfrontcell class] forCellWithReuseIdentifier:frontcellid];
     [collection setDataSource:self];
@@ -61,12 +62,10 @@ static NSInteger const frontbottomedge = 40;
 
 -(void)showdetail
 {
-    currentheadermultiplier = 1;
+    currentheadermultiplier = 2;
     currentcellheight = 0;
     currenttopedge = 0;
     
-    [self.collection setAlwaysBounceVertical:NO];
-    [self.collection setScrollEnabled:NO];
     [self.collection.collectionViewLayout invalidateLayout];
 }
 
@@ -76,8 +75,6 @@ static NSInteger const frontbottomedge = 40;
     currentcellheight = frontcellheight;
     currenttopedge = pollution_distposy + pollution_distminsize;
     
-    [self.collection setAlwaysBounceVertical:YES];
-    [self.collection setScrollEnabled:YES];
     [self.collection.collectionViewLayout invalidateLayout];
 }
 

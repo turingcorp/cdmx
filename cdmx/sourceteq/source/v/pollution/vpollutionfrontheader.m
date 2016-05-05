@@ -13,6 +13,12 @@
     
     CGFloat bordery = pollution_distposy + pollution_distposy + pollution_distminsize;
     
+    UIView *blanket = [[UIView alloc] init];
+    [blanket setUserInteractionEnabled:NO];
+    [blanket setClipsToBounds:YES];
+    [blanket setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [blanket setBackgroundColor:[UIColor whiteColor]];
+    
     UIView *bordertop = [[UIView alloc] init];
     [bordertop setUserInteractionEnabled:NO];
     [bordertop setBackgroundColor:[UIColor background]];
@@ -27,12 +33,15 @@
     [labeltitle setTextColor:[UIColor main]];
     self.labeltitle = labeltitle;
     
+    [self addSubview:blanket];
     [self addSubview:bordertop];
     [self addSubview:labeltitle];
     
-    NSDictionary *views = @{@"bordertop":bordertop, @"labeltitle":labeltitle};
+    NSDictionary *views = @{@"bordertop":bordertop, @"labeltitle":labeltitle, @"blanket":blanket};
     NSDictionary *metrics = @{@"bordery":@(bordery)};
     
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[blanket]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(bordery)-[blanket]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-5-[bordertop]-5-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(bordery)-[bordertop(1)]-0-[labeltitle(40)]" options:0 metrics:metrics views:views]
      ];

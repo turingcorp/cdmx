@@ -4,7 +4,7 @@
 
 +(instancetype)lastread
 {
-    mpollutionindex *index = [mpollutionindex points:192];
+    mpollutionindex *index = [mpollutionindex points:170];
     mpollutionread *read = [[mpollutionread alloc] init];
     read.items = @[
                    [mpollutionreaditem global:index]
