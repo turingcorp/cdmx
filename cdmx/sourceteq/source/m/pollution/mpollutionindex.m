@@ -59,4 +59,11 @@ static NSInteger const maxpointsdisaster = 200;
     return self;
 }
 
+-(NSString*)description
+{
+    NSString *string = [NSString stringWithFormat:@"%@", @(self.points)];
+    
+    return string;
+}
+
 @end

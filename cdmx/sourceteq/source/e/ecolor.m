@@ -24,12 +24,12 @@
 
 +(instancetype)pollution_yellow
 {
-    return [UIColor colorWithRed:0.97 green:0.96 blue:0.1 alpha:1];
+    return [UIColor colorWithRed:0.92 green:0.87 blue:0 alpha:1];
 }
 
 +(instancetype)pollution_orange
 {
-    return [UIColor colorWithRed:1 green:0.7 blue:0 alpha:1];
+    return [UIColor colorWithRed:1 green:0.6 blue:0 alpha:1];
 }
 
 +(instancetype)pollution_red
@@ -39,7 +39,7 @@
 
 +(instancetype)pollution_violet
 {
-    return [UIColor colorWithRed:0.8 green:0.5 blue:0.7 alpha:1];
+    return [UIColor colorWithRed:0.9 green:0.5 blue:0.8 alpha:1];
 }
 
 +(instancetype)pollution_pink

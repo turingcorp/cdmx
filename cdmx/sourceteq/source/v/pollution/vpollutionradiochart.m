@@ -18,6 +18,35 @@ static NSInteger const radiochartlinewidth = 8;
     self.maxpoints = [mpollutionindex maxpoints];
     [self render];
     
+    UILabel *labelpoints = [[UILabel alloc] init];
+    [labelpoints setUserInteractionEnabled:NO];
+    [labelpoints setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [labelpoints setTextAlignment:NSTextAlignmentCenter];
+    [labelpoints setFont:[UIFont regularsize:40]];
+    [labelpoints setTextColor:[UIColor blackColor]];
+    [labelpoints setText:index.description];
+    [labelpoints setBackgroundColor:[UIColor clearColor]];
+    
+    UILabel *labeltitle = [[UILabel alloc] init];
+    [labeltitle setUserInteractionEnabled:NO];
+    [labeltitle setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [labeltitle setTextAlignment:NSTextAlignmentCenter];
+    [labeltitle setFont:[UIFont boldsize:12]];
+    [labeltitle setTextColor:index.color];
+    [labeltitle setText:NSLocalizedString(@"vpollution_radio_chart_title", nil)];
+    [labeltitle setBackgroundColor:[UIColor clearColor]];
+    
+    [self addSubview:labelpoints];
+    [self addSubview:labeltitle];
+    
+    NSDictionary *views = @{@"labelpoints":labelpoints, @"labeltitle":labeltitle};
+    NSDictionary *metrics = @{};
+    
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[labelpoints]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[labelpoints]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[labeltitle]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[labeltitle(20)]-56-|" options:0 metrics:metrics views:views]];
+    
     return self;
 }
 
