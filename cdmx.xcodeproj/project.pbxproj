@@ -16,12 +16,12 @@
 		DA20AD091CD80B6000754956 /* efont.m in Sources */ = {isa = PBXBuildFile; fileRef = DA20AD081CD80B6000754956 /* efont.m */; };
 		DA20AD161CD80D5400754956 /* mpollutionnotificationdraw.m in Sources */ = {isa = PBXBuildFile; fileRef = DA20AD0F1CD80D5400754956 /* mpollutionnotificationdraw.m */; };
 		DA20AD1D1CD80D8100754956 /* msettings.m in Sources */ = {isa = PBXBuildFile; fileRef = DA20AD1C1CD80D8100754956 /* msettings.m */; };
+		DA4096411CDBF8880001D696 /* generic.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA4096401CDBF8880001D696 /* generic.xcassets */; };
 		DA87082A1CBE840F000C08E1 /* amanager.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8708291CBE840F000C08E1 /* amanager.m */; };
 		DA87082D1CBE844A000C08E1 /* acall.m in Sources */ = {isa = PBXBuildFile; fileRef = DA87082C1CBE844A000C08E1 /* acall.m */; };
 		DA8708311CBE8532000C08E1 /* aparser.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8708301CBE8532000C08E1 /* aparser.m */; };
 		DA8708341CBE8717000C08E1 /* acallstations.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8708331CBE8717000C08E1 /* acallstations.m */; };
 		DA8708371CBE87F7000C08E1 /* aparserstations.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8708361CBE87F7000C08E1 /* aparserstations.m */; };
-		DA8708AA1CBF2CCD000C08E1 /* stations.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA8708A91CBF2CCD000C08E1 /* stations.xcassets */; };
 		DA8E6AF11CDA37C5009100EE /* mpollutiondistitemcoyoacan.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8E6AF01CDA37C5009100EE /* mpollutiondistitemcoyoacan.m */; };
 		DA8E6AF41CDA3A4E009100EE /* mpollutiondistitemxochimilco.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8E6AF31CDA3A4E009100EE /* mpollutiondistitemxochimilco.m */; };
 		DA8E6AF71CDA3A5E009100EE /* mpollutiondistitemalvaroobregon.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8E6AF61CDA3A5E009100EE /* mpollutiondistitemalvaroobregon.m */; };
@@ -73,9 +73,7 @@
 		DAD340051CBC83E300C87502 /* vspinner.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD33FEB1CBC83E300C87502 /* vspinner.m */; };
 		DAD3400B1CBC858A00C87502 /* brand.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAD3400A1CBC858A00C87502 /* brand.xcassets */; };
 		DAD875CF1CBD2F0400A4F91C /* cpages.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD875CE1CBD2F0400A4F91C /* cpages.m */; };
-		DAD875D81CBD33FB00A4F91C /* spinner.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAD875D71CBD33FB00A4F91C /* spinner.xcassets */; };
 		DAD875FC1CBD6CF200A4F91C /* vmenubutton.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD875FB1CBD6CF200A4F91C /* vmenubutton.m */; };
-		DAD875FE1CBD6E7800A4F91C /* general.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAD875FD1CBD6E7800A4F91C /* general.xcassets */; };
 		E99EDB84D6293E5D839C08A5 /* libPods-cdmx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E47528F2CEFA76F37D95E3 /* libPods-cdmx.a */; };
 /* End PBXBuildFile section */
 
@@ -98,6 +96,7 @@
 		DA20AD0F1CD80D5400754956 /* mpollutionnotificationdraw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mpollutionnotificationdraw.m; sourceTree = "<group>"; };
 		DA20AD1B1CD80D8100754956 /* msettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = msettings.h; sourceTree = "<group>"; };
 		DA20AD1C1CD80D8100754956 /* msettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = msettings.m; sourceTree = "<group>"; };
+		DA4096401CDBF8880001D696 /* generic.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = generic.xcassets; sourceTree = "<group>"; };
 		DA8708281CBE840F000C08E1 /* amanager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = amanager.h; sourceTree = "<group>"; };
 		DA8708291CBE840F000C08E1 /* amanager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = amanager.m; sourceTree = "<group>"; };
 		DA87082B1CBE844A000C08E1 /* acall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = acall.h; sourceTree = "<group>"; };
@@ -110,7 +109,6 @@
 		DA8708351CBE87F7000C08E1 /* aparserstations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aparserstations.h; sourceTree = "<group>"; };
 		DA8708361CBE87F7000C08E1 /* aparserstations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = aparserstations.m; sourceTree = "<group>"; };
 		DA8708631CBEBD5C000C08E1 /* genericconstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = genericconstants.h; sourceTree = "<group>"; };
-		DA8708A91CBF2CCD000C08E1 /* stations.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = stations.xcassets; sourceTree = "<group>"; };
 		DA8E6AEF1CDA37C5009100EE /* mpollutiondistitemcoyoacan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpollutiondistitemcoyoacan.h; sourceTree = "<group>"; };
 		DA8E6AF01CDA37C5009100EE /* mpollutiondistitemcoyoacan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mpollutiondistitemcoyoacan.m; sourceTree = "<group>"; };
 		DA8E6AF21CDA3A4E009100EE /* mpollutiondistitemxochimilco.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpollutiondistitemxochimilco.h; sourceTree = "<group>"; };
@@ -213,10 +211,8 @@
 		DAD3400A1CBC858A00C87502 /* brand.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = brand.xcassets; sourceTree = "<group>"; };
 		DAD875CD1CBD2F0400A4F91C /* cpages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpages.h; sourceTree = "<group>"; };
 		DAD875CE1CBD2F0400A4F91C /* cpages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cpages.m; sourceTree = "<group>"; };
-		DAD875D71CBD33FB00A4F91C /* spinner.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = spinner.xcassets; sourceTree = "<group>"; };
 		DAD875FA1CBD6CF200A4F91C /* vmenubutton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vmenubutton.h; sourceTree = "<group>"; };
 		DAD875FB1CBD6CF200A4F91C /* vmenubutton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vmenubutton.m; sourceTree = "<group>"; };
-		DAD875FD1CBD6E7800A4F91C /* general.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = general.xcassets; sourceTree = "<group>"; };
 		EFFF53693CD2BFB9D79DACFE /* Pods-cdmx.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cdmx.release.xcconfig"; path = "Pods/Target Support Files/Pods-cdmx/Pods-cdmx.release.xcconfig"; sourceTree = "<group>"; };
 		FB216D6F4F8C21A7E0923298 /* Pods-cdmx.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cdmx.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cdmx/Pods-cdmx.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -477,10 +473,8 @@
 			isa = PBXGroup;
 			children = (
 				DAD3400A1CBC858A00C87502 /* brand.xcassets */,
-				DAD875D71CBD33FB00A4F91C /* spinner.xcassets */,
-				DAD875FD1CBD6E7800A4F91C /* general.xcassets */,
-				DA8708A91CBF2CCD000C08E1 /* stations.xcassets */,
 				DA8F03431CC1C6B10007596C /* districts.xcassets */,
+				DA4096401CDBF8880001D696 /* generic.xcassets */,
 			);
 			path = imateq;
 			sourceTree = "<group>";
@@ -678,11 +672,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA8F03441CC1C6B10007596C /* districts.xcassets in Resources */,
+				DA4096411CDBF8880001D696 /* generic.xcassets in Resources */,
 				DAD33FF31CBC83E300C87502 /* Localizable.strings in Resources */,
-				DAD875FE1CBD6E7800A4F91C /* general.xcassets in Resources */,
-				DA8708AA1CBF2CCD000C08E1 /* stations.xcassets in Resources */,
 				DAD3400B1CBC858A00C87502 /* brand.xcassets in Resources */,
-				DAD875D81CBD33FB00A4F91C /* spinner.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
