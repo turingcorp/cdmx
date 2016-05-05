@@ -18,31 +18,29 @@ static NSInteger const maxpointsdisaster = 200;
 {
     mpollutionindex *index;
     
-#warning "not sending points to items"
-    
     if(points < maxpointsnodata)
     {
-        index = [[mpollutionindexnodata alloc] init];
+        index = [[mpollutionindexnodata alloc] init:points];
     }
     else if(points < maxpointsacceptable)
     {
-        index = [[mpollutionindexacceptable alloc] init];
+        index = [[mpollutionindexacceptable alloc] init:points];
     }
     else if(points < maxpointswarning)
     {
-        index = [[mpollutionindexwarning alloc] init];
+        index = [[mpollutionindexwarning alloc] init:points];
     }
     else if(points < maxpointsdanger)
     {
-        index = [[mpollutionindexdanger alloc] init];
+        index = [[mpollutionindexdanger alloc] init:points];
     }
     else if(points < maxpointsdisaster)
     {
-        index = [[mpollutionindexdisaster alloc] init];
+        index = [[mpollutionindexdisaster alloc] init:points];
     }
     else
     {
-        index = [[mpollutionindexfallout alloc] init];
+        index = [[mpollutionindexfallout alloc] init:points];
     }
     
     return index;
@@ -51,6 +49,14 @@ static NSInteger const maxpointsdisaster = 200;
 +(NSInteger)maxpoints
 {
     return maxpointsdisaster;
+}
+
+-(instancetype)init:(NSInteger)points
+{
+    self = [super init];
+    self.points = points;
+    
+    return self;
 }
 
 @end

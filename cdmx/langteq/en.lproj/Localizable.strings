@@ -16,3 +16,10 @@
 "mpollution_district_miguelhidalgo_name"="Miguel Hidalgo";
 
 "mpollution_readitem_global"="General summary";
+
+"mpollution_index_nodata"="No info available";
+"mpollution_index_acceptable"="Acceptable";
+"mpollution_index_warning"="Warning";
+"mpollution_index_danger"="Danger";
+"mpollution_index_disaster"="Harmful";
+"mpollution_index_fallout"="Injurious";
