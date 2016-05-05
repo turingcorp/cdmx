@@ -29,15 +29,35 @@
     [labeltitle setTranslatesAutoresizingMaskIntoConstraints:NO];
     [labeltitle setUserInteractionEnabled:NO];
     [labeltitle setTextAlignment:NSTextAlignmentCenter];
-    [labeltitle setFont:[UIFont boldsize:15]];
+    [labeltitle setFont:[UIFont boldsize:16]];
     [labeltitle setTextColor:[UIColor main]];
     self.labeltitle = labeltitle;
+    
+    UILabel *labelindextitle = [[UILabel alloc] init];
+    [labelindextitle setBackgroundColor:[UIColor clearColor]];
+    [labelindextitle setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [labelindextitle setUserInteractionEnabled:NO];
+    [labelindextitle setTextAlignment:NSTextAlignmentCenter];
+    [labelindextitle setFont:[UIFont boldsize:15]];
+    [labelindextitle setTextColor:[UIColor colorWithWhite:0.3 alpha:1]];
+    self.labeltitle = labelindextitle;
+    
+    UILabel *labelindexinfo = [[UILabel alloc] init];
+    [labelindexinfo setBackgroundColor:[UIColor clearColor]];
+    [labelindexinfo setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [labelindexinfo setUserInteractionEnabled:NO];
+    [labelindexinfo setFont:[UIFont regularsize:15]];
+    [labelindexinfo setTextColor:[UIColor colorWithWhite:0.5 alpha:1]];
+    [labelindexinfo setNumberOfLines:0];
+    self.labelindexinfo = labelindexinfo;
     
     [self addSubview:blanket];
     [self addSubview:bordertop];
     [self addSubview:labeltitle];
+    [self addSubview:labelindextitle];
+    [self addSubview:labelindexinfo];
     
-    NSDictionary *views = @{@"bordertop":bordertop, @"labeltitle":labeltitle, @"blanket":blanket};
+    NSDictionary *views = @{@"bordertop":bordertop, @"labeltitle":labeltitle, @"blanket":blanket, @"labelindextitle":labelindextitle, @"labelindexinfo":labelindexinfo};
     NSDictionary *metrics = @{@"bordery":@(bordery)};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[blanket]-0-|" options:0 metrics:metrics views:views]];

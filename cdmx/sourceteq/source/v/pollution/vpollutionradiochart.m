@@ -22,7 +22,7 @@ static NSInteger const radiochartlinewidth = 8;
     [labelpoints setUserInteractionEnabled:NO];
     [labelpoints setTranslatesAutoresizingMaskIntoConstraints:NO];
     [labelpoints setTextAlignment:NSTextAlignmentCenter];
-    [labelpoints setFont:[UIFont regularsize:40]];
+    [labelpoints setFont:[UIFont numericsize:50]];
     [labelpoints setTextColor:[UIColor blackColor]];
     [labelpoints setText:index.description];
     [labelpoints setBackgroundColor:[UIColor clearColor]];
@@ -45,7 +45,7 @@ static NSInteger const radiochartlinewidth = 8;
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[labelpoints]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[labelpoints]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[labeltitle]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[labeltitle(20)]-56-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[labeltitle(20)]-53-|" options:0 metrics:metrics views:views]];
     
     return self;
 }

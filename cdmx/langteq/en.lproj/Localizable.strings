@@ -17,11 +17,18 @@
 
 "mpollution_readitem_global"="General summary";
 
-"mpollution_index_nodata"="No info available";
+"mpollution_index_nodata"="Error reading info";
 "mpollution_index_acceptable"="Acceptable";
 "mpollution_index_warning"="Warning";
 "mpollution_index_danger"="Danger";
 "mpollution_index_disaster"="Harmful";
 "mpollution_index_fallout"="Injurious";
+
+"mpollution_index_nodata_info"="The monitoring station is off or in maintenance, current conditions are unknown, please try again later";
+"mpollution_index_acceptable_info"="Calidad del aire satisfactoria, puedes realizar actividades al exterior sin riesgos a tu salud";
+"mpollution_index_warning_info"="Calidad del aire con presencia de contaminantes, si eres de salud delicada es posible que resultes afectado, intenta permanecer en interiores";
+"mpollution_index_danger_info"="Atmosfera contaminada, procura permanecer en interiores, niños y adultos mayores correran riesgos a su salud si salen de casa";
+"mpollution_index_disaster_info"="Altos niveles de contaminación en la atmosfera, es importante no salir de casa y tener especial cuidado con niños y adultos mayores";
+"mpollution_index_fallout_info"="Atmosfera dañina, estamos en condiciones de emergencia y tu salud esta en peligro, no salgas de casa";
 
 "vpollution_radio_chart_title"="IMECA";
