@@ -13,7 +13,7 @@
 
 +(instancetype)global:(mpollutionindex*)index
 {
-    mpollutionreaditemglobal *item = [[mpollutionreaditemglobal alloc] init];
+    mpollutionreaditemglobal *item = [[mpollutionreaditemglobal alloc] init:index];
     
     return item;
 }

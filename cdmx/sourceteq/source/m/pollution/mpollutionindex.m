@@ -18,6 +18,8 @@ static NSInteger const maxpointsdisaster = 200;
 {
     mpollutionindex *index;
     
+#warning "not sending points to items"
+    
     if(points < maxpointsnodata)
     {
         index = [[mpollutionindexnodata alloc] init];
