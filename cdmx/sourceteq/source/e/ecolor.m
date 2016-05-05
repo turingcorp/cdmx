@@ -4,7 +4,7 @@
 
 +(instancetype)main
 {
-    return [UIColor colorWithRed:0.28235 green:0.49019 blue:0.76078 alpha:1];
+    return [UIColor colorWithRed:0.352941 green:0.541176 blue:0.784313 alpha:1];
 }
 
 +(instancetype)second
