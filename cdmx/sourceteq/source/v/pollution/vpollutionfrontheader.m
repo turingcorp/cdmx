@@ -2,6 +2,7 @@
 #import "genericconstants.h"
 #import "ecolor.h"
 #import "efont.h"
+#import "vpollutionfrontheaderbutton.h"
 
 static NSInteger const infomarginx = 10;
 
@@ -61,26 +62,30 @@ static NSInteger const infomarginx = 10;
     vpollutionradiochart *radiochart = [[vpollutionradiochart alloc] init];
     self.radiochart = radiochart;
     
+    vpollutionfrontheaderbutton *button = [[vpollutionfrontheaderbutton alloc] init];
+    
     [self addSubview:blanket];
     [self addSubview:bordertop];
     [self addSubview:labeltitle];
     [self addSubview:labelindextitle];
     [self addSubview:labelindexinfo];
     [self addSubview:radiochart];
+    [self addSubview:button];
     
-    NSDictionary *views = @{@"bordertop":bordertop, @"labeltitle":labeltitle, @"blanket":blanket, @"labelindextitle":labelindextitle, @"labelindexinfo":labelindexinfo, @"radiochart":radiochart};
+    NSDictionary *views = @{@"bordertop":bordertop, @"labeltitle":labeltitle, @"blanket":blanket, @"labelindextitle":labelindextitle, @"labelindexinfo":labelindexinfo, @"radiochart":radiochart, @"button":button};
     NSDictionary *metrics = @{@"bordery":@(bordery), @"infomarginx":@(infomarginx)};
     
     self.layoutinfoheight = [NSLayoutConstraint constraintWithItem:labelindexinfo attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:0];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[blanket]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(bordery)-[blanket]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-5-[bordertop]-5-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(bordery)-[bordertop(1)]-0-[labeltitle(45)]-20-[radiochart]-30-[labelindextitle(22)]-(-4)-[labelindexinfo]" options:0 metrics:metrics views:views]
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(bordery)-[bordertop(1)]-0-[labeltitle(45)]-20-[radiochart]-30-[labelindextitle(22)]-(-4)-[labelindexinfo]-30-[button(60)]" options:0 metrics:metrics views:views]
      ];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-2-[labeltitle]-2-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-2-[labelindextitle]-2-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(infomarginx)-[labelindexinfo]-(infomarginx)-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[radiochart]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[button]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraint:self.layoutinfoheight];
     
     return self;
