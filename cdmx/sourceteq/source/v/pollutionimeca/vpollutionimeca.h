@@ -3,4 +3,7 @@
 
 @interface vpollutionimeca:vview
 
+@property(weak, nonatomic)UIScrollView *scroll;
+@property(weak, nonatomic)UILabel *label;
+
 @end
