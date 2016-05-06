@@ -25,7 +25,7 @@
 "mpollution_index_fallout"="Injurious";
 
 "mpollution_index_nodata_info"="The monitoring station is off or in maintenance, current conditions are unknown, please try again later";
-"mpollution_index_acceptable_info"="Calidad del aire satisfactoria, puedes realizar actividades en el exterior sin riesgos a tu salud.\n\nRevisa el indice de radiación Ultra Violeta antes de decidir ejercitarte ó alguna actividad prolongada al aire libre.";
+"mpollution_index_acceptable_info"="Calidad del aire satisfactoria y sin riesgos a tu salud.\n\nRevisa el indice de radiación Ultra Violeta antes realizar alguna actividad prolongada al aire libre.";
 "mpollution_index_warning_info"="Calidad del aire con presencia de contaminantes, si eres de salud delicada es posible que resultes afectado, intenta permanecer en interiores.\n\nLo mejor seria que niños y adultos mayores permanescan poco al aire libre.";
 "mpollution_index_danger_info"="Atmosfera contaminada, procura permanecer en interiores y limita lo más posible salir.\nEvita fumar o permanecer cerca de alguien que este fumando.\nConsume bastantes liquidos para mantenerte hidratado.\n\nNiños y adultos mayores correran riesgos a su salud si salen de casa.";
 "mpollution_index_disaster_info"="Altos niveles de contaminación en la atmosfera, suficientes como para activarse la Fase 1 de Contingencia Ambiental.\n\nEs importante no salir de casa, no fumar y consumir bastantes liquidos.\n\nEvita tambien estar cerca de parrillas, fogones, chimeneas, ó cualquier otro tipo de combustión.\n\nDebes tener especial cuidado con niños y adultos mayores ya que su salud correra muchos riesgos.";
