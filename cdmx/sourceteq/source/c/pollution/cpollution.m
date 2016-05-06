@@ -1,16 +1,10 @@
 #import "cpollution.h"
-#import "vpollution.h"
 #import "enotification.h"
 #import "cpollutionimeca.h"
 #import "cmain.h"
+#import "vpollution.h"
 
 static NSInteger const framespersecond = 60;
-
-@interface cpollution ()
-
-@property(strong, nonatomic)vpollution *view;
-
-@end
 
 @implementation cpollution
 

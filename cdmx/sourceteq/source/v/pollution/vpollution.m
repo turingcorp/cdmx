@@ -1,6 +1,5 @@
 #import "vpollution.h"
 #import "enotification.h"
-#import "vpollutionfront.h"
 
 static NSInteger const millisecondswait = 300;
 static NSInteger const texturecorners = 6;
@@ -50,6 +49,7 @@ static NSInteger const texturecorners = 6;
     if(!self.modeldist)
     {
         vpollutionfront *front = [[vpollutionfront alloc] init:self.controller];
+        self.front = front;
         [self addSubview:front];
         
         NSDictionary *views = @{@"front":front};

@@ -3,6 +3,7 @@
 #import "ecolor.h"
 #import "efont.h"
 #import "vpollutionfrontheaderbutton.h"
+#import "vpollution.h"
 
 static NSInteger const infomarginx = 10;
 
@@ -57,6 +58,7 @@ static NSInteger const infomarginx = 10;
     [button addTarget:self action:@selector(actionbutton:) forControlEvents:UIControlEventTouchUpInside];
     
     vpollutionfrontheadercurrent *current = [[vpollutionfrontheadercurrent alloc] init];
+    [current addTarget:self action:@selector(actioncurrent:) forControlEvents:UIControlEventTouchUpInside];
     self.current = current;
     
     [self addSubview:blanket];
@@ -93,6 +95,11 @@ static NSInteger const infomarginx = 10;
 -(void)actionbutton:(UIButton*)button
 {
     [self.controller imeca];
+}
+
+-(void)actioncurrent:(UIButton*)button
+{
+    [self.controller.view.front showlist];
 }
 
 #pragma mark public

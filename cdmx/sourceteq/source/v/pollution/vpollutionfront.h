@@ -1,6 +1,7 @@
 #import <UIKit/UIKit.h>
-#import "cpollution.h"
 #import "mpollutionread.h"
+
+@class cpollution;
 
 @interface vpollutionfront:UIView<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
