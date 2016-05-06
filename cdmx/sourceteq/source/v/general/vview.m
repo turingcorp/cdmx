@@ -2,7 +2,7 @@
 
 @implementation vview
 
--(instancetype)init:(UIViewController*)controller
+-(instancetype)init:(ccontroller*)controller
 {
     self = [super init];
     [self setBackgroundColor:[UIColor whiteColor]];

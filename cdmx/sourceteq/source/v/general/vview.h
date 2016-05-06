@@ -3,9 +3,9 @@
 
 @interface vview:UIView
 
--(instancetype)init:(UIViewController*)controller;
+-(instancetype)init:(ccontroller*)controller;
 
 @property(weak, nonatomic)vviewbar *bar;
-@property(weak, nonatomic)UIViewController *controller;
+@property(weak, nonatomic)ccontroller *controller;
 
 @end
