@@ -12,6 +12,10 @@
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
     self.controller = controller;
     
+    UIButton *buttonleft = [[UIButton alloc] init];
+    
+    [self addSubview:buttonleft];
+    
     return self;
 }
 

@@ -5,5 +5,6 @@
 -(instancetype)init:(UIViewController*)controller;
 
 @property(weak, nonatomic)UIViewController *controller;
+@property(weak, nonatomic)UIButton *buttonleft;
 
 @end
