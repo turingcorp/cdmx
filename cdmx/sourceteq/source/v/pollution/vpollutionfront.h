@@ -13,5 +13,7 @@
 @property(weak, nonatomic)cpollution *controller;
 @property(weak, nonatomic)mpollutionreaditem *currentreaditem;
 @property(weak, nonatomic)UICollectionView *collection;
+@property(strong, nonatomic)UICollectionViewFlowLayout *flowdetail;
+@property(strong, nonatomic)UICollectionViewFlowLayout *flowlist;
 
 @end

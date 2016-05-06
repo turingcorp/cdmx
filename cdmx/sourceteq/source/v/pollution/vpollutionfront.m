@@ -11,10 +11,11 @@ static NSInteger const frontbottomedge = 40;
 
 @implementation vpollutionfront
 {
+    CGRect rect1;
     NSInteger currentcellheight;
     NSInteger currentheadermultiplier;
     NSInteger currentheaderaddheight;
-    NSInteger currenttopedge;
+    NSInteger currentitems;
 }
 
 -(instancetype)init:(cpollution*)controller
@@ -26,16 +27,27 @@ static NSInteger const frontbottomedge = 40;
     self.controller = controller;
     [self showdetail];
     
+    rect1 = CGRectMake(0, 0, 1, 1);
     self.model = [mpollutionread lastread];
     self.currentreaditem = self.model.items[0];
     
-    UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
-    [flow setFooterReferenceSize:CGSizeZero];
-    [flow setMinimumInteritemSpacing:0];
-    [flow setMinimumLineSpacing:frontinteritem];
-    [flow setScrollDirection:UICollectionViewScrollDirectionVertical];
+    UICollectionViewFlowLayout *flowdetail = [[UICollectionViewFlowLayout alloc] init];
+    [flowdetail setFooterReferenceSize:CGSizeZero];
+    [flowdetail setMinimumInteritemSpacing:0];
+    [flowdetail setMinimumLineSpacing:frontinteritem];
+    [flowdetail setScrollDirection:UICollectionViewScrollDirectionVertical];
+    [flowdetail setSectionInset:UIEdgeInsetsMake(0, 0, -30 * frontinteritem, 0)];
+    self.flowdetail = flowdetail;
     
-    UICollectionView *collection = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flow];
+    UICollectionViewFlowLayout *flowlist = [[UICollectionViewFlowLayout alloc] init];
+    [flowlist setFooterReferenceSize:CGSizeZero];
+    [flowlist setMinimumInteritemSpacing:0];
+    [flowlist setMinimumLineSpacing:frontinteritem];
+    [flowlist setScrollDirection:UICollectionViewScrollDirectionVertical];
+    [flowlist setSectionInset:UIEdgeInsetsMake(pollution_distposy + pollution_distminsize + pollution_distposy, 0, frontbottomedge, 0)];
+    self.flowlist = flowlist;
+    
+    UICollectionView *collection = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowdetail];
     [collection setBackgroundColor:[UIColor clearColor]];
     [collection setClipsToBounds:YES];
     [collection setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -59,6 +71,13 @@ static NSInteger const frontbottomedge = 40;
     return self;
 }
 
+-(void)dealloc
+{
+    self.flowlist = nil;
+    self.flowdetail = nil;
+    [self.collection removeFromSuperview];
+}
+
 #pragma mark public
 
 -(void)showdetail
@@ -66,9 +85,14 @@ static NSInteger const frontbottomedge = 40;
     currentheadermultiplier = 1;
     currentheaderaddheight = pollution_distminsize + pollution_distposy + pollution_distposy - navbarheightmin;
     currentcellheight = 0;
-    currenttopedge = 0;
     
-    [self.collection.collectionViewLayout invalidateLayout];
+    __weak typeof(self) welf = self;
+    
+    [self.collection setCollectionViewLayout:self.flowdetail animated:YES completion:
+     ^(BOOL done)
+     {
+         [welf.collection scrollRectToVisible:rect1 animated:YES];
+     }];
 }
 
 -(void)showlist
@@ -76,9 +100,14 @@ static NSInteger const frontbottomedge = 40;
     currentheadermultiplier = 0;
     currentheaderaddheight = 0;
     currentcellheight = frontcellheight;
-    currenttopedge = pollution_distposy + pollution_distminsize;
     
-    [self.collection.collectionViewLayout invalidateLayout];
+    __weak typeof(self) welf = self;
+    
+    [self.collection setCollectionViewLayout:self.flowlist animated:YES completion:
+     ^(BOOL done)
+     {
+         [welf.collection scrollRectToVisible:rect1 animated:YES];
+     }];
 }
 
 #pragma mark -
@@ -101,13 +130,6 @@ static NSInteger const frontbottomedge = 40;
     CGSize size = CGSizeMake(width, useheight);
     
     return size;
-}
-
--(UIEdgeInsets)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout insetForSectionAtIndex:(NSInteger)section
-{
-    UIEdgeInsets insets = UIEdgeInsetsMake(currenttopedge, 0, 0, frontbottomedge);
-    
-    return insets;
 }
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView*)col
@@ -133,6 +155,11 @@ static NSInteger const frontbottomedge = 40;
     vpollutionfrontcell *cell = [col dequeueReusableCellWithReuseIdentifier:frontcellid forIndexPath:index];
     
     return cell;
+}
+
+-(void)collectionView:(UICollectionView*)col didSelectItemAtIndexPath:(NSIndexPath*)index
+{
+    [self showdetail];
 }
 
 @end

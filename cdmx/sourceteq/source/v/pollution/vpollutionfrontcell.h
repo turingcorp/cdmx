@@ -1,5 +1,6 @@
 #import <UIKit/UIKit.h>
+#import "vcollectioncell.h"
 
-@interface vpollutionfrontcell:UICollectionViewCell
+@interface vpollutionfrontcell:vcollectioncell
 
 @end
