@@ -55,7 +55,7 @@ static NSInteger const infomarginx = 10;
     [labelindexinfo setBackgroundColor:[UIColor clearColor]];
     [labelindexinfo setTranslatesAutoresizingMaskIntoConstraints:NO];
     [labelindexinfo setUserInteractionEnabled:NO];
-    [labelindexinfo setTextColor:[UIColor colorWithWhite:0.5 alpha:1]];
+    [labelindexinfo setTextColor:[UIColor colorWithWhite:0.4 alpha:1]];
     [labelindexinfo setNumberOfLines:0];
     self.labelindexinfo = labelindexinfo;
     
@@ -80,7 +80,7 @@ static NSInteger const infomarginx = 10;
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[blanket]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(bordery)-[blanket]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-5-[bordertop]-5-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(bordery)-[bordertop(1)]-0-[labeltitle(45)]-20-[radiochart]-30-[labelindextitle(22)]-(-4)-[labelindexinfo]-30-[button(60)]" options:0 metrics:metrics views:views]
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(bordery)-[bordertop(1)]-0-[labeltitle(45)]-20-[radiochart]-30-[labelindextitle(22)]-0-[labelindexinfo]-0-[button(70)]" options:0 metrics:metrics views:views]
      ];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-2-[labeltitle]-2-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-2-[labelindextitle]-2-|" options:0 metrics:metrics views:views]];
@@ -107,7 +107,7 @@ static NSInteger const infomarginx = 10;
     self.controller = controller;
     
     NSAttributedString *attrstr = [[NSAttributedString alloc] initWithString:model.index.info attributes:self.attrinfo];
-    CGFloat infoheight = ceilf([attrstr boundingRectWithSize:CGSizeMake(infowidth, 200) options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading context:nil].size.height);
+    CGFloat infoheight = ceilf([attrstr boundingRectWithSize:CGSizeMake(infowidth, 300) options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading context:nil].size.height);
     
     self.layoutinfoheight.constant = infoheight;
     [self.radiochart render:model.index];

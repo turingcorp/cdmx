@@ -61,12 +61,12 @@
 -(void)buttonback
 {
     UIButton *buttonleft = [[UIButton alloc] init];
-    [buttonleft setClipsToBounds:YES];
     [buttonleft setTranslatesAutoresizingMaskIntoConstraints:NO];
     [buttonleft setImage:[[UIImage imageNamed:@"generic_back"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];
     [buttonleft setImage:[[UIImage imageNamed:@"generic_back"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateHighlighted];
     [buttonleft.imageView setContentMode:UIViewContentModeScaleAspectFit];
     [buttonleft.imageView setClipsToBounds:YES];
+    [buttonleft.imageView setTintColor:[UIColor colorWithWhite:1 alpha:0.2]];
     [buttonleft addTarget:self action:@selector(actionback:) forControlEvents:UIControlEventTouchUpInside];
     [buttonleft setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 10)];
     self.buttonleft = buttonleft;
@@ -83,14 +83,14 @@
 -(void)buttonmenu
 {
     UIButton *buttonleft = [[UIButton alloc] init];
-    [buttonleft setClipsToBounds:YES];
     [buttonleft setTranslatesAutoresizingMaskIntoConstraints:NO];
     [buttonleft setImage:[[UIImage imageNamed:@"generic_menu"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];
     [buttonleft setImage:[[UIImage imageNamed:@"generic_menu"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateHighlighted];
-    [buttonleft.imageView setContentMode:UIViewContentModeCenter];
+    [buttonleft.imageView setContentMode:UIViewContentModeScaleAspectFit];
     [buttonleft.imageView setClipsToBounds:YES];
+    [buttonleft.imageView setTintColor:[UIColor colorWithWhite:1 alpha:0.2]];
     [buttonleft addTarget:self action:@selector(actionmenu:) forControlEvents:UIControlEventTouchUpInside];
-    [buttonleft setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 15)];
+    [buttonleft setImageEdgeInsets:UIEdgeInsetsMake(10, 0, 10, 27)];
     self.buttonleft = buttonleft;
     
     [self addSubview:buttonleft];

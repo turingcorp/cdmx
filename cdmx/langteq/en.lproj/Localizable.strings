@@ -25,11 +25,11 @@
 "mpollution_index_fallout"="Injurious";
 
 "mpollution_index_nodata_info"="The monitoring station is off or in maintenance, current conditions are unknown, please try again later";
-"mpollution_index_acceptable_info"="Calidad del aire satisfactoria, puedes realizar actividades al exterior sin riesgos a tu salud";
-"mpollution_index_warning_info"="Calidad del aire con presencia de contaminantes, si eres de salud delicada es posible que resultes afectado, intenta permanecer en interiores";
-"mpollution_index_danger_info"="Atmosfera contaminada, procura permanecer en interiores, niños y adultos mayores correran riesgos a su salud si salen de casa";
-"mpollution_index_disaster_info"="Altos niveles de contaminación en la atmosfera, es importante no salir de casa y tener especial cuidado con niños y adultos mayores";
-"mpollution_index_fallout_info"="Atmosfera dañina, estamos en condiciones de emergencia y tu salud esta en peligro, no salgas de casa";
+"mpollution_index_acceptable_info"="Calidad del aire satisfactoria, puedes realizar actividades en el exterior sin riesgos a tu salud.\n\nRevisa el indice de radiación Ultra Violeta antes de decidir ejercitarte ó alguna actividad prolongada al aire libre.";
+"mpollution_index_warning_info"="Calidad del aire con presencia de contaminantes, si eres de salud delicada es posible que resultes afectado, intenta permanecer en interiores.\n\nLo mejor seria que niños y adultos mayores permanescan poco al aire libre.";
+"mpollution_index_danger_info"="Atmosfera contaminada, procura permanecer en interiores y limita lo más posible salir.\nEvita fumar o permanecer cerca de alguien que este fumando.\nConsume bastantes liquidos para mantenerte hidratado.\n\nNiños y adultos mayores correran riesgos a su salud si salen de casa.";
+"mpollution_index_disaster_info"="Altos niveles de contaminación en la atmosfera, suficientes como para activarse la Fase 1 de Contingencia Ambiental.\n\nEs importante no salir de casa, no fumar y consumir bastantes liquidos.\n\nEvita tambien estar cerca de parrillas, fogones, chimeneas, ó cualquier otro tipo de combustión.\n\nDebes tener especial cuidado con niños y adultos mayores ya que su salud correra muchos riesgos.";
+"mpollution_index_fallout_info"="Atmosfera dañina, condiciones para activarse la Fase 2 de Contingencia Ambiental y es entrar en estado de emergencia.\n\nTu salud corre peligro, pero especialmente la de niños y adultos mayores.\n\nNo salgas de casa, no fumes, y mantente alejado de cualquier tipo de combustion como lo son las parrillas, fogones y chimeneas.\nProcura consumir bastantes liquidos.";
 
 "vpollution_radio_chart_title"="IMECA";
 
