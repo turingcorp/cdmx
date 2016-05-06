@@ -33,15 +33,6 @@ static NSInteger const infomarginx = 10;
     [bordertop setBackgroundColor:[UIColor background]];
     [bordertop setTranslatesAutoresizingMaskIntoConstraints:NO];
     
-    UILabel *labeltitle = [[UILabel alloc] init];
-    [labeltitle setBackgroundColor:[UIColor clearColor]];
-    [labeltitle setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [labeltitle setUserInteractionEnabled:NO];
-    [labeltitle setTextAlignment:NSTextAlignmentCenter];
-    [labeltitle setFont:[UIFont boldsize:16]];
-    [labeltitle setTextColor:[UIColor main]];
-    self.labeltitle = labeltitle;
-    
     UILabel *labelindextitle = [[UILabel alloc] init];
     [labelindextitle setBackgroundColor:[UIColor clearColor]];
     [labelindextitle setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -65,30 +56,33 @@ static NSInteger const infomarginx = 10;
     vpollutionfrontheaderbutton *button = [[vpollutionfrontheaderbutton alloc] init];
     [button addTarget:self action:@selector(actionbutton:) forControlEvents:UIControlEventTouchUpInside];
     
+    vpollutionfrontheadercurrent *current = [[vpollutionfrontheadercurrent alloc] init];
+    self.current = current;
+    
     [self addSubview:blanket];
     [self addSubview:bordertop];
-    [self addSubview:labeltitle];
     [self addSubview:labelindextitle];
     [self addSubview:labelindexinfo];
     [self addSubview:radiochart];
     [self addSubview:button];
+    [self addSubview:current];
     
-    NSDictionary *views = @{@"bordertop":bordertop, @"labeltitle":labeltitle, @"blanket":blanket, @"labelindextitle":labelindextitle, @"labelindexinfo":labelindexinfo, @"radiochart":radiochart, @"button":button};
+    NSDictionary *views = @{@"bordertop":bordertop, @"blanket":blanket, @"labelindextitle":labelindextitle, @"labelindexinfo":labelindexinfo, @"radiochart":radiochart, @"button":button, @"current":current};
     NSDictionary *metrics = @{@"bordery":@(bordery), @"infomarginx":@(infomarginx)};
     
     self.layoutinfoheight = [NSLayoutConstraint constraintWithItem:labelindexinfo attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:0];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[blanket]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(bordery)-[blanket]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-5-[bordertop]-5-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(bordery)-[bordertop(1)]-0-[labeltitle(45)]-20-[radiochart]-30-[labelindextitle(22)]-0-[labelindexinfo]" options:0 metrics:metrics views:views]
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(bordery)-[bordertop(1)]-0-[current]-20-[radiochart]-30-[labelindextitle(22)]-0-[labelindexinfo]" options:0 metrics:metrics views:views]
      ];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[button(50)]-0-|" options:0 metrics:metrics views:views]
      ];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-2-[labeltitle]-2-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-2-[labelindextitle]-2-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(infomarginx)-[labelindexinfo]-(infomarginx)-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[radiochart]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[button]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[current]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraint:self.layoutinfoheight];
     
     return self;
@@ -113,9 +107,9 @@ static NSInteger const infomarginx = 10;
     
     self.layoutinfoheight.constant = infoheight;
     [self.radiochart render:model.index];
-    [self.labeltitle setText:model.name];
     [self.labelindextitle setText:model.index.name];
     [self.labelindexinfo setAttributedText:attrstr];
+    [self.current config:model];
 }
 
 @end

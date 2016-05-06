@@ -2,6 +2,7 @@
 #import "vpollutionradiochart.h"
 #import "mpollutionreaditem.h"
 #import "cpollution.h"
+#import "vpollutionfrontheadercurrent.h"
 
 @interface vpollutionfrontheader:UICollectionReusableView
 
@@ -10,7 +11,7 @@
 @property(weak, nonatomic)vpollutionradiochart *radiochart;
 @property(weak, nonatomic)mpollutionreaditem *model;
 @property(weak, nonatomic)cpollution *controller;
-@property(weak, nonatomic)UILabel *labeltitle;
+@property(weak, nonatomic)vpollutionfrontheadercurrent *current;
 @property(weak, nonatomic)UILabel *labelindextitle;
 @property(weak, nonatomic)UILabel *labelindexinfo;
 @property(weak, nonatomic)NSLayoutConstraint *layoutinfoheight;
