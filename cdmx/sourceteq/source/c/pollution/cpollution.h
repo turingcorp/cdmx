@@ -3,4 +3,6 @@
 
 @interface cpollution:GLKViewController<GLKViewControllerDelegate>
 
+-(void)imeca;
+
 @end

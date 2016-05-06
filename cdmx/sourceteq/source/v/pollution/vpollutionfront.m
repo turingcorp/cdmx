@@ -123,7 +123,7 @@ static NSInteger const frontbottomedge = 40;
 -(UICollectionReusableView*)collectionView:(UICollectionView*)col viewForSupplementaryElementOfKind:(NSString*)kind atIndexPath:(NSIndexPath*)index
 {
     vpollutionfrontheader *header = [col dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:frontheaderid forIndexPath:index];
-    [header config:self.currentreaditem];
+    [header config:self.currentreaditem controller:self.controller];
     
     return header;
 }

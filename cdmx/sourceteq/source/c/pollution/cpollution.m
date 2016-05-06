@@ -1,6 +1,8 @@
 #import "cpollution.h"
 #import "vpollution.h"
 #import "enotification.h"
+#import "cpollutionimeca.h"
+#import "cmain.h"
 
 static NSInteger const framespersecond = 60;
 
@@ -46,6 +48,14 @@ static NSInteger const framespersecond = 60;
 -(void)loadView
 {
     self.view = [[vpollution alloc] init:self];
+}
+
+#pragma mark public
+
+-(void)imeca
+{
+    cpollutionimeca *controller = [[cpollutionimeca alloc] init];
+    [[cmain singleton] pushViewController:controller animated:YES];
 }
 
 #pragma mark -

@@ -63,6 +63,7 @@ static NSInteger const infomarginx = 10;
     self.radiochart = radiochart;
     
     vpollutionfrontheaderbutton *button = [[vpollutionfrontheaderbutton alloc] init];
+    [button addTarget:self action:@selector(actionbutton:) forControlEvents:UIControlEventTouchUpInside];
     
     [self addSubview:blanket];
     [self addSubview:bordertop];
@@ -91,11 +92,19 @@ static NSInteger const infomarginx = 10;
     return self;
 }
 
+#pragma mark actions
+
+-(void)actionbutton:(UIButton*)button
+{
+    [self.controller imeca];
+}
+
 #pragma mark public
 
--(void)config:(mpollutionreaditem*)model
+-(void)config:(mpollutionreaditem*)model controller:(cpollution*)controller
 {
     self.model = model;
+    self.controller = controller;
     
     NSAttributedString *attrstr = [[NSAttributedString alloc] initWithString:model.index.info attributes:self.attrinfo];
     CGFloat infoheight = ceilf([attrstr boundingRectWithSize:CGSizeMake(infowidth, 200) options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading context:nil].size.height);

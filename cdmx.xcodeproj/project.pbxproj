@@ -21,6 +21,8 @@
 		DA40964A1CDBFC550001D696 /* ccontroller.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4096491CDBFC550001D696 /* ccontroller.m */; };
 		DA40964D1CDC15FA0001D696 /* vview.m in Sources */ = {isa = PBXBuildFile; fileRef = DA40964C1CDC15FA0001D696 /* vview.m */; };
 		DA4096501CDC170F0001D696 /* vviewbar.m in Sources */ = {isa = PBXBuildFile; fileRef = DA40964F1CDC170F0001D696 /* vviewbar.m */; };
+		DA4096531CDC1F560001D696 /* cpollutionimeca.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4096521CDC1F560001D696 /* cpollutionimeca.m */; };
+		DA4096571CDC1FEE0001D696 /* vpollutionimeca.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4096561CDC1FEE0001D696 /* vpollutionimeca.m */; };
 		DA87082A1CBE840F000C08E1 /* amanager.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8708291CBE840F000C08E1 /* amanager.m */; };
 		DA87082D1CBE844A000C08E1 /* acall.m in Sources */ = {isa = PBXBuildFile; fileRef = DA87082C1CBE844A000C08E1 /* acall.m */; };
 		DA8708311CBE8532000C08E1 /* aparser.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8708301CBE8532000C08E1 /* aparser.m */; };
@@ -109,6 +111,10 @@
 		DA40964C1CDC15FA0001D696 /* vview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vview.m; sourceTree = "<group>"; };
 		DA40964E1CDC170F0001D696 /* vviewbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vviewbar.h; sourceTree = "<group>"; };
 		DA40964F1CDC170F0001D696 /* vviewbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vviewbar.m; sourceTree = "<group>"; };
+		DA4096511CDC1F560001D696 /* cpollutionimeca.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpollutionimeca.h; sourceTree = "<group>"; };
+		DA4096521CDC1F560001D696 /* cpollutionimeca.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cpollutionimeca.m; sourceTree = "<group>"; };
+		DA4096551CDC1FEE0001D696 /* vpollutionimeca.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vpollutionimeca.h; sourceTree = "<group>"; };
+		DA4096561CDC1FEE0001D696 /* vpollutionimeca.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vpollutionimeca.m; sourceTree = "<group>"; };
 		DA8708281CBE840F000C08E1 /* amanager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = amanager.h; sourceTree = "<group>"; };
 		DA8708291CBE840F000C08E1 /* amanager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = amanager.m; sourceTree = "<group>"; };
 		DA87082B1CBE844A000C08E1 /* acall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = acall.h; sourceTree = "<group>"; };
@@ -265,6 +271,8 @@
 			children = (
 				DA20ACE51CD7FBC700754956 /* cpollution.h */,
 				DA20ACE61CD7FBC700754956 /* cpollution.m */,
+				DA4096511CDC1F560001D696 /* cpollutionimeca.h */,
+				DA4096521CDC1F560001D696 /* cpollutionimeca.m */,
 			);
 			path = pollution;
 			sourceTree = "<group>";
@@ -375,6 +383,15 @@
 				DA20AD1C1CD80D8100754956 /* msettings.m */,
 			);
 			path = settings;
+			sourceTree = "<group>";
+		};
+		DA4096541CDC1FE50001D696 /* pollutionimeca */ = {
+			isa = PBXGroup;
+			children = (
+				DA4096551CDC1FEE0001D696 /* vpollutionimeca.h */,
+				DA4096561CDC1FEE0001D696 /* vpollutionimeca.m */,
+			);
+			path = pollutionimeca;
 			sourceTree = "<group>";
 		};
 		DA8708251CBE8245000C08E1 /* a */ = {
@@ -589,6 +606,7 @@
 		DAD33FE41CBC83E300C87502 /* v */ = {
 			isa = PBXGroup;
 			children = (
+				DA4096541CDC1FE50001D696 /* pollutionimeca */,
 				DA20ACE81CD7FC8600754956 /* pollution */,
 				DAD33FE51CBC83E300C87502 /* general */,
 			);
@@ -756,6 +774,7 @@
 				DA20AD1D1CD80D8100754956 /* msettings.m in Sources */,
 				DA87082D1CBE844A000C08E1 /* acall.m in Sources */,
 				DAD33FF61CBC83E300C87502 /* main.m in Sources */,
+				DA4096571CDC1FEE0001D696 /* vpollutionimeca.m in Sources */,
 				DA8E6AFA1CDA3A6B009100EE /* mpollutiondistitemazcapozalco.m in Sources */,
 				DAD33FFC1CBC83E300C87502 /* updater.m in Sources */,
 				DA8E6B821CDA76BC009100EE /* vpollutionfrontcell.m in Sources */,
@@ -814,6 +833,7 @@
 				DA20AD161CD80D5400754956 /* mpollutionnotificationdraw.m in Sources */,
 				DA4096501CDC170F0001D696 /* vviewbar.m in Sources */,
 				DA8E6AF71CDA3A5E009100EE /* mpollutiondistitemalvaroobregon.m in Sources */,
+				DA4096531CDC1F560001D696 /* cpollutionimeca.m in Sources */,
 				DA8E6B941CDA9B33009100EE /* mpollutionindexwarning.m in Sources */,
 				DAD875FC1CBD6CF200A4F91C /* vmenubutton.m in Sources */,
 				DA40964D1CDC15FA0001D696 /* vview.m in Sources */,
