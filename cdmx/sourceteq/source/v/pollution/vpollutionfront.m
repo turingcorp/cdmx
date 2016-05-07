@@ -5,7 +5,7 @@
 
 static NSString* const frontheaderid = @"frontheader";
 static NSString* const frontcellid = @"frontcell";
-static NSInteger const frontcellwidth = 250;
+static NSInteger const frontcellwidth = 200;
 
 @implementation vpollutionfront
 {
