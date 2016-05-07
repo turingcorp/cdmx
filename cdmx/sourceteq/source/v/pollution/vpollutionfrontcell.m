@@ -2,7 +2,7 @@
 #import "efont.h"
 #import "ecolor.h"
 
-static NSInteger const cellapparentheight = 160;
+static NSInteger const cellapparentheight = 80;
 
 @implementation vpollutionfrontcell
 
@@ -17,26 +17,30 @@ static NSInteger const cellapparentheight = 160;
     [label setBackgroundColor:[UIColor clearColor]];
     [label setFont:[UIFont boldsize:14]];
     [label setTextAlignment:NSTextAlignmentCenter];
-    [label setTextColor:[UIColor main]];
+    [label setTextColor:[UIColor second]];
     [label setText:@"Magdalena Contreras"];
+    self.label = label;
     
-    UIView *topbar = [[UIView alloc] init];
-    [topbar setBackgroundColor:[UIColor second]];
-    [topbar setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [topbar setClipsToBounds:YES];
-    [topbar setUserInteractionEnabled:NO];
-    self.topbar = topbar;
+    UIButton *buttonup = [[UIButton alloc] init];
+    [buttonup setClipsToBounds:YES];
+    [buttonup setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [buttonup setImage:[[UIImage imageNamed:@"generic_up"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];
+    [buttonup setImage:[[UIImage imageNamed:@"generic_up"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateHighlighted];
+    [buttonup.imageView setContentMode:UIViewContentModeCenter];
+    [buttonup.imageView setTintColor:[[UIColor main] colorWithAlphaComponent:0.2]];
+    [buttonup.imageView setClipsToBounds:YES];
+    self.buttonup = buttonup;
     
     [self addSubview:label];
-    [self addSubview:topbar];
+    [self addSubview:buttonup];
     
-    NSDictionary *views = @{@"label":label, @"topbar":topbar};
+    NSDictionary *views = @{@"label":label, @"up":buttonup};
     NSDictionary *metrics = @{@"apparentheight":@(cellapparentheight)};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-2-[label]-2-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[topbar]-0-[label(30)]" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-35-[topbar]-35-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[topbar(3)]-(apparentheight)-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[up]-(-20)-[label(30)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-35-[up]-35-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[up(60)]-(apparentheight)-|" options:0 metrics:metrics views:views]];
     
     return self;
 }
@@ -53,25 +57,36 @@ static NSInteger const cellapparentheight = 160;
     [self hover];
 }
 
+#pragma mark actions
+
+-(void)actionup:(UIButton*)button
+{
+    [self.front showdetail];
+}
+
 #pragma mark functionality
 
 -(void)hover
 {
     if(self.isSelected || self.isHighlighted)
     {
-        [self.topbar setHidden:NO];
+        [self.buttonup setHidden:NO];
+        [self setAlpha:1];
     }
     else
     {
-        [self.topbar setHidden:YES];
+        [self.buttonup setHidden:YES];
+        [self setAlpha:0.4];
     }
 }
 
 #pragma mark public
 
--(void)config
+-(void)config:(mpollutionreaditem*)model front:(vpollutionfront*)front
 {
-    
+    self.front = front;
+    [self.label setText:model.name];
+    [self hover];
 }
 
 @end

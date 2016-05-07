@@ -74,6 +74,15 @@ static NSInteger const frontcellwidth = 200;
     [self.collection removeFromSuperview];
 }
 
+#pragma mark functionality
+
+-(mpollutionreaditem*)modelforindex:(NSIndexPath*)index
+{
+    mpollutionreaditem *model = self.model.items[index.item];
+    
+    return model;
+}
+
 #pragma mark public
 
 -(void)showdetail
@@ -162,7 +171,9 @@ static NSInteger const frontcellwidth = 200;
 
 -(NSInteger)collectionView:(UICollectionView*)col numberOfItemsInSection:(NSInteger)section
 {
-    return 30;
+    NSInteger count = self.model.items.count;
+    
+    return count;
 }
 
 -(UICollectionReusableView*)collectionView:(UICollectionView*)col viewForSupplementaryElementOfKind:(NSString*)kind atIndexPath:(NSIndexPath*)index
@@ -175,14 +186,16 @@ static NSInteger const frontcellwidth = 200;
 
 -(UICollectionViewCell*)collectionView:(UICollectionView*)col cellForItemAtIndexPath:(NSIndexPath*)index
 {
+    mpollutionreaditem *model = [self modelforindex:index];
+    
     vpollutionfrontcell *cell = [col dequeueReusableCellWithReuseIdentifier:frontcellid forIndexPath:index];
+    [cell config:model front:self];
     
     return cell;
 }
 
 -(void)collectionView:(UICollectionView*)col didSelectItemAtIndexPath:(NSIndexPath*)index
 {
-    [self showdetail];
 }
 
 @end
