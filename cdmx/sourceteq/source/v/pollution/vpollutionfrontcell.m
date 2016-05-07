@@ -1,7 +1,8 @@
 #import "vpollutionfrontcell.h"
 #import "efont.h"
 #import "ecolor.h"
-#import "genericconstants.h"
+
+static NSInteger const cellapparentheight = 160;
 
 @implementation vpollutionfrontcell
 
@@ -9,8 +10,6 @@
 {
     self = [super initWithFrame:frame];
     [self setBackgroundColor:[UIColor clearColor]];
-    
-    CGFloat bordery = pollution_distposy + pollution_distposy + pollution_distminsize;
     
     UILabel *label = [[UILabel alloc] init];
     [label setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -21,19 +20,52 @@
     [label setTextColor:[UIColor main]];
     [label setText:@"Magdalena Contreras"];
     
-    [self addSubview:label];
+    UIView *topbar = [[UIView alloc] init];
+    [topbar setBackgroundColor:[UIColor second]];
+    [topbar setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [topbar setClipsToBounds:YES];
+    [topbar setUserInteractionEnabled:NO];
+    self.topbar = topbar;
     
-    NSDictionary *views = @{@"label":label};
-    NSDictionary *metrics = @{};
+    [self addSubview:label];
+    [self addSubview:topbar];
+    
+    NSDictionary *views = @{@"label":label, @"topbar":topbar};
+    NSDictionary *metrics = @{@"apparentheight":@(cellapparentheight)};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-2-[label]-2-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[label]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[topbar]-0-[label(30)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-35-[topbar]-35-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[topbar(3)]-(apparentheight)-|" options:0 metrics:metrics views:views]];
     
     return self;
 }
 
 -(void)setSelected:(BOOL)selected
+{
+    [super setSelected:selected];
+    [self hover];
+}
 
+-(void)setHighlighted:(BOOL)highlighted
+{
+    [super setHighlighted:highlighted];
+    [self hover];
+}
+
+#pragma mark functionality
+
+-(void)hover
+{
+    if(self.isSelected || self.isHighlighted)
+    {
+        [self.topbar setHidden:NO];
+    }
+    else
+    {
+        [self.topbar setHidden:YES];
+    }
+}
 
 #pragma mark public
 
