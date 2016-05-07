@@ -5,14 +5,12 @@
 
 static NSString* const frontheaderid = @"frontheader";
 static NSString* const frontcellid = @"frontcell";
-static NSInteger const frontcellheight = 50;
-static NSInteger const frontinteritem = -1;
-static NSInteger const frontbottomedge = 40;
+static NSInteger const frontcellwidth = 250;
 
 @implementation vpollutionfront
 {
     CGRect rect1;
-    NSInteger currentcellheight;
+    NSInteger currentcellmultiplier;
     NSInteger currentheadermultiplier;
     NSInteger currentheaderaddheight;
     NSInteger currentitems;
@@ -34,17 +32,15 @@ static NSInteger const frontbottomedge = 40;
     UICollectionViewFlowLayout *flowdetail = [[UICollectionViewFlowLayout alloc] init];
     [flowdetail setFooterReferenceSize:CGSizeZero];
     [flowdetail setMinimumInteritemSpacing:0];
-    [flowdetail setMinimumLineSpacing:frontinteritem];
+    [flowdetail setMinimumLineSpacing:0];
     [flowdetail setScrollDirection:UICollectionViewScrollDirectionVertical];
-    [flowdetail setSectionInset:UIEdgeInsetsMake(0, 0, -30 * frontinteritem, 0)];
     self.flowdetail = flowdetail;
     
     UICollectionViewFlowLayout *flowlist = [[UICollectionViewFlowLayout alloc] init];
     [flowlist setFooterReferenceSize:CGSizeZero];
     [flowlist setMinimumInteritemSpacing:0];
-    [flowlist setMinimumLineSpacing:frontinteritem];
-    [flowlist setScrollDirection:UICollectionViewScrollDirectionVertical];
-    [flowlist setSectionInset:UIEdgeInsetsMake(pollution_distposy + pollution_distminsize + pollution_distposy, 0, frontbottomedge, 0)];
+    [flowlist setMinimumLineSpacing:0];
+    [flowlist setScrollDirection:UICollectionViewScrollDirectionHorizontal];
     self.flowlist = flowlist;
     
     UICollectionView *collection = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowdetail];
@@ -84,7 +80,10 @@ static NSInteger const frontbottomedge = 40;
 {
     currentheadermultiplier = 1;
     currentheaderaddheight = pollution_distminsize + pollution_distposy + pollution_distposy - navbarheightmin;
-    currentcellheight = 0;
+    currentcellmultiplier = 0;
+    
+    [self.collection setAlwaysBounceHorizontal:NO];
+    [self.collection setAlwaysBounceVertical:YES];
     
     __weak typeof(self) welf = self;
     
@@ -99,7 +98,10 @@ static NSInteger const frontbottomedge = 40;
 {
     currentheadermultiplier = 0;
     currentheaderaddheight = 0;
-    currentcellheight = frontcellheight;
+    currentcellmultiplier = 1;
+    
+    [self.collection setAlwaysBounceHorizontal:YES];
+    [self.collection setAlwaysBounceVertical:NO];
     
     __weak typeof(self) welf = self;
     
@@ -113,10 +115,30 @@ static NSInteger const frontbottomedge = 40;
 #pragma mark -
 #pragma mark col del
 
+-(UIEdgeInsets)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout insetForSectionAtIndex:(NSInteger)section
+{
+    UIEdgeInsets insets;
+    
+    if(layout == self.flowlist)
+    {
+        CGFloat width = col.bounds.size.width;
+        CGFloat remain = width - frontcellwidth;
+        CGFloat margin = remain / 2.0;
+        insets = UIEdgeInsetsMake(0, margin, 0, margin);
+    }
+    else
+    {
+        insets = UIEdgeInsetsZero;
+    }
+    
+    return insets;
+}
+
 -(CGSize)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout sizeForItemAtIndexPath:(NSIndexPath*)index
 {
-    CGFloat width = col.bounds.size.width;
-    CGSize size = CGSizeMake(width, currentcellheight);
+    CGFloat height = col.bounds.size.height;
+    CGFloat useheight = height * currentcellmultiplier;
+    CGSize size = CGSizeMake(frontcellwidth, useheight);
     
     return size;
 }
@@ -125,9 +147,10 @@ static NSInteger const frontbottomedge = 40;
 {
     CGFloat width = col.bounds.size.width;
     CGFloat height = col.bounds.size.height;
+    CGFloat usewidth = width * currentheadermultiplier;
     CGFloat useheight = height * currentheadermultiplier;
     useheight += currentheaderaddheight;
-    CGSize size = CGSizeMake(width, useheight);
+    CGSize size = CGSizeMake(usewidth, useheight);
     
     return size;
 }
