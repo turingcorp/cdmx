@@ -16,5 +16,5 @@
     "ios": "7.0"
   },
   "source_files": "zql/Classes/**/**/*",
-  "libraries": "sqlite3"
+  "libraries": "libsqlite3"
 }

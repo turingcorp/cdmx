@@ -24,12 +24,15 @@ static NSString* const zqlerrorpermission =             @"Access permission deni
     return error;
 }
 
-+(instancetype)error:(NSInteger)errornumber
++(instancetype)sqlresponse:(NSInteger)responsenumber
 {
     NSString *errordescr;
     
-    switch(errornumber)
+    switch(responsenumber)
     {
+        case SQLITE_OK:
+            break;
+            
         case SQLITE_ERROR:
             
             errordescr = zqlerrorerror;
@@ -55,9 +58,26 @@ static NSString* const zqlerrorpermission =             @"Access permission deni
             break;
     }
     
-    zqlresulterror *error = [[zqlresulterror alloc] init:errordescr];
+    zqlresult *result;
     
-    return error;
+    if(errordescr)
+    {
+        result = [[zqlresulterror alloc] init:errordescr];
+    }
+    else
+    {
+        result = [[zqlresultsuccess alloc] init];
+    }
+    
+    return result;
+}
+
+-(instancetype)init
+{
+    self = [super init];
+    self.success = NO;
+    
+    return self;
 }
 
 @end

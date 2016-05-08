@@ -3,6 +3,8 @@
 @interface zqlresult:NSObject
 
 +(instancetype)errornodb;
-+(instancetype)error:(NSInteger)errornumber;
++(instancetype)sqlresponse:(NSInteger)responsenumber;
+
+@property(assign, nonatomic)BOOL success;
 
 @end

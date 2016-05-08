@@ -1,9 +1,11 @@
 #import "zql.h"
 #import "zqlconnection.h"
+#import "zqlqueryprocessor.h"
 
 @interface zql ()
 
 @property(strong, nonatomic)zqlconnection *connection;
+@property(strong, nonatomic)zqlqueryprocessor *queryprocessor;
 @property(assign, nonatomic)sqlite3 *sqlite;
 
 @end
@@ -16,17 +18,33 @@
     
     if([zqlconfig shared].dbname)
     {
-        zql *manager = [[zql alloc] init];
-        NSInteger connectionresult = [manager connect];
+        zql *manager = [[zql alloc] init:query];
+        result = [manager connect];
         
-        if(connectionresult == SQLITE_OK)
+        if(result.success)
         {
+            result = [manager prepare];
             
+            if(result.success)
+            {
+                result = [manager step];
+                
+                if(result.success)
+                {
+                    result = [manager finalizestatement];
+                    
+                    if(result.success)
+                    {
+                        [manager lastinsert:result];
+                    }
+                }
+            }
+            
+            [manager disconnect];
         }
         else
         {
             [manager disconnect];
-            result = [zqlresult error:connectionresult];
         }
     }
     else
@@ -37,25 +55,50 @@
     return result;
 }
 
--(instancetype)init
+-(instancetype)init:(zqlquery*)query
 {
     self = [super init];
     
     self.connection = [[zqlconnection alloc] init];
+    self.queryprocessor = [[zqlqueryprocessor alloc] init:query];
     
     return self;
 }
 
 #pragma mark functionality
 
--(NSInteger)connect
+-(zqlresult*)connect
 {
-    return [self.connection connect:&_sqlite];
+    NSInteger resultnumber = [self.connection connect:&_sqlite];
+    
+    return [zqlresult sqlresponse:resultnumber];
 }
 
--(NSInteger)disconnect
+-(zqlresult*)disconnect
 {
-    return [self.connection close:&_sqlite];
+    NSInteger resultnumber = [self.connection close:&_sqlite];
+    
+    return [zqlresult sqlresponse:resultnumber];
+}
+
+-(zqlresult*)prepare
+{
+    return [self.queryprocessor prepare:self.sqlite];
+}
+
+-(zqlresult*)step
+{
+    return [self.queryprocessor step];
+}
+
+-(zqlresult*)finalizestatement
+{
+    return [self.queryprocessor finalizestatement];
+}
+
+-(void)lastinsert:(zqlresult*)result
+{
+    [self.queryprocessor lastinsert:self.sqlite result:result];
 }
 
 @end

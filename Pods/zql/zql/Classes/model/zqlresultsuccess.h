@@ -3,4 +3,6 @@
 
 @interface zqlresultsuccess:zqlresult
 
+@property(nonatomic)NSInteger lastinsertid;
+
 @end
