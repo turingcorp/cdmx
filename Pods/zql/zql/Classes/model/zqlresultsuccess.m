@@ -2,10 +2,11 @@
 
 @implementation zqlresultsuccess
 
--(instancetype)init
+-(instancetype)init:(BOOL)moresteps
 {
     self = [super init];
     self.success = YES;
+    self.moresteps = moresteps;
     self.lastinsertid = 0;
     
     return self;

@@ -3,6 +3,9 @@
 
 @interface zqlresultsuccess:zqlresult
 
-@property(nonatomic)NSInteger lastinsertid;
+-(instancetype)init:(BOOL)moresteps;
+
+@property(assign, nonatomic)NSInteger lastinsertid;
+@property(assign, nonatomic)BOOL moresteps;
 
 @end

@@ -49,6 +49,11 @@ static NSString* const zqlquerycreateparamspostfix =    @");";
             }
         }
         
+        if(count)
+        {
+            [string appendString:zqlquerycreateparamsseparator];
+        }
+        
         [string appendString:[primarykey querycreate]];
         [string appendString:zqlquerycreateparamspostfix];
         
