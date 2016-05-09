@@ -9,6 +9,7 @@
     mpollutionitemdistrict *model = [[mpollutionitemdistrict alloc] init];
     model.name = modeldistrict.name;
     model.index = [mpollutionindex points:modeldistrict.pollution.integerValue];
+    model.modeldistrict = modeldistrict;
     
     return model;
 }
