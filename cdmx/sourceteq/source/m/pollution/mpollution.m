@@ -1,5 +1,7 @@
 #import "mpollution.h"
 #import "mdbselect.h"
+#import "mpollutionitemdistrict.h"
+#import "mpollutionitemdaily.h"
 
 @interface mpollution ()
 
@@ -61,7 +63,31 @@
 
 -(void)highlight:(mpollutionitem*)model
 {
+    BOOL highlightall = YES;
     
+    if([model isKindOfClass:[mpollutionitemdistrict class]])
+    {
+        highlightall = NO;
+    }
+    
+    for(mpollutionitem *item in self.items)
+    {
+        if(highlightall)
+        {
+            [item highlighted];
+        }
+        else
+        {
+            if(item == model)
+            {
+                [item highlighted];
+            }
+            else
+            {
+                [item nothighlighted];
+            }
+        }
+    }
 }
 
 @end

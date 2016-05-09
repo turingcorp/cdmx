@@ -33,7 +33,7 @@
 
 -(void)nothighlighted
 {
-    self.spatial.color = [UIColor background];
+    self.spatial.color = [[UIColor background] asvector];
 }
 
 @end
