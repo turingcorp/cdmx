@@ -14,6 +14,8 @@ static NSInteger const frontcellwidth = 170;
     NSInteger currentheadermultiplier;
     NSInteger currentheaderaddheight;
     NSInteger currentitems;
+    NSInteger selected;
+    BOOL trackscroll;
 }
 
 -(instancetype)init:(cpollution*)controller
@@ -25,11 +27,12 @@ static NSInteger const frontcellwidth = 170;
     self.controller = controller;
     [self showdetail];
     
+    trackscroll = NO;
+    selected = -1;
     rect1 = CGRectMake(0, 0, 1, 1);
-    self.currentitem = controller.model.items[0];
     
     UICollectionViewFlowLayout *flowdetail = [[UICollectionViewFlowLayout alloc] init];
-    [flowdetail setFooterReferenceSize:CGSizeZero];
+    [flowdetail setHeaderReferenceSize:CGSizeZero];
     [flowdetail setMinimumInteritemSpacing:0];
     [flowdetail setMinimumLineSpacing:0];
     [flowdetail setScrollDirection:UICollectionViewScrollDirectionVertical];
@@ -49,7 +52,7 @@ static NSInteger const frontcellwidth = 170;
     [collection setShowsVerticalScrollIndicator:NO];
     [collection setShowsHorizontalScrollIndicator:NO];
     [collection setAlwaysBounceVertical:YES];
-    [collection registerClass:[vpollutionfrontheader class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:frontheaderid];
+    [collection registerClass:[vpollutionfrontheader class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:frontheaderid];
     [collection registerClass:[vpollutionfrontcell class] forCellWithReuseIdentifier:frontcellid];
     [collection setDataSource:self];
     [collection setDelegate:self];
@@ -62,6 +65,14 @@ static NSInteger const frontcellwidth = 170;
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
+    
+    [self postselect:0];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_MSEC * 100), dispatch_get_main_queue(),
+                   ^
+                   {
+                       [collection selectItemAtIndexPath:[NSIndexPath indexPathForItem:selected inSection:0] animated:NO scrollPosition:UICollectionViewScrollPositionCenteredHorizontally];
+                   });
     
     return self;
 }
@@ -82,6 +93,15 @@ static NSInteger const frontcellwidth = 170;
     return model;
 }
 
+-(void)postselect:(NSInteger)index
+{
+    if(index != selected)
+    {
+        selected = index;
+        self.currentitem = self.controller.model.items[selected];
+    }
+}
+
 #pragma mark public
 
 -(void)showdetail
@@ -92,14 +112,7 @@ static NSInteger const frontcellwidth = 170;
     
     [self.collection setAlwaysBounceHorizontal:NO];
     [self.collection setAlwaysBounceVertical:YES];
-    
-    __weak typeof(self) welf = self;
-    
-    [self.collection setCollectionViewLayout:self.flowdetail animated:YES completion:
-     ^(BOOL done)
-     {
-         [welf.collection scrollRectToVisible:rect1 animated:YES];
-     }];
+    [self.collection setCollectionViewLayout:self.flowdetail animated:YES];
 }
 
 -(void)showlist
@@ -110,18 +123,40 @@ static NSInteger const frontcellwidth = 170;
     
     [self.collection setAlwaysBounceHorizontal:YES];
     [self.collection setAlwaysBounceVertical:NO];
-    
-    __weak typeof(self) welf = self;
-    
-    [self.collection setCollectionViewLayout:self.flowlist animated:YES completion:
-     ^(BOOL done)
-     {
-         [welf.collection scrollRectToVisible:rect1 animated:YES];
-     }];
+    [self.collection setCollectionViewLayout:self.flowlist animated:YES];
 }
 
 #pragma mark -
 #pragma mark col del
+
+-(void)scrollViewWillBeginDragging:(UIScrollView*)drag
+{
+    trackscroll = YES;
+}
+
+-(void)scrollViewDidEndDecelerating:(UIScrollView*)scroll
+{
+    trackscroll = NO;
+}
+
+-(void)scrollViewDidScroll:(UIScrollView*)scroll
+{
+    if(trackscroll)
+    {
+        CGFloat leftoffset = scroll.contentOffset.x;
+        CGFloat width = scroll.bounds.size.width;
+        CGFloat width_2 = width / 2.0;
+        
+        CGPoint point = CGPointMake(leftoffset + width_2, 0);
+        NSIndexPath *index = [self.collection indexPathForItemAtPoint:point];
+        
+        if(index)
+        {
+            [self postselect:index.item];
+            [self.collection selectItemAtIndexPath:index animated:NO scrollPosition:UICollectionViewScrollPositionNone];
+        }
+    }
+}
 
 -(UIEdgeInsets)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout insetForSectionAtIndex:(NSInteger)section
 {
@@ -151,7 +186,7 @@ static NSInteger const frontcellwidth = 170;
     return size;
 }
 
--(CGSize)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout referenceSizeForHeaderInSection:(NSInteger)section
+-(CGSize)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout referenceSizeForFooterInSection:(NSInteger)section
 {
     CGFloat width = col.bounds.size.width;
     CGFloat height = col.bounds.size.height;
@@ -195,6 +230,9 @@ static NSInteger const frontcellwidth = 170;
 
 -(void)collectionView:(UICollectionView*)col didSelectItemAtIndexPath:(NSIndexPath*)index
 {
+    [col scrollToItemAtIndexPath:index atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
+    [self postselect:index.item];
+    trackscroll = NO;
 }
 
 @end
