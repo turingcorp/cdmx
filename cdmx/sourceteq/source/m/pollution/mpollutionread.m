@@ -10,7 +10,7 @@
 
 +(instancetype)load
 {
-    
+    return nil;
 }
 
 +(instancetype)lastread
