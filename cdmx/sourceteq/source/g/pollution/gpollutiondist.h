@@ -4,6 +4,8 @@
 @interface gpollutiondist:gspatialtexture
 
 -(instancetype)init:(NSString*)texturename;
+-(void)originalsize;
+-(void)extrasize;
 
 @property(assign, nonatomic)CGFloat initialx;
 

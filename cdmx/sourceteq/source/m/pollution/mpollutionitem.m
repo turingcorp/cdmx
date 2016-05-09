@@ -30,6 +30,11 @@
     self.spatial.color = [self.index.color asvector];
 }
 
+-(void)regular
+{
+    self.spatial.color = [self.index.color asvector];
+}
+
 -(void)nothighlighted
 {
     self.spatial.color = [[UIColor background] asvector];

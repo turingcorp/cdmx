@@ -13,14 +13,30 @@ static BOOL const srgb = NO;
     CGFloat screenwidth = [UIScreen mainScreen].bounds.size.width;
     CGFloat remainwidth = screenwidth - pollution_distminsize;
     self.initialx = remainwidth / 2.0;
+    
+    return self;
+}
+
+#pragma mark public
+
+-(void)originalsize
+{
     self.x = self.initialx;
     self.y = pollution_distposy;
     self.width = pollution_distminsize;
     self.height = pollution_distminsize;
     
     [self render];
+}
+
+-(void)extrasize
+{
+    self.x = self.initialx - pollution_distminsize;
+    self.y = pollution_distposy - pollution_distminsize;
+    self.width = pollution_distminsize + pollution_distminsize;
+    self.height = pollution_distminsize + pollution_distminsize;
     
-    return self;
+    [self render];
 }
 
 #pragma mark -
