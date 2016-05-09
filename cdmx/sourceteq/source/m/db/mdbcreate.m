@@ -52,7 +52,7 @@
     }
     
     zqlparam *paramdate = [zqlparam type:[zqltype integer] name:dbpollutiondaily_date value:nil];
-    zqlparam *paramcreated = [zqlparam type:[zqltype integer] name:dbpollutiondaily_created value:nil];
+    zqlparam *paramcreated = [zqlparam type:[zqltype integer] name:dbcreated value:nil];
     zqlparam *parammaxpollution = [zqlparam type:[zqltype integer] name:dbpollutiondaily_maxpollution value:nil];
     
     params = @[
