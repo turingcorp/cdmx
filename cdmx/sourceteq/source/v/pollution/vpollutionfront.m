@@ -68,12 +68,6 @@ static NSInteger const frontcellwidth = 170;
     
     [self postselect:0];
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_MSEC * 100), dispatch_get_main_queue(),
-                   ^
-                   {
-                       [collection selectItemAtIndexPath:[NSIndexPath indexPathForItem:selected inSection:0] animated:NO scrollPosition:UICollectionViewScrollPositionCenteredHorizontally];
-                   });
-    
     return self;
 }
 
@@ -124,7 +118,14 @@ static NSInteger const frontcellwidth = 170;
     
     [self.collection setAlwaysBounceHorizontal:YES];
     [self.collection setAlwaysBounceVertical:NO];
-    [self.collection setCollectionViewLayout:self.flowlist animated:YES];
+    
+    __weak typeof(self) welf = self;
+    
+    [self.collection setCollectionViewLayout:self.flowlist animated:YES completion:
+     ^(BOOL done)
+     {
+         [welf.collection selectItemAtIndexPath:[NSIndexPath indexPathForItem:selected inSection:0] animated:YES scrollPosition:UICollectionViewScrollPositionCenteredHorizontally];
+     }];
 }
 
 #pragma mark -

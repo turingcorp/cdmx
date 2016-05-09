@@ -41,10 +41,10 @@ static BOOL const srgb = NO;
 {
     CGFloat screenwidth = [UIScreen mainScreen].bounds.size.width;
     CGFloat remainwidth = screenwidth - pollution_distminsize;
-    self.x = (remainwidth / 2.0) - 10;
-    self.y = (pollution_distposy) - 10;
-    self.width = pollution_distminsize + 20;
-    self.height = pollution_distminsize + 20;
+    self.x = (remainwidth / 2.0) - 40;
+    self.y = (pollution_distposy) - 40;
+    self.width = pollution_distminsize + 80;
+    self.height = pollution_distminsize + 80;
     
     [self render];
 }
