@@ -8,7 +8,7 @@
 {
     [[zqlconfig shared] createdb:databasename];
     
-    [mdbcreate createdistricts];
+    [mdbcreate create];
 }
 
 +(void)loaddatabase
@@ -18,20 +18,23 @@
 
 #pragma mark private
 
-+(void)createdistricts
++(void)create
 {
     NSArray *rawdistricts = [NSArray arrayWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"districts" withExtension:@"plist"]];
-    NSMutableArray<zqlparam*> *params = [NSMutableArray array];
     NSMutableArray<zqlquery*> *queries = [NSMutableArray array];
     
     zqlparam *paramserverid = [zqlparam type:[zqltype integer] name:dbserverindex value:nil];
     zqlparam *paramname = [zqlparam type:[zqltype text] name:dbdistricts_name value:nil];
+    zqlparam *parampollution = [zqlparam type:[zqltype integer] name:dbdistricts_pollution value:@0];
     
-    [params addObject:paramserverid];
-    [params addObject:paramname];
+    NSArray<zqlparam*> *params = @[
+                                   paramserverid,
+                                   paramname,
+                                   parampollution
+                                   ];
     
-    zqlquery *querytable = [zqlquery createtable:dbdistricts params:params];
-    [queries addObject:querytable];
+    zqlquery *querytabledistricts = [zqlquery createtable:dbdistricts params:params];
+    [queries addObject:querytabledistricts];
     
     NSUInteger countdistricts = rawdistricts.count;
     
@@ -48,9 +51,20 @@
         [queries addObject:newquery];
     }
     
-    zqlresult *result = [zql query:queries];
+    zqlparam *paramdate = [zqlparam type:[zqltype integer] name:dbpollutiondaily_date value:nil];
+    zqlparam *paramcreated = [zqlparam type:[zqltype integer] name:dbpollutiondaily_created value:nil];
+    zqlparam *parammaxpollution = [zqlparam type:[zqltype integer] name:dbpollutiondaily_maxpollution value:nil];
     
-    NSLog(@"result: %@", result);
+    params = @[
+               paramdate,
+               paramcreated,
+               parammaxpollution
+               ];
+    
+    zqlquery *querytablepollutiondaily = [zqlquery createtable:dbdistricts params:params];
+    [queries addObject:querytablepollutiondaily];
+    
+    [zql query:queries];
 }
 
 @end
