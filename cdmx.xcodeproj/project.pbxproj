@@ -30,21 +30,6 @@
 		DA8708311CBE8532000C08E1 /* aparser.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8708301CBE8532000C08E1 /* aparser.m */; };
 		DA8708341CBE8717000C08E1 /* acallstations.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8708331CBE8717000C08E1 /* acallstations.m */; };
 		DA8708371CBE87F7000C08E1 /* aparserstations.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8708361CBE87F7000C08E1 /* aparserstations.m */; };
-		DA8E6AF11CDA37C5009100EE /* mpollutiondistitemcoyoacan.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8E6AF01CDA37C5009100EE /* mpollutiondistitemcoyoacan.m */; };
-		DA8E6AF41CDA3A4E009100EE /* mpollutiondistitemxochimilco.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8E6AF31CDA3A4E009100EE /* mpollutiondistitemxochimilco.m */; };
-		DA8E6AF71CDA3A5E009100EE /* mpollutiondistitemalvaroobregon.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8E6AF61CDA3A5E009100EE /* mpollutiondistitemalvaroobregon.m */; };
-		DA8E6AFA1CDA3A6B009100EE /* mpollutiondistitemazcapozalco.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8E6AF91CDA3A6B009100EE /* mpollutiondistitemazcapozalco.m */; };
-		DA8E6AFD1CDA3AA8009100EE /* mpollutiondistitemiztapalapa.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8E6AFC1CDA3AA8009100EE /* mpollutiondistitemiztapalapa.m */; };
-		DA8E6B001CDA3AB1009100EE /* mpollutiondistitemiztacalco.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8E6AFF1CDA3AB1009100EE /* mpollutiondistitemiztacalco.m */; };
-		DA8E6B031CDA3ABC009100EE /* mpollutiondistitemtlalpan.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8E6B021CDA3ABC009100EE /* mpollutiondistitemtlalpan.m */; };
-		DA8E6B061CDA3AC7009100EE /* mpollutiondistitemtlahuac.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8E6B051CDA3AC7009100EE /* mpollutiondistitemtlahuac.m */; };
-		DA8E6B091CDA3ADC009100EE /* mpollutiondistitemmilpaalta.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8E6B081CDA3ADC009100EE /* mpollutiondistitemmilpaalta.m */; };
-		DA8E6B0C1CDA3AE9009100EE /* mpollutiondistitemmagdalenacontreras.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8E6B0B1CDA3AE9009100EE /* mpollutiondistitemmagdalenacontreras.m */; };
-		DA8E6B0F1CDA3B5F009100EE /* mpollutiondistitemgustavoamadero.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8E6B0E1CDA3B5F009100EE /* mpollutiondistitemgustavoamadero.m */; };
-		DA8E6B121CDA3BF1009100EE /* mpollutiondistitemcuajimalpa.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8E6B111CDA3BF1009100EE /* mpollutiondistitemcuajimalpa.m */; };
-		DA8E6B151CDA3C01009100EE /* mpollutiondistitemcuauhtemoc.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8E6B141CDA3C01009100EE /* mpollutiondistitemcuauhtemoc.m */; };
-		DA8E6B181CDA3C15009100EE /* mpollutiondistitemvenustianocarranza.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8E6B171CDA3C15009100EE /* mpollutiondistitemvenustianocarranza.m */; };
-		DA8E6B1B1CDA3C26009100EE /* mpollutiondistitemmiguelhidalgo.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8E6B1A1CDA3C26009100EE /* mpollutiondistitemmiguelhidalgo.m */; };
 		DA8E6B1E1CDA50FA009100EE /* vpollutionfront.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8E6B1D1CDA50FA009100EE /* vpollutionfront.m */; };
 		DA8E6B821CDA76BC009100EE /* vpollutionfrontcell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8E6B811CDA76BC009100EE /* vpollutionfrontcell.m */; };
 		DA8E6B851CDA76D3009100EE /* vpollutionfrontheader.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8E6B841CDA76D3009100EE /* vpollutionfrontheader.m */; };
@@ -58,9 +43,6 @@
 		DA8E6BA01CDA9FB1009100EE /* mpollutionindexfallout.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8E6B9F1CDA9FB1009100EE /* mpollutionindexfallout.m */; };
 		DA8E6BA31CDA9FC4009100EE /* mpollutionindexnodata.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8E6BA21CDA9FC4009100EE /* mpollutionindexnodata.m */; };
 		DA8F03441CC1C6B10007596C /* districts.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA8F03431CC1C6B10007596C /* districts.xcassets */; };
-		DAA0C6681CD96D4A00880D3E /* mpollutiondist.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA0C6671CD96D4A00880D3E /* mpollutiondist.m */; };
-		DAA0C66B1CD96D5700880D3E /* mpollutiondistitem.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA0C66A1CD96D5700880D3E /* mpollutiondistitem.m */; };
-		DAA0C66E1CD96D6800880D3E /* mpollutiondistitembenitojuarez.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA0C66D1CD96D6800880D3E /* mpollutiondistitembenitojuarez.m */; };
 		DAA0C67A1CD978BD00880D3E /* gtexture.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA0C6791CD978BD00880D3E /* gtexture.m */; };
 		DAA0C67D1CD978C600880D3E /* gspatial.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA0C67C1CD978C600880D3E /* gspatial.m */; };
 		DAA0C6801CD978CF00880D3E /* gspatialtexture.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA0C67F1CD978CF00880D3E /* gspatialtexture.m */; };
@@ -138,36 +120,6 @@
 		DA8708351CBE87F7000C08E1 /* aparserstations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aparserstations.h; sourceTree = "<group>"; };
 		DA8708361CBE87F7000C08E1 /* aparserstations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = aparserstations.m; sourceTree = "<group>"; };
 		DA8708631CBEBD5C000C08E1 /* genericconstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = genericconstants.h; sourceTree = "<group>"; };
-		DA8E6AEF1CDA37C5009100EE /* mpollutiondistitemcoyoacan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpollutiondistitemcoyoacan.h; sourceTree = "<group>"; };
-		DA8E6AF01CDA37C5009100EE /* mpollutiondistitemcoyoacan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mpollutiondistitemcoyoacan.m; sourceTree = "<group>"; };
-		DA8E6AF21CDA3A4E009100EE /* mpollutiondistitemxochimilco.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpollutiondistitemxochimilco.h; sourceTree = "<group>"; };
-		DA8E6AF31CDA3A4E009100EE /* mpollutiondistitemxochimilco.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mpollutiondistitemxochimilco.m; sourceTree = "<group>"; };
-		DA8E6AF51CDA3A5E009100EE /* mpollutiondistitemalvaroobregon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpollutiondistitemalvaroobregon.h; sourceTree = "<group>"; };
-		DA8E6AF61CDA3A5E009100EE /* mpollutiondistitemalvaroobregon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mpollutiondistitemalvaroobregon.m; sourceTree = "<group>"; };
-		DA8E6AF81CDA3A6B009100EE /* mpollutiondistitemazcapozalco.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpollutiondistitemazcapozalco.h; sourceTree = "<group>"; };
-		DA8E6AF91CDA3A6B009100EE /* mpollutiondistitemazcapozalco.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mpollutiondistitemazcapozalco.m; sourceTree = "<group>"; };
-		DA8E6AFB1CDA3AA8009100EE /* mpollutiondistitemiztapalapa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpollutiondistitemiztapalapa.h; sourceTree = "<group>"; };
-		DA8E6AFC1CDA3AA8009100EE /* mpollutiondistitemiztapalapa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mpollutiondistitemiztapalapa.m; sourceTree = "<group>"; };
-		DA8E6AFE1CDA3AB1009100EE /* mpollutiondistitemiztacalco.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpollutiondistitemiztacalco.h; sourceTree = "<group>"; };
-		DA8E6AFF1CDA3AB1009100EE /* mpollutiondistitemiztacalco.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mpollutiondistitemiztacalco.m; sourceTree = "<group>"; };
-		DA8E6B011CDA3ABC009100EE /* mpollutiondistitemtlalpan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpollutiondistitemtlalpan.h; sourceTree = "<group>"; };
-		DA8E6B021CDA3ABC009100EE /* mpollutiondistitemtlalpan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mpollutiondistitemtlalpan.m; sourceTree = "<group>"; };
-		DA8E6B041CDA3AC7009100EE /* mpollutiondistitemtlahuac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpollutiondistitemtlahuac.h; sourceTree = "<group>"; };
-		DA8E6B051CDA3AC7009100EE /* mpollutiondistitemtlahuac.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mpollutiondistitemtlahuac.m; sourceTree = "<group>"; };
-		DA8E6B071CDA3ADC009100EE /* mpollutiondistitemmilpaalta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpollutiondistitemmilpaalta.h; sourceTree = "<group>"; };
-		DA8E6B081CDA3ADC009100EE /* mpollutiondistitemmilpaalta.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mpollutiondistitemmilpaalta.m; sourceTree = "<group>"; };
-		DA8E6B0A1CDA3AE9009100EE /* mpollutiondistitemmagdalenacontreras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpollutiondistitemmagdalenacontreras.h; sourceTree = "<group>"; };
-		DA8E6B0B1CDA3AE9009100EE /* mpollutiondistitemmagdalenacontreras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mpollutiondistitemmagdalenacontreras.m; sourceTree = "<group>"; };
-		DA8E6B0D1CDA3B5F009100EE /* mpollutiondistitemgustavoamadero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpollutiondistitemgustavoamadero.h; sourceTree = "<group>"; };
-		DA8E6B0E1CDA3B5F009100EE /* mpollutiondistitemgustavoamadero.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mpollutiondistitemgustavoamadero.m; sourceTree = "<group>"; };
-		DA8E6B101CDA3BF1009100EE /* mpollutiondistitemcuajimalpa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpollutiondistitemcuajimalpa.h; sourceTree = "<group>"; };
-		DA8E6B111CDA3BF1009100EE /* mpollutiondistitemcuajimalpa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mpollutiondistitemcuajimalpa.m; sourceTree = "<group>"; };
-		DA8E6B131CDA3C01009100EE /* mpollutiondistitemcuauhtemoc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpollutiondistitemcuauhtemoc.h; sourceTree = "<group>"; };
-		DA8E6B141CDA3C01009100EE /* mpollutiondistitemcuauhtemoc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mpollutiondistitemcuauhtemoc.m; sourceTree = "<group>"; };
-		DA8E6B161CDA3C15009100EE /* mpollutiondistitemvenustianocarranza.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpollutiondistitemvenustianocarranza.h; sourceTree = "<group>"; };
-		DA8E6B171CDA3C15009100EE /* mpollutiondistitemvenustianocarranza.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mpollutiondistitemvenustianocarranza.m; sourceTree = "<group>"; };
-		DA8E6B191CDA3C26009100EE /* mpollutiondistitemmiguelhidalgo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpollutiondistitemmiguelhidalgo.h; sourceTree = "<group>"; };
-		DA8E6B1A1CDA3C26009100EE /* mpollutiondistitemmiguelhidalgo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mpollutiondistitemmiguelhidalgo.m; sourceTree = "<group>"; };
 		DA8E6B1C1CDA50FA009100EE /* vpollutionfront.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vpollutionfront.h; sourceTree = "<group>"; };
 		DA8E6B1D1CDA50FA009100EE /* vpollutionfront.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vpollutionfront.m; sourceTree = "<group>"; };
 		DA8E6B801CDA76BC009100EE /* vpollutionfrontcell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vpollutionfrontcell.h; sourceTree = "<group>"; };
@@ -193,12 +145,6 @@
 		DA8E6BA11CDA9FC4009100EE /* mpollutionindexnodata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpollutionindexnodata.h; sourceTree = "<group>"; };
 		DA8E6BA21CDA9FC4009100EE /* mpollutionindexnodata.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mpollutionindexnodata.m; sourceTree = "<group>"; };
 		DA8F03431CC1C6B10007596C /* districts.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = districts.xcassets; sourceTree = "<group>"; };
-		DAA0C6661CD96D4A00880D3E /* mpollutiondist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpollutiondist.h; sourceTree = "<group>"; };
-		DAA0C6671CD96D4A00880D3E /* mpollutiondist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mpollutiondist.m; sourceTree = "<group>"; };
-		DAA0C6691CD96D5700880D3E /* mpollutiondistitem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpollutiondistitem.h; sourceTree = "<group>"; };
-		DAA0C66A1CD96D5700880D3E /* mpollutiondistitem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mpollutiondistitem.m; sourceTree = "<group>"; };
-		DAA0C66C1CD96D6800880D3E /* mpollutiondistitembenitojuarez.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpollutiondistitembenitojuarez.h; sourceTree = "<group>"; };
-		DAA0C66D1CD96D6800880D3E /* mpollutiondistitembenitojuarez.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mpollutiondistitembenitojuarez.m; sourceTree = "<group>"; };
 		DAA0C6781CD978BD00880D3E /* gtexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gtexture.h; sourceTree = "<group>"; };
 		DAA0C6791CD978BD00880D3E /* gtexture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gtexture.m; sourceTree = "<group>"; };
 		DAA0C67B1CD978C600880D3E /* gspatial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gspatial.h; sourceTree = "<group>"; };
@@ -337,42 +283,6 @@
 			children = (
 				DA20AD0E1CD80D5400754956 /* mpollutionnotificationdraw.h */,
 				DA20AD0F1CD80D5400754956 /* mpollutionnotificationdraw.m */,
-				DAA0C6661CD96D4A00880D3E /* mpollutiondist.h */,
-				DAA0C6671CD96D4A00880D3E /* mpollutiondist.m */,
-				DAA0C6691CD96D5700880D3E /* mpollutiondistitem.h */,
-				DAA0C66A1CD96D5700880D3E /* mpollutiondistitem.m */,
-				DAA0C66C1CD96D6800880D3E /* mpollutiondistitembenitojuarez.h */,
-				DAA0C66D1CD96D6800880D3E /* mpollutiondistitembenitojuarez.m */,
-				DA8E6AEF1CDA37C5009100EE /* mpollutiondistitemcoyoacan.h */,
-				DA8E6AF01CDA37C5009100EE /* mpollutiondistitemcoyoacan.m */,
-				DA8E6AF21CDA3A4E009100EE /* mpollutiondistitemxochimilco.h */,
-				DA8E6AF31CDA3A4E009100EE /* mpollutiondistitemxochimilco.m */,
-				DA8E6AF51CDA3A5E009100EE /* mpollutiondistitemalvaroobregon.h */,
-				DA8E6AF61CDA3A5E009100EE /* mpollutiondistitemalvaroobregon.m */,
-				DA8E6AF81CDA3A6B009100EE /* mpollutiondistitemazcapozalco.h */,
-				DA8E6AF91CDA3A6B009100EE /* mpollutiondistitemazcapozalco.m */,
-				DA8E6AFB1CDA3AA8009100EE /* mpollutiondistitemiztapalapa.h */,
-				DA8E6AFC1CDA3AA8009100EE /* mpollutiondistitemiztapalapa.m */,
-				DA8E6AFE1CDA3AB1009100EE /* mpollutiondistitemiztacalco.h */,
-				DA8E6AFF1CDA3AB1009100EE /* mpollutiondistitemiztacalco.m */,
-				DA8E6B011CDA3ABC009100EE /* mpollutiondistitemtlalpan.h */,
-				DA8E6B021CDA3ABC009100EE /* mpollutiondistitemtlalpan.m */,
-				DA8E6B041CDA3AC7009100EE /* mpollutiondistitemtlahuac.h */,
-				DA8E6B051CDA3AC7009100EE /* mpollutiondistitemtlahuac.m */,
-				DA8E6B071CDA3ADC009100EE /* mpollutiondistitemmilpaalta.h */,
-				DA8E6B081CDA3ADC009100EE /* mpollutiondistitemmilpaalta.m */,
-				DA8E6B0A1CDA3AE9009100EE /* mpollutiondistitemmagdalenacontreras.h */,
-				DA8E6B0B1CDA3AE9009100EE /* mpollutiondistitemmagdalenacontreras.m */,
-				DA8E6B0D1CDA3B5F009100EE /* mpollutiondistitemgustavoamadero.h */,
-				DA8E6B0E1CDA3B5F009100EE /* mpollutiondistitemgustavoamadero.m */,
-				DA8E6B101CDA3BF1009100EE /* mpollutiondistitemcuajimalpa.h */,
-				DA8E6B111CDA3BF1009100EE /* mpollutiondistitemcuajimalpa.m */,
-				DA8E6B131CDA3C01009100EE /* mpollutiondistitemcuauhtemoc.h */,
-				DA8E6B141CDA3C01009100EE /* mpollutiondistitemcuauhtemoc.m */,
-				DA8E6B161CDA3C15009100EE /* mpollutiondistitemvenustianocarranza.h */,
-				DA8E6B171CDA3C15009100EE /* mpollutiondistitemvenustianocarranza.m */,
-				DA8E6B191CDA3C26009100EE /* mpollutiondistitemmiguelhidalgo.h */,
-				DA8E6B1A1CDA3C26009100EE /* mpollutiondistitemmiguelhidalgo.m */,
 				DA8E6B8C1CDA9AEC009100EE /* mpollutionindex.h */,
 				DA8E6B8D1CDA9AEC009100EE /* mpollutionindex.m */,
 				DA8E6BA11CDA9FC4009100EE /* mpollutionindexnodata.h */,
@@ -819,21 +729,14 @@
 				DA87082D1CBE844A000C08E1 /* acall.m in Sources */,
 				DAD33FF61CBC83E300C87502 /* main.m in Sources */,
 				DA4096571CDC1FEE0001D696 /* vpollutionimeca.m in Sources */,
-				DA8E6AFA1CDA3A6B009100EE /* mpollutiondistitemazcapozalco.m in Sources */,
 				DAD33FFC1CBC83E300C87502 /* updater.m in Sources */,
 				DA8E6B821CDA76BC009100EE /* vpollutionfrontcell.m in Sources */,
 				DAB26D8B1CE100BD00E1580F /* mpollution.m in Sources */,
-				DAA0C66E1CD96D6800880D3E /* mpollutiondistitembenitojuarez.m in Sources */,
-				DA8E6B181CDA3C15009100EE /* mpollutiondistitemvenustianocarranza.m in Sources */,
 				DAD340051CBC83E300C87502 /* vspinner.m in Sources */,
-				DAA0C6681CD96D4A00880D3E /* mpollutiondist.m in Sources */,
-				DA8E6B121CDA3BF1009100EE /* mpollutiondistitemcuajimalpa.m in Sources */,
 				DA8E6B8E1CDA9AEC009100EE /* mpollutionindex.m in Sources */,
 				DA8E6BA31CDA9FC4009100EE /* mpollutionindexnodata.m in Sources */,
 				DA8708341CBE8717000C08E1 /* acallstations.m in Sources */,
 				DA20AD061CD80B5A00754956 /* ecolor.m in Sources */,
-				DA8E6B031CDA3ABC009100EE /* mpollutiondistitemtlalpan.m in Sources */,
-				DA8E6B1B1CDA3C26009100EE /* mpollutiondistitemmiguelhidalgo.m in Sources */,
 				DA20AD091CD80B6000754956 /* efont.m in Sources */,
 				DAB26D941CE1019E00E1580F /* mpollutionitemdaily.m in Sources */,
 				DA8E6B8B1CDA998A009100EE /* vpollutionradiochart.m in Sources */,
@@ -844,20 +747,16 @@
 				DA40965D1CDD4C0D0001D696 /* vcollectioncell.m in Sources */,
 				DA20ACEB1CD7FC9100754956 /* vpollution.m in Sources */,
 				DA8E6BA01CDA9FB1009100EE /* mpollutionindexfallout.m in Sources */,
-				DA8E6AFD1CDA3AA8009100EE /* mpollutiondistitemiztapalapa.m in Sources */,
 				DAD340011CBC83E300C87502 /* mdirs.m in Sources */,
 				DA87082A1CBE840F000C08E1 /* amanager.m in Sources */,
 				DAA0C67D1CD978C600880D3E /* gspatial.m in Sources */,
 				DAB26D821CE0F98200E1580F /* mdbselect.m in Sources */,
-				DA8E6B091CDA3ADC009100EE /* mpollutiondistitemmilpaalta.m in Sources */,
 				DA20AD031CD80B5100754956 /* enotification.m in Sources */,
 				DAA0C6801CD978CF00880D3E /* gspatialtexture.m in Sources */,
-				DA8E6B061CDA3AC7009100EE /* mpollutiondistitemtlahuac.m in Sources */,
 				DA40965A1CDD26C00001D696 /* vpollutionfrontheadercurrent.m in Sources */,
 				DA8E6B9D1CDA9D39009100EE /* mpollutionindexacceptable.m in Sources */,
 				DA8E6B9A1CDA9D21009100EE /* mpollutionindexdisaster.m in Sources */,
 				DAA0C6841CD985D400880D3E /* gpollutiondist.m in Sources */,
-				DA8E6B151CDA3C01009100EE /* mpollutiondistitemcuauhtemoc.m in Sources */,
 				DA8E6B971CDA9B48009100EE /* mpollutionindexdanger.m in Sources */,
 				DAB26D851CE0F9E000E1580F /* mdbdistrict.m in Sources */,
 				DA8E6B881CDA8F5D009100EE /* vradiochart.m in Sources */,
@@ -865,30 +764,23 @@
 				DA8708371CBE87F7000C08E1 /* aparserstations.m in Sources */,
 				DA8E6B851CDA76D3009100EE /* vpollutionfrontheader.m in Sources */,
 				DACEDEE21CBC89630088AA8B /* cmain.m in Sources */,
-				DAA0C66B1CD96D5700880D3E /* mpollutiondistitem.m in Sources */,
 				DA8E6B1E1CDA50FA009100EE /* vpollutionfront.m in Sources */,
 				DAD33FF91CBC83E300C87502 /* tools.m in Sources */,
-				DA8E6B001CDA3AB1009100EE /* mpollutiondistitemiztacalco.m in Sources */,
 				DAD875CF1CBD2F0400A4F91C /* cpages.m in Sources */,
 				DAB26D791CE0D09D00E1580F /* mdbcreate.m in Sources */,
 				DAD33FF71CBC83E300C87502 /* analytics.m in Sources */,
-				DA8E6AF11CDA37C5009100EE /* mpollutiondistitemcoyoacan.m in Sources */,
-				DA8E6AF41CDA3A4E009100EE /* mpollutiondistitemxochimilco.m in Sources */,
 				DA8708311CBE8532000C08E1 /* aparser.m in Sources */,
 				DAB26D881CE0F9F100E1580F /* mdbpollutiondaily.m in Sources */,
 				DA4096471CDBFA1C0001D696 /* vbutton.m in Sources */,
 				DA20ACE71CD7FBC700754956 /* cpollution.m in Sources */,
-				DA8E6B0C1CDA3AE9009100EE /* mpollutiondistitemmagdalenacontreras.m in Sources */,
 				DA20AD161CD80D5400754956 /* mpollutionnotificationdraw.m in Sources */,
 				DA4096501CDC170F0001D696 /* vviewbar.m in Sources */,
-				DA8E6AF71CDA3A5E009100EE /* mpollutiondistitemalvaroobregon.m in Sources */,
 				DAB26D8E1CE1017F00E1580F /* mpollutionitem.m in Sources */,
 				DA4096531CDC1F560001D696 /* cpollutionimeca.m in Sources */,
 				DA8E6B941CDA9B33009100EE /* mpollutionindexwarning.m in Sources */,
 				DAD875FC1CBD6CF200A4F91C /* vmenubutton.m in Sources */,
 				DA40964D1CDC15FA0001D696 /* vview.m in Sources */,
 				DA4096441CDBF8ED0001D696 /* vpollutionfrontheaderbutton.m in Sources */,
-				DA8E6B0F1CDA3B5F009100EE /* mpollutiondistitemgustavoamadero.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

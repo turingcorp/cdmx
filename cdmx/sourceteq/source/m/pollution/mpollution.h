@@ -8,5 +8,6 @@
 -(void)daily;
 
 @property(strong, nonatomic, readonly)NSMutableArray<mpollutionitem*> *items;
+@property(strong, nonatomic, readonly)NSMutableArray<gspatial*> *spatials;
 
 @end

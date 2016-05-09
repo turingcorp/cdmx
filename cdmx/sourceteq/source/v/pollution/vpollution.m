@@ -1,5 +1,6 @@
 #import "vpollution.h"
 #import "enotification.h"
+#import "cpollution.h"
 
 static NSInteger const millisecondswait = 300;
 static NSInteger const texturecorners = 6;
@@ -19,75 +20,83 @@ static NSInteger const texturecorners = 6;
 
 -(void)glkstart
 {
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
-                   ^
-                   {
-                       EAGLContext *context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
-                       [EAGLContext setCurrentContext:context];
-                       [self setContext:context];
-                       [self setDelegate:self];
-                       
-                       self.datatexture = [NSMutableData dataWithLength:texturecorners * sizeof(GLKVector2)];
-                       self.pointertexture = self.datatexture.mutableBytes;
-                       self.pointertexture[0] = GLKVector2Make(0, 0);
-                       self.pointertexture[1] = GLKVector2Make(0, 1);
-                       self.pointertexture[2] = GLKVector2Make(1, 1);
-                       self.pointertexture[3] = GLKVector2Make(1, 1);
-                       self.pointertexture[4] = GLKVector2Make(1, 0);
-                       self.pointertexture[5] = GLKVector2Make(0, 0);
-                       
-                       self.modeldist = [[mpollutiondist alloc] init];
-                       self.baseeffect = [[GLKBaseEffect alloc] init];
-                       self.baseeffect.texture2d0.target = GLKTextureTarget2D;
-                   });
+    EAGLContext *context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
+    [EAGLContext setCurrentContext:context];
+    [self setContext:context];
+    [self setDelegate:self];
+    
+    self.datatexture = [NSMutableData dataWithLength:texturecorners * sizeof(GLKVector2)];
+    self.pointertexture = self.datatexture.mutableBytes;
+    self.pointertexture[0] = GLKVector2Make(0, 0);
+    self.pointertexture[1] = GLKVector2Make(0, 1);
+    self.pointertexture[2] = GLKVector2Make(1, 1);
+    self.pointertexture[3] = GLKVector2Make(1, 1);
+    self.pointertexture[4] = GLKVector2Make(1, 0);
+    self.pointertexture[5] = GLKVector2Make(0, 0);
+    self.baseeffect = [[GLKBaseEffect alloc] init];
+    self.baseeffect.texture2d0.target = GLKTextureTarget2D;
+}
+
+#pragma mark functionality
+
+-(void)loadfront
+{
+    [self.front removeFromSuperview];
+    
+    vpollutionfront *front = [[vpollutionfront alloc] init:self.controller];
+    self.front = front;
+    [self addSubview:front];
+    
+    NSDictionary *views = @{@"front":front};
+    NSDictionary *metrics = @{};
+    
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[front]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[front]-0-|" options:0 metrics:metrics views:views]];
 }
 
 #pragma mark public
 
 -(void)modelloaded
 {
-    if(self.front)
-    {
-        
-    }
-    else
-    {
-        vpollutionfront *front = [[vpollutionfront alloc] init:self.controller];
-        self.front = front;
-        [self addSubview:front];
-        
-        NSDictionary *views = @{@"front":front};
-        NSDictionary *metrics = @{};
-        
-        [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[front]-0-|" options:0 metrics:metrics views:views]];
-        [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[front]-0-|" options:0 metrics:metrics views:views]];
-        [self glkstart];
-    }
-}
-
--(void)viewdidappear
-{
-    if(!self.modeldist)
-    {
-        vpollutionfront *front = [[vpollutionfront alloc] init:self.controller];
-        self.front = front;
-        [self addSubview:front];
-        
-        NSDictionary *views = @{@"front":front};
-        NSDictionary *metrics = @{};
-        
-        [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[front]-0-|" options:0 metrics:metrics views:views]];
-        [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[front]-0-|" options:0 metrics:metrics views:views]];
-        
-        __weak typeof(self) welf = self;
-        
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_MSEC * millisecondswait),
-                       dispatch_get_main_queue(),
-                       ^
+    __weak typeof(self) welf = self;
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
+                   ^
+                   {
+                       if(!welf.delegate)
                        {
                            [welf glkstart];
-                       });
-    }
+                       }
+                       
+                       [welf show_districts];
+                   });
+}
+
+-(void)show_districts
+{
+    __weak typeof(self) welf = self;
+    [welf.controller show_districts];
+    
+    dispatch_async(dispatch_get_main_queue(),
+                   ^
+                   {
+                       [welf loadfront];
+                   });
+}
+
+-(void)show_today
+{
+    
+}
+
+-(void)show_history
+{
+    
+}
+
+-(void)show_map
+{
+    
 }
 
 #pragma mark -

@@ -22,4 +22,9 @@
     return model;
 }
 
+-(gspatial*)spatial
+{
+    return nil;
+}
+
 @end

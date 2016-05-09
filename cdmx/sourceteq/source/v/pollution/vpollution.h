@@ -1,5 +1,5 @@
 #import <UIKit/UIKit.h>
-#import "mpollutiondist.h"
+#import <GLKit/GLKit.h>
 #import "vpollutionfront.h"
 
 @class cpollution;
@@ -8,12 +8,15 @@
 
 -(instancetype)init:(cpollution*)controller;
 -(void)modelloaded;
+-(void)show_districts;
+-(void)show_today;
+-(void)show_history;
+-(void)show_map;
 
 @property(weak, nonatomic)cpollution *controller;
 @property(weak, nonatomic)vpollutionfront *front;
-@property(strong, nonatomic)mpollutiondist *modeldist;
-@property(strong, nonatomic)GLKBaseEffect *baseeffect;
 @property(strong, nonatomic)NSMutableData *datatexture;
+@property(strong, nonatomic)GLKBaseEffect *baseeffect;
 @property(assign, nonatomic)GLKVector2 *pointertexture;
 
 @end

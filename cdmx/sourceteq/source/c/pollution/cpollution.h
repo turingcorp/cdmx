@@ -6,6 +6,7 @@
 @interface cpollution:GLKViewController<GLKViewControllerDelegate>
 
 -(void)imeca;
+-(void)show_districts;
 
 @property(strong, nonatomic)vpollution *view;
 @property(strong, nonatomic)mpollution *model;

@@ -4,6 +4,7 @@
 @interface mpollution ()
 
 @property(strong, nonatomic, readwrite)NSMutableArray<mpollutionitem*> *items;
+@property(strong, nonatomic, readwrite)NSMutableArray<gspatial*> *spatials;
 @property(strong, nonatomic)NSArray<mdbdistrict*> *modeldistricts;
 @property(strong, nonatomic)NSArray<mdbpollutiondaily*> *modeldaily;
 
@@ -25,6 +26,7 @@
 -(void)districts
 {
     self.items = [NSMutableArray array];
+    self.spatials = [NSMutableArray array];
     
     NSUInteger countdistritcs = self.modeldistricts.count;
     
@@ -43,6 +45,7 @@
 -(void)daily
 {
     self.items = [NSMutableArray array];
+    self.spatials = nil;
     
     NSUInteger countdaily = self.modeldaily.count;
     

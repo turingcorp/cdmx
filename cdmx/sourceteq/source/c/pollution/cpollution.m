@@ -54,7 +54,6 @@ static NSInteger const framespersecond = 60;
                    ^
                    {
                        welf.model = [mpollution loadfromdb];
-                       [welf.model districts];
                        
                        dispatch_async(dispatch_get_main_queue(),
                                       ^
@@ -70,6 +69,11 @@ static NSInteger const framespersecond = 60;
 {
     cpollutionimeca *controller = [[cpollutionimeca alloc] init];
     [[cmain singleton] pushViewController:controller animated:YES];
+}
+
+-(void)show_districts
+{
+    [self.model districts];
 }
 
 #pragma mark -
