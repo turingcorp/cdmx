@@ -37,10 +37,9 @@
     {
         mdbdistrict *district = self.modeldistricts[indexdistricts];
         mpollutionitem *modeldistrict = [mpollutionitem district:district];
-        gspatial *spatial = [modeldistrict spatial];
         
         [self.items addObject:modeldistrict];
-        [self.spatials addObject:spatial];
+        [self.spatials addObject:modeldistrict.spatial];
     }
 }
 
@@ -58,6 +57,11 @@
         
         [self.items addObject:modeldaily];
     }
+}
+
+-(void)highlight:(mpollutionitem*)model
+{
+    
 }
 
 @end

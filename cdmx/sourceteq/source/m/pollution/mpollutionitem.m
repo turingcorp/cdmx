@@ -1,6 +1,7 @@
 #import "mpollutionitem.h"
 #import "mpollutionitemdistrict.h"
 #import "mpollutionitemdaily.h"
+#import "ecolor.h"
 
 @implementation mpollutionitem
 
@@ -23,9 +24,16 @@
     return model;
 }
 
--(gspatial*)spatial
+#pragma mark public
+
+-(void)highlighted
 {
-    return nil;
+    self.spatial.color = [self.index.color asvector];
+}
+
+-(void)nothighlighted
+{
+    self.spatial.color = [UIColor background];
 }
 
 @end

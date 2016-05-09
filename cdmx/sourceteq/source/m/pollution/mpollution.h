@@ -6,6 +6,7 @@
 +(instancetype)loadfromdb;
 -(void)districts;
 -(void)daily;
+-(void)highlight:(mpollutionitem*)model;
 
 @property(strong, nonatomic, readonly)NSMutableArray<mpollutionitem*> *items;
 @property(strong, nonatomic, readonly)NSMutableArray<gspatial*> *spatials;

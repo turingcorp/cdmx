@@ -17,7 +17,6 @@ static BOOL const srgb = NO;
     self.y = pollution_distposy;
     self.width = pollution_distminsize;
     self.height = pollution_distminsize;
-    self.color = [[UIColor background] asvector];
     
     [self render];
     

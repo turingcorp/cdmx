@@ -221,7 +221,6 @@ static NSInteger const frontcellwidth = 170;
 -(UICollectionViewCell*)collectionView:(UICollectionView*)col cellForItemAtIndexPath:(NSIndexPath*)index
 {
     mpollutionitem *model = [self modelforindex:index];
-    
     vpollutionfrontcell *cell = [col dequeueReusableCellWithReuseIdentifier:frontcellid forIndexPath:index];
     [cell config:model front:self];
     

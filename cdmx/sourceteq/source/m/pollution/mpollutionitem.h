@@ -8,9 +8,11 @@
 
 +(instancetype)district:(mdbdistrict*)modeldistrict;
 +(instancetype)pollutiondaily:(mdbpollutiondaily*)modelpollutiondaily;
--(gspatial*)spatial;
+-(void)highlighted;
+-(void)nothighlighted;
 
 @property(strong, nonatomic)mpollutionindex *index;
+@property(strong, nonatomic)gspatial *spatial;
 @property(copy, nonatomic)NSString *name;
 
 @end

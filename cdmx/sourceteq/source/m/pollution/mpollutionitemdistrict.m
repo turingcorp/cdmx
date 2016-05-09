@@ -3,14 +3,12 @@
 
 @implementation mpollutionitemdistrict
 
-#pragma mark -
-#pragma mark pollution item
-
--(gspatial*)spatial
+-(instancetype)init
 {
-    gpollutiondist *spatial = [[gpollutiondist alloc] init:self.modeldistrict.asset];
+    self = [super init];
+    self.spatial = [[gpollutiondist alloc] init:self.modeldistrict.asset];
     
-    return spatial;
+    return self;
 }
 
 @end
