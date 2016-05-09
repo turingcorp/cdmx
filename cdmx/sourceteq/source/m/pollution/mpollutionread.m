@@ -1,15 +1,12 @@
 #import "mpollutionread.h"
-
-@interface mpollutionread ()
-
-@property(strong, nonatomic, readwrite)NSMutableArray<mpollutionreaditem*> *items;
-
-@end
+#import "mdbselect.h"
 
 @implementation mpollutionread
 
 +(instancetype)load
 {
+    NSArray<modeldaily*> *modeldaily = [mdbselect pollutiondaily];
+    
     return nil;
 }
 

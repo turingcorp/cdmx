@@ -6,6 +6,7 @@
 +(instancetype)load;
 +(instancetype)lastread;
 
-@property(strong, nonatomic, readonly)NSMutableArray<mpollutionreaditem*> *items;
+@property(strong, nonatomic)NSMutableArray<mpollutionreaditem*> *items;
+@property()
 
 @end
