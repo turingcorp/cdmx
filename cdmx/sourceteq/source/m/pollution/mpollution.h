@@ -1,13 +1,12 @@
-//
-//  mpollution.h
-//  cdmx
-//
-//  Created by zero on 5/9/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
+#import "mpollutionitem.h"
 
-@interface mpollution : NSObject
+@interface mpollution:NSObject
+
++(instancetype)load;
+-(void)distritcs;
+-(void)daily;
+
+@property(strong, nonatomic, readonly)NSMutableArray<mpollutionitem*> *items;
 
 @end

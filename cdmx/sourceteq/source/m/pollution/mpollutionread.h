@@ -7,6 +7,5 @@
 +(instancetype)lastread;
 
 @property(strong, nonatomic)NSMutableArray<mpollutionreaditem*> *items;
-@property()
 
 @end
