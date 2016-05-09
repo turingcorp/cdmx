@@ -2,7 +2,7 @@
 #import "efont.h"
 #import "ecolor.h"
 
-static NSInteger const cellapparentheight = 80;
+static NSInteger const cellapparentheight = 50;
 
 @implementation vpollutionfrontcell
 
@@ -17,9 +17,14 @@ static NSInteger const cellapparentheight = 80;
     [label setBackgroundColor:[UIColor clearColor]];
     [label setFont:[UIFont boldsize:14]];
     [label setTextAlignment:NSTextAlignmentCenter];
-    [label setTextColor:[UIColor second]];
-    [label setText:@"Magdalena Contreras"];
     self.label = label;
+    
+    UIView *base = [[UIView alloc] init];
+    [base setClipsToBounds:YES];
+    [base setUserInteractionEnabled:NO];
+    [base setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [base.layer setCornerRadius:4];
+    self.base = base;
     
     UIButton *buttonup = [[UIButton alloc] init];
     [buttonup setClipsToBounds:YES];
@@ -29,16 +34,20 @@ static NSInteger const cellapparentheight = 80;
     [buttonup.imageView setContentMode:UIViewContentModeCenter];
     [buttonup.imageView setTintColor:[[UIColor main] colorWithAlphaComponent:0.2]];
     [buttonup.imageView setClipsToBounds:YES];
+    [buttonup addTarget:self action:@selector(actionup:) forControlEvents:UIControlEventTouchUpInside];
     self.buttonup = buttonup;
     
-    [self addSubview:label];
+    [base addSubview:label];
+    [self addSubview:base];
     [self addSubview:buttonup];
     
-    NSDictionary *views = @{@"label":label, @"up":buttonup};
+    NSDictionary *views = @{@"label":label, @"up":buttonup, @"base":base};
     NSDictionary *metrics = @{@"apparentheight":@(cellapparentheight)};
     
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-2-[label]-2-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[up]-(-20)-[label(30)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[label]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[label]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[base]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[up]-(-10)-[base(34)]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-35-[up]-35-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[up(60)]-(apparentheight)-|" options:0 metrics:metrics views:views]];
     
@@ -71,12 +80,14 @@ static NSInteger const cellapparentheight = 80;
     if(self.isSelected || self.isHighlighted)
     {
         [self.buttonup setHidden:NO];
-        [self setAlpha:1];
+        [self.label setTextColor:[UIColor whiteColor]];
+        [self.base setBackgroundColor:[UIColor second]];
     }
     else
     {
         [self.buttonup setHidden:YES];
-        [self setAlpha:0.4];
+        [self.label setTextColor:[UIColor colorWithWhite:0.7 alpha:1]];
+        [self.base setBackgroundColor:[UIColor clearColor]];
     }
 }
 
