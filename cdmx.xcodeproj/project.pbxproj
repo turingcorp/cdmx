@@ -71,6 +71,9 @@
 		DAA0C6841CD985D400880D3E /* gpollutiondist.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA0C6831CD985D400880D3E /* gpollutiondist.m */; };
 		DAB26D791CE0D09D00E1580F /* mdbcreate.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB26D781CE0D09D00E1580F /* mdbcreate.m */; };
 		DAB26D7F1CE0ECB300E1580F /* districts.plist in Resources */ = {isa = PBXBuildFile; fileRef = DAB26D7E1CE0ECB300E1580F /* districts.plist */; };
+		DAB26D821CE0F98200E1580F /* mdbselect.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB26D811CE0F98200E1580F /* mdbselect.m */; };
+		DAB26D851CE0F9E000E1580F /* mdbdistrict.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB26D841CE0F9E000E1580F /* mdbdistrict.m */; };
+		DAB26D881CE0F9F100E1580F /* mdbpollutiondaily.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB26D871CE0F9F100E1580F /* mdbpollutiondaily.m */; };
 		DACEDEE21CBC89630088AA8B /* cmain.m in Sources */ = {isa = PBXBuildFile; fileRef = DACEDEE11CBC89630088AA8B /* cmain.m */; };
 		DAD33FF31CBC83E300C87502 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DAD33FB01CBC83E300C87502 /* Localizable.strings */; };
 		DAD33FF41CBC83E300C87502 /* appdel.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD33FB61CBC83E300C87502 /* appdel.m */; };
@@ -216,6 +219,12 @@
 		DAB26D781CE0D09D00E1580F /* mdbcreate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mdbcreate.m; sourceTree = "<group>"; };
 		DAB26D7D1CE0D67400E1580F /* mdbconstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mdbconstants.h; sourceTree = "<group>"; };
 		DAB26D7E1CE0ECB300E1580F /* districts.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = districts.plist; sourceTree = "<group>"; };
+		DAB26D801CE0F98200E1580F /* mdbselect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mdbselect.h; sourceTree = "<group>"; };
+		DAB26D811CE0F98200E1580F /* mdbselect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mdbselect.m; sourceTree = "<group>"; };
+		DAB26D831CE0F9E000E1580F /* mdbdistrict.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mdbdistrict.h; sourceTree = "<group>"; };
+		DAB26D841CE0F9E000E1580F /* mdbdistrict.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mdbdistrict.m; sourceTree = "<group>"; };
+		DAB26D861CE0F9F100E1580F /* mdbpollutiondaily.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mdbpollutiondaily.h; sourceTree = "<group>"; };
+		DAB26D871CE0F9F100E1580F /* mdbpollutiondaily.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mdbpollutiondaily.m; sourceTree = "<group>"; };
 		DACEDEE01CBC89630088AA8B /* cmain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cmain.h; sourceTree = "<group>"; };
 		DACEDEE11CBC89630088AA8B /* cmain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cmain.m; sourceTree = "<group>"; };
 		DAD33F901CBC825900C87502 /* cdmx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cdmx.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -479,6 +488,12 @@
 				DAB26D7D1CE0D67400E1580F /* mdbconstants.h */,
 				DAB26D771CE0D09D00E1580F /* mdbcreate.h */,
 				DAB26D781CE0D09D00E1580F /* mdbcreate.m */,
+				DAB26D801CE0F98200E1580F /* mdbselect.h */,
+				DAB26D811CE0F98200E1580F /* mdbselect.m */,
+				DAB26D831CE0F9E000E1580F /* mdbdistrict.h */,
+				DAB26D841CE0F9E000E1580F /* mdbdistrict.m */,
+				DAB26D861CE0F9F100E1580F /* mdbpollutiondaily.h */,
+				DAB26D871CE0F9F100E1580F /* mdbpollutiondaily.m */,
 			);
 			path = db;
 			sourceTree = "<group>";
@@ -833,6 +848,7 @@
 				DAD340011CBC83E300C87502 /* mdirs.m in Sources */,
 				DA87082A1CBE840F000C08E1 /* amanager.m in Sources */,
 				DAA0C67D1CD978C600880D3E /* gspatial.m in Sources */,
+				DAB26D821CE0F98200E1580F /* mdbselect.m in Sources */,
 				DA8E6B091CDA3ADC009100EE /* mpollutiondistitemmilpaalta.m in Sources */,
 				DA20AD031CD80B5100754956 /* enotification.m in Sources */,
 				DAA0C6801CD978CF00880D3E /* gspatialtexture.m in Sources */,
@@ -843,6 +859,7 @@
 				DAA0C6841CD985D400880D3E /* gpollutiondist.m in Sources */,
 				DA8E6B151CDA3C01009100EE /* mpollutiondistitemcuauhtemoc.m in Sources */,
 				DA8E6B971CDA9B48009100EE /* mpollutionindexdanger.m in Sources */,
+				DAB26D851CE0F9E000E1580F /* mdbdistrict.m in Sources */,
 				DA8E6B881CDA8F5D009100EE /* vradiochart.m in Sources */,
 				DAA0C67A1CD978BD00880D3E /* gtexture.m in Sources */,
 				DA8708371CBE87F7000C08E1 /* aparserstations.m in Sources */,
@@ -858,6 +875,7 @@
 				DA8E6AF11CDA37C5009100EE /* mpollutiondistitemcoyoacan.m in Sources */,
 				DA8E6AF41CDA3A4E009100EE /* mpollutiondistitemxochimilco.m in Sources */,
 				DA8708311CBE8532000C08E1 /* aparser.m in Sources */,
+				DAB26D881CE0F9F100E1580F /* mdbpollutiondaily.m in Sources */,
 				DA8E6BBB1CDAA77B009100EE /* mpollutionreaditemdist.m in Sources */,
 				DA4096471CDBFA1C0001D696 /* vbutton.m in Sources */,
 				DA20ACE71CD7FBC700754956 /* cpollution.m in Sources */,

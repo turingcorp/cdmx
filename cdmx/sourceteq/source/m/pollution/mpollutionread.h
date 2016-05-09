@@ -3,8 +3,9 @@
 
 @interface mpollutionread:NSObject
 
++(instancetype)load;
 +(instancetype)lastread;
 
-@property(strong, nonatomic)NSArray<mpollutionreaditem*> *items;
+@property(strong, nonatomic, readonly)NSMutableArray<mpollutionreaditem*> *items;
 
 @end

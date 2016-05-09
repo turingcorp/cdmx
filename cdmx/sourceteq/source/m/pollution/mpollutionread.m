@@ -1,6 +1,17 @@
 #import "mpollutionread.h"
 
+@interface mpollutionread ()
+
+@property(strong, nonatomic, readwrite)NSMutableArray<mpollutionreaditem*> *items;
+
+@end
+
 @implementation mpollutionread
+
++(instancetype)load
+{
+    
+}
 
 +(instancetype)lastread
 {
