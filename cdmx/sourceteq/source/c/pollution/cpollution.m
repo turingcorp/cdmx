@@ -36,12 +36,32 @@ static NSInteger const framespersecond = 60;
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [self.view viewdidappear];
+    [self loadpollution];
 }
 
 -(void)loadView
 {
     self.view = [[vpollution alloc] init:self];
+}
+
+#pragma mark functionality
+
+-(void)loadpollution
+{
+    __weak typeof(self) welf = self;
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
+                   ^
+                   {
+                       welf.model = [mpollution load];
+                       [welf.model distritcs];
+                       
+                       dispatch_async(dispatch_get_main_queue(),
+                                      ^
+                                      {
+                                          [welf.view modelloaded];
+                                      });
+                   });
 }
 
 #pragma mark public

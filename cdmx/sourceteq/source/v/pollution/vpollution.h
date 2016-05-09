@@ -7,7 +7,7 @@
 @interface vpollution:GLKView<GLKViewDelegate>
 
 -(instancetype)init:(cpollution*)controller;
--(void)viewdidappear;
+-(void)modelloaded;
 
 @property(weak, nonatomic)cpollution *controller;
 @property(weak, nonatomic)vpollutionfront *front;
