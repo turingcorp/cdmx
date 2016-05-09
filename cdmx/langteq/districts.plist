@@ -7,96 +7,128 @@
 		<string>Alvaro Obregon</string>
 		<key>serverid</key>
 		<integer>1</integer>
+        <key>asset</key>
+        <string>districts_alvaroobregon</string>
 	</dict>
     <dict>
         <key>name</key>
         <string>Azcapotzalco</string>
         <key>serverid</key>
         <integer>2</integer>
+        <key>asset</key>
+        <string>districts_azcapozalco</string>
     </dict>
     <dict>
         <key>name</key>
         <string>Benito Juarez</string>
         <key>serverid</key>
         <integer>3</integer>
+        <key>asset</key>
+        <string>districts_benitojuarez</string>
     </dict>
     <dict>
         <key>name</key>
         <string>Coyoacan</string>
         <key>serverid</key>
         <integer>4</integer>
+        <key>asset</key>
+        <string>districts_coyoacan</string>
     </dict>
     <dict>
         <key>name</key>
         <string>Cuajimalpa</string>
         <key>serverid</key>
         <integer>5</integer>
+        <key>asset</key>
+        <string>districts_cuajimalpa</string>
     </dict>
     <dict>
         <key>name</key>
         <string>Cuauhtemoc</string>
         <key>serverid</key>
         <integer>6</integer>
+        <key>asset</key>
+        <string>districts_cuauhtemoc</string>
     </dict>
     <dict>
         <key>name</key>
         <string>Gustavo A. Madero</string>
         <key>serverid</key>
         <integer>7</integer>
+        <key>asset</key>
+        <string>districts_gustavoamadero</string>
     </dict>
     <dict>
         <key>name</key>
         <string>Iztacalco</string>
         <key>serverid</key>
         <integer>8</integer>
+        <key>asset</key>
+        <string>districts_iztacalco</string>
     </dict>
     <dict>
         <key>name</key>
         <string>Iztapalapa</string>
         <key>serverid</key>
         <integer>9</integer>
+        <key>asset</key>
+        <string>districts_iztapalapa</string>
     </dict>
     <dict>
         <key>name</key>
         <string>Magdalena Contreras</string>
         <key>serverid</key>
         <integer>10</integer>
+        <key>asset</key>
+        <string>districts_magdalenacontreras</string>
     </dict>
     <dict>
         <key>name</key>
         <string>Miguel Hidalgo</string>
         <key>serverid</key>
         <integer>11</integer>
+        <key>asset</key>
+        <string>districts_miguelhidalgo</string>
     </dict>
     <dict>
         <key>name</key>
         <string>Milpa Alta</string>
         <key>serverid</key>
         <integer>12</integer>
+        <key>asset</key>
+        <string>districts_milpaalta</string>
     </dict>
     <dict>
         <key>name</key>
         <string>Tlahuac</string>
         <key>serverid</key>
         <integer>13</integer>
+        <key>asset</key>
+        <string>districts_tlahuac</string>
     </dict>
     <dict>
         <key>name</key>
         <string>Tlalpan</string>
         <key>serverid</key>
         <integer>14</integer>
+        <key>asset</key>
+        <string>districts_tlalpan</string>
     </dict>
     <dict>
         <key>name</key>
         <string>Venustiano Carranza</string>
         <key>serverid</key>
         <integer>15</integer>
+        <key>asset</key>
+        <string>districts_venustianocarranza</string>
     </dict>
     <dict>
         <key>name</key>
         <string>Xochimilco</string>
         <key>serverid</key>
         <integer>16</integer>
+        <key>asset</key>
+        <string>districts_xochimilco</string>
     </dict>
 </array>
 </plist>
