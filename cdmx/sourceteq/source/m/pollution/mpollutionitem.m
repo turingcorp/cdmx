@@ -7,10 +7,9 @@
 
 +(instancetype)district:(mdbdistrict*)modeldistrict
 {
-    mpollutionitemdistrict *model = [[mpollutionitemdistrict alloc] init];
+    mpollutionitemdistrict *model = [[mpollutionitemdistrict alloc] init:modeldistrict];
     model.name = modeldistrict.name;
     model.index = [mpollutionindex points:modeldistrict.pollution.integerValue];
-    model.modeldistrict = modeldistrict;
     
     return model;
 }

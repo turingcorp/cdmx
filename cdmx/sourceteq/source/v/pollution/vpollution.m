@@ -2,7 +2,6 @@
 #import "enotification.h"
 #import "cpollution.h"
 
-static NSInteger const millisecondswait = 300;
 static NSInteger const texturecorners = 6;
 
 @implementation vpollution

@@ -3,6 +3,8 @@
 
 @interface mpollutionitemdistrict:mpollutionitem
 
+-(instancetype)init:(mdbdistrict*)modeldistrict;
+
 @property(weak, nonatomic)mdbdistrict *modeldistrict;
 
 @end

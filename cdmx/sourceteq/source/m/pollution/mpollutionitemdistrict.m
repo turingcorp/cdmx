@@ -3,10 +3,11 @@
 
 @implementation mpollutionitemdistrict
 
--(instancetype)init
+-(instancetype)init:(mdbdistrict*)modeldistrict
 {
     self = [super init];
-    self.spatial = [[gpollutiondist alloc] init:self.modeldistrict.asset];
+    self.modeldistrict = modeldistrict;
+    self.spatial = [[gpollutiondist alloc] init:modeldistrict.asset];
     
     return self;
 }

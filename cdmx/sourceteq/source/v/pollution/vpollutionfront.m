@@ -99,6 +99,7 @@ static NSInteger const frontcellwidth = 170;
     {
         selected = index;
         self.currentitem = self.controller.model.items[selected];
+        [self.controller.model highlight:self.currentitem];
     }
 }
 
