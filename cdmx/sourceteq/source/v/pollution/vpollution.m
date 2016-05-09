@@ -63,7 +63,7 @@ static NSInteger const texturecorners = 6;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
                    ^
                    {
-                       if(!welf.delegate)
+                       if(welf.delegate != welf)
                        {
                            [welf glkstart];
                        }
