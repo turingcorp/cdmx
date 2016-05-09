@@ -1,21 +1,4 @@
-"mpollution_district_benitojuarez_name"="Benito Juarez";
-"mpollution_district_coyoacan_name"="Coyoacan";
-"mpollution_district_xochimilco_name"="Xochimilco";
-"mpollution_district_alvaroobregon_name"="Alvaro Obregon";
-"mpollution_district_azcapozalco_name"="Azcapotzalco";
-"mpollution_district_iztapalapa_name"="Iztapalapa";
-"mpollution_district_iztacalco_name"="Iztacalco";
-"mpollution_district_tlalpan_name"="Tlalpan";
-"mpollution_district_tlahuac_name"="Tlahuac";
-"mpollution_district_milpaalta_name"="Milpa Alta";
-"mpollution_district_magdalenacontreras_name"="Magdalena Contreras";
-"mpollution_district_gustavoamadero_name"="Gustavo Adolfo Madero";
-"mpollution_district_cuajimalpa_name"="Cuajimalpa";
-"mpollution_district_cuauhtemoc_name"="Cuauhtemoc";
-"mpollution_district_venustianocarranza_name"="Venustiano Carranza";
-"mpollution_district_miguelhidalgo_name"="Miguel Hidalgo";
-
-"mpollution_item_daily"="General summary";
+"mpollution_item_daily_summary"="General summary";
 
 "mpollution_index_nodata"="Error reading info";
 "mpollution_index_acceptable"="Acceptable";
