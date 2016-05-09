@@ -7,6 +7,4 @@
 -(void)originalsize;
 -(void)extrasize;
 
-@property(assign, nonatomic)CGFloat initialx;
-
 @end

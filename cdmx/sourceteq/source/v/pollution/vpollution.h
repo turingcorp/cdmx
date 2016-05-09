@@ -18,5 +18,6 @@
 @property(strong, nonatomic)NSMutableData *datatexture;
 @property(strong, nonatomic)GLKBaseEffect *baseeffect;
 @property(assign, nonatomic)GLKVector2 *pointertexture;
+@property(assign, nonatomic)GLKMatrix4 projection;
 
 @end

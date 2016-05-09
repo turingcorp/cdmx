@@ -19,11 +19,16 @@ static NSInteger const texturecorners = 6;
 
 -(void)glkstart
 {
+    CGSize screensize = [UIScreen mainScreen].bounds.size;
+    CGFloat screenwidth = screensize.width;
+    CGFloat screenheight = screensize.height;
+    
     EAGLContext *context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
     [EAGLContext setCurrentContext:context];
     [self setContext:context];
     [self setDelegate:self];
-    
+
+    self.projection = GLKMatrix4MakeOrtho(0, screenwidth, screenheight, 0, 1, -1);
     self.datatexture = [NSMutableData dataWithLength:texturecorners * sizeof(GLKVector2)];
     self.pointertexture = self.datatexture.mutableBytes;
     self.pointertexture[0] = GLKVector2Make(0, 0);
@@ -110,6 +115,7 @@ static NSInteger const texturecorners = 6;
     glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
     glEnableVertexAttribArray(GLKVertexAttribPosition);
     
+    self.baseeffect.transform.projectionMatrix = self.projection;
     mpollutionnotificationdraw *userinfo = [[mpollutionnotificationdraw alloc] init:self.baseeffect pointertexture:self.pointertexture];
     [NSNotification glkdraw:userinfo];
     

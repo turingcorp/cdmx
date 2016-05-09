@@ -29,8 +29,6 @@
     [self.spatial extrasize];
 }
 
-#warning regular;
-
 -(void)nothighlighted
 {
     [super nothighlighted];

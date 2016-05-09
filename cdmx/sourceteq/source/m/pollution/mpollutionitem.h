@@ -9,7 +9,6 @@
 +(instancetype)district:(mdbdistrict*)modeldistrict;
 +(instancetype)pollutiondaily:(mdbpollutiondaily*)modelpollutiondaily;
 -(void)highlighted;
--(void)regular;
 -(void)nothighlighted;
 
 @property(strong, nonatomic)mpollutionindex *index;
