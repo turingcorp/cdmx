@@ -2,23 +2,6 @@
 #import <zql/zql.h>
 #import "mdbconstants.h"
 
-static NSString* const districtalvaroobregon = @"Alvaro Obregon";
-static NSString* const districtazcapotzalco = @"Azcapotzalco";
-static NSString* const districtbenitojuarez = @"Benito Juarez";
-static NSString* const districtcoyoacan = @"Coyoacan";
-static NSString* const districtcuajimalpa = @"Cuajimalpa";
-static NSString* const districtcuauhtemoc = @"Cuauhtemoc";
-static NSString* const districtgustavoamadero = @"Gustavo A. Madero";
-static NSString* const districtiztacalco = @"Iztacalco";
-static NSString* const districtiztapalapa = @"Iztapalapa";
-static NSString* const districtmagdalenacontreras = @"Magdalena Contreras";
-static NSString* const districtmiguelhidalgo = @"Miguel Hidalgo";
-static NSString* const districtmilpaalta = @"Milpa Alta";
-static NSString* const districttlahuac = @"Tlahuac";
-static NSString* const districttlalpan = @"Tlalpan";
-static NSString* const districtvenustianocarranza = @"Venustiano Carranza";
-static NSString* const districtxochimilco = @"Xochimilco";
-
 @implementation mdbcreate
 
 +(void)firsttime

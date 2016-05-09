@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>name</key>
+		<string>Alvaro Obregon</string>
+		<key>serverid</key>
+		<integer>1</integer>
+	</dict>
+    <dict>
+        <key>name</key>
+        <string>Azcapotzalco</string>
+        <key>serverid</key>
+        <integer>2</integer>
+    </dict>
+    <dict>
+        <key>name</key>
+        <string>Benito Juarez</string>
+        <key>serverid</key>
+        <integer>3</integer>
+    </dict>
+    <dict>
+        <key>name</key>
+        <string>Coyoacan</string>
+        <key>serverid</key>
+        <integer>4</integer>
+    </dict>
+    <dict>
+        <key>name</key>
+        <string>Cuajimalpa</string>
+        <key>serverid</key>
+        <integer>5</integer>
+    </dict>
+    <dict>
+        <key>name</key>
+        <string>Cuauhtemoc</string>
+        <key>serverid</key>
+        <integer>6</integer>
+    </dict>
+    <dict>
+        <key>name</key>
+        <string>Gustavo A. Madero</string>
+        <key>serverid</key>
+        <integer>7</integer>
+    </dict>
+    <dict>
+        <key>name</key>
+        <string>Iztacalco</string>
+        <key>serverid</key>
+        <integer>8</integer>
+    </dict>
+    <dict>
+        <key>name</key>
+        <string>Iztapalapa</string>
+        <key>serverid</key>
+        <integer>9</integer>
+    </dict>
+    <dict>
+        <key>name</key>
+        <string>Magdalena Contreras</string>
+        <key>serverid</key>
+        <integer>10</integer>
+    </dict>
+    <dict>
+        <key>name</key>
+        <string>Miguel Hidalgo</string>
+        <key>serverid</key>
+        <integer>11</integer>
+    </dict>
+    <dict>
+        <key>name</key>
+        <string>Milpa Alta</string>
+        <key>serverid</key>
+        <integer>12</integer>
+    </dict>
+    <dict>
+        <key>name</key>
+        <string>Tlahuac</string>
+        <key>serverid</key>
+        <integer>13</integer>
+    </dict>
+    <dict>
+        <key>name</key>
+        <string>Tlalpan</string>
+        <key>serverid</key>
+        <integer>14</integer>
+    </dict>
+    <dict>
+        <key>name</key>
+        <string>Venustiano Carranza</string>
+        <key>serverid</key>
+        <integer>15</integer>
+    </dict>
+    <dict>
+        <key>name</key>
+        <string>Xochimilco</string>
+        <key>serverid</key>
+        <integer>16</integer>
+    </dict>
+</array>
+</plist>
