@@ -15,6 +15,12 @@ static NSString* const zqlerrorpermission =             @"Access permission deni
 
 @end
 
+@interface zqlresult ()
+
+@property(strong, nonatomic, readwrite)NSMutableArray<zqlresultparams*> *params;
+
+@end
+
 @implementation zqlresult
 
 +(instancetype)errornodb
