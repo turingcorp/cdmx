@@ -26,11 +26,13 @@
     zqlparam *paramserverid = [zqlparam type:[zqltype integer] name:dbserverindex value:nil];
     zqlparam *paramname = [zqlparam type:[zqltype text] name:dbdistricts_name value:nil];
     zqlparam *parampollution = [zqlparam type:[zqltype integer] name:dbdistricts_pollution value:@0];
+    zqlparam *paramasset = [zqlparam type:[zqltype text] name:dbdistricts_asset value:@0];
     
     NSArray<zqlparam*> *params = @[
                                    paramserverid,
                                    paramname,
-                                   parampollution
+                                   parampollution,
+                                   paramasset
                                    ];
     
     zqlquery *querytabledistricts = [zqlquery createtable:dbdistricts params:params];
@@ -42,12 +44,13 @@
     {
         NSDictionary *rawdistrict = rawdistricts[indexdistricts];
         NSString *districname = rawdistrict[dbdistricts_name];
+        NSString *districasset = rawdistrict[dbdistricts_asset];
         NSNumber *districserverid = rawdistrict[dbserverindex];
         
         paramserverid.value = districserverid;
         paramname.value = districname;
+        paramasset.value = districasset;
         zqlquery *newquery = [zqlquery insert:dbdistricts params:params];
-        
         [queries addObject:newquery];
     }
     

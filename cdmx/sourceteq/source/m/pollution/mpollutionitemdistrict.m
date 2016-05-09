@@ -8,7 +8,9 @@
 
 -(gspatial*)spatial
 {
-    gpollutiondist *spatial = [[gpollutiondist alloc] init:<#(NSString *)#>];
+    gpollutiondist *spatial = [[gpollutiondist alloc] init:self.modeldistrict.asset];
+    
+    return spatial;
 }
 
 @end

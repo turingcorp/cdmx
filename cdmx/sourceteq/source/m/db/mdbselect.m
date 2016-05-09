@@ -11,12 +11,14 @@
     zqlparam *paramserverid = [zqlparam type:[zqltype integer] name:dbserverindex value:nil];
     zqlparam *parampollution = [zqlparam type:[zqltype integer] name:dbdistricts_pollution value:nil];
     zqlparam *paramname = [zqlparam type:[zqltype text] name:dbdistricts_name value:nil];
+    zqlparam *paramasset = [zqlparam type:[zqltype text] name:dbdistricts_asset value:nil];
     
     NSArray<zqlparam*> *params = @[
                                    paramprimarykey,
                                    paramserverid,
                                    parampollution,
-                                   paramname
+                                   paramname,
+                                   paramasset
                                    ];
     
     zqlquery *query = [zqlquery select:dbdistricts params:params ordered:paramname ascendent:YES];
@@ -31,11 +33,13 @@
         zqlparam *pserverindex = resultparams.items[dbserverindex];
         zqlparam *ppollution = resultparams.items[dbdistricts_pollution];
         zqlparam *pname = resultparams.items[dbdistricts_name];
+        zqlparam *passet = resultparams.items[dbdistricts_asset];
         
         model.primarykey = pprimarykey.value;
         model.serverid = pserverindex.value;
         model.pollution = ppollution.value;
         model.name = pname.value;
+        model.asset = passet.value;
         
         [array addObject:model];
     }
