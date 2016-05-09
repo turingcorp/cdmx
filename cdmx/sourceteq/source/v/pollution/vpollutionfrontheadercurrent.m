@@ -50,7 +50,7 @@ static NSInteger const buttonheight = 45;
 
 #pragma mark public
 
--(void)config:(mpollutionreaditem*)model
+-(void)config:(mpollutionitem*)model
 {
     [self.labeltitle setText:model.name];
 }

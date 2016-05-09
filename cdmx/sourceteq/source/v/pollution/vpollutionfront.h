@@ -1,5 +1,5 @@
 #import <UIKit/UIKit.h>
-#import "mpollutionread.h"
+#import "mpollutionitem.h"
 
 @class cpollution;
 
@@ -9,9 +9,8 @@
 -(void)showdetail;
 -(void)showlist;
 
-@property(strong, nonatomic)mpollutionread *model;
 @property(weak, nonatomic)cpollution *controller;
-@property(weak, nonatomic)mpollutionreaditem *currentreaditem;
+@property(weak, nonatomic)mpollutionitem *currentitem;
 @property(weak, nonatomic)UICollectionView *collection;
 @property(strong, nonatomic)UICollectionViewFlowLayout *flowdetail;
 @property(strong, nonatomic)UICollectionViewFlowLayout *flowlist;

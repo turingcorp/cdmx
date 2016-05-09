@@ -82,7 +82,7 @@ static NSInteger const cellapparentheight = 80;
 
 #pragma mark public
 
--(void)config:(mpollutionreaditem*)model front:(vpollutionfront*)front
+-(void)config:(mpollutionitem*)model front:(vpollutionfront*)front
 {
     self.front = front;
     [self.label setText:model.name];

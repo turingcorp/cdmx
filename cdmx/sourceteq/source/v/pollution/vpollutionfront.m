@@ -26,8 +26,7 @@ static NSInteger const frontcellwidth = 200;
     [self showdetail];
     
     rect1 = CGRectMake(0, 0, 1, 1);
-    self.model = [mpollutionread lastread];
-    self.currentreaditem = self.model.items[0];
+    self.currentitem = controller.model.items[0];
     
     UICollectionViewFlowLayout *flowdetail = [[UICollectionViewFlowLayout alloc] init];
     [flowdetail setFooterReferenceSize:CGSizeZero];
@@ -76,9 +75,9 @@ static NSInteger const frontcellwidth = 200;
 
 #pragma mark functionality
 
--(mpollutionreaditem*)modelforindex:(NSIndexPath*)index
+-(mpollutionitem*)modelforindex:(NSIndexPath*)index
 {
-    mpollutionreaditem *model = self.model.items[index.item];
+    mpollutionitem *model = self.controller.model.items[index.item];
     
     return model;
 }
@@ -171,7 +170,7 @@ static NSInteger const frontcellwidth = 200;
 
 -(NSInteger)collectionView:(UICollectionView*)col numberOfItemsInSection:(NSInteger)section
 {
-    NSInteger count = self.model.items.count;
+    NSInteger count = self.controller.model.items.count;
     
     return count;
 }
@@ -179,14 +178,14 @@ static NSInteger const frontcellwidth = 200;
 -(UICollectionReusableView*)collectionView:(UICollectionView*)col viewForSupplementaryElementOfKind:(NSString*)kind atIndexPath:(NSIndexPath*)index
 {
     vpollutionfrontheader *header = [col dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:frontheaderid forIndexPath:index];
-    [header config:self.currentreaditem controller:self.controller];
+    [header config:self.currentitem controller:self.controller];
     
     return header;
 }
 
 -(UICollectionViewCell*)collectionView:(UICollectionView*)col cellForItemAtIndexPath:(NSIndexPath*)index
 {
-    mpollutionreaditem *model = [self modelforindex:index];
+    mpollutionitem *model = [self modelforindex:index];
     
     vpollutionfrontcell *cell = [col dequeueReusableCellWithReuseIdentifier:frontcellid forIndexPath:index];
     [cell config:model front:self];

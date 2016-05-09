@@ -15,7 +15,11 @@
 
 +(instancetype)pollutiondaily:(mdbpollutiondaily*)modelpollutiondaily
 {
+    mpollutionitemdaily *model = [[mpollutionitemdaily alloc] init];
+    model.name = NSLocalizedString(@"mpollution_item_daily", nil);
+    model.index = [mpollutionindex points:modelpollutiondaily.pollution.integerValue];
     
+    return model;
 }
 
 @end

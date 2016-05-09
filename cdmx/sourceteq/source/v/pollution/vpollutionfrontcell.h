@@ -3,7 +3,7 @@
 
 @interface vpollutionfrontcell:UICollectionViewCell
 
--(void)config:(mpollutionreaditem*)model front:(vpollutionfront*)front;
+-(void)config:(mpollutionitem*)model front:(vpollutionfront*)front;
 
 @property(weak, nonatomic)vpollutionfront *front;
 @property(weak, nonatomic)UILabel *label;
