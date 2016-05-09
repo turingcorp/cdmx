@@ -53,8 +53,8 @@ static NSInteger const framespersecond = 60;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
                    ^
                    {
-                       welf.model = [mpollution load];
-                       [welf.model distritcs];
+                       welf.model = [mpollution loadfromdb];
+                       [welf.model districts];
                        
                        dispatch_async(dispatch_get_main_queue(),
                                       ^

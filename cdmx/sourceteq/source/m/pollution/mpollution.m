@@ -11,7 +11,7 @@
 
 @implementation mpollution
 
-+(instancetype)load
++(instancetype)loadfromdb
 {
     mpollution *model = [[mpollution alloc] init];
     model.modeldistricts = [mdbselect district];
@@ -22,7 +22,7 @@
 
 #pragma mark public
 
--(void)distritcs
+-(void)districts
 {
     self.items = [NSMutableArray array];
     

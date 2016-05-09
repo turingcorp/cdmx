@@ -61,9 +61,8 @@
                parammaxpollution
                ];
     
-    zqlquery *querytablepollutiondaily = [zqlquery createtable:dbdistricts params:params];
+    zqlquery *querytablepollutiondaily = [zqlquery createtable:dbpollutiondaily params:params];
     [queries addObject:querytablepollutiondaily];
-    
     [zql query:queries];
 }
 

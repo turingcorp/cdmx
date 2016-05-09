@@ -61,15 +61,7 @@ static NSInteger const texturecorners = 6;
         
         [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[front]-0-|" options:0 metrics:metrics views:views]];
         [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[front]-0-|" options:0 metrics:metrics views:views]];
-        
-        __weak typeof(self) welf = self;
-        
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_MSEC * millisecondswait),
-                       dispatch_get_main_queue(),
-                       ^
-                       {
-                           [welf glkstart];
-                       });
+        [self glkstart];
     }
 }
 

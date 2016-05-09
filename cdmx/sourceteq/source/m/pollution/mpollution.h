@@ -3,8 +3,8 @@
 
 @interface mpollution:NSObject
 
-+(instancetype)load;
--(void)distritcs;
++(instancetype)loadfromdb;
+-(void)districts;
 -(void)daily;
 
 @property(strong, nonatomic, readonly)NSMutableArray<mpollutionitem*> *items;

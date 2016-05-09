@@ -7,10 +7,18 @@ static NSString* const zqlparamcreatestringpk = @"id INTEGER PRIMARY KEY";
 
 +(instancetype)primarykey
 {
-    zqltype *type = [zqltype integer];
-    zqlpk *pk = [zqlpk type:type name:zqlprimarykeyname value:nil];
+    zqlpk *pk = [[zqlpk alloc] init];
     
     return pk;
+}
+
+-(instancetype)init
+{
+    self = [super init];
+    self.type = [zqltype integer];
+    self.name = zqlprimarykeyname;
+    
+    return self;
 }
 
 #pragma mark -

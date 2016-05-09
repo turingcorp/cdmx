@@ -30,7 +30,7 @@ static NSString* const zqltypetextcreate = @"TEXT COLLATE NOCASE";
 
 -(id)valuefor:(sqlite3_stmt**)statement column:(NSInteger)column
 {
-    NSString *value = [NSString stringWithUTF8String:sqlite3_column_text16(*statement, (int)column)];
+    NSString *value = [NSString stringWithUTF8String:(char*)sqlite3_column_text(*statement, (int)column)];
     
     return value;
 }

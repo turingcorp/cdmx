@@ -44,17 +44,14 @@ static NSString* const zqlquerytransactionrollback =            @"ROLLBACK";
         NSMutableString *string = [NSMutableString string];
         [string appendFormat:zqlquerycreatetitle, tablename];
         [string appendString:zqlqueryparamsprefix];
+        [string appendString:[primarykey querycreate]];
         
         NSUInteger count = params.count;
         
         for(NSUInteger indexparam = 0; indexparam < count; indexparam++)
         {
             zqlparam *param = params[indexparam];
-            
-            if(indexparam)
-            {
-                [string appendString:zqlqueryparamsseparator];
-            }
+            [string appendString:zqlqueryparamsseparator];
             
             if(![param.comparename isEqualToString:primarykey.name])
             {
@@ -62,8 +59,6 @@ static NSString* const zqlquerytransactionrollback =            @"ROLLBACK";
             }
         }
         
-        [string appendString:zqlqueryparamsseparator];
-        [string appendString:[primarykey querycreate]];
         [string appendString:zqlqueryparamspostfix];
         [string appendString:zqlqueryclosure];
         
@@ -201,6 +196,11 @@ static NSString* const zqlquerytransactionrollback =            @"ROLLBACK";
     self.querystring = querystring;
     
     return self;
+}
+
+-(NSString*)description
+{
+    return self.querystring;
 }
 
 @end
