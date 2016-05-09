@@ -3,6 +3,7 @@
 #import "analytics.h"
 #import "cmain.h"
 #import "genericconstants.h"
+#import "mdbcreate.h"
 
 @implementation updater
 
@@ -29,8 +30,9 @@
         if(appversionscalar != currentversionscalar)
         {
             [userdefaults setValue:appversion forKey:appversion_key];
-            [updater updateversion];
         }
+        
+        [mdbcreate loaddatabase];
     }
     else
     {
@@ -46,11 +48,8 @@
     [userdefaults removePersistentDomainForName:NSArgumentDomain];
     [userdefaults removePersistentDomainForName:NSRegistrationDomain];
     [userdefaults synchronize];
-}
-
-+(void)updateversion
-{
     
+    [mdbcreate firsttime];
 }
 
 @end

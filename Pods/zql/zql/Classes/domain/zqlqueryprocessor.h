@@ -9,6 +9,6 @@
 -(zqlresult*)prepare:(sqlite3*)sqlite;
 -(zqlresult*)step;
 -(zqlresult*)finalizestatement;
--(void)lastinsert:(sqlite3*)sqlite result:(zqlresult*)result;
+-(zqlresult*)lastinsert:(sqlite3*)sqlite;
 
 @end

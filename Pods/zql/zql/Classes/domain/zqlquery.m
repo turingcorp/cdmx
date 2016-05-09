@@ -1,10 +1,23 @@
 #import "zqlquery.h"
 #import "zqlpk.h"
+#import "zqltypetext.h"
 
-static NSString* const zqlquerycreatetitle =            @"create table %@ ";
-static NSString* const zqlquerycreateparamsprefix =     @"(";
-static NSString* const zqlquerycreateparamsseparator =     @", ";
-static NSString* const zqlquerycreateparamspostfix =    @");";
+static NSString* const zqlquerycreatetitle =                    @"create table %@ ";
+static NSString* const zqlqueryinserttitle =                    @"insert into %@ ";
+static NSString* const zqlqueryselecttitle =                    @"select ";
+static NSString* const zqlqueryselectall =                      @"*";
+static NSString* const zqlqueryselecttable =                    @" from %@";
+static NSString* const zqlqueryselectordered =                  @" order by %@ ";
+static NSString* const zqlqueryselectorderascending =           @"asc";
+static NSString* const zqlqueryselectorderdescending =          @"desc";
+static NSString* const zqlqueryvaluestitle =                    @" values";
+static NSString* const zqlqueryparamsprefix =                   @"(";
+static NSString* const zqlqueryparamsseparator =                @", ";
+static NSString* const zqlqueryparamspostfix =                  @")";
+static NSString* const zqlqueryclosure =                        @";";
+static NSString* const zqlquerytransactionbegin =               @"BEGIN";
+static NSString* const zqlquerytransactioncommit =              @"COMMIT";
+static NSString* const zqlquerytransactionrollback =            @"ROLLBACK";
 
 @interface zqlparam ()
 
@@ -24,13 +37,13 @@ static NSString* const zqlquerycreateparamspostfix =    @");";
 {
     zqlquery *query;
     
-    if(tablename && tablename.length && params)
+    if([zqlquery tablenamevalid:tablename] && params)
     {
         zqlpk *primarykey = [zqlpk primarykey];
         
         NSMutableString *string = [NSMutableString string];
         [string appendFormat:zqlquerycreatetitle, tablename];
-        [string appendString:zqlquerycreateparamsprefix];
+        [string appendString:zqlqueryparamsprefix];
         
         NSUInteger count = params.count;
         
@@ -40,7 +53,7 @@ static NSString* const zqlquerycreateparamspostfix =    @");";
             
             if(indexparam)
             {
-                [string appendString:zqlquerycreateparamsseparator];
+                [string appendString:zqlqueryparamsseparator];
             }
             
             if(![param.comparename isEqualToString:primarykey.name])
@@ -49,18 +62,137 @@ static NSString* const zqlquerycreateparamspostfix =    @");";
             }
         }
         
-        if(count)
-        {
-            [string appendString:zqlquerycreateparamsseparator];
-        }
-        
+        [string appendString:zqlqueryparamsseparator];
         [string appendString:[primarykey querycreate]];
-        [string appendString:zqlquerycreateparamspostfix];
+        [string appendString:zqlqueryparamspostfix];
+        [string appendString:zqlqueryclosure];
         
         query = [[zqlquery alloc] init:string];
     }
     
     return query;
+}
+
++(instancetype)insert:(NSString*)tablename params:(NSArray<zqlparam*>*)params
+{
+    zqlquery *query;
+    
+    if([zqlquery tablenamevalid:tablename] && params)
+    {
+        NSMutableString *string = [NSMutableString string];
+        NSMutableString *stringvalues = [NSMutableString string];
+        [string appendFormat:zqlqueryinserttitle, tablename];
+        [string appendString:zqlqueryparamsprefix];
+        [stringvalues appendString:zqlqueryvaluestitle];
+        [stringvalues appendString:zqlqueryparamsprefix];
+        
+        NSUInteger count = params.count;
+        
+        for(NSUInteger indexparam = 0; indexparam < count; indexparam++)
+        {
+            zqlparam *param = params[indexparam];
+            
+            if(indexparam)
+            {
+                [string appendString:zqlqueryparamsseparator];
+                [stringvalues appendString:zqlqueryparamsseparator];
+            }
+            
+            [string appendString:param.name];
+            [stringvalues appendString:[param queryvalue]];
+        }
+        
+        [string appendString:zqlqueryparamspostfix];
+        [stringvalues appendString:zqlqueryparamspostfix];
+        [string appendString:stringvalues];
+        [string appendString:zqlqueryclosure];
+        
+        query = [[zqlquery alloc] init:string];
+    }
+    
+    return query;
+}
+
++(instancetype)select:(NSString*)tablename params:(NSArray<zqlparam*>*)params ordered:(zqlparam*)ordered ascendent:(BOOL)ascendent
+{
+    zqlquery *query;
+    
+    if([zqlquery tablenamevalid:tablename])
+    {
+        NSMutableString *string = [NSMutableString string];
+        [string appendString:zqlqueryselecttitle];
+        
+        NSInteger count = params.count;
+        
+        if(count)
+        {
+            for(NSUInteger indexparam = 0; indexparam < count; indexparam++)
+            {
+                zqlparam *param = params[indexparam];
+                
+                if(indexparam)
+                {
+                    [string appendString:zqlqueryparamsseparator];
+                }
+                
+                [string appendString:param.name];
+            }
+        }
+        else
+        {
+            [string appendString:zqlqueryselectall];
+        }
+        
+        [string appendFormat:zqlqueryselecttable, tablename];
+        
+        if(ordered)
+        {
+            [string appendFormat:zqlqueryselectordered, ordered.name];
+            
+            if(ascendent)
+            {
+                [string appendString:zqlqueryselectorderascending];
+            }
+            else
+            {
+                [string appendString:zqlqueryselectorderdescending];
+            }
+        }
+        
+        [string appendString:zqlqueryclosure];
+        
+        query = [[zqlquery alloc] init:string];
+    }
+    
+    return query;
+}
+
++(instancetype)begintransaction
+{
+    zqlquery *query = [[zqlquery alloc] init:zqlquerytransactionbegin];
+    
+    return query;
+}
+
++(instancetype)committransaction
+{
+    zqlquery *query = [[zqlquery alloc] init:zqlquerytransactioncommit];
+    
+    return query;
+}
+
++(instancetype)rollbacktransaction
+{
+    zqlquery *query = [[zqlquery alloc] init:zqlquerytransactionrollback];
+    
+    return query;
+}
+
+#pragma mark private
+
++(BOOL)tablenamevalid:(NSString*)tablename
+{
+    return tablename && tablename.length;
 }
 
 -(instancetype)init:(NSString*)querystring

@@ -3,7 +3,6 @@
 #import "cpollutionimeca.h"
 #import "cmain.h"
 #import "vpollution.h"
-#import <zql/zql.h>
 
 static NSInteger const framespersecond = 60;
 
@@ -38,23 +37,6 @@ static NSInteger const framespersecond = 60;
 {
     [super viewDidAppear:animated];
     [self.view viewdidappear];
-    
-    [[zqlconfig shared] createdb:@"cdmx"];
-    //[[zqlconfig shared] startdb:@"cdmx"];
-    NSMutableArray<zqlparam*> *params = [NSMutableArray array];
-    [params addObject:[zqlparam type:[zqltype integer] name:@"created" value:nil]];
-    [params addObject:[zqlparam type:[zqltype text] name:@"name" value:nil]];
-    zqlquery *query = [zqlquery createtable:@"changui" params:params];
-    zqlresult *result = [zql query:query];
-    
-    if(result.success)
-    {
-        NSLog(@"success");
-    }
-    else
-    {
-        NSLog(@"error");
-    }
 }
 
 -(void)loadView

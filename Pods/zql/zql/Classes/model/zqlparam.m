@@ -33,11 +33,25 @@ static NSString* const zqlparamcreatestring = @"%@ %@";
     return self;
 }
 
+-(NSString*)description
+{
+    NSString *descr = [NSString stringWithFormat:@"%@[%@]:%@", self.name, self.type, self.value];
+    
+    return descr;
+}
+
 #pragma mark public
 
 -(NSString*)querycreate
 {
-    NSString *string = [NSString stringWithFormat:zqlparamcreatestring, self.name, self.type.name];
+    NSString *string = [NSString stringWithFormat:zqlparamcreatestring, self.name, [self.type createquery]];
+    
+    return string;
+}
+
+-(NSString*)queryvalue
+{
+    NSString *string = [self.type queryvalue:self.value];
     
     return string;
 }

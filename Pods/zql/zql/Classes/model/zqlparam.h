@@ -5,6 +5,7 @@
 
 +(instancetype)type:(zqltype*)type name:(NSString*)name value:(id)value;
 -(NSString*)querycreate;
+-(NSString*)queryvalue;
 
 @property(strong, nonatomic)zqltype *type;
 @property(strong, nonatomic)id value;

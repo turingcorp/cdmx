@@ -82,11 +82,28 @@ static NSString* const zqlerrorpermission =             @"Access permission deni
     return result;
 }
 
++(instancetype)lastinsert:(NSInteger)insertid
+{
+    zqlresultsuccess *result = [[zqlresultsuccess alloc] init:NO];
+    result.lastinsertid = insertid;
+    
+    return result;
+}
+
 -(instancetype)init
 {
     self = [super init];
+    self.lastinsertid = 0;
     self.success = NO;
+    self.moresteps = NO;
     
+    return self;
+}
+
+#pragma mark public
+
+-(zqlresult*)merge:(zqlresult*)result
+{
     return self;
 }
 

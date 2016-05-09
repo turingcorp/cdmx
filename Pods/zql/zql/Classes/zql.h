@@ -5,6 +5,6 @@
 
 @interface zql:NSObject
 
-+(zqlresult*)query:(zqlquery*)query;
++(zqlresult*)query:(NSArray<zqlquery*>*)querylist;
 
 @end

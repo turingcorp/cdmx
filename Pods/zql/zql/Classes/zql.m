@@ -6,37 +6,85 @@
 
 @property(strong, nonatomic)zqlconnection *connection;
 @property(strong, nonatomic)zqlqueryprocessor *queryprocessor;
+@property(strong, nonatomic)zqlresult *result;
 @property(assign, nonatomic)sqlite3 *sqlite;
 
 @end
 
 @implementation zql
 
-+(zqlresult*)query:(zqlquery*)query
++(zqlresult*)query:(NSArray<zqlquery*>*)querylist
 {
     zqlresult *result;
     
     if([zqlconfig shared].dbname)
     {
-        zql *manager = [[zql alloc] init:query];
-        result = [manager connect];
+        zql *manager = [[zql alloc] init];
+        [manager connect];
         
-        if(result.success)
+        if(manager.result.success)
         {
-            result = [manager prepare];
+            NSMutableArray<zqlquery*> *queries = querylist.mutableCopy;
+            NSUInteger countqueries = queries.count;
+            zqlquery *queryrollback;
             
-            if(result.success)
+            if(countqueries > 1)
             {
-                result = [manager step];
+                zqlquery *querybegin = [zqlquery begintransaction];
+                zqlquery *querycommit = [zqlquery committransaction];
+                queryrollback = [zqlquery rollbacktransaction];
                 
-                if(result.success)
+                [queries insertObject:querybegin atIndex:0];
+                [queries addObject:querycommit];
+                
+                countqueries = queries.count;
+            }
+            
+            for(NSUInteger indexquery = 0; indexquery < countqueries; indexquery++)
+            {
+                zqlquery *query = queries[indexquery];
+                [manager prepare:query];
+                
+                if(manager.result.success)
                 {
-                    result = [manager finalizestatement];
+                    [manager step];
                     
-                    if(result.success)
+                    if(manager.result.success)
                     {
-                        [manager lastinsert:result];
+                        [manager finalizestatement];
+                        
+                        if(manager.result.success)
+                        {
+                            [manager lastinsert];
+                        }
+                        else
+                        {
+                            if(queryrollback)
+                            {
+                                [zql exec:manager query:query];
+                            }
+                            
+                            break;
+                        }
                     }
+                    else
+                    {
+                        if(queryrollback)
+                        {
+                            [zql exec:manager query:query];
+                        }
+                        
+                        break;
+                    }
+                }
+                else
+                {
+                    if(queryrollback)
+                    {
+                        [zql exec:manager query:query];
+                    }
+                    
+                    break;
                 }
             }
             
@@ -46,6 +94,8 @@
         {
             [manager disconnect];
         }
+        
+        result = manager.result;
     }
     else
     {
@@ -55,23 +105,40 @@
     return result;
 }
 
--(instancetype)init:(zqlquery*)query
+#pragma mark private
+
++(void)exec:(zql*)manager query:(zqlquery*)query
+{
+    [manager prepare:query];
+    
+    if(manager.result.success)
+    {
+        [manager step];
+        
+        if(manager.result.success)
+        {
+            [manager finalizestatement];
+            [manager lastinsert];
+        }
+    }
+}
+
+-(instancetype)init
 {
     self = [super init];
     
     self.connection = [[zqlconnection alloc] init];
-    self.queryprocessor = [[zqlqueryprocessor alloc] init:query];
     
     return self;
 }
 
 #pragma mark functionality
 
--(zqlresult*)connect
+-(void)connect
 {
     NSInteger resultnumber = [self.connection connect:&_sqlite];
     
-    return [zqlresult sqlresponse:resultnumber];
+    self.result = [zqlresult sqlresponse:resultnumber];
 }
 
 -(zqlresult*)disconnect
@@ -81,24 +148,29 @@
     return [zqlresult sqlresponse:resultnumber];
 }
 
--(zqlresult*)prepare
+-(void)prepare:(zqlquery*)query
 {
-    return [self.queryprocessor prepare:self.sqlite];
+    self.queryprocessor = [[zqlqueryprocessor alloc] init:query];
+    zqlresult *newresult = [self.queryprocessor prepare:self.sqlite];
+    self.result = [self.result merge:newresult];
 }
 
--(zqlresult*)step
+-(void)step
 {
-    return [self.queryprocessor step];
+    zqlresult *newresult = [self.queryprocessor step];
+    self.result = [self.result merge:newresult];
 }
 
--(zqlresult*)finalizestatement
+-(void)finalizestatement
 {
-    return [self.queryprocessor finalizestatement];
+    zqlresult *newresult = [self.queryprocessor finalizestatement];
+    self.result = [self.result merge:newresult];
 }
 
--(void)lastinsert:(zqlresult*)result
+-(void)lastinsert
 {
-    [self.queryprocessor lastinsert:self.sqlite result:result];
+    zqlresult *newresult = [self.queryprocessor lastinsert:self.sqlite];
+    self.result = [self.result merge:newresult];
 }
 
 @end
