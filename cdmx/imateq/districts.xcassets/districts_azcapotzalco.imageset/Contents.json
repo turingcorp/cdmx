@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "districts_azcapozalco.png",
+      "filename" : "districts_azcapotzalco.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "districts_azcapozalco@2x.png",
+      "filename" : "districts_azcapotzalco@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "districts_azcapozalco@3x.png",
+      "filename" : "districts_azcapotzalco@3x.png",
       "scale" : "3x"
     }
   ],
