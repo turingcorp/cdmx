@@ -28,6 +28,7 @@
 -(void)highlighted
 {
     self.spatial.color = [self.index.color asvector];
+    [self.spatial movetotop];
 }
 
 -(void)nothighlighted

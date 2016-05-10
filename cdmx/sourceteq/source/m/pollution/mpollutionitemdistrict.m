@@ -26,13 +26,11 @@
 -(void)highlighted
 {
     [super highlighted];
-    [self.spatial extrasize];
 }
 
 -(void)nothighlighted
 {
     [super nothighlighted];
-    [self.spatial originalsize];
 }
 
 @end

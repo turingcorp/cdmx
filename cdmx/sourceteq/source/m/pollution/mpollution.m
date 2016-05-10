@@ -88,6 +88,8 @@
             }
         }
     }
+    
+    [model.spatial movetotop];
 }
 
 @end

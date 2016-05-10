@@ -4,7 +4,5 @@
 @interface gpollutiondist:gspatialtexture
 
 -(instancetype)init:(NSString*)texturename;
--(void)originalsize;
--(void)extrasize;
 
 @end
