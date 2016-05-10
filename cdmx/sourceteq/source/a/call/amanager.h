@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 #import "acalldelegate.h"
+#import "acall.h"
 
-@class acall;
 @class aparser;
 
 @interface amanager:NSObject<NSURLSessionDelegate, NSURLSessionTaskDelegate, NSURLSessionDataDelegate>

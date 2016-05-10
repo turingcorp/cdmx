@@ -4,6 +4,7 @@
 
 @interface acall:NSObject
 
++(instancetype)pollution;
 -(NSURLRequest*)request;
 
 @property(strong, nonatomic)aparser *parser;

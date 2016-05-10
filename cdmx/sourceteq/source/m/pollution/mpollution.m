@@ -13,9 +13,10 @@
 
 @implementation mpollution
 
-+(instancetype)loadfromdb
++(instancetype)loadfromdb:(NSArray<mpollutionitem*>*)modelhourly
 {
     mpollution *model = [[mpollution alloc] init];
+    model.modelhourly = modelhourly;
     model.modeldistricts = [mdbselect district];
     model.modeldaily = [mdbselect pollutiondaily];
     

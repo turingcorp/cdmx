@@ -3,6 +3,7 @@
 #import "cpollutionimeca.h"
 #import "cmain.h"
 #import "vpollution.h"
+#import "aparserpollution.h"
 
 static NSInteger const framespersecond = 60;
 
@@ -54,19 +55,8 @@ static NSInteger const framespersecond = 60;
 
 -(void)loadpollution
 {
-    __weak typeof(self) welf = self;
-    
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
-                   ^
-                   {
-                       welf.model = [mpollution loadfromdb];
-                       
-                       dispatch_async(dispatch_get_main_queue(),
-                                      ^
-                                      {
-                                          [welf.view modelloaded];
-                                      });
-                   });
+    [self.apimanager cancelcall];
+    self.apimanager = [amanager call:[acall pollution] delegate:self];
 }
 
 #pragma mark public
@@ -88,6 +78,31 @@ static NSInteger const framespersecond = 60;
 -(void)glkViewControllerUpdate:(GLKViewController*)controller
 {
     [NSNotification glkmove];
+}
+
+#pragma mark call del
+
+-(void)callsuccess:(amanager*)manager
+{
+    __weak typeof(self) welf = self;
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
+                   ^
+                   {
+                       aparserpollution *parser = (aparserpollution*)manager.call.parser;
+                       welf.model = [mpollution loadfromdb:parser.modelhourly];
+                       
+                       dispatch_async(dispatch_get_main_queue(),
+                                      ^
+                                      {
+                                          [welf.view modelloaded];
+                                      });
+                   });
+}
+
+-(void)call:(amanager*)manager error:(NSString*)error
+{
+    // TODO: error
 }
 
 @end

@@ -1,9 +1,17 @@
 #import "acall.h"
 #import "aparser.h"
+#import "acallpollution.h"
 
 static NSInteger const standardtimeout = 15;
 
 @implementation acall
+
++(instancetype)pollution
+{
+    acallpollution *call = [[acallpollution alloc] init];
+    
+    return call;
+}
 
 -(instancetype)init
 {

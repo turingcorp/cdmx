@@ -2,13 +2,16 @@
 #import <GLKit/GLKit.h>
 #import "vpollution.h"
 #import "mpollution.h"
+#import "acalldelegate.h"
+#import "amanager.h"
 
-@interface cpollution:GLKViewController<GLKViewControllerDelegate>
+@interface cpollution:GLKViewController<GLKViewControllerDelegate, acalldelegate>
 
 -(void)imeca;
 -(void)show_districts;
 
 @property(strong, nonatomic)vpollution *view;
 @property(strong, nonatomic)mpollution *model;
+@property(weak, nonatomic)amanager *apimanager;
 
 @end

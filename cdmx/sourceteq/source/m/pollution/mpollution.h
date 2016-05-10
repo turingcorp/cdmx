@@ -3,7 +3,7 @@
 
 @interface mpollution:NSObject
 
-+(instancetype)loadfromdb;
++(instancetype)loadfromdb:(NSArray<mpollutionitem*>*)modelhourly;
 -(void)districts;
 -(void)daily;
 -(void)clean;
