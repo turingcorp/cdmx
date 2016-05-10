@@ -1,4 +1,28 @@
 "mpollution_item_daily_summary"="General summary";
+"mpollution_item_hourly_0"="Midnight";
+"mpollution_item_hourly_1"="1:00 am";
+"mpollution_item_hourly_2"="Midnight";
+"mpollution_item_hourly_3"="Midnight";
+"mpollution_item_hourly_4"="Midnight";
+"mpollution_item_hourly_5"="Midnight";
+"mpollution_item_hourly_6"="Midnight";
+"mpollution_item_hourly_7"="Midnight";
+"mpollution_item_hourly_8"="Midnight";
+"mpollution_item_hourly_9"="Midnight";
+"mpollution_item_hourly_10"="Midnight";
+"mpollution_item_hourly_11"="Midnight";
+"mpollution_item_hourly_12"="Midnight";
+"mpollution_item_hourly_13"="Midnight";
+"mpollution_item_hourly_14"="Midnight";
+"mpollution_item_hourly_15"="Midnight";
+"mpollution_item_hourly_16"="Midnight";
+"mpollution_item_hourly_17"="Midnight";
+"mpollution_item_hourly_18"="Midnight";
+"mpollution_item_hourly_19"="Midnight";
+"mpollution_item_hourly_20"="Midnight";
+"mpollution_item_hourly_21"="Midnight";
+"mpollution_item_hourly_22"="Midnight";
+"mpollution_item_hourly_23"="Midnight";
 
 "mpollution_index_nodata"="Error reading info";
 "mpollution_index_acceptable"="Acceptable";
@@ -15,15 +39,9 @@
 "mpollution_index_fallout_info"="Fase 2 de Contingencia Ambiental, emergencia por alta contaminación.\n\nTu salud esta en peligro y más la de niños y adultos mayores. No salgas de casa, no fumes. Alejate de cualquier tipo de combustión como parrillas, fogones y chimeneas. Consume bastantes liquidos.";
 
 "vpollution_radio_chart_title"="IMECA";
-
 "vpollution_front_header_button"="Learn about IMECA";
-
 "vpollutionimeca_title"="IMECA";
-
 "vpollutionimeca_descr"="IMECA ó Índice Metropolitano de la Calidad del Aire es la referencia usada para representar el nivel de contaminación del aire, principalmente en la Ciudad de México, pero podría ser aplicado a cualquier otra ciudad.\n\nLa importancia de este índice radica en poderte informar cuales pueden ser los efectos en tu salud debido a la exposición a estos contaminantes, y que medidas procurar para evitar poner en riesgo tu integridad.\n\nEn 1977 la Secretaria de Salubridad y Asistencia creó el Índice Mexicano de la Calidad del Aire (IMEXCA), el cual en 1982 se transformo en IMECA, y en 2006 el Gobierno del Distrito Federal publicó la Norma Ambiental con la cual se rige hasta el momento.\n\n\nContaminantes considerados en el índice\n\n   ■ Ozono\n   ■ Monóxido de carbono\n   ■ Dióxido de azufre\n   ■ Dióxido de nitrógeno\n   ■ Partículas suspendidas";
-
-
-
 
 "api_error_nodata"="Server no responding, try again later";
 "api_error_invalidjson"="Trouble reaching server, try again later";

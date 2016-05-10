@@ -3,6 +3,6 @@
 
 @interface mpollutionitemdaily:mpollutionitem
 
-@property(weak, nonatomic)mdbpollutiondaily *modelpollutiondaily;
+-(instancetype)init:(mpollutionindex*)index
 
 @end

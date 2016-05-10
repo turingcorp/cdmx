@@ -1,4 +1,6 @@
 #import "mdbupdate.h"
+#import <zql/zql.h>
+#import "mdbconstants.h"
 
 @implementation mdbupdate
 
