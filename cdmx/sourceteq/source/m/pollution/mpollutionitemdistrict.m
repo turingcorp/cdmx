@@ -1,5 +1,6 @@
 #import "mpollutionitemdistrict.h"
 #import "gpollutiondist.h"
+#import "ecolor.h"
 
 @interface mpollutionitemdistrict ()
 
@@ -26,20 +27,19 @@
 
 -(void)turnon
 {
-    [super turnon];
-    [self.spatial maxsize];
+    self.spatial.color = [self.index.color asvector];
+    [self.spatial movetotop];
 }
 
 -(void)turnoff
 {
-    [super turnoff];
-    [self.spatial minsize];
+    self.spatial.color = [[UIColor background] asvector];
 }
 
 -(void)standby
 {
-    [super standby];
-    [self.spatial minsize];
+    self.spatial.color = [self.index.color asvector];
 }
+
 
 @end

@@ -41,17 +41,14 @@
 
 -(void)turnon
 {
-    self.spatial.color = [self.index.color asvector];
 }
 
 -(void)turnoff
 {
-    self.spatial.color = [[UIColor background] asvector];
 }
 
 -(void)standby
 {
-    self.spatial.color = [self.index.color asvector];
 }
 
 @end

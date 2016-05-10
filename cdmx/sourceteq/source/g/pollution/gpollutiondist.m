@@ -41,6 +41,9 @@ static BOOL const districtsrgb = NO;
     self.highlightx = self.standx - deltawidth_2;
     
     [NSNotification observe:self glkmove:@selector(notifiedglkmove:)];
+    [self minsize];
+    
+    NSLog(@"%@: x: %@ y: %@ width: %@ height: %@", model.name, @(self.standx), @(self.standy), @(self.minwidth), @(self.minheight));
     
     return self;
 }

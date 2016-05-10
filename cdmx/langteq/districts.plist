@@ -6,7 +6,7 @@
 		<key>name</key>
 		<string>Alvaro Obregon</string>
 		<key>serverid</key>
-		<integer>1</integer>
+		<integer>101</integer>
         <key>asset</key>
         <string>districts_alvaroobregon</string>
         <key>x</key>
@@ -22,7 +22,7 @@
         <key>name</key>
         <string>Azcapotzalco</string>
         <key>serverid</key>
-        <integer>2</integer>
+        <integer>102</integer>
         <key>asset</key>
         <string>districts_azcapotzalco</string>
         <key>x</key>
@@ -38,7 +38,7 @@
         <key>name</key>
         <string>Benito Juarez</string>
         <key>serverid</key>
-        <integer>3</integer>
+        <integer>103</integer>
         <key>asset</key>
         <string>districts_benitojuarez</string>
         <key>x</key>
@@ -54,7 +54,7 @@
         <key>name</key>
         <string>Coyoacan</string>
         <key>serverid</key>
-        <integer>4</integer>
+        <integer>104</integer>
         <key>asset</key>
         <string>districts_coyoacan</string>
         <key>x</key>
@@ -70,7 +70,7 @@
         <key>name</key>
         <string>Cuajimalpa</string>
         <key>serverid</key>
-        <integer>5</integer>
+        <integer>105</integer>
         <key>asset</key>
         <string>districts_cuajimalpa</string>
         <key>x</key>
@@ -86,7 +86,7 @@
         <key>name</key>
         <string>Cuauhtemoc</string>
         <key>serverid</key>
-        <integer>6</integer>
+        <integer>106</integer>
         <key>asset</key>
         <string>districts_cuauhtemoc</string>
         <key>x</key>
@@ -102,7 +102,7 @@
         <key>name</key>
         <string>Gustavo A. Madero</string>
         <key>serverid</key>
-        <integer>7</integer>
+        <integer>107</integer>
         <key>asset</key>
         <string>districts_gustavoamadero</string>
         <key>x</key>
@@ -118,7 +118,7 @@
         <key>name</key>
         <string>Iztacalco</string>
         <key>serverid</key>
-        <integer>8</integer>
+        <integer>108</integer>
         <key>asset</key>
         <string>districts_iztacalco</string>
         <key>x</key>
@@ -134,7 +134,7 @@
         <key>name</key>
         <string>Iztapalapa</string>
         <key>serverid</key>
-        <integer>9</integer>
+        <integer>109</integer>
         <key>asset</key>
         <string>districts_iztapalapa</string>
         <key>x</key>
@@ -154,11 +154,11 @@
         <key>asset</key>
         <string>districts_magdalenacontreras</string>
         <key>x</key>
-        <integer>14</integer>
+        <integer>15</integer>
         <key>y</key>
         <integer>138</integer>
         <key>width</key>
-        <integer>67</integer>
+        <integer>63</integer>
         <key>height</key>
         <integer>72</integer>
     </dict>
