@@ -10,6 +10,7 @@ static NSInteger const cellapparentheight = 50;
 {
     self = [super initWithFrame:frame];
     [self setBackgroundColor:[UIColor clearColor]];
+    [self setClipsToBounds:YES];
     
     UILabel *label = [[UILabel alloc] init];
     [label setTranslatesAutoresizingMaskIntoConstraints:NO];
