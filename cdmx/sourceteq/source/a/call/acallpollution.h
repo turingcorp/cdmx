@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 #import "acall.h"
 
-@interface acallstations:acall
+@interface acallpollution:acall
 
 @end

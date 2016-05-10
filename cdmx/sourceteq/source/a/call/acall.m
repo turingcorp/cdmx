@@ -1,6 +1,8 @@
 #import "acall.h"
 #import "aparser.h"
 
+static NSInteger const standardtimeout = 15;
+
 @implementation acall
 
 -(instancetype)init
@@ -9,7 +11,7 @@
     
     self.urlstring = @"";
     self.post = NO;
-    self.timeout = 25;
+    self.timeout = standardtimeout;
     self.cachepolicy = NSURLRequestReloadIgnoringLocalCacheData;
     
     return self;
