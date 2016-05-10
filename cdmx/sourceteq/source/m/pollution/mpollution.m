@@ -3,8 +3,8 @@
 
 @interface mpollution ()
 
-@property(strong, nonatomic, readwrite)NSMutableArray<mpollutionitem*> *items;
-@property(strong, nonatomic, readwrite)NSMutableArray<gspatial*> *spatials;
+@property(strong, nonatomic, readwrite)NSArray<mpollutionitem*> *items;
+@property(strong, nonatomic, readwrite)NSArray<gspatial*> *spatials;
 @property(strong, nonatomic)NSArray<mdbdistrict*> *modeldistricts;
 @property(strong, nonatomic)NSArray<mdbpollutiondaily*> *modeldaily;
 @property(strong, nonatomic)NSArray<mpollutionitem*> *modelhourly;
@@ -27,26 +27,31 @@
 -(void)districts
 {
     [self clean];
-    self.spatials = [NSMutableArray array];
+    NSMutableArray<mpollutionitem*> *items = [NSMutableArray array];
+    NSMutableArray<gspatial*> *spatials = [NSMutableArray array];
     
     NSUInteger countdistritcs = self.modeldistricts.count;
     
     mpollutionitem *globalitem = [mpollutionitem pollutionglobal:self.modeldaily[0]];
-    [self.items addObject:globalitem];
+    [items addObject:globalitem];
     
     for(NSUInteger indexdistricts = 0; indexdistricts < countdistritcs; indexdistricts++)
     {
         mdbdistrict *district = self.modeldistricts[indexdistricts];
         mpollutionitem *modeldistrict = [mpollutionitem district:district];
         
-        [self.items addObject:modeldistrict];
-        [self.spatials addObject:modeldistrict.spatial];
+        [items addObject:modeldistrict];
+        [spatials addObject:modeldistrict.spatial];
     }
+    
+    self.items = items;
+    self.spatials = spatials;
 }
 
 -(void)daily
 {
     [self clean];
+    NSMutableArray<mpollutionitem*> *items = [NSMutableArray array];
     
     NSUInteger countdaily = self.modeldaily.count;
     
@@ -55,13 +60,15 @@
         mdbpollutiondaily *daily = self.modeldaily[indexdaily];
         mpollutionitem *modeldaily = [mpollutionitem pollutiondaily:daily];
         
-        [self.items addObject:modeldaily];
+        [items addObject:modeldaily];
     }
+    
+    self.items = items;
 }
 
 -(void)clean
 {
-    self.items = [NSMutableArray array];
+    self.items = nil;
     self.spatials = nil;
 }
 
