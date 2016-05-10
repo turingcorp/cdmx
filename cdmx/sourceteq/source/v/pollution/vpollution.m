@@ -28,7 +28,6 @@ static NSInteger const texturecorners = 6;
     [self setContext:context];
     [self setDelegate:self];
 
-    self.projection = GLKMatrix4MakeOrtho(0, screenwidth, screenheight, 0, 1, -1);
     self.datatexture = [NSMutableData dataWithLength:texturecorners * sizeof(GLKVector2)];
     self.pointertexture = self.datatexture.mutableBytes;
     self.pointertexture[0] = GLKVector2Make(0, 0);
@@ -39,6 +38,7 @@ static NSInteger const texturecorners = 6;
     self.pointertexture[5] = GLKVector2Make(0, 0);
     self.baseeffect = [[GLKBaseEffect alloc] init];
     self.baseeffect.texture2d0.target = GLKTextureTarget2D;
+    self.baseeffect.transform.projectionMatrix = GLKMatrix4MakeOrtho(0, screenwidth, screenheight, 0, 1, -1);
 }
 
 #pragma mark functionality
@@ -115,7 +115,6 @@ static NSInteger const texturecorners = 6;
     glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
     glEnableVertexAttribArray(GLKVertexAttribPosition);
     
-    self.baseeffect.transform.projectionMatrix = self.projection;
     mpollutionnotificationdraw *userinfo = [[mpollutionnotificationdraw alloc] init:self.baseeffect pointertexture:self.pointertexture];
     [NSNotification glkdraw:userinfo];
     

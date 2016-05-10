@@ -16,7 +16,7 @@ static NSInteger const vectorcorners = 6;
 {
     GLKBaseEffect *baseeffect = userinfo.baseeffect;
     glVertexAttribPointer(GLKVertexAttribPosition, 2, GL_FLOAT, GL_FALSE, 0, self.pointerposition);
-    
+    baseeffect.constantColor = self.color;
     [baseeffect prepareToDraw];
     
     glDrawArrays(GL_TRIANGLES, 0, vectorcorners);

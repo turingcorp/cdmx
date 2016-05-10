@@ -21,14 +21,4 @@ static BOOL const srgb = NO;
     return self;
 }
 
-#pragma mark -
-#pragma mark spatial
-
--(void)drawwithuserinfo:(mpollutionnotificationdraw*)userinfo
-{
-    GLKBaseEffect *baseeffect = userinfo.baseeffect;
-    baseeffect.constantColor = self.color;
-    [super drawwithuserinfo:userinfo];
-}
-
 @end
