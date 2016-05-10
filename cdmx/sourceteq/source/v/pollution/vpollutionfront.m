@@ -102,7 +102,7 @@ static NSInteger const frontcellwidth = 170;
 -(void)showdetail
 {
     currentheadermultiplier = 1;
-    currentheaderaddheight = pollution_distsize + pollution_distposy + pollution_distposy - navbarheightmin;
+    currentheaderaddheight = pollution_mapsize - navbarheightmin;
     currentcellmultiplier = 0;
     
     [self.collection setAlwaysBounceHorizontal:NO];

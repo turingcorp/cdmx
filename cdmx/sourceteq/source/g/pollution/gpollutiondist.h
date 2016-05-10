@@ -1,8 +1,9 @@
 #import <Foundation/Foundation.h>
 #import "gspatialtexture.h"
+#import "mdbdistrict.h"
 
 @interface gpollutiondist:gspatialtexture
 
--(instancetype)init:(NSString*)texturename;
+-(instancetype)init:(mdbdistrict*)model;
 
 @end

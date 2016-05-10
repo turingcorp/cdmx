@@ -6,15 +6,15 @@ static BOOL const srgb = NO;
 
 @implementation gpollutiondist
 
--(instancetype)init:(NSString*)texturename
+-(instancetype)init:(mdbdistrict*)model
 {
-    self = [super init:texturename srgb:srgb];
-    CGFloat screenwidth = [UIScreen mainScreen].bounds.size.width;
-    CGFloat remainwidth = screenwidth - pollution_distsize;
-    self.x = remainwidth / 2.0;
-    self.y = pollution_distposy;
-    self.width = pollution_distsize;
-    self.height = pollution_distsize;
+    self = [super init:model.asset srgb:srgb];
+//    CGFloat screenwidth = [UIScreen mainScreen].bounds.size.width;
+//    CGFloat remainwidth = screenwidth - pollution_distsize;
+    self.x = model.x.integerValue;
+    self.y = model.y.integerValue;
+    self.width = model.width.integerValue;
+    self.height = model.height.integerValue;
     
     [self render];
     

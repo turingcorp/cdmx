@@ -45,17 +45,17 @@
         zqlparam *px = resultparams.items[dbdistricts_x];
         zqlparam *py = resultparams.items[dbdistricts_y];
         zqlparam *pwidth = resultparams.items[dbdistricts_width];
-        zqlparam *pheihgt = resultparams.items[dbdistricts_height];
+        zqlparam *pheight = resultparams.items[dbdistricts_height];
         
         model.primarykey = pprimarykey.value;
         model.serverid = pserverindex.value;
         model.pollution = ppollution.value;
         model.name = pname.value;
         model.asset = passet.value;
-        model.x = paramx.value;
-        model.y = paramy.value;
-        model.width = paramwidth.value;
-        model.height = paramheight.value;
+        model.x = px.value;
+        model.y = py.value;
+        model.width = pwidth.value;
+        model.height = pheight.value;
         
         [array addObject:model];
     }

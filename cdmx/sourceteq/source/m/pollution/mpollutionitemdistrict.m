@@ -15,7 +15,7 @@
 {
     self = [super init];
     self.modeldistrict = modeldistrict;
-    self.spatial = [[gpollutiondist alloc] init:modeldistrict.asset];
+    self.spatial = [[gpollutiondist alloc] init:modeldistrict];
     
     return self;
 }
