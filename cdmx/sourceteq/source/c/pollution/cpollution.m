@@ -55,8 +55,14 @@ static NSInteger const framespersecond = 60;
 
 -(void)loadpollution
 {
-    [self.apimanager cancelcall];
-    self.apimanager = [amanager call:[acall pollution] delegate:self];
+    __weak typeof(self) welf = self;
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
+                   ^
+                   {
+                       [welf.apimanager cancelcall];
+                       welf.apimanager = [amanager call:[acall pollution] delegate:welfa];
+                   });
 }
 
 #pragma mark public

@@ -7,7 +7,7 @@
 {
     self = [super init];
     
-    NSDictionary *urls = [NSDictionary dictionaryWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"urls" withExtension:@"plist"]];
+    NSDictionary *urls = [NSDictionary dictionaryWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"url" withExtension:@"plist"]];
     NSMutableString *mut = [NSMutableString string];
     [mut appendString:urls[@"server"]];
     [mut appendString:urls[@"pollution"]];
