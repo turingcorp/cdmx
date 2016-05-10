@@ -31,7 +31,7 @@
     
     NSUInteger countdistritcs = self.modeldistricts.count;
     
-    mpollutionitem *globalitem = [mpollutionitem pollutiondaily:self.modeldaily[0]];
+    mpollutionitem *globalitem = [mpollutionitem pollutionglobal:self.modeldaily[0]];
     [self.items addObject:globalitem];
     
     for(NSUInteger indexdistricts = 0; indexdistricts < countdistritcs; indexdistricts++)
@@ -67,16 +67,11 @@
 
 -(void)highlight:(mpollutionitem*)model
 {
-    BOOL highlightall = YES;
-    
-    if([model isKindOfClass:[mpollutionitemdistrict class]])
-    {
-        highlightall = NO;
-    }
+    BOOL makestandby = model.makesstandby;
     
     for(mpollutionitem *item in self.items)
     {
-        if(highlightall)
+        if(makestandby)
         {
             [item standby];
         }

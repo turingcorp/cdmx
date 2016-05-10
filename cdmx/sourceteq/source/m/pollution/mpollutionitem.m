@@ -1,5 +1,6 @@
 #import "mpollutionitem.h"
 #import "mpollutionitemdistrict.h"
+#import "mpollutionitemglobal.h"
 #import "mpollutionitemdaily.h"
 #import "mpollutionitemhourly.h"
 #import "ecolor.h"
@@ -15,9 +16,16 @@
     return model;
 }
 
++(instancetype)pollutionglobal:(mdbpollutiondaily*)modelpollutiondaily
+{
+    mpollutionitemglobal *model = [[mpollutionitemglobal alloc] init:[mpollutionindex points:modelpollutiondaily.pollution.integerValue]];
+    
+    return model;
+}
+
 +(instancetype)pollutiondaily:(mdbpollutiondaily*)modelpollutiondaily
 {
-    mpollutionitemdaily *model = [[mpollutionitemdaily alloc] init:[mpollutionindex points:modelpollutiondaily.pollution.integerValue]];
+    mpollutionitemdaily *model = [[mpollutionitemdaily alloc] init:[mpollutionindex points:modelpollutiondaily.pollution.integerValue] date:modelpollutiondaily.date];
     
     return model;
 }

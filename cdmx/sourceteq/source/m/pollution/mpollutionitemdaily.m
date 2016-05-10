@@ -7,8 +7,8 @@
 {
     self = [super init];
     self.index = index;
-    self.name = NSLocalizedString(@"mpollution_item_daily_summary", nil);
     self.makesstandby = NO;
+    self.name = [[tools singleton] datefromserver:date];
     
     return self;
 }
