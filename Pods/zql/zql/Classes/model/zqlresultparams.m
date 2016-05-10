@@ -11,7 +11,7 @@
 -(instancetype)init
 {
     self = [super init];
-    self.items = [NSMutableDictionary dictionary];
+    self.items = [NSDictionary dictionary];
     
     return self;
 }
@@ -27,9 +27,12 @@
 
 -(void)add:(zqlparam*)param
 {
-    NSMutableDictionary<NSString*, zqlparam*> *items = self.items.mutableCopy;
-    items[param.name] = param;
-    self.items = items;
+    if(param)
+    {
+        NSMutableDictionary<NSString*, zqlparam*> *items = self.items.mutableCopy;
+        items[param.name] = param;
+        self.items = items;
+    }
 }
 
 @end

@@ -7,6 +7,7 @@
 +(instancetype)floatnum;
 +(instancetype)text;
 +(instancetype)blob;
++(instancetype)nulltype;
 +(instancetype)fromsqltype:(NSInteger)sqltype;
 -(NSString*)queryvalue:(id)value;
 -(NSString*)createquery;

@@ -3,6 +3,7 @@
 #import "zqltypefloat.h"
 #import "zqltypetext.h"
 #import "zqltypeblob.h"
+#import "zqltypenull.h"
 #import "sqlite3.h"
 
 @implementation zqltype
@@ -35,6 +36,13 @@
     return type;
 }
 
++(instancetype)nulltype
+{
+    zqltypenull *type = [[zqltypenull alloc] init];
+    
+    return type;
+}
+
 +(instancetype)fromsqltype:(NSInteger)sqltype
 {
     zqltype *type;
@@ -62,6 +70,12 @@
         case SQLITE_BLOB:
             
             type = [zqltype blob];
+            
+            break;
+            
+        default:
+            
+            type = [zqltype nulltype];
             
             break;
     }

@@ -61,7 +61,7 @@ static NSInteger const framespersecond = 60;
                    ^
                    {
                        [welf.apimanager cancelcall];
-                       welf.apimanager = [amanager call:[acall pollution] delegate:welfa];
+                       welf.apimanager = [amanager call:[acall pollution] delegate:welf];
                    });
 }
 
