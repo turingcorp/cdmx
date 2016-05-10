@@ -9,6 +9,14 @@
 		<integer>1</integer>
         <key>asset</key>
         <string>districts_alvaroobregon</string>
+        <key>x</key>
+        <integer>1</integer>
+        <key>y</key>
+        <integer>1</integer>
+        <key>width</key>
+        <integer>81</integer>
+        <key>height</key>
+        <integer>98</integer>
 	</dict>
     <dict>
         <key>name</key>
@@ -17,6 +25,14 @@
         <integer>2</integer>
         <key>asset</key>
         <string>districts_azcapotzalco</string>
+        <key>x</key>
+        <integer>1</integer>
+        <key>y</key>
+        <integer>1</integer>
+        <key>width</key>
+        <integer>39</integer>
+        <key>height</key>
+        <integer>31</integer>
     </dict>
     <dict>
         <key>name</key>
@@ -25,6 +41,14 @@
         <integer>3</integer>
         <key>asset</key>
         <string>districts_benitojuarez</string>
+        <key>x</key>
+        <integer>1</integer>
+        <key>y</key>
+        <integer>1</integer>
+        <key>width</key>
+        <integer>36</integer>
+        <key>height</key>
+        <integer>30</integer>
     </dict>
     <dict>
         <key>name</key>
@@ -33,6 +57,14 @@
         <integer>4</integer>
         <key>asset</key>
         <string>districts_coyoacan</string>
+        <key>x</key>
+        <integer>1</integer>
+        <key>y</key>
+        <integer>1</integer>
+        <key>width</key>
+        <integer>76</integer>
+        <key>height</key>
+        <integer>55</integer>
     </dict>
     <dict>
         <key>name</key>
@@ -41,6 +73,14 @@
         <integer>5</integer>
         <key>asset</key>
         <string>districts_cuajimalpa</string>
+        <key>x</key>
+        <integer>1</integer>
+        <key>y</key>
+        <integer>1</integer>
+        <key>width</key>
+        <integer>57</integer>
+        <key>height</key>
+        <integer>91</integer>
     </dict>
     <dict>
         <key>name</key>
@@ -49,6 +89,14 @@
         <integer>6</integer>
         <key>asset</key>
         <string>districts_cuauhtemoc</string>
+        <key>x</key>
+        <integer>1</integer>
+        <key>y</key>
+        <integer>1</integer>
+        <key>width</key>
+        <integer>52</integer>
+        <key>height</key>
+        <integer>57</integer>
     </dict>
     <dict>
         <key>name</key>
@@ -57,6 +105,14 @@
         <integer>7</integer>
         <key>asset</key>
         <string>districts_gustavoamadero</string>
+        <key>x</key>
+        <integer>1</integer>
+        <key>y</key>
+        <integer>1</integer>
+        <key>width</key>
+        <integer>60</integer>
+        <key>height</key>
+        <integer>83</integer>
     </dict>
     <dict>
         <key>name</key>
@@ -65,6 +121,14 @@
         <integer>8</integer>
         <key>asset</key>
         <string>districts_iztacalco</string>
+        <key>x</key>
+        <integer>1</integer>
+        <key>y</key>
+        <integer>1</integer>
+        <key>width</key>
+        <integer>66</integer>
+        <key>height</key>
+        <integer>47</integer>
     </dict>
     <dict>
         <key>name</key>
@@ -73,6 +137,14 @@
         <integer>9</integer>
         <key>asset</key>
         <string>districts_iztapalapa</string>
+        <key>x</key>
+        <integer>1</integer>
+        <key>y</key>
+        <integer>1</integer>
+        <key>width</key>
+        <integer>96</integer>
+        <key>height</key>
+        <integer>66</integer>
     </dict>
     <dict>
         <key>name</key>
@@ -81,6 +153,14 @@
         <integer>10</integer>
         <key>asset</key>
         <string>districts_magdalenacontreras</string>
+        <key>x</key>
+        <integer>1</integer>
+        <key>y</key>
+        <integer>1</integer>
+        <key>width</key>
+        <integer>63</integer>
+        <key>height</key>
+        <integer>72</integer>
     </dict>
     <dict>
         <key>name</key>
@@ -89,6 +169,14 @@
         <integer>11</integer>
         <key>asset</key>
         <string>districts_miguelhidalgo</string>
+        <key>x</key>
+        <integer>1</integer>
+        <key>y</key>
+        <integer>1</integer>
+        <key>width</key>
+        <integer>49</integer>
+        <key>height</key>
+        <integer>51</integer>
     </dict>
     <dict>
         <key>name</key>
@@ -97,6 +185,14 @@
         <integer>12</integer>
         <key>asset</key>
         <string>districts_milpaalta</string>
+        <key>x</key>
+        <integer>1</integer>
+        <key>y</key>
+        <integer>1</integer>
+        <key>width</key>
+        <integer>112</integer>
+        <key>height</key>
+        <integer>102</integer>
     </dict>
     <dict>
         <key>name</key>
@@ -105,6 +201,14 @@
         <integer>13</integer>
         <key>asset</key>
         <string>districts_tlahuac</string>
+        <key>x</key>
+        <integer>1</integer>
+        <key>y</key>
+        <integer>1</integer>
+        <key>width</key>
+        <integer>63</integer>
+        <key>height</key>
+        <integer>74</integer>
     </dict>
     <dict>
         <key>name</key>
@@ -113,6 +217,14 @@
         <integer>14</integer>
         <key>asset</key>
         <string>districts_tlalpan</string>
+        <key>x</key>
+        <integer>1</integer>
+        <key>y</key>
+        <integer>1</integer>
+        <key>width</key>
+        <integer>109</integer>
+        <key>height</key>
+        <integer>124</integer>
     </dict>
     <dict>
         <key>name</key>
@@ -121,6 +233,14 @@
         <integer>15</integer>
         <key>asset</key>
         <string>districts_venustianocarranza</string>
+        <key>x</key>
+        <integer>1</integer>
+        <key>y</key>
+        <integer>1</integer>
+        <key>width</key>
+        <integer>49</integer>
+        <key>height</key>
+        <integer>37</integer>
     </dict>
     <dict>
         <key>name</key>
@@ -129,6 +249,14 @@
         <integer>16</integer>
         <key>asset</key>
         <string>districts_xochimilco</string>
+        <key>x</key>
+        <integer>1</integer>
+        <key>y</key>
+        <integer>1</integer>
+        <key>width</key>
+        <integer>83</integer>
+        <key>height</key>
+        <integer>93</integer>
     </dict>
 </array>
 </plist>
