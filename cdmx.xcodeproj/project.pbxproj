@@ -28,7 +28,6 @@
 		DA87082A1CBE840F000C08E1 /* amanager.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8708291CBE840F000C08E1 /* amanager.m */; };
 		DA87082D1CBE844A000C08E1 /* acall.m in Sources */ = {isa = PBXBuildFile; fileRef = DA87082C1CBE844A000C08E1 /* acall.m */; };
 		DA8708311CBE8532000C08E1 /* aparser.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8708301CBE8532000C08E1 /* aparser.m */; };
-		DA8708371CBE87F7000C08E1 /* aparserstations.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8708361CBE87F7000C08E1 /* aparserstations.m */; };
 		DA8E6B1E1CDA50FA009100EE /* vpollutionfront.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8E6B1D1CDA50FA009100EE /* vpollutionfront.m */; };
 		DA8E6B821CDA76BC009100EE /* vpollutionfrontcell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8E6B811CDA76BC009100EE /* vpollutionfrontcell.m */; };
 		DA8E6B851CDA76D3009100EE /* vpollutionfrontheader.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8E6B841CDA76D3009100EE /* vpollutionfrontheader.m */; };
@@ -119,8 +118,6 @@
 		DA87082E1CBE846B000C08E1 /* acalldelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = acalldelegate.h; sourceTree = "<group>"; };
 		DA87082F1CBE8532000C08E1 /* aparser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aparser.h; sourceTree = "<group>"; };
 		DA8708301CBE8532000C08E1 /* aparser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = aparser.m; sourceTree = "<group>"; };
-		DA8708351CBE87F7000C08E1 /* aparserstations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aparserstations.h; sourceTree = "<group>"; };
-		DA8708361CBE87F7000C08E1 /* aparserstations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = aparserstations.m; sourceTree = "<group>"; };
 		DA8708631CBEBD5C000C08E1 /* genericconstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = genericconstants.h; sourceTree = "<group>"; };
 		DA8E6B1C1CDA50FA009100EE /* vpollutionfront.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vpollutionfront.h; sourceTree = "<group>"; };
 		DA8E6B1D1CDA50FA009100EE /* vpollutionfront.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vpollutionfront.m; sourceTree = "<group>"; };
@@ -370,8 +367,6 @@
 			children = (
 				DA87082F1CBE8532000C08E1 /* aparser.h */,
 				DA8708301CBE8532000C08E1 /* aparser.m */,
-				DA8708351CBE87F7000C08E1 /* aparserstations.h */,
-				DA8708361CBE87F7000C08E1 /* aparserstations.m */,
 				DAB3FEE01CE270F900CCBB86 /* aparserpollution.h */,
 				DAB3FEE11CE270F900CCBB86 /* aparserpollution.m */,
 			);
@@ -782,7 +777,6 @@
 				DAB26D851CE0F9E000E1580F /* mdbdistrict.m in Sources */,
 				DA8E6B881CDA8F5D009100EE /* vradiochart.m in Sources */,
 				DAA0C67A1CD978BD00880D3E /* gtexture.m in Sources */,
-				DA8708371CBE87F7000C08E1 /* aparserstations.m in Sources */,
 				DA8E6B851CDA76D3009100EE /* vpollutionfrontheader.m in Sources */,
 				DACEDEE21CBC89630088AA8B /* cmain.m in Sources */,
 				DA8E6B1E1CDA50FA009100EE /* vpollutionfront.m in Sources */,

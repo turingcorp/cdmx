@@ -1,4 +1,5 @@
 #import "acallpollution.h"
+#import "aparserpollution.h"
 
 @implementation acallpollution
 
@@ -11,7 +12,7 @@
     [mut appendString:urls[@"server"]];
     [mut appendString:urls[@"pollution"]];
     self.urlstring = mut;
-    self.parser = [[aparserstations alloc] init];
+    self.parser = [[aparserpollution alloc] init];
     
     return self;
 }
