@@ -4,6 +4,6 @@
 
 @interface mdbupdate:NSObject
 
-+(void)pollutiondistricts:(NSArray<mdbdistrict*>*)districts daily:(NSArray<mdbpollutiondaily*>*)districts;
++(void)pollutiondistricts:(NSArray<mdbdistrict*>*)districts daily:(NSArray<mdbpollutiondaily*>*)daily;
 
 @end

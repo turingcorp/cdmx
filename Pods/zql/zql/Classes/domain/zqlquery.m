@@ -4,12 +4,16 @@
 
 static NSString* const zqlquerycreatetitle =                    @"create table %@ ";
 static NSString* const zqlqueryinserttitle =                    @"insert into %@ ";
+static NSString* const zqlqueryupdatetitle =                    @"update %@ ";
 static NSString* const zqlqueryselecttitle =                    @"select ";
 static NSString* const zqlqueryselectall =                      @"*";
 static NSString* const zqlqueryselecttable =                    @" from %@";
 static NSString* const zqlqueryselectordered =                  @" order by %@ ";
 static NSString* const zqlqueryselectorderascending =           @"asc";
 static NSString* const zqlqueryselectorderdescending =          @"desc";
+static NSString* const zqlqueryedit =                           @"set ";
+static NSString* const zqlquerywhere =                          @" where ";
+static NSString* const zqlqueryequals =                         @"%@=%@";
 static NSString* const zqlqueryvaluestitle =                    @" values";
 static NSString* const zqlqueryparamsprefix =                   @"(";
 static NSString* const zqlqueryparamsseparator =                @", ";
@@ -100,6 +104,40 @@ static NSString* const zqlquerytransactionrollback =            @"ROLLBACK";
         [string appendString:zqlqueryparamspostfix];
         [stringvalues appendString:zqlqueryparamspostfix];
         [string appendString:stringvalues];
+        [string appendString:zqlqueryclosure];
+        
+        query = [[zqlquery alloc] init:string];
+    }
+    
+    return query;
+}
+
++(instancetype)update:(NSString*)tablename params:(NSArray<zqlparam*>*)params where:(zqlparam*)where
+{
+    zqlquery *query;
+    
+    if([zqlquery tablenamevalid:tablename] && params)
+    {
+        NSMutableString *string = [NSMutableString string];
+        [string appendFormat:zqlqueryupdatetitle, tablename];
+        [string appendString:zqlqueryedit];
+        
+        NSUInteger count = params.count;
+        
+        for(NSUInteger indexparam = 0; indexparam < count; indexparam++)
+        {
+            zqlparam *param = params[indexparam];
+            
+            if(indexparam)
+            {
+                [string appendString:zqlqueryparamsseparator];
+            }
+            
+            [string appendFormat:zqlqueryequals, param.name, param.value];
+        }
+        
+        [string appendString:zqlquerywhere];
+        [string appendFormat:zqlqueryequals, where.name, where.value];
         [string appendString:zqlqueryclosure];
         
         query = [[zqlquery alloc] init:string];
