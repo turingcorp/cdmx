@@ -6,6 +6,7 @@
 +(instancetype)loadfromdb;
 -(void)districts;
 -(void)daily;
+-(void)clean;
 -(void)highlight:(mpollutionitem*)model;
 
 @property(strong, nonatomic, readonly)NSMutableArray<mpollutionitem*> *items;

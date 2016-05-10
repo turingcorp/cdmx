@@ -1,5 +1,7 @@
 #import <UIKit/UIKit.h>
 #import "mpollutionitem.h"
+#import "vpollutionfrontlayoutdetail.h"
+#import "vpollutionfrontlayoutlist.h"
 
 @class cpollution;
 
@@ -12,7 +14,7 @@
 @property(weak, nonatomic)cpollution *controller;
 @property(weak, nonatomic)mpollutionitem *currentitem;
 @property(weak, nonatomic)UICollectionView *collection;
-@property(strong, nonatomic)UICollectionViewFlowLayout *flowdetail;
-@property(strong, nonatomic)UICollectionViewFlowLayout *flowlist;
+@property(strong, nonatomic)vpollutionfrontlayoutdetail *flowdetail;
+@property(strong, nonatomic)vpollutionfrontlayoutlist *flowlist;
 
 @end

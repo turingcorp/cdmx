@@ -27,7 +27,7 @@
 
 -(void)districts
 {
-    self.items = [NSMutableArray array];
+    [self clean];
     self.spatials = [NSMutableArray array];
     
     NSUInteger countdistritcs = self.modeldistricts.count;
@@ -47,8 +47,7 @@
 
 -(void)daily
 {
-    self.items = [NSMutableArray array];
-    self.spatials = nil;
+    [self clean];
     
     NSUInteger countdaily = self.modeldaily.count;
     
@@ -59,6 +58,12 @@
         
         [self.items addObject:modeldaily];
     }
+}
+
+-(void)clean
+{
+    self.items = [NSMutableArray array];
+    self.spatials = nil;
 }
 
 -(void)highlight:(mpollutionitem*)model

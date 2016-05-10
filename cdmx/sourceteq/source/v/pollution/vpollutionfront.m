@@ -31,21 +31,10 @@ static NSInteger const frontcellwidth = 170;
     selected = -1;
     rect1 = CGRectMake(0, 0, 1, 1);
     
-    UICollectionViewFlowLayout *flowdetail = [[UICollectionViewFlowLayout alloc] init];
-    [flowdetail setHeaderReferenceSize:CGSizeZero];
-    [flowdetail setMinimumInteritemSpacing:0];
-    [flowdetail setMinimumLineSpacing:0];
-    [flowdetail setScrollDirection:UICollectionViewScrollDirectionVertical];
-    self.flowdetail = flowdetail;
+    self.flowdetail = [[vpollutionfrontlayoutdetail alloc] init];
+    self.flowlist = [[vpollutionfrontlayoutlist alloc] init];
     
-    UICollectionViewFlowLayout *flowlist = [[UICollectionViewFlowLayout alloc] init];
-    [flowlist setFooterReferenceSize:CGSizeZero];
-    [flowlist setMinimumInteritemSpacing:0];
-    [flowlist setMinimumLineSpacing:0];
-    [flowlist setScrollDirection:UICollectionViewScrollDirectionHorizontal];
-    self.flowlist = flowlist;
-    
-    UICollectionView *collection = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowdetail];
+    UICollectionView *collection = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:self.flowdetail];
     [collection setBackgroundColor:[UIColor clearColor]];
     [collection setClipsToBounds:YES];
     [collection setTranslatesAutoresizingMaskIntoConstraints:NO];

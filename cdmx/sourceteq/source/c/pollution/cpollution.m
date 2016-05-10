@@ -30,13 +30,19 @@ static NSInteger const framespersecond = 60;
     [self setPreferredFramesPerSecond:framespersecond];
     [self setResumeOnDidBecomeActive:YES];
     [self setDelegate:self];
-    
 }
 
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
     [self loadpollution];
+}
+
+-(void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    [self.view.front removeFromSuperview];
+    [self.model clean];
 }
 
 -(void)loadView
