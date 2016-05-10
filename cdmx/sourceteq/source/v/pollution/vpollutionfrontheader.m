@@ -20,7 +20,7 @@ static NSInteger const infomarginx = 10;
     
     self.attrinfo = @{NSFontAttributeName:[UIFont regularsize:15]};
     CGFloat width = frame.size.width;
-    CGFloat bordery = pollution_distposy + pollution_distposy + pollution_distminsize;
+    CGFloat bordery = pollution_distposy + pollution_distposy + pollution_distsize;
     infowidth = width - (infomarginx + infomarginx);
     
     UIView *blanket = [[UIView alloc] init];
