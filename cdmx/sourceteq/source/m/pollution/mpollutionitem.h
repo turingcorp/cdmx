@@ -16,5 +16,6 @@
 @property(strong, nonatomic)mpollutionindex *index;
 @property(strong, nonatomic)gspatial *spatial;
 @property(copy, nonatomic)NSString *name;
+@property(assign, nonatomic)BOOL makesstandby;
 
 @end

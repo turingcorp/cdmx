@@ -3,4 +3,6 @@
 
 @interface mpollutionitemhourly:mpollutionitem
 
+-(instancetype)init:(mpollutionindex*)index hour:(NSNumber*)hour;
+
 @end

@@ -1,6 +1,6 @@
-#import "mpollutionitemdaily.h"
+#import "mpollutionitemglobal.h"
 
-@implementation mpollutionitemdaily
+@implementation mpollutionitemglobal
 
 -(instancetype)init:(mpollutionindex*)index
 {

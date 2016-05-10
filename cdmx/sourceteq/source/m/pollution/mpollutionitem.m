@@ -24,8 +24,7 @@
 
 +(instancetype)pollutionhourly:(NSNumber*)hour pollution:(NSNumber*)pollution
 {
-    mpollutionitemhourly *model = [[mpollutionitemhourly alloc] init];
-    model.name = [NSString stringWithFormat:<#(nonnull NSString *), ...#>];
+    mpollutionitemhourly *model = [[mpollutionitemhourly alloc] init:[mpollutionindex points:pollution.integerValue] hour:hour];
     
     return model;
 }

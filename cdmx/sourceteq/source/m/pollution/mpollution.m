@@ -1,7 +1,5 @@
 #import "mpollution.h"
 #import "mdbselect.h"
-#import "mpollutionitemdistrict.h"
-#import "mpollutionitemdaily.h"
 
 @interface mpollution ()
 
@@ -9,6 +7,7 @@
 @property(strong, nonatomic, readwrite)NSMutableArray<gspatial*> *spatials;
 @property(strong, nonatomic)NSArray<mdbdistrict*> *modeldistricts;
 @property(strong, nonatomic)NSArray<mdbpollutiondaily*> *modeldaily;
+@property(strong, nonatomic)NSArray<mpollutionitem*> *modelhourly;
 
 @end
 
