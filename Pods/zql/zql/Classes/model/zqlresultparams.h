@@ -5,6 +5,6 @@
 
 -(void)add:(zqlparam*)param;
 
-@property(strong, nonatomic, readonly)NSMutableDictionary<NSString*, zqlparam*> *items;
+@property(strong, nonatomic, readonly)NSDictionary<NSString*, zqlparam*> *items;
 
 @end

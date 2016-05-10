@@ -2,7 +2,7 @@
 
 @interface zqlresultparams ()
 
-@property(strong, nonatomic, readwrite)NSMutableDictionary<NSString*, zqlparam*> *items;
+@property(strong, nonatomic, readwrite)NSDictionary<NSString*, zqlparam*> *items;
 
 @end
 
@@ -27,7 +27,9 @@
 
 -(void)add:(zqlparam*)param
 {
-    self.items[param.name] = param;
+    NSMutableDictionary<NSString*, zqlparam*> *items = self.items.mutableCopy;
+    items[param.name] = param;
+    self.items = items;
 }
 
 @end

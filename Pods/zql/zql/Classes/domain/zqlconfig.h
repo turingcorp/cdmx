@@ -6,6 +6,6 @@
 -(void)createdb:(NSString*)dbname;
 -(void)startdb:(NSString*)dbname;
 
-@property(copy, readonly,nonatomic)NSString *dbname;
+@property(copy, nonatomic, readonly)NSString *dbname;
 
 @end

@@ -1,6 +1,12 @@
 #import "zqlqueryprocessor.h"
 #import "zqlresultparams.h"
 
+@interface zqlresult ()
+
+@property(strong, nonatomic, readwrite)NSArray<zqlresultparams*> *params;
+
+@end
+
 @interface zqlqueryprocessor ()
 
 @property(weak, nonatomic)zqlquery *query;
@@ -58,6 +64,7 @@
     
     if(result.moresteps)
     {
+        NSMutableArray<zqlresultparams*> *arrparams = [NSMutableArray array];
         NSInteger columncount = sqlite3_column_count(self.statement);
         NSInteger newresultnumber = resultnumber;
         
@@ -75,10 +82,12 @@
                 [params add:param];
             }
             
-            [result.params addObject:params];
+            [arrparams addObject:params];
             
             newresultnumber = [self stepresult];
         }
+        
+        result.params = arrparams;
     }
     
     return result;

@@ -2,7 +2,7 @@
 
 @interface zqlresult ()
 
-@property(strong, nonatomic, readwrite)NSMutableArray<zqlresultparams*> *params;
+@property(strong, nonatomic, readwrite)NSArray<zqlresultparams*> *params;
 
 @end
 
@@ -43,7 +43,10 @@
     
     if(result.success)
     {
-        [self.params addObjectsFromArray:result.params];
+        NSMutableArray<zqlresultparams*> *params = [NSMutableArray array];
+        [params addObjectsFromArray:self.params];
+        [params addObjectsFromArray:result.params];
+        self.params = params;
         
         if(result.lastinsertid)
         {
