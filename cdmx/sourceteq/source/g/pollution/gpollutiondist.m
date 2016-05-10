@@ -3,7 +3,7 @@
 #import "enotification.h"
 #import "genericconstants.h"
 
-static CGFloat const districtstandscale = 0.75;
+static CGFloat const districtstandscale = 0.70192;
 static BOOL const districtsrgb = NO;
 
 @implementation gpollutiondist
