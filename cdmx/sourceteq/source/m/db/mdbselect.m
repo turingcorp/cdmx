@@ -12,13 +12,21 @@
     zqlparam *parampollution = [zqlparam type:[zqltype integer] name:dbdistricts_pollution value:nil];
     zqlparam *paramname = [zqlparam type:[zqltype text] name:dbdistricts_name value:nil];
     zqlparam *paramasset = [zqlparam type:[zqltype text] name:dbdistricts_asset value:nil];
+    zqlparam *paramx = [zqlparam type:[zqltype integer] name:dbdistricts_x value:nil];
+    zqlparam *paramy = [zqlparam type:[zqltype integer] name:dbdistricts_y value:nil];
+    zqlparam *paramwidth = [zqlparam type:[zqltype integer] name:dbdistricts_width value:nil];
+    zqlparam *paramheight = [zqlparam type:[zqltype integer] name:dbdistricts_height value:nil];
     
     NSArray<zqlparam*> *params = @[
                                    paramprimarykey,
                                    paramserverid,
                                    parampollution,
                                    paramname,
-                                   paramasset
+                                   paramasset,
+                                   paramx,
+                                   paramy,
+                                   paramwidth,
+                                   paramheight
                                    ];
     
     zqlquery *query = [zqlquery select:dbdistricts params:params ordered:paramname ascendent:YES];
@@ -34,12 +42,20 @@
         zqlparam *ppollution = resultparams.items[dbdistricts_pollution];
         zqlparam *pname = resultparams.items[dbdistricts_name];
         zqlparam *passet = resultparams.items[dbdistricts_asset];
+        zqlparam *px = resultparams.items[dbdistricts_x];
+        zqlparam *py = resultparams.items[dbdistricts_y];
+        zqlparam *pwidth = resultparams.items[dbdistricts_width];
+        zqlparam *pheihgt = resultparams.items[dbdistricts_height];
         
         model.primarykey = pprimarykey.value;
         model.serverid = pserverindex.value;
         model.pollution = ppollution.value;
         model.name = pname.value;
         model.asset = passet.value;
+        model.x = paramx.value;
+        model.y = paramy.value;
+        model.width = paramwidth.value;
+        model.height = paramheight.value;
         
         [array addObject:model];
     }

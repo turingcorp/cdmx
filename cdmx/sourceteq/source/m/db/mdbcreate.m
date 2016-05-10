@@ -27,12 +27,20 @@
     zqlparam *paramname = [zqlparam type:[zqltype text] name:dbdistricts_name value:nil];
     zqlparam *parampollution = [zqlparam type:[zqltype integer] name:dbdistricts_pollution value:@0];
     zqlparam *paramasset = [zqlparam type:[zqltype text] name:dbdistricts_asset value:@0];
+    zqlparam *paramx = [zqlparam type:[zqltype integer] name:dbdistricts_x value:@0];
+    zqlparam *paramy = [zqlparam type:[zqltype integer] name:dbdistricts_y value:@0];
+    zqlparam *paramwidth = [zqlparam type:[zqltype integer] name:dbdistricts_width value:@0];
+    zqlparam *paramheight = [zqlparam type:[zqltype integer] name:dbdistricts_height value:@0];
     
     NSArray<zqlparam*> *params = @[
                                    paramserverid,
                                    paramname,
                                    parampollution,
-                                   paramasset
+                                   paramasset,
+                                   paramx,
+                                   paramy,
+                                   paramwidth,
+                                   paramheight
                                    ];
     
     zqlquery *querytabledistricts = [zqlquery createtable:dbdistricts params:params];
@@ -43,13 +51,21 @@
     for(NSUInteger indexdistricts = 0; indexdistricts < countdistricts; indexdistricts++)
     {
         NSDictionary *rawdistrict = rawdistricts[indexdistricts];
-        NSString *districname = rawdistrict[dbdistricts_name];
-        NSString *districasset = rawdistrict[dbdistricts_asset];
-        NSNumber *districserverid = rawdistrict[dbserverindex];
+        NSString *districtname = rawdistrict[dbdistricts_name];
+        NSString *districtasset = rawdistrict[dbdistricts_asset];
+        NSNumber *districtserverid = rawdistrict[dbserverindex];
+        NSNumber *districtx = rawdistrict[dbdistricts_x];
+        NSNumber *districty = rawdistrict[dbdistricts_y];
+        NSNumber *districtwidth = rawdistrict[dbdistricts_width];
+        NSNumber *districtheight = rawdistrict[dbdistricts_height];
         
-        paramserverid.value = districserverid;
-        paramname.value = districname;
-        paramasset.value = districasset;
+        paramserverid.value = districtserverid;
+        paramname.value = districtname;
+        paramasset.value = districtasset;
+        paramx.value = districtx;
+        paramy.value = districty;
+        paramwidth.value = districtwidth;
+        paramheight.value = districtheight;
         zqlquery *newquery = [zqlquery insert:dbdistricts params:params];
         [queries addObject:newquery];
     }
