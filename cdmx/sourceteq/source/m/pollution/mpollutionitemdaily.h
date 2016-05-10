@@ -3,6 +3,6 @@
 
 @interface mpollutionitemdaily:mpollutionitem
 
--(instancetype)init:(mpollutionindex*)index;
+-(instancetype)init:(mpollutionindex*)index date:(NSNumber*)date;
 
 @end

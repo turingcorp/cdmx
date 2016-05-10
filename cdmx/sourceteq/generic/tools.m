@@ -6,6 +6,10 @@ static NSString* const shareurl = @"https://itunes.apple.com/us/app/cdmx/id%@";
 static NSString* const rateurl = @"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=%@";
 
 @implementation tools
+{
+    NSDateFormatter *dateserverinput;
+    NSDateFormatter *dateoutput;
+}
 
 +(instancetype)singleton
 {
@@ -49,9 +53,24 @@ static NSString* const rateurl = @"itms-apps://itunes.apple.com/WebObjects/MZSto
 {
     self = [super init];
     
+    dateserverinput = [[NSDateFormatter alloc] init];
+    [dateserverinput setDateFormat:@"yyMMdd"];
+    
+    dateoutput = [[NSDateFormatter alloc] init];
+    [dateoutput setDateFormat:@"MMM d"];
+    
     return self;
 }
 
 #pragma mark public
+
+-(NSString*)datefromserver:(NSNumber*)serverdate
+{
+    NSString *datestring = [NSString stringWithFormat:@"%@", serverdate];
+    NSDate *inputdate = [dateserverinput dateFromString:datestring];
+    NSString *outputdate = [dateoutput stringFromDate:inputdate];
+    
+    return outputdate;
+}
 
 @end

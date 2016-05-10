@@ -1,8 +1,9 @@
 #import "mpollutionitemdaily.h"
+#import "tools.h"
 
 @implementation mpollutionitemdaily
 
--(instancetype)init:(mpollutionindex*)index
+-(instancetype)init:(mpollutionindex*)index date:(NSNumber*)date
 {
     self = [super init];
     self.index = index;
