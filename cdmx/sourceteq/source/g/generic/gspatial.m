@@ -28,7 +28,7 @@ static NSInteger const vectorcorners = 6;
     [self drawwithuserinfo:userinfo];
 }
 
--(void)render
+-(void)render:(BOOL)movetotop
 {
     CGFloat minx = self.x;
     CGFloat maxx = minx + self.width;
@@ -44,7 +44,10 @@ static NSInteger const vectorcorners = 6;
     self.pointerposition[4] = GLKVector2Make(maxx, miny);
     self.pointerposition[5] = GLKVector2Make(minx, miny);
     
-    [self movetotop];
+    if(movetotop)
+    {
+        [self movetotop];
+    }
 }
 
 -(void)movetotop

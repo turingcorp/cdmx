@@ -74,22 +74,20 @@
     {
         if(highlightall)
         {
-            [item highlighted];
+            [item standby];
         }
         else
         {
             if(item == model)
             {
-                [item highlighted];
+                [item turnon];
             }
             else
             {
-                [item nothighlighted];
+                [item turnoff];
             }
         }
     }
-    
-    [model.spatial movetotop];
 }
 
 @end

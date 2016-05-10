@@ -25,15 +25,19 @@
 
 #pragma mark public
 
--(void)highlighted
+-(void)turnon
 {
     self.spatial.color = [self.index.color asvector];
-    [self.spatial movetotop];
 }
 
--(void)nothighlighted
+-(void)turnoff
 {
     self.spatial.color = [[UIColor background] asvector];
+}
+
+-(void)standby
+{
+    self.spatial.color = [self.index.color asvector];
 }
 
 @end

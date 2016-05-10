@@ -23,14 +23,22 @@
 #pragma mark -
 #pragma mark pollution item
 
--(void)highlighted
+-(void)turnon
 {
-    [super highlighted];
+    [super turnon];
+    [self.spatial maxsize];
 }
 
--(void)nothighlighted
+-(void)turnoff
 {
-    [super nothighlighted];
+    [super turnoff];
+    [self.spatial minsize];
+}
+
+-(void)standby
+{
+    [super standby];
+    [self.spatial minsize];
 }
 
 @end
