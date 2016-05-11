@@ -7,7 +7,7 @@
 @interface mpollutionitem:NSObject
 
 +(instancetype)district:(mdbdistrict*)modeldistrict;
-+(instancetype)pollutionglobal:(mdbpollutiondaily*)modelpollutiondaily;
++(instancetype)pollutionglobal:(NSNumber*)pollution;
 +(instancetype)pollutiondaily:(mdbpollutiondaily*)modelpollutiondaily;
 +(instancetype)pollutionhourly:(NSNumber*)hour pollution:(NSNumber*)pollution;
 -(void)turnon;

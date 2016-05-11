@@ -16,9 +16,9 @@
     return model;
 }
 
-+(instancetype)pollutionglobal:(mdbpollutiondaily*)modelpollutiondaily
++(instancetype)pollutionglobal:(NSNumber*)pollution
 {
-    mpollutionitemglobal *model = [[mpollutionitemglobal alloc] init:[mpollutionindex points:modelpollutiondaily.pollution.integerValue]];
+    mpollutionitemglobal *model = [[mpollutionitemglobal alloc] init:[mpollutionindex points:pollution.integerValue]];
     
     return model;
 }

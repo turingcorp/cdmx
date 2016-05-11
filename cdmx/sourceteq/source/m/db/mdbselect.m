@@ -67,18 +67,16 @@
 {
     NSMutableArray<mdbpollutiondaily*> *array = [NSMutableArray array];
     zqlparam *paramprimarykey = [zqlparam type:[zqltype integer] name:dbprimarykey value:nil];
-    zqlparam *paramcreated = [zqlparam type:[zqltype integer] name:dbcreated value:nil];
     zqlparam *paramdate = [zqlparam type:[zqltype integer] name:dbpollutiondaily_date value:nil];
     zqlparam *parampollution = [zqlparam type:[zqltype integer] name:dbpollutiondaily_maxpollution value:nil];
     
     NSArray<zqlparam*> *params = @[
                                    paramprimarykey,
-                                   paramcreated,
                                    paramdate,
                                    parampollution
                                    ];
     
-    zqlquery *query = [zqlquery select:dbpollutiondaily params:params ordered:paramcreated ascendent:NO];
+    zqlquery *query = [zqlquery select:dbpollutiondaily params:params ordered:paramdate ascendent:NO];
     zqlresult *result = [zql query:@[query]];
     
     NSUInteger districtscount = result.params.count;
