@@ -16,22 +16,13 @@
     [icon setContentMode:UIViewContentModeCenter];
     self.icon = icon;
     
-    UIView *background = [[UIView alloc] init];
-    [background setClipsToBounds:YES];
-    [background setUserInteractionEnabled:NO];
-    [background setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [background.layer setCornerRadius:4];
-    
-    [self addSubview:background];
     [self addSubview:icon];
     
-    NSDictionary *views = @{@"icon":icon, @"background":background};
+    NSDictionary *views = @{@"icon":icon};
     NSDictionary *metrics = @{};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[icon]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[icon]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[background]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[background]-0-|" options:0 metrics:metrics views:views]];
     
     return self;
 }
@@ -54,13 +45,13 @@
 {
     if(self.isSelected || self.isHighlighted)
     {
-        [self.background setBackgroundColor:[UIColor second]];
+        [self setBackgroundColor:[UIColor second]];
         [self.icon setTintColor:[UIColor whiteColor]];
     }
     else
     {
-        [self.background setBackgroundColor:[UIColor clearColor]];
-        [self.icon setTintColor:[UIColor main]];
+        [self setBackgroundColor:[UIColor background]];
+        [self.icon setTintColor:[UIColor colorWithWhite:0.85 alpha:1]];
     }
 }
 

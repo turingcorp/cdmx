@@ -7,6 +7,7 @@
 -(instancetype)init:(cpollution*)controller
 {
     self = [super init];
+    [self setBackgroundColor:[UIColor clearColor]];
     [self setClipsToBounds:YES];
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
     self.controller = controller;
@@ -17,7 +18,7 @@
     [flow setFooterReferenceSize:CGSizeZero];
     [flow setMinimumInteritemSpacing:0];
     [flow setMinimumLineSpacing:0];
-    [flow setScrollDirection:UICollectionViewScrollDirectionVertical];
+    [flow setScrollDirection:UICollectionViewScrollDirectionHorizontal];
     [flow setSectionInset:UIEdgeInsetsZero];
     
     UICollectionView *collection = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flow];
@@ -31,6 +32,7 @@
     [collection setDataSource:self];
     [collection setDelegate:self];
     [collection registerClass:[vpollutionmenucell class] forCellWithReuseIdentifier:[vpollutionmenucell reusableidentifier]];
+    [collection setHidden:YES];
     
     [self addSubview:collection];
     
@@ -60,8 +62,8 @@
     NSInteger cellcount = self.model.items.count;
     CGFloat width = self.bounds.size.width;
     CGFloat height = self.bounds.size.height;
-    CGFloat heightpercell = height / cellcount;
-    CGSize size = CGSizeMake(width, heightpercell);
+    CGFloat widthpercell = width / cellcount;
+    CGSize size = CGSizeMake(widthpercell, height);
     
     return size;
 }

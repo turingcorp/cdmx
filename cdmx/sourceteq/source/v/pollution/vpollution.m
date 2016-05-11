@@ -4,9 +4,7 @@
 #import "vpollutionmenu.h"
 
 static NSInteger const texturecorners = 6;
-static NSInteger const pollutionmenuwidth = 60;
-static NSInteger const pollutionmenuheight = 150;
-static NSInteger const pollutionmenuy = 50;
+static NSInteger const pollutionmenuheight = 50;
 
 @implementation vpollution
 
@@ -53,10 +51,10 @@ static NSInteger const pollutionmenuy = 50;
     [self addSubview:menu];
     
     NSDictionary *views = @{@"menu":menu};
-    NSDictionary *metrics = @{@"width":@(pollutionmenuwidth), @"height":@(pollutionmenuheight), @"y":@(pollutionmenuy)};
+    NSDictionary *metrics = @{@"height":@(pollutionmenuheight)};
     
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[menu(width)]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(y)-[menu(height)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[menu]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[menu(height)]-0-|" options:0 metrics:metrics views:views]];
 }
 
 -(void)loadfront
