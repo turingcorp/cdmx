@@ -65,7 +65,7 @@
     CGFloat bluecomponent;
     CGFloat alphacomponent;
     [self getRed:&redcomponent green:&greencomponent blue:&bluecomponent alpha:&alphacomponent];
-    vector = GLKVector4Make(redcomponent, greencomponent, bluecomponent, alphacomponent);
+    vector = GLKVector4Make(redcomponent * alphacomponent, greencomponent * alphacomponent, bluecomponent * alphacomponent, alphacomponent);
     
     return vector;
 }

@@ -2,21 +2,17 @@
 #import "ecolor.h"
 #import "genericconstants.h"
 
-static NSInteger const chartbasebottommarginx = 5;
-static NSInteger const chartbasebottomheight = 2;
+static NSInteger const chartbasebottomheight = 1;
 
 @implementation gpollutionchartbasebottom
 
--(instancetype)init
+-(instancetype)init:(CGFloat)width
 {
     self = [super init:[UIColor main] toprigh:[UIColor main] bottomleft:[UIColor main] bottomright:[UIColor main]];
     
-    CGSize size = [UIScreen mainScreen].bounds.size;
-    CGFloat width = size.width;
-    
-    self.x = chartbasebottommarginx;
+    self.x = 0;
     self.y = pollution_drawableheight;
-    self.width = width - (chartbasebottommarginx + chartbasebottommarginx);
+    self.width = width;
     self.height = chartbasebottomheight;
     
     [self render];

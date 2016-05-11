@@ -171,6 +171,7 @@ static NSInteger const pollutionmenuheight = 80;
 -(void)glkView:(GLKView*)view drawInRect:(CGRect)rect
 {
     glDisable(GL_DEPTH_TEST);
+    glDisable(GL_DITHER);
     glClearColor(1,1,1,1);
     glClear(GL_COLOR_BUFFER_BIT);
     glEnable(GL_BLEND);

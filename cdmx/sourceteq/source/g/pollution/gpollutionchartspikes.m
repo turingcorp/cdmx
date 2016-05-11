@@ -11,10 +11,12 @@
 
 @implementation gpollutionchartspikes
 
--(instancetype)init
+-(instancetype)init:(UIColor*)colortop bottom:(UIColor*)colorbottom
 {
     self = [super init];
     self.spikes = [NSMutableArray array];
+    self.colortop = colortop;
+    self.colorbottom = colorbottom;
     
     return self;
 }
@@ -42,25 +44,6 @@
     glDisableVertexAttribArray(GLKVertexAttribColor);
 }
 
-#pragma mark functionality
-
--(void)closurespikes
-{
-    GLKVector4 color = [[UIColor colorWithWhite:0 alpha:0.1] asvector];
-    
-    mpollutionchartspike *firstspike = [[mpollutionchartspike alloc] init];
-    firstspike.x = 0;
-    firstspike.y = pollution_drawableheight;
-    firstspike.color = color;
-    
-    mpollutionchartspike *secondspike = [[mpollutionchartspike alloc] init];
-    secondspike.x = [self.spikes lastObject].x;
-    secondspike.y = pollution_drawableheight;
-    secondspike.color = color;
-    
-    [self add:secondspike];
-}
-
 #pragma mark public
 
 -(void)add:(mpollutionchartspike*)spike
@@ -70,20 +53,27 @@
 
 -(void)render
 {
-    [self closurespikes];
-    self.corners = self.spikes.count;
+    NSInteger corners = self.spikes.count;
+    NSInteger corners2 = corners * 2;
+    NSInteger indexvector = 0;
+    self.corners = corners2;
     
-    self.dataposition = [NSMutableData dataWithLength:self.corners * sizeof(GLKVector2)];
-    self.datacolor = [NSMutableData dataWithLength:self.corners * sizeof(GLKVector4)];
+    GLKVector4 colortop = [self.colortop asvector];
+    GLKVector4 colorbottom = [self.colorbottom asvector];
+    
+    self.dataposition = [NSMutableData dataWithLength:corners2 * sizeof(GLKVector2)];
+    self.datacolor = [NSMutableData dataWithLength:corners2 * sizeof(GLKVector4)];
     self.pointerposition = self.dataposition.mutableBytes;
     self.pointercolor = self.datacolor.mutableBytes;
     
-    for(NSUInteger indexspike = 0; indexspike < self.corners; indexspike++)
+    for(NSUInteger indexspike = 0; indexspike < corners; indexspike++)
     {
         mpollutionchartspike *spike = self.spikes[indexspike];
         
-        self.pointerposition[indexspike] = GLKVector2Make(spike.x, spike.y);
-        self.pointercolor[indexspike] = spike.color;
+        self.pointerposition[indexvector] = GLKVector2Make(spike.x, pollution_drawableheight);
+        self.pointercolor[indexvector++] = colorbottom;
+        self.pointerposition[indexvector] = GLKVector2Make(spike.x, spike.y);
+        self.pointercolor[indexvector++] = colortop;
     }
     
     [NSNotification observe:self glkdraw:@selector(draw:)];

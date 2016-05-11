@@ -10,7 +10,6 @@
     self.index = index;
     self.makesstandby = NO;
     self.name = [[tools singleton] datefromserver:date];
-    self.spatial = [[gpollutionchartbar alloc] init:index x:spatialx width:spatialwidth];
     
     return self;
 }

@@ -3,4 +3,6 @@
 
 @interface gpollutionchartbasebottom:gspatialcolor
 
+-(instancetype)init:(CGFloat)width;
+
 @end

@@ -1,11 +1,14 @@
 #import "mpollution.h"
 #import "mdbselect.h"
+#import "ecolor.h"
 #import "gpollutionchartbasebottom.h"
+#import "gpollutionchartspikes.h"
+#import "genericconstants.h"
 
 @interface mpollution ()
 
 @property(strong, nonatomic, readwrite)NSArray<mpollutionitem*> *items;
-@property(strong, nonatomic, readwrite)NSArray<gspatial*> *spatials;
+@property(strong, nonatomic)NSArray *spatials;
 @property(strong, nonatomic)NSArray<mdbdistrict*> *modeldistricts;
 @property(strong, nonatomic)NSArray<mdbpollutiondaily*> *modeldaily;
 @property(strong, nonatomic)NSArray<mpollutionhour*> *modelhourly;
@@ -30,7 +33,6 @@
 {
     [self clean];
     NSMutableArray<mpollutionitem*> *items = [NSMutableArray array];
-    NSMutableArray<gspatial*> *spatials = [NSMutableArray array];
     
     mpollutionitem *globalitem;
     
@@ -53,37 +55,44 @@
         mpollutionitem *modeldistrict = [mpollutionitem district:district];
         
         [items addObject:modeldistrict];
-        [spatials addObject:modeldistrict.spatial];
     }
     
     self.items = items;
-    self.spatials = spatials;
 }
 
 -(void)chart
 {
     [self clean];
     NSMutableArray<mpollutionitem*> *items = [NSMutableArray array];
-    NSMutableArray<gspatial*> *spatials = [NSMutableArray array];
+    NSMutableArray *spatials = [NSMutableArray array];
     
     NSUInteger countdaily = self.modeldaily.count;
     CGSize screensize = [UIScreen mainScreen].bounds.size;
     CGFloat width = screensize.width;
-    CGFloat widthperitem = width / countdaily;
+    CGFloat widthperitem = width / (countdaily - 1);
     CGFloat widthsum = 0;
     
-    gpollutionchartbasebottom *basebottom = [[gpollutionchartbasebottom alloc] init];
+    gpollutionchartbasebottom *basebottom = [[gpollutionchartbasebottom alloc] init:width];
+    gpollutionchartspikes *spikes = [[gpollutionchartspikes alloc] init:[[UIColor main] colorWithAlphaComponent:0.2] bottom:[[UIColor main] colorWithAlphaComponent:0.05]];
+    
     [spatials addObject:basebottom];
+    [spatials addObject:spikes];
     
     for(NSUInteger indexdaily = 0; indexdaily < countdaily; indexdaily++)
     {
         mdbpollutiondaily *daily = self.modeldaily[indexdaily];
         mpollutionitem *modeldaily = [mpollutionitem pollutiondaily:daily spatialx:widthsum spatialwidth:widthperitem];
-        widthsum += widthperitem;
-        
         [items addObject:modeldaily];
-        [spatials addObject:modeldaily.spatial];
+        
+        mpollutionchartspike *spike = [[mpollutionchartspike alloc] init];
+        spike.x = widthsum;
+        spike.y = pollution_drawableheight - modeldaily.index.points;
+        [spikes add:spike];
+        
+        widthsum += widthperitem;
     }
+    
+    [spikes render];
     
     self.items = items;
     self.spatials = spatials;

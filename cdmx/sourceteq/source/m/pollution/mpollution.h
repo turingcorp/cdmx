@@ -11,6 +11,5 @@
 -(void)highlight:(mpollutionitem*)model;
 
 @property(strong, nonatomic, readonly)NSArray<mpollutionitem*> *items;
-@property(strong, nonatomic, readonly)NSArray<gspatial*> *spatials;
 
 @end
