@@ -1,5 +1,4 @@
 #import "vpollutionmenu.h"
-#import "vpollutionmenubackground.h"
 #import "vpollutionmenucell.h"
 #import "ecell.h"
 
@@ -16,7 +15,12 @@ static NSInteger const menucellwidth = 64;
     self.controller = controller;
     self.model = [[mpollutionmenu alloc] init];
     
-    vpollutionmenubackground *background = [[vpollutionmenubackground alloc] init];
+    UIImageView *background = [[UIImageView alloc] init];
+    [background setUserInteractionEnabled:NO];
+    [background setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [background setClipsToBounds:YES];
+    [background setContentMode:UIViewContentModeBottom];
+    [background setImage:[UIImage imageNamed:@"pollution_background"]];
     
     UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
     [flow setHeaderReferenceSize:CGSizeZero];

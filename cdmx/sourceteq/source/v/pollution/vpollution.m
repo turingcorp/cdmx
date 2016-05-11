@@ -4,7 +4,7 @@
 #import "vpollutionmenu.h"
 
 static NSInteger const texturecorners = 6;
-static NSInteger const pollutionmenuheight = 80;
+static NSInteger const pollutionmenuheight = 100;
 
 @implementation vpollution
 
