@@ -6,7 +6,7 @@
 
 +(instancetype)loadfromdb:(NSArray<mpollutionhour*>*)modelhourly;
 -(void)districts;
--(void)daily;
+-(void)chart;
 -(void)clean;
 -(void)highlight:(mpollutionitem*)model;
 

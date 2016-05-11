@@ -100,23 +100,56 @@ static NSInteger const pollutionmenuheight = 80;
 -(void)show_districts
 {
     __weak typeof(self) welf = self;
-    [welf.controller show_districts];
     
-    dispatch_async(dispatch_get_main_queue(),
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
                    ^
                    {
-                       [welf loadfront];
+                       [welf.controller.model districts];
+                       
+                       dispatch_async(dispatch_get_main_queue(),
+                                      ^
+                                      {
+                                          [welf loadfront];
+                                      });
                    });
 }
 
 -(void)show_chart
 {
+    __weak typeof(self) welf = self;
     
+    [welf.front remove];
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
+                   ^
+                   {
+                       [welf.controller.model chart];
+                       
+                       dispatch_async(dispatch_get_main_queue(),
+                                      ^
+                                      {
+                                          [welf loadfront];
+                                      });
+                   });
 }
 
 -(void)show_map
 {
+    __weak typeof(self) welf = self;
     
+    [welf.front remove];
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
+                   ^
+                   {
+                       [welf.controller.model chart];
+                       
+                       dispatch_async(dispatch_get_main_queue(),
+                                      ^
+                                      {
+                                          [welf loadfront];
+                                      });
+                   });
 }
 
 #pragma mark -

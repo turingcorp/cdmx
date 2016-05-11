@@ -73,11 +73,6 @@ static NSInteger const framespersecond = 60;
     [[cmain singleton] pushViewController:controller animated:YES];
 }
 
--(void)show_districts
-{
-    [self.model districts];
-}
-
 #pragma mark -
 #pragma mark glk del
 

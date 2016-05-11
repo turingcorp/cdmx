@@ -59,10 +59,11 @@
     self.spatials = spatials;
 }
 
--(void)daily
+-(void)chart
 {
     [self clean];
     NSMutableArray<mpollutionitem*> *items = [NSMutableArray array];
+    NSMutableArray<gspatial*> *spatials = [NSMutableArray array];
     
     NSUInteger countdaily = self.modeldaily.count;
     
@@ -75,6 +76,7 @@
     }
     
     self.items = items;
+    self.spatials = spatials;
 }
 
 -(void)clean

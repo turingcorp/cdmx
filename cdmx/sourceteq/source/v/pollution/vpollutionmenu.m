@@ -52,6 +52,8 @@ static NSInteger const menucellwidth = 50;
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
     
+    [collection selectItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0] animated:NO scrollPosition:UICollectionViewScrollPositionNone];
+    
     return self;
 }
 
@@ -106,6 +108,14 @@ static NSInteger const menucellwidth = 50;
     [cell config:model];
     
     return cell;
+}
+
+-(BOOL)collectionView:(UICollectionView*)col shouldSelectItemAtIndexPath:(NSIndexPath*)index
+{
+    UICollectionViewCell *cell = [col cellForItemAtIndexPath:index];
+    BOOL selectable = !cell.isSelected;
+    
+    return selectable;
 }
 
 -(void)collectionView:(UICollectionView*)col didSelectItemAtIndexPath:(NSIndexPath*)index

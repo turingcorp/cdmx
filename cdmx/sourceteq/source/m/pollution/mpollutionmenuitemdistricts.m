@@ -16,7 +16,7 @@ static NSString* const menuassetname = @"pollution_menudistricts";
 
 -(void)actionselected:(vpollution*)view
 {
-    
+    [view show_districts];
 }
 
 @end

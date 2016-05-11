@@ -10,6 +10,7 @@
 -(instancetype)init:(cpollution*)controller;
 -(void)showdetail;
 -(void)showlist;
+-(void)remove;
 
 @property(weak, nonatomic)cpollution *controller;
 @property(weak, nonatomic)mpollutionitem *currentitem;
