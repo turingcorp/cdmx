@@ -3,6 +3,13 @@
 
 @implementation vcollectioncell
 
++(NSString*)reusableidentifier
+{
+    NSString *classname = NSStringFromClass([self class]);
+    
+    return classname;
+}
+
 -(instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];

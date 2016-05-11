@@ -2,4 +2,6 @@
 
 @interface vcollectioncell:UICollectionViewCell
 
++(NSString*)reusableidentifier;
+
 @end
