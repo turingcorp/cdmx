@@ -128,7 +128,7 @@ static NSInteger const pollutionmenuheight = 80;
                        dispatch_async(dispatch_get_main_queue(),
                                       ^
                                       {
-                                          [welf loadfront];
+//                                          [welf loadfront];
                                       });
                    });
 }
@@ -147,7 +147,7 @@ static NSInteger const pollutionmenuheight = 80;
                        dispatch_async(dispatch_get_main_queue(),
                                       ^
                                       {
-                                          [welf loadfront];
+//                                          [welf loadfront];
                                       });
                    });
 }

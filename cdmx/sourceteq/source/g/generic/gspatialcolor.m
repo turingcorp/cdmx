@@ -19,9 +19,9 @@ static NSInteger const colorcorners = 6;
     self.pointercolor[0] = colortopleft;
     self.pointercolor[1] = colorbottomleft;
     self.pointercolor[2] = colorbottomright;
-    self.pointercolor[3] = colortopleft;
+    self.pointercolor[3] = colorbottomright;
     self.pointercolor[4] = colortopright;
-    self.pointercolor[5] = colorbottomright;
+    self.pointercolor[5] = colortopleft;
     
     return self;
 }
@@ -32,10 +32,9 @@ static NSInteger const colorcorners = 6;
 -(void)drawwithuserinfo:(mpollutionnotificationdraw*)userinfo
 {
     GLKBaseEffect *baseeffect = userinfo.baseeffect;
-    GLKVector2 *pointertexture = userinfo.pointertexture;
-    
+    baseeffect.texture2d0.enabled = NO;
     glEnableVertexAttribArray(GLKVertexAttribColor);
-    glVertexAttribPointer(GLKVertexAttribColor, 2, GL_FLOAT, GL_FALSE, 0, pointertexture);
+    glVertexAttribPointer(GLKVertexAttribColor, 4, GL_FLOAT, GL_FALSE, 0, self.pointercolor);
     
     [super drawwithuserinfo:userinfo];
     

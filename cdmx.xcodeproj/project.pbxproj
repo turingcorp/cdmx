@@ -36,6 +36,7 @@
 		DA86ACD51CE37B8E00908755 /* ecell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA86ACD41CE37B8E00908755 /* ecell.m */; };
 		DA86ACD81CE37C1F00908755 /* ereusable.m in Sources */ = {isa = PBXBuildFile; fileRef = DA86ACD71CE37C1F00908755 /* ereusable.m */; };
 		DA86ACDE1CE3A20B00908755 /* gspatialcolor.m in Sources */ = {isa = PBXBuildFile; fileRef = DA86ACDD1CE3A20B00908755 /* gspatialcolor.m */; };
+		DA86ACE11CE3A8CD00908755 /* gpollutionchartbasebottom.m in Sources */ = {isa = PBXBuildFile; fileRef = DA86ACE01CE3A8CD00908755 /* gpollutionchartbasebottom.m */; };
 		DA87082A1CBE840F000C08E1 /* amanager.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8708291CBE840F000C08E1 /* amanager.m */; };
 		DA87082D1CBE844A000C08E1 /* acall.m in Sources */ = {isa = PBXBuildFile; fileRef = DA87082C1CBE844A000C08E1 /* acall.m */; };
 		DA8708311CBE8532000C08E1 /* aparser.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8708301CBE8532000C08E1 /* aparser.m */; };
@@ -147,6 +148,8 @@
 		DA86ACD71CE37C1F00908755 /* ereusable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ereusable.m; sourceTree = "<group>"; };
 		DA86ACDC1CE3A20B00908755 /* gspatialcolor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gspatialcolor.h; sourceTree = "<group>"; };
 		DA86ACDD1CE3A20B00908755 /* gspatialcolor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gspatialcolor.m; sourceTree = "<group>"; };
+		DA86ACDF1CE3A8CD00908755 /* gpollutionchartbasebottom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gpollutionchartbasebottom.h; sourceTree = "<group>"; };
+		DA86ACE01CE3A8CD00908755 /* gpollutionchartbasebottom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gpollutionchartbasebottom.m; sourceTree = "<group>"; };
 		DA8708281CBE840F000C08E1 /* amanager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = amanager.h; sourceTree = "<group>"; };
 		DA8708291CBE840F000C08E1 /* amanager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = amanager.m; sourceTree = "<group>"; };
 		DA87082B1CBE844A000C08E1 /* acall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = acall.h; sourceTree = "<group>"; };
@@ -470,6 +473,8 @@
 			children = (
 				DAA0C6821CD985D400880D3E /* gpollutiondist.h */,
 				DAA0C6831CD985D400880D3E /* gpollutiondist.m */,
+				DA86ACDF1CE3A8CD00908755 /* gpollutionchartbasebottom.h */,
+				DA86ACE01CE3A8CD00908755 /* gpollutionchartbasebottom.m */,
 			);
 			path = pollution;
 			sourceTree = "<group>";
@@ -855,6 +860,7 @@
 				DAA0C6841CD985D400880D3E /* gpollutiondist.m in Sources */,
 				DA8E6B971CDA9B48009100EE /* mpollutionindexdanger.m in Sources */,
 				DAB26D851CE0F9E000E1580F /* mdbdistrict.m in Sources */,
+				DA86ACE11CE3A8CD00908755 /* gpollutionchartbasebottom.m in Sources */,
 				DA8E6B881CDA8F5D009100EE /* vradiochart.m in Sources */,
 				DAA0C67A1CD978BD00880D3E /* gtexture.m in Sources */,
 				DA86ACCF1CE3758B00908755 /* mpollutionmenuitemchart.m in Sources */,

@@ -1,5 +1,6 @@
 #import "mpollution.h"
 #import "mdbselect.h"
+#import "gpollutionchartbasebottom.h"
 
 @interface mpollution ()
 
@@ -64,6 +65,10 @@
     [self clean];
     NSMutableArray<mpollutionitem*> *items = [NSMutableArray array];
     NSMutableArray<gspatial*> *spatials = [NSMutableArray array];
+    
+    gpollutionchartbasebottom *basebottom = [[gpollutionchartbasebottom alloc] init];
+    
+    [spatials addObject:basebottom];
     
     NSUInteger countdaily = self.modeldaily.count;
     
