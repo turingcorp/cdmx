@@ -49,7 +49,7 @@
     }
     else
     {
-        [self.icon setTintColor:[UIColor colorWithWhite:0.8 alpha:1]];
+        [self.icon setTintColor:[UIColor colorWithWhite:0.9 alpha:1]];
     }
 }
 

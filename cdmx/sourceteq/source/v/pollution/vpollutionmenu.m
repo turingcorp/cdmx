@@ -2,7 +2,7 @@
 #import "vpollutionmenucell.h"
 #import "ecell.h"
 
-static NSInteger const menucellwidth = 60;
+static NSInteger const menucellwidth = 50;
 
 @implementation vpollutionmenu
 
@@ -72,7 +72,7 @@ static NSInteger const menucellwidth = 60;
     NSInteger cellcount = self.model.items.count;
     CGFloat width = col.bounds.size.width;
     CGFloat widthallcells = cellcount * menucellwidth;
-    CGFloat remain = width = widthallcells;
+    CGFloat remain = width - widthallcells;
     CGFloat margin = remain / 2.0;
     UIEdgeInsets insets = UIEdgeInsetsMake(0, margin, 0, margin);
     
