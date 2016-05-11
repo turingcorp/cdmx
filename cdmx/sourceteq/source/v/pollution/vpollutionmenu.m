@@ -3,12 +3,12 @@
 
 @implementation vpollutionmenu
 
--(instancetype)init
+-(instancetype)init:(cpollution*)controller
 {
     self = [super init];
     [self setClipsToBounds:YES];
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
-
+    self.controller = controller;
     self.model = [[mpollutionmenu alloc] init];
     
     UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];

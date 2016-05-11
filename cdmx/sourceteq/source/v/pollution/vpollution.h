@@ -1,6 +1,7 @@
 #import <UIKit/UIKit.h>
 #import <GLKit/GLKit.h>
 #import "vpollutionfront.h"
+#import "vpollutionmenu.h"
 
 @class cpollution;
 
@@ -15,6 +16,7 @@
 
 @property(weak, nonatomic)cpollution *controller;
 @property(weak, nonatomic)vpollutionfront *front;
+@property(weak, nonatomic)vpollutionmenu *menu;
 @property(strong, nonatomic)NSMutableData *datatexture;
 @property(strong, nonatomic)GLKBaseEffect *baseeffect;
 @property(strong, nonatomic)EAGLContext *strongcontext;

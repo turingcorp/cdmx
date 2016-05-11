@@ -3,6 +3,9 @@
 #import "cpollution.h"
 
 static NSInteger const texturecorners = 6;
+static NSInteger const pollutionmenuwidth = 60;
+static NSInteger const pollutionmenuheight = 150;
+static NSInteger const pollutionmenuy = 50;
 
 @implementation vpollution
 
@@ -41,7 +44,17 @@ static NSInteger const texturecorners = 6;
     self.baseeffect.transform.projectionMatrix = GLKMatrix4MakeOrtho(0, screenwidth, screenheight, 0, 1, -1);
 }
 
-#pragma mark functionality
+-(void)loadmenu
+{
+    vpollutionmenu *menu = [[vpollutionmenu alloc] init:self.controller];
+    self.menu = menu;
+    
+    NSDictionary *views = @{@"menu":menu};
+    NSDictionary *metrics = @{@"width":@(pollutionmenuwidth), @"height":@(pollutionmenuheight), @"y":@(pollutionmenuy)};
+    
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[menu(width)]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(y)-[menu(height)]" options:0 metrics:metrics views:views]];
+}
 
 -(void)loadfront
 {
@@ -49,7 +62,7 @@ static NSInteger const texturecorners = 6;
     
     vpollutionfront *front = [[vpollutionfront alloc] init:self.controller];
     self.front = front;
-    [self addSubview:front];
+    [self insertSubview:front belowSubview:self.menu];
     
     NSDictionary *views = @{@"front":front};
     NSDictionary *metrics = @{};
@@ -70,6 +83,12 @@ static NSInteger const texturecorners = 6;
                        if(!welf.strongcontext)
                        {
                            [welf glkstart];
+                           
+                           dispatch_async(dispatch_get_main_queue(),
+                                          ^
+                                          {
+                                              [welf loadmenu];
+                                          });
                        }
                        
                        [EAGLContext setCurrentContext:welf.strongcontext];
