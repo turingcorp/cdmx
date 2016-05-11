@@ -2,7 +2,7 @@
 #import "vpollutionmenucell.h"
 #import "ecell.h"
 
-static NSInteger const menucellwidth = 64;
+static NSInteger const menucellwidth = 60;
 
 @implementation vpollutionmenu
 
