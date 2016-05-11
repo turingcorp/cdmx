@@ -6,24 +6,62 @@
 -(instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
+    [self setClipsToBounds:YES];
+    [self setBackgroundColor:[UIColor clearColor]];
     
     UIImageView *icon = [[UIImageView alloc] init];
     [icon setClipsToBounds:YES];
     [icon setUserInteractionEnabled:NO];
     [icon setTranslatesAutoresizingMaskIntoConstraints:NO];
     [icon setContentMode:UIViewContentModeCenter];
-    [icon setTintColor:[UIColor main]];
     self.icon = icon;
     
+    UIView *background = [[UIView alloc] init];
+    [background setClipsToBounds:YES];
+    [background setUserInteractionEnabled:NO];
+    [background setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [background.layer setCornerRadius:4];
+    
+    [self addSubview:background];
     [self addSubview:icon];
     
-    NSDictionary *views = @{@"icon":icon};
+    NSDictionary *views = @{@"icon":icon, @"background":background};
     NSDictionary *metrics = @{};
     
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-2-[icon]-2-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-2-[icon]-2-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[icon]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[icon]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[background]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[background]-0-|" options:0 metrics:metrics views:views]];
     
     return self;
+}
+
+-(void)setHighlighted:(BOOL)highlighted
+{
+    [super setHighlighted:highlighted];
+    [self hover];
+}
+
+-(void)setSelected:(BOOL)selected
+{
+    [super setSelected:selected];
+    [self hover];
+}
+
+#pragma mark functionality
+
+-(void)hover
+{
+    if(self.isSelected || self.isHighlighted)
+    {
+        [self.background setBackgroundColor:[UIColor second]];
+        [self.icon setTintColor:[UIColor whiteColor]];
+    }
+    else
+    {
+        [self.background setBackgroundColor:[UIColor clearColor]];
+        [self.icon setTintColor:[UIColor main]];
+    }
 }
 
 #pragma mark public
@@ -31,6 +69,7 @@
 -(void)config:(mpollutionmenuitem*)model
 {
     [self.icon setImage:[[UIImage imageNamed:model.asset] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+    [self hover];
 }
 
 @end
