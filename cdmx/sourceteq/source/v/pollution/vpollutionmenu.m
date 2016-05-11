@@ -1,6 +1,9 @@
 #import "vpollutionmenu.h"
+#import "vpollutionmenubackground.h"
 #import "vpollutionmenucell.h"
 #import "ecell.h"
+
+static NSInteger const menucellwidth = 64;
 
 @implementation vpollutionmenu
 
@@ -13,13 +16,14 @@
     self.controller = controller;
     self.model = [[mpollutionmenu alloc] init];
     
+    vpollutionmenubackground *background = [[vpollutionmenubackground alloc] init];
+    
     UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
     [flow setHeaderReferenceSize:CGSizeZero];
     [flow setFooterReferenceSize:CGSizeZero];
     [flow setMinimumInteritemSpacing:0];
     [flow setMinimumLineSpacing:0];
     [flow setScrollDirection:UICollectionViewScrollDirectionHorizontal];
-    [flow setSectionInset:UIEdgeInsetsZero];
     
     UICollectionView *collection = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flow];
     [collection setClipsToBounds:YES];
@@ -32,13 +36,15 @@
     [collection setDataSource:self];
     [collection setDelegate:self];
     [collection registerClass:[vpollutionmenucell class] forCellWithReuseIdentifier:[vpollutionmenucell reusableidentifier]];
-    [collection setHidden:YES];
     
+    [self addSubview:background];
     [self addSubview:collection];
     
-    NSDictionary *views = @{@"col":collection};
+    NSDictionary *views = @{@"col":collection, @"background":background};
     NSDictionary *metrics = @{};
     
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[background]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[background]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
     
@@ -57,13 +63,22 @@
 #pragma mark -
 #pragma mark col del
 
--(CGSize)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout sizeForItemAtIndexPath:(NSIndexPath*)index
+-(UIEdgeInsets)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout insetForSectionAtIndex:(NSInteger)section
 {
     NSInteger cellcount = self.model.items.count;
-    CGFloat width = self.bounds.size.width;
+    CGFloat width = col.bounds.size.width;
+    CGFloat widthallcells = cellcount * menucellwidth;
+    CGFloat remain = width = widthallcells;
+    CGFloat margin = remain / 2.0;
+    UIEdgeInsets insets = UIEdgeInsetsMake(0, margin, 0, margin);
+    
+    return insets;
+}
+
+-(CGSize)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout sizeForItemAtIndexPath:(NSIndexPath*)index
+{
     CGFloat height = self.bounds.size.height;
-    CGFloat widthpercell = width / cellcount;
-    CGSize size = CGSizeMake(widthpercell, height);
+    CGSize size = CGSizeMake(menucellwidth, height);
     
     return size;
 }
