@@ -76,7 +76,7 @@
                                    parampollution
                                    ];
     
-    zqlquery *query = [zqlquery select:dbpollutiondaily params:params ordered:paramdate ascendent:NO];
+    zqlquery *query = [zqlquery select:dbpollutiondaily params:params ordered:paramdate ascendent:YES];
     zqlresult *result = [zql query:@[query]];
     
     NSUInteger districtscount = result.params.count;

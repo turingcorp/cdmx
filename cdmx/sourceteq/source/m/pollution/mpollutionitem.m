@@ -23,9 +23,9 @@
     return model;
 }
 
-+(instancetype)pollutiondaily:(mdbpollutiondaily*)modelpollutiondaily
++(instancetype)pollutiondaily:(mdbpollutiondaily*)modelpollutiondaily spatialx:(CGFloat)spatialx spatialwidth:(CGFloat)spatialwidth
 {
-    mpollutionitemdaily *model = [[mpollutionitemdaily alloc] init:[mpollutionindex points:modelpollutiondaily.pollution.integerValue] date:modelpollutiondaily.date];
+    mpollutionitemdaily *model = [[mpollutionitemdaily alloc] init:[mpollutionindex points:modelpollutiondaily.pollution.integerValue] date:modelpollutiondaily.date spatialx:spatialx spatialwidth:spatialwidth];
     
     return model;
 }

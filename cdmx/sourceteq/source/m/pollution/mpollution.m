@@ -36,7 +36,7 @@
     
     if(self.modelhourly.count)
     {
-        globalitem = [mpollutionitem pollutionglobal:self.modelhourly[0].pollution];
+        globalitem = [mpollutionitem pollutionglobal:[self.modelhourly lastObject].pollution];
     }
     else
     {
@@ -66,18 +66,23 @@
     NSMutableArray<mpollutionitem*> *items = [NSMutableArray array];
     NSMutableArray<gspatial*> *spatials = [NSMutableArray array];
     
-    gpollutionchartbasebottom *basebottom = [[gpollutionchartbasebottom alloc] init];
-    
-    [spatials addObject:basebottom];
-    
     NSUInteger countdaily = self.modeldaily.count;
+    CGSize screensize = [UIScreen mainScreen].bounds.size;
+    CGFloat width = screensize.width;
+    CGFloat widthperitem = width / countdaily;
+    CGFloat widthsum = 0;
+    
+    gpollutionchartbasebottom *basebottom = [[gpollutionchartbasebottom alloc] init];
+    [spatials addObject:basebottom];
     
     for(NSUInteger indexdaily = 0; indexdaily < countdaily; indexdaily++)
     {
         mdbpollutiondaily *daily = self.modeldaily[indexdaily];
-        mpollutionitem *modeldaily = [mpollutionitem pollutiondaily:daily];
+        mpollutionitem *modeldaily = [mpollutionitem pollutiondaily:daily spatialx:widthsum spatialwidth:widthperitem];
+        widthsum += widthperitem;
         
         [items addObject:modeldaily];
+        [spatials addObject:modeldaily.spatial];
     }
     
     self.items = items;

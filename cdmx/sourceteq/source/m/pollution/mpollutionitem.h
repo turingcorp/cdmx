@@ -8,7 +8,7 @@
 
 +(instancetype)district:(mdbdistrict*)modeldistrict;
 +(instancetype)pollutionglobal:(NSNumber*)pollution;
-+(instancetype)pollutiondaily:(mdbpollutiondaily*)modelpollutiondaily;
++(instancetype)pollutiondaily:(mdbpollutiondaily*)modelpollutiondaily spatialx:(CGFloat)spatialx spatialwidth:(CGFloat)spatialwidth;
 +(instancetype)pollutionhourly:(NSNumber*)hour pollution:(NSNumber*)pollution;
 -(void)turnon;
 -(void)turnoff;

@@ -92,8 +92,11 @@ static NSInteger const pollutionmenuheight = 80;
                                           });
                        }
                        
-                       [EAGLContext setCurrentContext:welf.strongcontext];
-                       [welf show_districts];
+                       dispatch_async(dispatch_get_main_queue(),
+                                      ^
+                                      {
+                                          [welf show_districts];
+                                      });
                    });
 }
 
@@ -101,15 +104,19 @@ static NSInteger const pollutionmenuheight = 80;
 {
     __weak typeof(self) welf = self;
     
+    [welf.menu setUserInteractionEnabled:NO];
+    
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
                    ^
                    {
+                       [EAGLContext setCurrentContext:welf.strongcontext];
                        [welf.controller.model districts];
                        
                        dispatch_async(dispatch_get_main_queue(),
                                       ^
                                       {
                                           [welf loadfront];
+                                          [welf.menu setUserInteractionEnabled:YES];
                                       });
                    });
 }
@@ -118,17 +125,20 @@ static NSInteger const pollutionmenuheight = 80;
 {
     __weak typeof(self) welf = self;
     
+    [welf.menu setUserInteractionEnabled:NO];
     [welf.front remove];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
                    ^
                    {
+                       [EAGLContext setCurrentContext:welf.strongcontext];
                        [welf.controller.model chart];
                        
                        dispatch_async(dispatch_get_main_queue(),
                                       ^
                                       {
 //                                          [welf loadfront];
+                                          [welf.menu setUserInteractionEnabled:YES];
                                       });
                    });
 }
@@ -137,17 +147,20 @@ static NSInteger const pollutionmenuheight = 80;
 {
     __weak typeof(self) welf = self;
     
+    [welf.menu setUserInteractionEnabled:NO];
     [welf.front remove];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
                    ^
                    {
+                       [EAGLContext setCurrentContext:welf.strongcontext];
                        [welf.controller.model chart];
                        
                        dispatch_async(dispatch_get_main_queue(),
                                       ^
                                       {
 //                                          [welf loadfront];
+                                          [welf.menu setUserInteractionEnabled:YES];
                                       });
                    });
 }

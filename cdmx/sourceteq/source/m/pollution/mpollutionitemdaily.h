@@ -3,6 +3,6 @@
 
 @interface mpollutionitemdaily:mpollutionitem
 
--(instancetype)init:(mpollutionindex*)index date:(NSNumber*)date;
+-(instancetype)init:(mpollutionindex*)index date:(NSNumber*)date spatialx:(CGFloat)spatialx spatialwidth:(CGFloat)spatialwidth;
 
 @end
