@@ -1,6 +1,7 @@
 #import "vpollution.h"
 #import "enotification.h"
 #import "cpollution.h"
+#import "vpollutionmenu.h"
 
 static NSInteger const texturecorners = 6;
 static NSInteger const pollutionmenuwidth = 60;
@@ -48,6 +49,8 @@ static NSInteger const pollutionmenuy = 50;
 {
     vpollutionmenu *menu = [[vpollutionmenu alloc] init:self.controller];
     self.menu = menu;
+    
+    [self addSubview:menu];
     
     NSDictionary *views = @{@"menu":menu};
     NSDictionary *metrics = @{@"width":@(pollutionmenuwidth), @"height":@(pollutionmenuheight), @"y":@(pollutionmenuy)};

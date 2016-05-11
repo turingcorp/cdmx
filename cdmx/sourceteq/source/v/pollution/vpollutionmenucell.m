@@ -1,4 +1,5 @@
 #import "vpollutionmenucell.h"
+#import "ecolor.h"
 
 @implementation vpollutionmenucell
 
@@ -11,6 +12,7 @@
     [icon setUserInteractionEnabled:NO];
     [icon setTranslatesAutoresizingMaskIntoConstraints:NO];
     [icon setContentMode:UIViewContentModeCenter];
+    [icon setTintColor:[UIColor main]];
     self.icon = icon;
     
     [self addSubview:icon];
@@ -18,8 +20,8 @@
     NSDictionary *views = @{@"icon":icon};
     NSDictionary *metrics = @{};
     
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[icon]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[icon]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-2-[icon]-2-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-2-[icon]-2-|" options:0 metrics:metrics views:views]];
     
     return self;
 }
@@ -28,7 +30,7 @@
 
 -(void)config:(mpollutionmenuitem*)model
 {
-    
+    [self.icon setImage:[[UIImage imageNamed:model.asset] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
 }
 
 @end

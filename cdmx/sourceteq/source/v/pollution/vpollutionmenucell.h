@@ -1,8 +1,7 @@
 #import <UIKit/UIKit.h>
-#import "vcollectioncell.h"
 #import "mpollutionmenuitem.h"
 
-@interface vpollutionmenucell:vcollectioncell
+@interface vpollutionmenucell:UICollectionViewCell
 
 -(void)config:(mpollutionmenuitem*)model;
 

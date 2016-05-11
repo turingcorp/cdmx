@@ -1,10 +1,10 @@
 #import "vpollutionfront.h"
 #import "vpollutionfrontheader.h"
 #import "vpollutionfrontcell.h"
+#import "ecell.h"
+#import "ereusable.h"
 #import "genericconstants.h"
 
-static NSString* const frontheaderid = @"frontheader";
-static NSString* const frontcellid = @"frontcell";
 static NSInteger const frontcellwidth = 170;
 
 @implementation vpollutionfront
@@ -41,8 +41,8 @@ static NSInteger const frontcellwidth = 170;
     [collection setShowsVerticalScrollIndicator:NO];
     [collection setShowsHorizontalScrollIndicator:NO];
     [collection setAlwaysBounceVertical:YES];
-    [collection registerClass:[vpollutionfrontheader class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:frontheaderid];
-    [collection registerClass:[vpollutionfrontcell class] forCellWithReuseIdentifier:frontcellid];
+    [collection registerClass:[vpollutionfrontheader class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:[vpollutionfrontheader reusableidentifier]];
+    [collection registerClass:[vpollutionfrontcell class] forCellWithReuseIdentifier:[vpollutionfrontcell reusableidentifier]];
     [collection setDataSource:self];
     [collection setDelegate:self];
     self.collection = collection;
@@ -203,7 +203,7 @@ static NSInteger const frontcellwidth = 170;
 
 -(UICollectionReusableView*)collectionView:(UICollectionView*)col viewForSupplementaryElementOfKind:(NSString*)kind atIndexPath:(NSIndexPath*)index
 {
-    vpollutionfrontheader *header = [col dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:frontheaderid forIndexPath:index];
+    vpollutionfrontheader *header = [col dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:[vpollutionfrontheader reusableidentifier] forIndexPath:index];
     [header config:self.currentitem controller:self.controller];
     
     return header;
@@ -212,7 +212,7 @@ static NSInteger const frontcellwidth = 170;
 -(UICollectionViewCell*)collectionView:(UICollectionView*)col cellForItemAtIndexPath:(NSIndexPath*)index
 {
     mpollutionitem *model = [self modelforindex:index];
-    vpollutionfrontcell *cell = [col dequeueReusableCellWithReuseIdentifier:frontcellid forIndexPath:index];
+    vpollutionfrontcell *cell = [col dequeueReusableCellWithReuseIdentifier:[vpollutionfrontcell reusableidentifier] forIndexPath:index];
     [cell config:model front:self];
     
     return cell;

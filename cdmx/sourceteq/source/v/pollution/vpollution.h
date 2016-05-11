@@ -1,9 +1,9 @@
 #import <UIKit/UIKit.h>
 #import <GLKit/GLKit.h>
 #import "vpollutionfront.h"
-#import "vpollutionmenu.h"
 
 @class cpollution;
+@class vpollutionmenu;
 
 @interface vpollution:GLKView<GLKViewDelegate>
 
