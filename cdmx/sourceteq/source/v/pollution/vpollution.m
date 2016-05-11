@@ -23,9 +23,9 @@ static NSInteger const texturecorners = 6;
     CGFloat screenwidth = screensize.width;
     CGFloat screenheight = screensize.height;
     
-    self.context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
-    [EAGLContext setCurrentContext:self.context];
-    [self setContext:self.context];
+    self.strongcontext = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
+    [EAGLContext setCurrentContext:self.strongcontext];
+    [self setContext:self.strongcontext];
     [self setDelegate:self];
 
     self.datatexture = [NSMutableData dataWithLength:texturecorners * sizeof(GLKVector2)];
@@ -67,12 +67,12 @@ static NSInteger const texturecorners = 6;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
                    ^
                    {
-                       if(!welf.context)
+                       if(!welf.strongcontext)
                        {
                            [welf glkstart];
                        }
                        
-                       [EAGLContext setCurrentContext:welf.context];
+                       [EAGLContext setCurrentContext:welf.strongcontext];
                        [welf show_districts];
                    });
 }

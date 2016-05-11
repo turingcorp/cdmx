@@ -1,9 +1,9 @@
 #import <Foundation/Foundation.h>
 #import "aparser.h"
-#import "mpollutionitem.h"
+#import "mpollutionhour.h"
 
 @interface aparserpollution:aparser
 
-@property(strong, nonatomic, readonly)NSArray<mpollutionitem*> *modelhourly;
+@property(strong, nonatomic, readonly)NSArray<mpollutionhour*> *modelhourly;
 
 @end

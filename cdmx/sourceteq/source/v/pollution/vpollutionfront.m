@@ -220,9 +220,9 @@ static NSInteger const frontcellwidth = 170;
 
 -(void)collectionView:(UICollectionView*)col didSelectItemAtIndexPath:(NSIndexPath*)index
 {
+    trackscroll = NO;
     [col scrollToItemAtIndexPath:index atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
     [self postselect:index.item];
-    trackscroll = NO;
 }
 
 @end

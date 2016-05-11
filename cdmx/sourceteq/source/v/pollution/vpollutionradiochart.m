@@ -2,6 +2,9 @@
 #import "ecolor.h"
 #import "efont.h"
 
+static CGFloat const timerinterval = 0.01;
+static NSInteger const aftertimer = 400;
+static NSInteger const timerdelta = 2;
 static NSInteger const radiochartwidth_2 = 80;
 static NSInteger const radiochartlinewidth = 8;
 
@@ -12,6 +15,8 @@ static NSInteger const radiochartlinewidth = 8;
     self = [super init];
     self.size_2 = radiochartwidth_2;
     self.linewidth = radiochartlinewidth;
+    self.basecolor = [UIColor background];
+    self.maxpoints = [mpollutionindex maxpoints];
     
     UILabel *labelpoints = [[UILabel alloc] init];
     [labelpoints setUserInteractionEnabled:NO];
@@ -45,6 +50,11 @@ static NSInteger const radiochartlinewidth = 8;
     return self;
 }
 
+-(void)dealloc
+{
+    [self.timer invalidate];
+}
+
 -(CGSize)intrinsicContentSize
 {
     NSInteger height = (radiochartwidth_2 + radiochartlinewidth) * 2;
@@ -53,18 +63,47 @@ static NSInteger const radiochartlinewidth = 8;
     return size;
 }
 
+#pragma mark functionality
+
+-(void)tick:(NSTimer*)timer
+{
+    self.currentpoints += timerdelta;
+    
+    if(self.currentpoints > self.index.points)
+    {
+        self.currentpoints = self.index.points;
+        [timer invalidate];
+    }
+    
+    [self print];
+}
+
+-(void)print
+{
+    NSString *strindex = [NSString stringWithFormat:@"%@", @(self.currentpoints)];
+    
+    [self render];
+    [self.labelpoints setText:strindex];
+}
+
 #pragma mark public
 
 -(void)render:(mpollutionindex*)index
 {
-    self.basecolor = [UIColor background];
+    [self.timer invalidate];
+    self.index = index;
     self.higlightcolor = index.color;
-    self.currentpoints = index.points;
-    self.maxpoints = [mpollutionindex maxpoints];
-    [self render];
-    
-    [self.labelpoints setText:index.description];
+    self.currentpoints = 0;
     [self.labeltitle setTextColor:index.color];
+    [self print];
+    
+    __weak typeof(self) welf = self;
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_MSEC * aftertimer), dispatch_get_main_queue(),
+                   ^
+                   {
+                       welf.timer = [NSTimer scheduledTimerWithTimeInterval:timerinterval target:welf selector:@selector(tick:) userInfo:nil repeats:YES];
+                   });
 }
 
 @end

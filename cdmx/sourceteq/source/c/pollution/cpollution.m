@@ -108,7 +108,7 @@ static NSInteger const framespersecond = 60;
 
 -(void)call:(amanager*)manager error:(NSString*)error
 {
-    // TODO: error
+#warning "missing error actions"
 }
 
 @end

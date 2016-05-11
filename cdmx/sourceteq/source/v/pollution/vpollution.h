@@ -17,7 +17,7 @@
 @property(weak, nonatomic)vpollutionfront *front;
 @property(strong, nonatomic)NSMutableData *datatexture;
 @property(strong, nonatomic)GLKBaseEffect *baseeffect;
-@property(strong, nonatomic)EAGLContext *context;
+@property(strong, nonatomic)EAGLContext *strongcontext;
 @property(assign, nonatomic)GLKVector2 *pointertexture;
 
 @end

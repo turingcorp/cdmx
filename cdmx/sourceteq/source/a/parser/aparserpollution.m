@@ -3,7 +3,7 @@
 
 @interface aparserpollution ()
 
-@property(strong, nonatomic, readwrite)NSArray<mpollutionitem*> *modelhourly;
+@property(strong, nonatomic, readwrite)NSArray<mpollutionhour*> *modelhourly;
 
 @end
 
@@ -20,7 +20,7 @@
         NSArray *rawhourly = self.validjson[@"hourly"];
         NSMutableArray<mdbdistrict*> *modeldistricts = [NSMutableArray array];
         NSMutableArray<mdbpollutiondaily*> *modeldaily = [NSMutableArray array];
-        NSMutableArray<mpollutionitem*> *modelhourly = [NSMutableArray array];
+        NSMutableArray<mpollutionhour*> *modelhourly = [NSMutableArray array];
         
         NSUInteger countdistricts = rawdistricts.count;
         
@@ -60,12 +60,13 @@
             NSNumber *rawhourhour = rawhour[@"hour"];
             NSNumber *rawhourpollution = rawhour[@"pollution"];
             
-            mpollutionitem *modelhour = [mpollutionitem pollutionhourly:rawhourhour pollution:rawhourpollution];
+            mpollutionhour *modelhour = [[mpollutionhour alloc] init];
+            modelhour.hour = rawhourhour;
+            modelhour.pollution = rawhourpollution;
             [modelhourly addObject:modelhour];
         }
         
         self.modelhourly = modelhourly;
-        
         [mdbupdate pollutiondistricts:modeldistricts daily:modeldaily];
     }
 }

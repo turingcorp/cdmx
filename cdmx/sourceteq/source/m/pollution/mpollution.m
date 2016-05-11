@@ -7,13 +7,13 @@
 @property(strong, nonatomic, readwrite)NSArray<gspatial*> *spatials;
 @property(strong, nonatomic)NSArray<mdbdistrict*> *modeldistricts;
 @property(strong, nonatomic)NSArray<mdbpollutiondaily*> *modeldaily;
-@property(strong, nonatomic)NSArray<mpollutionitem*> *modelhourly;
+@property(strong, nonatomic)NSArray<mpollutionhour*> *modelhourly;
 
 @end
 
 @implementation mpollution
 
-+(instancetype)loadfromdb:(NSArray<mpollutionitem*>*)modelhourly
++(instancetype)loadfromdb:(NSArray<mpollutionhour*>*)modelhourly
 {
     mpollution *model = [[mpollution alloc] init];
     model.modelhourly = modelhourly;
@@ -31,11 +31,21 @@
     NSMutableArray<mpollutionitem*> *items = [NSMutableArray array];
     NSMutableArray<gspatial*> *spatials = [NSMutableArray array];
     
-    NSUInteger countdistritcs = self.modeldistricts.count;
+    mpollutionitem *globalitem;
     
-    mpollutionitem *globalitem = [mpollutionitem pollutionglobal:self.modelhourly.po];
+    if(self.modelhourly.count)
+    {
+        globalitem = [mpollutionitem pollutionglobal:self.modelhourly[0].pollution];
+    }
+    else
+    {
+        globalitem = [mpollutionitem pollutionglobal:@0];
+    }
+    
     [items addObject:globalitem];
     
+    NSUInteger countdistritcs = self.modeldistricts.count;
+
     for(NSUInteger indexdistricts = 0; indexdistricts < countdistritcs; indexdistricts++)
     {
         mdbdistrict *district = self.modeldistricts[indexdistricts];
