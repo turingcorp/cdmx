@@ -3,6 +3,7 @@
 #import "ecolor.h"
 #import "gpollutionchartbasebottom.h"
 #import "gpollutionchartspikes.h"
+#import "gpollutionchartline.h"
 #import "genericconstants.h"
 
 @interface mpollution ()
@@ -74,9 +75,11 @@
     
     gpollutionchartbasebottom *basebottom = [[gpollutionchartbasebottom alloc] init:width];
     gpollutionchartspikes *spikes = [[gpollutionchartspikes alloc] init];
+    gpollutionchartline *line = [[gpollutionchartline alloc] init];
     
     [spatials addObject:basebottom];
     [spatials addObject:spikes];
+    [spatials addObject:line];
     
     for(NSUInteger indexdaily = 0; indexdaily < countdaily; indexdaily++)
     {
@@ -85,14 +88,18 @@
         [items addObject:modeldaily];
         
         mpollutionchartspike *spike = [[mpollutionchartspike alloc] init];
+        spike.color = modeldaily.index.color;
         spike.x = widthsum;
         spike.y = pollution_drawableheight - modeldaily.index.points;
+        
         [spikes add:spike];
+        [line add:spike];
         
         widthsum += widthperitem;
     }
     
     [spikes render];
+    [line render];
     
     self.items = items;
     self.spatials = spatials;

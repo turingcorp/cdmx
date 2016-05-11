@@ -3,6 +3,9 @@
 #import "ecolor.h"
 #import "genericconstants.h"
 
+static NSInteger const chartlinewidth = 50;
+static NSInteger const chartvectorcorners = 6;
+
 @interface gpollutionchartline ()
 
 @property(strong, nonatomic, readwrite)NSMutableArray<mpollutionchartspike*> *spikes;
@@ -36,9 +39,7 @@
     glVertexAttribPointer(GLKVertexAttribPosition, 2, GL_FLOAT, GL_FALSE, 0, self.pointerposition);
     glVertexAttribPointer(GLKVertexAttribColor, 4, GL_FLOAT, GL_FALSE, 0, self.pointercolor);
     [baseeffect prepareToDraw];
-    
-    glDrawArrays(GL_TRIANGLE_STRIP, 0, (int)self.corners);
-    
+    glDrawArrays(GL_TRIANGLES, 0, (int)self.corners);
     glDisableVertexAttribArray(GLKVertexAttribColor);
 }
 
@@ -52,29 +53,47 @@
 -(void)render
 {
     NSInteger corners = self.spikes.count;
-    NSInteger corners2 = corners * 2;
-    NSInteger indexvector = 0;
-    self.corners = corners2;
+    NSInteger corners_1 = corners - 1;
+    NSInteger vectorcorners = corners * chartvectorcorners;
+    NSInteger indexposition = 0;
+    NSInteger indexcolor = 0;
+    self.corners = vectorcorners;
     
-    GLKVector4 colortop = [[[UIColor main] colorWithAlphaComponent:0.2] asvector];
-    GLKVector4 colorbottom = [[[UIColor main] colorWithAlphaComponent:0.02] asvector];
-    
-    self.dataposition = [NSMutableData dataWithLength:corners2 * sizeof(GLKVector2)];
-    self.datacolor = [NSMutableData dataWithLength:corners2 * sizeof(GLKVector4)];
+    self.dataposition = [NSMutableData dataWithLength:vectorcorners * sizeof(GLKVector2)];
+    self.datacolor = [NSMutableData dataWithLength:vectorcorners * sizeof(GLKVector4)];
     self.pointerposition = self.dataposition.mutableBytes;
     self.pointercolor = self.datacolor.mutableBytes;
     
-    for(NSUInteger indexspike = 0; indexspike < corners; indexspike++)
+    for(NSUInteger indexspike = 0; indexspike < corners_1;)
     {
-        mpollutionchartspike *spike = self.spikes[indexspike];
+        mpollutionchartspike *spikea = self.spikes[indexspike++];
+        mpollutionchartspike *spikeb = self.spikes[indexspike];
+        GLKVector4 colora = [spikea.color asvector];
+        GLKVector4 coloratrans = GLKVector4Make(1, 1, 1, 0);
+        GLKVector4 colorb = [spikeb.color asvector];
+        GLKVector4 colorbtrans = GLKVector4Make(1, 1, 1, 0);
+        CGFloat ax = spikea.x;
+        CGFloat ay = spikea.y;
+        CGFloat bx = spikeb.x;
+        CGFloat by = spikeb.y;
         
-        self.pointerposition[indexvector] = GLKVector2Make(spike.x, pollution_drawableheight);
-        self.pointercolor[indexvector++] = colorbottom;
-        self.pointerposition[indexvector] = GLKVector2Make(spike.x, spike.y);
-        self.pointercolor[indexvector++] = colortop;
+        self.pointerposition[indexposition++] = GLKVector2Make(ax, ay - chartlinewidth);
+        self.pointerposition[indexposition++] = GLKVector2Make(ax, ay);
+        self.pointerposition[indexposition++] = GLKVector2Make(bx, by);
+        self.pointerposition[indexposition++] = GLKVector2Make(bx, by);
+        self.pointerposition[indexposition++] = GLKVector2Make(bx, by - chartlinewidth);
+        self.pointerposition[indexposition++] = GLKVector2Make(ax, ay - chartlinewidth);
+        
+        self.pointercolor[indexcolor++] = coloratrans;
+        self.pointercolor[indexcolor++] = colora;
+        self.pointercolor[indexcolor++] = colorb;
+        self.pointercolor[indexcolor++] = colorb;
+        self.pointercolor[indexcolor++] = colorbtrans;
+        self.pointercolor[indexcolor++] = coloratrans;
     }
     
     [NSNotification observe:self glkdraw:@selector(draw:)];
+    self.spikes = nil;
 }
 
 @end

@@ -36,9 +36,7 @@
     glVertexAttribPointer(GLKVertexAttribPosition, 2, GL_FLOAT, GL_FALSE, 0, self.pointerposition);
     glVertexAttribPointer(GLKVertexAttribColor, 4, GL_FLOAT, GL_FALSE, 0, self.pointercolor);
     [baseeffect prepareToDraw];
-    
     glDrawArrays(GL_TRIANGLE_STRIP, 0, (int)self.corners);
-    
     glDisableVertexAttribArray(GLKVertexAttribColor);
 }
 
@@ -75,6 +73,7 @@
     }
     
     [NSNotification observe:self glkdraw:@selector(draw:)];
+    self.spikes = nil;
 }
 
 @end
