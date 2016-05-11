@@ -1,15 +1,15 @@
-#import "gpollutionchartspikes.h"
+#import "gpollutionchartline.h"
 #import "enotification.h"
 #import "ecolor.h"
 #import "genericconstants.h"
 
-@interface gpollutionchartspikes ()
+@interface gpollutionchartline ()
 
 @property(strong, nonatomic, readwrite)NSMutableArray<mpollutionchartspike*> *spikes;
 
 @end
 
-@implementation gpollutionchartspikes
+@implementation gpollutionchartline
 
 -(instancetype)init
 {

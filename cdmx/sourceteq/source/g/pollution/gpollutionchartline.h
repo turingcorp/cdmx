@@ -2,7 +2,7 @@
 #import <GLKit/GLKit.h>
 #import "mpollutionchartspike.h"
 
-@interface gpollutionchartspikes:NSObject
+@interface gpollutionchartline:NSObject
 
 -(void)add:(mpollutionchartspike*)spike;
 -(void)render;

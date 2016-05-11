@@ -73,7 +73,7 @@
     CGFloat widthsum = 0;
     
     gpollutionchartbasebottom *basebottom = [[gpollutionchartbasebottom alloc] init:width];
-    gpollutionchartspikes *spikes = [[gpollutionchartspikes alloc] init:[[UIColor main] colorWithAlphaComponent:0.2] bottom:[[UIColor main] colorWithAlphaComponent:0.05]];
+    gpollutionchartspikes *spikes = [[gpollutionchartspikes alloc] init];
     
     [spatials addObject:basebottom];
     [spatials addObject:spikes];
