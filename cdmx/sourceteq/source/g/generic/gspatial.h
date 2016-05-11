@@ -6,7 +6,7 @@
 
 -(void)drawwithuserinfo:(mpollutionnotificationdraw*)userinfo;
 -(void)draw:(NSNotification*)notification;
--(void)render:(BOOL)movetotop;
+-(void)render;
 -(void)movetotop;
 
 @property(strong, nonatomic)NSMutableData *dataposition;

@@ -45,8 +45,7 @@
         [queries addObject:querydaily];
     }
     
-    zqlresult *result = [zql query:queries];
-    NSLog(@"result %@", result);
+    [zql query:queries];
 }
 
 @end
