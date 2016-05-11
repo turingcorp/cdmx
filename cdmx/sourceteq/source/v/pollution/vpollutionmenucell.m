@@ -26,7 +26,7 @@
 
 #pragma mark public
 
--(void)config
+-(void)config:(mpollutionmenuitem*)model
 {
     
 }
