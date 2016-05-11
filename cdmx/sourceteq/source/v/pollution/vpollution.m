@@ -109,12 +109,7 @@ static NSInteger const pollutionmenuheight = 80;
                    });
 }
 
--(void)show_today
-{
-    
-}
-
--(void)show_history
+-(void)show_chart
 {
     
 }

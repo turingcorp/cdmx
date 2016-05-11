@@ -10,8 +10,7 @@
 -(instancetype)init:(cpollution*)controller;
 -(void)modelloaded;
 -(void)show_districts;
--(void)show_today;
--(void)show_history;
+-(void)show_chart;
 -(void)show_map;
 
 @property(weak, nonatomic)cpollution *controller;

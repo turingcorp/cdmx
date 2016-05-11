@@ -11,4 +11,12 @@ static NSString* const menuassetname = @"pollution_menudistricts";
     return self;
 }
 
+#pragma mark -
+#pragma mark item
+
+-(void)actionselected:(vpollution*)view
+{
+    
+}
+
 @end

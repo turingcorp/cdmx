@@ -10,4 +10,10 @@
     return self;
 }
 
+#pragma mark public
+
+-(void)actionselected:(vpollution*)view
+{
+}
+
 @end
