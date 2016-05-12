@@ -33,7 +33,7 @@ static NSInteger const frontcellwidth = 170;
     [collection setShowsVerticalScrollIndicator:NO];
     [collection setShowsHorizontalScrollIndicator:NO];
     [collection setAlwaysBounceVertical:YES];
-    [collection registerClass:[vpollutionfrontheader class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:[vpollutionfrontheader reusableidentifier]];
+    [collection registerClass:[vpollutionfrontheader class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:[vpollutionfrontheader reusableidentifier]];
     [collection registerClass:[vpollutionfrontcell class] forCellWithReuseIdentifier:[vpollutionfrontcell reusableidentifier]];
     [collection setDataSource:self];
     [collection setDelegate:self];
@@ -177,7 +177,7 @@ static NSInteger const frontcellwidth = 170;
     return size;
 }
 
--(CGSize)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout referenceSizeForFooterInSection:(NSInteger)section
+-(CGSize)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout referenceSizeForHeaderInSection:(NSInteger)section
 {
     CGFloat width = col.bounds.size.width;
     CGFloat height = col.bounds.size.height;

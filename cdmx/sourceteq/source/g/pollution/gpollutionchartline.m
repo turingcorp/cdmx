@@ -3,7 +3,7 @@
 #import "ecolor.h"
 #import "genericconstants.h"
 
-static CGFloat const chartlinedeltamove = -4;
+static CGFloat const chartlinedeltamove = -5;
 static NSInteger const chartlinewidth = 5;
 
 @interface gpollutionchartline ()
@@ -51,7 +51,6 @@ static NSInteger const chartlinewidth = 5;
             
             position = GLKVector2Make(position.x, newposition);
             completed = NO;
-            
             self.pointerposition[indexpoint] = position;
         }
     }
