@@ -1,7 +1,5 @@
 #import <UIKit/UIKit.h>
 #import "vpollutionoption.h"
-#import "vpollutionfrontlayoutdetail.h"
-#import "vpollutionfrontlayoutlist.h"
 #import "mpollutionfront.h"
 
 @interface vpollutionfront:vpollutionoption<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
