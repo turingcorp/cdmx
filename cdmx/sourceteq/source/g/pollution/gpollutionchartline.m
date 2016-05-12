@@ -3,11 +3,13 @@
 #import "ecolor.h"
 #import "genericconstants.h"
 
+static CGFloat const chartlinedeltamove = -3;
 static NSInteger const chartlinewidth = 5;
 
 @interface gpollutionchartline ()
 
 @property(strong, nonatomic, readwrite)NSMutableArray<mpollutionchartitempoint*> *points;
+@property(strong, nonatomic)NSMutableArray<NSNumber*> *expected;
 
 @end
 
@@ -27,6 +29,38 @@ static NSInteger const chartlinewidth = 5;
 }
 
 #pragma mark notified
+
+-(void)move:(NSNotification*)notification
+{
+    BOOL completed = YES;
+    
+    for(NSUInteger indexpoint = 0; indexpoint < self.corners; indexpoint++)
+    {
+        CGFloat expected = self.expected[indexpoint].floatValue;
+        GLKVector2 position = self.pointerposition[indexpoint];
+        CGFloat current = position.y;
+        
+        if(current > expected)
+        {
+            CGFloat newposition = current + chartlinedeltamove;
+            
+            if(newposition < expected)
+            {
+                newposition = expected;
+            }
+            
+            position = GLKVector2Make(position.x, newposition);
+            completed = NO;
+            
+            self.pointerposition[indexpoint] = position;
+        }
+    }
+    
+    if(completed)
+    {
+        [NSNotification glkmoveremove:self];
+    }
+}
 
 -(void)draw:(NSNotification*)notification
 {
@@ -54,11 +88,11 @@ static NSInteger const chartlinewidth = 5;
 {
     NSInteger corners = self.points.count;
     self.corners = corners;
-    
     self.dataposition = [NSMutableData dataWithLength:corners * sizeof(GLKVector2)];
     self.datacolor = [NSMutableData dataWithLength:corners * sizeof(GLKVector4)];
     self.pointerposition = self.dataposition.mutableBytes;
     self.pointercolor = self.datacolor.mutableBytes;
+    self.expected = [NSMutableArray array];
     
     for(NSUInteger indexpoint = 0; indexpoint < corners; indexpoint++)
     {
@@ -66,11 +100,13 @@ static NSInteger const chartlinewidth = 5;
         CGFloat x = point.x;
         CGFloat y = point.y;
         
-        self.pointerposition[indexpoint] = GLKVector2Make(x, y);
+        [self.expected addObject:@(y)];
+        self.pointerposition[indexpoint] = GLKVector2Make(x, pollution_drawableheight);
         self.pointercolor[indexpoint] = [point.index.color asvector];
     }
     
     [NSNotification observe:self glkdraw:@selector(draw:)];
+    [NSNotification observe:self glkmove:@selector(move:)];
     self.points = nil;
 }
 
