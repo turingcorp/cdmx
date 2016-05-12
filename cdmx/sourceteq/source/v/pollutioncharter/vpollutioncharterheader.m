@@ -16,7 +16,7 @@
     [labelindex setNumberOfLines:0];
     [labelindex setBackgroundColor:[UIColor clearColor]];
     [labelindex setTextAlignment:NSTextAlignmentCenter];
-    [labelindex setFont:[UIFont numericsize:38]];
+    [labelindex setFont:[UIFont numericsize:30]];
     [labelindex setTextColor:[UIColor main]];
     self.labelindex = labelindex;
     
@@ -37,8 +37,8 @@
     [labelname setNumberOfLines:0];
     [labelname setBackgroundColor:[UIColor clearColor]];
     [labelname setTextAlignment:NSTextAlignmentCenter];
-    [labelname setFont:[UIFont boldsize:19]];
-    [labelname setTextColor:[UIColor second]];
+    [labelname setFont:[UIFont boldsize:13]];
+    [labelname setTextColor:[UIColor colorWithWhite:0.5 alpha:1]];
     self.labelname = labelname;
     
     [self addSubview:labelindex];
@@ -51,7 +51,7 @@
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[index]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[title]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[name]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-25-[index(43)]-(-10)-[title(14)]-0-[name(25)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-20-[index(35)]-(-7)-[title(14)]-0-[name(17)]" options:0 metrics:metrics views:views]];
     
     return self;
 }
