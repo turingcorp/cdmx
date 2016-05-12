@@ -5,6 +5,9 @@
 static NSInteger const selectorsize = 20;
 
 @implementation gpollutionchartselect
+{
+    NSInteger selectorsize_2;
+}
 
 -(instancetype)init
 {
@@ -14,6 +17,7 @@ static NSInteger const selectorsize = 20;
     self.visible = NO;
     self.rerender = NO;
     self.color = [[UIColor main] asvector];
+    selectorsize_2 = selectorsize / 2.0;
     
     [NSNotification observe:self glkmove:@selector(move:)];
     
@@ -37,8 +41,8 @@ static NSInteger const selectorsize = 20;
 
 -(void)newx:(CGFloat)x y:(CGFloat)y
 {
-    self.x = x;
-    self.y = y;
+    self.x = x - selectorsize_2;
+    self.y = y - selectorsize_2;
     self.rerender = YES;
     self.visible = YES;
 }

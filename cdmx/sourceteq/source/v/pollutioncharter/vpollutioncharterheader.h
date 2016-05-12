@@ -1,8 +1,8 @@
 #import <UIKit/UIKit.h>
-#import "mpollutionchartselect.h"
+#import "mpollutionchart.h"
 
 @interface vpollutioncharterheader:UICollectionReusableView
 
-@property(weak, nonatomic)mpollutionchartselect *model;
+@property(weak, nonatomic)mpollutionchart *model;
 
 @end

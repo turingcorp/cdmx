@@ -45,16 +45,22 @@
 
 -(void)pointerselection:(UITouch*)touch
 {
-    CGPoint location = [touch locationInView:self];
-    CGFloat x = location.x;
-    CGFloat y = location.y;
+    __weak typeof(self) welf = self;
     
-    [self.model newx:x y:y];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
+                   ^
+                   {
+                       CGPoint location = [touch locationInView:welf];
+                       CGFloat x = location.x;
+                       CGFloat y = location.y;
+                       
+                       [welf.model.selected.modelselect newx:x y:y];
+                   });
 }
 
 -(void)releasepointer
 {
-    [self.model hideselector];
+    [self.model.selected.modelselect hideselector];
 }
 
 @end
