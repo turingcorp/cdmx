@@ -6,7 +6,7 @@
 #import "genericconstants.h"
 #import "cpollution.h"
 
-static NSInteger const chartercellheight = 60;
+static NSInteger const chartercellheight = 40;
 static NSInteger const charterinteritem = -1;
 
 @implementation vpollutioncharter
@@ -115,6 +115,19 @@ static NSInteger const charterinteritem = -1;
     [cell config:model];
     
     return cell;
+}
+
+-(BOOL)collectionView:(UICollectionView*)col shouldSelectItemAtIndexPath:(NSIndexPath*)index
+{
+    BOOL selectable = YES;
+    mpollutionchartitem *model = [self modelforindex:index];
+    
+    if(model == self.model.selected)
+    {
+        selectable = NO;
+    }
+    
+    return selectable;
 }
 
 -(void)collectionView:(UICollectionView*)col didSelectItemAtIndexPath:(NSIndexPath*)index

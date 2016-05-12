@@ -19,8 +19,9 @@
 +(void)update
 {
     NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];
-    NSString *appversion = [[[NSBundle mainBundle] infoDictionary] objectForKey:appversion_key];
+    NSString *appversion = [[[NSBundle mainBundle] infoDictionary] objectForKey:appversionos_key];
     NSString *currentversion = [userdefaults valueForKey:appversion_key];
+    BOOL updateversion = NO;
     
     if(currentversion)
     {
@@ -29,14 +30,20 @@
         
         if(appversionscalar != currentversionscalar)
         {
-            [userdefaults setValue:appversion forKey:appversion_key];
+            updateversion = YES;
         }
         
         [mdbcreate loaddatabase];
     }
     else
     {
+        updateversion = YES;
         [updater firsttime];
+    }
+    
+    if(updateversion)
+    {
+        [userdefaults setValue:appversion forKey:appversion_key];
     }
 }
 
