@@ -1,11 +1,11 @@
 #import <Foundation/Foundation.h>
 #import "mpollutionoption.h"
-#import "mpollutionitem.h"
+#import "mpollutionfrontitem.h"
 
 @interface mpollutionfront:mpollutionoption
 
 -(void)highlight:(mpollutionitem*)model;
 
-@property(strong, nonatomic, readonly)NSArray<mpollutionitem*> *items;
+@property(strong, nonatomic, readonly)NSArray<mpollutionfrontitem*> *items;
 
 @end

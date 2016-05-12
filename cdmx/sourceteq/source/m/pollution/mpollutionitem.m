@@ -23,6 +23,13 @@
     return model;
 }
 
++(instancetype)pollutionglobalempty
+{
+    mpollutionitemglobal *model = [[mpollutionitemglobal alloc] init:[mpollutionindex points:0]];
+    
+    return model;
+}
+
 +(instancetype)pollutiondaily:(mdbpollutiondaily*)modelpollutiondaily spatialx:(CGFloat)spatialx spatialwidth:(CGFloat)spatialwidth
 {
     mpollutionitemdaily *model = [[mpollutionitemdaily alloc] init:[mpollutionindex points:modelpollutiondaily.pollution.integerValue] date:modelpollutiondaily.date spatialx:spatialx spatialwidth:spatialwidth];

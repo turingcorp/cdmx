@@ -15,22 +15,23 @@
     NSMutableArray<mpollutionitem*> *items = [NSMutableArray array];
     mpollutionitem *globalitem;
     
-    if(self.modelhourly.count)
+    if(model.modelhourly.count)
     {
-        globalitem = [mpollutionitem pollutionglobal:[self.modelhourly lastObject].pollution];
+        mpollutionhour *currenthour = [model.modelhourly lastObject];
+        globalitem = [mpollutionitem pollutionglobal:currenthour.pollution];
     }
     else
     {
-        globalitem = [mpollutionitem pollutionglobal:@0];
+        globalitem = [mpollutionitem pollutionglobalempty];
     }
     
     [items addObject:globalitem];
     
-    NSUInteger countdistritcs = self.modeldistricts.count;
+    NSUInteger countdistritcs = model.modeldistricts.count;
     
     for(NSUInteger indexdistricts = 0; indexdistricts < countdistritcs; indexdistricts++)
     {
-        mdbdistrict *district = self.modeldistricts[indexdistricts];
+        mdbdistrict *district = model.modeldistricts[indexdistricts];
         mpollutionitem *modeldistrict = [mpollutionitem district:district];
         
         [items addObject:modeldistrict];

@@ -1,5 +1,8 @@
 #import <Foundation/Foundation.h>
 #import "mpollutionhour.h"
+#import "mdbdistrict.h"
+#import "mdbpollutiondaily.h"
+#import "mpollutionhour.h"
 
 @class mpollutionoption;
 
