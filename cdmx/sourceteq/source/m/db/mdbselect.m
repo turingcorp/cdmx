@@ -110,4 +110,40 @@
     return array;
 }
 
++(mdbpollutiondaily*)lastpollutiondaily
+{
+    mdbpollutiondaily *lastdaily;
+    zqlparam *paramprimarykey = [zqlparam type:[zqltype integer] name:dbprimarykey value:nil];
+    zqlparam *paramdate = [zqlparam type:[zqltype integer] name:dbpollutiondaily_date value:nil];
+    zqlparam *parampollution = [zqlparam type:[zqltype integer] name:dbpollutiondaily_maxpollution value:nil];
+    
+    NSArray<zqlparam*> *params = @[
+                                   paramprimarykey,
+                                   paramdate,
+                                   parampollution
+                                   ];
+    
+    zqlquery *query = [zqlquery select:dbpollutiondaily params:params ordered:paramdate ascendent:NO limit:1];
+    zqlresult *result = [zql query:@[query]];
+    
+    NSUInteger districtscount = result.params.count;
+    
+    if(districtscount)
+    {
+        lastdaily = [[mdbpollutiondaily alloc] init];
+        zqlresultparams *resultparams = result.params[0];
+        zqlparam *pprimarykey = resultparams.items[dbprimarykey];
+        zqlparam *pcreated = resultparams.items[dbcreated];
+        zqlparam *pdate = resultparams.items[dbpollutiondaily_date];
+        zqlparam *ppollution = resultparams.items[dbpollutiondaily_maxpollution];
+        
+        lastdaily.primarykey = pprimarykey.value;
+        lastdaily.created = pcreated.value;
+        lastdaily.date = pdate.value;
+        lastdaily.pollution = ppollution.value;
+    }
+    
+    return lastdaily;
+}
+
 @end

@@ -6,5 +6,6 @@
 
 +(NSArray<mdbdistrict*>*)district;
 +(NSArray<mdbpollutiondaily*>*)pollutiondaily;
++(mdbpollutiondaily*)lastpollutiondaily;
 
 @end
