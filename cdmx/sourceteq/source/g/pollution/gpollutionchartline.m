@@ -3,7 +3,7 @@
 #import "ecolor.h"
 #import "genericconstants.h"
 
-static CGFloat const chartlinedeltamove = -3;
+static CGFloat const chartlinedeltamove = -4;
 static NSInteger const chartlinewidth = 5;
 
 @interface gpollutionchartline ()

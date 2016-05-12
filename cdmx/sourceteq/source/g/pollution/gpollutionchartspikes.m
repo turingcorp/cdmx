@@ -3,7 +3,7 @@
 #import "ecolor.h"
 #import "genericconstants.h"
 
-static CGFloat const chartspikesdeltamove = -3;
+static CGFloat const chartspikesdeltamove = -4;
 
 @interface gpollutionchartspikes ()
 
