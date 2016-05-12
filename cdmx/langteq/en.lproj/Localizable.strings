@@ -1,5 +1,9 @@
 "mpollution_front_global"="General summary";
 
+"mpollution_chart_month"="Last 30 days";
+"mpollution_chart_week"="Last 7 days";
+"mpollution_chart_today"="Today";
+
 "mpollution_item_hourly_0"="Midnight";
 "mpollution_item_hourly_1"="1:00 am";
 "mpollution_item_hourly_2"="2:00 am";

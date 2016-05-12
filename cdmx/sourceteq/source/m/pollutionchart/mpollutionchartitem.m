@@ -9,6 +9,14 @@
 
 @implementation mpollutionchartitem
 
+-(instancetype)init:(NSString*)name
+{
+    self = [super init];
+    self.name = name;
+    
+    return self;
+}
+
 #pragma mark functionality
 
 -(void)render

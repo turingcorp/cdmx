@@ -2,4 +2,6 @@
 
 @interface vcollectioncell:UICollectionViewCell
 
+-(void)hover;
+
 @end

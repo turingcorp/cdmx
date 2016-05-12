@@ -4,6 +4,7 @@
 #import "vpollutioncharterheader.h"
 #import "vpollutionchartercell.h"
 #import "genericconstants.h"
+#import "cpollution.h"
 
 static NSInteger const chartercellheight = 60;
 static NSInteger const charterinteritem = -1;
@@ -13,6 +14,7 @@ static NSInteger const charterinteritem = -1;
 -(instancetype)init:(cpollution*)controller
 {
     self = [super init:controller];
+    self.model = (mpollutionchart*)controller.model.option;
     
     UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
     [flow setFooterReferenceSize:CGSizeZero];
@@ -43,7 +45,29 @@ static NSInteger const charterinteritem = -1;
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
     
+    if(self.model.items.count)
+    {
+        [collection selectItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0] animated:NO scrollPosition:UICollectionViewScrollPositionNone];
+        mpollutionchartitem *current = self.model.items[0];
+        
+        [self selectmodel:current];
+    }
+    
     return self;
+}
+
+#pragma mark functionality
+
+-(mpollutionchartitem*)modelforindex:(NSIndexPath*)index
+{
+    mpollutionchartitem *model = self.model.items[index.item];
+    
+    return model;
+}
+
+-(void)selectmodel:(mpollutionchartitem*)model
+{
+    [self.model changeselected:model];
 }
 
 #pragma mark -
@@ -72,7 +96,9 @@ static NSInteger const charterinteritem = -1;
 
 -(NSInteger)collectionView:(UICollectionView*)col numberOfItemsInSection:(NSInteger)section
 {
-    return 0;
+    NSUInteger count = self.model.items.count;
+    
+    return count;
 }
 
 -(UICollectionReusableView*)collectionView:(UICollectionView*)col viewForSupplementaryElementOfKind:(NSString*)kind atIndexPath:(NSIndexPath*)index
@@ -84,9 +110,16 @@ static NSInteger const charterinteritem = -1;
 
 -(UICollectionViewCell*)collectionView:(UICollectionView*)col cellForItemAtIndexPath:(NSIndexPath*)index
 {
+    mpollutionchartitem *model = [self modelforindex:index];
     vpollutionchartercell *cell = [col dequeueReusableCellWithReuseIdentifier:[vpollutionchartercell reusableidentifier] forIndexPath:index];
     
     return cell;
+}
+
+-(void)collectionView:(UICollectionView*)col didSelectItemAtIndexPath:(NSIndexPath*)index
+{
+    mpollutionchartitem *model = [self modelforindex:index];
+    [self selectmodel:model];
 }
 
 @end

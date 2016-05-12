@@ -21,9 +21,7 @@ static NSInteger const frontcellwidth = 170;
 -(instancetype)init:(cpollution*)controller
 {
     self = [super init:controller];
-    [self showdetail];
     self.model = (mpollutionfront*)controller.model.option;
-    
     trackscroll = NO;
     selected = -1;
     rect1 = CGRectMake(0, 0, 1, 1);
@@ -53,6 +51,7 @@ static NSInteger const frontcellwidth = 170;
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
     
     [self postselect:0];
+    [self showdetail];
     
     return self;
 }

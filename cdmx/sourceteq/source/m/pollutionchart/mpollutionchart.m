@@ -22,8 +22,6 @@
                    [[mpollutionchartitemmonth alloc] init]
                    ];
     
-    [self changeselected:self.items[0]];
-    
     return self;
 }
 

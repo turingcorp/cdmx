@@ -11,6 +11,13 @@ static NSInteger const chartmaxdaysmonth = 30;
 
 @implementation mpollutionchartitemmonth
 
+-(instancetype)init:(NSString*)name
+{
+    self = [super init:NSLocalizedString(@"mpollution_chart_month", nil)];
+    
+    return self;
+}
+
 #pragma mark -
 #pragma mark chart item
 

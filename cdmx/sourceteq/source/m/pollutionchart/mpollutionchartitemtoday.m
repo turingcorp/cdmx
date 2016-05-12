@@ -8,6 +8,13 @@
 
 @implementation mpollutionchartitemtoday
 
+-(instancetype)init:(NSString*)name
+{
+    self = [super init:NSLocalizedString(@"mpollution_chart_today", nil)];
+    
+    return self;
+}
+
 #pragma mark -
 #pragma mark chart item
 
