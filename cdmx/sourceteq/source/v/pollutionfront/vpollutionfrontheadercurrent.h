@@ -1,10 +1,10 @@
 #import <UIKit/UIKit.h>
 #import "vbutton.h"
-#import "mpollutionitem.h"
+#import "mpollutionfrontitem.h"
 
 @interface vpollutionfrontheadercurrent:vbutton
 
--(void)config:(mpollutionitem*)model;
+-(void)config:(mpollutionfrontitem*)model;
 
 @property(weak, nonatomic)UILabel *labeltitle;
 

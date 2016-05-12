@@ -5,7 +5,7 @@
 
 @interface gpollutionchartspikes ()
 
-@property(strong, nonatomic, readwrite)NSMutableArray<mpollutionchartspike*> *spikes;
+@property(strong, nonatomic, readwrite)NSMutableArray<mpollutionchartitempoint*> *points;
 
 @end
 
@@ -14,7 +14,7 @@
 -(instancetype)init
 {
     self = [super init];
-    self.spikes = [NSMutableArray array];
+    self.points = [NSMutableArray array];
     
     return self;
 }
@@ -42,14 +42,14 @@
 
 #pragma mark public
 
--(void)add:(mpollutionchartspike*)spike
+-(void)add:(mpollutionchartitempoint*)point
 {
-    [self.spikes addObject:spike];
+    [self.points addObject:point];
 }
 
 -(void)render
 {
-    NSInteger corners = self.spikes.count;
+    NSInteger corners = self.points.count;
     NSInteger corners2 = corners * 2;
     NSInteger indexvector = 0;
     self.corners = corners2;
@@ -62,18 +62,20 @@
     self.pointerposition = self.dataposition.mutableBytes;
     self.pointercolor = self.datacolor.mutableBytes;
     
-    for(NSUInteger indexspike = 0; indexspike < corners; indexspike++)
+    for(NSUInteger indexpoint = 0; indexpoint < corners; indexpoint++)
     {
-        mpollutionchartspike *spike = self.spikes[indexspike];
+        mpollutionchartitempoint *point = self.points[indexpoint];
+        CGFloat x = point.x;
+        CGFloat y = point.y;
         
-        self.pointerposition[indexvector] = GLKVector2Make(spike.x, pollution_drawableheight);
+        self.pointerposition[indexvector] = GLKVector2Make(x, pollution_drawableheight);
         self.pointercolor[indexvector++] = colorbottom;
-        self.pointerposition[indexvector] = GLKVector2Make(spike.x, spike.y);
+        self.pointerposition[indexvector] = GLKVector2Make(x, y);
         self.pointercolor[indexvector++] = colortop;
     }
     
     [NSNotification observe:self glkdraw:@selector(draw:)];
-    self.spikes = nil;
+    self.points = nil;
 }
 
 @end

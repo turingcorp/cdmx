@@ -4,6 +4,6 @@
 
 @interface gpollutiondist:gspatialtexture
 
--(instancetype)init:(mdbdistrict*)model;
+-(instancetype)init:(mdbdistrict*)model marginx:(CGFloat)marginx;
 
 @end

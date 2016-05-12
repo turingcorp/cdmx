@@ -1,13 +1,13 @@
 #import <UIKit/UIKit.h>
 #import <GLKit/GLKit.h>
-#import "mpollutionchartspike.h"
+#import "mpollutionchartitempoint.h"
 
 @interface gpollutionchartspikes:NSObject
 
--(void)add:(mpollutionchartspike*)spike;
+-(void)add:(mpollutionchartitempoint*)point;
 -(void)render;
 
-@property(strong, nonatomic, readonly)NSMutableArray<mpollutionchartspike*> *spikes;
+@property(strong, nonatomic, readonly)NSMutableArray<mpollutionchartitempoint*> *points;
 @property(strong, nonatomic)NSMutableData *dataposition;
 @property(strong, nonatomic)NSMutableData *datacolor;
 @property(assign, nonatomic)GLKVector2 *pointerposition;

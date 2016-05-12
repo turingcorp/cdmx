@@ -5,7 +5,7 @@
 
 @interface mpollutionfrontitem:NSObject
 
-+(instancetype)district:(mdbdistrict*)district;
++(instancetype)district:(mdbdistrict*)district marginx:(CGFloat)marginx;
 +(instancetype)global:(NSInteger)pollution;
 -(void)turnon;
 -(void)turnoff;

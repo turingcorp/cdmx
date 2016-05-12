@@ -1,4 +1,5 @@
 #import "mpollutionfront.h"
+#import "genericconstants.h"
 
 @interface mpollutionfront ()
 
@@ -10,7 +11,7 @@
 
 -(instancetype)init:(mpollution*)model
 {
-    self = [super init];
+    self = [super init:model];
     
     NSMutableArray<mpollutionfrontitem*> *items = [NSMutableArray array];
     mpollutionfrontitem *globalitem;
@@ -27,12 +28,16 @@
     
     [items addObject:globalitem];
     
+    CGFloat screenwidth = [UIScreen mainScreen].bounds.size.width;
+    CGFloat remainwidth = screenwidth - pollution_mapwidth;
+    CGFloat marginx = remainwidth / 2.0;
+    
     NSUInteger countdistritcs = model.modeldistricts.count;
     
     for(NSUInteger indexdistricts = 0; indexdistricts < countdistritcs; indexdistricts++)
     {
         mdbdistrict *district = model.modeldistricts[indexdistricts];
-        mpollutionfrontitem *item = [mpollutionfrontitem district:district];
+        mpollutionfrontitem *item = [mpollutionfrontitem district:district marginx:marginx];
         
         [items addObject:item];
     }
@@ -46,7 +51,12 @@
 
 -(void)highlight:(mpollutionfrontitem*)model
 {
-    BOOL makestandby = model.spatial;
+    BOOL makestandby = YES;
+    
+    if(model.spatial)
+    {
+        makestandby = NO;
+    }
     
     for(mpollutionfrontitem *item in self.items)
     {

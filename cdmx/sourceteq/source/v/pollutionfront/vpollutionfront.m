@@ -22,6 +22,7 @@ static NSInteger const frontcellwidth = 170;
 {
     self = [super init:controller];
     [self showdetail];
+    self.model = (mpollutionfront*)controller.model.option;
     
     trackscroll = NO;
     selected = -1;
@@ -65,9 +66,9 @@ static NSInteger const frontcellwidth = 170;
 
 #pragma mark functionality
 
--(mpollutionitem*)modelforindex:(NSIndexPath*)index
+-(mpollutionfrontitem*)modelforindex:(NSIndexPath*)index
 {
-    mpollutionitem *model = self.controller.model.items[index.item];
+    mpollutionfrontitem *model = self.model.items[index.item];
     
     return model;
 }
@@ -77,8 +78,8 @@ static NSInteger const frontcellwidth = 170;
     if(index != selected)
     {
         selected = index;
-        self.currentitem = self.controller.model.items[selected];
-        [self.controller.model highlight:self.currentitem];
+        self.currentitem = self.model.items[selected];
+        [self.model highlight:self.currentitem];
     }
 }
 
@@ -192,7 +193,7 @@ static NSInteger const frontcellwidth = 170;
 
 -(NSInteger)collectionView:(UICollectionView*)col numberOfItemsInSection:(NSInteger)section
 {
-    NSInteger count = self.controller.model.items.count;
+    NSInteger count = self.model.items.count;
     
     return count;
 }
@@ -207,7 +208,7 @@ static NSInteger const frontcellwidth = 170;
 
 -(UICollectionViewCell*)collectionView:(UICollectionView*)col cellForItemAtIndexPath:(NSIndexPath*)index
 {
-    mpollutionitem *model = [self modelforindex:index];
+    mpollutionfrontitem *model = [self modelforindex:index];
     vpollutionfrontcell *cell = [col dequeueReusableCellWithReuseIdentifier:[vpollutionfrontcell reusableidentifier] forIndexPath:index];
     [cell config:model front:self];
     

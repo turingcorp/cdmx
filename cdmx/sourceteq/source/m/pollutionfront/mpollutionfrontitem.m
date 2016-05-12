@@ -11,12 +11,12 @@
 
 @implementation mpollutionfrontitem
 
-+(instancetype)district:(mdbdistrict*)district
++(instancetype)district:(mdbdistrict*)district marginx:(CGFloat)marginx
 {
     mpollutionfrontitem *model = [[mpollutionfrontitem alloc] init];
     model.name = district.name;
     model.index = [mpollutionindex points:district.pollution.integerValue];
-    model.spatial = [[gpollutiondist alloc] init:district];
+    model.spatial = [[gpollutiondist alloc] init:district marginx:marginx];
     
     return model;
 }

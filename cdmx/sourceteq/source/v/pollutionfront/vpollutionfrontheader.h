@@ -2,13 +2,14 @@
 #import "vpollutionradiochart.h"
 #import "cpollution.h"
 #import "vpollutionfrontheadercurrent.h"
+#import "mpollutionfrontitem.h"
 
 @interface vpollutionfrontheader:UICollectionReusableView
 
--(void)config:(mpollutionitem*)model controller:(cpollution*)controller;
+-(void)config:(mpollutionfrontitem*)model controller:(cpollution*)controller;
 
 @property(weak, nonatomic)vpollutionradiochart *radiochart;
-@property(weak, nonatomic)mpollutionitem *model;
+@property(weak, nonatomic)mpollutionfrontitem *model;
 @property(weak, nonatomic)cpollution *controller;
 @property(weak, nonatomic)vpollutionfrontheadercurrent *current;
 @property(weak, nonatomic)UILabel *labelindextitle;

@@ -1,8 +1,8 @@
 #import <UIKit/UIKit.h>
 #import "vpollutionoption.h"
-#import "mpollutionitem.h"
 #import "vpollutionfrontlayoutdetail.h"
 #import "vpollutionfrontlayoutlist.h"
+#import "mpollutionfront.h"
 
 @interface vpollutionfront:vpollutionoption<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
@@ -10,7 +10,8 @@
 -(void)showlist;
 
 @property(weak, nonatomic)UICollectionView *collection;
-@property(weak, nonatomic)mpollutionitem *currentitem;
+@property(weak, nonatomic)mpollutionfront *model;
+@property(weak, nonatomic)mpollutionfrontitem *currentitem;
 @property(strong, nonatomic)vpollutionfrontlayoutdetail *flowdetail;
 @property(strong, nonatomic)vpollutionfrontlayoutlist *flowlist;
 

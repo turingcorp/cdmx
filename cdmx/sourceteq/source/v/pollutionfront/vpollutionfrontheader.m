@@ -103,7 +103,7 @@ static NSInteger const infomarginx = 10;
 
 #pragma mark public
 
--(void)config:(mpollutionitem*)model controller:(cpollution*)controller
+-(void)config:(mpollutionfrontitem*)model controller:(cpollution*)controller
 {
     self.model = model;
     self.controller = controller;
