@@ -11,7 +11,7 @@ static NSInteger const chartmaxdaysweek = 7;
 
 @implementation mpollutionchartitemweek
 
--(instancetype)init:(NSString*)name
+-(instancetype)init
 {
     self = [super init:NSLocalizedString(@"mpollution_chart_week", nil)];
     

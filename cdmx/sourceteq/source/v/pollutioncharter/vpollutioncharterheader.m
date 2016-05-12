@@ -48,8 +48,6 @@
     CGPoint location = [touch locationInView:self];
     CGFloat x = location.x;
     CGFloat y = location.y;
-    
-    NSLog(@"%@ %@", @(x), @(y));
 }
 
 -(void)releasepointer

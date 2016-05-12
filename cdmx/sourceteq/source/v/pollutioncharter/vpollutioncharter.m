@@ -19,7 +19,7 @@ static NSInteger const charterinteritem = -1;
     UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
     [flow setFooterReferenceSize:CGSizeZero];
     [flow setMinimumInteritemSpacing:0];
-    [flow setMinimumInteritemSpacing:charterinteritem];
+    [flow setMinimumLineSpacing:charterinteritem];
     [flow setScrollDirection:UICollectionViewScrollDirectionVertical];
     [flow setSectionInset:UIEdgeInsetsZero];
     
@@ -112,6 +112,7 @@ static NSInteger const charterinteritem = -1;
 {
     mpollutionchartitem *model = [self modelforindex:index];
     vpollutionchartercell *cell = [col dequeueReusableCellWithReuseIdentifier:[vpollutionchartercell reusableidentifier] forIndexPath:index];
+    [cell config:model];
     
     return cell;
 }

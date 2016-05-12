@@ -8,7 +8,7 @@
 
 @implementation mpollutionchartitemtoday
 
--(instancetype)init:(NSString*)name
+-(instancetype)init
 {
     self = [super init:NSLocalizedString(@"mpollution_chart_today", nil)];
     
