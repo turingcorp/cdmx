@@ -9,8 +9,6 @@ static NSInteger const frontcellwidth = 170;
 
 @implementation vpollutionfront
 {
-    CGRect rect1;
-    NSInteger currentcellmultiplier;
     NSInteger currentheadermultiplier;
     NSInteger currentheaderaddheight;
     NSInteger currentitems;
@@ -24,12 +22,11 @@ static NSInteger const frontcellwidth = 170;
     self.model = (mpollutionfront*)controller.model.option;
     trackscroll = NO;
     selected = -1;
-    rect1 = CGRectMake(0, 0, 1, 1);
     
-    self.flowdetail = [[vpollutionfrontlayoutdetail alloc] init];
-    self.flowlist = [[vpollutionfrontlayoutlist alloc] init];
+    vpollutionfrontlayout *layout = [[vpollutionfrontlayout alloc] init];
+    self.layout = layout;
     
-    UICollectionView *collection = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:self.flowdetail];
+    UICollectionView *collection = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
     [collection setBackgroundColor:[UIColor clearColor]];
     [collection setClipsToBounds:YES];
     [collection setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -56,13 +53,6 @@ static NSInteger const frontcellwidth = 170;
     return self;
 }
 
--(void)dealloc
-{
-    self.flowlist = nil;
-    self.flowdetail = nil;
-    [self.collection removeFromSuperview];
-}
-
 #pragma mark functionality
 
 -(mpollutionfrontitem*)modelforindex:(NSIndexPath*)index
@@ -82,35 +72,50 @@ static NSInteger const frontcellwidth = 170;
     }
 }
 
+-(void)updatecollection
+{
+    NSIndexSet *index = [NSIndexSet indexSetWithIndex:0];
+    __weak typeof(self) welf = self;
+    
+    [welf.collection performBatchUpdates:
+     ^
+     {
+         [welf.collection deleteSections:index];
+         [welf.collection insertSections:index];
+     } completion:
+     ^(BOOL done)
+     {
+         if(currentitems)
+         {
+             [welf.collection selectItemAtIndexPath:[NSIndexPath indexPathForItem:selected inSection:0] animated:YES scrollPosition:UICollectionViewScrollPositionCenteredHorizontally];
+         }
+     }];
+}
+
 #pragma mark public
 
 -(void)showdetail
 {
     currentheadermultiplier = 1;
     currentheaderaddheight = pollution_drawableheight - navbarheightmin;
-    currentcellmultiplier = 0;
+    currentitems = 0;
     
     [self.collection setAlwaysBounceHorizontal:NO];
     [self.collection setAlwaysBounceVertical:YES];
-    [self.collection setCollectionViewLayout:self.flowdetail animated:YES];
+    [self.layout setScrollDirection:UICollectionViewScrollDirectionVertical];
+    [self updatecollection];
 }
 
 -(void)showlist
 {
     currentheadermultiplier = 0;
     currentheaderaddheight = 0;
-    currentcellmultiplier = 1;
-    
+    currentitems = self.model.items.count;
+
     [self.collection setAlwaysBounceHorizontal:YES];
     [self.collection setAlwaysBounceVertical:NO];
-    
-    __weak typeof(self) welf = self;
-    
-    [self.collection setCollectionViewLayout:self.flowlist animated:YES completion:
-     ^(BOOL done)
-     {
-         [welf.collection selectItemAtIndexPath:[NSIndexPath indexPathForItem:selected inSection:0] animated:YES scrollPosition:UICollectionViewScrollPositionCenteredHorizontally];
-     }];
+    [self.layout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
+    [self updatecollection];
 }
 
 #pragma mark -
@@ -149,7 +154,7 @@ static NSInteger const frontcellwidth = 170;
 {
     UIEdgeInsets insets;
     
-    if(layout == self.flowlist)
+    if(self.layout.scrollDirection == UICollectionViewScrollDirectionHorizontal)
     {
         CGFloat width = col.bounds.size.width;
         CGFloat remain = width - frontcellwidth;
@@ -167,8 +172,7 @@ static NSInteger const frontcellwidth = 170;
 -(CGSize)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout sizeForItemAtIndexPath:(NSIndexPath*)index
 {
     CGFloat height = col.bounds.size.height;
-    CGFloat useheight = height * currentcellmultiplier;
-    CGSize size = CGSizeMake(frontcellwidth, useheight);
+    CGSize size = CGSizeMake(frontcellwidth, height);
     
     return size;
 }
@@ -192,9 +196,7 @@ static NSInteger const frontcellwidth = 170;
 
 -(NSInteger)collectionView:(UICollectionView*)col numberOfItemsInSection:(NSInteger)section
 {
-    NSInteger count = self.model.items.count;
-    
-    return count;
+    return currentitems;
 }
 
 -(UICollectionReusableView*)collectionView:(UICollectionView*)col viewForSupplementaryElementOfKind:(NSString*)kind atIndexPath:(NSIndexPath*)index
