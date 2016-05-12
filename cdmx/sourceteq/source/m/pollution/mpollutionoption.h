@@ -1,13 +1,8 @@
-//
-//  mpollutionoption.h
-//  cdmx
-//
-//  Created by zero on 5/12/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
+#import "mpollution.h"
 
-@interface mpollutionoption : NSObject
+@interface mpollutionoption:NSObject
+
+-(instancetype)init:(mpollution*)model;
 
 @end

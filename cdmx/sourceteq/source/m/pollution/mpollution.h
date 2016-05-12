@@ -1,6 +1,7 @@
 #import <Foundation/Foundation.h>
-#import "mpollutionitem.h"
 #import "mpollutionhour.h"
+
+@class mpollutionoption;
 
 @interface mpollution:NSObject
 
@@ -8,8 +9,10 @@
 -(void)districts;
 -(void)chart;
 -(void)clean;
--(void)highlight:(mpollutionitem*)model;
 
-@property(strong, nonatomic, readonly)NSArray<mpollutionitem*> *items;
+@property(strong, nonatomic, readonly)mpollutionoption *option;
+@property(strong, nonatomic, readonly)NSArray<mdbdistrict*> *modeldistricts;
+@property(strong, nonatomic, readonly)NSArray<mdbpollutiondaily*> *modeldaily;
+@property(strong, nonatomic, readonly)NSArray<mpollutionhour*> *modelhourly;
 
 @end

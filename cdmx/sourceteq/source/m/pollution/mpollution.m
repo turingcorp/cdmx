@@ -1,19 +1,14 @@
 #import "mpollution.h"
+#import "mpollutionfront.h"
+#import "mpollutionchart.h"
 #import "mdbselect.h"
-#import "ecolor.h"
-#import "gpollutionchartbasebottom.h"
-#import "gpollutionchartspikes.h"
-#import "gpollutionchartline.h"
-#import "gpollutionchartselect.h"
-#import "genericconstants.h"
 
 @interface mpollution ()
 
-@property(strong, nonatomic, readwrite)NSArray<mpollutionitem*> *items;
-@property(strong, nonatomic)NSArray *spatials;
-@property(strong, nonatomic)NSArray<mdbdistrict*> *modeldistricts;
-@property(strong, nonatomic)NSArray<mdbpollutiondaily*> *modeldaily;
-@property(strong, nonatomic)NSArray<mpollutionhour*> *modelhourly;
+@property(strong, nonatomic, readwrite)mpollutionoption *option;
+@property(strong, nonatomic, readwrite)NSArray<mdbdistrict*> *modeldistricts;
+@property(strong, nonatomic, readwrite)NSArray<mdbpollutiondaily*> *modeldaily;
+@property(strong, nonatomic, readwrite)NSArray<mpollutionhour*> *modelhourly;
 
 @end
 
@@ -33,109 +28,17 @@
 
 -(void)districts
 {
-    [self clean];
-    NSMutableArray<mpollutionitem*> *items = [NSMutableArray array];
-    
-    mpollutionitem *globalitem;
-    
-    if(self.modelhourly.count)
-    {
-        globalitem = [mpollutionitem pollutionglobal:[self.modelhourly lastObject].pollution];
-    }
-    else
-    {
-        globalitem = [mpollutionitem pollutionglobal:@0];
-    }
-    
-    [items addObject:globalitem];
-    
-    NSUInteger countdistritcs = self.modeldistricts.count;
-
-    for(NSUInteger indexdistricts = 0; indexdistricts < countdistritcs; indexdistricts++)
-    {
-        mdbdistrict *district = self.modeldistricts[indexdistricts];
-        mpollutionitem *modeldistrict = [mpollutionitem district:district];
-        
-        [items addObject:modeldistrict];
-    }
-    
-    self.items = items;
+    self.option = [[mpollutionfront alloc] init:self];
 }
 
 -(void)chart
 {
-    [self clean];
-    NSMutableArray<mpollutionitem*> *items = [NSMutableArray array];
-    NSMutableArray *spatials = [NSMutableArray array];
-    
-    NSUInteger countdaily = self.modeldaily.count;
-    CGSize screensize = [UIScreen mainScreen].bounds.size;
-    CGFloat width = screensize.width;
-    CGFloat widthperitem = width / (countdaily - 1);
-    CGFloat widthsum = 0;
-    
-    gpollutionchartbasebottom *basebottom = [[gpollutionchartbasebottom alloc] init:width];
-    gpollutionchartspikes *spikes = [[gpollutionchartspikes alloc] init];
-    gpollutionchartline *line = [[gpollutionchartline alloc] init];
-    gpollutionchartselect *chartselect = [[gpollutionchartselect alloc] init];
-    
-//    [spatials addObject:basebottom];
-    [spatials addObject:spikes];
-    [spatials addObject:line];
-    [spatials addObject:chartselect];
-    
-    for(NSUInteger indexdaily = 0; indexdaily < countdaily; indexdaily++)
-    {
-        mdbpollutiondaily *daily = self.modeldaily[indexdaily];
-        mpollutionitem *modeldaily = [mpollutionitem pollutiondaily:daily spatialx:widthsum spatialwidth:widthperitem];
-        [items addObject:modeldaily];
-        
-        mpollutionchartspike *spike = [[mpollutionchartspike alloc] init];
-        spike.color = modeldaily.index.color;
-        spike.x = widthsum;
-        spike.y = pollution_drawableheight - modeldaily.index.points;
-        
-        [spikes add:spike];
-        [line add:spike];
-        
-        widthsum += widthperitem;
-    }
-    
-    [spikes render];
-    [line render];
-    
-    self.items = items;
-    self.spatials = spatials;
+    self.option = [[mpollutionchart alloc] init:self];
 }
 
 -(void)clean
 {
-    self.items = nil;
-    self.spatials = nil;
-}
-
--(void)highlight:(mpollutionitem*)model
-{
-    BOOL makestandby = model.makesstandby;
-    
-    for(mpollutionitem *item in self.items)
-    {
-        if(makestandby)
-        {
-            [item standby];
-        }
-        else
-        {
-            if(item == model)
-            {
-                [item turnon];
-            }
-            else
-            {
-                [item turnoff];
-            }
-        }
-    }
+    self.option = nil;
 }
 
 @end
