@@ -5,7 +5,6 @@
 #import "ereusable.h"
 #import "genericconstants.h"
 
-static CGFloat const animationduration = 0.4;
 static NSInteger const frontcellwidth = 170;
 
 @implementation vpollutionfront
@@ -21,12 +20,7 @@ static NSInteger const frontcellwidth = 170;
 
 -(instancetype)init:(cpollution*)controller
 {
-    self = [super init];
-    [self setClipsToBounds:YES];
-    [self setBackgroundColor:[UIColor clearColor]];
-    [self setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [self setAlpha:0];
-    self.controller = controller;
+    self = [super init:controller];
     [self showdetail];
     
     trackscroll = NO;
@@ -58,14 +52,6 @@ static NSInteger const frontcellwidth = 170;
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
     
     [self postselect:0];
-    
-    __weak typeof(self) welf = self;
-    
-    [UIView animateWithDuration:animationduration animations:
-     ^
-     {
-         [welf setAlpha:1];
-     }];
     
     return self;
 }
@@ -124,21 +110,6 @@ static NSInteger const frontcellwidth = 170;
      ^(BOOL done)
      {
          [welf.collection selectItemAtIndexPath:[NSIndexPath indexPathForItem:selected inSection:0] animated:YES scrollPosition:UICollectionViewScrollPositionCenteredHorizontally];
-     }];
-}
-
--(void)remove
-{
-    __weak typeof(self) welf = self;
-    
-    [UIView animateWithDuration:animationduration animations:
-     ^
-     {
-         [welf setAlpha:0];
-     } completion:
-     ^(BOOL done)
-     {
-         [welf removeFromSuperview];
      }];
 }
 

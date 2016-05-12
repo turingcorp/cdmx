@@ -4,6 +4,7 @@
 #import "efont.h"
 #import "vpollutionfrontheaderbutton.h"
 #import "vpollution.h"
+#import "vpollutionfront.h"
 
 static NSInteger const infomarginx = 10;
 
@@ -97,7 +98,7 @@ static NSInteger const infomarginx = 10;
 
 -(void)actioncurrent:(UIButton*)button
 {
-    [self.controller.view.front showlist];
+    [(vpollutionfront*)self.controller.view.option showlist];
 }
 
 #pragma mark public

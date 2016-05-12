@@ -41,6 +41,9 @@
 		DA86ACEA1CE3BC6800908755 /* gpollutionchartspikes.m in Sources */ = {isa = PBXBuildFile; fileRef = DA86ACE91CE3BC6800908755 /* gpollutionchartspikes.m */; };
 		DA86ACED1CE3BE7400908755 /* mpollutionchartspike.m in Sources */ = {isa = PBXBuildFile; fileRef = DA86ACEC1CE3BE7400908755 /* mpollutionchartspike.m */; };
 		DA86ACF01CE3D78400908755 /* gpollutionchartline.m in Sources */ = {isa = PBXBuildFile; fileRef = DA86ACEF1CE3D78400908755 /* gpollutionchartline.m */; };
+		DA86ACF31CE3FE3600908755 /* gpollutionchartselect.m in Sources */ = {isa = PBXBuildFile; fileRef = DA86ACF21CE3FE3600908755 /* gpollutionchartselect.m */; };
+		DA86ACF61CE4010B00908755 /* vpollutioncharter.m in Sources */ = {isa = PBXBuildFile; fileRef = DA86ACF51CE4010B00908755 /* vpollutioncharter.m */; };
+		DA86ACF91CE401CD00908755 /* vpollutionoption.m in Sources */ = {isa = PBXBuildFile; fileRef = DA86ACF81CE401CD00908755 /* vpollutionoption.m */; };
 		DA87082A1CBE840F000C08E1 /* amanager.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8708291CBE840F000C08E1 /* amanager.m */; };
 		DA87082D1CBE844A000C08E1 /* acall.m in Sources */ = {isa = PBXBuildFile; fileRef = DA87082C1CBE844A000C08E1 /* acall.m */; };
 		DA8708311CBE8532000C08E1 /* aparser.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8708301CBE8532000C08E1 /* aparser.m */; };
@@ -162,6 +165,12 @@
 		DA86ACEC1CE3BE7400908755 /* mpollutionchartspike.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mpollutionchartspike.m; sourceTree = "<group>"; };
 		DA86ACEE1CE3D78400908755 /* gpollutionchartline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gpollutionchartline.h; sourceTree = "<group>"; };
 		DA86ACEF1CE3D78400908755 /* gpollutionchartline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gpollutionchartline.m; sourceTree = "<group>"; };
+		DA86ACF11CE3FE3600908755 /* gpollutionchartselect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gpollutionchartselect.h; sourceTree = "<group>"; };
+		DA86ACF21CE3FE3600908755 /* gpollutionchartselect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gpollutionchartselect.m; sourceTree = "<group>"; };
+		DA86ACF41CE4010B00908755 /* vpollutioncharter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vpollutioncharter.h; sourceTree = "<group>"; };
+		DA86ACF51CE4010B00908755 /* vpollutioncharter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vpollutioncharter.m; sourceTree = "<group>"; };
+		DA86ACF71CE401CD00908755 /* vpollutionoption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vpollutionoption.h; sourceTree = "<group>"; };
+		DA86ACF81CE401CD00908755 /* vpollutionoption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vpollutionoption.m; sourceTree = "<group>"; };
 		DA8708281CBE840F000C08E1 /* amanager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = amanager.h; sourceTree = "<group>"; };
 		DA8708291CBE840F000C08E1 /* amanager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = amanager.m; sourceTree = "<group>"; };
 		DA87082B1CBE844A000C08E1 /* acall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = acall.h; sourceTree = "<group>"; };
@@ -316,6 +325,8 @@
 			children = (
 				DA20ACE91CD7FC9100754956 /* vpollution.h */,
 				DA20ACEA1CD7FC9100754956 /* vpollution.m */,
+				DA86ACF71CE401CD00908755 /* vpollutionoption.h */,
+				DA86ACF81CE401CD00908755 /* vpollutionoption.m */,
 				DA8E6B1C1CDA50FA009100EE /* vpollutionfront.h */,
 				DA8E6B1D1CDA50FA009100EE /* vpollutionfront.m */,
 				DAB3FED51CE23E9E00CCBB86 /* vpollutionfrontlayoutdetail.h */,
@@ -336,6 +347,8 @@
 				DA86ACBF1CE3712F00908755 /* vpollutionmenu.m */,
 				DA86ACC11CE3737B00908755 /* vpollutionmenucell.h */,
 				DA86ACC21CE3737B00908755 /* vpollutionmenucell.m */,
+				DA86ACF41CE4010B00908755 /* vpollutioncharter.h */,
+				DA86ACF51CE4010B00908755 /* vpollutioncharter.m */,
 			);
 			path = pollution;
 			sourceTree = "<group>";
@@ -495,6 +508,8 @@
 				DA86ACE91CE3BC6800908755 /* gpollutionchartspikes.m */,
 				DA86ACEE1CE3D78400908755 /* gpollutionchartline.h */,
 				DA86ACEF1CE3D78400908755 /* gpollutionchartline.m */,
+				DA86ACF11CE3FE3600908755 /* gpollutionchartselect.h */,
+				DA86ACF21CE3FE3600908755 /* gpollutionchartselect.m */,
 			);
 			path = pollution;
 			sourceTree = "<group>";
@@ -841,6 +856,7 @@
 				DA20AD1D1CD80D8100754956 /* msettings.m in Sources */,
 				DA87082D1CBE844A000C08E1 /* acall.m in Sources */,
 				DAD33FF61CBC83E300C87502 /* main.m in Sources */,
+				DA86ACF31CE3FE3600908755 /* gpollutionchartselect.m in Sources */,
 				DA4096571CDC1FEE0001D696 /* vpollutionimeca.m in Sources */,
 				DAD33FFC1CBC83E300C87502 /* updater.m in Sources */,
 				DA8E6B821CDA76BC009100EE /* vpollutionfrontcell.m in Sources */,
@@ -887,6 +903,7 @@
 				DAA0C67A1CD978BD00880D3E /* gtexture.m in Sources */,
 				DA86ACCF1CE3758B00908755 /* mpollutionmenuitemchart.m in Sources */,
 				DA8E6B851CDA76D3009100EE /* vpollutionfrontheader.m in Sources */,
+				DA86ACF91CE401CD00908755 /* vpollutionoption.m in Sources */,
 				DA86ACC01CE3712F00908755 /* vpollutionmenu.m in Sources */,
 				DAB3FEEB1CE27B6B00CCBB86 /* mpollutionitemglobal.m in Sources */,
 				DA86ACE41CE3B64100908755 /* gpollutionchartbar.m in Sources */,
@@ -909,6 +926,7 @@
 				DA8E6B941CDA9B33009100EE /* mpollutionindexwarning.m in Sources */,
 				DAD875FC1CBD6CF200A4F91C /* vmenubutton.m in Sources */,
 				DA86ACC61CE3755700908755 /* mpollutionmenu.m in Sources */,
+				DA86ACF61CE4010B00908755 /* vpollutioncharter.m in Sources */,
 				DA86ACD51CE37B8E00908755 /* ecell.m in Sources */,
 				DAB3FEF21CE2B19200CCBB86 /* mpollutionhour.m in Sources */,
 				DA40964D1CDC15FA0001D696 /* vview.m in Sources */,

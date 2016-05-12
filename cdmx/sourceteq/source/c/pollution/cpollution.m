@@ -42,7 +42,7 @@ static NSInteger const framespersecond = 60;
 -(void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
-    [self.view.front removeFromSuperview];
+    [self.view.option removeFromSuperview];
     [self.model clean];
 }
 

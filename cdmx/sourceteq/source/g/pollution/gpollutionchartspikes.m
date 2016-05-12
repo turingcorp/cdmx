@@ -54,8 +54,8 @@
     NSInteger indexvector = 0;
     self.corners = corners2;
     
-    GLKVector4 colortop = [[[UIColor main] colorWithAlphaComponent:0.2] asvector];
-    GLKVector4 colorbottom = [[[UIColor main] colorWithAlphaComponent:0.02] asvector];
+    GLKVector4 colortop = [[[UIColor main] colorWithAlphaComponent:0.1] asvector];
+    GLKVector4 colorbottom = GLKVector4Make(0, 0, 0, 0);
     
     self.dataposition = [NSMutableData dataWithLength:corners2 * sizeof(GLKVector2)];
     self.datacolor = [NSMutableData dataWithLength:corners2 * sizeof(GLKVector4)];

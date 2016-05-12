@@ -2,6 +2,7 @@
 #import "enotification.h"
 #import "cpollution.h"
 #import "vpollutionmenu.h"
+#import "vpollutionfront.h"
 
 static NSInteger const texturecorners = 6;
 static NSInteger const pollutionmenuheight = 80;
@@ -59,10 +60,10 @@ static NSInteger const pollutionmenuheight = 80;
 
 -(void)loadfront
 {
-    [self.front removeFromSuperview];
+    [self.option removeFromSuperview];
     
     vpollutionfront *front = [[vpollutionfront alloc] init:self.controller];
-    self.front = front;
+    self.option = front;
     [self insertSubview:front belowSubview:self.menu];
     
     NSDictionary *views = @{@"front":front};
@@ -126,7 +127,7 @@ static NSInteger const pollutionmenuheight = 80;
     __weak typeof(self) welf = self;
     
     [welf.menu setUserInteractionEnabled:NO];
-    [welf.front remove];
+    [welf.option remove];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
                    ^
@@ -148,7 +149,7 @@ static NSInteger const pollutionmenuheight = 80;
     __weak typeof(self) welf = self;
     
     [welf.menu setUserInteractionEnabled:NO];
-    [welf.front remove];
+    [welf.option remove];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
                    ^

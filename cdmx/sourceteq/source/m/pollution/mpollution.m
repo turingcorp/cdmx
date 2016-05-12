@@ -4,6 +4,7 @@
 #import "gpollutionchartbasebottom.h"
 #import "gpollutionchartspikes.h"
 #import "gpollutionchartline.h"
+#import "gpollutionchartselect.h"
 #import "genericconstants.h"
 
 @interface mpollution ()
@@ -76,10 +77,12 @@
     gpollutionchartbasebottom *basebottom = [[gpollutionchartbasebottom alloc] init:width];
     gpollutionchartspikes *spikes = [[gpollutionchartspikes alloc] init];
     gpollutionchartline *line = [[gpollutionchartline alloc] init];
+    gpollutionchartselect *chartselect = [[gpollutionchartselect alloc] init];
     
-    [spatials addObject:basebottom];
+//    [spatials addObject:basebottom];
     [spatials addObject:spikes];
     [spatials addObject:line];
+    [spatials addObject:chartselect];
     
     for(NSUInteger indexdaily = 0; indexdaily < countdaily; indexdaily++)
     {
