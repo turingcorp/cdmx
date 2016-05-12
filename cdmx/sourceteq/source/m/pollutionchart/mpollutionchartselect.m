@@ -60,6 +60,7 @@
         
         if(match)
         {
+            self.current = point;
             pointerx = inpointx;
             pointery = inpointy;
             

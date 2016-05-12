@@ -10,5 +10,6 @@
 
 @property(strong, nonatomic)gpollutionchartselect *spatial;
 @property(weak, nonatomic)NSArray<mpollutionchartitempoint*> *points;
+@property(weak, nonatomic)mpollutionchartitempoint *current;
 
 @end

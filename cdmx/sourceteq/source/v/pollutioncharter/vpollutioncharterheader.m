@@ -1,4 +1,6 @@
 #import "vpollutioncharterheader.h"
+#import "ecolor.h"
+#import "efont.h"
 
 @implementation vpollutioncharterheader
 
@@ -7,6 +9,48 @@
     self = [super initWithFrame:frame];
     [self setClipsToBounds:YES];
     [self setBackgroundColor:[UIColor clearColor]];
+    
+    UILabel *labelindex = [[UILabel alloc] init];
+    [labelindex setUserInteractionEnabled:NO];
+    [labelindex setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [labelindex setNumberOfLines:0];
+    [labelindex setBackgroundColor:[UIColor clearColor]];
+    [labelindex setTextAlignment:NSTextAlignmentCenter];
+    [labelindex setFont:[UIFont numericsize:35]];
+    [labelindex setTextColor:[UIColor main]];
+    self.labelindex = labelindex;
+    
+    UILabel *labeltitle = [[UILabel alloc] init];
+    [labeltitle setUserInteractionEnabled:NO];
+    [labeltitle setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [labeltitle setNumberOfLines:0];
+    [labeltitle setBackgroundColor:[UIColor clearColor]];
+    [labeltitle setTextAlignment:NSTextAlignmentCenter];
+    [labeltitle setFont:[UIFont boldsize:13]];
+    [labeltitle setText:NSLocalizedString(@"vpollution_chart_header_title", nil)];
+    self.labeltitle = labeltitle;
+    
+    UILabel *labelname = [[UILabel alloc] init];
+    [labelname setUserInteractionEnabled:NO];
+    [labelname setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [labelname setNumberOfLines:0];
+    [labelname setBackgroundColor:[UIColor clearColor]];
+    [labelname setTextAlignment:NSTextAlignmentCenter];
+    [labelname setFont:[UIFont boldsize:16]];
+    [labelname setTextColor:[UIColor second]];
+    self.labelname = labelname;
+    
+    [self addSubview:labelindex];
+    [self addSubview:labeltitle];
+    [self addSubview:labelname];
+    
+    NSDictionary *views = @{@"index":labelindex, @"name":labelname, @"title":labeltitle};
+    NSDictionary *metrics = @{};
+    
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[index]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[title]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[name]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-25-[index(40)]-(-10)-[title(18)]-(-5)-[name(20)]" options:0 metrics:metrics views:views]];
     
     return self;
 }
@@ -55,12 +99,26 @@
                        CGFloat y = location.y;
                        
                        [welf.model.selected.modelselect newx:x y:y];
+                       mpollutionchartitempoint *current = welf.model.selected.modelselect.current;
+                       
+                       NSString *stringindex = [NSString stringWithFormat:@"%@", current.index];
+                       NSString *stringname = current.name;
+                       
+                       dispatch_async(dispatch_get_main_queue(),
+                                      ^
+                                      {
+                                          [welf.labelindex setText:stringindex];
+                                          [welf.labeltitle setTextColor:current.index.color];
+                                          [welf.labelname setText:stringname];
+                                      });
                    });
 }
 
 -(void)releasepointer
 {
     [self.model.selected.modelselect hideselector];
+    [self.labelindex setText:nil];
+    [self.labelname setText:nil];
 }
 
 @end
