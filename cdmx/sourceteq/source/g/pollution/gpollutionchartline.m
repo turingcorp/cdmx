@@ -59,6 +59,7 @@ static NSInteger const chartlinewidth = 5;
     if(completed)
     {
         [NSNotification glkmoveremove:self];
+        self.expected = nil;
     }
 }
 

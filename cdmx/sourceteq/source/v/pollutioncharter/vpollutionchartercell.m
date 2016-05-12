@@ -47,7 +47,7 @@
     }
     else
     {
-        [self.label setTextColor:[UIColor colorWithWhite:0.2 alpha:1]];
+        [self.label setTextColor:[UIColor colorWithWhite:0.3 alpha:1]];
         [self setAlpha:0.2];
     }
 }
