@@ -2,7 +2,7 @@
 
 @interface mpollutionfront ()
 
-@property(strong, nonatomic, readwrite)NSArray<mpollutionitem*> *items;
+@property(strong, nonatomic, readwrite)NSArray<mpollutionfrontitem*> *items;
 
 @end
 
@@ -12,17 +12,17 @@
 {
     self = [super init];
     
-    NSMutableArray<mpollutionitem*> *items = [NSMutableArray array];
-    mpollutionitem *globalitem;
+    NSMutableArray<mpollutionfrontitem*> *items = [NSMutableArray array];
+    mpollutionfrontitem *globalitem;
     
     if(model.modelhourly.count)
     {
-        mpollutionhour *currenthour = [model.modelhourly lastObject];
-        globalitem = [mpollutionitem pollutionglobal:currenthour.pollution];
+        mpollutionhour *currenthour = model.modelhourly.lastObject;
+        globalitem = [mpollutionfrontitem global:currenthour.pollution.integerValue];
     }
     else
     {
-        globalitem = [mpollutionitem pollutionglobalempty];
+        globalitem = [mpollutionfrontitem global:0];
     }
     
     [items addObject:globalitem];
@@ -32,9 +32,9 @@
     for(NSUInteger indexdistricts = 0; indexdistricts < countdistritcs; indexdistricts++)
     {
         mdbdistrict *district = model.modeldistricts[indexdistricts];
-        mpollutionitem *modeldistrict = [mpollutionitem district:district];
+        mpollutionfrontitem *item = [mpollutionfrontitem district:district];
         
-        [items addObject:modeldistrict];
+        [items addObject:item];
     }
     
     self.items = items;
@@ -44,11 +44,11 @@
 
 #pragma mark public
 
--(void)highlight:(mpollutionitem*)model
+-(void)highlight:(mpollutionfrontitem*)model
 {
-    BOOL makestandby = model.makesstandby;
+    BOOL makestandby = model.spatial;
     
-    for(mpollutionitem *item in self.items)
+    for(mpollutionfrontitem *item in self.items)
     {
         if(makestandby)
         {

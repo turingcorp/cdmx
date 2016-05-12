@@ -4,7 +4,7 @@
 
 @interface mpollutionfront:mpollutionoption
 
--(void)highlight:(mpollutionitem*)model;
+-(void)highlight:(mpollutionfrontitem*)model;
 
 @property(strong, nonatomic, readonly)NSArray<mpollutionfrontitem*> *items;
 
