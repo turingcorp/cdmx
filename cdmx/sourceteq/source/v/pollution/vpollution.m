@@ -3,6 +3,7 @@
 #import "cpollution.h"
 #import "vpollutionmenu.h"
 #import "vpollutionfront.h"
+#import "vpollutioncharter.h"
 
 static NSInteger const texturecorners = 6;
 static NSInteger const pollutionmenuheight = 80;
@@ -58,19 +59,28 @@ static NSInteger const pollutionmenuheight = 80;
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[menu(height)]-0-|" options:0 metrics:metrics views:views]];
 }
 
--(void)loadfront
+-(void)loadoption:(vpollutionoption*)option
 {
-    [self.option removeFromSuperview];
+    self.option = option;
+    [self insertSubview:option belowSubview:self.menu];
     
-    vpollutionfront *front = [[vpollutionfront alloc] init:self.controller];
-    self.option = front;
-    [self insertSubview:front belowSubview:self.menu];
-    
-    NSDictionary *views = @{@"front":front};
+    NSDictionary *views = @{@"option":option};
     NSDictionary *metrics = @{};
     
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[front]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[front]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[option]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[option]-0-|" options:0 metrics:metrics views:views]];
+}
+
+-(void)loadfront
+{
+    vpollutionfront *front = [[vpollutionfront alloc] init:self.controller];
+    [self loadoption:front];
+}
+
+-(void)loadcharter
+{
+    vpollutioncharter *charter = [[vpollutioncharter alloc] init:self.controller];
+    [self loadoption:charter];
 }
 
 #pragma mark public
@@ -106,6 +116,7 @@ static NSInteger const pollutionmenuheight = 80;
     __weak typeof(self) welf = self;
     
     [welf.menu setUserInteractionEnabled:NO];
+    [welf.option remove];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
                    ^
@@ -138,7 +149,7 @@ static NSInteger const pollutionmenuheight = 80;
                        dispatch_async(dispatch_get_main_queue(),
                                       ^
                                       {
-//                                          [welf loadfront];
+                                          [self loadcharter];
                                           [welf.menu setUserInteractionEnabled:YES];
                                       });
                    });
