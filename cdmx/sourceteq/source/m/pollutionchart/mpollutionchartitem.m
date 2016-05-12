@@ -36,7 +36,6 @@
         CGFloat y = pollution_drawableheight - point.index.points;
         point.x = widthsum;
         point.y = y;
-        
         widthsum += widthperitem;
         
         [spatialspikes add:point];
@@ -48,6 +47,7 @@
     
     self.spatialspikes = spatialspikes;
     self.spatialline = spatialline;
+    self.modelselect = [[mpollutionchartselect alloc] init:self.points];
 }
 
 #pragma mark public

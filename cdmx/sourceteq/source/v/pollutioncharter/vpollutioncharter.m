@@ -104,6 +104,7 @@ static NSInteger const charterinteritem = -1;
 -(UICollectionReusableView*)collectionView:(UICollectionView*)col viewForSupplementaryElementOfKind:(NSString*)kind atIndexPath:(NSIndexPath*)index
 {
     vpollutioncharterheader *header = [col dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:[vpollutioncharterheader reusableidentifier] forIndexPath:index];
+    header.model = self.model.selected.modelselect;
     
     return header;
 }

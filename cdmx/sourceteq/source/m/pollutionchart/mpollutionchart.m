@@ -15,7 +15,6 @@
 {
     self = [super init:model];
     self.model = model;
-    self.modelselect = [[mpollutionchartselect alloc] init];
     self.items = @[
                    [[mpollutionchartitemtoday alloc] init],
                    [[mpollutionchartitemweek alloc] init],

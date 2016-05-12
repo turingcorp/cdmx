@@ -1,19 +1,57 @@
 #import "gpollutionchartselect.h"
+#import "ecolor.h"
+#import "enotification.h"
+
+static NSInteger const selectorsize = 20;
 
 @implementation gpollutionchartselect
 
 -(instancetype)init
 {
     self = [super init:@"pollution_chartselect" srgb:NO];
-    self.x = 100;
-    self.y = 100;
-    self.width = 20;
-    self.height = 20;
-    self.color = GLKVector4Make(0.3, 0.5, 0.7, 1);
-    [self render];
-    [self movetotop];
+    self.width = selectorsize;
+    self.height = selectorsize;
+    self.visible = NO;
+    self.rerender = NO;
+    self.color = [[UIColor main] asvector];
+    
+    [NSNotification observe:self glkmove:@selector(move:)];
     
     return self;
+}
+
+#pragma mark notified
+
+-(void)move:(NSNotification*)notification
+{
+    if(self.rerender)
+    {
+        [self render];
+        [self movetotop];
+        
+        self.rerender = NO;
+    }
+}
+
+#pragma mark public
+
+-(void)newx:(CGFloat)x y:(CGFloat)y
+{
+    self.x = x;
+    self.y = y;
+    self.rerender = YES;
+    self.visible = YES;
+}
+
+#pragma mark -
+#pragma mark spatial
+
+-(void)drawwithuserinfo:(mpollutionnotificationdraw*)userinfo
+{
+    if(self.visible)
+    {
+        [super drawwithuserinfo:userinfo];
+    }
 }
 
 @end

@@ -48,11 +48,13 @@
     CGPoint location = [touch locationInView:self];
     CGFloat x = location.x;
     CGFloat y = location.y;
+    
+    [self.model newx:x y:y];
 }
 
 -(void)releasepointer
 {
-    
+    [self.model hideselector];
 }
 
 @end
