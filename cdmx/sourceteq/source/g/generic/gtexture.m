@@ -11,6 +11,20 @@
     return self;
 }
 
+-(void)dealloc
+{
+    GLuint reference = self.textureid;
+    
+    if(reference)
+    {
+        dispatch_async(dispatch_get_main_queue(),
+                       ^
+                       {
+                           glDeleteTextures(1, &reference);
+                       });
+    }
+}
+
 #pragma mark public
 
 -(void)loadtexture:(NSString*)texturename srgb:(BOOL)srgb
