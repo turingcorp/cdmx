@@ -29,7 +29,7 @@
                                    paramheight
                                    ];
     
-    zqlquery *query = [zqlquery select:dbdistricts params:params ordered:paramname ascendent:YES];
+    zqlquery *query = [zqlquery select:dbdistricts params:params ordered:paramname ascendent:YES limit:0];
     zqlresult *result = [zql query:@[query]];
     
     NSUInteger districtscount = result.params.count;
@@ -76,7 +76,7 @@
                                    parampollution
                                    ];
     
-    zqlquery *query = [zqlquery select:dbpollutiondaily params:params ordered:paramdate ascendent:YES];
+    zqlquery *query = [zqlquery select:dbpollutiondaily params:params ordered:paramdate ascendent:YES limit:0];
     zqlresult *result = [zql query:@[query]];
     
     NSUInteger districtscount = result.params.count;

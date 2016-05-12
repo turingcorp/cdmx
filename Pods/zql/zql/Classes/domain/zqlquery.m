@@ -11,6 +11,7 @@ static NSString* const zqlqueryselecttable =                    @" from %@";
 static NSString* const zqlqueryselectordered =                  @" order by %@ ";
 static NSString* const zqlqueryselectorderascending =           @"asc";
 static NSString* const zqlqueryselectorderdescending =          @"desc";
+static NSString* const zqlqueryselectlimit =                    @" limit %@";
 static NSString* const zqlqueryedit =                           @"set ";
 static NSString* const zqlquerywhere =                          @" where ";
 static NSString* const zqlqueryequals =                         @"%@=%@";
@@ -146,7 +147,7 @@ static NSString* const zqlquerytransactionrollback =            @"ROLLBACK";
     return query;
 }
 
-+(instancetype)select:(NSString*)tablename params:(NSArray<zqlparam*>*)params ordered:(zqlparam*)ordered ascendent:(BOOL)ascendent
++(instancetype)select:(NSString*)tablename params:(NSArray<zqlparam*>*)params ordered:(zqlparam*)ordered ascendent:(BOOL)ascendent limit:(NSInteger)limit
 {
     zqlquery *query;
     
@@ -190,6 +191,11 @@ static NSString* const zqlquerytransactionrollback =            @"ROLLBACK";
             {
                 [string appendString:zqlqueryselectorderdescending];
             }
+        }
+        
+        if(limit)
+        {
+            [string appendFormat:zqlqueryselectlimit, @(limit)];
         }
         
         [string appendString:zqlqueryclosure];
