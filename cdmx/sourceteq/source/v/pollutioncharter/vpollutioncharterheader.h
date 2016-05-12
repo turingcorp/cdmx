@@ -8,5 +8,4 @@
 @property(weak, nonatomic)UILabel *labeltitle;
 @property(weak, nonatomic)UILabel *labelname;
 
-
 @end

@@ -62,6 +62,7 @@
     self.points = nil;
     self.spatialspikes = nil;
     self.spatialline = nil;
+    self.modelselect = nil;
 }
 
 @end
