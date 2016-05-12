@@ -49,6 +49,22 @@ static NSInteger const charterinteritem = -1;
 #pragma mark -
 #pragma mark col del
 
+-(CGSize)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout sizeForItemAtIndexPath:(NSIndexPath*)index
+{
+    CGFloat width = col.bounds.size.width;
+    CGSize size = CGSizeMake(width, chartercellheight);
+    
+    return size;
+}
+
+-(CGSize)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout referenceSizeForHeaderInSection:(NSInteger)section
+{
+    CGFloat width = col.bounds.size.width;
+    CGSize size = CGSizeMake(width, pollution_drawableheight);
+    
+    return size;
+}
+
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView*)col
 {
     return 1;
@@ -59,9 +75,18 @@ static NSInteger const charterinteritem = -1;
     return 0;
 }
 
+-(UICollectionReusableView*)collectionView:(UICollectionView*)col viewForSupplementaryElementOfKind:(NSString*)kind atIndexPath:(NSIndexPath*)index
+{
+    vpollutioncharterheader *header = [col dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:[vpollutioncharterheader reusableidentifier] forIndexPath:index];
+    
+    return header;
+}
+
 -(UICollectionViewCell*)collectionView:(UICollectionView*)col cellForItemAtIndexPath:(NSIndexPath*)index
 {
-    return nil;
+    vpollutionchartercell *cell = [col dequeueReusableCellWithReuseIdentifier:[vpollutionchartercell reusableidentifier] forIndexPath:index];
+    
+    return cell;
 }
 
 @end
