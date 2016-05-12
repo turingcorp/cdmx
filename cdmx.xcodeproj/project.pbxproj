@@ -86,9 +86,9 @@
 		DAB3FEF21CE2B19200CCBB86 /* mpollutionhour.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB3FEF11CE2B19200CCBB86 /* mpollutionhour.m */; };
 		DAC21CBF1CE4BF0F00D92161 /* mpollutionchart.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC21CBE1CE4BF0F00D92161 /* mpollutionchart.m */; };
 		DAC21CC21CE4BF2400D92161 /* mpollutionchartitem.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC21CC11CE4BF2400D92161 /* mpollutionchartitem.m */; };
-		DAC21CC51CE4BF4000D92161 /* mpollutionchartitemhourly.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC21CC41CE4BF4000D92161 /* mpollutionchartitemhourly.m */; };
 		DAC21CC81CE4BFA300D92161 /* mpollutionchartitemweek.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC21CC71CE4BFA300D92161 /* mpollutionchartitemweek.m */; };
 		DAC21CCB1CE4BFB500D92161 /* mpollutionchartitemmonth.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC21CCA1CE4BFB500D92161 /* mpollutionchartitemmonth.m */; };
+		DAC21CCE1CE4C07F00D92161 /* mpollutionchartitemtoday.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC21CCD1CE4C07F00D92161 /* mpollutionchartitemtoday.m */; };
 		DACEDEE21CBC89630088AA8B /* cmain.m in Sources */ = {isa = PBXBuildFile; fileRef = DACEDEE11CBC89630088AA8B /* cmain.m */; };
 		DAD33FF31CBC83E300C87502 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DAD33FB01CBC83E300C87502 /* Localizable.strings */; };
 		DAD33FF41CBC83E300C87502 /* appdel.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD33FB61CBC83E300C87502 /* appdel.m */; };
@@ -262,12 +262,12 @@
 		DAC21CBE1CE4BF0F00D92161 /* mpollutionchart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mpollutionchart.m; sourceTree = "<group>"; };
 		DAC21CC01CE4BF2400D92161 /* mpollutionchartitem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpollutionchartitem.h; sourceTree = "<group>"; };
 		DAC21CC11CE4BF2400D92161 /* mpollutionchartitem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mpollutionchartitem.m; sourceTree = "<group>"; };
-		DAC21CC31CE4BF4000D92161 /* mpollutionchartitemhourly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpollutionchartitemhourly.h; sourceTree = "<group>"; };
-		DAC21CC41CE4BF4000D92161 /* mpollutionchartitemhourly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mpollutionchartitemhourly.m; sourceTree = "<group>"; };
 		DAC21CC61CE4BFA300D92161 /* mpollutionchartitemweek.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpollutionchartitemweek.h; sourceTree = "<group>"; };
 		DAC21CC71CE4BFA300D92161 /* mpollutionchartitemweek.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mpollutionchartitemweek.m; sourceTree = "<group>"; };
 		DAC21CC91CE4BFB500D92161 /* mpollutionchartitemmonth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpollutionchartitemmonth.h; sourceTree = "<group>"; };
 		DAC21CCA1CE4BFB500D92161 /* mpollutionchartitemmonth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mpollutionchartitemmonth.m; sourceTree = "<group>"; };
+		DAC21CCC1CE4C07F00D92161 /* mpollutionchartitemtoday.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpollutionchartitemtoday.h; sourceTree = "<group>"; };
+		DAC21CCD1CE4C07F00D92161 /* mpollutionchartitemtoday.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mpollutionchartitemtoday.m; sourceTree = "<group>"; };
 		DACEDEE01CBC89630088AA8B /* cmain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cmain.h; sourceTree = "<group>"; };
 		DACEDEE11CBC89630088AA8B /* cmain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cmain.m; sourceTree = "<group>"; };
 		DAD33F901CBC825900C87502 /* cdmx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cdmx.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -444,8 +444,8 @@
 				DAC21CBE1CE4BF0F00D92161 /* mpollutionchart.m */,
 				DAC21CC01CE4BF2400D92161 /* mpollutionchartitem.h */,
 				DAC21CC11CE4BF2400D92161 /* mpollutionchartitem.m */,
-				DAC21CC31CE4BF4000D92161 /* mpollutionchartitemhourly.h */,
-				DAC21CC41CE4BF4000D92161 /* mpollutionchartitemhourly.m */,
+				DAC21CCC1CE4C07F00D92161 /* mpollutionchartitemtoday.h */,
+				DAC21CCD1CE4C07F00D92161 /* mpollutionchartitemtoday.m */,
 				DAC21CC61CE4BFA300D92161 /* mpollutionchartitemweek.h */,
 				DAC21CC71CE4BFA300D92161 /* mpollutionchartitemweek.m */,
 				DAC21CC91CE4BFB500D92161 /* mpollutionchartitemmonth.h */,
@@ -914,6 +914,7 @@
 				DAB26D911CE1018C00E1580F /* mpollutionitemdistrict.m in Sources */,
 				DA86ACEA1CE3BC6800908755 /* gpollutionchartspikes.m in Sources */,
 				DA40965D1CDD4C0D0001D696 /* vcollectioncell.m in Sources */,
+				DAC21CCE1CE4C07F00D92161 /* mpollutionchartitemtoday.m in Sources */,
 				DA86ACC91CE3756B00908755 /* mpollutionmenuitem.m in Sources */,
 				DA20ACEB1CD7FC9100754956 /* vpollution.m in Sources */,
 				DAB3FEE21CE270F900CCBB86 /* aparserpollution.m in Sources */,
@@ -947,7 +948,6 @@
 				DAB3FEEB1CE27B6B00CCBB86 /* mpollutionitemglobal.m in Sources */,
 				DA86ACE41CE3B64100908755 /* gpollutionchartbar.m in Sources */,
 				DACEDEE21CBC89630088AA8B /* cmain.m in Sources */,
-				DAC21CC51CE4BF4000D92161 /* mpollutionchartitemhourly.m in Sources */,
 				DA8E6B1E1CDA50FA009100EE /* vpollutionfront.m in Sources */,
 				DAD33FF91CBC83E300C87502 /* tools.m in Sources */,
 				DAD875CF1CBD2F0400A4F91C /* cpages.m in Sources */,

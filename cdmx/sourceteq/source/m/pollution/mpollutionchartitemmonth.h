@@ -1,13 +1,6 @@
-//
-//  mpollutionchartitemmonth.h
-//  cdmx
-//
-//  Created by zero on 5/12/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
+#import "mpollutionchartitem.h"
 
-@interface mpollutionchartitemmonth : NSObject
+@interface mpollutionchartitemmonth:mpollutionchartitem
 
 @end

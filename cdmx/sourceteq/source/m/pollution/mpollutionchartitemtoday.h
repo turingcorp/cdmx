@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 #import "mpollutionchartitem.h"
 
-@interface mpollutionchartitemweek:mpollutionchartitem
+@interface mpollutionchartitemtoday:mpollutionchartitem
 
 @end
