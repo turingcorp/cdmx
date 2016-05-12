@@ -1,13 +1,8 @@
-//
-//  vpollutioncharter.h
-//  cdmx
-//
-//  Created by zero on 5/11/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
+#import <UIKit/UIKit.h>
+#import "vpollutionoption.h"
 
-#import <Foundation/Foundation.h>
+@interface vpollutioncharter:vpollutionoption<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
-@interface vpollutioncharter : NSObject
+@property(weak, nonatomic)UICollectionView *collection;
 
 @end

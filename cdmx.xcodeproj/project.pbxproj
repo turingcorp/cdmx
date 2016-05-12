@@ -44,6 +44,8 @@
 		DA86ACF31CE3FE3600908755 /* gpollutionchartselect.m in Sources */ = {isa = PBXBuildFile; fileRef = DA86ACF21CE3FE3600908755 /* gpollutionchartselect.m */; };
 		DA86ACF61CE4010B00908755 /* vpollutioncharter.m in Sources */ = {isa = PBXBuildFile; fileRef = DA86ACF51CE4010B00908755 /* vpollutioncharter.m */; };
 		DA86ACF91CE401CD00908755 /* vpollutionoption.m in Sources */ = {isa = PBXBuildFile; fileRef = DA86ACF81CE401CD00908755 /* vpollutionoption.m */; };
+		DA86ACFC1CE4052600908755 /* vpollutioncharterheader.m in Sources */ = {isa = PBXBuildFile; fileRef = DA86ACFB1CE4052600908755 /* vpollutioncharterheader.m */; };
+		DA86ACFF1CE4053900908755 /* vpollutionchartercell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA86ACFE1CE4053900908755 /* vpollutionchartercell.m */; };
 		DA87082A1CBE840F000C08E1 /* amanager.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8708291CBE840F000C08E1 /* amanager.m */; };
 		DA87082D1CBE844A000C08E1 /* acall.m in Sources */ = {isa = PBXBuildFile; fileRef = DA87082C1CBE844A000C08E1 /* acall.m */; };
 		DA8708311CBE8532000C08E1 /* aparser.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8708301CBE8532000C08E1 /* aparser.m */; };
@@ -171,6 +173,10 @@
 		DA86ACF51CE4010B00908755 /* vpollutioncharter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vpollutioncharter.m; sourceTree = "<group>"; };
 		DA86ACF71CE401CD00908755 /* vpollutionoption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vpollutionoption.h; sourceTree = "<group>"; };
 		DA86ACF81CE401CD00908755 /* vpollutionoption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vpollutionoption.m; sourceTree = "<group>"; };
+		DA86ACFA1CE4052600908755 /* vpollutioncharterheader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vpollutioncharterheader.h; sourceTree = "<group>"; };
+		DA86ACFB1CE4052600908755 /* vpollutioncharterheader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vpollutioncharterheader.m; sourceTree = "<group>"; };
+		DA86ACFD1CE4053900908755 /* vpollutionchartercell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vpollutionchartercell.h; sourceTree = "<group>"; };
+		DA86ACFE1CE4053900908755 /* vpollutionchartercell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vpollutionchartercell.m; sourceTree = "<group>"; };
 		DA8708281CBE840F000C08E1 /* amanager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = amanager.h; sourceTree = "<group>"; };
 		DA8708291CBE840F000C08E1 /* amanager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = amanager.m; sourceTree = "<group>"; };
 		DA87082B1CBE844A000C08E1 /* acall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = acall.h; sourceTree = "<group>"; };
@@ -349,6 +355,10 @@
 				DA86ACC21CE3737B00908755 /* vpollutionmenucell.m */,
 				DA86ACF41CE4010B00908755 /* vpollutioncharter.h */,
 				DA86ACF51CE4010B00908755 /* vpollutioncharter.m */,
+				DA86ACFA1CE4052600908755 /* vpollutioncharterheader.h */,
+				DA86ACFB1CE4052600908755 /* vpollutioncharterheader.m */,
+				DA86ACFD1CE4053900908755 /* vpollutionchartercell.h */,
+				DA86ACFE1CE4053900908755 /* vpollutionchartercell.m */,
 			);
 			path = pollution;
 			sourceTree = "<group>";
@@ -870,6 +880,7 @@
 				DAB26D941CE1019E00E1580F /* mpollutionitemdaily.m in Sources */,
 				DA8E6B8B1CDA998A009100EE /* vpollutionradiochart.m in Sources */,
 				DA40964A1CDBFC550001D696 /* ccontroller.m in Sources */,
+				DA86ACFC1CE4052600908755 /* vpollutioncharterheader.m in Sources */,
 				DAD340041CBC83E300C87502 /* vblur.m in Sources */,
 				DA86ACF01CE3D78400908755 /* gpollutionchartline.m in Sources */,
 				DAD33FF41CBC83E300C87502 /* appdel.m in Sources */,
@@ -887,6 +898,7 @@
 				DAB3FEE81CE2756800CCBB86 /* mpollutionitemhourly.m in Sources */,
 				DAB26D821CE0F98200E1580F /* mdbselect.m in Sources */,
 				DA20AD031CD80B5100754956 /* enotification.m in Sources */,
+				DA86ACFF1CE4053900908755 /* vpollutionchartercell.m in Sources */,
 				DAA0C6801CD978CF00880D3E /* gspatialtexture.m in Sources */,
 				DA86ACD21CE3759900908755 /* mpollutionmenuitemmap.m in Sources */,
 				DA40965A1CDD26C00001D696 /* vpollutionfrontheadercurrent.m in Sources */,
