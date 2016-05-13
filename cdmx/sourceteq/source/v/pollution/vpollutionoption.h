@@ -6,6 +6,7 @@
 
 -(instancetype)init:(cpollution*)controller;
 -(void)remove;
+-(void)didappear;
 
 @property(weak, nonatomic)cpollution *controller;
 

@@ -49,6 +49,10 @@
 "vpollutionimeca_descr"="IMECA ó Índice Metropolitano de la Calidad del Aire es la referencia usada para representar el nivel de contaminación del aire, principalmente en la Ciudad de México, pero podría ser aplicado a cualquier otra ciudad.\n\nLa importancia de este índice radica en poderte informar cuales pueden ser los efectos en tu salud debido a la exposición a estos contaminantes, y que medidas procurar para evitar poner en riesgo tu integridad.\n\nEn 1977 la Secretaria de Salubridad y Asistencia creó el Índice Mexicano de la Calidad del Aire (IMEXCA), el cual en 1982 se transformo en IMECA, y en 2006 el Gobierno del Distrito Federal publicó la Norma Ambiental con la cual se rige hasta el momento.\n\n\nContaminantes considerados en el índice\n\n   ■ Ozono\n   ■ Monóxido de carbono\n   ■ Dióxido de azufre\n   ■ Dióxido de nitrógeno\n   ■ Partículas suspendidas";
 
 "vpollution_chart_header_title"="IMECA";
+"vpollution_map_header_loading"="Loading your current location";
+"vpollution_map_header_denied"="CDMX can't access your current location. You can enable it in the Settings";
+"vpollution_map_header_imeca"="IMECA";
+"vpollution_map_header_km"="%@ Kilometers away";
 
 "api_error_nodata"="Server no responding, try again later";
 "api_error_invalidjson"="Trouble reaching server, try again later";

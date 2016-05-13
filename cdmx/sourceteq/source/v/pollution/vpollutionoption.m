@@ -19,6 +19,10 @@ static CGFloat const animationduration = 0.4;
      ^
      {
          [welf setAlpha:1];
+     } completion:
+     ^(BOOL done)
+     {
+         [welf didappear];
      }];
     
     return self;
@@ -39,6 +43,10 @@ static CGFloat const animationduration = 0.4;
      {
          [welf removeFromSuperview];
      }];
+}
+
+-(void)didappear
+{
 }
 
 @end

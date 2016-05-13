@@ -1,5 +1,4 @@
 #import "vpollutionmapdisplay.h"
-#import "ecolor.h"
 
 static NSInteger const pollutionmapheight = 200;
 
@@ -10,11 +9,33 @@ static NSInteger const pollutionmapheight = 200;
     self = [super init];
     [self setClipsToBounds:YES];
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self setRotateEnabled:NO];
+    [self setScrollEnabled:YES];
+    [self setZoomEnabled:YES];
+    [self setPitchEnabled:NO];
+    [self setMapType:MKMapTypeStandard];
+    [self setShowsBuildings:NO];
+    [self setShowsPointsOfInterest:YES];
+    
+    if([self respondsToSelector:@selector(setShowsCompass:)])
+    {
+        [self setShowsCompass:NO];
+    }
+    
+    if([self respondsToSelector:@selector(setShowsScale:)])
+    {
+        [self setShowsScale:NO];
+    }
+    
+    if([self respondsToSelector:@selector(setShowsTraffic:)])
+    {
+        [self setShowsTraffic:NO];
+    }
     
     UIView *border = [[UIView alloc] init];
     [border setUserInteractionEnabled:NO];
     [border setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [border setBackgroundColor:[UIColor background]];
+    [border setBackgroundColor:[UIColor blackColor]];
     
     [self addSubview:border];
     

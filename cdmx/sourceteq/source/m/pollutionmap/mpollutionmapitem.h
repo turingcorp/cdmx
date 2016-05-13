@@ -5,7 +5,8 @@
 
 @property(strong, nonatomic)mpollutionindex *index;
 @property(copy, nonatomic)NSString *name;
-@property(copy, nonatomic)NSNumber *latitude;
-@property(copy, nonatomic)NSNumber *longitude;
+@property(assign, nonatomic)CGFloat latitude;
+@property(assign, nonatomic)CGFloat longitude;
+@property(assign, nonatomic)CGFloat kilometers;
 
 @end

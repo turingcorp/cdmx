@@ -1,24 +1,32 @@
 #import "vpollutionmap.h"
 #import "cpollution.h"
 #import "vpollutionmapcell.h"
-#import "vpollutionmapheader.h"
 #import "ecollectioncell.h"
 #import "ecollectionreusable.h"
 
+static CGFloat const pollutionmapspansize = 0.015;
 static NSInteger const mapheaderheight = 150;
 static NSInteger const mapcellheight = 50;
 static NSInteger const mapcollectionbottom = 120;
 static NSInteger const mapinteritemspace = -1;
 
 @implementation vpollutionmap
+{
+    CGRect rect1;
+    BOOL userupdated;
+}
 
 -(instancetype)init:(cpollution*)controller
 {
     self = [super init:controller];
     self.model = (mpollutionmap*)controller.model.option;
+    self.mapspan = MKCoordinateSpanMake(pollutionmapspansize, pollutionmapspansize);
+    rect1 = CGRectMake(0, 0, 1, 1);
     
     vpollutionmapdisplay *display = [[vpollutionmapdisplay alloc] init];
+    [display setDelegate:self];
     self.display = display;
+    userupdated = NO;
     
     UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
     [flow setFooterReferenceSize:CGSizeZero];
@@ -53,13 +61,79 @@ static NSInteger const mapinteritemspace = -1;
     return self;
 }
 
-#pragma mark functionalitysetfo
+#pragma mark functionality
 
 -(mpollutionmapitem*)modeforindex:(NSIndexPath*)index
 {
     mpollutionmapitem *model = self.model.items[index.item];
     
     return model;
+}
+
+-(void)centeruser
+{
+    MKCoordinateRegion region = MKCoordinateRegionMake(self.userlocation, self.mapspan);
+    [self.display setRegion:region animated:YES];
+}
+
+-(void)findcloserstation
+{
+    __weak typeof(self) welf = self;
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
+                   ^
+                   {
+                       mpollutionmapitem *closeritem = [welf.model closertolat:welf.userlocation.latitude lon:welf.userlocation.longitude];
+                       
+                       dispatch_async(dispatch_get_main_queue(),
+                                      ^
+                                      {
+                                          [welf.header closerstationfound:closeritem];
+                                      });
+                   });
+}
+
+-(void)locationscheck
+{
+    switch([CLLocationManager authorizationStatus])
+    {
+        case kCLAuthorizationStatusAuthorizedAlways:
+        case kCLAuthorizationStatusAuthorizedWhenInUse:
+            
+            [self.display setShowsUserLocation:YES];
+            
+            break;
+            
+        case kCLAuthorizationStatusNotDetermined:
+            
+            self.locationmanager = [[CLLocationManager alloc] init];
+            [self.locationmanager setDesiredAccuracy:kCLLocationAccuracyNearestTenMeters];
+            [self.locationmanager setDistanceFilter:20];
+            [self.locationmanager setDelegate:self];
+            
+            if([self.locationmanager respondsToSelector:@selector(requestWhenInUseAuthorization)])
+            {
+                [self.locationmanager requestWhenInUseAuthorization];
+            }
+            else
+            {
+                [self.locationmanager startUpdatingLocation];
+            }
+            
+            if(![UIVisualEffectView class])
+            {
+                [self.display setShowsUserLocation:YES];
+            }
+            
+            break;
+            
+        case kCLAuthorizationStatusDenied:
+        case kCLAuthorizationStatusRestricted:
+            
+            [self.header deniedlocation];
+            
+            break;
+    }
 }
 
 #pragma mark -
@@ -93,6 +167,14 @@ static NSInteger const mapinteritemspace = -1;
     return count;
 }
 
+-(UICollectionReusableView*)collectionView:(UICollectionView*)col viewForSupplementaryElementOfKind:(NSString*)kind atIndexPath:(NSIndexPath*)index
+{
+    vpollutionmapheader *header = [col dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:[vpollutionmapheader reusableidentifier] forIndexPath:index];
+    self.header = header;
+    
+    return header;
+}
+
 -(UICollectionViewCell*)collectionView:(UICollectionView*)col cellForItemAtIndexPath:(NSIndexPath*)index
 {
     mpollutionmapitem *model = [self modeforindex:index];
@@ -100,6 +182,62 @@ static NSInteger const mapinteritemspace = -1;
     [cell config:model];
     
     return cell;
+}
+
+#pragma mark location delegate
+
+-(void)mapView:(MKMapView*)mapview didUpdateUserLocation:(MKUserLocation*)userlocation
+{
+    self.userlocation = userlocation.coordinate;
+    
+    if(!userupdated)
+    {
+        userupdated = YES;
+        [self centeruser];
+        [self findcloserstation];
+    }
+}
+
+-(void)locationManager:(CLLocationManager*)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
+{
+    if(status == kCLAuthorizationStatusAuthorizedAlways || status == kCLAuthorizationStatusAuthorizedWhenInUse)
+    {
+        [self.display setShowsUserLocation:YES];
+    }
+}
+
+-(MKAnnotationView*)mapView:(MKMapView*)mapview viewForAnnotation:(id<MKAnnotation>)annotation
+{
+    MKAnnotationView *anview;
+    
+    if(annotation == self.display.userLocation)
+    {
+        anview = [mapview viewForAnnotation:annotation];
+    }
+    else
+    {
+//        anview = [[vairgeomapann alloc] init:annotation];
+    }
+    
+    return anview;
+}
+
+-(void)mapView:(MKMapView*)mapView didSelectAnnotationView:(MKAnnotationView*)view
+{
+    /*
+    if([view isKindOfClass:[vairgeomapann class]])
+    {
+        [self.controller selectitem:((vairgeomapann*)view).annotation.model];
+        
+        [[analytics singleton] trackevent:ga_event_environment_station action:ga_action_geo label:((vairgeomapann*)view).annotation.model.name];
+    }*/
+}
+
+#pragma mark option
+
+-(void)didappear
+{
+    [self locationscheck];
 }
 
 @end
