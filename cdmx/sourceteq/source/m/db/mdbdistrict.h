@@ -11,5 +11,7 @@
 @property(copy, nonatomic)NSNumber *y;
 @property(copy, nonatomic)NSNumber *width;
 @property(copy, nonatomic)NSNumber *height;
+@property(copy, nonatomic)NSNumber *latitude;
+@property(copy, nonatomic)NSNumber *longitude;
 
 @end

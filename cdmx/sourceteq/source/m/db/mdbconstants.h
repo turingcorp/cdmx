@@ -15,4 +15,4 @@ static NSString* const dbdistricts_longitude =                  @"longitude";
 static NSString* const dbpollutiondaily =                       @"pollutiondaily";
 static NSString* const dbpollutiondaily_date =                  @"date";
 static NSString* const dbpollutiondaily_maxpollution =          @"maxpollution";
-static NSInteger const dbintegermultiply =                      1000000;
+static NSInteger const dbintegermultiply =                      10000000;

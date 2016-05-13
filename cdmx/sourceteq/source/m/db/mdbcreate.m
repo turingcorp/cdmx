@@ -25,14 +25,14 @@
     
     zqlparam *paramserverid = [zqlparam type:[zqltype integer] name:dbserverindex value:nil];
     zqlparam *paramname = [zqlparam type:[zqltype text] name:dbdistricts_name value:nil];
-    zqlparam *parampollution = [zqlparam type:[zqltype integer] name:dbdistricts_pollution value:@0];
-    zqlparam *paramasset = [zqlparam type:[zqltype text] name:dbdistricts_asset value:@0];
-    zqlparam *paramx = [zqlparam type:[zqltype integer] name:dbdistricts_x value:@0];
-    zqlparam *paramy = [zqlparam type:[zqltype integer] name:dbdistricts_y value:@0];
-    zqlparam *paramwidth = [zqlparam type:[zqltype integer] name:dbdistricts_width value:@0];
-    zqlparam *paramheight = [zqlparam type:[zqltype integer] name:dbdistricts_height value:@0];
-    zqlparam *paramlatitude = [zqlparam type:[zqltype integer] name:dbdistricts_latitude value:@0];
-    zqlparam *paramlongitude = [zqlparam type:[zqltype integer] name:dbdistricts_longitude value:@0];
+    zqlparam *parampollution = [zqlparam type:[zqltype integer] name:dbdistricts_pollution value:nil];
+    zqlparam *paramasset = [zqlparam type:[zqltype text] name:dbdistricts_asset value:nil];
+    zqlparam *paramx = [zqlparam type:[zqltype integer] name:dbdistricts_x value:nil];
+    zqlparam *paramy = [zqlparam type:[zqltype integer] name:dbdistricts_y value:nil];
+    zqlparam *paramwidth = [zqlparam type:[zqltype integer] name:dbdistricts_width value:nil];
+    zqlparam *paramheight = [zqlparam type:[zqltype integer] name:dbdistricts_height value:nil];
+    zqlparam *paramlatitude = [zqlparam type:[zqltype integer] name:dbdistricts_latitude value:nil];
+    zqlparam *paramlongitude = [zqlparam type:[zqltype integer] name:dbdistricts_longitude value:nil];
     
     NSArray<zqlparam*> *params = @[
                                    paramserverid,
@@ -42,7 +42,9 @@
                                    paramx,
                                    paramy,
                                    paramwidth,
-                                   paramheight
+                                   paramheight,
+                                   paramlatitude,
+                                   paramlongitude
                                    ];
     
     zqlquery *querytabledistricts = [zqlquery createtable:dbdistricts params:params];
@@ -60,6 +62,10 @@
         NSNumber *districty = rawdistrict[dbdistricts_y];
         NSNumber *districtwidth = rawdistrict[dbdistricts_width];
         NSNumber *districtheight = rawdistrict[dbdistricts_height];
+        NSNumber *districtlatitude = rawdistrict[dbdistricts_latitude];
+        NSNumber *districtlongitude = rawdistrict[dbdistricts_longitude];
+        NSNumber *uselatitude = @(districtlatitude.floatValue * dbintegermultiply);
+        NSNumber *uselongitude = @(districtlongitude.floatValue * dbintegermultiply);
         
         paramserverid.value = districtserverid;
         paramname.value = districtname;
@@ -68,6 +74,8 @@
         paramy.value = districty;
         paramwidth.value = districtwidth;
         paramheight.value = districtheight;
+        paramlatitude.value = uselatitude;
+        paramlongitude.value = uselongitude;
         zqlquery *newquery = [zqlquery insert:dbdistricts params:params];
         [queries addObject:newquery];
     }

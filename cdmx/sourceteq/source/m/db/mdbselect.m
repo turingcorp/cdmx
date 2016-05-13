@@ -16,6 +16,8 @@
     zqlparam *paramy = [zqlparam type:[zqltype integer] name:dbdistricts_y value:nil];
     zqlparam *paramwidth = [zqlparam type:[zqltype integer] name:dbdistricts_width value:nil];
     zqlparam *paramheight = [zqlparam type:[zqltype integer] name:dbdistricts_height value:nil];
+    zqlparam *paramlatitude = [zqlparam type:[zqltype integer] name:dbdistricts_latitude value:nil];
+    zqlparam *paramlongitude = [zqlparam type:[zqltype integer] name:dbdistricts_longitude value:nil];
     
     NSArray<zqlparam*> *params = @[
                                    paramprimarykey,
@@ -26,7 +28,9 @@
                                    paramx,
                                    paramy,
                                    paramwidth,
-                                   paramheight
+                                   paramheight,
+                                   paramlatitude,
+                                   paramlongitude
                                    ];
     
     zqlquery *query = [zqlquery select:dbdistricts params:params ordered:paramname ascendent:YES limit:0];
@@ -46,6 +50,10 @@
         zqlparam *py = resultparams.items[dbdistricts_y];
         zqlparam *pwidth = resultparams.items[dbdistricts_width];
         zqlparam *pheight = resultparams.items[dbdistricts_height];
+        zqlparam *platitude = resultparams.items[dbdistricts_latitude];
+        zqlparam *plongitude = resultparams.items[dbdistricts_longitude];
+        NSNumber *uselatitude = @([platitude.value integerValue] / (CGFloat)dbintegermultiply);
+        NSNumber *uselongitude = @([plongitude.value integerValue] / (CGFloat)dbintegermultiply);
         
         model.primarykey = pprimarykey.value;
         model.serverid = pserverindex.value;
@@ -56,6 +64,8 @@
         model.y = py.value;
         model.width = pwidth.value;
         model.height = pheight.value;
+        model.latitude = uselatitude;
+        model.longitude = uselongitude;
         
         [array addObject:model];
     }

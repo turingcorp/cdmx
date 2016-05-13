@@ -12,7 +12,12 @@
 {
     self = [super init:model];
     
+    NSUInteger countdistricts = model.modeldistricts.count;
     
+    for(NSUInteger indexdistrict = 0; indexdistrict < countdistricts; indexdistrict++)
+    {
+        
+    }
     
     return self;
 }
