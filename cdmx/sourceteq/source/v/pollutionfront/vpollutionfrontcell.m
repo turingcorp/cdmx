@@ -2,7 +2,7 @@
 #import "efont.h"
 #import "ecolor.h"
 
-static NSInteger const cellapparentheight = 100;
+static NSInteger const cellapparentheight = 130;
 
 @implementation vpollutionfrontcell
 
@@ -49,7 +49,7 @@ static NSInteger const cellapparentheight = 100;
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[label]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[base]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[up]-(-10)-[base(34)]" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-35-[up]-35-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[up]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[up(60)]-(apparentheight)-|" options:0 metrics:metrics views:views]];
     
     return self;

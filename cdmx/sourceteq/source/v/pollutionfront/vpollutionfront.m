@@ -11,8 +11,8 @@ static NSInteger const frontcellwidth = 170;
 {
     NSInteger currentheadermultiplier;
     NSInteger currentheaderaddheight;
-    NSInteger currentitems;
     NSInteger selected;
+    NSInteger currentitems;
     BOOL trackscroll;
 }
 
@@ -72,7 +72,7 @@ static NSInteger const frontcellwidth = 170;
     }
 }
 
--(void)updatecollection
+-(void)updatecollection:(UICollectionViewScrollDirection)direction
 {
     NSIndexSet *index = [NSIndexSet indexSetWithIndex:0];
     __weak typeof(self) welf = self;
@@ -85,9 +85,11 @@ static NSInteger const frontcellwidth = 170;
      } completion:
      ^(BOOL done)
      {
+         [welf.layout setScrollDirection:direction];
+         
          if(currentitems)
          {
-             [welf.collection selectItemAtIndexPath:[NSIndexPath indexPathForItem:selected inSection:0] animated:YES scrollPosition:UICollectionViewScrollPositionCenteredHorizontally];
+             [welf.collection selectItemAtIndexPath:[NSIndexPath indexPathForItem:selected inSection:0] animated:NO scrollPosition:UICollectionViewScrollPositionCenteredHorizontally];
          }
      }];
 }
@@ -102,8 +104,7 @@ static NSInteger const frontcellwidth = 170;
     
     [self.collection setAlwaysBounceHorizontal:NO];
     [self.collection setAlwaysBounceVertical:YES];
-    [self.layout setScrollDirection:UICollectionViewScrollDirectionVertical];
-    [self updatecollection];
+    [self updatecollection:UICollectionViewScrollDirectionVertical];
 }
 
 -(void)showlist
@@ -114,8 +115,7 @@ static NSInteger const frontcellwidth = 170;
 
     [self.collection setAlwaysBounceHorizontal:YES];
     [self.collection setAlwaysBounceVertical:NO];
-    [self.layout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
-    [self updatecollection];
+    [self updatecollection:UICollectionViewScrollDirectionHorizontal];
 }
 
 #pragma mark -
@@ -154,7 +154,7 @@ static NSInteger const frontcellwidth = 170;
 {
     UIEdgeInsets insets;
     
-    if(self.layout.scrollDirection == UICollectionViewScrollDirectionHorizontal)
+    if(currentitems)
     {
         CGFloat width = col.bounds.size.width;
         CGFloat remain = width - frontcellwidth;
@@ -171,8 +171,16 @@ static NSInteger const frontcellwidth = 170;
 
 -(CGSize)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout sizeForItemAtIndexPath:(NSIndexPath*)index
 {
-    CGFloat height = col.bounds.size.height;
-    CGSize size = CGSizeMake(frontcellwidth, height);
+    CGFloat width = 0;
+    CGFloat height = 0;
+    
+    if(currentitems)
+    {
+        width = frontcellwidth;
+        height = col.bounds.size.height;
+    }
+    
+    CGSize size = CGSizeMake(width, height);
     
     return size;
 }
