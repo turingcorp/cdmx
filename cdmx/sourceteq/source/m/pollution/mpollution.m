@@ -1,6 +1,7 @@
 #import "mpollution.h"
 #import "mpollutionfront.h"
 #import "mpollutionchart.h"
+#import "mpollutionmap.h"
 #import "mdbselect.h"
 
 @interface mpollution ()
@@ -41,7 +42,7 @@
 -(void)map
 {
     [self clean];
-    self.option = [[mpollutionchart alloc] init:self];
+    self.option = [[mpollutionmap alloc] init:self];
 }
 
 -(void)clean
