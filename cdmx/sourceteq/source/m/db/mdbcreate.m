@@ -31,6 +31,8 @@
     zqlparam *paramy = [zqlparam type:[zqltype integer] name:dbdistricts_y value:@0];
     zqlparam *paramwidth = [zqlparam type:[zqltype integer] name:dbdistricts_width value:@0];
     zqlparam *paramheight = [zqlparam type:[zqltype integer] name:dbdistricts_height value:@0];
+    zqlparam *paramlatitude = [zqlparam type:[zqltype integer] name:dbdistricts_latitude value:@0];
+    zqlparam *paramlongitude = [zqlparam type:[zqltype integer] name:dbdistricts_longitude value:@0];
     
     NSArray<zqlparam*> *params = @[
                                    paramserverid,
