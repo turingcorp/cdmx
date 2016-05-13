@@ -1,6 +1,6 @@
 #import "vpollutionmenu.h"
 #import "vpollutionmenucell.h"
-#import "ecell.h"
+#import "ecollectioncell.h"
 
 static NSInteger const menucellwidth = 50;
 

@@ -1,8 +1,8 @@
 #import "vpollutionfront.h"
 #import "vpollutionfrontheader.h"
 #import "vpollutionfrontcell.h"
-#import "ecell.h"
-#import "ereusable.h"
+#import "ecollectioncell.h"
+#import "ecollectionreusable.h"
 #import "genericconstants.h"
 
 static NSInteger const frontcellwidth = 170;

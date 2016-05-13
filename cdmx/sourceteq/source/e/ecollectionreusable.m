@@ -1,6 +1,6 @@
-#import "ecell.h"
+#import "ecollectionreusable.h"
 
-@implementation UICollectionViewCell (ecell)
+@implementation UICollectionReusableView (ecollectionreusable)
 
 +(NSString*)reusableidentifier
 {

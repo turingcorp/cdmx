@@ -1,6 +1,6 @@
 #import "vpollutioncharter.h"
-#import "ecell.h"
-#import "ereusable.h"
+#import "ecollectioncell.h"
+#import "ecollectionreusable.h"
 #import "vpollutioncharterheader.h"
 #import "vpollutionchartercell.h"
 #import "genericconstants.h"

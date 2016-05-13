@@ -10,6 +10,10 @@
 		DA000D821CC459D100A82EC0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA000D811CC459D100A82EC0 /* MapKit.framework */; };
 		DA05C6CC1CE6329B00A22A5E /* vpollutionmap.m in Sources */ = {isa = PBXBuildFile; fileRef = DA05C6CB1CE6329B00A22A5E /* vpollutionmap.m */; };
 		DA05C6D21CE632DD00A22A5E /* vpollutionmapdisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = DA05C6D11CE632DD00A22A5E /* vpollutionmapdisplay.m */; };
+		DA05C6D51CE6387800A22A5E /* vpollutionmapheader.m in Sources */ = {isa = PBXBuildFile; fileRef = DA05C6D41CE6387800A22A5E /* vpollutionmapheader.m */; };
+		DA05C6D81CE6388500A22A5E /* vpollutionmapcell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA05C6D71CE6388500A22A5E /* vpollutionmapcell.m */; };
+		DA05C6DB1CE63C0C00A22A5E /* ecollectioncell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA05C6DA1CE63C0C00A22A5E /* ecollectioncell.m */; };
+		DA05C6DE1CE63C1500A22A5E /* ecollectionreusable.m in Sources */ = {isa = PBXBuildFile; fileRef = DA05C6DD1CE63C1500A22A5E /* ecollectionreusable.m */; };
 		DA20ACE71CD7FBC700754956 /* cpollution.m in Sources */ = {isa = PBXBuildFile; fileRef = DA20ACE61CD7FBC700754956 /* cpollution.m */; };
 		DA20AD031CD80B5100754956 /* enotification.m in Sources */ = {isa = PBXBuildFile; fileRef = DA20AD021CD80B5100754956 /* enotification.m */; };
 		DA20AD061CD80B5A00754956 /* ecolor.m in Sources */ = {isa = PBXBuildFile; fileRef = DA20AD051CD80B5A00754956 /* ecolor.m */; };
@@ -23,8 +27,6 @@
 		DA4096531CDC1F560001D696 /* cpollutionimeca.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4096521CDC1F560001D696 /* cpollutionimeca.m */; };
 		DA40965D1CDD4C0D0001D696 /* vcollectioncell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA40965C1CDD4C0D0001D696 /* vcollectioncell.m */; };
 		DA86ACBD1CE36E2500908755 /* pollution.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA86ACBC1CE36E2500908755 /* pollution.xcassets */; };
-		DA86ACD51CE37B8E00908755 /* ecell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA86ACD41CE37B8E00908755 /* ecell.m */; };
-		DA86ACD81CE37C1F00908755 /* ereusable.m in Sources */ = {isa = PBXBuildFile; fileRef = DA86ACD71CE37C1F00908755 /* ereusable.m */; };
 		DA86ACDE1CE3A20B00908755 /* gspatialcolor.m in Sources */ = {isa = PBXBuildFile; fileRef = DA86ACDD1CE3A20B00908755 /* gspatialcolor.m */; };
 		DA86ACEA1CE3BC6800908755 /* gpollutionchartspikes.m in Sources */ = {isa = PBXBuildFile; fileRef = DA86ACE91CE3BC6800908755 /* gpollutionchartspikes.m */; };
 		DA86ACF01CE3D78400908755 /* gpollutionchartline.m in Sources */ = {isa = PBXBuildFile; fileRef = DA86ACEF1CE3D78400908755 /* gpollutionchartline.m */; };
@@ -114,6 +116,14 @@
 		DA05C6CB1CE6329B00A22A5E /* vpollutionmap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vpollutionmap.m; sourceTree = "<group>"; };
 		DA05C6D01CE632DD00A22A5E /* vpollutionmapdisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vpollutionmapdisplay.h; sourceTree = "<group>"; };
 		DA05C6D11CE632DD00A22A5E /* vpollutionmapdisplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vpollutionmapdisplay.m; sourceTree = "<group>"; };
+		DA05C6D31CE6387800A22A5E /* vpollutionmapheader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vpollutionmapheader.h; sourceTree = "<group>"; };
+		DA05C6D41CE6387800A22A5E /* vpollutionmapheader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vpollutionmapheader.m; sourceTree = "<group>"; };
+		DA05C6D61CE6388500A22A5E /* vpollutionmapcell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vpollutionmapcell.h; sourceTree = "<group>"; };
+		DA05C6D71CE6388500A22A5E /* vpollutionmapcell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vpollutionmapcell.m; sourceTree = "<group>"; };
+		DA05C6D91CE63C0C00A22A5E /* ecollectioncell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ecollectioncell.h; sourceTree = "<group>"; };
+		DA05C6DA1CE63C0C00A22A5E /* ecollectioncell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ecollectioncell.m; sourceTree = "<group>"; };
+		DA05C6DC1CE63C1500A22A5E /* ecollectionreusable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ecollectionreusable.h; sourceTree = "<group>"; };
+		DA05C6DD1CE63C1500A22A5E /* ecollectionreusable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ecollectionreusable.m; sourceTree = "<group>"; };
 		DA20ACE51CD7FBC700754956 /* cpollution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpollution.h; sourceTree = "<group>"; };
 		DA20ACE61CD7FBC700754956 /* cpollution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cpollution.m; sourceTree = "<group>"; };
 		DA20AD011CD80B5100754956 /* enotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = enotification.h; sourceTree = "<group>"; };
@@ -138,10 +148,6 @@
 		DA40965B1CDD4C0D0001D696 /* vcollectioncell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vcollectioncell.h; sourceTree = "<group>"; };
 		DA40965C1CDD4C0D0001D696 /* vcollectioncell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vcollectioncell.m; sourceTree = "<group>"; };
 		DA86ACBC1CE36E2500908755 /* pollution.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = pollution.xcassets; sourceTree = "<group>"; };
-		DA86ACD31CE37B8E00908755 /* ecell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ecell.h; sourceTree = "<group>"; };
-		DA86ACD41CE37B8E00908755 /* ecell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ecell.m; sourceTree = "<group>"; };
-		DA86ACD61CE37C1F00908755 /* ereusable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ereusable.h; sourceTree = "<group>"; };
-		DA86ACD71CE37C1F00908755 /* ereusable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ereusable.m; sourceTree = "<group>"; };
 		DA86ACDC1CE3A20B00908755 /* gspatialcolor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gspatialcolor.h; sourceTree = "<group>"; };
 		DA86ACDD1CE3A20B00908755 /* gspatialcolor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gspatialcolor.m; sourceTree = "<group>"; };
 		DA86ACE81CE3BC6800908755 /* gpollutionchartspikes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gpollutionchartspikes.h; sourceTree = "<group>"; };
@@ -343,6 +349,10 @@
 				DA05C6CB1CE6329B00A22A5E /* vpollutionmap.m */,
 				DA05C6D01CE632DD00A22A5E /* vpollutionmapdisplay.h */,
 				DA05C6D11CE632DD00A22A5E /* vpollutionmapdisplay.m */,
+				DA05C6D31CE6387800A22A5E /* vpollutionmapheader.h */,
+				DA05C6D41CE6387800A22A5E /* vpollutionmapheader.m */,
+				DA05C6D61CE6388500A22A5E /* vpollutionmapcell.h */,
+				DA05C6D71CE6388500A22A5E /* vpollutionmapcell.m */,
 			);
 			path = pollutionmap;
 			sourceTree = "<group>";
@@ -367,10 +377,10 @@
 				DA20AD051CD80B5A00754956 /* ecolor.m */,
 				DA20AD071CD80B6000754956 /* efont.h */,
 				DA20AD081CD80B6000754956 /* efont.m */,
-				DA86ACD31CE37B8E00908755 /* ecell.h */,
-				DA86ACD41CE37B8E00908755 /* ecell.m */,
-				DA86ACD61CE37C1F00908755 /* ereusable.h */,
-				DA86ACD71CE37C1F00908755 /* ereusable.m */,
+				DA05C6D91CE63C0C00A22A5E /* ecollectioncell.h */,
+				DA05C6DA1CE63C0C00A22A5E /* ecollectioncell.m */,
+				DA05C6DC1CE63C1500A22A5E /* ecollectionreusable.h */,
+				DA05C6DD1CE63C1500A22A5E /* ecollectionreusable.m */,
 			);
 			path = e;
 			sourceTree = "<group>";
@@ -1001,13 +1011,14 @@
 				DAC21D491CE4C35B00D92161 /* vpollutionradiochart.m in Sources */,
 				DAC21D201CE4C2AA00D92161 /* mpollutionmenuitemdistricts.m in Sources */,
 				DAC21D501CE4C35B00D92161 /* vpollutionfrontheaderbutton.m in Sources */,
+				DA05C6D51CE6387800A22A5E /* vpollutionmapheader.m in Sources */,
 				DAC21D171CE4C2AA00D92161 /* mpollutionindexacceptable.m in Sources */,
+				DA05C6DB1CE63C0C00A22A5E /* ecollectioncell.m in Sources */,
 				DA86ACEA1CE3BC6800908755 /* gpollutionchartspikes.m in Sources */,
 				DA40965D1CDD4C0D0001D696 /* vcollectioncell.m in Sources */,
 				DAC21D141CE4C2AA00D92161 /* mpollutionchartitemweek.m in Sources */,
 				DAB3FEE21CE270F900CCBB86 /* aparserpollution.m in Sources */,
 				DAC21D111CE4C2AA00D92161 /* mpollutionchartitem.m in Sources */,
-				DA86ACD81CE37C1F00908755 /* ereusable.m in Sources */,
 				DAD340011CBC83E300C87502 /* mdirs.m in Sources */,
 				DA87082A1CBE840F000C08E1 /* amanager.m in Sources */,
 				DAA0C67D1CD978C600880D3E /* gspatial.m in Sources */,
@@ -1033,6 +1044,7 @@
 				DACEDEE21CBC89630088AA8B /* cmain.m in Sources */,
 				DAC21D1B1CE4C2AA00D92161 /* mpollutionindexnodata.m in Sources */,
 				DAD33FF91CBC83E300C87502 /* tools.m in Sources */,
+				DA05C6D81CE6388500A22A5E /* vpollutionmapcell.m in Sources */,
 				DAC21D511CE4C35B00D92161 /* vpollutionfrontheadercurrent.m in Sources */,
 				DA92746F1CE55B600005138A /* mpollutionmap.m in Sources */,
 				DAD875CF1CBD2F0400A4F91C /* cpages.m in Sources */,
@@ -1054,8 +1066,8 @@
 				DA4096531CDC1F560001D696 /* cpollutionimeca.m in Sources */,
 				DAC21D531CE4C35B00D92161 /* vpollutionfrontlayoutlist.m in Sources */,
 				DAD875FC1CBD6CF200A4F91C /* vmenubutton.m in Sources */,
-				DA86ACD51CE37B8E00908755 /* ecell.m in Sources */,
 				DA40964D1CDC15FA0001D696 /* vview.m in Sources */,
+				DA05C6DE1CE63C1500A22A5E /* ecollectionreusable.m in Sources */,
 				DAC21D1D1CE4C2AA00D92161 /* mpollutionmenu.m in Sources */,
 				DA9274721CE55D090005138A /* mpollutionmapitem.m in Sources */,
 				DAB3FEE51CE273A600CCBB86 /* mdbupdate.m in Sources */,

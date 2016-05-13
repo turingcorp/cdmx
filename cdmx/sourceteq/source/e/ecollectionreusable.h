@@ -1,6 +1,6 @@
 #import <UIKit/UIKit.h>
 
-@interface UICollectionReusableView (ereusable)
+@interface UICollectionReusableView (ecollectionreusable)
 
 +(NSString*)reusableidentifier;
 

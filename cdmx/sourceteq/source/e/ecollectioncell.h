@@ -1,6 +1,6 @@
 #import <UIKit/UIKit.h>
 
-@interface UICollectionViewCell (ecell)
+@interface UICollectionViewCell (ecollectioncell)
 
 +(NSString*)reusableidentifier;
 
