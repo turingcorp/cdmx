@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DA000D821CC459D100A82EC0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA000D811CC459D100A82EC0 /* MapKit.framework */; };
+		DA05C6CC1CE6329B00A22A5E /* vpollutionmap.m in Sources */ = {isa = PBXBuildFile; fileRef = DA05C6CB1CE6329B00A22A5E /* vpollutionmap.m */; };
 		DA20ACE71CD7FBC700754956 /* cpollution.m in Sources */ = {isa = PBXBuildFile; fileRef = DA20ACE61CD7FBC700754956 /* cpollution.m */; };
 		DA20AD031CD80B5100754956 /* enotification.m in Sources */ = {isa = PBXBuildFile; fileRef = DA20AD021CD80B5100754956 /* enotification.m */; };
 		DA20AD061CD80B5A00754956 /* ecolor.m in Sources */ = {isa = PBXBuildFile; fileRef = DA20AD051CD80B5A00754956 /* ecolor.m */; };
@@ -108,6 +109,8 @@
 /* Begin PBXFileReference section */
 		B9E47528F2CEFA76F37D95E3 /* libPods-cdmx.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-cdmx.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA000D811CC459D100A82EC0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		DA05C6CA1CE6329B00A22A5E /* vpollutionmap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vpollutionmap.h; sourceTree = "<group>"; };
+		DA05C6CB1CE6329B00A22A5E /* vpollutionmap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vpollutionmap.m; sourceTree = "<group>"; };
 		DA20ACE51CD7FBC700754956 /* cpollution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpollution.h; sourceTree = "<group>"; };
 		DA20ACE61CD7FBC700754956 /* cpollution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cpollution.m; sourceTree = "<group>"; };
 		DA20AD011CD80B5100754956 /* enotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = enotification.h; sourceTree = "<group>"; };
@@ -328,6 +331,15 @@
 				EFFF53693CD2BFB9D79DACFE /* Pods-cdmx.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		DA05C6C91CE6328400A22A5E /* pollutionmap */ = {
+			isa = PBXGroup;
+			children = (
+				DA05C6CA1CE6329B00A22A5E /* vpollutionmap.h */,
+				DA05C6CB1CE6329B00A22A5E /* vpollutionmap.m */,
+			);
+			path = pollutionmap;
 			sourceTree = "<group>";
 		};
 		DA20ACE41CD7FBBF00754956 /* pollution */ = {
@@ -782,6 +794,7 @@
 				DAC21D221CE4C35B00D92161 /* pollution */,
 				DAC21D291CE4C35B00D92161 /* pollutioncharter */,
 				DAC21D301CE4C35B00D92161 /* pollutionfront */,
+				DA05C6C91CE6328400A22A5E /* pollutionmap */,
 				DAC21D3F1CE4C35B00D92161 /* pollutionimeca */,
 				DAC21D421CE4C35B00D92161 /* pollutionmenu */,
 				DAD33FE51CBC83E300C87502 /* general */,
@@ -1020,6 +1033,7 @@
 				DAB26D791CE0D09D00E1580F /* mdbcreate.m in Sources */,
 				DAD33FF71CBC83E300C87502 /* analytics.m in Sources */,
 				DAC21D4F1CE4C35B00D92161 /* vpollutionfrontheader.m in Sources */,
+				DA05C6CC1CE6329B00A22A5E /* vpollutionmap.m in Sources */,
 				DA8708311CBE8532000C08E1 /* aparser.m in Sources */,
 				DAB26D881CE0F9F100E1580F /* mdbpollutiondaily.m in Sources */,
 				DAC21D5C1CE4C40800D92161 /* mpollutionoption.m in Sources */,
