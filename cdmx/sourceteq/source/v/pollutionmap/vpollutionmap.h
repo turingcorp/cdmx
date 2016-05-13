@@ -1,13 +1,10 @@
-//
-//  vpollutionmap.h
-//  cdmx
-//
-//  Created by zero on 5/13/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
+#import <UIKit/UIKit.h>
+#import "vpollutionoption.h"
+#import "vpollutionmapdisplay.h"
 
-#import <Foundation/Foundation.h>
+@interface vpollutionmap:vpollutionoption<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
-@interface vpollutionmap : NSObject
+@property(weak, nonatomic)vpollutionmapdisplay *display;
+@property(weak, nonatomic)UICollectionView *collection;
 
 @end

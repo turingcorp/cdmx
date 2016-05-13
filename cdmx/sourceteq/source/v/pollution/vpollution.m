@@ -4,6 +4,7 @@
 #import "vpollutionmenu.h"
 #import "vpollutionfront.h"
 #import "vpollutioncharter.h"
+#import "vpollutionmap.h"
 
 static NSInteger const texturecorners = 6;
 static NSInteger const pollutionmenuheight = 80;
@@ -81,6 +82,12 @@ static NSInteger const pollutionmenuheight = 80;
 {
     vpollutioncharter *charter = [[vpollutioncharter alloc] init:self.controller];
     [self loadoption:charter];
+}
+
+-(void)loadmap
+{
+    vpollutionmap *map = [[vpollutionmap alloc] init:self.controller];
+    [self loadoption:map];
 }
 
 #pragma mark public
@@ -166,12 +173,12 @@ static NSInteger const pollutionmenuheight = 80;
                    ^
                    {
                        [EAGLContext setCurrentContext:welf.strongcontext];
-                       [welf.controller.model chart];
+                       [welf.controller.model map];
                        
                        dispatch_async(dispatch_get_main_queue(),
                                       ^
                                       {
-//                                          [welf loadfront];
+                                          [welf loadmap];
                                           [welf.menu setUserInteractionEnabled:YES];
                                       });
                    });

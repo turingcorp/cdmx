@@ -29,21 +29,18 @@
 -(void)districts
 {
     [self clean];
-    
     self.option = [[mpollutionfront alloc] init:self];
 }
 
 -(void)chart
 {
     [self clean];
-    
     self.option = [[mpollutionchart alloc] init:self];
 }
 
 -(void)map
 {
     [self clean];
-    
     self.option = [[mpollutionchart alloc] init:self];
 }
 
