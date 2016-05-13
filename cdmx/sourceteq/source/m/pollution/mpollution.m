@@ -40,6 +40,13 @@
     self.option = [[mpollutionchart alloc] init:self];
 }
 
+-(void)map
+{
+    [self clean];
+    
+    self.option = [[mpollutionchart alloc] init:self];
+}
+
 -(void)clean
 {
     self.option = nil;

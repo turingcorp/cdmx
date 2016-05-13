@@ -11,6 +11,7 @@
 +(instancetype)loadfromdb:(NSArray<mpollutionhour*>*)modelhourly;
 -(void)districts;
 -(void)chart;
+-(void)map;
 -(void)clean;
 
 @property(strong, nonatomic, readonly)mpollutionoption *option;

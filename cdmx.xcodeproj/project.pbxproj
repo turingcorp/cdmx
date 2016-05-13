@@ -35,6 +35,8 @@
 		DA9274651CE4E5640005138A /* mpollutionchartselect.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9274641CE4E5640005138A /* mpollutionchartselect.m */; };
 		DA9274681CE4E73C0005138A /* mpollutionchartitempoint.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9274671CE4E73C0005138A /* mpollutionchartitempoint.m */; };
 		DA92746B1CE540050005138A /* vpollutionfrontlayout.m in Sources */ = {isa = PBXBuildFile; fileRef = DA92746A1CE540050005138A /* vpollutionfrontlayout.m */; };
+		DA92746F1CE55B600005138A /* mpollutionmap.m in Sources */ = {isa = PBXBuildFile; fileRef = DA92746E1CE55B600005138A /* mpollutionmap.m */; };
+		DA9274721CE55D090005138A /* mpollutionmapitem.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9274711CE55D090005138A /* mpollutionmapitem.m */; };
 		DAA0C67A1CD978BD00880D3E /* gtexture.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA0C6791CD978BD00880D3E /* gtexture.m */; };
 		DAA0C67D1CD978C600880D3E /* gspatial.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA0C67C1CD978C600880D3E /* gspatial.m */; };
 		DAA0C6801CD978CF00880D3E /* gspatialtexture.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA0C67F1CD978CF00880D3E /* gspatialtexture.m */; };
@@ -159,6 +161,10 @@
 		DA9274671CE4E73C0005138A /* mpollutionchartitempoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mpollutionchartitempoint.m; sourceTree = "<group>"; };
 		DA9274691CE540050005138A /* vpollutionfrontlayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vpollutionfrontlayout.h; sourceTree = "<group>"; };
 		DA92746A1CE540050005138A /* vpollutionfrontlayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vpollutionfrontlayout.m; sourceTree = "<group>"; };
+		DA92746D1CE55B600005138A /* mpollutionmap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpollutionmap.h; sourceTree = "<group>"; };
+		DA92746E1CE55B600005138A /* mpollutionmap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mpollutionmap.m; sourceTree = "<group>"; };
+		DA9274701CE55D090005138A /* mpollutionmapitem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpollutionmapitem.h; sourceTree = "<group>"; };
+		DA9274711CE55D090005138A /* mpollutionmapitem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mpollutionmapitem.m; sourceTree = "<group>"; };
 		DAA0C6781CD978BD00880D3E /* gtexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gtexture.h; sourceTree = "<group>"; };
 		DAA0C6791CD978BD00880D3E /* gtexture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gtexture.m; sourceTree = "<group>"; };
 		DAA0C67B1CD978C600880D3E /* gspatial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gspatial.h; sourceTree = "<group>"; };
@@ -393,6 +399,17 @@
 				DAB3FEE11CE270F900CCBB86 /* aparserpollution.m */,
 			);
 			path = parser;
+			sourceTree = "<group>";
+		};
+		DA92746C1CE55B530005138A /* pollutionmap */ = {
+			isa = PBXGroup;
+			children = (
+				DA92746D1CE55B600005138A /* mpollutionmap.h */,
+				DA92746E1CE55B600005138A /* mpollutionmap.m */,
+				DA9274701CE55D090005138A /* mpollutionmapitem.h */,
+				DA9274711CE55D090005138A /* mpollutionmapitem.m */,
+			);
+			path = pollutionmap;
 			sourceTree = "<group>";
 		};
 		DAA0C6761CD9789F00880D3E /* g */ = {
@@ -733,6 +750,7 @@
 				DAC21CCF1CE4C2AA00D92161 /* pollution */,
 				DAC21CE01CE4C2AA00D92161 /* pollutionchart */,
 				DAC21CED1CE4C2AA00D92161 /* pollutionfront */,
+				DA92746C1CE55B530005138A /* pollutionmap */,
 				DAC21CEE1CE4C2AA00D92161 /* pollutionindex */,
 				DAC21CFD1CE4C2AA00D92161 /* pollutionmenu */,
 				DAB26D761CE0D08900E1580F /* db */,
@@ -997,6 +1015,7 @@
 				DAC21D1B1CE4C2AA00D92161 /* mpollutionindexnodata.m in Sources */,
 				DAD33FF91CBC83E300C87502 /* tools.m in Sources */,
 				DAC21D511CE4C35B00D92161 /* vpollutionfrontheadercurrent.m in Sources */,
+				DA92746F1CE55B600005138A /* mpollutionmap.m in Sources */,
 				DAD875CF1CBD2F0400A4F91C /* cpages.m in Sources */,
 				DAB26D791CE0D09D00E1580F /* mdbcreate.m in Sources */,
 				DAD33FF71CBC83E300C87502 /* analytics.m in Sources */,
@@ -1018,6 +1037,7 @@
 				DA86ACD51CE37B8E00908755 /* ecell.m in Sources */,
 				DA40964D1CDC15FA0001D696 /* vview.m in Sources */,
 				DAC21D1D1CE4C2AA00D92161 /* mpollutionmenu.m in Sources */,
+				DA9274721CE55D090005138A /* mpollutionmapitem.m in Sources */,
 				DAB3FEE51CE273A600CCBB86 /* mdbupdate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
