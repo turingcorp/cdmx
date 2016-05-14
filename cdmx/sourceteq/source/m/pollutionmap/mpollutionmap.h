@@ -5,6 +5,7 @@
 @interface mpollutionmap:mpollutionoption
 
 -(mpollutionmapitem*)closertolat:(CGFloat)lat lon:(CGFloat)lon;
+-(void)annotations;
 
 @property(strong, nonatomic, readonly)NSArray<mpollutionmapitem*> *items;
 

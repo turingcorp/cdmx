@@ -75,4 +75,49 @@ static CGFloat const kilometersperdegree = 111.1;
     return closer;
 }
 
+-(void)annotations
+{
+    /*
+    NSArray<mstationsreadingitem*> *items = [[mstations singleton].readings lastObject].items;
+    BOOL first = YES;
+    
+    for(mstationsreadingitem *item in items)
+    {
+        mstationsannotation *annotation;
+        
+        if(item.location)
+        {
+            NSString *title = item.name;
+            mstationsreadingitem *model = item;
+            CLLocationCoordinate2D coord = [item.location coordinates];
+            
+            annotation = [[mstationsannotation alloc] init:title model:model coord:coord];
+        }
+        else if(item.station.location)
+        {
+            NSString *title = item.name;
+            mstationsreadingitem *model = item;
+            CLLocationCoordinate2D coord = [item.station.location coordinates];
+            
+            annotation = [[mstationsannotation alloc] init:title model:model coord:coord];
+        }
+        
+        if(annotation)
+        {
+            [self.map addAnnotation:annotation];
+            
+            if(first)
+            {
+                first = NO;
+                
+                if(!userfound)
+                {
+                    MKCoordinateRegion region = MKCoordinateRegionMake(annotation.coordinate, self.mapspan);
+                    [self.map setRegion:region animated:YES];
+                }
+            }
+        }
+    }*/
+}
+
 @end
