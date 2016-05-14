@@ -1,8 +1,10 @@
 #import "vpollutionmap.h"
 #import "cpollution.h"
 #import "vpollutionmapcell.h"
+#import "vpollutionmapdisplayannotation.h"
 #import "ecollectioncell.h"
 #import "ecollectionreusable.h"
+#import "eannotationview.h"
 
 static CGFloat const pollutionmapspansize = 0.02;
 static NSInteger const mapheaderheight = 150;
@@ -218,7 +220,7 @@ static NSInteger const mapinteritemspace = -1;
         [self.display setShowsUserLocation:YES];
     }
 }
-/*
+
 -(MKAnnotationView*)mapView:(MKMapView*)mapview viewForAnnotation:(id<MKAnnotation>)annotation
 {
     MKAnnotationView *anview;
@@ -229,12 +231,17 @@ static NSInteger const mapinteritemspace = -1;
     }
     else
     {
-//        anview = [[vairgeomapann alloc] init:annotation];
+        anview = [mapview dequeueReusableAnnotationViewWithIdentifier:[vpollutionmapdisplayannotation reusableidentifier]];
+        
+        if(!anview)
+        {
+            anview = [[vpollutionmapdisplayannotation alloc] initWithAnnotation:annotation reuseIdentifier:[vpollutionmapdisplayannotation reusableidentifier]];
+        }
     }
     
     return anview;
 }
-*/
+
 -(void)mapView:(MKMapView*)mapView didSelectAnnotationView:(MKAnnotationView*)view
 {
     /*

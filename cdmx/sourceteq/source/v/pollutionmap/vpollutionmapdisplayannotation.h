@@ -4,4 +4,6 @@
 
 @interface vpollutionmapdisplayannotation:MKAnnotationView
 
+@property(weak, nonatomic)UIImageView *img;
+
 @end
