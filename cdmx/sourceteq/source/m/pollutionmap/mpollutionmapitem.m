@@ -6,8 +6,7 @@
 
 -(mpollutionmapitemannotation*)asannotation
 {
-    mpollutionmapitemannotation *annotation = [[mpollutionmapitemannotation alloc] init];
-    annotation.coordinate = CLLocationCoordinate2DMake(self.latitude, self.longitude);
+    mpollutionmapitemannotation *annotation = [[mpollutionmapitemannotation alloc] init:self.latitude lon:self.longitude];
     annotation.index = self.index;
     annotation.model = self;
     self.annotation = annotation;

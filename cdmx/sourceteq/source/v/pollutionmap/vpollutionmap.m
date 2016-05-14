@@ -4,7 +4,7 @@
 #import "ecollectioncell.h"
 #import "ecollectionreusable.h"
 
-static CGFloat const pollutionmapspansize = 0.015;
+static CGFloat const pollutionmapspansize = 0.025;
 static NSInteger const mapheaderheight = 150;
 static NSInteger const mapcellheight = 50;
 static NSInteger const mapcollectionbottom = 120;

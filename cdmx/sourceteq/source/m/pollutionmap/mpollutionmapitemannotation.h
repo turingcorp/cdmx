@@ -6,6 +6,8 @@
 
 @interface mpollutionmapitemannotation:NSObject<MKAnnotation>
 
+-(instancetype)init:(CGFloat)lat lon:(CGFloat)lon;
+
 @property(weak, nonatomic)mpollutionmapitem *model;
 @property(weak, nonatomic)mpollutionindex *index;
 
