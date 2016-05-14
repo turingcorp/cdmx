@@ -2,6 +2,8 @@
 #import "efont.h"
 #import "ecolor.h"
 
+static NSInteger const maxfractionskm = 1;
+
 @implementation vpollutionmapheader
 
 -(instancetype)initWithFrame:(CGRect)frame
@@ -103,7 +105,7 @@
     NSString *strindex = [NSString stringWithFormat:@"%@", model.index];
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
-    [formatter setMaximumFractionDigits:1];
+    [formatter setMaximumFractionDigits:maxfractionskm];
     NSString *strkm = [NSString stringWithFormat:NSLocalizedString(@"vpollution_map_header_km", nil), [formatter stringFromNumber:@(model.kilometers)]];
     
     [self.label removeFromSuperview];

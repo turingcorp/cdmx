@@ -1,4 +1,5 @@
 #import "vpollutionmapdisplay.h"
+#import "ecolor.h"
 
 static NSInteger const pollutionmapheight = 200;
 
@@ -35,7 +36,7 @@ static NSInteger const pollutionmapheight = 200;
     UIView *border = [[UIView alloc] init];
     [border setUserInteractionEnabled:NO];
     [border setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [border setBackgroundColor:[UIColor blackColor]];
+    [border setBackgroundColor:[UIColor main]];
     
     [self addSubview:border];
     

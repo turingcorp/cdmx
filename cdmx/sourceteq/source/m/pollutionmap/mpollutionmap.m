@@ -69,7 +69,7 @@ static CGFloat const kilometersperdegree = 111.1;
         }
     }
     
-    CGFloat kilometers = distance / kilometersperdegree;
+    CGFloat kilometers = distance * kilometersperdegree;
     closer.kilometers = kilometers;
     
     return closer;

@@ -22,7 +22,7 @@ static NSInteger const mapinteritemspace = -1;
     self.model = (mpollutionmap*)controller.model.option;
     self.mapspan = MKCoordinateSpanMake(pollutionmapspansize, pollutionmapspansize);
     rect1 = CGRectMake(0, 0, 1, 1);
-    
+  
     vpollutionmapdisplay *display = [[vpollutionmapdisplay alloc] init];
     [display setDelegate:self];
     self.display = display;
@@ -59,6 +59,12 @@ static NSInteger const mapinteritemspace = -1;
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[display]-0-[col]-0-|" options:0 metrics:metrics views:views]];
     
     return self;
+}
+
+-(void)dealloc
+{
+    [self.locationmanager stopUpdatingLocation];
+    [self.display setShowsUserLocation:NO];
 }
 
 #pragma mark functionality
@@ -108,7 +114,7 @@ static NSInteger const mapinteritemspace = -1;
             
             self.locationmanager = [[CLLocationManager alloc] init];
             [self.locationmanager setDesiredAccuracy:kCLLocationAccuracyNearestTenMeters];
-            [self.locationmanager setDistanceFilter:20];
+            [self.locationmanager setDistanceFilter:30];
             [self.locationmanager setDelegate:self];
             
             if([self.locationmanager respondsToSelector:@selector(requestWhenInUseAuthorization)])
@@ -205,7 +211,7 @@ static NSInteger const mapinteritemspace = -1;
         [self.display setShowsUserLocation:YES];
     }
 }
-
+/*
 -(MKAnnotationView*)mapView:(MKMapView*)mapview viewForAnnotation:(id<MKAnnotation>)annotation
 {
     MKAnnotationView *anview;
@@ -221,7 +227,7 @@ static NSInteger const mapinteritemspace = -1;
     
     return anview;
 }
-
+*/
 -(void)mapView:(MKMapView*)mapView didSelectAnnotationView:(MKAnnotationView*)view
 {
     /*
