@@ -4,7 +4,7 @@
 #import "ecollectioncell.h"
 #import "ecollectionreusable.h"
 
-static CGFloat const pollutionmapspansize = 0.025;
+static CGFloat const pollutionmapspansize = 0.02;
 static NSInteger const mapheaderheight = 150;
 static NSInteger const mapcellheight = 50;
 static NSInteger const mapcollectionbottom = 120;
@@ -188,6 +188,13 @@ static NSInteger const mapinteritemspace = -1;
     [cell config:model];
     
     return cell;
+}
+
+-(void)collectionView:(UICollectionView*)col didSelectItemAtIndexPath:(NSIndexPath*)index
+{
+    mpollutionmapitem *model = [self modeforindex:index];
+    MKCoordinateRegion region = MKCoordinateRegionMake(model.annotation.coordinate, self.mapspan);
+    [self.display setRegion:region animated:YES];
 }
 
 #pragma mark location delegate
