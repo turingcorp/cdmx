@@ -5,6 +5,7 @@ static CGFloat const kilometersperdegree = 111.1;
 @interface mpollutionmap ()
 
 @property(strong, nonatomic, readwrite)NSArray<mpollutionmapitem*> *items;
+@property(weak, nonatomic, readwrite)NSArray<mpollutionmapitemannotation*> *modelannotations;
 
 @end
 
@@ -75,49 +76,19 @@ static CGFloat const kilometersperdegree = 111.1;
     return closer;
 }
 
--(void)annotations
+-(NSArray<mpollutionmapitemannotation*>*)annotations
 {
-    /*
-    NSArray<mstationsreadingitem*> *items = [[mstations singleton].readings lastObject].items;
-    BOOL first = YES;
+    NSMutableArray<mpollutionmapitemannotation*> *annotations = [NSMutableArray array];
     
-    for(mstationsreadingitem *item in items)
+    for(mpollutionmapitem *item in self.items)
     {
-        mstationsannotation *annotation;
-        
-        if(item.location)
-        {
-            NSString *title = item.name;
-            mstationsreadingitem *model = item;
-            CLLocationCoordinate2D coord = [item.location coordinates];
-            
-            annotation = [[mstationsannotation alloc] init:title model:model coord:coord];
-        }
-        else if(item.station.location)
-        {
-            NSString *title = item.name;
-            mstationsreadingitem *model = item;
-            CLLocationCoordinate2D coord = [item.station.location coordinates];
-            
-            annotation = [[mstationsannotation alloc] init:title model:model coord:coord];
-        }
-        
-        if(annotation)
-        {
-            [self.map addAnnotation:annotation];
-            
-            if(first)
-            {
-                first = NO;
-                
-                if(!userfound)
-                {
-                    MKCoordinateRegion region = MKCoordinateRegionMake(annotation.coordinate, self.mapspan);
-                    [self.map setRegion:region animated:YES];
-                }
-            }
-        }
-    }*/
+        mpollutionmapitemannotation *annotation = [item asannotation];
+        [annotations addObject:annotation];
+    }
+    
+    self.modelannotations = annotations;
+    
+    return annotations;
 }
 
 @end

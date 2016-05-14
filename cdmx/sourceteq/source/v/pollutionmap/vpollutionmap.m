@@ -244,6 +244,15 @@ static NSInteger const mapinteritemspace = -1;
 -(void)didappear
 {
     [self locationscheck];
+    
+    __weak typeof(self) welf = self;
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
+                   ^
+                   {
+                       NSArray<mpollutionmapitemannotation*> *annotations = [welf.model annotations];
+                       [welf.display addAnnotations:annotations];
+                   });
 }
 
 @end
