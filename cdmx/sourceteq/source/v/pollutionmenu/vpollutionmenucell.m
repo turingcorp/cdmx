@@ -45,13 +45,11 @@
 {
     if(self.isSelected || self.isHighlighted)
     {
-        [self.icon setTintColor:[UIColor whiteColor]];
-        [self setBackgroundColor:[UIColor main]];
+        [self.icon setTintColor:[UIColor main]];
     }
     else
     {
-        [self.icon setTintColor:[UIColor main]];
-        [self setBackgroundColor:[UIColor clearColor]];
+        [self.icon setTintColor:[UIColor colorWithWhite:0.88 alpha:1]];
     }
 }
 
