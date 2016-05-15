@@ -197,6 +197,7 @@ static NSInteger const mapinteritemspace = -1;
     mpollutionmapitem *model = [self modeforindex:index];
     MKCoordinateRegion region = MKCoordinateRegionMake(model.annotation.coordinate, self.mapspan);
     [self.display setRegion:region animated:YES];
+    [self.display selectAnnotation:model.annotation animated:YES];
 }
 
 #pragma mark location delegate
@@ -250,13 +251,12 @@ static NSInteger const mapinteritemspace = -1;
 
 -(void)mapView:(MKMapView*)mapView didSelectAnnotationView:(MKAnnotationView*)view
 {
-    /*
-    if([view isKindOfClass:[vairgeomapann class]])
+    if([view isKindOfClass:[vpollutionmapdisplayannotation class]])
     {
-        [self.controller selectitem:((vairgeomapann*)view).annotation.model];
-        
-        [[analytics singleton] trackevent:ga_event_environment_station action:ga_action_geo label:((vairgeomapann*)view).annotation.model.name];
-    }*/
+        mpollutionmapitemannotation *annotation = (mpollutionmapitemannotation*)view.annotation;
+        NSInteger index = [self.model.items indexOfObject:annotation.model];
+        [self.collection selectItemAtIndexPath:[NSIndexPath indexPathForItem:index inSection:0] animated:YES scrollPosition:UICollectionViewScrollPositionCenteredVertically];
+    }
 }
 
 #pragma mark option
