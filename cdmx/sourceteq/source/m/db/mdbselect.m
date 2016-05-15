@@ -98,12 +98,10 @@
             mdbpollutiondaily *model = [[mdbpollutiondaily alloc] init];
             zqlresultparams *resultparams = result.params[indexdistrict];
             zqlparam *pprimarykey = resultparams.items[dbprimarykey];
-            zqlparam *pcreated = resultparams.items[dbcreated];
             zqlparam *pdate = resultparams.items[dbpollutiondaily_date];
             zqlparam *ppollution = resultparams.items[dbpollutiondaily_maxpollution];
             
             model.primarykey = pprimarykey.value;
-            model.created = pcreated.value;
             model.date = pdate.value;
             model.pollution = ppollution.value;
             
@@ -143,12 +141,10 @@
         lastdaily = [[mdbpollutiondaily alloc] init];
         zqlresultparams *resultparams = result.params[0];
         zqlparam *pprimarykey = resultparams.items[dbprimarykey];
-        zqlparam *pcreated = resultparams.items[dbcreated];
         zqlparam *pdate = resultparams.items[dbpollutiondaily_date];
         zqlparam *ppollution = resultparams.items[dbpollutiondaily_maxpollution];
         
         lastdaily.primarykey = pprimarykey.value;
-        lastdaily.created = pcreated.value;
         lastdaily.date = pdate.value;
         lastdaily.pollution = ppollution.value;
     }

@@ -1,7 +1,6 @@
 static NSString* const databasename =                           @"cdmx";
 static NSString* const dbprimarykey =                           @"id";
 static NSString* const dbserverindex =                          @"serverid";
-static NSString* const dbcreated =                              @"created";
 static NSString* const dbdistricts =                            @"district";
 static NSString* const dbdistricts_name =                       @"name";
 static NSString* const dbdistricts_pollution =                  @"pollution";

@@ -16,6 +16,8 @@ static NSInteger const menucellwidth = 50;
     self.controller = controller;
     self.model = [[mpollutionmenu alloc] init];
     
+    UIButton *buttonmenu = [[UIButton alloc] init];
+    
     UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
     [flow setHeaderReferenceSize:CGSizeZero];
     [flow setFooterReferenceSize:CGSizeZero];
