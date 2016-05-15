@@ -1,6 +1,6 @@
 #import "mpollutionmenuitemmap.h"
 
-static NSString* const menuassetname = @"pollution_menudistricts";
+static NSString* const menuassetname = @"pollution_menumap";
 
 @implementation mpollutionmenuitemmap
 
