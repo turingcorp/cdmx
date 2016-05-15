@@ -7,7 +7,7 @@
 #import "vpollutionmap.h"
 
 static NSInteger const texturecorners = 6;
-static NSInteger const pollutionmenuheight = 80;
+static NSInteger const pollutionmenuheight = 50;
 
 @implementation vpollution
 

@@ -1,6 +1,7 @@
 #import "vpollutionmenu.h"
 #import "vpollutionmenucell.h"
 #import "ecollectioncell.h"
+#import "ecolor.h"
 
 static NSInteger const menucellwidth = 50;
 
@@ -9,18 +10,11 @@ static NSInteger const menucellwidth = 50;
 -(instancetype)init:(cpollution*)controller
 {
     self = [super init];
-    [self setBackgroundColor:[UIColor clearColor]];
+    [self setBackgroundColor:[UIColor whiteColor]];
     [self setClipsToBounds:YES];
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
     self.controller = controller;
     self.model = [[mpollutionmenu alloc] init];
-    
-    UIImageView *background = [[UIImageView alloc] init];
-    [background setUserInteractionEnabled:NO];
-    [background setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [background setClipsToBounds:YES];
-    [background setContentMode:UIViewContentModeBottom];
-    [background setImage:[UIImage imageNamed:@"pollution_background"]];
     
     UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
     [flow setHeaderReferenceSize:CGSizeZero];
@@ -41,14 +35,19 @@ static NSInteger const menucellwidth = 50;
     [collection setDelegate:self];
     [collection registerClass:[vpollutionmenucell class] forCellWithReuseIdentifier:[vpollutionmenucell reusableidentifier]];
     
-    [self addSubview:background];
+    UIView *border = [[UIView alloc] init];
+    [border setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [border setBackgroundColor:[UIColor background]];
+    [border setUserInteractionEnabled:NO];
+    
+    [self addSubview:border];
     [self addSubview:collection];
     
-    NSDictionary *views = @{@"col":collection, @"background":background};
+    NSDictionary *views = @{@"col":collection, @"border":border};
     NSDictionary *metrics = @{};
     
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[background]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[background]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[border]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[border(1)]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
     

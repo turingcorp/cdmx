@@ -22,7 +22,7 @@
     NSDictionary *metrics = @{};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[icon]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-20-[icon]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[icon]-0-|" options:0 metrics:metrics views:views]];
     
     return self;
 }
@@ -45,11 +45,13 @@
 {
     if(self.isSelected || self.isHighlighted)
     {
-        [self.icon setTintColor:[UIColor main]];
+        [self.icon setTintColor:[UIColor whiteColor]];
+        [self setBackgroundColor:[UIColor main]];
     }
     else
     {
-        [self.icon setTintColor:[UIColor colorWithWhite:0.9 alpha:1]];
+        [self.icon setTintColor:[UIColor main]];
+        [self setBackgroundColor:[UIColor clearColor]];
     }
 }
 

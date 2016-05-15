@@ -46,6 +46,8 @@
     }
     
     [zql query:queries];
+    
+    NSLog(@"%@", queries);
 }
 
 @end

@@ -92,6 +92,8 @@
     zqlquery *querytablepollutiondaily = [zqlquery createtable:dbpollutiondaily params:params];
     [queries addObject:querytablepollutiondaily];
     [zql query:queries];
+    
+    NSLog(@"%@", queries);
 }
 
 @end
