@@ -233,10 +233,16 @@ static NSInteger const mapinteritemspace = -1;
     {
         anview = [mapview dequeueReusableAnnotationViewWithIdentifier:[vpollutionmapdisplayannotation reusableidentifier]];
         
-        if(!anview)
+        if(anview)
+        {
+            anview.annotation = annotation;
+        }
+        else
         {
             anview = [[vpollutionmapdisplayannotation alloc] initWithAnnotation:annotation reuseIdentifier:[vpollutionmapdisplayannotation reusableidentifier]];
         }
+        
+        [(vpollutionmapdisplayannotation*)anview config];
     }
     
     return anview;

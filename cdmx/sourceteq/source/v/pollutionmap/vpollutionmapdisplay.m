@@ -1,7 +1,7 @@
 #import "vpollutionmapdisplay.h"
 #import "ecolor.h"
 
-static NSInteger const pollutionmapheight = 200;
+static NSInteger const pollutionmapheight = 220;
 
 @implementation vpollutionmapdisplay
 
