@@ -10,5 +10,6 @@
 @property(strong, nonatomic)zqltype *type;
 @property(strong, nonatomic)id value;
 @property(copy, nonatomic)NSString *name;
+@property(assign, nonatomic)BOOL unique;
 
 @end

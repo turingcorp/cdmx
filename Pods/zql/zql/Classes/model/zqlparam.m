@@ -1,6 +1,7 @@
 #import "zqlparam.h"
 
 static NSString* const zqlparamcreatestring = @"%@ %@";
+static NSString* const zqlparamcreatestringunique = @"%@ %@ unique on conflict replace";
 
 @interface zqlparam ()
 
@@ -29,6 +30,7 @@ static NSString* const zqlparamcreatestring = @"%@ %@";
     self = [super init];
     self.name = name;
     self.comparename = name.lowercaseString;
+    self.unique = NO;
     
     return self;
 }
@@ -44,7 +46,16 @@ static NSString* const zqlparamcreatestring = @"%@ %@";
 
 -(NSString*)querycreate
 {
-    NSString *string = [NSString stringWithFormat:zqlparamcreatestring, self.name, [self.type createquery]];
+    NSString *string;
+    
+    if(self.unique)
+    {
+        string = [NSString stringWithFormat:zqlparamcreatestringunique, self.name, [self.type createquery]];
+    }
+    else
+    {
+        string = [NSString stringWithFormat:zqlparamcreatestring, self.name, [self.type createquery]];
+    }
     
     return string;
 }

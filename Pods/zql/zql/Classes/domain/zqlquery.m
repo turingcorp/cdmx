@@ -4,6 +4,7 @@
 
 static NSString* const zqlquerycreatetitle =                    @"create table %@ ";
 static NSString* const zqlqueryinserttitle =                    @"insert into %@ ";
+static NSString* const zqlqueryreplacetitle =                   @"replace into %@ ";
 static NSString* const zqlqueryupdatetitle =                    @"update %@ ";
 static NSString* const zqlqueryselecttitle =                    @"select ";
 static NSString* const zqlqueryselectall =                      @"*";
@@ -82,6 +83,46 @@ static NSString* const zqlquerytransactionrollback =            @"ROLLBACK";
         NSMutableString *string = [NSMutableString string];
         NSMutableString *stringvalues = [NSMutableString string];
         [string appendFormat:zqlqueryinserttitle, tablename];
+        [string appendString:zqlqueryparamsprefix];
+        [stringvalues appendString:zqlqueryvaluestitle];
+        [stringvalues appendString:zqlqueryparamsprefix];
+        
+        NSUInteger count = params.count;
+        
+        for(NSUInteger indexparam = 0; indexparam < count; indexparam++)
+        {
+            zqlparam *param = params[indexparam];
+            
+            if(indexparam)
+            {
+                [string appendString:zqlqueryparamsseparator];
+                [stringvalues appendString:zqlqueryparamsseparator];
+            }
+            
+            [string appendString:param.name];
+            [stringvalues appendString:[param queryvalue]];
+        }
+        
+        [string appendString:zqlqueryparamspostfix];
+        [stringvalues appendString:zqlqueryparamspostfix];
+        [string appendString:stringvalues];
+        [string appendString:zqlqueryclosure];
+        
+        query = [[zqlquery alloc] init:string];
+    }
+    
+    return query;
+}
+
++(instancetype)replace:(NSString*)tablename params:(NSArray<zqlparam*>*)params
+{
+    zqlquery *query;
+    
+    if([zqlquery tablenamevalid:tablename] && params)
+    {
+        NSMutableString *string = [NSMutableString string];
+        NSMutableString *stringvalues = [NSMutableString string];
+        [string appendFormat:zqlqueryreplacetitle, tablename];
         [string appendString:zqlqueryparamsprefix];
         [stringvalues appendString:zqlqueryvaluestitle];
         [stringvalues appendString:zqlqueryparamsprefix];
