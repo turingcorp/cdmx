@@ -271,7 +271,12 @@ static NSInteger const mapinteritemspace = -1;
                    ^
                    {
                        NSArray<mpollutionmapitemannotation*> *annotations = [welf.model annotations];
-                       [welf.display addAnnotations:annotations];
+                       
+                       dispatch_async(dispatch_get_main_queue(),
+                                      ^
+                                      {
+                                          [welf.display addAnnotations:annotations];
+                                      });
                    });
 }
 

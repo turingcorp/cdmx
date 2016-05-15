@@ -2,6 +2,8 @@
 #import "ecolor.h"
 #import "efont.h"
 
+static const char *queuename = "charterqueue";
+
 @implementation vpollutioncharterheader
 
 -(instancetype)initWithFrame:(CGRect)frame
@@ -9,6 +11,9 @@
     self = [super initWithFrame:frame];
     [self setClipsToBounds:YES];
     [self setBackgroundColor:[UIColor clearColor]];
+    
+    self.queue = dispatch_queue_create(queuename, DISPATCH_QUEUE_SERIAL);
+    dispatch_set_target_queue(self.queue, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0));
     
     UILabel *labelindex = [[UILabel alloc] init];
     [labelindex setUserInteractionEnabled:NO];
@@ -18,6 +23,7 @@
     [labelindex setTextAlignment:NSTextAlignmentCenter];
     [labelindex setFont:[UIFont numericsize:30]];
     [labelindex setTextColor:[UIColor main]];
+    [labelindex setHidden:YES];
     self.labelindex = labelindex;
     
     UILabel *labeltitle = [[UILabel alloc] init];
@@ -39,6 +45,7 @@
     [labelname setTextAlignment:NSTextAlignmentCenter];
     [labelname setFont:[UIFont regularsize:13]];
     [labelname setTextColor:[UIColor colorWithWhite:0.5 alpha:1]];
+    [labelname setHidden:YES];
     self.labelname = labelname;
     
     [self addSubview:labelindex];
@@ -92,36 +99,61 @@
 {
     __weak typeof(self) welf = self;
     
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
+    dispatch_async(welf.queue,
                    ^
                    {
                        CGPoint location = [touch locationInView:welf];
                        CGFloat x = location.x;
-                       CGFloat y = location.y;
                        
-                       [welf.model.selected.modelselect newx:x y:y];
-                       mpollutionchartitempoint *current = welf.model.selected.modelselect.current;
+                       if(x != welf.lastx)
+                       {
+                           welf.lastx = x;
+                           [welf.model.selected.modelselect newx:x];
+                           
+                           mpollutionchartitempoint *current = welf.model.selected.modelselect.current;
+                           NSString *stringindex = [NSString stringWithFormat:@"%@", current.index];
+                           NSString *stringname = current.name;
+                           
+                           dispatch_async(dispatch_get_main_queue(),
+                                          ^
+                                          {
+                                              [welf.labelindex setText:stringindex];
+                                              [welf.labelname setText:stringname];
+                                              [welf.labeltitle setTextColor:current.index.color];
+                                          });
+                       }
                        
-                       NSString *stringindex = [NSString stringWithFormat:@"%@", current.index];
-                       NSString *stringname = current.name;
-                       
-                       dispatch_async(dispatch_get_main_queue(),
-                                      ^
-                                      {
-                                          [welf.labelindex setText:stringindex];
-                                          [welf.labeltitle setTextColor:current.index.color];
-                                          [welf.labelname setText:stringname];
-                                          [welf.labeltitle setHidden:NO];
-                                      });
+                       if(welf.labelindex.isHidden)
+                       {
+                           dispatch_async(dispatch_get_main_queue(),
+                                          ^
+                                          {
+                                              [welf.labelindex setHidden:NO];
+                                              [welf.labelname setHidden:NO];
+                                              [welf.labeltitle setHidden:NO];
+                                          });
+                       }
                    });
 }
 
 -(void)releasepointer
 {
-    [self.model.selected.modelselect hideselector];
-    [self.labelindex setText:nil];
-    [self.labelname setText:nil];
-    [self.labeltitle setHidden:YES];
+    __weak typeof(self) welf = self;
+    
+    dispatch_async(welf.queue,
+                   ^
+                   {
+                       [welf.model.selected.modelselect hideselector];
+                       
+                       dispatch_async(dispatch_get_main_queue(),
+                                      ^
+                                      {
+                                          
+                                          [welf.labelindex setHidden:YES];
+                                          [welf.labelname setHidden:YES];
+                                          [welf.labeltitle setHidden:YES];
+                                      });
+                   });
 }
 
 @end

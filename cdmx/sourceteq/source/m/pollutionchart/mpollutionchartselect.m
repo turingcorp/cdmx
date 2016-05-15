@@ -18,7 +18,7 @@
     self.spatial.visible = NO;
 }
 
--(void)newx:(CGFloat)x y:(CGFloat)y
+-(void)newx:(CGFloat)x
 {
     CGFloat pointerx;
     CGFloat pointery;
@@ -32,7 +32,7 @@
         CGFloat inpointy = point.y;
         BOOL match = NO;
         
-        if(inpointx == pointerx)
+        if(inpointx == x)
         {
             match = YES;
         }

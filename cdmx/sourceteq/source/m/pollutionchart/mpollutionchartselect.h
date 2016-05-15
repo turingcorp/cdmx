@@ -6,7 +6,7 @@
 
 -(instancetype)init:(NSArray<mpollutionchartitempoint*>*)points;
 -(void)hideselector;
--(void)newx:(CGFloat)x y:(CGFloat)y;
+-(void)newx:(CGFloat)x;
 
 @property(strong, nonatomic)gpollutionchartselect *spatial;
 @property(weak, nonatomic)NSArray<mpollutionchartitempoint*> *points;
