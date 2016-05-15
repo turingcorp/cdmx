@@ -2,7 +2,7 @@
 
 @interface mpollutionhour:NSObject
 
-@property(assign, nonatomic)NSNumber *hour;
-@property(assign, nonatomic)NSNumber *pollution;
+@property(copy, nonatomic)NSNumber *hour;
+@property(copy, nonatomic)NSNumber *pollution;
 
 @end

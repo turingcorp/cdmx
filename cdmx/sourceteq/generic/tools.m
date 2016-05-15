@@ -57,7 +57,7 @@ static NSString* const rateurl = @"itms-apps://itunes.apple.com/WebObjects/MZSto
     [dateserverinput setDateFormat:@"yyMMdd"];
     
     dateoutput = [[NSDateFormatter alloc] init];
-    [dateoutput setDateFormat:@"MMM d"];
+    [dateoutput setDateFormat:NSLocalizedString(@"mpollution_chart_dateformat", nil)];
     
     return self;
 }

@@ -2,7 +2,7 @@
 #import "efont.h"
 #import "ecolor.h"
 
-static NSInteger const cellapparentheight = 130;
+static NSInteger const cellapparentheight = 160;
 
 @implementation vpollutionfrontcell
 

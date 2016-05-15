@@ -10,7 +10,7 @@ static NSInteger const menucellwidth = 50;
 -(instancetype)init:(cpollution*)controller
 {
     self = [super init];
-    [self setBackgroundColor:[UIColor whiteColor]];
+    [self setBackgroundColor:[UIColor colorWithWhite:1 alpha:0.96]];
     [self setClipsToBounds:YES];
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
     self.controller = controller;

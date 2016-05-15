@@ -3,6 +3,7 @@
 "mpollution_chart_month"="Last 30 days";
 "mpollution_chart_week"="Last 7 days";
 "mpollution_chart_today"="Today";
+"mpollution_chart_dateformat"="MMMM d";
 
 "mpollution_item_hourly_0"="Midnight";
 "mpollution_item_hourly_1"="1:00 am";

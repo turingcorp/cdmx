@@ -26,7 +26,7 @@
     [labeltitle setNumberOfLines:0];
     [labeltitle setBackgroundColor:[UIColor clearColor]];
     [labeltitle setTextAlignment:NSTextAlignmentCenter];
-    [labeltitle setFont:[UIFont boldsize:11]];
+    [labeltitle setFont:[UIFont boldsize:10]];
     [labeltitle setText:NSLocalizedString(@"vpollution_chart_header_title", nil)];
     [labeltitle setHidden:YES];
     self.labeltitle = labeltitle;
@@ -37,7 +37,7 @@
     [labelname setNumberOfLines:0];
     [labelname setBackgroundColor:[UIColor clearColor]];
     [labelname setTextAlignment:NSTextAlignmentCenter];
-    [labelname setFont:[UIFont boldsize:13]];
+    [labelname setFont:[UIFont regularsize:13]];
     [labelname setTextColor:[UIColor colorWithWhite:0.5 alpha:1]];
     self.labelname = labelname;
     
@@ -51,7 +51,7 @@
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[index]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[title]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[name]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-20-[index(35)]-(-7)-[title(14)]-0-[name(17)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-25-[index(35)]-(-8)-[title(14)]-0-[name(16)]" options:0 metrics:metrics views:views]];
     
     return self;
 }
