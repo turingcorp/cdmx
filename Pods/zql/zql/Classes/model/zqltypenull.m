@@ -1,7 +1,6 @@
 #import "zqltypenull.h"
 
 static NSString* const zqltypenullname = @"null";
-static NSString* const zqltypenullcreate = @"NULL";
 
 @implementation zqltypenull
 
@@ -16,9 +15,14 @@ static NSString* const zqltypenullcreate = @"NULL";
 #pragma mark -
 #pragma mark type
 
--(NSString*)createquery
+-(NSString*)queryvalue:(id)value
 {
-    return zqltypenullcreate;
+    return zqltypenullname;
+}
+
+-(id)valuefor:(sqlite3_stmt**)statement column:(NSInteger)column
+{
+    return nil;
 }
 
 @end

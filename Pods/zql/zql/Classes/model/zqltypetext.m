@@ -1,7 +1,7 @@
 #import "zqltypetext.h"
 
 static NSString* const zqltypetextname = @"text";
-static NSString* const zqltypetextcreate = @"TEXT COLLATE NOCASE";
+static NSString* const zqltypetextcreate = @"text collate nocase";
 
 @implementation zqltypetext
 

@@ -15,6 +15,13 @@ static NSString* const zqltypefloatname = @"float";
 #pragma mark -
 #pragma mark type
 
+-(NSString*)queryvalue:(id)value
+{
+    NSString *string = [NSString stringWithFormat:@"%@", @([value floatValue])];
+    
+    return string;
+}
+
 -(id)valuefor:(sqlite3_stmt**)statement column:(NSInteger)column
 {
     CGFloat intvalue = sqlite3_column_double(*statement, (int)column);

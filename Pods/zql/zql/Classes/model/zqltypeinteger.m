@@ -1,7 +1,6 @@
 #import "zqltypeinteger.h"
 
 static NSString* const zqltypeintegername = @"integer";
-static NSString* const zqltypeintegercreate = @"INTEGER";
 
 @implementation zqltypeinteger
 
@@ -16,9 +15,11 @@ static NSString* const zqltypeintegercreate = @"INTEGER";
 #pragma mark -
 #pragma mark type
 
--(NSString*)createquery
+-(NSString*)queryvalue:(id)value
 {
-    return zqltypeintegercreate;
+    NSString *string = [NSString stringWithFormat:@"%@", @([value integerValue])];
+    
+    return string;
 }
 
 -(id)valuefor:(sqlite3_stmt**)statement column:(NSInteger)column
