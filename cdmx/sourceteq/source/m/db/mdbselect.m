@@ -46,6 +46,7 @@
         zqlparam *pprimarykey = resultparams.items[dbprimarykey];
         zqlparam *pserverindex = resultparams.items[dbserverindex];
         zqlparam *ppollution = resultparams.items[dbdistricts_pollution];
+        zqlparam *ppollutantid = resultparams.items[dbdistricts_pollutantid];
         zqlparam *pname = resultparams.items[dbdistricts_name];
         zqlparam *passet = resultparams.items[dbdistricts_asset];
         zqlparam *px = resultparams.items[dbdistricts_x];
@@ -60,6 +61,7 @@
         model.primarykey = pprimarykey.value;
         model.serverid = pserverindex.value;
         model.pollution = ppollution.value;
+        model.pollutantid = ppollutantid.value;
         model.name = pname.value;
         model.asset = passet.value;
         model.x = px.value;
