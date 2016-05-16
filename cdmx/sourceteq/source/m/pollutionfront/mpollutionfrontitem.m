@@ -54,7 +54,22 @@
 {
     NSMutableArray<mpollutionfrontitemoption*> *options = [NSMutableArray array];
     
+    if(self.pollutant)
+    {
+        mpollutionfrontitemoption *optionpollutant = [mpollutionfrontitemoption pollutant:self.pollutant];
+        [options addObject:optionpollutant];
+    }
+    else
+    {
+        mpollutionfrontitemoption *optionallpollutants = [mpollutionfrontitemoption allpollutants:self.parent];
+        [options addObject:optionallpollutants];
+    }
     
+    mpollutionfrontitemoption *optionrecommendation = [mpollutionfrontitemoption recommendation:self.index];
+    [options addObject:optionrecommendation];
+    
+    mpollutionfrontitemoption *optionimeca = [mpollutionfrontitemoption imeca];
+    [options addObject:optionimeca];
     
     return options;
 }

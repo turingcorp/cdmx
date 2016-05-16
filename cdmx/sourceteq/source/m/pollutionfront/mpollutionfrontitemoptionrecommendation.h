@@ -3,4 +3,6 @@
 
 @interface mpollutionfrontitemoptionrecommendation:mpollutionfrontitemoption
 
+-(instancetype)init:(mpollutionindex*)index;
+
 @end

@@ -15,21 +15,21 @@
 
 +(instancetype)recommendation:(mpollutionindex*)index
 {
-    mpollutionfrontitemoptionrecommendation *option = [[mpollutionfrontitemoptionrecommendation alloc] init];
+    mpollutionfrontitemoptionrecommendation *option = [[mpollutionfrontitemoptionrecommendation alloc] init:index];
     
     return option;
 }
 
 +(instancetype)pollutant:(mpollutionpollutant*)pollutant
 {
-    mpollutionfrontitemoptionpollutant *option = [[mpollutionfrontitemoptionpollutant alloc] init];
+    mpollutionfrontitemoptionpollutant *option = [[mpollutionfrontitemoptionpollutant alloc] init:pollutant];
     
     return option;
 }
 
-+(instancetype)allpollutants
++(instancetype)allpollutants:(mpollutionfront*)model
 {
-    mpollutionfrontitemoptionallpollutants *option = [[mpollutionfrontitemoptionallpollutants alloc] init];
+    mpollutionfrontitemoptionallpollutants *option = [[mpollutionfrontitemoptionallpollutants alloc] init:model];
     
     return option;
 }

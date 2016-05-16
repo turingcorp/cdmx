@@ -8,7 +8,8 @@
 #import "vpollutionfrontheadercell.h"
 #import "ecollectioncell.h"
 
-static NSInteger const frontheadercellinteritem = -1;
+static NSInteger const frontheadercellheight = 50;
+static NSInteger const frontheaderinteritem = -1;
 static NSInteger const infomarginx = 10;
 
 @implementation vpollutionfrontheader
@@ -71,7 +72,7 @@ static NSInteger const infomarginx = 10;
     UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
     [flow setHeaderReferenceSize:CGSizeZero];
     [flow setFooterReferenceSize:CGSizeZero];
-    [flow setMinimumLineSpacing:frontheadercellinteritem];
+    [flow setMinimumLineSpacing:frontheaderinteritem];
     [flow setMinimumInteritemSpacing:0];
     [flow setScrollDirection:UICollectionViewScrollDirectionVertical];
     [flow setSectionInset:UIEdgeInsetsZero];
@@ -148,11 +149,40 @@ static NSInteger const infomarginx = 10;
         [self.labelpollutant setHidden:YES];
     }
     
-    [self.collection reloadData];
+    __weak typeof(self) welf = self;
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
+                   ^
+                   {
+                       welf.options = [welf.model options];
+                       
+                       dispatch_async(dispatch_get_main_queue(),
+                                      ^
+                                      {
+                                          [welf.collection reloadData];
+                                      });
+                   });
+}
+
+#pragma mark functionality
+
+-(mpollutionfrontitemoption*)modelforindex:(NSIndexPath*)index
+{
+    mpollutionfrontitemoption *model = self.options[index.item];
+    
+    return model;
 }
 
 #pragma mark -
 #pragma mark col del
+
+-(CGSize)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout sizeForItemAtIndexPath:(NSIndexPath*)index
+{
+    CGFloat width = col.bounds.size.width;
+    CGSize size = CGSizeMake(width, frontheadercellheight);
+    
+    return size;
+}
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView*)col
 {
@@ -161,12 +191,16 @@ static NSInteger const infomarginx = 10;
 
 -(NSInteger)collectionView:(UICollectionView*)col numberOfItemsInSection:(NSInteger)section
 {
-    return 0;
+    NSInteger count = self.options.count;
+    
+    return count;
 }
 
 -(UICollectionViewCell*)collectionView:(UICollectionView*)col cellForItemAtIndexPath:(NSIndexPath*)index
 {
+    mpollutionfrontitemoption *model = [self modelforindex:index];
     vpollutionfrontheadercell *cell = [col dequeueReusableCellWithReuseIdentifier:[vpollutionfrontheadercell reusableidentifier] forIndexPath:index];
+    [cell config:model];
     
     return cell;
 }

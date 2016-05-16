@@ -3,4 +3,6 @@
 
 @interface mpollutionfrontitemoptionpollutant:mpollutionfrontitemoption
 
+-(instancetype)init:(mpollutionpollutant*)pollutant;
+
 @end

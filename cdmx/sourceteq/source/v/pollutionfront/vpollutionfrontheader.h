@@ -8,6 +8,7 @@
 
 -(void)config:(mpollutionfrontitem*)model controller:(cpollution*)controller;
 
+@property(strong, nonatomic)NSArray<mpollutionfrontitemoption*> *options;
 @property(weak, nonatomic)vpollutionradiochart *radiochart;
 @property(weak, nonatomic)mpollutionfrontitem *model;
 @property(weak, nonatomic)cpollution *controller;
