@@ -40,7 +40,7 @@ static NSInteger const infomarginx = 10;
     [labelpollutanttitle setUserInteractionEnabled:NO];
     [labelpollutanttitle setTextColor:[UIColor colorWithWhite:0 alpha:0.4]];
     [labelpollutanttitle setNumberOfLines:0];
-    [labelpollutanttitle setFont:[UIFont regularsize:14]];
+    [labelpollutanttitle setFont:[UIFont regularsize:12]];
     [labelpollutanttitle setTextAlignment:NSTextAlignmentCenter];
     [labelpollutanttitle setText:NSLocalizedString(@"vpollution_chart_header_pollutanttitle", nil)];
     self.labelpollutanttitle = labelpollutanttitle;
@@ -51,7 +51,7 @@ static NSInteger const infomarginx = 10;
     [labelpollutant setUserInteractionEnabled:NO];
     [labelpollutant setTextColor:[UIColor main]];
     [labelpollutant setNumberOfLines:0];
-    [labelpollutant setFont:[UIFont boldsize:16]];
+    [labelpollutant setFont:[UIFont boldsize:18]];
     [labelpollutant setTextAlignment:NSTextAlignmentCenter];
     self.labelpollutant = labelpollutant;
     
@@ -79,10 +79,10 @@ static NSInteger const infomarginx = 10;
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[blanket]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(bordery)-[blanket]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-5-[bordertop]-5-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(bordery)-[bordertop(1)]-0-[current]-20-[radiochart]-30-[labelpollutanttitle(22)]-10-[labelpollutant(20)]-20-[button(50)]" options:0 metrics:metrics views:views]
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(bordery)-[bordertop(1)]-0-[current]-20-[radiochart]-15-[labelpollutanttitle(14)]-0-[labelpollutant(21)]-50-[button(50)]" options:0 metrics:metrics views:views]
      ];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[labelpollutanttitle]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(infomarginx)-[labelpollutant]-(infomarginx)-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[labelpollutant]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[radiochart]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[button]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[current]-0-|" options:0 metrics:metrics views:views]];
