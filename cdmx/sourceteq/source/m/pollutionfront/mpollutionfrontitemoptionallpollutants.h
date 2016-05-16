@@ -5,4 +5,6 @@
 
 -(instancetype)init:(mpollutionfront*)model;
 
+@property(strong, nonatomic, readonly)NSArray<mpollutionpollutant*> *pollutants;
+
 @end

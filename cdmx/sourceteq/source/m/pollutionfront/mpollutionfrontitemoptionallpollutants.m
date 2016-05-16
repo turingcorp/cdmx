@@ -2,6 +2,12 @@
 #import "mpollutionfront.h"
 #import "cpollutionpollutants.h"
 
+@interface mpollutionfrontitemoptionallpollutants ()
+
+@property(strong, nonatomic, readwrite)NSArray<mpollutionpollutant*> *pollutants;
+
+@end
+
 @implementation mpollutionfrontitemoptionallpollutants
 
 -(instancetype)init:(mpollutionfront*)model
@@ -17,7 +23,7 @@
 
 -(UIViewController*)controller
 {
-    cpollutionpollutants *controller = [[cpollutionpollutants alloc] init];
+    cpollutionpollutants *controller = [[cpollutionpollutants alloc] init:self.pollutants];
     
     return controller;
 }
