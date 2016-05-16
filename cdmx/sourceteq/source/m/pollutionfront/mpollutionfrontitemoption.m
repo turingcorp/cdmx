@@ -34,4 +34,11 @@
     return option;
 }
 
+#pragma mark public
+
+-(UIViewController*)controller
+{
+    return nil;
+}
+
 @end

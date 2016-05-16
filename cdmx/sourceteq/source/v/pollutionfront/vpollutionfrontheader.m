@@ -116,13 +116,6 @@ static NSInteger const infomarginx = 10;
     return self;
 }
 
-#pragma mark actions
-
--(void)actionbutton:(UIButton*)button
-{
-    [self.controller imeca];
-}
-
 -(void)actioncurrent:(UIButton*)button
 {
     [(vpollutionfront*)self.controller.view.option showlist];
@@ -207,6 +200,13 @@ static NSInteger const infomarginx = 10;
     [cell config:model];
     
     return cell;
+}
+
+-(void)collectionView:(UICollectionView*)col didSelectItemAtIndexPath:(NSIndexPath*)index
+{
+    mpollutionfrontitemoption *model = [self modelforindex:index];
+    UIViewController *controller = [model controller];
+    [self.controller option:controller];
 }
 
 @end

@@ -10,4 +10,14 @@
     return self;
 }
 
+#pragma mark -
+#pragma mark option
+
+-(UIViewController*)controller
+{
+    UIViewController *controller = [[UIViewController alloc] init];
+    
+    return controller;
+}
+
 @end

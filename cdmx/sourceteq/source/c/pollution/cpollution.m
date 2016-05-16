@@ -1,6 +1,5 @@
 #import "cpollution.h"
 #import "enotification.h"
-#import "cpollutionimeca.h"
 #import "cmain.h"
 #import "vpollution.h"
 #import "aparserpollution.h"
@@ -67,9 +66,8 @@ static NSInteger const framespersecond = 60;
 
 #pragma mark public
 
--(void)imeca
+-(void)option:(UIViewController*)controller
 {
-    cpollutionimeca *controller = [[cpollutionimeca alloc] init];
     [[cmain singleton] pushViewController:controller animated:YES];
 }
 
