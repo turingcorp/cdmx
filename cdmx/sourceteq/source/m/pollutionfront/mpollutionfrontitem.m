@@ -4,6 +4,7 @@
 @interface mpollutionfrontitem ()
 
 @property(strong, nonatomic, readwrite)mpollutionindex *index;
+@property(strong, nonatomic, readwrite)mpollutionpollutant *pollutant;
 @property(strong, nonatomic, readwrite)gpollutiondist *spatial;
 @property(copy, nonatomic, readwrite)NSString *name;
 
@@ -16,6 +17,7 @@
     mpollutionfrontitem *model = [[mpollutionfrontitem alloc] init];
     model.name = district.name;
     model.index = [mpollutionindex points:district.pollution.integerValue];
+    model.pollutant = [mpollutionpollutant server:district.pollutantid];
     model.spatial = [[gpollutiondist alloc] init:district marginx:marginx];
     
     return model;

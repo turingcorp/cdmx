@@ -9,7 +9,6 @@
     self.points = points;
     self.color = [UIColor pollution_gray];
     self.name = NSLocalizedString(@"mpollution_index_nodata", nil);
-    self.info = NSLocalizedString(@"mpollution_index_nodata_info", nil);
     
     return self;
 }

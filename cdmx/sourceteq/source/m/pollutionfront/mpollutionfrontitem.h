@@ -2,6 +2,7 @@
 #import "gpollutiondist.h"
 #import "mpollutionindex.h"
 #import "mdbdistrict.h"
+#import "mpollutionpollutant.h"
 
 @interface mpollutionfrontitem:NSObject
 
@@ -12,6 +13,7 @@
 -(void)standby;
 
 @property(strong, nonatomic, readonly)mpollutionindex *index;
+@property(strong, nonatomic, readonly)mpollutionpollutant *pollutant;
 @property(strong, nonatomic, readonly)gpollutiondist *spatial;
 @property(copy, nonatomic, readonly)NSString *name;
 

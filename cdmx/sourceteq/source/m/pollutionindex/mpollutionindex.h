@@ -8,7 +8,6 @@
 
 @property(strong, nonatomic)UIColor *color;
 @property(copy, nonatomic)NSString *name;
-@property(copy, nonatomic)NSString *info;
 @property(assign, nonatomic)NSInteger points;
 
 @end
