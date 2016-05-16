@@ -4,6 +4,7 @@ static NSString* const dbserverindex =                          @"serverid";
 static NSString* const dbdistricts =                            @"district";
 static NSString* const dbdistricts_name =                       @"name";
 static NSString* const dbdistricts_pollution =                  @"pollution";
+static NSString* const dbdistricts_pollutantid =                @"pollutantid";
 static NSString* const dbdistricts_asset =                      @"asset";
 static NSString* const dbdistricts_x =                          @"x";
 static NSString* const dbdistricts_y =                          @"y";

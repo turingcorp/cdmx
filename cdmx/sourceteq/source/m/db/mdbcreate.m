@@ -26,6 +26,7 @@
     zqlparam *paramserverid = [zqlparam type:[zqltype integer] name:dbserverindex value:nil];
     zqlparam *paramname = [zqlparam type:[zqltype text] name:dbdistricts_name value:nil];
     zqlparam *parampollution = [zqlparam type:[zqltype integer] name:dbdistricts_pollution value:nil];
+    zqlparam *parampollutantid = [zqlparam type:[zqltype integer] name:dbdistricts_pollutantid value:nil];
     zqlparam *paramasset = [zqlparam type:[zqltype text] name:dbdistricts_asset value:nil];
     zqlparam *paramx = [zqlparam type:[zqltype integer] name:dbdistricts_x value:nil];
     zqlparam *paramy = [zqlparam type:[zqltype integer] name:dbdistricts_y value:nil];
@@ -38,6 +39,7 @@
                                    paramserverid,
                                    paramname,
                                    parampollution,
+                                   parampollutantid,
                                    paramasset,
                                    paramx,
                                    paramy,
