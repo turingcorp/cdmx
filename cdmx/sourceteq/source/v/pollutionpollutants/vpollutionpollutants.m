@@ -56,6 +56,15 @@ static NSInteger const pollutantcollectionbottom = 120;
     return self;
 }
 
+#pragma mark functionality
+
+-(mpollutionpollutant*)modelforindex:(NSIndexPath*)index
+{
+    mpollutionpollutant *model = self.controller.items[index.section];
+    
+    return model;
+}
+
 #pragma mark -
 #pragma mark col del
 
@@ -89,7 +98,9 @@ static NSInteger const pollutantcollectionbottom = 120;
 
 -(UICollectionReusableView*)collectionView:(UICollectionView*)col viewForSupplementaryElementOfKind:(NSString*)kind atIndexPath:(NSIndexPath*)index
 {
+    mpollutionpollutant *model = [self modelforindex:index];
     vpollutionpollutantsheader *header = [col dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:[vpollutionpollutantsheader reusableidentifier] forIndexPath:index];
+    [header config:model];
     
     return header;
 }

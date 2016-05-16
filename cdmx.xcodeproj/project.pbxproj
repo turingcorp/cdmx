@@ -120,6 +120,7 @@
 		DAEA5A141CEA68B100584526 /* vpollutionpollutants.m in Sources */ = {isa = PBXBuildFile; fileRef = DAEA5A131CEA68B100584526 /* vpollutionpollutants.m */; };
 		DAEA5A171CEA80D000584526 /* vpollutionpollutantsheader.m in Sources */ = {isa = PBXBuildFile; fileRef = DAEA5A161CEA80D000584526 /* vpollutionpollutantsheader.m */; };
 		DAEA5A1A1CEA80DC00584526 /* vpollutionpollutantscell.m in Sources */ = {isa = PBXBuildFile; fileRef = DAEA5A191CEA80DC00584526 /* vpollutionpollutantscell.m */; };
+		DAEA5A1D1CEA8AFA00584526 /* pollutants.plist in Resources */ = {isa = PBXBuildFile; fileRef = DAEA5A1B1CEA8AFA00584526 /* pollutants.plist */; };
 		E99EDB84D6293E5D839C08A5 /* libPods-cdmx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E47528F2CEFA76F37D95E3 /* libPods-cdmx.a */; };
 /* End PBXBuildFile section */
 
@@ -349,6 +350,8 @@
 		DAEA5A161CEA80D000584526 /* vpollutionpollutantsheader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vpollutionpollutantsheader.m; sourceTree = "<group>"; };
 		DAEA5A181CEA80DC00584526 /* vpollutionpollutantscell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vpollutionpollutantscell.h; sourceTree = "<group>"; };
 		DAEA5A191CEA80DC00584526 /* vpollutionpollutantscell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vpollutionpollutantscell.m; sourceTree = "<group>"; };
+		DAEA5A1C1CEA8AFA00584526 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/pollutants.plist; sourceTree = "<group>"; };
+		DAEA5A1E1CEA8B0500584526 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = es; path = es.lproj/pollutants.plist; sourceTree = "<group>"; };
 		EFFF53693CD2BFB9D79DACFE /* Pods-cdmx.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cdmx.release.xcconfig"; path = "Pods/Target Support Files/Pods-cdmx/Pods-cdmx.release.xcconfig"; sourceTree = "<group>"; };
 		FB216D6F4F8C21A7E0923298 /* Pods-cdmx.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cdmx.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cdmx/Pods-cdmx.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -767,6 +770,7 @@
 		DAD33FAD1CBC83E300C87502 /* langteq */ = {
 			isa = PBXGroup;
 			children = (
+				DAEA5A1B1CEA8AFA00584526 /* pollutants.plist */,
 				DAD33FB01CBC83E300C87502 /* Localizable.strings */,
 				DAB26D7E1CE0ECB300E1580F /* districts.plist */,
 				DAB3FEDB1CE26DCF00CCBB86 /* url.plist */,
@@ -1001,6 +1005,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAEA5A1D1CEA8AFA00584526 /* pollutants.plist in Resources */,
 				DAB3FEDC1CE26DCF00CCBB86 /* url.plist in Resources */,
 				DA8F03441CC1C6B10007596C /* districts.xcassets in Resources */,
 				DA4096411CDBF8880001D696 /* generic.xcassets in Resources */,
@@ -1184,6 +1189,15 @@
 				DAD33FB21CBC83E300C87502 /* es */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		DAEA5A1B1CEA8AFA00584526 /* pollutants.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DAEA5A1C1CEA8AFA00584526 /* en */,
+				DAEA5A1E1CEA8B0500584526 /* es */,
+			);
+			name = pollutants.plist;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
