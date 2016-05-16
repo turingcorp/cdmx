@@ -47,6 +47,7 @@
 
 -(void)clean
 {
+    [self.option clean];
     self.option = nil;
 }
 

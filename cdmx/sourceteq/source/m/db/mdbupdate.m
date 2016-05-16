@@ -41,7 +41,7 @@
         pdailydate.value = day.date;
         pdailypollution.value = day.pollution;
         
-        zqlquery *querydaily = [zqlquery insert:dbpollutiondaily params:dailyparams];
+        zqlquery *querydaily = [zqlquery replace:dbpollutiondaily params:dailyparams];
         [queries addObject:querydaily];
     }
     

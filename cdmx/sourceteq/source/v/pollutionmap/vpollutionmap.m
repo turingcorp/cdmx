@@ -11,6 +11,7 @@ static NSInteger const mapheaderheight = 150;
 static NSInteger const mapcellheight = 50;
 static NSInteger const mapcollectionbottom = 120;
 static NSInteger const mapinteritemspace = -1;
+static NSInteger const maptimeafterannotations = 2;
 
 @implementation vpollutionmap
 {
@@ -48,6 +49,7 @@ static NSInteger const mapinteritemspace = -1;
     [collection setDataSource:self];
     [collection registerClass:[vpollutionmapcell class] forCellWithReuseIdentifier:[vpollutionmapcell reusableidentifier]];
     [collection registerClass:[vpollutionmapheader class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:[vpollutionmapheader reusableidentifier]];
+    [collection setAlpha:0];
     self.collection = collection;
     
     [self addSubview:display];
@@ -272,10 +274,16 @@ static NSInteger const mapinteritemspace = -1;
                    {
                        NSArray<mpollutionmapitemannotation*> *annotations = [welf.model annotations];
                        
-                       dispatch_async(dispatch_get_main_queue(),
+                       dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC * maptimeafterannotations), dispatch_get_main_queue(),
                                       ^
                                       {
                                           [welf.display addAnnotations:annotations];
+                                          
+                                          [UIView animateWithDuration:0.5 animations:
+                                           ^
+                                           {
+                                               [welf.collection setAlpha:1];
+                                           }];
                                       });
                    });
 }

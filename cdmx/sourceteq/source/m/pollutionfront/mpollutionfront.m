@@ -78,4 +78,15 @@
     }
 }
 
+#pragma mark -
+#pragma mark option
+
+-(void)clean
+{
+    for(mpollutionfrontitem *item in self.items)
+    {
+        item.spatial.color = GLKVector4Make(0, 0, 0, 0);
+    }
+}
+
 @end

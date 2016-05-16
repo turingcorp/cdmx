@@ -9,4 +9,10 @@
     return self;
 }
 
+#pragma mark public
+
+-(void)clean
+{
+}
+
 @end
