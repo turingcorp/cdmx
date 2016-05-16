@@ -151,11 +151,11 @@ static NSInteger const infomarginx = 10;
                        welf.options = [welf.model options];
                        NSInteger countoptions = welf.options.count;
                        NSInteger optionsheight = (countoptions * frontheadercellheight) + frontheadercollectionbottom;
-                       welf.layoutcollectionheight.constant = optionsheight;
                        
                        dispatch_async(dispatch_get_main_queue(),
                                       ^
                                       {
+                                          welf.layoutcollectionheight.constant = optionsheight;
                                           [welf.collection reloadData];
                                       });
                    });
