@@ -3,6 +3,7 @@
 #import "mpollutionindex.h"
 #import "mdbdistrict.h"
 #import "mpollutionpollutant.h"
+#import "mpollutionfrontitemoption.h"
 
 @interface mpollutionfrontitem:NSObject
 
@@ -11,6 +12,7 @@
 -(void)turnon;
 -(void)turnoff;
 -(void)standby;
+-(NSArray<mpollutionfrontitemoption*>*)options;
 
 @property(strong, nonatomic, readonly)mpollutionindex *index;
 @property(strong, nonatomic, readonly)mpollutionpollutant *pollutant;

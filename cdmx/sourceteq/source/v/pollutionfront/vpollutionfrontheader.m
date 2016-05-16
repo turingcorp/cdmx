@@ -5,7 +5,10 @@
 #import "vpollutionfrontheaderbutton.h"
 #import "vpollution.h"
 #import "vpollutionfront.h"
+#import "vpollutionfrontheadercell.h"
+#import "ecollectioncell.h"
 
+static NSInteger const frontheadercellinteritem = -1;
 static NSInteger const infomarginx = 10;
 
 @implementation vpollutionfrontheader
@@ -65,6 +68,27 @@ static NSInteger const infomarginx = 10;
     [current addTarget:self action:@selector(actioncurrent:) forControlEvents:UIControlEventTouchUpInside];
     self.current = current;
     
+    UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
+    [flow setHeaderReferenceSize:CGSizeZero];
+    [flow setFooterReferenceSize:CGSizeZero];
+    [flow setMinimumLineSpacing:frontheadercellinteritem];
+    [flow setMinimumInteritemSpacing:0];
+    [flow setScrollDirection:UICollectionViewScrollDirectionVertical];
+    [flow setSectionInset:UIEdgeInsetsZero];
+    
+    UICollectionView *collection = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flow];
+    [collection setClipsToBounds:YES];
+    [collection setBackgroundColor:[UIColor clearColor]];
+    [collection setShowsHorizontalScrollIndicator:NO];
+    [collection setShowsVerticalScrollIndicator:NO];
+    [collection setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [collection setBounces:NO];
+    [collection setScrollEnabled:NO];
+    [collection setDataSource:self];
+    [collection setDelegate:self];
+    [collection registerClass:[vpollutionfrontheadercell class] forCellWithReuseIdentifier:[vpollutionfrontheadercell reusableidentifier]];
+    self.collection = collection;
+    
     [self addSubview:blanket];
     [self addSubview:bordertop];
     [self addSubview:labelpollutanttitle];
@@ -123,6 +147,28 @@ static NSInteger const infomarginx = 10;
         [self.labelpollutanttitle setHidden:YES];
         [self.labelpollutant setHidden:YES];
     }
+    
+    [self.collection reloadData];
+}
+
+#pragma mark -
+#pragma mark col del
+
+-(NSInteger)numberOfSectionsInCollectionView:(UICollectionView*)col
+{
+    return 1;
+}
+
+-(NSInteger)collectionView:(UICollectionView*)col numberOfItemsInSection:(NSInteger)section
+{
+    return 0;
+}
+
+-(UICollectionViewCell*)collectionView:(UICollectionView*)col cellForItemAtIndexPath:(NSIndexPath*)index
+{
+    vpollutionfrontheadercell *cell = [col dequeueReusableCellWithReuseIdentifier:[vpollutionfrontheadercell reusableidentifier] forIndexPath:index];
+    
+    return cell;
 }
 
 @end

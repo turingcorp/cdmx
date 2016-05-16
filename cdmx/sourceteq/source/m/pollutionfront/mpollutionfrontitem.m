@@ -50,4 +50,13 @@
     self.spatial.color = [self.index.color asvector];
 }
 
+-(NSArray<mpollutionfrontitemoption*>*)options
+{
+    NSMutableArray<mpollutionfrontitemoption*> *options = [NSMutableArray array];
+    
+    
+    
+    return options;
+}
+
 @end
