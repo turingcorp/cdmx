@@ -16,5 +16,6 @@
 @property(weak, nonatomic)UICollectionView *collection;
 @property(weak, nonatomic)UILabel *labelpollutanttitle;
 @property(weak, nonatomic)UILabel *labelpollutant;
+@property(weak, nonatomic)NSLayoutConstraint *layoutcollectionheight;
 
 @end

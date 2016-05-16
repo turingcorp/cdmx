@@ -2,7 +2,6 @@
 #import "genericconstants.h"
 #import "ecolor.h"
 #import "efont.h"
-#import "vpollutionfrontheaderbutton.h"
 #import "vpollution.h"
 #import "vpollutionfront.h"
 #import "vpollutionfrontheadercell.h"
@@ -10,6 +9,7 @@
 
 static NSInteger const frontheadercellheight = 50;
 static NSInteger const frontheaderinteritem = -1;
+static NSInteger const frontheadercollectionbottom = 50;
 static NSInteger const infomarginx = 10;
 
 @implementation vpollutionfrontheader
@@ -62,9 +62,6 @@ static NSInteger const infomarginx = 10;
     vpollutionradiochart *radiochart = [[vpollutionradiochart alloc] init];
     self.radiochart = radiochart;
     
-    vpollutionfrontheaderbutton *button = [[vpollutionfrontheaderbutton alloc] init];
-    [button addTarget:self action:@selector(actionbutton:) forControlEvents:UIControlEventTouchUpInside];
-    
     vpollutionfrontheadercurrent *current = [[vpollutionfrontheadercurrent alloc] init];
     [current addTarget:self action:@selector(actioncurrent:) forControlEvents:UIControlEventTouchUpInside];
     self.current = current;
@@ -95,22 +92,26 @@ static NSInteger const infomarginx = 10;
     [self addSubview:labelpollutanttitle];
     [self addSubview:labelpollutant];
     [self addSubview:radiochart];
-    [self addSubview:button];
     [self addSubview:current];
+    [self addSubview:collection];
     
-    NSDictionary *views = @{@"bordertop":bordertop, @"blanket":blanket, @"labelpollutanttitle":labelpollutanttitle, @"labelpollutant":labelpollutant, @"radiochart":radiochart, @"button":button, @"current":current};
+    NSDictionary *views = @{@"bordertop":bordertop, @"blanket":blanket, @"labelpollutanttitle":labelpollutanttitle, @"labelpollutant":labelpollutant, @"radiochart":radiochart, @"current":current, @"collection":collection};
     NSDictionary *metrics = @{@"bordery":@(bordery), @"infomarginx":@(infomarginx)};
     
+    self.layoutcollectionheight = [NSLayoutConstraint constraintWithItem:collection attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:0];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[blanket]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(bordery)-[blanket]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-5-[bordertop]-5-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(bordery)-[bordertop(1)]-0-[current]-20-[radiochart]-15-[labelpollutanttitle(14)]-0-[labelpollutant(21)]-50-[button(50)]" options:0 metrics:metrics views:views]
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(bordery)-[bordertop(1)]-0-[current]-20-[radiochart]-15-[labelpollutanttitle(14)]-0-[labelpollutant(21)]" options:0 metrics:metrics views:views]
+     ];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[collection]-0-|" options:0 metrics:metrics views:views]
      ];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[labelpollutanttitle]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[labelpollutant]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[radiochart]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[button]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[collection]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[current]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraint:self.layoutcollectionheight];
     
     return self;
 }
@@ -155,6 +156,9 @@ static NSInteger const infomarginx = 10;
                    ^
                    {
                        welf.options = [welf.model options];
+                       NSInteger countoptions = welf.options.count;
+                       NSInteger optionsheight = (countoptions * frontheadercellheight) + frontheadercollectionbottom;
+                       welf.layoutcollectionheight.constant = optionsheight;
                        
                        dispatch_async(dispatch_get_main_queue(),
                                       ^
