@@ -10,8 +10,10 @@
     
     zqlparam *pdistrictserverid = [zqlparam type:[zqltype integer] name:dbserverindex value:nil];
     zqlparam *pdistrictpollution = [zqlparam type:[zqltype integer] name:dbdistricts_pollution value:nil];
+    zqlparam *pdistrictpollutantid = [zqlparam type:[zqltype integer] name:dbdistricts_pollutantid value:nil];
     NSArray<zqlparam*> *distparams = @[
-                                       pdistrictpollution
+                                       pdistrictpollution,
+                                       pdistrictpollutantid
                                        ];
     
     NSUInteger countdistricts = districts.count;
@@ -21,6 +23,7 @@
         mdbdistrict *dist = districts[indexdistricts];
         pdistrictserverid.value = dist.serverid;
         pdistrictpollution.value = dist.pollution;
+        pdistrictpollutantid.value = dist.pollutantid;
         
         zqlquery *querydistrict = [zqlquery update:dbdistricts params:distparams where:pdistrictserverid];
         [queries addObject:querydistrict];

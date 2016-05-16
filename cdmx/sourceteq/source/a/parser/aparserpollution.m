@@ -29,10 +29,12 @@
             NSDictionary *rawdist = rawdistricts[indexdistricts];
             NSNumber *rawdistid = rawdist[@"id"];
             NSNumber *rawdistpollution = rawdist[@"pollution"];
+            NSNumber *rawdistpollutantid = rawdist[@"pollutantid"];
             
             mdbdistrict *modeldist = [[mdbdistrict alloc] init];
             modeldist.serverid = rawdistid;
             modeldist.pollution = rawdistpollution;
+            modeldist.pollutantid = rawdistpollutantid;
             
             [modeldistricts addObject:modeldist];
         }
