@@ -34,15 +34,6 @@ static NSInteger const infomarginx = 10;
     [bordertop setBackgroundColor:[UIColor background]];
     [bordertop setTranslatesAutoresizingMaskIntoConstraints:NO];
     
-    UILabel *labelindextitle = [[UILabel alloc] init];
-    [labelindextitle setBackgroundColor:[UIColor clearColor]];
-    [labelindextitle setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [labelindextitle setUserInteractionEnabled:NO];
-    [labelindextitle setTextAlignment:NSTextAlignmentCenter];
-    [labelindextitle setFont:[UIFont regularsize:14]];
-    [labelindextitle setTextColor:[UIColor blackColor]];
-    self.labelindextitle = labelindextitle;
-    
     UILabel *labelpollutanttitle = [[UILabel alloc] init];
     [labelpollutanttitle setBackgroundColor:[UIColor clearColor]];
     [labelpollutanttitle setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -76,22 +67,20 @@ static NSInteger const infomarginx = 10;
     
     [self addSubview:blanket];
     [self addSubview:bordertop];
-    [self addSubview:labelindextitle];
     [self addSubview:labelpollutanttitle];
     [self addSubview:labelpollutant];
     [self addSubview:radiochart];
     [self addSubview:button];
     [self addSubview:current];
     
-    NSDictionary *views = @{@"bordertop":bordertop, @"blanket":blanket, @"labelindextitle":labelindextitle, @"labelpollutanttitle":labelpollutanttitle, @"labelpollutant":labelpollutant, @"radiochart":radiochart, @"button":button, @"current":current};
+    NSDictionary *views = @{@"bordertop":bordertop, @"blanket":blanket, @"labelpollutanttitle":labelpollutanttitle, @"labelpollutant":labelpollutant, @"radiochart":radiochart, @"button":button, @"current":current};
     NSDictionary *metrics = @{@"bordery":@(bordery), @"infomarginx":@(infomarginx)};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[blanket]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(bordery)-[blanket]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-5-[bordertop]-5-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(bordery)-[bordertop(1)]-0-[current]-0-[labelindextitle(20)]-[radiochart]-30-[labelpollutanttitle(22)]-10-[labelpollutant(20)]-20-[button(50)]" options:0 metrics:metrics views:views]
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(bordery)-[bordertop(1)]-0-[current]-20-[radiochart]-30-[labelpollutanttitle(22)]-10-[labelpollutant(20)]-20-[button(50)]" options:0 metrics:metrics views:views]
      ];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-2-[labelindextitle]-2-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[labelpollutanttitle]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(infomarginx)-[labelpollutant]-(infomarginx)-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[radiochart]-0-|" options:0 metrics:metrics views:views]];
@@ -121,7 +110,6 @@ static NSInteger const infomarginx = 10;
     self.controller = controller;
     
     [self.radiochart render:model.index];
-    [self.labelindextitle setText:model.index.name];
     [self.current config:model];
     
     if(model.pollutant)

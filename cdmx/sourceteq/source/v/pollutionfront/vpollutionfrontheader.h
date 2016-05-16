@@ -12,7 +12,6 @@
 @property(weak, nonatomic)mpollutionfrontitem *model;
 @property(weak, nonatomic)cpollution *controller;
 @property(weak, nonatomic)vpollutionfrontheadercurrent *current;
-@property(weak, nonatomic)UILabel *labelindextitle;
 @property(weak, nonatomic)UILabel *labelpollutanttitle;
 @property(weak, nonatomic)UILabel *labelpollutant;
 
