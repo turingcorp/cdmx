@@ -1,4 +1,5 @@
 #import "mpollutionfrontitemoptionpollutant.h"
+#import "cpollutionpollutants.h"
 
 @implementation mpollutionfrontitemoptionpollutant
 
@@ -15,7 +16,7 @@
 
 -(UIViewController*)controller
 {
-    UIViewController *controller = [[UIViewController alloc] init];
+    cpollutionpollutants *controller = [[cpollutionpollutants alloc] init];
     
     return controller;
 }

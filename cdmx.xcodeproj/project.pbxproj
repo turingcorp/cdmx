@@ -116,6 +116,8 @@
 		DAEA5A031CEA408F00584526 /* mpollutionfrontitemoptionrecommendation.m in Sources */ = {isa = PBXBuildFile; fileRef = DAEA5A021CEA408F00584526 /* mpollutionfrontitemoptionrecommendation.m */; };
 		DAEA5A061CEA40A300584526 /* mpollutionfrontitemoptionpollutant.m in Sources */ = {isa = PBXBuildFile; fileRef = DAEA5A051CEA40A300584526 /* mpollutionfrontitemoptionpollutant.m */; };
 		DAEA5A091CEA40B800584526 /* mpollutionfrontitemoptionallpollutants.m in Sources */ = {isa = PBXBuildFile; fileRef = DAEA5A081CEA40B800584526 /* mpollutionfrontitemoptionallpollutants.m */; };
+		DAEA5A0C1CEA66FE00584526 /* cpollutionpollutants.m in Sources */ = {isa = PBXBuildFile; fileRef = DAEA5A0B1CEA66FE00584526 /* cpollutionpollutants.m */; };
+		DAEA5A141CEA68B100584526 /* vpollutionpollutants.m in Sources */ = {isa = PBXBuildFile; fileRef = DAEA5A131CEA68B100584526 /* vpollutionpollutants.m */; };
 		E99EDB84D6293E5D839C08A5 /* libPods-cdmx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E47528F2CEFA76F37D95E3 /* libPods-cdmx.a */; };
 /* End PBXBuildFile section */
 
@@ -337,6 +339,10 @@
 		DAEA5A051CEA40A300584526 /* mpollutionfrontitemoptionpollutant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mpollutionfrontitemoptionpollutant.m; sourceTree = "<group>"; };
 		DAEA5A071CEA40B800584526 /* mpollutionfrontitemoptionallpollutants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpollutionfrontitemoptionallpollutants.h; sourceTree = "<group>"; };
 		DAEA5A081CEA40B800584526 /* mpollutionfrontitemoptionallpollutants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mpollutionfrontitemoptionallpollutants.m; sourceTree = "<group>"; };
+		DAEA5A0A1CEA66FE00584526 /* cpollutionpollutants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpollutionpollutants.h; sourceTree = "<group>"; };
+		DAEA5A0B1CEA66FE00584526 /* cpollutionpollutants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cpollutionpollutants.m; sourceTree = "<group>"; };
+		DAEA5A121CEA68B100584526 /* vpollutionpollutants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vpollutionpollutants.h; sourceTree = "<group>"; };
+		DAEA5A131CEA68B100584526 /* vpollutionpollutants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vpollutionpollutants.m; sourceTree = "<group>"; };
 		EFFF53693CD2BFB9D79DACFE /* Pods-cdmx.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cdmx.release.xcconfig"; path = "Pods/Target Support Files/Pods-cdmx/Pods-cdmx.release.xcconfig"; sourceTree = "<group>"; };
 		FB216D6F4F8C21A7E0923298 /* Pods-cdmx.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cdmx.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cdmx/Pods-cdmx.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -396,6 +402,8 @@
 				DA20ACE61CD7FBC700754956 /* cpollution.m */,
 				DA4096511CDC1F560001D696 /* cpollutionimeca.h */,
 				DA4096521CDC1F560001D696 /* cpollutionimeca.m */,
+				DAEA5A0A1CEA66FE00584526 /* cpollutionpollutants.h */,
+				DAEA5A0B1CEA66FE00584526 /* cpollutionpollutants.m */,
 			);
 			path = pollution;
 			sourceTree = "<group>";
@@ -856,6 +864,7 @@
 			isa = PBXGroup;
 			children = (
 				DAC21D221CE4C35B00D92161 /* pollution */,
+				DAEA5A111CEA68A500584526 /* pollutionpollutants */,
 				DAC21D291CE4C35B00D92161 /* pollutioncharter */,
 				DAC21D301CE4C35B00D92161 /* pollutionfront */,
 				DA05C6C91CE6328400A22A5E /* pollutionmap */,
@@ -904,6 +913,15 @@
 				DAEA59F31CEA041900584526 /* mpollutionpollutant.m */,
 			);
 			path = pollutionpollutant;
+			sourceTree = "<group>";
+		};
+		DAEA5A111CEA68A500584526 /* pollutionpollutants */ = {
+			isa = PBXGroup;
+			children = (
+				DAEA5A121CEA68B100584526 /* vpollutionpollutants.h */,
+				DAEA5A131CEA68B100584526 /* vpollutionpollutants.m */,
+			);
+			path = pollutionpollutants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1080,6 +1098,7 @@
 				DAB3FEE21CE270F900CCBB86 /* aparserpollution.m in Sources */,
 				DAC21D111CE4C2AA00D92161 /* mpollutionchartitem.m in Sources */,
 				DAD340011CBC83E300C87502 /* mdirs.m in Sources */,
+				DAEA5A141CEA68B100584526 /* vpollutionpollutants.m in Sources */,
 				DA87082A1CBE840F000C08E1 /* amanager.m in Sources */,
 				DAA0C67D1CD978C600880D3E /* gspatial.m in Sources */,
 				DAC21D131CE4C2AA00D92161 /* mpollutionchartitemtoday.m in Sources */,
@@ -1098,6 +1117,7 @@
 				DAC21D471CE4C35B00D92161 /* vpollution.m in Sources */,
 				DAEA59FD1CEA3E8E00584526 /* mpollutionfrontitemoption.m in Sources */,
 				DA05C6D21CE632DD00A22A5E /* vpollutionmapdisplay.m in Sources */,
+				DAEA5A0C1CEA66FE00584526 /* cpollutionpollutants.m in Sources */,
 				DAEA5A001CEA407300584526 /* mpollutionfrontitemoptionimeca.m in Sources */,
 				DA9274681CE4E73C0005138A /* mpollutionchartitempoint.m in Sources */,
 				DAEA5A061CEA40A300584526 /* mpollutionfrontitemoptionpollutant.m in Sources */,
