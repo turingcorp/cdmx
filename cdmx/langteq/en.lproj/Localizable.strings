@@ -36,6 +36,29 @@
 "mpollution_index_disaster"="Harmful";
 "mpollution_index_fallout"="Injurious";
 
+"mpollution_pollutant_name_101"="Benzene";
+"mpollution_pollutant_name_102"="Toluene";
+"mpollution_pollutant_name_103"="Sulphate";
+"mpollution_pollutant_name_104"="Sulphur dioxide";
+"mpollution_pollutant_name_105"="Nitrate";
+"mpollution_pollutant_name_106"="Nitrogen dioxide";
+"mpollution_pollutant_name_107"="Nitric oxide";
+"mpollution_pollutant_name_108"="Nitrogen oxides";
+"mpollution_pollutant_name_109"="Chloride";
+"mpollution_pollutant_name_1010"="Carbonate";
+"mpollution_pollutant_name_1011"="Carbon monoxide";
+"mpollution_pollutant_name_1012"="Hydrogen";
+"mpollution_pollutant_name_1013"="Ammonium";
+"mpollution_pollutant_name_1014"="Calcium";
+"mpollution_pollutant_name_1015"="Magnesium";
+"mpollution_pollutant_name_1016"="Sodium";
+"mpollution_pollutant_name_1017"="Potassium";
+"mpollution_pollutant_name_1018"="Ozone";
+"mpollution_pollutant_name_1019"="Lead";
+"mpollution_pollutant_name_1020"="Ethylbenzene";
+"mpollution_pollutant_name_1021"="Xylene";
+"mpollution_pollutant_name_1022"="Dust";
+
 "mpollution_index_nodata_info"="The monitoring station is off or in maintenance, current conditions are unknown, please try again later";
 "mpollution_index_acceptable_info"="Calidad del aire satisfactoria y sin riesgos a tu salud.\n\nRevisa el indice de radiación Ultra Violeta antes realizar alguna actividad prolongada al aire libre.";
 "mpollution_index_warning_info"="Aire con presencia de contaminantes, si eres de salud delicada es posible que resultes afectado al salir de casa.\n\nEs recomendable que niños y adultos mayores permanescan poco al aire libre.";
