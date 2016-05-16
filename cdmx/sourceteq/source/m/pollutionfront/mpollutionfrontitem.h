@@ -5,6 +5,8 @@
 #import "mpollutionpollutant.h"
 #import "mpollutionfrontitemoption.h"
 
+@class mpollutionfront;
+
 @interface mpollutionfrontitem:NSObject
 
 +(instancetype)district:(mdbdistrict*)district marginx:(CGFloat)marginx;
@@ -14,6 +16,7 @@
 -(void)standby;
 -(NSArray<mpollutionfrontitemoption*>*)options;
 
+@property(weak, nonatomic)mpollutionfront *parent;
 @property(strong, nonatomic, readonly)mpollutionindex *index;
 @property(strong, nonatomic, readonly)mpollutionpollutant *pollutant;
 @property(strong, nonatomic, readonly)gpollutiondist *spatial;

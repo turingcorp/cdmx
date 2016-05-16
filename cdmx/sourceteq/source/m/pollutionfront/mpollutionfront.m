@@ -26,6 +26,7 @@
         globalitem = [mpollutionfrontitem global:0];
     }
     
+    globalitem.parent = self;
     [items addObject:globalitem];
     
     CGFloat screenwidth = [UIScreen mainScreen].bounds.size.width;
@@ -38,7 +39,7 @@
     {
         mdbdistrict *district = model.modeldistricts[indexdistricts];
         mpollutionfrontitem *item = [mpollutionfrontitem district:district marginx:marginx];
-        
+        item.parent = self;
         [items addObject:item];
     }
     
