@@ -23,7 +23,7 @@
     [symbol setUserInteractionEnabled:NO];
     [symbol setTranslatesAutoresizingMaskIntoConstraints:NO];
     [symbol setBackgroundColor:[UIColor clearColor]];
-    [symbol setFont:[UIFont boldsize:14]];
+    [symbol setFont:[UIFont boldsize:16]];
     [symbol setTextColor:[UIColor whiteColor]];
     [symbol setTextAlignment:NSTextAlignmentCenter];
     self.symbol = symbol;
