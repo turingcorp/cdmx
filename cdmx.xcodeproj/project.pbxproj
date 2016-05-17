@@ -43,6 +43,9 @@
 		DA3F6BF11CEBBBF200625BE9 /* mmenusectionitemecobici.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3F6BF01CEBBBF200625BE9 /* mmenusectionitemecobici.m */; };
 		DA3F6BF41CEBBD2000625BE9 /* mmenusectionapp.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3F6BF31CEBBD2000625BE9 /* mmenusectionapp.m */; };
 		DA3F6BF71CEBBE1D00625BE9 /* mmenusectionitemabout.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3F6BF61CEBBE1D00625BE9 /* mmenusectionitemabout.m */; };
+		DA3F6BFB1CEBC8F400625BE9 /* cradiation.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3F6BFA1CEBC8F400625BE9 /* cradiation.m */; };
+		DA3F6BFF1CEBCB4600625BE9 /* vradiation.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3F6BFE1CEBCB4600625BE9 /* vradiation.m */; };
+		DA3F6C021CEBCCA100625BE9 /* vradiationbar.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3F6C011CEBCCA100625BE9 /* vradiationbar.m */; };
 		DA4096411CDBF8880001D696 /* generic.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA4096401CDBF8880001D696 /* generic.xcassets */; };
 		DA4096471CDBFA1C0001D696 /* vbutton.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4096461CDBFA1C0001D696 /* vbutton.m */; };
 		DA40964A1CDBFC550001D696 /* ccontroller.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4096491CDBFC550001D696 /* ccontroller.m */; };
@@ -217,6 +220,12 @@
 		DA3F6BF31CEBBD2000625BE9 /* mmenusectionapp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mmenusectionapp.m; sourceTree = "<group>"; };
 		DA3F6BF51CEBBE1D00625BE9 /* mmenusectionitemabout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mmenusectionitemabout.h; sourceTree = "<group>"; };
 		DA3F6BF61CEBBE1D00625BE9 /* mmenusectionitemabout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mmenusectionitemabout.m; sourceTree = "<group>"; };
+		DA3F6BF91CEBC8F400625BE9 /* cradiation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cradiation.h; sourceTree = "<group>"; };
+		DA3F6BFA1CEBC8F400625BE9 /* cradiation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cradiation.m; sourceTree = "<group>"; };
+		DA3F6BFD1CEBCB4600625BE9 /* vradiation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vradiation.h; sourceTree = "<group>"; };
+		DA3F6BFE1CEBCB4600625BE9 /* vradiation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vradiation.m; sourceTree = "<group>"; };
+		DA3F6C001CEBCCA100625BE9 /* vradiationbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vradiationbar.h; sourceTree = "<group>"; };
+		DA3F6C011CEBCCA100625BE9 /* vradiationbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vradiationbar.m; sourceTree = "<group>"; };
 		DA4096401CDBF8880001D696 /* generic.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = generic.xcassets; sourceTree = "<group>"; };
 		DA4096451CDBFA1C0001D696 /* vbutton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vbutton.h; sourceTree = "<group>"; };
 		DA4096461CDBFA1C0001D696 /* vbutton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vbutton.m; sourceTree = "<group>"; };
@@ -571,6 +580,26 @@
 				DA3F6BF61CEBBE1D00625BE9 /* mmenusectionitemabout.m */,
 			);
 			path = menu;
+			sourceTree = "<group>";
+		};
+		DA3F6BF81CEBC8DB00625BE9 /* radiation */ = {
+			isa = PBXGroup;
+			children = (
+				DA3F6BF91CEBC8F400625BE9 /* cradiation.h */,
+				DA3F6BFA1CEBC8F400625BE9 /* cradiation.m */,
+			);
+			path = radiation;
+			sourceTree = "<group>";
+		};
+		DA3F6BFC1CEBCB3B00625BE9 /* radiation */ = {
+			isa = PBXGroup;
+			children = (
+				DA3F6BFD1CEBCB4600625BE9 /* vradiation.h */,
+				DA3F6BFE1CEBCB4600625BE9 /* vradiation.m */,
+				DA3F6C001CEBCCA100625BE9 /* vradiationbar.h */,
+				DA3F6C011CEBCCA100625BE9 /* vradiationbar.m */,
+			);
+			path = radiation;
 			sourceTree = "<group>";
 		};
 		DA8708251CBE8245000C08E1 /* a */ = {
@@ -960,6 +989,7 @@
 		DAD33FD21CBC83E300C87502 /* c */ = {
 			isa = PBXGroup;
 			children = (
+				DA3F6BF81CEBC8DB00625BE9 /* radiation */,
 				DA3F6BBA1CEB8E0500625BE9 /* menu */,
 				DA20ACE41CD7FBBF00754956 /* pollution */,
 				DACEDEDF1CBC895B0088AA8B /* main */,
@@ -1004,6 +1034,7 @@
 		DAD33FE41CBC83E300C87502 /* v */ = {
 			isa = PBXGroup;
 			children = (
+				DA3F6BFC1CEBCB3B00625BE9 /* radiation */,
 				DA3F6BBE1CEB8E8C00625BE9 /* menu */,
 				DAC21D221CE4C35B00D92161 /* pollution */,
 				DA3F6BB61CEB599000625BE9 /* pollutionrecommendation */,
@@ -1228,6 +1259,7 @@
 				DA20AD061CD80B5A00754956 /* ecolor.m in Sources */,
 				DAC21D591CE4C3C200D92161 /* mpollutionfront.m in Sources */,
 				DA3F6BEB1CEBBA4600625BE9 /* mmenusectionmobility.m in Sources */,
+				DA3F6BFB1CEBC8F400625BE9 /* cradiation.m in Sources */,
 				DAC21D4A1CE4C35B00D92161 /* vpollutioncharter.m in Sources */,
 				DA20AD091CD80B6000754956 /* efont.m in Sources */,
 				DA40964A1CDBFC550001D696 /* ccontroller.m in Sources */,
@@ -1240,6 +1272,7 @@
 				DAC21D091CE4C2AA00D92161 /* mpollutionhour.m in Sources */,
 				DA3F6BB51CEB54D800625BE9 /* cpollutionrecommendation.m in Sources */,
 				DA24B7B61CE7AE140008DE86 /* mpollutionmapitemannotation.m in Sources */,
+				DA3F6C021CEBCCA100625BE9 /* vradiationbar.m in Sources */,
 				DAD33FF41CBC83E300C87502 /* appdel.m in Sources */,
 				DA3F6BC51CEB902C00625BE9 /* mmenu.m in Sources */,
 				DAC21D491CE4C35B00D92161 /* vpollutionradiochart.m in Sources */,
@@ -1274,6 +1307,7 @@
 				DA3F6BCE1CEB914F00625BE9 /* mmenusectioncity.m in Sources */,
 				DA3F6BE21CEBA97D00625BE9 /* mmenusectionitemradiation.m in Sources */,
 				DA3F6BBD1CEB8E0F00625BE9 /* cmenu.m in Sources */,
+				DA3F6BFF1CEBCB4600625BE9 /* vradiation.m in Sources */,
 				DAC21D4B1CE4C35B00D92161 /* vpollutionchartercell.m in Sources */,
 				DAC21D471CE4C35B00D92161 /* vpollution.m in Sources */,
 				DAEA59FD1CEA3E8E00584526 /* mpollutionfrontitemoption.m in Sources */,
