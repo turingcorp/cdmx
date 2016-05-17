@@ -13,7 +13,7 @@
     [label setUserInteractionEnabled:NO];
     [label setTranslatesAutoresizingMaskIntoConstraints:NO];
     [label setNumberOfLines:0];
-    [label setTextColor:[UIColor colorWithWhite:0.3 alpha:1]];
+    [label setTextColor:[UIColor colorWithWhite:0.4 alpha:1]];
     self.label = label;
     
     [self addSubview:label];

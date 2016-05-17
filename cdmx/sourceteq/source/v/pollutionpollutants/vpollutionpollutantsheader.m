@@ -14,18 +14,28 @@
     [label setBackgroundColor:[UIColor clearColor]];
     [label setUserInteractionEnabled:NO];
     [label setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [label setFont:[UIFont boldsize:22]];
+    [label setFont:[UIFont boldsize:17]];
     [label setTextColor:[UIColor main]];
     [label setTextAlignment:NSTextAlignmentCenter];
     self.label = label;
     
-    [self addSubview:label];
+    UIImageView *circle = [[UIImageView alloc] init];
+    [circle setUserInteractionEnabled:NO];
+    [circle setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [circle setImage:[[UIImage imageNamed:@"generic_circle"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+    [circle setClipsToBounds:YES];
+    [circle setContentMode:UIViewContentModeCenter];
+    [circle setTintColor:[UIColor main]];
     
-    NSDictionary *views = @{@"label":label};
+    [self addSubview:label];
+    [self addSubview:circle];
+    
+    NSDictionary *views = @{@"circle":circle, @"label":label};
     NSDictionary *metrics = @{};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[label]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[label]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[circle]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-10-[circle]-0-[label(20)]-20-|" options:0 metrics:metrics views:views]];
     
     return self;
 }

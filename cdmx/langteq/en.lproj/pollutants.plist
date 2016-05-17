@@ -24,9 +24,8 @@ Long-term exposure to ozone has been shown to increase risk of death from respir
         <key>symbol</key>
         <string>PM</string>
         <key>info</key>
-        <string>Atmospheric particulate matter also known as particulate matter or particulates are microscopic solid or liquid matter suspended in the Earth's atmosphere.
+        <string>Atmospheric particulate matter also known as particulates are microscopic matter suspended in the Earth's atmosphere, it can be solid or liquid. The mixture of particulate and air is commonly refered as aerosol.
 
-The term aerosol commonly refers to the particulate/air mixture.
 Sources of particulate matter can be man-made or natural and they have impacts on climate and precipitation that adversely affect human health.
 
 The International Agency for Research on Cancer and World Health Organization designate airborne particulates a Group 1 carcinogen.
@@ -38,7 +37,7 @@ There is no safe level of particulates and the smaller are particularly deadly a
 Some particulates occur naturally, originating from volcanoes, dust storms, forest and grassland fires, living vegetation, and sea spray.
 Human activities, such as the burning of fossil fuels in vehicles, power plants and various industrial processes also generate significant amounts of particulates.
 
-Because salt spray over the oceans is the overwhelmingly most common form of particulate in the atmosphere, aerosols made by human activities currently account for about 10 percent of the total mass of aerosols the atmosphere.</string>
+Because salt spray over the oceans is the overwhelmingly most common form of particulate in the atmosphere, aerosols made by human activities currently account for about 10 percent of the total mass of aerosols.</string>
     </dict>
 </dict>
 </plist>

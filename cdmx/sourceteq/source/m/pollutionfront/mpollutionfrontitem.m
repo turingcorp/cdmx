@@ -56,8 +56,11 @@
     
     if(self.pollutant)
     {
-        mpollutionfrontitemoption *optionpollutant = [mpollutionfrontitemoption pollutant:self.pollutant];
-        [options addObject:optionpollutant];
+        if(self.pollutant.serverid.integerValue)
+        {
+            mpollutionfrontitemoption *optionpollutant = [mpollutionfrontitemoption pollutant:self.pollutant];
+            [options addObject:optionpollutant];
+        }
     }
     else
     {

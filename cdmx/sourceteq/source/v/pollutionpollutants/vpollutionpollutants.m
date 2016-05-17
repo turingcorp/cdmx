@@ -6,8 +6,8 @@
 #import "ecollectionreusable.h"
 #import "efont.h"
 
-static NSInteger const pollutantsheaderheight = 60;
-static NSInteger const pollutantcollectionbottom = 120;
+static NSInteger const pollutantsheaderheight = 130;
+static NSInteger const pollutantcollectionbottom = 40;
 
 @interface vpollutionpollutants ()
 
@@ -42,7 +42,7 @@ static NSInteger const pollutantcollectionbottom = 120;
                            if(width)
                            {
                                NSDictionary *pollutants = [NSDictionary dictionaryWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"pollutants" withExtension:@"plist"]];
-                               NSDictionary *attributes = @{NSFontAttributeName:[UIFont regularsize:16]};
+                               NSDictionary *attributes = @{NSFontAttributeName:[UIFont regularsize:15]};
                                
                                for(mpollutionpollutant *item in welf.controller.items)
                                {
