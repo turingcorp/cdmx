@@ -13,4 +13,15 @@
     return self;
 }
 
+#pragma mark -
+#pragma mark index
+
+-(NSString*)recommendations
+{
+    NSDictionary *allrecom = [self allrecomendations];
+    NSString *string = allrecom[@"acceptable"];
+    
+    return string;
+}
+
 @end

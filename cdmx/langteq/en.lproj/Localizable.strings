@@ -61,7 +61,7 @@
 
 "vpollution_radio_chart_title"="IMECA";
 "vpollution_front_header_button_imeca"="About IMECA";
-"vpollution_front_header_button_recommendation"="Recommendations";
+"vpollution_front_header_button_recommendation"="Precautions";
 "vpollution_front_header_button_pollutant"="About %@";
 "vpollution_front_header_button_allpollutants"="Current pollutants";
 "vpollutionimeca_title"="IMECA";

@@ -66,4 +66,18 @@ static NSInteger const maxpointsdisaster = 200;
     return string;
 }
 
+#pragma mark public
+
+-(NSDictionary*)allrecomendations
+{
+    NSDictionary *recom = [NSDictionary dictionaryWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"recommendations" withExtension:@"plist"]];
+    
+    return recom;
+}
+
+-(NSString*)recommendations
+{
+    return @"";
+}
+
 @end

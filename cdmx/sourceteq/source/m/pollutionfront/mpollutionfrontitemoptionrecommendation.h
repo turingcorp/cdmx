@@ -5,4 +5,6 @@
 
 -(instancetype)init:(mpollutionindex*)index;
 
+@property(weak, nonatomic)mpollutionindex *index;
+
 @end
