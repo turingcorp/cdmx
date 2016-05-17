@@ -25,6 +25,7 @@
 		DA24B7BC1CE7BFE00008DE86 /* eannotationview.m in Sources */ = {isa = PBXBuildFile; fileRef = DA24B7BB1CE7BFE00008DE86 /* eannotationview.m */; };
 		DA3F6BB51CEB54D800625BE9 /* cpollutionrecommendation.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3F6BB41CEB54D800625BE9 /* cpollutionrecommendation.m */; };
 		DA3F6BB91CEB599D00625BE9 /* vpollutionrecommendation.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3F6BB81CEB599D00625BE9 /* vpollutionrecommendation.m */; };
+		DA3F6BBD1CEB8E0F00625BE9 /* cmenu.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3F6BBC1CEB8E0F00625BE9 /* cmenu.m */; };
 		DA4096411CDBF8880001D696 /* generic.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA4096401CDBF8880001D696 /* generic.xcassets */; };
 		DA4096471CDBFA1C0001D696 /* vbutton.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4096461CDBFA1C0001D696 /* vbutton.m */; };
 		DA40964A1CDBFC550001D696 /* ccontroller.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4096491CDBFC550001D696 /* ccontroller.m */; };
@@ -164,6 +165,8 @@
 		DA3F6BB41CEB54D800625BE9 /* cpollutionrecommendation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cpollutionrecommendation.m; sourceTree = "<group>"; };
 		DA3F6BB71CEB599D00625BE9 /* vpollutionrecommendation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vpollutionrecommendation.h; sourceTree = "<group>"; };
 		DA3F6BB81CEB599D00625BE9 /* vpollutionrecommendation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vpollutionrecommendation.m; sourceTree = "<group>"; };
+		DA3F6BBB1CEB8E0F00625BE9 /* cmenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cmenu.h; sourceTree = "<group>"; };
+		DA3F6BBC1CEB8E0F00625BE9 /* cmenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cmenu.m; sourceTree = "<group>"; };
 		DA4096401CDBF8880001D696 /* generic.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = generic.xcassets; sourceTree = "<group>"; };
 		DA4096451CDBFA1C0001D696 /* vbutton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vbutton.h; sourceTree = "<group>"; };
 		DA4096461CDBFA1C0001D696 /* vbutton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vbutton.m; sourceTree = "<group>"; };
@@ -463,6 +466,15 @@
 				DA3F6BB81CEB599D00625BE9 /* vpollutionrecommendation.m */,
 			);
 			path = pollutionrecommendation;
+			sourceTree = "<group>";
+		};
+		DA3F6BBA1CEB8E0500625BE9 /* menu */ = {
+			isa = PBXGroup;
+			children = (
+				DA3F6BBB1CEB8E0F00625BE9 /* cmenu.h */,
+				DA3F6BBC1CEB8E0F00625BE9 /* cmenu.m */,
+			);
+			path = menu;
 			sourceTree = "<group>";
 		};
 		DA8708251CBE8245000C08E1 /* a */ = {
@@ -851,6 +863,7 @@
 		DAD33FD21CBC83E300C87502 /* c */ = {
 			isa = PBXGroup;
 			children = (
+				DA3F6BBA1CEB8E0500625BE9 /* menu */,
 				DA20ACE41CD7FBBF00754956 /* pollution */,
 				DACEDEDF1CBC895B0088AA8B /* main */,
 			);
@@ -1152,6 +1165,7 @@
 				DAC21D521CE4C35B00D92161 /* vpollutionfrontlayoutdetail.m in Sources */,
 				DAC21D5F1CE4D15300D92161 /* mpollutionfrontitem.m in Sources */,
 				DAC21D1E1CE4C2AA00D92161 /* mpollutionmenuitem.m in Sources */,
+				DA3F6BBD1CEB8E0F00625BE9 /* cmenu.m in Sources */,
 				DAC21D4B1CE4C35B00D92161 /* vpollutionchartercell.m in Sources */,
 				DAC21D471CE4C35B00D92161 /* vpollution.m in Sources */,
 				DAEA59FD1CEA3E8E00584526 /* mpollutionfrontitemoption.m in Sources */,
