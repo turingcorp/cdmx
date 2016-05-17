@@ -57,7 +57,7 @@
 
 -(void)actionbuttonleft:(UIButton*)button
 {
-    
+    [self.controller menu];
 }
 
 -(void)actionbuttonright:(UIButton*)button

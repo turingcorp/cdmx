@@ -1,4 +1,5 @@
 #import "cradiation.h"
+#import "cmain.h"
 #import "vradiation.h"
 
 @interface cradiation ()
@@ -32,6 +33,13 @@
 -(void)loadView
 {
     self.view = [[vradiation alloc] init:self];
+}
+
+#pragma mark public
+
+-(void)menu
+{
+    [[cmain singleton].pages menu];
 }
 
 @end

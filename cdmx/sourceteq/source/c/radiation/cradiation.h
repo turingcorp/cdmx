@@ -2,4 +2,6 @@
 
 @interface cradiation:UIViewController
 
+-(void)menu;
+
 @end

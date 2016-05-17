@@ -1,4 +1,5 @@
 #import "mmenusectionitemradiation.h"
+#import "cradiation.h"
 
 @interface mmenusectionitem ()
 
@@ -17,5 +18,16 @@
     
     return self;
 }
+
+#pragma mark -
+#pragma mark item
+
+-(UIViewController*)controller
+{
+    cradiation *controller = [[cradiation alloc] init];
+    
+    return controller;
+}
+
 
 @end
