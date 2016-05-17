@@ -5,7 +5,8 @@
 -(instancetype)init:(ccontroller*)controller
 {
     self = [super init:controller];
-    [self setBackgroundColor:[UIColor clearColor]];
+    [self setBackgroundColor:[UIColor colorWithWhite:1 alpha:0.5]];
+    [self setUserInteractionEnabled:NO];
     
     UIImageView *logo = [[UIImageView alloc] init];
     [logo setUserInteractionEnabled:NO];

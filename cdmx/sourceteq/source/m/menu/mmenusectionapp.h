@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 #import "mmenusection.h"
 
-@interface mmenusectionitemmobility:mmenusection
+@interface mmenusectionapp:mmenusection
 
 @end

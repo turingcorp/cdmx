@@ -32,7 +32,6 @@ static NSInteger const menuinteritem = -1;
     [flow setMinimumLineSpacing:menuinteritem];
     [flow setMinimumInteritemSpacing:0];
     [flow setScrollDirection:UICollectionViewScrollDirectionVertical];
-    [flow setSectionInset:UIEdgeInsetsMake(0, 0, menucollectionbottom, 0)];
     
     UICollectionView *collection = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flow];
     [collection setClipsToBounds:YES];
@@ -47,14 +46,14 @@ static NSInteger const menuinteritem = -1;
     [collection registerClass:[vmenuheader class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:[vmenuheader reusableidentifier]];
     self.collection = collection;
 
-    [self addSubview:collection];
+    [self insertSubview:collection belowSubview:self.bar];
     
     NSDictionary *views = @{@"col":collection, @"bar":self.bar};
     NSDictionary *metrics = @{};
     
     self.layoutbarheight = [NSLayoutConstraint constraintWithItem:self.bar attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:menubarheight];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[bar]-0-[col]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraint:self.layoutbarheight];
     
     return self;
@@ -64,14 +63,14 @@ static NSInteger const menuinteritem = -1;
 
 -(mmenusection*)sectionforindex:(NSIndexPath*)index
 {
-    mmenusection *model = self.controller.model.sections[index.section];
+    mmenusection *model = self.controller.model.sections[index.section - 1];
     
     return model;
 }
 
 -(mmenusectionitem*)itemforindex:(NSIndexPath*)index
 {
-    mmenusectionitem *model = self.controller.model.sections[index.section].items[index.item];
+    mmenusectionitem *model = self.controller.model.sections[index.section - 1].items[index.item];
     
     return model;
 }
@@ -82,16 +81,34 @@ static NSInteger const menuinteritem = -1;
 -(void)scrollViewDidScroll:(UIScrollView*)scroll
 {
     CGFloat offsety = scroll.contentOffset.y;
-    CGFloat newbarheight = menubarheight + offsety;
+    CGFloat newbarheight = menubarheight - offsety;
     
     if(newbarheight < navbarheightmin)
     {
         newbarheight = navbarheightmin;
     }
-    
-    NSLog(@"%@", @(newbarheight));
+    else if(newbarheight > menubarheight)
+    {
+        newbarheight = menubarheight;
+    }
     
     self.layoutbarheight.constant = newbarheight;
+}
+
+-(UIEdgeInsets)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout insetForSectionAtIndex:(NSInteger)section
+{
+    UIEdgeInsets insets;
+    
+    if(section)
+    {
+        insets = UIEdgeInsetsMake(0, 0, menucollectionbottom, 0);
+    }
+    else
+    {
+        insets = UIEdgeInsetsMake(menubarheight, 0, 0, 0);
+    }
+    
+    return insets;
 }
 
 -(CGSize)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout sizeForItemAtIndexPath:(NSIndexPath*)index
@@ -105,21 +122,33 @@ static NSInteger const menuinteritem = -1;
 -(CGSize)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout referenceSizeForHeaderInSection:(NSInteger)section
 {
     CGFloat width = col.bounds.size.width;
-    CGSize size = CGSizeMake(width, menuheaderheight);
+    CGFloat height = 0;
+    
+    if(section)
+    {
+        height = menuheaderheight;
+    }
+    
+    CGSize size = CGSizeMake(width, height);
     
     return size;
 }
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView*)col
 {
-    NSInteger countsections = self.controller.model.sections.count;
+    NSInteger countsections = self.controller.model.sections.count + 1;
     
     return countsections;
 }
 
 -(NSInteger)collectionView:(UICollectionView*)col numberOfItemsInSection:(NSInteger)section
 {
-    NSInteger countitems = self.controller.model.sections[section].items.count;
+    NSInteger countitems = 0;
+    
+    if(section)
+    {
+        countitems = self.controller.model.sections[section - 1].items.count;
+    }
     
     return countitems;
 }

@@ -77,11 +77,13 @@
 
 "mmenu_section_city"="City";
 "mmenu_section_mobility"="Mobility";
+"mmenu_section_app"="App";
 "mmenu_item_pollution"="Pollution";
 "mmenu_item_radiation"="UV Radiation";
 "mmenu_item_climate"="Weather";
 "mmenu_item_nodrive"="No drive";
 "mmenu_item_ecobici"="ecobici";
+"mmenu_item_about"="About";
 
 "api_error_nodata"="Server no responding, try again later";
 "api_error_invalidjson"="Trouble reaching server, try again later";
