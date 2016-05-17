@@ -7,11 +7,12 @@
 #import "eannotationview.h"
 
 static CGFloat const pollutionmapspansize = 0.02;
+static CGFloat const latitudezocalo = 19.432503;
+static CGFloat const longitudezocalo = -99.133223;
 static NSInteger const mapheaderheight = 150;
 static NSInteger const mapcellheight = 50;
 static NSInteger const mapcollectionbottom = 120;
 static NSInteger const mapinteritemspace = -1;
-static NSInteger const maptimeafterannotations = 2;
 
 @implementation vpollutionmap
 {
@@ -27,7 +28,10 @@ static NSInteger const maptimeafterannotations = 2;
     rect1 = CGRectMake(0, 0, 1, 1);
   
     vpollutionmapdisplay *display = [[vpollutionmapdisplay alloc] init];
+    MKCoordinateRegion region = MKCoordinateRegionMake(CLLocationCoordinate2DMake(latitudezocalo, longitudezocalo), self.mapspan);
+    [display setRegion:region animated:NO];
     [display setDelegate:self];
+    
     self.display = display;
     userupdated = NO;
     
@@ -274,7 +278,7 @@ static NSInteger const maptimeafterannotations = 2;
                    {
                        NSArray<mpollutionmapitemannotation*> *annotations = [welf.model annotations];
                        
-                       dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC * maptimeafterannotations), dispatch_get_main_queue(),
+                       dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC), dispatch_get_main_queue(),
                                       ^
                                       {
                                           [welf.display addAnnotations:annotations];
