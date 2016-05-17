@@ -14,7 +14,7 @@
     [label setBackgroundColor:[UIColor clearColor]];
     [label setUserInteractionEnabled:NO];
     [label setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [label setFont:[UIFont boldsize:16]];
+    [label setFont:[UIFont boldsize:22]];
     [label setTextColor:[UIColor main]];
     [label setTextAlignment:NSTextAlignmentCenter];
     self.label = label;
@@ -25,7 +25,7 @@
     NSDictionary *metrics = @{};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[label]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[label(30)]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[label]-0-|" options:0 metrics:metrics views:views]];
     
     return self;
 }

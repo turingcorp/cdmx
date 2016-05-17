@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<array>
-    <key>1018</key>
     <dict>
-        <key>symbol</key>
-        <string>O3</string>
-        <key>info</key>
-        <string>hello world</string>
+        <key>1018</key>
+        <dict>
+            <key>symbol</key>
+            <string>O3</string>
+            <key>info</key>
+            <string>Ozone precursors are a group of pollutants, predominantly those emitted during the combustion of fossil fuels. Ground-level ozone pollution (tropospheric ozone) is created near the Earth&apos;s surface by the action of daylight UV rays on these precursors. The ozone at ground level is primarily from fossil fuel precursors, but methane is a natural precursor, and the very low natural background level of ozone at ground level is considered safe.
+                
+                There is a great deal of evidence to show that ground level ozone can harm lung function and irritate the respiratory system.
+                Exposure to ozone (and the pollutants that produce it) is linked to premature death, asthma, bronchitis, heart attack, and other cardiopulmonary problems.
+                
+                Long-term exposure to ozone has been shown to increase risk of death from respiratory illness. A study of 450,000 people living in United States cities saw a significant correlation between ozone levels and respiratory illness over the 18-year follow-up period.
+                The study revealed that people living in cities with high ozone levels, such as Houston or Los Angeles, had an over 30% increased risk of dying from lung disease</string>
+        </dict>
     </dict>
-</array>
 </plist>

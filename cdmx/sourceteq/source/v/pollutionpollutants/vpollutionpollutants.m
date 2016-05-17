@@ -4,9 +4,9 @@
 #import "vpollutionpollutantsheader.h"
 #import "ecollectioncell.h"
 #import "ecollectionreusable.h"
+#import "efont.h"
 
-static NSInteger const pollutantsheaderheight = 100;
-static NSInteger const pollutantscellheight = 300;
+static NSInteger const pollutantsheaderheight = 60;
 static NSInteger const pollutantcollectionbottom = 120;
 
 @interface vpollutionpollutants ()
@@ -25,11 +25,59 @@ static NSInteger const pollutantcollectionbottom = 120;
     [self.bar buttonback];
     [self.bar title:NSLocalizedString(@"vpollution_pollutants_title", nil)];
     
+    return self;
+}
+
+-(void)layoutSubviews
+{
+    if(!self.collection)
+    {
+        __weak typeof(self) welf = self;
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
+                       ^
+                       {
+                           CGFloat width = welf.bounds.size.width;
+                           
+                           if(width)
+                           {
+                               NSDictionary *pollutants = [NSDictionary dictionaryWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"pollutants" withExtension:@"plist"]];
+                               NSDictionary *attributes = @{NSFontAttributeName:[UIFont regularsize:16]};
+                               
+                               for(mpollutionpollutant *item in welf.controller.items)
+                               {
+                                   NSNumber *pollutantid = item.serverid;
+                                   NSString *pollutantkey = [NSString stringWithFormat:@"%@", pollutantid];
+                                   NSDictionary *rawpollutant = pollutants[pollutantkey];
+                                   
+                                   if(rawpollutant)
+                                   {
+                                       NSString *info = rawpollutant[@"info"];
+                                       [item createattributedstring:info attributes:attributes width:width];
+                                   }
+                               }
+                               
+                               dispatch_async(dispatch_get_main_queue(),
+                                              ^
+                                              {
+                                                  [welf addcollection];
+                                              });
+                           }
+                       });
+    }
+    
+    [super layoutSubviews];
+}
+
+#pragma mark functionality
+
+-(void)addcollection
+{
     UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
     [flow setFooterReferenceSize:CGSizeZero];
     [flow setMinimumInteritemSpacing:0];
     [flow setMinimumLineSpacing:0];
-    [flow setSectionInset:UIEdgeInsetsZero];
+    [flow setSectionInset:UIEdgeInsetsMake(0, 0, pollutantcollectionbottom, 0)];
     [flow setScrollDirection:UICollectionViewScrollDirectionVertical];
     
     UICollectionView *collection = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flow];
@@ -52,11 +100,7 @@ static NSInteger const pollutantcollectionbottom = 120;
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[bar]-0-[col]-0-|" options:0 metrics:metrics views:views]];
-    
-    return self;
 }
-
-#pragma mark functionality
 
 -(mpollutionpollutant*)modelforindex:(NSIndexPath*)index
 {
@@ -70,8 +114,9 @@ static NSInteger const pollutantcollectionbottom = 120;
 
 -(CGSize)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout sizeForItemAtIndexPath:(NSIndexPath*)index
 {
+    mpollutionpollutant *model = [self modelforindex:index];
     CGFloat width = col.bounds.size.width;
-    CGSize size = CGSizeMake(width, pollutantscellheight);
+    CGSize size = CGSizeMake(width, model.cellheight);
     
     return size;
 }
@@ -107,7 +152,9 @@ static NSInteger const pollutantcollectionbottom = 120;
 
 -(UICollectionViewCell*)collectionView:(UICollectionView*)col cellForItemAtIndexPath:(NSIndexPath*)index
 {
+    mpollutionpollutant *model = [self modelforindex:index];
     vpollutionpollutantscell *cell = [col dequeueReusableCellWithReuseIdentifier:[vpollutionpollutantscell reusableidentifier] forIndexPath:index];
+    [cell config:model];
     
     return cell;
 }
