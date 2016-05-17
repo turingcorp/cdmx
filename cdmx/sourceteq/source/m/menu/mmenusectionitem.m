@@ -9,4 +9,13 @@
 
 @implementation mmenusectionitem
 
+#pragma mark public
+
+-(UIViewController*)controller
+{
+    UIViewController *controller = [[UIViewController alloc] init];
+    
+    return controller;
+}
+
 @end

@@ -171,6 +171,13 @@ static NSInteger const menuinteritem = -1;
     return cell;
 }
 
+-(void)collectionView:(UICollectionView*)col didSelectItemAtIndexPath:(NSIndexPath*)index
+{
+    mmenusectionitem *model = [self itemforindex:index];
+    UIViewController *controller = [model controller];
+    [self.controller menuselected:controller];
+}
+
 #pragma mark view
 
 -(vviewbar*)loadbar

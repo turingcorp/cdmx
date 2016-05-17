@@ -1,4 +1,5 @@
 #import "mmenusectionitempollution.h"
+#import "cpollution.h"
 
 @interface mmenusectionitem ()
 
@@ -16,6 +17,16 @@
     self.asset = @"menu_city_pollution";
     
     return self;
+}
+
+#pragma mark -
+#pragma mark item
+
+-(UIViewController*)controller
+{
+    cpollution *controller = [[cpollution alloc] init];
+    
+    return controller;
 }
 
 @end

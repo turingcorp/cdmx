@@ -44,4 +44,11 @@
     self.view = [[vmenu alloc] init:self];
 }
 
+#pragma mark public
+
+-(void)menuselected:(UIViewController*)controller
+{
+    [[cmain singleton].pages changecontroller:controller direction:UIPageViewControllerNavigationDirectionForward animated:YES];
+}
+
 @end
