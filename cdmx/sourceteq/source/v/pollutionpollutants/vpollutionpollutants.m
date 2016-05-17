@@ -7,7 +7,7 @@
 #import "efont.h"
 
 static NSInteger const pollutantsheaderheight = 130;
-static NSInteger const pollutantcollectionbottom = 40;
+static NSInteger const pollutantcollectionbottom = 60;
 
 @interface vpollutionpollutants ()
 
