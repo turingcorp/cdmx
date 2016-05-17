@@ -5,10 +5,13 @@
 #import "vmenubar.h"
 #import "ecollectionreusable.h"
 #import "ecollectioncell.h"
+#import "genericconstants.h"
 
+static NSInteger const menubarheight = 150;
 static NSInteger const menucollectionbottom = 40;
 static NSInteger const menuheaderheight = 32;
 static NSInteger const menucellheight = 60;
+static NSInteger const menuinteritem = -1;
 
 @interface vmenu ()
 
@@ -26,7 +29,7 @@ static NSInteger const menucellheight = 60;
 
     UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
     [flow setFooterReferenceSize:CGSizeZero];
-    [flow setMinimumLineSpacing:0];
+    [flow setMinimumLineSpacing:menuinteritem];
     [flow setMinimumInteritemSpacing:0];
     [flow setScrollDirection:UICollectionViewScrollDirectionVertical];
     [flow setSectionInset:UIEdgeInsetsMake(0, 0, menucollectionbottom, 0)];
@@ -49,8 +52,10 @@ static NSInteger const menucellheight = 60;
     NSDictionary *views = @{@"col":collection, @"bar":self.bar};
     NSDictionary *metrics = @{};
     
+    self.layoutbarheight = [NSLayoutConstraint constraintWithItem:self.bar attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:menubarheight];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[bar]-0-[col]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraint:self.layoutbarheight];
     
     return self;
 }
@@ -73,6 +78,21 @@ static NSInteger const menucellheight = 60;
 
 #pragma mark -
 #pragma mark col del
+
+-(void)scrollViewDidScroll:(UIScrollView*)scroll
+{
+    CGFloat offsety = scroll.contentOffset.y;
+    CGFloat newbarheight = menubarheight + offsety;
+    
+    if(newbarheight < navbarheightmin)
+    {
+        newbarheight = navbarheightmin;
+    }
+    
+    NSLog(@"%@", @(newbarheight));
+    
+    self.layoutbarheight.constant = newbarheight;
+}
 
 -(CGSize)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout sizeForItemAtIndexPath:(NSIndexPath*)index
 {

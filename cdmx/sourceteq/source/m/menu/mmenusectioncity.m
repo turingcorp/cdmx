@@ -1,5 +1,7 @@
 #import "mmenusectioncity.h"
 #import "mmenusectionitempollution.h"
+#import "mmenusectionitemradiation.h"
+#import "mmenusectionitemclimate.h"
 
 @interface mmenusection ()
 
@@ -15,7 +17,9 @@
     self = [super init];
     self.name = NSLocalizedString(@"mmenu_section_city", nil);
     self.items = @[
-                   [[mmenusectionitempollution alloc] init]
+                   [[mmenusectionitempollution alloc] init],
+                   [[mmenusectionitemradiation alloc] init],
+                   [[mmenusectionitemclimate alloc] init]
                    ];
     
     return self;

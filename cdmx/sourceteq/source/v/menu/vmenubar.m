@@ -1,7 +1,5 @@
 #import "vmenubar.h"
 
-static NSInteger const menubarheight = 150;
-
 @implementation vmenubar
 
 -(instancetype)init:(ccontroller*)controller
@@ -9,14 +7,23 @@ static NSInteger const menubarheight = 150;
     self = [super init:controller];
     [self setBackgroundColor:[UIColor clearColor]];
     
-    return self;
-}
-
--(CGSize)intrinsicContentSize
-{
-    CGSize size = CGSizeMake(UIViewNoIntrinsicMetric, menubarheight);
+    UIImageView *logo = [[UIImageView alloc] init];
+    [logo setUserInteractionEnabled:NO];
+    [logo setClipsToBounds:YES];
+    [logo setContentMode:UIViewContentModeCenter];
+    [logo setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [logo setImage:[[UIImage imageNamed:@"menu_city_pollution"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+    [logo setTintColor:[UIColor blueColor]];
     
-    return size;
+    [self addSubview:logo];
+    
+    NSDictionary *views = @{@"logo":logo};
+    NSDictionary *metrics = @{};
+    
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[logo]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[logo(120)]-10-|" options:0 metrics:metrics views:views]];
+    
+    return self;
 }
 
 @end
