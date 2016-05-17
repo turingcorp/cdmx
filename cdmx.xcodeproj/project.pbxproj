@@ -30,6 +30,8 @@
 		DA3F6BC51CEB902C00625BE9 /* mmenu.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3F6BC41CEB902C00625BE9 /* mmenu.m */; };
 		DA3F6BC81CEB903A00625BE9 /* mmenusection.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3F6BC71CEB903A00625BE9 /* mmenusection.m */; };
 		DA3F6BCB1CEB904800625BE9 /* mmenusectionitem.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3F6BCA1CEB904800625BE9 /* mmenusectionitem.m */; };
+		DA3F6BCE1CEB914F00625BE9 /* mmenusectioncity.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3F6BCD1CEB914F00625BE9 /* mmenusectioncity.m */; };
+		DA3F6BD41CEB918E00625BE9 /* mmenusectionitempollution.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3F6BD31CEB918E00625BE9 /* mmenusectionitempollution.m */; };
 		DA4096411CDBF8880001D696 /* generic.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA4096401CDBF8880001D696 /* generic.xcassets */; };
 		DA4096471CDBFA1C0001D696 /* vbutton.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4096461CDBFA1C0001D696 /* vbutton.m */; };
 		DA40964A1CDBFC550001D696 /* ccontroller.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4096491CDBFC550001D696 /* ccontroller.m */; };
@@ -179,6 +181,10 @@
 		DA3F6BC71CEB903A00625BE9 /* mmenusection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mmenusection.m; sourceTree = "<group>"; };
 		DA3F6BC91CEB904800625BE9 /* mmenusectionitem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mmenusectionitem.h; sourceTree = "<group>"; };
 		DA3F6BCA1CEB904800625BE9 /* mmenusectionitem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mmenusectionitem.m; sourceTree = "<group>"; };
+		DA3F6BCC1CEB914F00625BE9 /* mmenusectioncity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mmenusectioncity.h; sourceTree = "<group>"; };
+		DA3F6BCD1CEB914F00625BE9 /* mmenusectioncity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mmenusectioncity.m; sourceTree = "<group>"; };
+		DA3F6BD21CEB918E00625BE9 /* mmenusectionitempollution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mmenusectionitempollution.h; sourceTree = "<group>"; };
+		DA3F6BD31CEB918E00625BE9 /* mmenusectionitempollution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mmenusectionitempollution.m; sourceTree = "<group>"; };
 		DA4096401CDBF8880001D696 /* generic.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = generic.xcassets; sourceTree = "<group>"; };
 		DA4096451CDBFA1C0001D696 /* vbutton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vbutton.h; sourceTree = "<group>"; };
 		DA4096461CDBFA1C0001D696 /* vbutton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vbutton.m; sourceTree = "<group>"; };
@@ -507,6 +513,10 @@
 				DA3F6BC71CEB903A00625BE9 /* mmenusection.m */,
 				DA3F6BC91CEB904800625BE9 /* mmenusectionitem.h */,
 				DA3F6BCA1CEB904800625BE9 /* mmenusectionitem.m */,
+				DA3F6BCC1CEB914F00625BE9 /* mmenusectioncity.h */,
+				DA3F6BCD1CEB914F00625BE9 /* mmenusectioncity.m */,
+				DA3F6BD21CEB918E00625BE9 /* mmenusectionitempollution.h */,
+				DA3F6BD31CEB918E00625BE9 /* mmenusectionitempollution.m */,
 			);
 			path = menu;
 			sourceTree = "<group>";
@@ -1204,6 +1214,7 @@
 				DAC21D521CE4C35B00D92161 /* vpollutionfrontlayoutdetail.m in Sources */,
 				DAC21D5F1CE4D15300D92161 /* mpollutionfrontitem.m in Sources */,
 				DAC21D1E1CE4C2AA00D92161 /* mpollutionmenuitem.m in Sources */,
+				DA3F6BCE1CEB914F00625BE9 /* mmenusectioncity.m in Sources */,
 				DA3F6BBD1CEB8E0F00625BE9 /* cmenu.m in Sources */,
 				DAC21D4B1CE4C35B00D92161 /* vpollutionchartercell.m in Sources */,
 				DAC21D471CE4C35B00D92161 /* vpollution.m in Sources */,
@@ -1213,6 +1224,7 @@
 				DAEA5A001CEA407300584526 /* mpollutionfrontitemoptionimeca.m in Sources */,
 				DA9274681CE4E73C0005138A /* mpollutionchartitempoint.m in Sources */,
 				DAEA5A061CEA40A300584526 /* mpollutionfrontitemoptionpollutant.m in Sources */,
+				DA3F6BD41CEB918E00625BE9 /* mmenusectionitempollution.m in Sources */,
 				DA8E6B881CDA8F5D009100EE /* vradiochart.m in Sources */,
 				DAEA59F41CEA041900584526 /* mpollutionpollutant.m in Sources */,
 				DAA0C67A1CD978BD00880D3E /* gtexture.m in Sources */,

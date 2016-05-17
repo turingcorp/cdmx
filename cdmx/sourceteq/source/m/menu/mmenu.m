@@ -1,4 +1,5 @@
 #import "mmenu.h"
+#import "mmenusectioncity.h"
 
 @interface mmenu ()
 
@@ -11,7 +12,9 @@
 -(instancetype)init
 {
     self = [super init];
-    self.sections = @[];
+    self.sections = @[
+                      [[mmenusectioncity alloc] init]
+                      ];
     
     return self;
 }
