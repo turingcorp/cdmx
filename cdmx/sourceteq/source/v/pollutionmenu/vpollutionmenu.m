@@ -17,6 +17,14 @@ static NSInteger const menucellwidth = 50;
     self.model = [[mpollutionmenu alloc] init];
     
     UIButton *buttonmenu = [[UIButton alloc] init];
+    [buttonmenu setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [buttonmenu setImage:[[UIImage imageNamed:@"generic_menu"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
+    [buttonmenu setImage:[[UIImage imageNamed:@"generic_menu"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateHighlighted];
+    [buttonmenu setClipsToBounds:YES];
+    [buttonmenu.imageView setContentMode:UIViewContentModeScaleAspectFit];
+    [buttonmenu.imageView setClipsToBounds:YES];
+    [buttonmenu.imageView setTintColor:[UIColor main]];
+    [buttonmenu setImageEdgeInsets:UIEdgeInsetsMake(14, 0, 13, 15)];
     
     UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
     [flow setHeaderReferenceSize:CGSizeZero];
@@ -44,14 +52,17 @@ static NSInteger const menucellwidth = 50;
     
     [self addSubview:border];
     [self addSubview:collection];
+    [self addSubview:buttonmenu];
     
-    NSDictionary *views = @{@"col":collection, @"border":border};
+    NSDictionary *views = @{@"col":collection, @"border":border, @"button":buttonmenu};
     NSDictionary *metrics = @{};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[border]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[border(1)]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[button(60)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[button]-0-|" options:0 metrics:metrics views:views]];
     
     [collection selectItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0] animated:NO scrollPosition:UICollectionViewScrollPositionNone];
     
