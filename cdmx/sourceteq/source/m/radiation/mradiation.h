@@ -1,0 +1,13 @@
+//
+//  mradiation.h
+//  cdmx
+//
+//  Created by zero on 5/17/16.
+//  Copyright © 2016 Iturbide. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+@interface mradiation : NSObject
+
+@end

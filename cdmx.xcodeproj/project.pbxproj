@@ -48,6 +48,8 @@
 		DA3F6C021CEBCCA100625BE9 /* vradiationbar.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3F6C011CEBCCA100625BE9 /* vradiationbar.m */; };
 		DA3F6C051CEBD3B400625BE9 /* vradiationreactor.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3F6C041CEBD3B400625BE9 /* vradiationreactor.m */; };
 		DA3F6C081CEBD60900625BE9 /* vradiationreactorsun.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3F6C071CEBD60900625BE9 /* vradiationreactorsun.m */; };
+		DA3F6C0C1CEBDEA400625BE9 /* mradiation.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3F6C0B1CEBDEA400625BE9 /* mradiation.m */; };
+		DA3F6C0F1CEBDEBB00625BE9 /* mradiationreactor.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3F6C0E1CEBDEBB00625BE9 /* mradiationreactor.m */; };
 		DA4096411CDBF8880001D696 /* generic.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA4096401CDBF8880001D696 /* generic.xcassets */; };
 		DA4096471CDBFA1C0001D696 /* vbutton.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4096461CDBFA1C0001D696 /* vbutton.m */; };
 		DA40964A1CDBFC550001D696 /* ccontroller.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4096491CDBFC550001D696 /* ccontroller.m */; };
@@ -232,6 +234,10 @@
 		DA3F6C041CEBD3B400625BE9 /* vradiationreactor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vradiationreactor.m; sourceTree = "<group>"; };
 		DA3F6C061CEBD60900625BE9 /* vradiationreactorsun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vradiationreactorsun.h; sourceTree = "<group>"; };
 		DA3F6C071CEBD60900625BE9 /* vradiationreactorsun.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vradiationreactorsun.m; sourceTree = "<group>"; };
+		DA3F6C0A1CEBDEA400625BE9 /* mradiation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mradiation.h; sourceTree = "<group>"; };
+		DA3F6C0B1CEBDEA400625BE9 /* mradiation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mradiation.m; sourceTree = "<group>"; };
+		DA3F6C0D1CEBDEBB00625BE9 /* mradiationreactor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mradiationreactor.h; sourceTree = "<group>"; };
+		DA3F6C0E1CEBDEBB00625BE9 /* mradiationreactor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mradiationreactor.m; sourceTree = "<group>"; };
 		DA4096401CDBF8880001D696 /* generic.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = generic.xcassets; sourceTree = "<group>"; };
 		DA4096451CDBFA1C0001D696 /* vbutton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vbutton.h; sourceTree = "<group>"; };
 		DA4096461CDBFA1C0001D696 /* vbutton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vbutton.m; sourceTree = "<group>"; };
@@ -608,6 +614,17 @@
 				DA3F6C041CEBD3B400625BE9 /* vradiationreactor.m */,
 				DA3F6C061CEBD60900625BE9 /* vradiationreactorsun.h */,
 				DA3F6C071CEBD60900625BE9 /* vradiationreactorsun.m */,
+			);
+			path = radiation;
+			sourceTree = "<group>";
+		};
+		DA3F6C091CEBDE9B00625BE9 /* radiation */ = {
+			isa = PBXGroup;
+			children = (
+				DA3F6C0A1CEBDEA400625BE9 /* mradiation.h */,
+				DA3F6C0B1CEBDEA400625BE9 /* mradiation.m */,
+				DA3F6C0D1CEBDEBB00625BE9 /* mradiationreactor.h */,
+				DA3F6C0E1CEBDEBB00625BE9 /* mradiationreactor.m */,
 			);
 			path = radiation;
 			sourceTree = "<group>";
@@ -1010,6 +1027,7 @@
 		DAD33FD41CBC83E300C87502 /* m */ = {
 			isa = PBXGroup;
 			children = (
+				DA3F6C091CEBDE9B00625BE9 /* radiation */,
 				DA3F6BC21CEB902200625BE9 /* menu */,
 				DAEA59F11CEA01E300584526 /* pollutionpollutant */,
 				DAC21CCF1CE4C2AA00D92161 /* pollution */,
@@ -1307,6 +1325,7 @@
 				DAC21D131CE4C2AA00D92161 /* mpollutionchartitemtoday.m in Sources */,
 				DAB26D821CE0F98200E1580F /* mdbselect.m in Sources */,
 				DA20AD031CD80B5100754956 /* enotification.m in Sources */,
+				DA3F6C0C1CEBDEA400625BE9 /* mradiation.m in Sources */,
 				DAC21D1F1CE4C2AA00D92161 /* mpollutionmenuitemchart.m in Sources */,
 				DAA0C6801CD978CF00880D3E /* gspatialtexture.m in Sources */,
 				DA86ACDE1CE3A20B00908755 /* gspatialcolor.m in Sources */,
@@ -1325,6 +1344,7 @@
 				DAEA59FD1CEA3E8E00584526 /* mpollutionfrontitemoption.m in Sources */,
 				DA05C6D21CE632DD00A22A5E /* vpollutionmapdisplay.m in Sources */,
 				DAEA5A0C1CEA66FE00584526 /* cpollutionpollutants.m in Sources */,
+				DA3F6C0F1CEBDEBB00625BE9 /* mradiationreactor.m in Sources */,
 				DAEA5A001CEA407300584526 /* mpollutionfrontitemoptionimeca.m in Sources */,
 				DA9274681CE4E73C0005138A /* mpollutionchartitempoint.m in Sources */,
 				DA3F6BEE1CEBBAA600625BE9 /* mmenusectionitemnodrive.m in Sources */,

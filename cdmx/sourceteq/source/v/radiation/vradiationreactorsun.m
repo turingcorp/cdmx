@@ -1,13 +1,6 @@
 #import "vradiationreactorsun.h"
 #import "ecolor.h"
 
-static CGFloat const radiationreactorstartingradius = 0;
-static CGFloat const radiationreactorendingradius = 6.284;
-static CGFloat const radiationreactorraywidth = 0.05;
-static CGFloat const radiationreactorrayspacing = 0.02;
-static NSInteger const radiationreactorradius = 100;
-static NSInteger const radiationreactorlinewidth = 3;
-
 @implementation vradiationreactorsun
 
 -(instancetype)init
@@ -27,18 +20,31 @@ static NSInteger const radiationreactorlinewidth = 3;
     CGFloat height = rect.size.height;
     CGFloat width_2 = width / 2.0;
     CGFloat height_2 = height / 2.0;
-    CGFloat sum = radiationreactorstartingradius;
+    CGFloat sum = self.model.startingradius;
+    CGFloat endingradius = self.model.endingradius;
+    CGFloat raywidth = self.model.raywidth;
+    CGFloat rayspacing = self.model.rayspacing;
+    CGFloat sunradius = self.model.sunradius;
     
     CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextSetLineWidth(context, radiationreactorlinewidth);
-    CGContextSetStrokeColorWithColor(context, [UIColor redColor].CGColor);
+    CGContextSetLineWidth(context, self.model.linewidth);
+    CGContextSetStrokeColorWithColor(context, self.model.color.CGColor);
     
-    while(sum < radiationreactorendingradius)
+    while(sum < endingradius)
     {
-        CGContextAddArc(context, width_2, height_2, radiationreactorradius, sum, sum + radiationreactorraywidth, 0);
+        CGFloat endingray = sum + raywidth;
+        CGContextAddArc(context, width_2, height_2, sunradius, sum, endingray, 0);
         CGContextDrawPath(context, kCGPathStroke);
-        sum += radiationreactorraywidth + radiationreactorrayspacing;
+        sum += endingray + rayspacing;
     }
+}
+
+#pragma mark public
+
+-(void)update:(mradiationreactor*)model
+{
+    self.model = model;
+    [self setNeedsDisplay];
 }
 
 @end
