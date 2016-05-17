@@ -52,8 +52,16 @@ static NSInteger const pollutantcollectionbottom = 40;
                                    
                                    if(rawpollutant)
                                    {
+                                       NSString *symbol = rawpollutant[@"symbol"];
                                        NSString *info = rawpollutant[@"info"];
+                                       
+                                       if(!symbol)
+                                       {
+                                           symbol = @"";
+                                       }
+                                       
                                        [item createattributedstring:info attributes:attributes width:width];
+                                       item.symbol = symbol;
                                    }
                                }
                                
