@@ -1,5 +1,6 @@
 #import "cpages.h"
 #import "cpollution.h"
+#import "cmenu.h"
 
 @implementation cpages
 
@@ -46,6 +47,12 @@
 {
     NSArray *array = @[controller];
     [self setViewControllers:array direction:direction animated:animated completion:nil];
+}
+
+-(void)menu
+{
+    cmenu *controller = [[cmenu alloc] init];
+    [self changecontroller:controller direction:UIPageViewControllerNavigationDirectionReverse animated:YES];
 }
 
 @end

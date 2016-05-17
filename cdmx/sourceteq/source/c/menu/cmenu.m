@@ -1,8 +1,10 @@
 #import "cmenu.h"
+#import "cmain.h"
 #import "vmenu.h"
 
 @interface cmenu ()
 
+@property(strong, nonatomic, readwrite)mmenu *model;
 @property(strong, nonatomic)vmenu *view;
 
 @end
@@ -11,12 +13,30 @@
 
 @dynamic view;
 
+-(UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleDefault;
+}
+
+-(BOOL)prefersStatusBarHidden
+{
+    return NO;
+}
+
 -(void)viewDidLoad
 {
     [super viewDidLoad];
     [self setEdgesForExtendedLayout:UIRectEdgeNone];
     [self setExtendedLayoutIncludesOpaqueBars:NO];
     [self setAutomaticallyAdjustsScrollViewInsets:NO];
+    
+    self.model = [[mmenu alloc] init];
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [[cmain singleton].pages setNeedsStatusBarAppearanceUpdate];
 }
 
 -(void)loadView

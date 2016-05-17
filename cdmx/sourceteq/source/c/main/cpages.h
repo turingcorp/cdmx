@@ -3,5 +3,6 @@
 @interface cpages:UIPageViewController
 
 -(void)changecontroller:(UIViewController*)controller direction:(UIPageViewControllerNavigationDirection)direction animated:(BOOL)animated;
+-(void)menu;
 
 @end

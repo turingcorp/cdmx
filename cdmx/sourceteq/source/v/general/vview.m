@@ -9,7 +9,7 @@
     [self setClipsToBounds:YES];
     self.controller = controller;
     
-    vviewbar *bar = [[vviewbar alloc] init:controller];
+    vviewbar *bar = [self loadbar];
     self.bar = bar;
     
     [self addSubview:bar];
@@ -21,6 +21,15 @@
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[bar]" options:0 metrics:metrics views:views]];
     
     return self;
+}
+
+#pragma mark public
+
+-(vviewbar*)loadbar
+{
+    vviewbar *bar = [[vviewbar alloc] init:self.controller];
+    
+    return bar;
 }
 
 @end

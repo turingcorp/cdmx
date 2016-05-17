@@ -25,6 +25,7 @@ static NSInteger const menucellwidth = 50;
     [buttonmenu.imageView setClipsToBounds:YES];
     [buttonmenu.imageView setTintColor:[UIColor main]];
     [buttonmenu setImageEdgeInsets:UIEdgeInsetsMake(14, 0, 13, 15)];
+    [buttonmenu addTarget:self action:@selector(actionmenu:) forControlEvents:UIControlEventTouchUpInside];
     
     UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
     [flow setHeaderReferenceSize:CGSizeZero];
@@ -67,6 +68,13 @@ static NSInteger const menucellwidth = 50;
     [collection selectItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0] animated:NO scrollPosition:UICollectionViewScrollPositionNone];
     
     return self;
+}
+
+#pragma mark actions
+
+-(void)actionmenu:(UIButton*)button
+{
+    [self.controller menu];
 }
 
 #pragma mark functionality

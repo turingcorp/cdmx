@@ -66,6 +66,11 @@ static NSInteger const framespersecond = 60;
 
 #pragma mark public
 
+-(void)menu
+{
+    [[cmain singleton].pages menu];
+}
+
 -(void)option:(UIViewController*)controller
 {
     [[cmain singleton] pushViewController:controller animated:YES];
