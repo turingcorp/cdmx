@@ -89,7 +89,6 @@
 		DAC21D4D1CE4C35B00D92161 /* vpollutionfront.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC21D321CE4C35B00D92161 /* vpollutionfront.m */; };
 		DAC21D4E1CE4C35B00D92161 /* vpollutionfrontcell.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC21D341CE4C35B00D92161 /* vpollutionfrontcell.m */; };
 		DAC21D4F1CE4C35B00D92161 /* vpollutionfrontheader.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC21D361CE4C35B00D92161 /* vpollutionfrontheader.m */; };
-		DAC21D501CE4C35B00D92161 /* vpollutionfrontheaderbutton.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC21D381CE4C35B00D92161 /* vpollutionfrontheaderbutton.m */; };
 		DAC21D511CE4C35B00D92161 /* vpollutionfrontheadercurrent.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC21D3A1CE4C35B00D92161 /* vpollutionfrontheadercurrent.m */; };
 		DAC21D521CE4C35B00D92161 /* vpollutionfrontlayoutdetail.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC21D3C1CE4C35B00D92161 /* vpollutionfrontlayoutdetail.m */; };
 		DAC21D531CE4C35B00D92161 /* vpollutionfrontlayoutlist.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC21D3E1CE4C35B00D92161 /* vpollutionfrontlayoutlist.m */; };
@@ -291,8 +290,6 @@
 		DAC21D341CE4C35B00D92161 /* vpollutionfrontcell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vpollutionfrontcell.m; sourceTree = "<group>"; };
 		DAC21D351CE4C35B00D92161 /* vpollutionfrontheader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vpollutionfrontheader.h; sourceTree = "<group>"; };
 		DAC21D361CE4C35B00D92161 /* vpollutionfrontheader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vpollutionfrontheader.m; sourceTree = "<group>"; };
-		DAC21D371CE4C35B00D92161 /* vpollutionfrontheaderbutton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vpollutionfrontheaderbutton.h; sourceTree = "<group>"; };
-		DAC21D381CE4C35B00D92161 /* vpollutionfrontheaderbutton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vpollutionfrontheaderbutton.m; sourceTree = "<group>"; };
 		DAC21D391CE4C35B00D92161 /* vpollutionfrontheadercurrent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vpollutionfrontheadercurrent.h; sourceTree = "<group>"; };
 		DAC21D3A1CE4C35B00D92161 /* vpollutionfrontheadercurrent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vpollutionfrontheadercurrent.m; sourceTree = "<group>"; };
 		DAC21D3B1CE4C35B00D92161 /* vpollutionfrontlayoutdetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vpollutionfrontlayoutdetail.h; sourceTree = "<group>"; };
@@ -704,8 +701,6 @@
 				DAC21D361CE4C35B00D92161 /* vpollutionfrontheader.m */,
 				DAEA59F51CEA3C0100584526 /* vpollutionfrontheadercell.h */,
 				DAEA59F61CEA3C0100584526 /* vpollutionfrontheadercell.m */,
-				DAC21D371CE4C35B00D92161 /* vpollutionfrontheaderbutton.h */,
-				DAC21D381CE4C35B00D92161 /* vpollutionfrontheaderbutton.m */,
 				DAC21D391CE4C35B00D92161 /* vpollutionfrontheadercurrent.h */,
 				DAC21D3A1CE4C35B00D92161 /* vpollutionfrontheadercurrent.m */,
 				DAC21D3B1CE4C35B00D92161 /* vpollutionfrontlayoutdetail.h */,
@@ -1133,7 +1128,6 @@
 				DAD33FF41CBC83E300C87502 /* appdel.m in Sources */,
 				DAC21D491CE4C35B00D92161 /* vpollutionradiochart.m in Sources */,
 				DAC21D201CE4C2AA00D92161 /* mpollutionmenuitemdistricts.m in Sources */,
-				DAC21D501CE4C35B00D92161 /* vpollutionfrontheaderbutton.m in Sources */,
 				DA05C6D51CE6387800A22A5E /* vpollutionmapheader.m in Sources */,
 				DAC21D171CE4C2AA00D92161 /* mpollutionindexacceptable.m in Sources */,
 				DA05C6DB1CE63C0C00A22A5E /* ecollectioncell.m in Sources */,
