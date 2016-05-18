@@ -16,7 +16,7 @@
     [image setUserInteractionEnabled:NO];
     [image setTranslatesAutoresizingMaskIntoConstraints:NO];
     [image setContentMode:UIViewContentModeScaleAspectFit];
-    [image setTintColor:[UIColor main]];
+    [image setTintColor:[UIColor colorWithWhite:0 alpha:0.3]];
     self.image = image;
     
     UILabel *title = [[UILabel alloc] init];
@@ -25,7 +25,7 @@
     [title setTranslatesAutoresizingMaskIntoConstraints:NO];
     [title setTextAlignment:NSTextAlignmentCenter];
     [title setFont:[UIFont regularsize:11]];
-    [title setTextColor:[UIColor main]];
+    [title setTextColor:[UIColor colorWithWhite:0 alpha:0.4]];
     self.title = title;
     
     UILabel *level = [[UILabel alloc] init];
@@ -33,7 +33,7 @@
     [level setUserInteractionEnabled:NO];
     [level setTranslatesAutoresizingMaskIntoConstraints:NO];
     [level setTextAlignment:NSTextAlignmentCenter];
-    [level setFont:[UIFont boldsize:11]];
+    [level setFont:[UIFont boldsize:13]];
     [level setTextColor:[UIColor main]];
     self.level = level;
     
@@ -47,7 +47,7 @@
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[image]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[title]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[level]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[level(13)]-4-[image(26)]-4-[title(13)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[image(26)]-4-[title(13)]-0-[level(16)]" options:0 metrics:metrics views:views]];
     
     return self;
 }
