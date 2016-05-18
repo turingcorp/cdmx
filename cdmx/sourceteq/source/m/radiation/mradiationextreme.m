@@ -14,6 +14,7 @@
 {
     self = [super init];
     self.name = NSLocalizedString(@"mradiation_index_extreme", nil);
+    self.color = [UIColor pollution_violet];
     
     return self;
 }

@@ -14,6 +14,7 @@
 {
     self = [super init];
     self.name = NSLocalizedString(@"mradiation_index_none", nil);
+    self.color = [UIColor background];
     
     return self;
 }
