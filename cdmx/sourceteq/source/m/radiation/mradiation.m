@@ -6,6 +6,12 @@
 #import "mradiationveryhigh.h"
 #import "mradiationextreme.h"
 
+static NSInteger const radiationthresholdlow = 1;
+static NSInteger const radiationthresholdmid = 3;
+static NSInteger const radiationthresholdhigh = 6;
+static NSInteger const radiationthresholdveryhigh = 8;
+static NSInteger const radiationthresholdextreme = 11;
+
 @interface mradiation ()
 
 @property(copy, nonatomic, readwrite)NSString *name;
@@ -20,23 +26,23 @@
 {
     mradiation *model;
     
-    if(points < 1)
+    if(points < radiationthresholdlow)
     {
         model = [[mradiationnone alloc] init:points];
     }
-    else if(points < 3)
+    else if(points < radiationthresholdmid)
     {
         model = [[mradiationlow alloc] init:points];
     }
-    else if(points < 6)
+    else if(points < radiationthresholdhigh)
     {
         model = [[mradiationmid alloc] init:points];
     }
-    else if(points < 8)
+    else if(points < radiationthresholdveryhigh)
     {
         model = [[mradiationhigh alloc] init:points];
     }
-    else if(points < 11)
+    else if(points < radiationthresholdextreme)
     {
         model = [[mradiationveryhigh alloc] init:points];
     }
@@ -46,6 +52,11 @@
     }
     
     return model;
+}
+
++(NSInteger)maxpoints
+{
+    return radiationthresholdextreme;
 }
 
 -(instancetype)init:(NSInteger)points

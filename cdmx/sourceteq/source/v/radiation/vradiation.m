@@ -37,7 +37,7 @@
 
 -(void)radiationloaded:(mradiation*)model
 {
-    
+    [self.reactor loadradiation:model];
 }
 
 @end
