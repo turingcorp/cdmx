@@ -20,7 +20,40 @@
 {
     mradiation *model;
     
+    if(points < 1)
+    {
+        model = [[mradiationnone alloc] init:points];
+    }
+    else if(points < 3)
+    {
+        model = [[mradiationlow alloc] init:points];
+    }
+    else if(points < 6)
+    {
+        model = [[mradiationmid alloc] init:points];
+    }
+    else if(points < 8)
+    {
+        model = [[mradiationhigh alloc] init:points];
+    }
+    else if(points < 11)
+    {
+        model = [[mradiationveryhigh alloc] init:points];
+    }
+    else
+    {
+        model = [[mradiationextreme alloc] init:points];
+    }
+    
     return model;
+}
+
+-(instancetype)init:(NSInteger)points
+{
+    self = [self init];
+    self.points = points;
+    
+    return self;
 }
 
 @end
