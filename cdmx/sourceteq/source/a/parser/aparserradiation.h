@@ -1,13 +1,9 @@
-//
-//  aparserradiation.h
-//  cdmx
-//
-//  Created by zero on 5/18/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
+#import "aparser.h"
+#import "mradiation.h"
 
-@interface aparserradiation : NSObject
+@interface aparserradiation:aparser
+
+@property(strong, nonatomic, readonly)mradiation *radiation;
 
 @end

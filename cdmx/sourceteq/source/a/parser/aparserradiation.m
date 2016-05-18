@@ -1,13 +1,29 @@
-//
-//  aparserradiation.m
-//  cdmx
-//
-//  Created by zero on 5/18/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
-
 #import "aparserradiation.h"
 
+@interface aparserradiation ()
+
+@property(strong, nonatomic, readwrite)mradiation *radiation;
+
+@end
+
 @implementation aparserradiation
+
+-(void)parse:(NSDictionary*)json
+{
+    [super parse:json];
+    
+    if(self.validjson)
+    {
+        NSInteger current = 0;
+        NSNumber *rawcurrent = self.validjson[@"current"];
+        
+        if(rawcurrent)
+        {
+            current = rawcurrent.integerValue;
+        }
+        
+        self.radiation = [mradiation index:current];
+    }
+}
 
 @end
