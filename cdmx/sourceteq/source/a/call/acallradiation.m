@@ -1,7 +1,5 @@
 #import "acallradiation.h"
-#import "aparserpollution.h"
-
-static NSString* const lastdailyparam = @"?lastdate=%@";
+#import "aparserradiation.h"
 
 @implementation acallradiation
 
@@ -9,19 +7,13 @@ static NSString* const lastdailyparam = @"?lastdate=%@";
 {
     self = [super init];
     
-    mdbpollutiondaily *lastdaily = [mdbselect lastpollutiondaily];
     NSDictionary *urls = [NSDictionary dictionaryWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"url" withExtension:@"plist"]];
     NSMutableString *mut = [NSMutableString string];
     [mut appendString:urls[@"server"]];
-    [mut appendString:urls[@"pollution"]];
-    
-    if(lastdaily)
-    {
-        [mut appendFormat:lastdailyparam, lastdaily.date];
-    }
+    [mut appendString:urls[@"radiation"]];
     
     self.urlstring = mut;
-    self.parser = [[aparserpollution alloc] init];
+    self.parser = [[aparserradiation alloc] init];
     
     return self;
 }
