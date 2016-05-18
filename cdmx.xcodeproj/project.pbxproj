@@ -78,6 +78,12 @@
 		DAA0C6841CD985D400880D3E /* gpollutiondist.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA0C6831CD985D400880D3E /* gpollutiondist.m */; };
 		DAAEEDDA1CECAE96008C992C /* acallradiation.m in Sources */ = {isa = PBXBuildFile; fileRef = DAAEEDD91CECAE96008C992C /* acallradiation.m */; };
 		DAAEEDDD1CECB2F9008C992C /* aparserradiation.m in Sources */ = {isa = PBXBuildFile; fileRef = DAAEEDDC1CECB2F9008C992C /* aparserradiation.m */; };
+		DAAEEDE01CECC04A008C992C /* mradiationnone.m in Sources */ = {isa = PBXBuildFile; fileRef = DAAEEDDF1CECC04A008C992C /* mradiationnone.m */; };
+		DAAEEDE31CECC057008C992C /* mradiationlow.m in Sources */ = {isa = PBXBuildFile; fileRef = DAAEEDE21CECC057008C992C /* mradiationlow.m */; };
+		DAAEEDE61CECC061008C992C /* mradiationmid.m in Sources */ = {isa = PBXBuildFile; fileRef = DAAEEDE51CECC061008C992C /* mradiationmid.m */; };
+		DAAEEDE91CECC06B008C992C /* mradiationhigh.m in Sources */ = {isa = PBXBuildFile; fileRef = DAAEEDE81CECC06B008C992C /* mradiationhigh.m */; };
+		DAAEEDEC1CECC077008C992C /* mradiationveryhigh.m in Sources */ = {isa = PBXBuildFile; fileRef = DAAEEDEB1CECC077008C992C /* mradiationveryhigh.m */; };
+		DAAEEDEF1CECC081008C992C /* mradiationextreme.m in Sources */ = {isa = PBXBuildFile; fileRef = DAAEEDEE1CECC081008C992C /* mradiationextreme.m */; };
 		DAB26D791CE0D09D00E1580F /* mdbcreate.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB26D781CE0D09D00E1580F /* mdbcreate.m */; };
 		DAB26D7F1CE0ECB300E1580F /* districts.plist in Resources */ = {isa = PBXBuildFile; fileRef = DAB26D7E1CE0ECB300E1580F /* districts.plist */; };
 		DAB26D821CE0F98200E1580F /* mdbselect.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB26D811CE0F98200E1580F /* mdbselect.m */; };
@@ -295,6 +301,18 @@
 		DAAEEDD91CECAE96008C992C /* acallradiation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = acallradiation.m; sourceTree = "<group>"; };
 		DAAEEDDB1CECB2F9008C992C /* aparserradiation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aparserradiation.h; sourceTree = "<group>"; };
 		DAAEEDDC1CECB2F9008C992C /* aparserradiation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = aparserradiation.m; sourceTree = "<group>"; };
+		DAAEEDDE1CECC04A008C992C /* mradiationnone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mradiationnone.h; sourceTree = "<group>"; };
+		DAAEEDDF1CECC04A008C992C /* mradiationnone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mradiationnone.m; sourceTree = "<group>"; };
+		DAAEEDE11CECC057008C992C /* mradiationlow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mradiationlow.h; sourceTree = "<group>"; };
+		DAAEEDE21CECC057008C992C /* mradiationlow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mradiationlow.m; sourceTree = "<group>"; };
+		DAAEEDE41CECC061008C992C /* mradiationmid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mradiationmid.h; sourceTree = "<group>"; };
+		DAAEEDE51CECC061008C992C /* mradiationmid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mradiationmid.m; sourceTree = "<group>"; };
+		DAAEEDE71CECC06B008C992C /* mradiationhigh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mradiationhigh.h; sourceTree = "<group>"; };
+		DAAEEDE81CECC06B008C992C /* mradiationhigh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mradiationhigh.m; sourceTree = "<group>"; };
+		DAAEEDEA1CECC077008C992C /* mradiationveryhigh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mradiationveryhigh.h; sourceTree = "<group>"; };
+		DAAEEDEB1CECC077008C992C /* mradiationveryhigh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mradiationveryhigh.m; sourceTree = "<group>"; };
+		DAAEEDED1CECC081008C992C /* mradiationextreme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mradiationextreme.h; sourceTree = "<group>"; };
+		DAAEEDEE1CECC081008C992C /* mradiationextreme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mradiationextreme.m; sourceTree = "<group>"; };
 		DAB26D771CE0D09D00E1580F /* mdbcreate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mdbcreate.h; sourceTree = "<group>"; };
 		DAB26D781CE0D09D00E1580F /* mdbcreate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mdbcreate.m; sourceTree = "<group>"; };
 		DAB26D7D1CE0D67400E1580F /* mdbconstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mdbconstants.h; sourceTree = "<group>"; };
@@ -631,6 +649,18 @@
 				DA3F6C0B1CEBDEA400625BE9 /* mradiation.m */,
 				DA3F6C0D1CEBDEBB00625BE9 /* mradiationreactor.h */,
 				DA3F6C0E1CEBDEBB00625BE9 /* mradiationreactor.m */,
+				DAAEEDDE1CECC04A008C992C /* mradiationnone.h */,
+				DAAEEDDF1CECC04A008C992C /* mradiationnone.m */,
+				DAAEEDE11CECC057008C992C /* mradiationlow.h */,
+				DAAEEDE21CECC057008C992C /* mradiationlow.m */,
+				DAAEEDE41CECC061008C992C /* mradiationmid.h */,
+				DAAEEDE51CECC061008C992C /* mradiationmid.m */,
+				DAAEEDE71CECC06B008C992C /* mradiationhigh.h */,
+				DAAEEDE81CECC06B008C992C /* mradiationhigh.m */,
+				DAAEEDEA1CECC077008C992C /* mradiationveryhigh.h */,
+				DAAEEDEB1CECC077008C992C /* mradiationveryhigh.m */,
+				DAAEEDED1CECC081008C992C /* mradiationextreme.h */,
+				DAAEEDEE1CECC081008C992C /* mradiationextreme.m */,
 			);
 			path = radiation;
 			sourceTree = "<group>";
@@ -1280,6 +1310,7 @@
 				DA20AD1D1CD80D8100754956 /* msettings.m in Sources */,
 				DAEA5A1A1CEA80DC00584526 /* vpollutionpollutantscell.m in Sources */,
 				DAC21D481CE4C35B00D92161 /* vpollutionoption.m in Sources */,
+				DAAEEDEC1CECC077008C992C /* mradiationveryhigh.m in Sources */,
 				DAC21D1C1CE4C2AA00D92161 /* mpollutionindexwarning.m in Sources */,
 				DA3F6BF11CEBBBF200625BE9 /* mmenusectionitemecobici.m in Sources */,
 				DA9274651CE4E5640005138A /* mpollutionchartselect.m in Sources */,
@@ -1306,6 +1337,8 @@
 				DA24B7BC1CE7BFE00008DE86 /* eannotationview.m in Sources */,
 				DAC21D4D1CE4C35B00D92161 /* vpollutionfront.m in Sources */,
 				DAC21D211CE4C2AA00D92161 /* mpollutionmenuitemmap.m in Sources */,
+				DAAEEDE01CECC04A008C992C /* mradiationnone.m in Sources */,
+				DAAEEDEF1CECC081008C992C /* mradiationextreme.m in Sources */,
 				DAC21D561CE4C35B00D92161 /* vpollutionmenucell.m in Sources */,
 				DAC21D091CE4C2AA00D92161 /* mpollutionhour.m in Sources */,
 				DA3F6BB51CEB54D800625BE9 /* cpollutionrecommendation.m in Sources */,
@@ -1356,6 +1389,7 @@
 				DAEA5A0C1CEA66FE00584526 /* cpollutionpollutants.m in Sources */,
 				DA3F6C0F1CEBDEBB00625BE9 /* mradiationreactor.m in Sources */,
 				DAEA5A001CEA407300584526 /* mpollutionfrontitemoptionimeca.m in Sources */,
+				DAAEEDE61CECC061008C992C /* mradiationmid.m in Sources */,
 				DA9274681CE4E73C0005138A /* mpollutionchartitempoint.m in Sources */,
 				DA3F6BEE1CEBBAA600625BE9 /* mmenusectionitemnodrive.m in Sources */,
 				DA3F6BF71CEBBE1D00625BE9 /* mmenusectionitemabout.m in Sources */,
@@ -1381,6 +1415,7 @@
 				DAC21D4F1CE4C35B00D92161 /* vpollutionfrontheader.m in Sources */,
 				DA05C6CC1CE6329B00A22A5E /* vpollutionmap.m in Sources */,
 				DAEA5A171CEA80D000584526 /* vpollutionpollutantsheader.m in Sources */,
+				DAAEEDE91CECC06B008C992C /* mradiationhigh.m in Sources */,
 				DA8708311CBE8532000C08E1 /* aparser.m in Sources */,
 				DAB26D881CE0F9F100E1580F /* mdbpollutiondaily.m in Sources */,
 				DA3F6BCB1CEB904800625BE9 /* mmenusectionitem.m in Sources */,
@@ -1401,6 +1436,7 @@
 				DAD875FC1CBD6CF200A4F91C /* vmenubutton.m in Sources */,
 				DA3F6BF41CEBBD2000625BE9 /* mmenusectionapp.m in Sources */,
 				DA3F6BDA1CEB934B00625BE9 /* vmenucell.m in Sources */,
+				DAAEEDE31CECC057008C992C /* mradiationlow.m in Sources */,
 				DAAEEDDA1CECAE96008C992C /* acallradiation.m in Sources */,
 				DA40964D1CDC15FA0001D696 /* vview.m in Sources */,
 				DA05C6DE1CE63C1500A22A5E /* ecollectionreusable.m in Sources */,
