@@ -4,6 +4,7 @@
 @interface mradiation ()
 
 @property(strong, nonatomic, readwrite)NSArray<mradiationactivity*> *activities;
+@property(strong, nonatomic, readwrite)NSArray<mradiationprecaution*> *precautions;
 @property(strong, nonatomic, readwrite)UIColor *color;
 @property(copy, nonatomic, readwrite)NSString *name;
 
@@ -22,6 +23,12 @@
                         [mradiationactivity outdoors:NO],
                         [mradiationactivity cafe:NO]
                         ];
+    
+    self.precautions = @[
+                         [mradiationprecaution umbrella:[mradiationprecautionlevel mandatory]],
+                         [mradiationprecaution shades:[mradiationprecautionlevel mandatory]],
+                         [mradiationprecaution sunscreen:[mradiationprecautionlevel mandatory]]
+                         ];
     
     return self;
 }
