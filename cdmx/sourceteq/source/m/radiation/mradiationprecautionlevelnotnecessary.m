@@ -10,4 +10,13 @@
 
 @implementation mradiationprecautionlevelnotnecessary
 
+-(instancetype)init
+{
+    self = [super init];
+    self.name = NSLocalizedString(@"mradiation_precaution_level_notnecessary", nil);
+    self.color = [UIColor main];
+    
+    return self;
+}
+
 @end

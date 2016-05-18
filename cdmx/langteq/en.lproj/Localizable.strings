@@ -48,6 +48,14 @@
 "mradiation_activity_outdoors"="Hobbies";
 "mradiation_activity_cafe"="Patio";
 
+"mradiation_precaution_umbrella"="Umbrella";
+"mradiation_precaution_shades"="Shades";
+"mradiation_precaution_sunscreen"="Sunscreen";
+
+"mradiation_precaution_level_notnecessary"="Not necessary";
+"mradiation_precaution_level_advised"="Advised";
+"mradiation_precaution_level_mandatory"="Mandatory";
+
 "mpollution_pollutant_name_0"="Unknown";
 "mpollution_pollutant_name_101"="Benzene";
 "mpollution_pollutant_name_102"="Toluene";
