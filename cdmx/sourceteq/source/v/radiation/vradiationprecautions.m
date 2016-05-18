@@ -2,7 +2,7 @@
 #import "vradiationprecautionscell.h"
 #import "ecollectioncell.h"
 
-static NSInteger const precautionsheight = 70;
+static NSInteger const precautionsheight = 60;
 static NSInteger const precautionscellwidth = 100;
 
 @implementation vradiationprecautions
@@ -57,9 +57,9 @@ static NSInteger const precautionscellwidth = 100;
 
 #pragma mark functionality
 
--(mradiationactivity*)modelforindex:(NSIndexPath*)index
+-(mradiationprecaution*)modelforindex:(NSIndexPath*)index
 {
-    mradiationactivity *model = self.model.precautions[index.item];
+    mradiationprecaution *model = self.model.precautions[index.item];
     
     return model;
 }
@@ -77,9 +77,9 @@ static NSInteger const precautionscellwidth = 100;
 
 -(UIEdgeInsets)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout insetForSectionAtIndex:(NSInteger)section
 {
-    CGFloat cells = self.model.activities.count;
+    CGFloat cells = self.model.precautions.count;
     CGFloat width = col.bounds.size.width;
-    CGFloat cellswidth = cells * activitiescellwidth;
+    CGFloat cellswidth = cells * precautionscellwidth;
     CGFloat remain = width - cellswidth;
     CGFloat margin = remain / 2.0;
     UIEdgeInsets insets = UIEdgeInsetsMake(0, margin, 0, margin);
@@ -94,15 +94,15 @@ static NSInteger const precautionscellwidth = 100;
 
 -(NSInteger)collectionView:(UICollectionView*)col numberOfItemsInSection:(NSInteger)section
 {
-    NSInteger count = self.model.activities.count;
+    NSInteger count = self.model.precautions.count;
     
     return count;
 }
 
 -(UICollectionViewCell*)collectionView:(UICollectionView*)col cellForItemAtIndexPath:(NSIndexPath*)index
 {
-    mradiationactivity *model = [self modelforindex:index];
-    vradiationactivitiescell *cell = [col dequeueReusableCellWithReuseIdentifier:[vradiationactivitiescell reusableidentifier] forIndexPath:index];
+    mradiationprecaution *model = [self modelforindex:index];
+    vradiationprecautionscell *cell = [col dequeueReusableCellWithReuseIdentifier:[vradiationprecautionscell reusableidentifier] forIndexPath:index];
     [cell config:model];
     
     return cell;
