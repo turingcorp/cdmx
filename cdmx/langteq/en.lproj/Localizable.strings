@@ -82,6 +82,9 @@
 "vpollution_map_header_km"="%@ Kilometers away";
 "vpollution_pollutants_title"="Current pollutants";
 
+"vradiation_index_title"="Ultraviolet";
+"vradiation_index_subtitle"="index";
+
 "mmenu_section_city"="City";
 "mmenu_section_mobility"="Mobility";
 "mmenu_section_app"="App";

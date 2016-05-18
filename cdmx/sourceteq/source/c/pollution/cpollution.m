@@ -68,6 +68,9 @@ static NSInteger const framespersecond = 60;
 
 -(void)menu
 {
+    [self.view setUserInteractionEnabled:NO];
+    [self setPaused:YES];
+    [self.model clean];
     [[cmain singleton].pages menu];
 }
 
