@@ -6,7 +6,7 @@ static CGFloat const loadingtimerinterval = 0.04;
 static CGFloat const radiationtimerinterval = 0.015;
 static CGFloat const loadingreactorradius = 0.7;
 static CGFloat const radiationlinewidth = 6;
-static NSInteger const reactorheight = 250;
+static NSInteger const reactorheight = 260;
 
 @implementation vradiationreactor
 

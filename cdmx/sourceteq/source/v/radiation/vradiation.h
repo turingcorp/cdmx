@@ -14,5 +14,6 @@
 @property(weak, nonatomic)vradiationreactor *reactor;
 @property(weak, nonatomic)vradiationactivities *activities;
 @property(weak, nonatomic)vradiationprecautions *precautions;
+@property(weak, nonatomic)UILabel *label;
 
 @end

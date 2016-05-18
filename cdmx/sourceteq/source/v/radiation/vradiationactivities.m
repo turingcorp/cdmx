@@ -2,8 +2,8 @@
 #import "vradiationactivitiescell.h"
 #import "ecollectioncell.h"
 
-static NSInteger const activitiesheight = 50;
-static NSInteger const activitiescellwidth = 64;
+static NSInteger const activitiesheight = 70;
+static NSInteger const activitiescellwidth = 80;
 
 @implementation vradiationactivities
 
