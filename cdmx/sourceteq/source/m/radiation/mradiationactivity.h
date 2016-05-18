@@ -2,7 +2,7 @@
 
 @interface mradiationactivity:NSObject
 
-+(instancetype)exercsise:(BOOL)allowed;
++(instancetype)exercise:(BOOL)allowed;
 +(instancetype)transport:(BOOL)allowed;
 +(instancetype)outdoors:(BOOL)allowed;
 +(instancetype)cafe:(BOOL)allowed;

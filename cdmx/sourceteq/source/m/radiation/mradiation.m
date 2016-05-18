@@ -14,8 +14,9 @@ static NSInteger const radiationthresholdextreme = 11;
 
 @interface mradiation ()
 
-@property(copy, nonatomic, readwrite)NSString *name;
+@property(strong, nonatomic, readwrite)NSArray<mradiationactivity*> *activities;
 @property(strong, nonatomic, readwrite)UIColor *color;
+@property(copy, nonatomic, readwrite)NSString *name;
 @property(assign, nonatomic, readwrite)NSInteger points;
 
 @end

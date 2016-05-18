@@ -14,7 +14,7 @@
 
 @implementation mradiationactivity
 
-+(instancetype)exercsise:(BOOL)allowed
++(instancetype)exercise:(BOOL)allowed
 {
     mradiationactivityexercise *model = [[mradiationactivityexercise alloc] init:allowed];
     
