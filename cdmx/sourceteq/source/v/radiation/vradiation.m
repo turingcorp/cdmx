@@ -33,4 +33,11 @@
     [self.reactor.timer invalidate];
 }
 
+#pragma mark public
+
+-(void)radiationloaded:(mradiation*)model
+{
+    
+}
+
 @end
