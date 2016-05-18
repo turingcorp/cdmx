@@ -8,8 +8,8 @@
 -(NSDictionary*)allrecomendations;
 -(NSString*)recommendations;
 
-@property(strong, nonatomic)UIColor *color;
-@property(copy, nonatomic)NSString *name;
-@property(assign, nonatomic)NSInteger points;
+@property(strong, nonatomic, readonly)UIColor *color;
+@property(copy, nonatomic, readonly)NSString *name;
+@property(assign, nonatomic, readonly)NSInteger points;
 
 @end

@@ -12,6 +12,14 @@ static NSInteger const maxpointswarning = 100;
 static NSInteger const maxpointsdanger = 150;
 static NSInteger const maxpointsdisaster = 200;
 
+@interface mpollutionindex ()
+
+@property(strong, nonatomic, readwrite)UIColor *color;
+@property(copy, nonatomic, readwrite)NSString *name;
+@property(assign, nonatomic, readwrite)NSInteger points;
+
+@end
+
 @implementation mpollutionindex
 
 +(instancetype)points:(NSInteger)points

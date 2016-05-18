@@ -1,6 +1,14 @@
 #import "mpollutionindexacceptable.h"
 #import "ecolor.h"
 
+@interface mpollutionindex ()
+
+@property(strong, nonatomic, readwrite)UIColor *color;
+@property(copy, nonatomic, readwrite)NSString *name;
+@property(assign, nonatomic, readwrite)NSInteger points;
+
+@end
+
 @implementation mpollutionindexacceptable
 
 -(instancetype)init:(NSInteger)points
