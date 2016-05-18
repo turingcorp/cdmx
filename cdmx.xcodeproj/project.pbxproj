@@ -77,6 +77,7 @@
 		DAA0C6801CD978CF00880D3E /* gspatialtexture.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA0C67F1CD978CF00880D3E /* gspatialtexture.m */; };
 		DAA0C6841CD985D400880D3E /* gpollutiondist.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA0C6831CD985D400880D3E /* gpollutiondist.m */; };
 		DAAEEDDA1CECAE96008C992C /* acallradiation.m in Sources */ = {isa = PBXBuildFile; fileRef = DAAEEDD91CECAE96008C992C /* acallradiation.m */; };
+		DAAEEDDD1CECB2F9008C992C /* aparserradiation.m in Sources */ = {isa = PBXBuildFile; fileRef = DAAEEDDC1CECB2F9008C992C /* aparserradiation.m */; };
 		DAB26D791CE0D09D00E1580F /* mdbcreate.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB26D781CE0D09D00E1580F /* mdbcreate.m */; };
 		DAB26D7F1CE0ECB300E1580F /* districts.plist in Resources */ = {isa = PBXBuildFile; fileRef = DAB26D7E1CE0ECB300E1580F /* districts.plist */; };
 		DAB26D821CE0F98200E1580F /* mdbselect.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB26D811CE0F98200E1580F /* mdbselect.m */; };
@@ -292,6 +293,8 @@
 		DAA0C6831CD985D400880D3E /* gpollutiondist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gpollutiondist.m; sourceTree = "<group>"; };
 		DAAEEDD81CECAE96008C992C /* acallradiation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = acallradiation.h; sourceTree = "<group>"; };
 		DAAEEDD91CECAE96008C992C /* acallradiation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = acallradiation.m; sourceTree = "<group>"; };
+		DAAEEDDB1CECB2F9008C992C /* aparserradiation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aparserradiation.h; sourceTree = "<group>"; };
+		DAAEEDDC1CECB2F9008C992C /* aparserradiation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = aparserradiation.m; sourceTree = "<group>"; };
 		DAB26D771CE0D09D00E1580F /* mdbcreate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mdbcreate.h; sourceTree = "<group>"; };
 		DAB26D781CE0D09D00E1580F /* mdbcreate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mdbcreate.m; sourceTree = "<group>"; };
 		DAB26D7D1CE0D67400E1580F /* mdbconstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mdbconstants.h; sourceTree = "<group>"; };
@@ -664,6 +667,8 @@
 				DA8708301CBE8532000C08E1 /* aparser.m */,
 				DAB3FEE01CE270F900CCBB86 /* aparserpollution.h */,
 				DAB3FEE11CE270F900CCBB86 /* aparserpollution.m */,
+				DAAEEDDB1CECB2F9008C992C /* aparserradiation.h */,
+				DAAEEDDC1CECB2F9008C992C /* aparserradiation.m */,
 			);
 			path = parser;
 			sourceTree = "<group>";
@@ -1365,6 +1370,7 @@
 				DA3F6BB91CEB599D00625BE9 /* vpollutionrecommendation.m in Sources */,
 				DAC21D1B1CE4C2AA00D92161 /* mpollutionindexnodata.m in Sources */,
 				DAD33FF91CBC83E300C87502 /* tools.m in Sources */,
+				DAAEEDDD1CECB2F9008C992C /* aparserradiation.m in Sources */,
 				DA05C6D81CE6388500A22A5E /* vpollutionmapcell.m in Sources */,
 				DAEA59F71CEA3C0100584526 /* vpollutionfrontheadercell.m in Sources */,
 				DAC21D511CE4C35B00D92161 /* vpollutionfrontheadercurrent.m in Sources */,

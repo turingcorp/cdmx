@@ -6,5 +6,7 @@
 	<string>https://nubecero.com/</string>
 	<key>pollution</key>
 	<string>cdmx/pollution.api</string>
+	<key>radiation</key>
+	<string>cdmx/radiation.api</string>
 </dict>
 </plist>
