@@ -22,7 +22,7 @@
             current = rawcurrent.integerValue;
         }
         
-        self.radiation = [mradiation index:current];
+        self.radiation = [mradiation points:current];
     }
 }
 
