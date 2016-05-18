@@ -49,6 +49,14 @@
 -(void)radiationloaded:(mradiation*)model
 {
     [self.reactor loadradiation:model];
+    
+    __weak typeof(self) welf = self;
+    
+    dispatch_async(dispatch_get_main_queue(),
+                   ^
+                   {
+                       [welf.activities update:model];
+                   });
 }
 
 @end

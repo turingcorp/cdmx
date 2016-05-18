@@ -93,6 +93,7 @@
 		DAAEEE041CECE23F008C992C /* mradiationactivitytransport.m in Sources */ = {isa = PBXBuildFile; fileRef = DAAEEE031CECE23F008C992C /* mradiationactivitytransport.m */; };
 		DAAEEE071CECE253008C992C /* mradiationactivityoutdoors.m in Sources */ = {isa = PBXBuildFile; fileRef = DAAEEE061CECE253008C992C /* mradiationactivityoutdoors.m */; };
 		DAAEEE0A1CECE2E8008C992C /* mradiationactivitycafe.m in Sources */ = {isa = PBXBuildFile; fileRef = DAAEEE091CECE2E8008C992C /* mradiationactivitycafe.m */; };
+		DAAEEE0C1CECF1EE008C992C /* radiation.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAAEEE0B1CECF1EE008C992C /* radiation.xcassets */; };
 		DAB26D791CE0D09D00E1580F /* mdbcreate.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB26D781CE0D09D00E1580F /* mdbcreate.m */; };
 		DAB26D7F1CE0ECB300E1580F /* districts.plist in Resources */ = {isa = PBXBuildFile; fileRef = DAB26D7E1CE0ECB300E1580F /* districts.plist */; };
 		DAB26D821CE0F98200E1580F /* mdbselect.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB26D811CE0F98200E1580F /* mdbselect.m */; };
@@ -340,6 +341,7 @@
 		DAAEEE061CECE253008C992C /* mradiationactivityoutdoors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mradiationactivityoutdoors.m; sourceTree = "<group>"; };
 		DAAEEE081CECE2E8008C992C /* mradiationactivitycafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mradiationactivitycafe.h; sourceTree = "<group>"; };
 		DAAEEE091CECE2E8008C992C /* mradiationactivitycafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mradiationactivitycafe.m; sourceTree = "<group>"; };
+		DAAEEE0B1CECF1EE008C992C /* radiation.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = radiation.xcassets; sourceTree = "<group>"; };
 		DAB26D771CE0D09D00E1580F /* mdbcreate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mdbcreate.h; sourceTree = "<group>"; };
 		DAB26D781CE0D09D00E1580F /* mdbcreate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mdbcreate.m; sourceTree = "<group>"; };
 		DAB26D7D1CE0D67400E1580F /* mdbconstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mdbconstants.h; sourceTree = "<group>"; };
@@ -1031,6 +1033,7 @@
 				DA4096401CDBF8880001D696 /* generic.xcassets */,
 				DA86ACBC1CE36E2500908755 /* pollution.xcassets */,
 				DA3F6BDE1CEBA60800625BE9 /* menu.xcassets */,
+				DAAEEE0B1CECF1EE008C992C /* radiation.xcassets */,
 			);
 			path = imateq;
 			sourceTree = "<group>";
@@ -1283,6 +1286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA3F6BDF1CEBA60800625BE9 /* menu.xcassets in Resources */,
+				DAAEEE0C1CECF1EE008C992C /* radiation.xcassets in Resources */,
 				DAEA5A1D1CEA8AFA00584526 /* pollutants.plist in Resources */,
 				DAB3FEDC1CE26DCF00CCBB86 /* url.plist in Resources */,
 				DA8F03441CC1C6B10007596C /* districts.xcassets in Resources */,
