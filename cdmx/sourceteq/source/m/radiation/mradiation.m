@@ -56,4 +56,11 @@
     return self;
 }
 
+-(NSString*)description
+{
+    NSString *string = [NSString stringWithFormat:@"%@", @(self.points)];
+    
+    return string;
+}
+
 @end
