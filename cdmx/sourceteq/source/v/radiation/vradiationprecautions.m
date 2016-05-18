@@ -1,5 +1,7 @@
 #import "vradiationprecautions.h"
 
+static NSInteger const precautionsheight = 50;
+
 @implementation vradiationprecautions
 
 -(instancetype)init
@@ -22,6 +24,13 @@
     [self addSubview:collection];
     
     return self;
+}
+
+-(CGSize)intrinsicContentSize
+{
+    CGSize size = CGSizeMake(UIViewNoIntrinsicMetric, precautionsheight);
+    
+    return size;
 }
 
 @end

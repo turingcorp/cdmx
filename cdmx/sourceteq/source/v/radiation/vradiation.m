@@ -1,7 +1,5 @@
 #import "vradiation.h"
 #import "vradiationbar.h"
-#import "vradiationactivities.h"
-#import "vradiationprecautions.h"
 
 @implementation vradiation
 
@@ -17,15 +15,26 @@
     vradiationreactor *reactor = [[vradiationreactor alloc] init];
     self.reactor = reactor;
     
+    vradiationactivities *activities = [[vradiationactivities alloc] init];
+    self.activities = activities;
+    
+    vradiationprecautions *precautions = [[vradiationprecautions alloc] init];
+    self.precautions = precautions;
+    
     [self addSubview:bar];
     [self addSubview:reactor];
+    [self addSubview:activities];
+    [self addSubview:precautions];
     
-    NSDictionary *views = @{@"bar":bar, @"reactor":reactor};
+    NSDictionary *views = @{@"bar":bar, @"reactor":reactor, @"activities":activities, @"precautions":precautions};
     NSDictionary *metrics = @{};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[bar]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[reactor]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[activities]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[precautions]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[bar]-50-[reactor]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[activities]-0-[precautions]-0-|" options:0 metrics:metrics views:views]];
     
     return self;
 }

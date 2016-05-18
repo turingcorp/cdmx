@@ -1,5 +1,7 @@
 #import "vradiationactivities.h"
 
+static NSInteger const activitiesheight = 50;
+
 @implementation vradiationactivities
 
 -(instancetype)init
@@ -22,6 +24,13 @@
     [self addSubview:collection];
     
     return self;
+}
+
+-(CGSize)intrinsicContentSize
+{
+    CGSize size = CGSizeMake(UIViewNoIntrinsicMetric, activitiesheight);
+    
+    return size;
 }
 
 @end
