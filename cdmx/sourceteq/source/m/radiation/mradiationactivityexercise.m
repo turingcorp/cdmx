@@ -12,7 +12,7 @@
 -(instancetype)init
 {
     self = [super init];
-    self.asset = @"menu_city_radiation";
+    self.asset = @"radiation_exercise";
     self.name = NSLocalizedString(@"mradiation_activity_exercise", nil);
     
     return self;
