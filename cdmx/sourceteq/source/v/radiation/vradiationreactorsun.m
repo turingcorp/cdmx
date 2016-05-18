@@ -35,7 +35,7 @@
         CGFloat endingray = sum + raywidth;
         CGContextAddArc(context, width_2, height_2, sunradius, sum, endingray, 0);
         CGContextDrawPath(context, kCGPathStroke);
-        sum += endingray + rayspacing;
+        sum = endingray + rayspacing;
     }
 }
 

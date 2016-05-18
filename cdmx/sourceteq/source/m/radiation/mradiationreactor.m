@@ -2,8 +2,8 @@
 #import "ecolor.h"
 
 static CGFloat const radiationreactorsunradius = 100;
-static CGFloat const radiationreactorstartingradius = 0;
-static CGFloat const radiationreactorendingradius = 6.2832;
+static CGFloat const radiationreactorstartingradius = -1.570796325;
+static CGFloat const radiationreactorendingradius = 4.712403675;
 static CGFloat const radiationreactorraywidth = 0.05;
 static CGFloat const radiationreactorrayspacing = 0.02;
 static CGFloat const radiationreactorlinewidth = 3;

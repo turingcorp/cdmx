@@ -20,6 +20,7 @@
     [buttonleft.imageView setContentMode:UIViewContentModeScaleAspectFit];
     [buttonleft.imageView setClipsToBounds:YES];
     [buttonleft.imageView setTintColor:[UIColor main]];
+    [buttonleft setImageEdgeInsets:UIEdgeInsetsMake(11, 0, 11, 18)];
     [buttonleft addTarget:self action:@selector(actionbuttonleft:) forControlEvents:UIControlEventTouchUpInside];
     
     UIButton *buttonright = [[UIButton alloc] init];
