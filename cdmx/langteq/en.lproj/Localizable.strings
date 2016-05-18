@@ -43,6 +43,11 @@
 "mradiation_index_veryhigh"="Very high";
 "mradiation_index_extreme"="Extreme";
 
+"mradiation_activity_exercise"="Exercise";
+"mradiation_activity_transport"="Transport";
+"mradiation_activity_outdoors"="Leisure";
+"mradiation_activity_cafe"="Outdoors cafe";
+
 "mpollution_pollutant_name_0"="Unknown";
 "mpollution_pollutant_name_101"="Benzene";
 "mpollution_pollutant_name_102"="Toluene";

@@ -23,17 +23,23 @@
 
 +(instancetype)transport:(BOOL)allowed
 {
+    mradiationactivitytransport *model = [[mradiationactivitytransport alloc] init:allowed];
     
+    return model;
 }
 
 +(instancetype)outdoors:(BOOL)allowed
 {
+    mradiationactivityoutdoors *model = [[mradiationactivityoutdoors alloc] init:allowed];
     
+    return model;
 }
 
 +(instancetype)cafe:(BOOL)allowed
 {
+    mradiationactivitycafe *model = [[mradiationactivitycafe alloc] init:allowed];
     
+    return model;
 }
 
 -(instancetype)init:(BOOL)allowed
