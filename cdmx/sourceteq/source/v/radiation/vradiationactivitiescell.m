@@ -17,13 +17,24 @@
     [indicator setContentMode:UIViewContentModeScaleAspectFit];
     self.indicator = indicator;
     
-    [self addSubview:indicator];
+    UIImageView *image = [[UIImageView alloc] init];
+    [image setUserInteractionEnabled:NO];
+    [image setClipsToBounds:YES];
+    [image setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [image setContentMode:UIViewContentModeScaleAspectFit];
+    [image setTintColor:[UIColor main]];
+    self.image = image;
     
-    NSDictionary *views = @{@"indicator":indicator};
+    [self addSubview:indicator];
+    [self addSubview:image];
+    
+    NSDictionary *views = @{@"indicator":indicator, @"image":image};
     NSDictionary *metrics = @{};
     
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[indicator(20)]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[indicator(20)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[indicator(20)]-5-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-5-[indicator(20)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[image]-20-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-10-[image]-10-|" options:0 metrics:metrics views:views]];
     
     return self;
 }
@@ -42,12 +53,13 @@
     }
     else
     {
-        colorindicator = [UIColor pollution_red];
+        colorindicator = [UIColor pollution_violet];
         assetindicator = @"radiation_notallowed";
     }
     
     [self.indicator setTintColor:colorindicator];
     [self.indicator setImage:[[UIImage imageNamed:assetindicator] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+    [self.image setImage:[[UIImage imageNamed:model.asset] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
 }
 
 @end

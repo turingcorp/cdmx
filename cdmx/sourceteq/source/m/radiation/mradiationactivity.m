@@ -44,7 +44,7 @@
 
 -(instancetype)init:(BOOL)allowed
 {
-    self = [super init];
+    self = [self init];
     self.allowed = allowed;
     
     return self;

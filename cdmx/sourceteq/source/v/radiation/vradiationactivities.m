@@ -75,6 +75,18 @@ static NSInteger const activitiescellwidth = 64;
 #pragma mark -
 #pragma mark col del
 
+-(UIEdgeInsets)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout insetForSectionAtIndex:(NSInteger)section
+{
+    CGFloat cells = self.model.activities.count;
+    CGFloat width = col.bounds.size.width;
+    CGFloat cellswidth = cells * activitiescellwidth;
+    CGFloat remain = width - cellswidth;
+    CGFloat margin = remain / 2.0;
+    UIEdgeInsets insets = UIEdgeInsetsMake(0, margin, 0, margin);
+    
+    return insets;
+}
+
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView*)col
 {
     return 1;
