@@ -647,8 +647,6 @@
 			children = (
 				DA3F6C0A1CEBDEA400625BE9 /* mradiation.h */,
 				DA3F6C0B1CEBDEA400625BE9 /* mradiation.m */,
-				DA3F6C0D1CEBDEBB00625BE9 /* mradiationreactor.h */,
-				DA3F6C0E1CEBDEBB00625BE9 /* mradiationreactor.m */,
 				DAAEEDDE1CECC04A008C992C /* mradiationnone.h */,
 				DAAEEDDF1CECC04A008C992C /* mradiationnone.m */,
 				DAAEEDE11CECC057008C992C /* mradiationlow.h */,
@@ -661,6 +659,8 @@
 				DAAEEDEB1CECC077008C992C /* mradiationveryhigh.m */,
 				DAAEEDED1CECC081008C992C /* mradiationextreme.h */,
 				DAAEEDEE1CECC081008C992C /* mradiationextreme.m */,
+				DA3F6C0D1CEBDEBB00625BE9 /* mradiationreactor.h */,
+				DA3F6C0E1CEBDEBB00625BE9 /* mradiationreactor.m */,
 			);
 			path = radiation;
 			sourceTree = "<group>";

@@ -36,6 +36,13 @@
 "mpollution_index_disaster"="Harmful";
 "mpollution_index_fallout"="Injurious";
 
+"mradiation_index_none"="None";
+"mradiation_index_low"="Low";
+"mradiation_index_mid"="Considerable";
+"mradiation_index_high"="High";
+"mradiation_index_veryhigh"="Very high";
+"mradiation_index_extreme"="Extreme";
+
 "mpollution_pollutant_name_0"="Unknown";
 "mpollution_pollutant_name_101"="Benzene";
 "mpollution_pollutant_name_102"="Toluene";
