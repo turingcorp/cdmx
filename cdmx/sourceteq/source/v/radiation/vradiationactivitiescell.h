@@ -5,6 +5,7 @@
 
 -(void)config:(mradiationactivity*)model;
 
+@property(weak, nonatomic)UIImageView *indicator;
 @property(weak, nonatomic)UILabel *title;
 
 @end
