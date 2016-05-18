@@ -1,5 +1,7 @@
 #import "vradiation.h"
 #import "vradiationbar.h"
+#import "vradiationactivities.h"
+#import "vradiationprecautions.h"
 
 @implementation vradiation
 

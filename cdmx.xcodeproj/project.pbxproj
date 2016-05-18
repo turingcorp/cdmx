@@ -84,6 +84,10 @@
 		DAAEEDE91CECC06B008C992C /* mradiationhigh.m in Sources */ = {isa = PBXBuildFile; fileRef = DAAEEDE81CECC06B008C992C /* mradiationhigh.m */; };
 		DAAEEDEC1CECC077008C992C /* mradiationveryhigh.m in Sources */ = {isa = PBXBuildFile; fileRef = DAAEEDEB1CECC077008C992C /* mradiationveryhigh.m */; };
 		DAAEEDEF1CECC081008C992C /* mradiationextreme.m in Sources */ = {isa = PBXBuildFile; fileRef = DAAEEDEE1CECC081008C992C /* mradiationextreme.m */; };
+		DAAEEDF21CECDEE2008C992C /* vradiationactivities.m in Sources */ = {isa = PBXBuildFile; fileRef = DAAEEDF11CECDEE2008C992C /* vradiationactivities.m */; };
+		DAAEEDF51CECDF81008C992C /* vradiationprecautions.m in Sources */ = {isa = PBXBuildFile; fileRef = DAAEEDF41CECDF81008C992C /* vradiationprecautions.m */; };
+		DAAEEDF81CECDFEC008C992C /* vradiationactivitiescell.m in Sources */ = {isa = PBXBuildFile; fileRef = DAAEEDF71CECDFEC008C992C /* vradiationactivitiescell.m */; };
+		DAAEEDFB1CECDFFC008C992C /* vradiationprecautionscell.m in Sources */ = {isa = PBXBuildFile; fileRef = DAAEEDFA1CECDFFC008C992C /* vradiationprecautionscell.m */; };
 		DAB26D791CE0D09D00E1580F /* mdbcreate.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB26D781CE0D09D00E1580F /* mdbcreate.m */; };
 		DAB26D7F1CE0ECB300E1580F /* districts.plist in Resources */ = {isa = PBXBuildFile; fileRef = DAB26D7E1CE0ECB300E1580F /* districts.plist */; };
 		DAB26D821CE0F98200E1580F /* mdbselect.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB26D811CE0F98200E1580F /* mdbselect.m */; };
@@ -313,6 +317,14 @@
 		DAAEEDEB1CECC077008C992C /* mradiationveryhigh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mradiationveryhigh.m; sourceTree = "<group>"; };
 		DAAEEDED1CECC081008C992C /* mradiationextreme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mradiationextreme.h; sourceTree = "<group>"; };
 		DAAEEDEE1CECC081008C992C /* mradiationextreme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mradiationextreme.m; sourceTree = "<group>"; };
+		DAAEEDF01CECDEE2008C992C /* vradiationactivities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vradiationactivities.h; sourceTree = "<group>"; };
+		DAAEEDF11CECDEE2008C992C /* vradiationactivities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vradiationactivities.m; sourceTree = "<group>"; };
+		DAAEEDF31CECDF81008C992C /* vradiationprecautions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vradiationprecautions.h; sourceTree = "<group>"; };
+		DAAEEDF41CECDF81008C992C /* vradiationprecautions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vradiationprecautions.m; sourceTree = "<group>"; };
+		DAAEEDF61CECDFEC008C992C /* vradiationactivitiescell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vradiationactivitiescell.h; sourceTree = "<group>"; };
+		DAAEEDF71CECDFEC008C992C /* vradiationactivitiescell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vradiationactivitiescell.m; sourceTree = "<group>"; };
+		DAAEEDF91CECDFFC008C992C /* vradiationprecautionscell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vradiationprecautionscell.h; sourceTree = "<group>"; };
+		DAAEEDFA1CECDFFC008C992C /* vradiationprecautionscell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vradiationprecautionscell.m; sourceTree = "<group>"; };
 		DAB26D771CE0D09D00E1580F /* mdbcreate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mdbcreate.h; sourceTree = "<group>"; };
 		DAB26D781CE0D09D00E1580F /* mdbcreate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mdbcreate.m; sourceTree = "<group>"; };
 		DAB26D7D1CE0D67400E1580F /* mdbconstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mdbconstants.h; sourceTree = "<group>"; };
@@ -638,6 +650,14 @@
 				DA3F6C041CEBD3B400625BE9 /* vradiationreactor.m */,
 				DA3F6C061CEBD60900625BE9 /* vradiationreactorsun.h */,
 				DA3F6C071CEBD60900625BE9 /* vradiationreactorsun.m */,
+				DAAEEDF01CECDEE2008C992C /* vradiationactivities.h */,
+				DAAEEDF11CECDEE2008C992C /* vradiationactivities.m */,
+				DAAEEDF61CECDFEC008C992C /* vradiationactivitiescell.h */,
+				DAAEEDF71CECDFEC008C992C /* vradiationactivitiescell.m */,
+				DAAEEDF31CECDF81008C992C /* vradiationprecautions.h */,
+				DAAEEDF41CECDF81008C992C /* vradiationprecautions.m */,
+				DAAEEDF91CECDFFC008C992C /* vradiationprecautionscell.h */,
+				DAAEEDFA1CECDFFC008C992C /* vradiationprecautionscell.m */,
 			);
 			path = radiation;
 			sourceTree = "<group>";
@@ -1336,6 +1356,7 @@
 				DA86ACF01CE3D78400908755 /* gpollutionchartline.m in Sources */,
 				DA24B7BC1CE7BFE00008DE86 /* eannotationview.m in Sources */,
 				DAC21D4D1CE4C35B00D92161 /* vpollutionfront.m in Sources */,
+				DAAEEDFB1CECDFFC008C992C /* vradiationprecautionscell.m in Sources */,
 				DAC21D211CE4C2AA00D92161 /* mpollutionmenuitemmap.m in Sources */,
 				DAAEEDE01CECC04A008C992C /* mradiationnone.m in Sources */,
 				DAAEEDEF1CECC081008C992C /* mradiationextreme.m in Sources */,
@@ -1402,6 +1423,7 @@
 				DAEA5A091CEA40B800584526 /* mpollutionfrontitemoptionallpollutants.m in Sources */,
 				DACEDEE21CBC89630088AA8B /* cmain.m in Sources */,
 				DA3F6BB91CEB599D00625BE9 /* vpollutionrecommendation.m in Sources */,
+				DAAEEDF51CECDF81008C992C /* vradiationprecautions.m in Sources */,
 				DAC21D1B1CE4C2AA00D92161 /* mpollutionindexnodata.m in Sources */,
 				DAD33FF91CBC83E300C87502 /* tools.m in Sources */,
 				DAAEEDDD1CECB2F9008C992C /* aparserradiation.m in Sources */,
@@ -1412,6 +1434,7 @@
 				DAD875CF1CBD2F0400A4F91C /* cpages.m in Sources */,
 				DAB26D791CE0D09D00E1580F /* mdbcreate.m in Sources */,
 				DAD33FF71CBC83E300C87502 /* analytics.m in Sources */,
+				DAAEEDF81CECDFEC008C992C /* vradiationactivitiescell.m in Sources */,
 				DAC21D4F1CE4C35B00D92161 /* vpollutionfrontheader.m in Sources */,
 				DA05C6CC1CE6329B00A22A5E /* vpollutionmap.m in Sources */,
 				DAEA5A171CEA80D000584526 /* vpollutionpollutantsheader.m in Sources */,
@@ -1423,6 +1446,7 @@
 				DAC21D5C1CE4C40800D92161 /* mpollutionoption.m in Sources */,
 				DAB3FEDF1CE26E8900CCBB86 /* acallpollution.m in Sources */,
 				DAC21D191CE4C2AA00D92161 /* mpollutionindexdisaster.m in Sources */,
+				DAAEEDF21CECDEE2008C992C /* vradiationactivities.m in Sources */,
 				DA24B7B91CE7BB160008DE86 /* vpollutionmapdisplayannotation.m in Sources */,
 				DA4096471CDBFA1C0001D696 /* vbutton.m in Sources */,
 				DAC21D1A1CE4C2AA00D92161 /* mpollutionindexfallout.m in Sources */,
