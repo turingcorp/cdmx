@@ -8,8 +8,8 @@
 
 @end
 
-static CGFloat const menuanimation = 0.6;
-static CGFloat const movecontrolleranimation = 0.5;
+static CGFloat const menuanimation = 0.5;
+static CGFloat const movecontrolleranimation = 0.3;
 static CGFloat const pushcontrolleranimation = 1;
 
 @implementation cmain
@@ -83,13 +83,14 @@ static CGFloat const pushcontrolleranimation = 1;
     
     CGRect rect = [welf contentframe];
     CGRect currentleavingrect = CGRectMake(rect.origin.x - rect.size.width, rect.origin.y, rect.size.width, rect.size.height);
+    CGRect movingenteringrect = CGRectMake(rect.origin.x + rect.size.width, rect.origin.y, rect.size.width, rect.size.height);
     [welf.current willMoveToParentViewController:nil];
     [welf addChildViewController:controller];
-    [controller.view setFrame:rect];
-    [welf transitionFromViewController:welf.current toViewController:controller duration:movecontrolleranimation options:0 animations:
+    [controller.view setFrame:movingenteringrect];
+    [welf transitionFromViewController:welf.current toViewController:controller duration:movecontrolleranimation options:UIViewAnimationOptionCurveEaseOut animations:
      ^{
-         [welf.view bringSubviewToFront:welf.current.view];
          [welf.current.view setFrame:currentleavingrect];
+         [controller.view setFrame:rect];
      } completion:
      ^(BOOL done)
      {

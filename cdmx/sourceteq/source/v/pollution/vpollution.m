@@ -192,7 +192,6 @@ static NSInteger const pollutionmenuheight = 50;
                    ^
                    {
                        [EAGLContext setCurrentContext:nil];
-                       NSLog(@"context dealloced");
                    });
 }
 

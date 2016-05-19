@@ -81,11 +81,6 @@ static NSInteger const framespersecond = 60;
 #pragma mark -
 #pragma mark glk del
 
--(void)glkViewController:(GLKViewController *)controller willPause:(BOOL)pause
-{
-    NSLog(@"paused %@", @(pause));
-}
-
 -(void)glkViewControllerUpdate:(GLKViewController*)controller
 {
     [NSNotification glkmove];
