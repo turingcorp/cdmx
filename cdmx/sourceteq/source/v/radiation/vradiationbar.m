@@ -1,6 +1,7 @@
 #import "vradiationbar.h"
 #import "genericconstants.h"
 #import "ecolor.h"
+#import "efont.h"
 
 @implementation vradiationbar
 
@@ -26,12 +27,12 @@
     UIButton *buttonright = [[UIButton alloc] init];
     [buttonright setClipsToBounds:YES];
     [buttonright setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [buttonright setImage:[[UIImage imageNamed:@"generic_menu"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
-    [buttonright setImage:[[UIImage imageNamed:@"generic_menu"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateHighlighted];
-    [buttonright.imageView setClipsToBounds:YES];
-    [buttonright.imageView setContentMode:UIViewContentModeScaleAspectFit];
-    [buttonright.imageView setTintColor:[UIColor main]];
+    [buttonright setBackgroundColor:[UIColor clearColor]];
+    [buttonright setTitle:NSLocalizedString(@"vradiation_buttonright_title", nil) forState:UIControlStateNormal];
+    [buttonright setTitleColor:[UIColor main] forState:UIControlStateNormal];
+    [buttonright setTitleColor:[UIColor background] forState:UIControlStateHighlighted];
     [buttonright addTarget:self action:@selector(actionbuttonright:) forControlEvents:UIControlEventTouchUpInside];
+    [buttonright.titleLabel setFont:[UIFont boldsize:12]];
     
     [self addSubview:buttonleft];
     [self addSubview:buttonright];
