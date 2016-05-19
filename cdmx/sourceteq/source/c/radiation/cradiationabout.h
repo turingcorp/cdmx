@@ -1,13 +1,6 @@
-//
-//  cradiationabout.h
-//  cdmx
-//
-//  Created by zero on 5/18/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
+#import <UIKit/UIKit.h>
+#import "ccontroller.h"
 
-#import <Foundation/Foundation.h>
-
-@interface cradiationabout : NSObject
+@interface cradiationabout:ccontroller
 
 @end

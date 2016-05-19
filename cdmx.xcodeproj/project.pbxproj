@@ -151,6 +151,7 @@
 		DAC21D5C1CE4C40800D92161 /* mpollutionoption.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC21D5B1CE4C40800D92161 /* mpollutionoption.m */; };
 		DAC21D5F1CE4D15300D92161 /* mpollutionfrontitem.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC21D5E1CE4D15300D92161 /* mpollutionfrontitem.m */; };
 		DACEDEE21CBC89630088AA8B /* cmain.m in Sources */ = {isa = PBXBuildFile; fileRef = DACEDEE11CBC89630088AA8B /* cmain.m */; };
+		DAD2F76D1CEDFB4900A6C534 /* vradiationabout.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD2F76C1CEDFB4900A6C534 /* vradiationabout.m */; };
 		DAD33FF31CBC83E300C87502 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DAD33FB01CBC83E300C87502 /* Localizable.strings */; };
 		DAD33FF41CBC83E300C87502 /* appdel.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD33FB61CBC83E300C87502 /* appdel.m */; };
 		DAD33FF61CBC83E300C87502 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD33FB81CBC83E300C87502 /* main.m */; };
@@ -464,6 +465,8 @@
 		DAC21D5E1CE4D15300D92161 /* mpollutionfrontitem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mpollutionfrontitem.m; sourceTree = "<group>"; };
 		DACEDEE01CBC89630088AA8B /* cmain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cmain.h; sourceTree = "<group>"; };
 		DACEDEE11CBC89630088AA8B /* cmain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cmain.m; sourceTree = "<group>"; };
+		DAD2F76B1CEDFB4900A6C534 /* vradiationabout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vradiationabout.h; sourceTree = "<group>"; };
+		DAD2F76C1CEDFB4900A6C534 /* vradiationabout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vradiationabout.m; sourceTree = "<group>"; };
 		DAD33F901CBC825900C87502 /* cdmx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cdmx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAD33FB11CBC83E300C87502 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DAD33FB21CBC83E300C87502 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -1042,6 +1045,15 @@
 			path = main;
 			sourceTree = "<group>";
 		};
+		DAD2F76A1CEDFB3F00A6C534 /* radiationabout */ = {
+			isa = PBXGroup;
+			children = (
+				DAD2F76B1CEDFB4900A6C534 /* vradiationabout.h */,
+				DAD2F76C1CEDFB4900A6C534 /* vradiationabout.m */,
+			);
+			path = radiationabout;
+			sourceTree = "<group>";
+		};
 		DAD33F871CBC825900C87502 = {
 			isa = PBXGroup;
 			children = (
@@ -1195,6 +1207,7 @@
 		DAD33FE41CBC83E300C87502 /* v */ = {
 			isa = PBXGroup;
 			children = (
+				DAD2F76A1CEDFB3F00A6C534 /* radiationabout */,
 				DA3F6BFC1CEBCB3B00625BE9 /* radiation */,
 				DA3F6BBE1CEB8E8C00625BE9 /* menu */,
 				DAC21D221CE4C35B00D92161 /* pollution */,
@@ -1488,6 +1501,7 @@
 				DA05C6D21CE632DD00A22A5E /* vpollutionmapdisplay.m in Sources */,
 				DAEA5A0C1CEA66FE00584526 /* cpollutionpollutants.m in Sources */,
 				DA3F6C0F1CEBDEBB00625BE9 /* mradiationreactor.m in Sources */,
+				DAD2F76D1CEDFB4900A6C534 /* vradiationabout.m in Sources */,
 				DAEA5A001CEA407300584526 /* mpollutionfrontitemoptionimeca.m in Sources */,
 				DAAEEDE61CECC061008C992C /* mradiationmid.m in Sources */,
 				DA9274681CE4E73C0005138A /* mpollutionchartitempoint.m in Sources */,

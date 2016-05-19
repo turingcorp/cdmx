@@ -1,13 +1,26 @@
-//
-//  cradiationabout.m
-//  cdmx
-//
-//  Created by zero on 5/18/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
-
 #import "cradiationabout.h"
+#import "vradiationabout.h"
+
+@interface cradiationabout ()
+
+@property(strong, nonatomic)vradiationabout *view;
+
+@end
 
 @implementation cradiationabout
+
+@dynamic view;
+
+-(instancetype)init
+{
+    self = [super init];
+    
+    return self;
+}
+
+-(void)loadView
+{
+    self.view = [[vradiationabout alloc] init:self];
+}
 
 @end
