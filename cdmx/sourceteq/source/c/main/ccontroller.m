@@ -1,7 +1,15 @@
 #import "ccontroller.h"
 #import "cmain.h"
 
+@interface ccontroller ()
+
+@property(weak, nonatomic, readonly)cmain *parentViewController;
+
+@end
+
 @implementation ccontroller
+
+@dynamic parentViewController;
 
 -(UIStatusBarStyle)preferredStatusBarStyle
 {
@@ -23,23 +31,11 @@
     //    [[analytics singleton] trackscreen:self];
 }
 
--(void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    self.prevgesturedelegate = self.navigationController.interactivePopGestureRecognizer.delegate;
-    self.navigationController.interactivePopGestureRecognizer.delegate = self;
-}
-
--(void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-    self.navigationController.interactivePopGestureRecognizer.delegate = self.prevgesturedelegate;
-}
-
 #pragma mark public
 
 -(void)back
 {
+    [self.parentViewController back];
 }
 
 -(void)menu

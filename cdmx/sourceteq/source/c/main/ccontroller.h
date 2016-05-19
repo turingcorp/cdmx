@@ -1,10 +1,8 @@
 #import <UIKit/UIKit.h>
 
-@interface ccontroller:UIViewController<UIGestureRecognizerDelegate>
+@interface ccontroller:UIViewController
 
 -(void)back;
 -(void)menu;
-
-@property(weak, nonatomic)id<UIGestureRecognizerDelegate> prevgesturedelegate;
 
 @end
