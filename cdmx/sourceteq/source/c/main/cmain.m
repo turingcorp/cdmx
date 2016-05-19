@@ -1,4 +1,5 @@
 #import "cmain.h"
+#import "cpollution.h"
 
 @implementation cmain
 
@@ -13,9 +14,8 @@
 
 -(instancetype)init
 {
-    cpages *pages = [[cpages alloc] init];
-    self.pages = pages;
-    self = [super initWithRootViewController:pages];
+    cpollution *controller = [[cpollution alloc] init];
+    self = [super initWithRootViewController:controller];
     
     return self;
 }
@@ -24,6 +24,13 @@
 {
     [super viewDidLoad];
     [self setNavigationBarHidden:YES];
+}
+
+#pragma mark public
+
+-(void)changecontroller:(UIViewController*)controller animated:(BOOL)animated forward:(BOOL)forward
+{
+    
 }
 
 @end

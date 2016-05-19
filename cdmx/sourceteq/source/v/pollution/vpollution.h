@@ -12,6 +12,7 @@
 -(void)show_districts;
 -(void)show_chart;
 -(void)show_map;
+-(void)clean;
 
 @property(weak, nonatomic)cpollution *controller;
 @property(weak, nonatomic)vpollutionoption *option;

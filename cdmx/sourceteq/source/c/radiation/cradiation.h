@@ -5,6 +5,7 @@
 @interface cradiation:UIViewController<acalldelegate>
 
 -(void)menu;
+-(void)about;
 
 @property(weak, nonatomic)amanager *apimanager;
 

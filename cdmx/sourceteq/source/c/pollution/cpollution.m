@@ -68,8 +68,7 @@ static NSInteger const framespersecond = 60;
 
 -(void)menu
 {
-    [self.view setUserInteractionEnabled:NO];
-    [self setPaused:YES];
+    [self.view clean];
     [self.model clean];
     [[cmain singleton].pages menu];
 }
@@ -81,6 +80,11 @@ static NSInteger const framespersecond = 60;
 
 #pragma mark -
 #pragma mark glk del
+
+-(void)glkViewController:(GLKViewController *)controller willPause:(BOOL)pause
+{
+    NSLog(@"paused %@", @(pause));
+}
 
 -(void)glkViewControllerUpdate:(GLKViewController*)controller
 {

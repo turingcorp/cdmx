@@ -1,10 +1,10 @@
 #import <UIKit/UIKit.h>
-#import "cpages.h"
 
 @interface cmain:UINavigationController
 
 +(instancetype)singleton;
+-(void)changecontroller:(UIViewController*)controller animated:(BOOL)animated forward:(BOOL)forward;
 
-@property(weak, nonatomic)cpages *pages;
+@property(weak, nonatomic)UIViewController *current;
 
 @end

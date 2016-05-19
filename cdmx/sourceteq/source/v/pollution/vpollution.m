@@ -29,7 +29,6 @@ static NSInteger const pollutionmenuheight = 50;
     CGFloat screenheight = screensize.height;
     
     self.strongcontext = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
-    [EAGLContext setCurrentContext:self.strongcontext];
     [self setContext:self.strongcontext];
     [self setDelegate:self];
 
@@ -181,6 +180,19 @@ static NSInteger const pollutionmenuheight = 50;
                                           [welf loadmap];
                                           [welf.menu setUserInteractionEnabled:YES];
                                       });
+                   });
+}
+
+-(void)clean
+{
+    [self setUserInteractionEnabled:NO];
+    self.strongcontext = nil;
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
+                   ^
+                   {
+                       [EAGLContext setCurrentContext:nil];
+                       NSLog(@"context dealloced");
                    });
 }
 

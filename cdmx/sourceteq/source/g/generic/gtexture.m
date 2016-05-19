@@ -32,12 +32,21 @@
     __weak typeof(self) welf = self;
     
     UIImage *image = [UIImage imageNamed:texturename];
-    GLKTextureLoader *loader = [[GLKTextureLoader alloc] initWithSharegroup:[EAGLContext currentContext].sharegroup];
-    [loader textureWithCGImage:image.CGImage options:@{GLKTextureLoaderSRGB:@(srgb)} queue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0) completionHandler:
-     ^(GLKTextureInfo * _Nullable textureinfo, NSError * _Nullable outerror)
+    EAGLContext *context = [EAGLContext currentContext];
+    
+    if(context)
     {
-        welf.textureid = textureinfo.name;
-    }];
+        GLKTextureLoader *loader = [[GLKTextureLoader alloc] initWithSharegroup:context.sharegroup];
+        [loader textureWithCGImage:image.CGImage options:@{GLKTextureLoaderSRGB:@(srgb)} queue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0) completionHandler:
+         ^(GLKTextureInfo * _Nullable textureinfo, NSError * _Nullable outerror)
+         {
+             welf.textureid = textureinfo.name;
+         }];
+    }
+    else
+    {
+        NSLog(@"no context");
+    }
 }
 
 @end

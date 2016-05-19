@@ -1,5 +1,6 @@
 #import "cradiation.h"
 #import "cmain.h"
+#import "cradiationabout.h"
 #import "vradiation.h"
 #import "aparserradiation.h"
 
@@ -61,6 +62,12 @@
 -(void)menu
 {
     [[cmain singleton].pages menu];
+}
+
+-(void)about
+{
+    cradiationabout *controller = [[cradiationabout alloc] init];
+    [[cmain singleton].pages changecontroller:controller direction:UIPageViewControllerNavigationDirectionForward animated:YES];
 }
 
 #pragma mark -
