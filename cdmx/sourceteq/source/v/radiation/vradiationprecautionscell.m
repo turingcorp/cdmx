@@ -24,7 +24,7 @@
     [title setUserInteractionEnabled:NO];
     [title setTranslatesAutoresizingMaskIntoConstraints:NO];
     [title setTextAlignment:NSTextAlignmentCenter];
-    [title setFont:[UIFont regularsize:11]];
+    [title setFont:[UIFont regularsize:12]];
     [title setTextColor:[UIColor colorWithWhite:0 alpha:0.4]];
     self.title = title;
     
@@ -47,7 +47,7 @@
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[image]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[title]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[level]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[image(26)]-4-[title(13)]-0-[level(16)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[image(32)]-0-[title(14)]-0-[level(14)]-0-|" options:0 metrics:metrics views:views]];
     
     return self;
 }
