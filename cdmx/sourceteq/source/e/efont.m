@@ -2,7 +2,7 @@
 
 static NSString* const fontregularname =    @"AvenirNext-Regular";
 static NSString* const fontboldname =       @"AvenirNext-DemiBold";
-static NSString* const fontnumeric =        @"AvenirNextCondensed-Regular";
+static NSString* const fontnumeric =        @"AvenirNextCondensed-UltraLight";
 
 @implementation UIFont (efont)
 

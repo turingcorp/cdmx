@@ -1,11 +1,13 @@
 #import <UIKit/UIKit.h>
 
-@interface cmain:UINavigationController
+@interface cmain:UIViewController
 
 +(instancetype)singleton;
 -(void)menu;
--(void)changecontroller:(UIViewController*)controller;
+-(void)rootcontroller:(UIViewController*)controller;
+-(void)movetocontroller:(UIViewController*)controller;
+-(void)pushcontroller:(UIViewController*)controller;
 
-@property(weak, nonatomic)UIViewController *current;
+@property(weak, nonatomic, readonly)UIViewController *current;
 
 @end

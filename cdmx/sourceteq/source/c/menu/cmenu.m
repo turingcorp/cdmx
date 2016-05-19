@@ -42,7 +42,7 @@
 
 -(void)menuselected:(UIViewController*)controller
 {
-    [[cmain singleton] changecontroller:controller];
+    [[cmain singleton] movetocontroller:controller];
 }
 
 @end

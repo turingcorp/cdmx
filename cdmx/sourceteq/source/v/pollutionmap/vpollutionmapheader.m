@@ -28,7 +28,7 @@ static NSInteger const maxfractionskm = 1;
     [labelindex setUserInteractionEnabled:NO];
     [labelindex setTranslatesAutoresizingMaskIntoConstraints:NO];
     [labelindex setTextAlignment:NSTextAlignmentCenter];
-    [labelindex setFont:[UIFont numericsize:20]];
+    [labelindex setFont:[UIFont numericsize:26]];
     [labelindex setTextColor:[UIColor blackColor]];
     self.labelindex = labelindex;
     
@@ -87,7 +87,7 @@ static NSInteger const maxfractionskm = 1;
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[km]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[circle]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[index]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[index]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-4-[index]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-8-[station(18)]-0-[km(16)]-5-[circle(90)]-(-12)-[title(16)]" options:0 metrics:metrics views:views]];
     
     return self;

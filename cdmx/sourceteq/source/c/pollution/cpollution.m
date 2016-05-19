@@ -75,7 +75,7 @@ static NSInteger const framespersecond = 60;
 
 -(void)option:(UIViewController*)controller
 {
-    [[cmain singleton] pushViewController:controller animated:YES];
+//    [[cmain singleton] pushViewController:controller animated:YES];
 }
 
 #pragma mark -
