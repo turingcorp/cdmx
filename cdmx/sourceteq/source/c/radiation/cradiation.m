@@ -67,7 +67,7 @@
 -(void)about
 {
     cradiationabout *controller = [[cradiationabout alloc] init];
-//    [[cmain singleton] pushViewController:controller animated:YES];
+    [[cmain singleton] pushcontroller:controller];
 }
 
 #pragma mark -

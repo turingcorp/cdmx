@@ -20,6 +20,11 @@ static NSInteger const pollutionmenuheight = 50;
     return self;
 }
 
+-(void)dealloc
+{
+    NSLog(@"dealloc");
+}
+
 #pragma mark functionality
 
 -(void)glkstart

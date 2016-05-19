@@ -40,12 +40,11 @@
 
 -(void)back
 {
-    [self.navigationController popViewControllerAnimated:YES];
 }
 
 -(void)menu
 {
-    //    [[cmain singleton].pages pagemenu];
+    [[cmain singleton] menu];
 }
 
 @end

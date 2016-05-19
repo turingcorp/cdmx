@@ -5,12 +5,13 @@
 @interface cmain ()
 
 @property(weak, nonatomic, readwrite)UIViewController *current;
+@property(strong, nonatomic, readwrite)UIViewController *previous;
 
 @end
 
-static CGFloat const menuanimation = 0.5;
+static CGFloat const menuanimation = 0.4;
 static CGFloat const movecontrolleranimation = 0.3;
-static CGFloat const pushcontrolleranimation = 1;
+static CGFloat const pushcontrolleranimation = 0.3;
 
 @implementation cmain
 
@@ -39,6 +40,16 @@ static CGFloat const pushcontrolleranimation = 1;
     CGRect rect = self.view.bounds;
     
     return rect;
+}
+
+-(UIView*)shade
+{
+    UIView *view = [[UIView alloc] init];
+    [view setUserInteractionEnabled:NO];
+    [view setClipsToBounds:YES];
+    [view setBackgroundColor:[UIColor colorWithWhite:0 alpha:0.1]];
+    
+    return view;
 }
 
 #pragma mark public
@@ -102,7 +113,72 @@ static CGFloat const pushcontrolleranimation = 1;
 
 -(void)pushcontroller:(UIViewController*)controller
 {
+    __weak typeof(self) welf = self;
     
+    CGRect rect = [welf contentframe];
+    CGFloat rectx = rect.origin.x;
+    CGFloat recty = rect.origin.y;
+    CGFloat rectwidth = rect.size.width;
+    CGFloat rectheight = rect.size.height;
+    CGRect movingenteringrect = CGRectMake(rectx + rectwidth, recty, rectwidth, rectheight);
+    CGRect currentleavingrect = CGRectMake(rectx - (rectwidth / 2.0), recty, rectwidth, rectheight);
+    UIView *shade = [welf shade];
+    
+    [shade setFrame:rect];
+    [controller.view setFrame:movingenteringrect];
+    
+    [welf.current willMoveToParentViewController:nil];
+    [welf addChildViewController:controller];
+    
+    [welf transitionFromViewController:welf.current toViewController:controller duration:pushcontrolleranimation options:UIViewAnimationOptionCurveEaseOut animations:
+     ^{
+         [controller.view setFrame:rect];
+         [welf.current.view setFrame:currentleavingrect];
+         [welf.view insertSubview:shade belowSubview:controller.view];
+     } completion:
+     ^(BOOL done)
+     {
+         welf.previous = welf.current;
+         [welf.current removeFromParentViewController];
+         [controller didMoveToParentViewController:welf];
+         [shade removeFromSuperview];
+         welf.current = controller;
+     }];
+}
+
+-(void)back
+{
+    __weak typeof(self) welf = self;
+    
+    CGRect rect = [welf contentframe];
+    CGFloat rectx = rect.origin.x;
+    CGFloat recty = rect.origin.y;
+    CGFloat rectwidth = rect.size.width;
+    CGFloat rectheight = rect.size.height;
+    CGRect currentleavingrect = CGRectMake(rectx + rectwidth, recty, rectwidth, rectheight);
+    CGRect movingenteringrect = CGRectMake(rectx - (rectwidth / 2.0), recty, rectwidth, rectheight);
+    UIView *shade = [welf shade];
+    
+    [shade setFrame:rect];
+    [welf.previous.view setFrame:movingenteringrect];
+    
+    [welf.current willMoveToParentViewController:nil];
+    [welf addChildViewController:welf.previous];
+    
+    [welf transitionFromViewController:welf.current toViewController:welf.previous duration:pushcontrolleranimation options:UIViewAnimationOptionCurveEaseOut animations:
+     ^{
+         [welf.previous.view setFrame:rect];
+         [welf.current.view setFrame:currentleavingrect];
+         [welf.view insertSubview:shade belowSubview:welf.previous.view];
+     } completion:
+     ^(BOOL done)
+     {
+         [welf.current removeFromParentViewController];
+         [welf.previous didMoveToParentViewController:welf];
+         [shade removeFromSuperview];
+         welf.current = welf.previous;
+         welf.previous = nil;
+     }];
 }
 
 @end
