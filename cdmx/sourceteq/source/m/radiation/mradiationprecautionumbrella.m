@@ -13,7 +13,7 @@
 {
     self = [super init];
     self.name = NSLocalizedString(@"mradiation_precaution_umbrella", nil);
-    self.asset = @"radiation_exercise";
+    self.asset = @"radiation_umbrella";
     
     return self;
 }

@@ -33,7 +33,7 @@
     [level setUserInteractionEnabled:NO];
     [level setTranslatesAutoresizingMaskIntoConstraints:NO];
     [level setTextAlignment:NSTextAlignmentCenter];
-    [level setFont:[UIFont boldsize:13]];
+    [level setFont:[UIFont boldsize:12]];
     [level setTextColor:[UIColor main]];
     self.level = level;
     
