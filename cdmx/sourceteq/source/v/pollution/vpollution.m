@@ -5,6 +5,7 @@
 #import "vpollutionfront.h"
 #import "vpollutioncharter.h"
 #import "vpollutionmap.h"
+#import "msettings.h"
 
 static NSInteger const texturecorners = 6;
 static NSInteger const pollutionmenuheight = 50;
@@ -20,11 +21,6 @@ static NSInteger const pollutionmenuheight = 50;
     return self;
 }
 
--(void)dealloc
-{
-    NSLog(@"dealloc");
-}
-
 #pragma mark functionality
 
 -(void)glkstart
@@ -33,8 +29,12 @@ static NSInteger const pollutionmenuheight = 50;
     CGFloat screenwidth = screensize.width;
     CGFloat screenheight = screensize.height;
     
-    self.strongcontext = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
-    [self setContext:self.strongcontext];
+    if(![msettings singleton].context)
+    {
+        [msettings singleton].context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
+    }
+    
+    [self setContext:[msettings singleton].context];
     [self setDelegate:self];
 
     self.datatexture = [NSMutableData dataWithLength:texturecorners * sizeof(GLKVector2)];
@@ -53,6 +53,7 @@ static NSInteger const pollutionmenuheight = 50;
 -(void)loadmenu
 {
     vpollutionmenu *menu = [[vpollutionmenu alloc] init:self.controller];
+    [menu setUserInteractionEnabled:NO];
     self.menu = menu;
     
     [self addSubview:menu];
@@ -100,24 +101,25 @@ static NSInteger const pollutionmenuheight = 50;
 {
     __weak typeof(self) welf = self;
     
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
+    dispatch_async(dispatch_get_main_queue(),
                    ^
                    {
-                       if(!welf.strongcontext)
-                       {
-                           [welf glkstart];
-                           
-                           dispatch_async(dispatch_get_main_queue(),
-                                          ^
-                                          {
-                                              [welf loadmenu];
-                                          });
-                       }
+                       [welf loadmenu];
                        
-                       dispatch_async(dispatch_get_main_queue(),
+                       dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC),
+                                      dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
                                       ^
                                       {
-                                          [welf show_districts];
+                                          if(!welf.context)
+                                          {
+                                              [welf glkstart];
+                                          }
+                                          
+                                          dispatch_async(dispatch_get_main_queue(),
+                                                         ^
+                                                         {
+                                                             [welf show_districts];
+                                                         });
                                       });
                    });
 }
@@ -132,7 +134,7 @@ static NSInteger const pollutionmenuheight = 50;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
                    ^
                    {
-                       [EAGLContext setCurrentContext:welf.strongcontext];
+                       [EAGLContext setCurrentContext:welf.context];
                        [welf.controller.model districts];
                        
                        dispatch_async(dispatch_get_main_queue(),
@@ -154,7 +156,7 @@ static NSInteger const pollutionmenuheight = 50;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
                    ^
                    {
-                       [EAGLContext setCurrentContext:welf.strongcontext];
+                       [EAGLContext setCurrentContext:welf.context];
                        [welf.controller.model chart];
                        
                        dispatch_async(dispatch_get_main_queue(),
@@ -176,7 +178,7 @@ static NSInteger const pollutionmenuheight = 50;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
                    ^
                    {
-                       [EAGLContext setCurrentContext:welf.strongcontext];
+                       [EAGLContext setCurrentContext:welf.context];
                        [welf.controller.model map];
                        
                        dispatch_async(dispatch_get_main_queue(),
@@ -191,13 +193,6 @@ static NSInteger const pollutionmenuheight = 50;
 -(void)clean
 {
     [self setUserInteractionEnabled:NO];
-    self.strongcontext = nil;
-    
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
-                   ^
-                   {
-                       [EAGLContext setCurrentContext:nil];
-                   });
 }
 
 #pragma mark -

@@ -19,7 +19,6 @@
 @property(weak, nonatomic)vpollutionmenu *menu;
 @property(strong, nonatomic)NSMutableData *datatexture;
 @property(strong, nonatomic)GLKBaseEffect *baseeffect;
-@property(strong, nonatomic)EAGLContext *strongcontext;
 @property(assign, nonatomic)GLKVector2 *pointertexture;
 
 @end
