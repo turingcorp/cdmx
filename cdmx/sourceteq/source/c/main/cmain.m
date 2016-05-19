@@ -15,6 +15,7 @@
 -(instancetype)init
 {
     cpollution *controller = [[cpollution alloc] init];
+    self.current = controller;
     self = [super initWithRootViewController:controller];
     
     return self;
@@ -28,7 +29,12 @@
 
 #pragma mark public
 
--(void)changecontroller:(UIViewController*)controller animated:(BOOL)animated forward:(BOOL)forward
+-(void)menu
+{
+    
+}
+
+-(void)changecontroller:(UIViewController*)controller
 {
     
 }

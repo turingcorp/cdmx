@@ -70,7 +70,7 @@ static NSInteger const framespersecond = 60;
 {
     [self.view clean];
     [self.model clean];
-    [[cmain singleton].pages menu];
+    [[cmain singleton] menu];
 }
 
 -(void)option:(UIViewController*)controller

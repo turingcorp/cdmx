@@ -61,13 +61,13 @@
 
 -(void)menu
 {
-    [[cmain singleton].pages menu];
+    [[cmain singleton] menu];
 }
 
 -(void)about
 {
     cradiationabout *controller = [[cradiationabout alloc] init];
-    [[cmain singleton].pages changecontroller:controller direction:UIPageViewControllerNavigationDirectionForward animated:YES];
+    [[cmain singleton] pushViewController:controller animated:YES];
 }
 
 #pragma mark -
