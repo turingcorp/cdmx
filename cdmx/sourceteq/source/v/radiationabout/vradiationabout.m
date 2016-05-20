@@ -6,6 +6,8 @@
 #import "ecollectionreusable.h"
 
 static NSInteger const radiationaboutbottom = 40;
+static NSInteger const radiationaboutheaderheight = 150;
+static NSInteger const radiationaboutcellheight = 40;
 
 @interface vradiationabout ()
 
@@ -96,6 +98,22 @@ static NSInteger const radiationaboutbottom = 40;
 
 #pragma mark -
 #pragma mark col del
+
+-(CGSize)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout referenceSizeForHeaderInSection:(NSInteger)section
+{
+    CGFloat width = col.bounds.size.width;
+    CGSize size = CGSizeMake(width, radiationaboutheaderheight);
+    
+    return size;
+}
+
+-(CGSize)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout sizeForItemAtIndexPath:(NSIndexPath*)index
+{
+    CGFloat width = col.bounds.size.width;
+    CGSize size = CGSizeMake(width, radiationaboutcellheight);
+    
+    return size;
+}
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView*)col
 {
