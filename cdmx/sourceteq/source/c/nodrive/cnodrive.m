@@ -81,7 +81,7 @@
     [self.parentViewController menu];
 }
 
--(void)option:(UIViewController*)controller
+-(void)calendar
 {
     
 }

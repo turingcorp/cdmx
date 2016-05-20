@@ -5,7 +5,7 @@
 @interface cnodrive:UIViewController<acalldelegate>
 
 -(void)menu;
--(void)option:(UIViewController*)controller;
+-(void)calendar;
 
 @property(weak, nonatomic)amanager *apimanager;
 
