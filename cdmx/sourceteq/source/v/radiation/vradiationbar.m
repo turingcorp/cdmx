@@ -33,7 +33,6 @@
     [buttonright setTitleColor:[UIColor background] forState:UIControlStateHighlighted];
     [buttonright addTarget:self action:@selector(actionbuttonright:) forControlEvents:UIControlEventTouchUpInside];
     [buttonright.titleLabel setFont:[UIFont boldsize:12]];
-    [buttonright addTarget:self action:@selector(actionbuttonright:) forControlEvents:UIControlEventTouchUpInside];
     
     [self addSubview:buttonleft];
     [self addSubview:buttonright];
@@ -43,8 +42,8 @@
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[buttonleft(60)]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[buttonright(60)]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-20-[buttonleft]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-20-[buttonright]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[buttonleft(45)]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[buttonright(45)]-0-|" options:0 metrics:metrics views:views]];
     
     return self;
 }

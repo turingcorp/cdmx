@@ -26,11 +26,12 @@
     UIButton *buttonright = [[UIButton alloc] init];
     [buttonright setClipsToBounds:YES];
     [buttonright setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [buttonright setBackgroundColor:[UIColor clearColor]];
-    [buttonright setTitle:NSLocalizedString(@"vradiation_buttonright_title", nil) forState:UIControlStateNormal];
-    [buttonright setTitleColor:[UIColor main] forState:UIControlStateNormal];
-    [buttonright setTitleColor:[UIColor background] forState:UIControlStateHighlighted];
-    [buttonright addTarget:self action:@selector(actionbuttonright:) forControlEvents:UIControlEventTouchUpInside];
+    [buttonright setImage:[[UIImage imageNamed:@"generic_calendar"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
+    [buttonright setImage:[[UIImage imageNamed:@"generic_calendar"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateHighlighted];
+    [buttonright.imageView setContentMode:UIViewContentModeScaleAspectFit];
+    [buttonright.imageView setClipsToBounds:YES];
+    [buttonright.imageView setTintColor:[UIColor main]];
+    [buttonright setImageEdgeInsets:UIEdgeInsetsMake(12, 18, 12, 0)];
     [buttonright addTarget:self action:@selector(actionbuttonright:) forControlEvents:UIControlEventTouchUpInside];
     
     [self addSubview:buttonleft];
@@ -41,8 +42,8 @@
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[buttonleft(60)]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[buttonright(60)]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-20-[buttonleft]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-20-[buttonright]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[buttonleft(45)]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[buttonright(45)]-0-|" options:0 metrics:metrics views:views]];
     
     return self;
 }
