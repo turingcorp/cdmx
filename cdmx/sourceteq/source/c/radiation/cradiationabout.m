@@ -18,6 +18,13 @@
     return self;
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [self.view viewdidappear];
+}
+
 -(void)loadView
 {
     self.view = [[vradiationabout alloc] init:self];
