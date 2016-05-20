@@ -48,7 +48,7 @@ static CGFloat const pushcontrolleranimation = 0.3;
     UIView *view = [[UIView alloc] init];
     [view setUserInteractionEnabled:NO];
     [view setClipsToBounds:YES];
-    [view setBackgroundColor:[UIColor colorWithWhite:0 alpha:0.1]];
+    [view setBackgroundColor:[UIColor blackColor]];
     
     return view;
 }
@@ -129,6 +129,7 @@ static CGFloat const pushcontrolleranimation = 0.3;
     CGRect currentleavingrect = CGRectMake(rectx - (rectwidth / 2.0), recty, rectwidth, rectheight);
     UIView *shade = [welf shade];
     
+    [shade setAlpha:0];
     [shade setFrame:rect];
     [controller.view setFrame:movingenteringrect];
     
@@ -137,6 +138,7 @@ static CGFloat const pushcontrolleranimation = 0.3;
     
     [welf transitionFromViewController:welf.current toViewController:controller duration:pushcontrolleranimation options:UIViewAnimationOptionCurveEaseOut animations:
      ^{
+         [shade setAlpha:0.2];
          [controller.view setFrame:rect];
          [welf.current.view setFrame:currentleavingrect];
          [welf.view insertSubview:shade belowSubview:controller.view];
@@ -167,6 +169,7 @@ static CGFloat const pushcontrolleranimation = 0.3;
     UIView *shade = [welf shade];
     
     [shade setFrame:rect];
+    [shade setAlpha:0.2];
     [welf.previous.view setFrame:movingenteringrect];
     
     [welf.current willMoveToParentViewController:nil];
@@ -174,9 +177,11 @@ static CGFloat const pushcontrolleranimation = 0.3;
     
     [welf transitionFromViewController:welf.current toViewController:welf.previous duration:pushcontrolleranimation options:UIViewAnimationOptionCurveEaseOut animations:
      ^{
+         [shade setAlpha:0];
          [welf.previous.view setFrame:rect];
          [welf.current.view setFrame:currentleavingrect];
-         [welf.view insertSubview:shade belowSubview:welf.previous.view];
+         [welf.view bringSubviewToFront:welf.current.view];
+         [welf.view insertSubview:shade belowSubview:welf.current.view];
      } completion:
      ^(BOOL done)
      {

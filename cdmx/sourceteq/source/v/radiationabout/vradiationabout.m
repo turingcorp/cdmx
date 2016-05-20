@@ -14,6 +14,8 @@
 -(instancetype)init:(ccontroller*)controller
 {
     self = [super init:controller];
+    [self.bar buttonback];
+    [self.bar title:NSLocalizedString(@"vradiation_about_title", nil)];
     
     return self;
 }

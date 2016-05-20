@@ -17,6 +17,11 @@ static NSInteger const framespersecond = 60;
 @dynamic view;
 @dynamic parentViewController;
 
+-(void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 -(UIStatusBarStyle)preferredStatusBarStyle
 {
     return UIStatusBarStyleDefault;
@@ -43,17 +48,20 @@ static NSInteger const framespersecond = 60;
 {
     [super viewDidAppear:animated];
     [self loadpollution];
-}
-
--(void)viewDidDisappear:(BOOL)animated
-{
-    [super viewDidDisappear:animated];
-    [self.view.option removeFromSuperview];
+    
+    [NSNotification observe:self becomeactive:@selector(notifiedbecomeactive:)];
 }
 
 -(void)loadView
 {
     self.view = [[vpollution alloc] init:self];
+}
+
+#pragma mark notified
+
+-(void)notifiedbecomeactive:(NSNotification*)notification
+{
+    [self loadpollution];
 }
 
 #pragma mark functionality
@@ -81,7 +89,6 @@ static NSInteger const framespersecond = 60;
 
 -(void)option:(UIViewController*)controller
 {
-    [self.model clean];
     [self.parentViewController pushcontroller:controller];
 }
 

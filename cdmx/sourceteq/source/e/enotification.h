@@ -9,5 +9,6 @@
 +(void)glkdraw:(mpollutionnotificationdraw*)userinfo;
 +(void)glkdrawremove:(id)observer;
 +(void)observe:(id)observer glkdraw:(SEL)selector;
++(void)observe:(id)observer becomeactive:(SEL)selector;
 
 @end

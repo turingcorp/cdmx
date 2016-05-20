@@ -33,6 +33,7 @@
     [buttonright setTitleColor:[UIColor background] forState:UIControlStateHighlighted];
     [buttonright addTarget:self action:@selector(actionbuttonright:) forControlEvents:UIControlEventTouchUpInside];
     [buttonright.titleLabel setFont:[UIFont boldsize:12]];
+    [buttonright addTarget:self action:@selector(actionbuttonright:) forControlEvents:UIControlEventTouchUpInside];
     
     [self addSubview:buttonleft];
     [self addSubview:buttonright];
@@ -64,7 +65,7 @@
 
 -(void)actionbuttonright:(UIButton*)button
 {
-    
+    [self.controller about];
 }
 
 @end

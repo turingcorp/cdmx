@@ -35,4 +35,9 @@ static NSString* const notification_glkdraw =               @"glkdraw";
     [[NSNotificationCenter defaultCenter] addObserver:observer selector:selector name:notification_glkdraw object:nil];
 }
 
++(void)observe:(id)observer becomeactive:(SEL)selector
+{
+    [[NSNotificationCenter defaultCenter] addObserver:observer selector:selector name:UIApplicationDidBecomeActiveNotification object:nil];
+}
+
 @end
