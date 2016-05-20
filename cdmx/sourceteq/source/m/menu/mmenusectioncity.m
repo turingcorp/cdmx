@@ -19,7 +19,7 @@
     self.items = @[
                    [[mmenusectionitempollution alloc] init],
                    [[mmenusectionitemradiation alloc] init],
-                   [[mmenusectionitemclimate alloc] init]
+                   //[[mmenusectionitemclimate alloc] init]
                    ];
     
     return self;

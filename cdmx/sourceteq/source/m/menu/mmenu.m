@@ -17,7 +17,7 @@
     self.sections = @[
                       [[mmenusectioncity alloc] init],
                       [[mmenusectionmobility alloc] init],
-                      [[mmenusectionapp alloc] init]
+                      //[[mmenusectionapp alloc] init]
                       ];
     
     return self;

@@ -17,7 +17,7 @@
     self.name = NSLocalizedString(@"mmenu_section_mobility", nil);
     self.items = @[
                    [[mmenusectionitemnodrive alloc] init],
-                   [[mmenusectionitemecobici alloc] init]
+                   //[[mmenusectionitemecobici alloc] init]
                    ];
     
     return self;

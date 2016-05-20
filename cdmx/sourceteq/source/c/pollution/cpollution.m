@@ -62,6 +62,7 @@ static NSInteger const framespersecond = 60;
 
 -(void)notifiedbecomeactive:(NSNotification*)notification
 {
+    [self setPaused:NO];
     [self loadpollution];
 }
 
