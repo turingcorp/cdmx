@@ -14,7 +14,7 @@
 {
     self = [super init];
     self.name = NSLocalizedString(@"mmenu_item_nodrive", nil);
-    self.asset = @"menu_city_pollution";
+    self.asset = @"menu_mobility_nodrive";
     
     return self;
 }
