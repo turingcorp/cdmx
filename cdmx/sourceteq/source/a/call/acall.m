@@ -2,6 +2,7 @@
 #import "aparser.h"
 #import "acallpollution.h"
 #import "acallradiation.h"
+#import "acallnodrive.h"
 
 static NSInteger const standardtimeout = 15;
 
@@ -17,6 +18,13 @@ static NSInteger const standardtimeout = 15;
 +(instancetype)radiation
 {
     acallradiation *call = [[acallradiation alloc] init];
+    
+    return call;
+}
+
++(instancetype)nodrive
+{
+    acallnodrive *call = [[acallnodrive alloc] init];
     
     return call;
 }
