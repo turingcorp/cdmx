@@ -8,5 +8,7 @@
 	<string>cdmx/pollution.api</string>
 	<key>radiation</key>
 	<string>cdmx/radiation.api</string>
+	<key>nodrive</key>
+	<string>cdmx/nodrive.api</string>
 </dict>
 </plist>
