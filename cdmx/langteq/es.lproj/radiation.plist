@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <array>
+        <dict>
+            <key>name</key>
+            <string>None</string>
+            <key>info</key>
+            <string>Safe</string>
+            <key>items</key>
+            <array>
+                <integer>0</integer>
+            </array>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Low</string>
+            <key>info</key>
+            <string>No risk</string>
+            <key>items</key>
+            <array>
+                <integer>1</integer>
+                <integer>2</integer>
+            </array>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Considerable</string>
+            <key>info</key>
+            <string>May be harmful for your skin, try not to expose too much to direct uv radiation</string>
+            <key>items</key>
+            <array>
+                <integer>3</integer>
+                <integer>4</integer>
+                <integer>5</integer>
+            </array>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>High</string>
+            <key>info</key>
+            <string>Harmful for your skin, expose as little as possible to uv radiation</string>
+            <key>items</key>
+            <array>
+                <integer>6</integer>
+                <integer>7</integer>
+            </array>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Very high</string>
+            <key>info</key>
+            <string>Highly harmful for your skin, do not expose to uv radiation</string>
+            <key>items</key>
+            <array>
+                <integer>8</integer>
+                <integer>9</integer>
+                <integer>10</integer>
+            </array>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Extreme</string>
+            <key>info</key>
+            <string>Extremely harmful for your skin and your eyes, avoid it</string>
+            <key>items</key>
+            <array>
+                <integer>11</integer>
+            </array>
+        </dict></array>
+</plist>
