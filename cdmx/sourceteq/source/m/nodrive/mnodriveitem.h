@@ -1,13 +1,9 @@
-//
-//  mnodriveitem.h
-//  cdmx
-//
-//  Created by zero on 5/20/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
+#import "mnodriveitemplate.h"
 
-@interface mnodriveitem : NSObject
+@interface mnodriveitem:NSObject
+
+@property(strong, nonatomic, readonly)NSArray<mnodriveitemplate*> *plates;
+@property(assign, nonatomic, readonly)BOOL permit;
 
 @end
