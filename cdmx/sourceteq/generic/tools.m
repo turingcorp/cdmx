@@ -1,5 +1,4 @@
 #import "tools.h"
-#import "cmain.h"
 #import "privateconstants.h"
 
 static NSString* const shareurl = @"https://itunes.apple.com/us/app/cdmx/id%@";
@@ -27,24 +26,6 @@ static NSString* const rateurl = @"itms-apps://itunes.apple.com/WebObjects/MZSto
     NSURL *url = [NSURL URLWithString:string];
                         
     [[UIApplication sharedApplication] openURL:url];
-}
-
-+(void)shareapp
-{
-    NSUserDefaults *properties = [NSUserDefaults standardUserDefaults];
-    NSString *string = [NSString stringWithFormat:shareurl, [properties valueForKey:appstoreid]];
-    NSURL *url = [NSURL URLWithString:string];
-    
-    UIActivityViewController *act = [[UIActivityViewController alloc] initWithActivityItems:@[url] applicationActivities:nil];
-    
-    if([UIPopoverPresentationController class])
-    {
-        act.popoverPresentationController.sourceView = [cmain singleton].view;
-        act.popoverPresentationController.sourceRect = CGRectMake(([cmain singleton].view.bounds.size.width / 2.0) - 2, [cmain singleton].view.bounds.size.height - 100, 1, 1);
-        act.popoverPresentationController.permittedArrowDirections = UIPopoverArrowDirectionUp | UIPopoverArrowDirectionDown;
-    }
-    
-    [[cmain singleton] presentViewController:act animated:YES completion:nil];
 }
 
 #pragma mark -

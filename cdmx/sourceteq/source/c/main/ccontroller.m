@@ -40,7 +40,7 @@
 
 -(void)menu
 {
-    [[cmain singleton] menu];
+    [self.parentViewController menu];
 }
 
 @end

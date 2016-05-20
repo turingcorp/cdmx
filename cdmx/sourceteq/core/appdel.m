@@ -12,10 +12,12 @@
 {
     [updater launch];
     
+    cmain *controller = [[cmain alloc] init];
+    
     window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [window makeKeyAndVisible];
     [window setBackgroundColor:[UIColor whiteColor]];
-    [window setRootViewController:[cmain singleton]];
+    [window setRootViewController:controller];
     
     return YES;
 }

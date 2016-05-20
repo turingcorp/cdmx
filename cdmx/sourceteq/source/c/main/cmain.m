@@ -15,15 +15,6 @@ static CGFloat const pushcontrolleranimation = 0.3;
 
 @implementation cmain
 
-+(instancetype)singleton
-{
-    static cmain *single;
-    static dispatch_once_t once;
-    dispatch_once(&once, ^(void) { single = [[self alloc] init]; });
-    
-    return single;
-}
-
 -(instancetype)init
 {
     self = [super init];
@@ -31,6 +22,16 @@ static CGFloat const pushcontrolleranimation = 0.3;
     [self rootcontroller:controller];
     
     return self;
+}
+
+-(UIStatusBarStyle)preferredStatusBarStyle
+{
+    return [self.current preferredStatusBarStyle];
+}
+
+-(BOOL)prefersStatusBarHidden
+{
+    return [self.current prefersStatusBarHidden];
 }
 
 #pragma mark functionality
@@ -86,6 +87,8 @@ static CGFloat const pushcontrolleranimation = 0.3;
     [controller.view setFrame:self.view.bounds];
     [self.view addSubview:controller.view];
     [controller didMoveToParentViewController:self];
+    
+    [self setNeedsStatusBarAppearanceUpdate];
 }
 
 -(void)movetocontroller:(UIViewController*)controller
@@ -108,6 +111,8 @@ static CGFloat const pushcontrolleranimation = 0.3;
          [welf.current removeFromParentViewController];
          [controller didMoveToParentViewController:welf];
          welf.current = controller;
+         
+         [welf setNeedsStatusBarAppearanceUpdate];
      }];
 }
 
@@ -143,6 +148,8 @@ static CGFloat const pushcontrolleranimation = 0.3;
          [controller didMoveToParentViewController:welf];
          [shade removeFromSuperview];
          welf.current = controller;
+         
+         [welf setNeedsStatusBarAppearanceUpdate];
      }];
 }
 
@@ -178,6 +185,8 @@ static CGFloat const pushcontrolleranimation = 0.3;
          [shade removeFromSuperview];
          welf.current = welf.previous;
          welf.previous = nil;
+         
+         [welf setNeedsStatusBarAppearanceUpdate];
      }];
 }
 

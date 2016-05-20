@@ -4,6 +4,7 @@
 
 @interface cmenu ()
 
+@property(weak, nonatomic, readonly)cmain *parentViewController;
 @property(strong, nonatomic, readwrite)mmenu *model;
 @property(strong, nonatomic)vmenu *view;
 
@@ -12,6 +13,7 @@
 @implementation cmenu
 
 @dynamic view;
+@dynamic parentViewController;
 
 -(UIStatusBarStyle)preferredStatusBarStyle
 {
@@ -42,7 +44,7 @@
 
 -(void)menuselected:(UIViewController*)controller
 {
-    [[cmain singleton] movetocontroller:controller];
+    [self.parentViewController movetocontroller:controller];
 }
 
 @end

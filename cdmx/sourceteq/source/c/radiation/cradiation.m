@@ -7,12 +7,14 @@
 @interface cradiation ()
 
 @property(strong, nonatomic)vradiation *view;
+@property(weak, nonatomic, readonly)cmain *parentViewController;
 
 @end
 
 @implementation cradiation
 
 @dynamic view;
+@dynamic parentViewController;
 
 -(UIStatusBarStyle)preferredStatusBarStyle
 {
@@ -61,13 +63,13 @@
 
 -(void)menu
 {
-    [[cmain singleton] menu];
+    [self.parentViewController menu];
 }
 
 -(void)about
 {
     cradiationabout *controller = [[cradiationabout alloc] init];
-    [[cmain singleton] pushcontroller:controller];
+    [self.parentViewController pushcontroller:controller];
 }
 
 #pragma mark -

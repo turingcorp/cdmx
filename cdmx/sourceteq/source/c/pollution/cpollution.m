@@ -6,9 +6,16 @@
 
 static NSInteger const framespersecond = 60;
 
+@interface cpollution ()
+
+@property(weak, nonatomic, readonly)cmain *parentViewController;
+
+@end
+
 @implementation cpollution
 
 @dynamic view;
+@dynamic parentViewController;
 
 -(UIStatusBarStyle)preferredStatusBarStyle
 {
@@ -42,7 +49,6 @@ static NSInteger const framespersecond = 60;
 {
     [super viewDidDisappear:animated];
     [self.view.option removeFromSuperview];
-    [self.model clean];
 }
 
 -(void)loadView
@@ -70,12 +76,13 @@ static NSInteger const framespersecond = 60;
 {
     [self.view clean];
     [self.model clean];
-    [[cmain singleton] menu];
+    [self.parentViewController menu];
 }
 
 -(void)option:(UIViewController*)controller
 {
-    [[cmain singleton] pushcontroller:controller];
+    [self.model clean];
+    [self.parentViewController pushcontroller:controller];
 }
 
 #pragma mark -
