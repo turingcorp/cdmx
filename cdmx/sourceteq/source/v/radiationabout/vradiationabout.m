@@ -6,8 +6,8 @@
 #import "ecollectionreusable.h"
 
 static NSInteger const radiationaboutbottom = 40;
-static NSInteger const radiationaboutheaderheight = 150;
-static NSInteger const radiationaboutcellheight = 40;
+static NSInteger const radiationaboutheaderheight = 140;
+static NSInteger const radiationaboutcellheight = 90;
 
 @interface vradiationabout ()
 
@@ -49,11 +49,11 @@ static NSInteger const radiationaboutcellheight = 40;
     
     [self addSubview:collection];
     
-    NSDictionary *views = @{@"col":collection};
+    NSDictionary *views = @{@"col":collection, @"bar":self.bar};
     NSDictionary *metrics = @{};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[bar]-0-[col]-0-|" options:0 metrics:metrics views:views]];
     
     return self;
 }

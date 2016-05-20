@@ -16,7 +16,7 @@
     [labelname setUserInteractionEnabled:NO];
     [labelname setBackgroundColor:[UIColor clearColor]];
     [labelname setTextAlignment:NSTextAlignmentCenter];
-    [labelname setFont:[UIFont boldsize:16]];
+    [labelname setFont:[UIFont boldsize:20]];
     [labelname setTextColor:[UIColor main]];
     self.labelname = labelname;
     
@@ -24,9 +24,9 @@
     [labelinfo setTranslatesAutoresizingMaskIntoConstraints:NO];
     [labelinfo setUserInteractionEnabled:NO];
     [labelinfo setBackgroundColor:[UIColor clearColor]];
-    [labelinfo setTextAlignment:NSTextAlignmentCenter];
     [labelinfo setFont:[UIFont regularsize:17]];
     [labelinfo setNumberOfLines:0];
+    [labelinfo setTextAlignment:NSTextAlignmentCenter];
     [labelinfo setTextColor:[UIColor colorWithWhite:0.5 alpha:1]];
     self.labelinfo = labelinfo;
     
@@ -46,7 +46,7 @@
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[name]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[info]-10-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[border]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-10-[name(20)]-0-[info(60)]-0-[border(2)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[name(22)]-0-[info(75)]-0-[border(2)]-15-|" options:0 metrics:metrics views:views]];
     
     return self;
 }

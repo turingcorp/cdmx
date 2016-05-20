@@ -9,9 +9,23 @@
 {
     self = [super init];
     [self setClipsToBounds:YES];
-    [self setBackgroundColor:[UIColor main]];
+    [self setBackgroundColor:[UIColor clearColor]];
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
     self.controller = controller;
+    
+    UIView *border = [[UIView alloc] init];
+    [border setUserInteractionEnabled:NO];
+    [border setBackgroundColor:[UIColor background]];
+    [border setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [border setClipsToBounds:YES];
+    
+    [self addSubview:border];
+    
+    NSDictionary *views = @{@"border":border};
+    NSDictionary *metrics = @{};
+    
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[border]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[border(1)]-0-|" options:0 metrics:metrics views:views]];
     
     return self;
 }
@@ -44,8 +58,8 @@
     [label setUserInteractionEnabled:NO];
     [label setTranslatesAutoresizingMaskIntoConstraints:NO];
     [label setTextAlignment:NSTextAlignmentCenter];
-    [label setFont:[UIFont boldsize:16]];
-    [label setTextColor:[UIColor whiteColor]];
+    [label setFont:[UIFont boldsize:14]];
+    [label setTextColor:[UIColor blackColor]];
     [label setText:title];
     self.labeltitle = label;
     
@@ -62,11 +76,11 @@
 {
     UIButton *buttonleft = [[UIButton alloc] init];
     [buttonleft setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [buttonleft setImage:[[UIImage imageNamed:@"generic_back"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];
-    [buttonleft setImage:[[UIImage imageNamed:@"generic_back"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateHighlighted];
+    [buttonleft setImage:[[UIImage imageNamed:@"generic_back"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
+    [buttonleft setImage:[[UIImage imageNamed:@"generic_back"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateHighlighted];
     [buttonleft.imageView setContentMode:UIViewContentModeScaleAspectFit];
     [buttonleft.imageView setClipsToBounds:YES];
-    [buttonleft.imageView setTintColor:[UIColor colorWithWhite:1 alpha:0.2]];
+    [buttonleft.imageView setTintColor:[UIColor blackColor]];
     [buttonleft addTarget:self action:@selector(actionback:) forControlEvents:UIControlEventTouchUpInside];
     [buttonleft setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 10)];
     self.buttonleft = buttonleft;
