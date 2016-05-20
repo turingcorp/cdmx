@@ -3,8 +3,6 @@
 <plist version="1.0">
     <array>
         <dict>
-            <key>name</key>
-            <string>None</string>
             <key>info</key>
             <string>Safe</string>
             <key>items</key>
@@ -13,8 +11,6 @@
             </array>
         </dict>
         <dict>
-            <key>name</key>
-            <string>Low</string>
             <key>info</key>
             <string>No risk</string>
             <key>items</key>
@@ -24,8 +20,6 @@
             </array>
         </dict>
         <dict>
-            <key>name</key>
-            <string>Considerable</string>
             <key>info</key>
             <string>May be harmful for your skin, try not to expose too much</string>
             <key>items</key>
@@ -36,8 +30,6 @@
             </array>
         </dict>
         <dict>
-            <key>name</key>
-            <string>High</string>
             <key>info</key>
             <string>Harmful for your skin, expose as little as possible</string>
             <key>items</key>
@@ -47,8 +39,6 @@
             </array>
         </dict>
         <dict>
-            <key>name</key>
-            <string>Very high</string>
             <key>info</key>
             <string>Highly harmful for your skin, do not expose</string>
             <key>items</key>
@@ -59,10 +49,8 @@
             </array>
         </dict>
         <dict>
-            <key>name</key>
-            <string>Extreme</string>
             <key>info</key>
-            <string>Extremely harmful for your skin and your eyes, avoid it</string>
+            <string>Extremely harmful for your skin and eyes, avoid it</string>
             <key>items</key>
             <array>
                 <integer>11</integer>

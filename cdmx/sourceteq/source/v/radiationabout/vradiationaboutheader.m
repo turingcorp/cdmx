@@ -2,6 +2,8 @@
 #import "efont.h"
 #import "ecolor.h"
 
+static NSInteger const informarginhr = 10;
+
 @implementation vradiationaboutheader
 
 -(instancetype)initWithFrame:(CGRect)frame
@@ -11,12 +13,14 @@
     [self setBackgroundColor:[UIColor clearColor]];
     [self setUserInteractionEnabled:NO];
     
+    self.labelattributes = @{NSFontAttributeName:[UIFont regularsize:14]};
+    
     UILabel *labelname = [[UILabel alloc] init];
     [labelname setTranslatesAutoresizingMaskIntoConstraints:NO];
     [labelname setUserInteractionEnabled:NO];
     [labelname setBackgroundColor:[UIColor clearColor]];
     [labelname setTextAlignment:NSTextAlignmentCenter];
-    [labelname setFont:[UIFont boldsize:20]];
+    [labelname setFont:[UIFont boldsize:16]];
     [labelname setTextColor:[UIColor main]];
     self.labelname = labelname;
     
@@ -24,29 +28,22 @@
     [labelinfo setTranslatesAutoresizingMaskIntoConstraints:NO];
     [labelinfo setUserInteractionEnabled:NO];
     [labelinfo setBackgroundColor:[UIColor clearColor]];
-    [labelinfo setFont:[UIFont regularsize:17]];
     [labelinfo setNumberOfLines:0];
     [labelinfo setTextAlignment:NSTextAlignmentCenter];
-    [labelinfo setTextColor:[UIColor colorWithWhite:0.5 alpha:1]];
+    [labelinfo setTextColor:[UIColor colorWithWhite:0.55 alpha:1]];
     self.labelinfo = labelinfo;
-    
-    UIView *border = [[UIView alloc] init];
-    [border setUserInteractionEnabled:NO];
-    [border setClipsToBounds:YES];
-    [border setTranslatesAutoresizingMaskIntoConstraints:NO];
-    self.border = border;
     
     [self addSubview:labelinfo];
     [self addSubview:labelname];
-    [self addSubview:border];
     
-    NSDictionary *views = @{@"name":labelname, @"info":labelinfo, @"border":border};
-    NSDictionary *metrics = @{};
+    NSDictionary *views = @{@"name":labelname, @"info":labelinfo};
+    NSDictionary *metrics = @{@"margin":@(informarginhr)};
     
+    self.layoutlabelinfoheight = [NSLayoutConstraint constraintWithItem:labelinfo attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:0];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[name]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[info]-10-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[border]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[name(22)]-0-[info(75)]-0-[border(2)]-15-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(margin)-[info]-(margin)-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[name(18)]-0-[info]-7-|" options:0 metrics:metrics views:views]];
+    [self addConstraint:self.layoutlabelinfoheight];
     
     return self;
 }
@@ -55,11 +52,19 @@
 
 -(void)config:(mradiationaboutsection*)model
 {
-    [self.labelname setText:model.name];
-    [self.labelinfo setText:model.info];
-    
     mradiationaboutitem *firstitem = model.items[0];
-    [self.border setBackgroundColor:firstitem.index.color];
+    [self.labelname setText:firstitem.index.name];
+    
+    CGFloat width = self.bounds.size.width;
+    CGFloat labelmargin = informarginhr + informarginhr;
+    CGFloat labelwidth = width - labelmargin;
+    CGSize size = CGSizeMake(labelwidth, 1000);
+    
+    NSAttributedString *string = [[NSAttributedString alloc] initWithString:model.info attributes:self.labelattributes];
+    CGFloat height = ceilf([string boundingRectWithSize:size options:NSStringDrawingUsesFontLeading|NSStringDrawingUsesLineFragmentOrigin context:nil].size.height);
+    self.layoutlabelinfoheight.constant = height;
+    
+    [self.labelinfo setAttributedText:string];
 }
 
 @end

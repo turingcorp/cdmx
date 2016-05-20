@@ -5,8 +5,8 @@
 #import "ecollectioncell.h"
 #import "ecollectionreusable.h"
 
-static NSInteger const radiationaboutbottom = 40;
-static NSInteger const radiationaboutheaderheight = 100;
+static NSInteger const radiationaboutbottom = 60;
+static NSInteger const radiationaboutheaderheight = 70;
 static NSInteger const radiationaboutcellheight = 60;
 
 @interface vradiationabout ()
