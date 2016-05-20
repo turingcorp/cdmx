@@ -14,7 +14,7 @@
     [circle setClipsToBounds:YES];
     [circle setContentMode:UIViewContentModeCenter];
     [circle setUserInteractionEnabled:NO];
-    [circle setImage:[[UIImage imageNamed:@"generic_circle"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+    [circle setImage:[[UIImage imageNamed:@"generic_halo"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
     [circle setTranslatesAutoresizingMaskIntoConstraints:NO];
     self.circle = circle;
     
@@ -23,7 +23,7 @@
     [label setTranslatesAutoresizingMaskIntoConstraints:NO];
     [label setBackgroundColor:[UIColor clearColor]];
     [label setTextAlignment:NSTextAlignmentCenter];
-    [label setFont:[UIFont numericsize:20]];
+    [label setFont:[UIFont numericsize:16]];
     [label setTextColor:[UIColor blackColor]];
     self.label = label;
     
@@ -34,7 +34,7 @@
     NSDictionary *metrics = @{};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[circle]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[circle]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-10-[circle]-10-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[label]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[label]-0-|" options:0 metrics:metrics views:views]];
     
