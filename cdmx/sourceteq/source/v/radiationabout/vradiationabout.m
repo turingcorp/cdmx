@@ -1,11 +1,16 @@
 #import "vradiationabout.h"
 #import "cradiationabout.h"
+#import "vradiationaboutheader.h"
+#import "vradiationaboutcell.h"
+#import "ecollectioncell.h"
+#import "ecollectionreusable.h"
 
 static NSInteger const radiationaboutbottom = 40;
 
 @interface vradiationabout ()
 
 @property(weak, nonatomic)cradiationabout *controller;
+@property(strong, nonatomic, readwrite)mradiationabout *model;
 
 @end
 
@@ -36,6 +41,8 @@ static NSInteger const radiationaboutbottom = 40;
     [collection setTranslatesAutoresizingMaskIntoConstraints:NO];
     [collection setDelegate:self];
     [collection setDataSource:self];
+    [collection registerClass:[vradiationaboutheader class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:[vradiationaboutheader reusableidentifier]];
+    [collection registerClass:[vradiationaboutcell class] forCellWithReuseIdentifier:[vradiationaboutcell reusableidentifier]];
     self.collection = collection;
     
     [self addSubview:collection];
@@ -49,11 +56,77 @@ static NSInteger const radiationaboutbottom = 40;
     return self;
 }
 
+#pragma mark functionality
+
+-(mradiationaboutitem*)itemforindex:(NSIndexPath*)index
+{
+    mradiationaboutitem *item = self.model.sections[index.section].items[index.item];
+    
+    return item;
+}
+
+-(mradiationaboutsection*)sectionforindex:(NSIndexPath*)index
+{
+    mradiationaboutsection *section = self.model.sections[index.section];
+    
+    return section;
+}
+
 #pragma mark public
 
 -(void)viewdidappear
 {
+    if(!self.model)
+    {
+        __weak typeof(self) welf = self;
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
+                       ^
+                       {
+                           welf.model = [mradiationabout model];
+                           
+                           dispatch_async(dispatch_get_main_queue(),
+                                          ^
+                                          {
+                                              [welf.collection reloadData];
+                                          });
+                       });
+    }
+}
+
+#pragma mark -
+#pragma mark col del
+
+-(NSInteger)numberOfSectionsInCollectionView:(UICollectionView*)col
+{
+    NSInteger count = self.model.sections.count;
     
+    return count;
+}
+
+-(NSInteger)collectionView:(UICollectionView*)col numberOfItemsInSection:(NSInteger)section
+{
+    NSInteger count = self.model.sections[section].items.count;
+    
+    return count;
+}
+
+-(UICollectionReusableView*)collectionView:(UICollectionView*)col viewForSupplementaryElementOfKind:(NSString*)kind atIndexPath:(NSIndexPath*)index
+{
+    mradiationaboutsection *section = [self sectionforindex:index];
+    vradiationaboutheader *header = [col dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:[vradiationaboutheader reusableidentifier] forIndexPath:index];
+    [header config:section];
+    
+    return header;
+}
+
+-(UICollectionViewCell*)collectionView:(UICollectionView*)col cellForItemAtIndexPath:(NSIndexPath*)index
+{
+    mradiationaboutitem *item = [self itemforindex:index];
+    vradiationaboutcell *cell = [col dequeueReusableCellWithReuseIdentifier:[vradiationaboutcell reusableidentifier] forIndexPath:index];
+    [cell config:item];
+    
+    return cell;
 }
 
 @end
