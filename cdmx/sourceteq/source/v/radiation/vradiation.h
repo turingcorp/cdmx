@@ -15,5 +15,6 @@
 @property(weak, nonatomic)vradiationactivities *activities;
 @property(weak, nonatomic)vradiationprecautions *precautions;
 @property(weak, nonatomic)UILabel *label;
+@property(strong, nonatomic)mradiation *model;
 
 @end

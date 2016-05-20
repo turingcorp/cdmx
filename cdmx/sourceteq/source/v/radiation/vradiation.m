@@ -61,6 +61,7 @@
 
 -(void)radiationloaded:(mradiation*)model
 {
+    self.model = model;
     [self.reactor loadradiation:model];
     
     __weak typeof(self) welf = self;
