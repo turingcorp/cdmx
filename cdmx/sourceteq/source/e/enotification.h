@@ -10,5 +10,6 @@
 +(void)glkdrawremove:(id)observer;
 +(void)observe:(id)observer glkdraw:(SEL)selector;
 +(void)observe:(id)observer becomeactive:(SEL)selector;
++(void)becomeactiveremove:(id)observer;
 
 @end

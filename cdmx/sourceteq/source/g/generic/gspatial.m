@@ -45,7 +45,7 @@ static NSInteger const vectorcorners = 6;
 
 -(void)movetotop
 {
-//    [NSNotification glkdrawremove:self];
+    [NSNotification glkdrawremove:self];
     [NSNotification observe:self glkdraw:@selector(draw:)];
 }
 

@@ -3,6 +3,7 @@
 #import "cradiationabout.h"
 #import "vradiation.h"
 #import "aparserradiation.h"
+#import "enotification.h"
 
 @interface cradiation ()
 
@@ -15,6 +16,11 @@
 
 @dynamic view;
 @dynamic parentViewController;
+
+-(void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
 -(UIStatusBarStyle)preferredStatusBarStyle
 {
@@ -38,11 +44,21 @@
 {
     [super viewDidAppear:animated];
     [self loadradiation];
+    
+    [NSNotification becomeactiveremove:self];
+    [NSNotification observe:self becomeactive:@selector(notifiedbecomeactive:)];
 }
 
 -(void)loadView
 {
     self.view = [[vradiation alloc] init:self];
+}
+
+#pragma mark notified
+
+-(void)notifiedbecomeactive:(NSNotification*)notification
+{
+    [self loadradiation];
 }
 
 #pragma mark functionality

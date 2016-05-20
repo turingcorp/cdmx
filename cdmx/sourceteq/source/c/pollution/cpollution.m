@@ -49,6 +49,7 @@ static NSInteger const framespersecond = 60;
     [super viewDidAppear:animated];
     [self loadpollution];
     
+    [NSNotification becomeactiveremove:self];
     [NSNotification observe:self becomeactive:@selector(notifiedbecomeactive:)];
 }
 
