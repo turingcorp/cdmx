@@ -97,6 +97,15 @@
                    ^
                    {
                        aparsernodrive *parser = (aparsernodrive*)manager.call.parser;
+                       
+                       if(parser.nodrive)
+                       {
+                           dispatch_async(dispatch_get_main_queue(),
+                                          ^
+                                          {
+                                              [welf.view nodriveloaded:parser.nodrive];
+                                          });
+                       }
                    });
 }
 

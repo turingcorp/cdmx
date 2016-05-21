@@ -1,6 +1,12 @@
 #import "vnodrive.h"
 #import "vnodrivebar.h"
 
+@interface vnodrive ()
+
+@property(strong, nonatomic, readwrite)mnodrive *model;
+
+@end
+
 @implementation vnodrive
 
 -(instancetype)init:(cnodrive*)controller
@@ -17,6 +23,7 @@
     UICollectionView *collection = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flow];
     [collection setBackgroundColor:[UIColor clearColor]];
     [collection setTranslatesAutoresizingMaskIntoConstraints:NO];
+    self.collection = collection;
     
     [self addSubview:bar];
     [self addSubview:collection];
@@ -29,6 +36,14 @@
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[bar]-0-[col]-0-|" options:0 metrics:metrics views:views]];
     
     return self;
+}
+
+#pragma mark public
+
+-(void)nodriveloaded:(mnodrive*)model
+{
+    self.model = model;
+    [self.collection reloadData];
 }
 
 @end
