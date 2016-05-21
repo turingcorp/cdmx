@@ -62,7 +62,26 @@
     
     if([rawratings00 boolValue])
     {
-        
+        mnodriverating *rating = [mnodriverating rate00];
+        [ratings addObject:rating];
+    }
+    
+    if([rawratings0 boolValue])
+    {
+        mnodriverating *rating = [mnodriverating rate0];
+        [ratings addObject:rating];
+    }
+    
+    if([rawratings1 boolValue])
+    {
+        mnodriverating *rating = [mnodriverating rate1];
+        [ratings addObject:rating];
+    }
+    
+    if([rawratings2 boolValue])
+    {
+        mnodriverating *rating = [mnodriverating rate2];
+        [ratings addObject:rating];
     }
     
     self.ratings = ratings;
