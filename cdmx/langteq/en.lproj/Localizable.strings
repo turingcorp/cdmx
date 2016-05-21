@@ -80,6 +80,11 @@
 "mpollution_pollutant_name_1021"="Xylene";
 "mpollution_pollutant_name_1022"="Particulates";
 
+"mnodrive_rating_00"="00";
+"mnodrive_rating_0"="0";
+"mnodrive_rating_1"="1";
+"mnodrive_rating_2"="2";
+
 "vpollution_radio_chart_title"="IMECA";
 "vpollution_front_header_button_imeca"="About IMECA";
 "vpollution_front_header_button_recommendation"="Precautions";
