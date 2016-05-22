@@ -95,4 +95,13 @@
     return self;
 }
 
+#pragma mark public
+
+-(mnodrivetoday*)today
+{
+    mnodrivetoday *today = [mnodrivetoday model:self];
+    
+    return today;
+}
+
 @end

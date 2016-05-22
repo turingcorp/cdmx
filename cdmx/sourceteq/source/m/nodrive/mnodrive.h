@@ -1,10 +1,12 @@
 #import <Foundation/Foundation.h>
 #import "mnodriveitem.h"
 #import "mnodriverating.h"
+#import "mnodrivetoday.h"
 
 @interface mnodrive:NSObject
 
 -(instancetype)init:(NSDictionary*)dictionary;
+-(mnodrivetoday*)today;
 
 @property(strong, nonatomic, readonly)mnodriveitem *today;
 @property(strong, nonatomic, readonly)NSArray<mnodriveitem*> *week;
