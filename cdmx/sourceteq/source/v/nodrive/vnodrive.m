@@ -80,7 +80,10 @@ static NSInteger const nodrivecolbottom = 40;
     
     for(mnodrivetodaysection *section in model.sections)
     {
-        [self.collection registerClass:section.cellclass forCellWithReuseIdentifier:section.reusableidentifier];
+        if(section.items.count)
+        {
+            [self.collection registerClass:section.cellclass forCellWithReuseIdentifier:section.reusableidentifier];
+        }
     }
     
     [self.collection reloadData];

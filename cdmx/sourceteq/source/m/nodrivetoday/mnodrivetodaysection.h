@@ -4,8 +4,6 @@
 
 @interface mnodrivetodaysection:NSObject
 
-+(instancetype)plates:(NSArray<mnodriveitemplate*>*)plates;
-
 @property(strong, nonatomic, readonly)NSArray<mnodrivetodayitem*> *items;
 @property(copy, nonatomic, readonly)NSString *name;
 @property(copy, nonatomic, readonly)NSString *reusableidentifier;
@@ -14,5 +12,6 @@
 @property(assign, nonatomic, readonly)NSInteger cellheight;
 @property(assign, nonatomic, readonly)NSInteger cellsperrow;
 @property(assign, nonatomic, readonly)BOOL fullwidth;
+@property(assign, nonatomic, readonly)BOOL headerborder;
 
 @end

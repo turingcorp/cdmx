@@ -1,6 +1,13 @@
 #import "mnodrivetoday.h"
 #import "mnodrive.h"
 
+@interface mnodrivetodaysection ()
+
++(instancetype)free;
++(instancetype)plates:(NSArray<mnodriveitemplate*>*)plates;
+
+@end
+
 @interface mnodrivetoday ()
 
 @property(strong, nonatomic, readwrite)NSArray<mnodrivetodaysection*> *sections;
@@ -12,10 +19,20 @@
 +(instancetype)model:(mnodrive*)model
 {
     NSMutableArray<mnodrivetodaysection*> *sections = [NSMutableArray array];
+    NSArray<mnodriveitemplate*> *plates = model.today.plates;
     
-    mnodrivetodaysection *sectionplates = [mnodrivetodaysection plates:model.today.plates];
-    
-    [sections addObject:sectionplates];
+    if(plates.count)
+    {
+        mnodrivetodaysection *sectionplates = [mnodrivetodaysection plates:plates];
+        
+        [sections addObject:sectionplates];
+    }
+    else
+    {
+        mnodrivetodaysection *sectionfree = [mnodrivetodaysection free];
+        
+        [sections addObject:sectionfree];
+    }
     
     mnodrivetoday *today = [[mnodrivetoday alloc] init:sections];
     

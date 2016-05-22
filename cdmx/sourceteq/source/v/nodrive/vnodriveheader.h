@@ -5,6 +5,7 @@
 
 -(void)config:(mnodrivetodaysection*)model;
 
+@property(weak, nonatomic)UIView *border;
 @property(weak, nonatomic)UILabel *title;
 
 @end

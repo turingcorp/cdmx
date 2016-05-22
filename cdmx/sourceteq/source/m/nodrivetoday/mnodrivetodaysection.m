@@ -1,7 +1,14 @@
 #import "mnodrivetodaysection.h"
+#import "mnodrivetodaysectionfree.h"
 #import "mnodrivetodaysectionplate.h"
 #import "mnodrivetodaysectionhologram.h"
 #import "mnodrivetodaysectionrestriction.h"
+
+@interface mnodrivetodaysectionfree ()
+
++(instancetype)model;
+
+@end
 
 @interface mnodrivetodaysectionplate ()
 
@@ -19,10 +26,18 @@
 @property(assign, nonatomic, readwrite)NSInteger cellheight;
 @property(assign, nonatomic, readwrite)NSInteger cellsperrow;
 @property(assign, nonatomic, readwrite)BOOL fullwidth;
+@property(assign, nonatomic, readwrite)BOOL headerborder;
 
 @end
 
 @implementation mnodrivetodaysection
+
++(instancetype)free
+{
+    mnodrivetodaysection *model = [mnodrivetodaysectionfree model];
+    
+    return model;
+}
 
 +(instancetype)plates:(NSArray<mnodriveitemplate*>*)plates
 {

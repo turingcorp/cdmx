@@ -26,6 +26,7 @@
     [border setTranslatesAutoresizingMaskIntoConstraints:NO];
     [border setBackgroundColor:[UIColor background]];
     [border setClipsToBounds:YES];
+    self.border = border;
     
     [self addSubview:title];
     [self addSubview:border];
@@ -33,7 +34,7 @@
     NSDictionary *views = @{@"title":title, @"border":border};
     NSDictionary *metrics = @{};
     
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[title]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[title]-10-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[border]-20-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[title(50)]-0-[border(1)]-0-|" options:0 metrics:metrics views:views]];
     
@@ -45,6 +46,7 @@
 -(void)config:(mnodrivetodaysection*)model
 {
     [self.title setText:model.name];
+    [self.border setHidden:!model.headerborder];
 }
 
 @end

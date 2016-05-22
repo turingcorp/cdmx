@@ -23,6 +23,7 @@ static NSInteger const nodrivetodayplatecellsperrow = 2;
 @property(assign, nonatomic, readwrite)NSInteger cellheight;
 @property(assign, nonatomic, readwrite)NSInteger cellsperrow;
 @property(assign, nonatomic, readwrite)BOOL fullwidth;
+@property(assign, nonatomic, readwrite)BOOL headerborder;
 
 @end
 
@@ -55,6 +56,7 @@ static NSInteger const nodrivetodayplatecellsperrow = 2;
     self.cellheight = nodrivetodayplateheight;
     self.cellsperrow = nodrivetodayplatecellsperrow;
     self.fullwidth = NO;
+    self.headerborder = YES;
     
     return self;
 }
