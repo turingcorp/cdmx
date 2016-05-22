@@ -3,6 +3,7 @@
 #import "mnodrivetodaysectionplate.h"
 #import "mnodrivetodaysectionhologram.h"
 #import "mnodrivetodaysectionrestriction.h"
+#import "mnodrive.h"
 
 @interface mnodrivetodaysectionfree ()
 
@@ -19,6 +20,12 @@
 @interface mnodrivetodaysectionhologram ()
 
 +(instancetype)model:(NSArray<mnodriverating*>*)ratings;
+
+@end
+
+@interface mnodrivetodaysectionrestriction ()
+
++(instancetype)model:(mnodrive*)nodrive;
 
 @end
 
@@ -55,6 +62,13 @@
 +(instancetype)holograms:(NSArray<mnodriverating*>*)ratings
 {
     mnodrivetodaysectionhologram *model = [mnodrivetodaysectionhologram model:ratings];
+    
+    return model;
+}
+
++(instancetype)restrictions:(mnodrive*)nodrive
+{
+    mnodrivetodaysectionrestriction *model = [mnodrivetodaysectionrestriction model:nodrive];
     
     return model;
 }

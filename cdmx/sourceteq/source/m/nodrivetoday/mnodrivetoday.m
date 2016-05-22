@@ -6,6 +6,7 @@
 +(instancetype)free;
 +(instancetype)plates:(NSArray<mnodriveitemplate*>*)plates;
 +(instancetype)holograms:(NSArray<mnodriverating*>*)ratings;
++(instancetype)restrictions:(mnodrive*)nodrive;
 
 @end
 
@@ -26,9 +27,11 @@
     {
         mnodrivetodaysection *sectionplates = [mnodrivetodaysection plates:plates];
         mnodrivetodaysection *sectionholograms = [mnodrivetodaysection holograms:model.ratings];
+        mnodrivetodaysection *sectionrestrictions = [mnodrivetodaysection restrictions:model];
         
         [sections addObject:sectionplates];
         [sections addObject:sectionholograms];
+        [sections addObject:sectionrestrictions];
     }
     else
     {

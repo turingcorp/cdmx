@@ -1,4 +1,3 @@
-#import "mnodrivetodayitemrestriction.h"
 #import "mnodrivetodayitemrestrictiontime.h"
 
 @interface mnodrivetodayitemrestriction ()
@@ -9,14 +8,7 @@
 
 @end
 
-@implementation mnodrivetodayitemrestriction
-
-+(instancetype)time:(mnodrive*)model
-{
-    mnodrivetodayitemrestriction *restriction = [[mnodrivetodayitemrestrictiontime alloc] init:model];
-    
-    return restriction;
-}
+@implementation mnodrivetodayitemrestrictiontime
 
 -(instancetype)init:(mnodrive*)model
 {
