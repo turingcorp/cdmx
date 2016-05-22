@@ -46,4 +46,26 @@
     [self.collection reloadData];
 }
 
+#pragma mark -
+#pragma mark col del
+
+-(NSInteger)numberOfSectionsInCollectionView:(UICollectionView*)col
+{
+    NSInteger count = 0;
+    
+    if(self.model)
+    {
+        count = 3;
+    }
+    
+    return count;
+}
+
+-(NSInteger)collectionView:(UICollectionView*)col numberOfItemsInSection:(NSInteger)section
+{
+    NSInteger count = 0;
+    
+    return count;
+}
+
 @end

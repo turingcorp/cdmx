@@ -2,7 +2,7 @@
 #import "cnodrive.h"
 #import "mnodrive.h"
 
-@interface vnodrive:UIView
+@interface vnodrive:UIView<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
 -(instancetype)init:(cnodrive*)controller;
 -(void)nodriveloaded:(mnodrive*)model;
