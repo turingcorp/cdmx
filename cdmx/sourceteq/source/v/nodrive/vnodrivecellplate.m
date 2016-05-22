@@ -21,7 +21,7 @@
     [number setTextColor:[UIColor blackColor]];
     [number setTextAlignment:NSTextAlignmentCenter];
     [number setUserInteractionEnabled:NO];
-    [number setFont:[UIFont numericsize:25]];
+    [number setFont:[UIFont regularsize:22]];
     [number setBackgroundColor:[UIColor clearColor]];
     self.number = number;
     

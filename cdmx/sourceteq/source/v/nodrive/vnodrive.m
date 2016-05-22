@@ -1,7 +1,12 @@
 #import "vnodrive.h"
 #import "vnodrivebar.h"
 #import "vnodrivecell.h"
+#import "vnodriveheader.h"
 #import "ecollectionreusable.h"
+
+static NSInteger const nodriveheaderheight = 60;
+static NSInteger const nodrivecoltop = 20;
+static NSInteger const nodrivecolbottom = 40;
 
 @interface vnodrive ()
 
@@ -35,6 +40,7 @@
     [collection setAlwaysBounceVertical:YES];
     [collection setDelegate:self];
     [collection setDataSource:self];
+    [collection registerClass:[vnodriveheader class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:[vnodriveheader reusableidentifier]];
     self.collection = collection;
     
     [self addSubview:bar];
@@ -83,6 +89,37 @@
 #pragma mark -
 #pragma mark col del
 
+-(UIEdgeInsets)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout insetForSectionAtIndex:(NSInteger)section
+{
+    mnodrivetodaysection *model = self.model.sections[section];
+    CGFloat margin = 0;
+    
+    if(!model.fullwidth)
+    {
+        CGFloat width = col.bounds.size.width;
+        CGFloat cellwidth = model.cellwidth;
+        CGFloat allcells = cellwidth * model.cellsperrow;
+        CGFloat remain = width - allcells;
+        
+        if(remain > 0)
+        {
+            margin = remain / 2.0;
+        }
+    }
+    
+    UIEdgeInsets insets = UIEdgeInsetsMake(nodrivecoltop, margin, nodrivecolbottom, margin);
+    
+    return insets;
+}
+
+-(CGSize)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout referenceSizeForHeaderInSection:(NSInteger)section
+{
+    CGFloat width = col.bounds.size.width;
+    CGSize size = CGSizeMake(width, nodriveheaderheight);
+    
+    return size;
+}
+
 -(CGSize)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout sizeForItemAtIndexPath:(NSIndexPath*)index
 {
     mnodrivetodaysection *model = [self sectionforindex:index];
@@ -115,6 +152,15 @@
     NSInteger count = self.model.sections[section].items.count;
     
     return count;
+}
+
+-(UICollectionReusableView*)collectionView:(UICollectionView*)col viewForSupplementaryElementOfKind:(NSString*)kind atIndexPath:(NSIndexPath*)index
+{
+    mnodrivetodaysection *model = [self sectionforindex:index];
+    vnodriveheader *header = [col dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:[vnodriveheader reusableidentifier] forIndexPath:index];
+    [header config:model];
+    
+    return header;
 }
 
 -(UICollectionViewCell*)collectionView:(UICollectionView*)col cellForItemAtIndexPath:(NSIndexPath*)index

@@ -3,8 +3,9 @@
 #import "vnodrivecellplate.h"
 #import "ecollectioncell.h"
 
-static NSInteger const nodrivetodayplatewidth = 80;
-static NSInteger const nodrivetodayplateheight = 80;
+static NSInteger const nodrivetodayplatewidth = 70;
+static NSInteger const nodrivetodayplateheight = 70;
+static NSInteger const nodrivetodayplatecellsperrow = 2;
 
 @interface mnodrivetodayitemplate ()
 
@@ -20,6 +21,7 @@ static NSInteger const nodrivetodayplateheight = 80;
 @property(assign, nonatomic, readwrite)Class cellclass;
 @property(assign, nonatomic, readwrite)NSInteger cellwidth;
 @property(assign, nonatomic, readwrite)NSInteger cellheight;
+@property(assign, nonatomic, readwrite)NSInteger cellsperrow;
 @property(assign, nonatomic, readwrite)BOOL fullwidth;
 
 @end
@@ -51,6 +53,7 @@ static NSInteger const nodrivetodayplateheight = 80;
     self.cellclass = [vnodrivecellplate class];
     self.cellwidth = nodrivetodayplatewidth;
     self.cellheight = nodrivetodayplateheight;
+    self.cellsperrow = nodrivetodayplatecellsperrow;
     self.fullwidth = NO;
     
     return self;
