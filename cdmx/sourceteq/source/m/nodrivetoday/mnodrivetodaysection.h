@@ -1,6 +1,7 @@
 #import <Foundation/Foundation.h>
 #import "mnodrivetodayitem.h"
 #import "mnodriveitemplate.h"
+#import "mnodriverating.h"
 
 @interface mnodrivetodaysection:NSObject
 

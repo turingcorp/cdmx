@@ -3,4 +3,6 @@
 
 @interface mnodrivetodayitemhologram:mnodrivetodayitem
 
+@property(copy, nonatomic, readonly)NSString *symbol;
+
 @end

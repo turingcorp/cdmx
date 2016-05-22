@@ -16,6 +16,12 @@
 
 @end
 
+@interface mnodrivetodaysectionhologram ()
+
++(instancetype)model:(NSArray<mnodriverating*>*)ratings;
+
+@end
+
 @interface mnodrivetodaysection ()
 
 @property(strong, nonatomic, readwrite)NSArray<mnodrivetodayitem*> *items;
@@ -42,6 +48,13 @@
 +(instancetype)plates:(NSArray<mnodriveitemplate*>*)plates
 {
     mnodrivetodaysection *model = [mnodrivetodaysectionplate model:plates];
+    
+    return model;
+}
+
++(instancetype)holograms:(NSArray<mnodriverating*>*)ratings
+{
+    mnodrivetodaysectionhologram *model = [mnodrivetodaysectionhologram model:ratings];
     
     return model;
 }

@@ -5,6 +5,7 @@
 
 +(instancetype)free;
 +(instancetype)plates:(NSArray<mnodriveitemplate*>*)plates;
++(instancetype)holograms:(NSArray<mnodriverating*>*)ratings;
 
 @end
 
@@ -24,8 +25,10 @@
     if(plates.count)
     {
         mnodrivetodaysection *sectionplates = [mnodrivetodaysection plates:plates];
+        mnodrivetodaysection *sectionholograms = [mnodrivetodaysection holograms:model.ratings];
         
         [sections addObject:sectionplates];
+        [sections addObject:sectionholograms];
     }
     else
     {
