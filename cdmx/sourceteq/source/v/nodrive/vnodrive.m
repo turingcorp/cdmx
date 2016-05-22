@@ -21,10 +21,20 @@
     vnodrivebar *bar = [[vnodrivebar alloc] init:controller];
     
     UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
+    [flow setFooterReferenceSize:CGSizeZero];
+    [flow setMinimumLineSpacing:0];
+    [flow setMinimumInteritemSpacing:0];
+    [flow setScrollDirection:UICollectionViewScrollDirectionVertical];
     
     UICollectionView *collection = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flow];
     [collection setBackgroundColor:[UIColor clearColor]];
     [collection setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [collection setClipsToBounds:YES];
+    [collection setShowsVerticalScrollIndicator:NO];
+    [collection setShowsHorizontalScrollIndicator:NO];
+    [collection setAlwaysBounceVertical:YES];
+    [collection setDelegate:self];
+    [collection setDataSource:self];
     self.collection = collection;
     
     [self addSubview:bar];

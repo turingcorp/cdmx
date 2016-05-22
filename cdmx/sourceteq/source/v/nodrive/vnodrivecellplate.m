@@ -1,5 +1,6 @@
 #import "vnodrivecellplate.h"
 #import "mnodrivetodayitemplate.h"
+#import "efont.h"
 
 @implementation vnodrivecellplate
 
@@ -15,13 +16,25 @@
     [circle setImage:[[UIImage imageNamed:@"generic_circle"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
     self.circle = circle;
     
-    [self addSubview:circle];
+    UILabel *number = [[UILabel alloc] init];
+    [number setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [number setTextColor:[UIColor blackColor]];
+    [number setTextAlignment:NSTextAlignmentCenter];
+    [number setUserInteractionEnabled:NO];
+    [number setFont:[UIFont numericsize:25]];
+    [number setBackgroundColor:[UIColor clearColor]];
+    self.number = number;
     
-    NSDictionary *views = @{@"circle":circle};
+    [self addSubview:circle];
+    [self addSubview:number];
+    
+    NSDictionary *views = @{@"circle":circle, @"number":number};
     NSDictionary *metrics = @{};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[circle]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[circle]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[number]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[number]-0-|" options:0 metrics:metrics views:views]];
     
     return self;
 }
@@ -32,6 +45,7 @@
 -(void)config:(mnodrivetodayitemplate*)model
 {
     [self.circle setTintColor:model.color];
+    [self.number setText:model.number];
 }
 
 @end
