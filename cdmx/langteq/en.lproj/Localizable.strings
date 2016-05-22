@@ -85,6 +85,10 @@
 "mnodrive_rating_1"="1";
 "mnodrive_rating_2"="2";
 
+"mnodrive_today_section_plate"="Plates and colours";
+"mnodrive_today_section_hologram"="Holograms";
+"mnodrive_today_section_restriction"="Restrictions";
+
 "vpollution_radio_chart_title"="IMECA";
 "vpollution_front_header_button_imeca"="About IMECA";
 "vpollution_front_header_button_recommendation"="Precautions";

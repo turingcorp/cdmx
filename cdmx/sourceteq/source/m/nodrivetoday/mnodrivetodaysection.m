@@ -1,4 +1,13 @@
 #import "mnodrivetodaysection.h"
+#import "mnodrivetodaysectionplate.h"
+#import "mnodrivetodaysectionhologram.h"
+#import "mnodrivetodaysectionrestriction.h"
+
+@interface mnodrivetodaysectionplate ()
+
++(instancetype)model:(NSArray<mnodriveitemplate*>*)plates;
+
+@end
 
 @interface mnodrivetodaysection ()
 
@@ -11,12 +20,16 @@
 
 +(instancetype)plates:(NSArray<mnodriveitemplate*>*)plates
 {
+    mnodrivetodaysection *model = [mnodrivetodaysectionplate model:plates];
     
+    return model;
 }
 
 -(instancetype)init:(NSString*)name items:(NSArray<mnodrivetodayitem*>*)items
 {
-    self = [super init];
+    self = [self init];
+    self.name = name;
+    self.items = items;
     
     return self;
 }
