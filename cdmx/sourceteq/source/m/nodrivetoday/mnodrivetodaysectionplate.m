@@ -1,5 +1,10 @@
 #import "mnodrivetodaysectionplate.h"
 #import "mnodrivetodayitemplate.h"
+#import "vnodrivecellplate.h"
+#import "ecollectioncell.h"
+
+static NSInteger const nodrivetodayplatewidth = 80;
+static NSInteger const nodrivetodayplateheight = 80;
 
 @interface mnodrivetodayitemplate ()
 
@@ -10,6 +15,12 @@
 @interface mnodrivetodaysection ()
 
 -(instancetype)init:(NSString*)name items:(NSArray<mnodrivetodayitem*>*)items;
+
+@property(copy, nonatomic, readwrite)NSString *reusableidentifier;
+@property(assign, nonatomic, readwrite)Class cellclass;
+@property(assign, nonatomic, readwrite)NSInteger cellwidth;
+@property(assign, nonatomic, readwrite)NSInteger cellheight;
+@property(assign, nonatomic, readwrite)BOOL fullwidth;
 
 @end
 
@@ -31,6 +42,18 @@
     mnodrivetodaysectionplate *model = [[mnodrivetodaysectionplate alloc] init:name items:items];
     
     return model;
+}
+
+-(instancetype)init
+{
+    self = [super init];
+    self.reusableidentifier = [vnodrivecellplate reusableidentifier];
+    self.cellclass = [vnodrivecellplate class];
+    self.cellwidth = nodrivetodayplatewidth;
+    self.cellheight = nodrivetodayplateheight;
+    self.fullwidth = NO;
+    
+    return self;
 }
 
 @end

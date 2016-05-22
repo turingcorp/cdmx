@@ -196,6 +196,7 @@
 		DAD7AA8A1CF21DD5003B169A /* mnodrivetodaysectionhologram.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD7AA891CF21DD5003B169A /* mnodrivetodaysectionhologram.m */; };
 		DAD7AA8D1CF21DEC003B169A /* mnodrivetodaysectionrestriction.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD7AA8C1CF21DEC003B169A /* mnodrivetodaysectionrestriction.m */; };
 		DAD7AA901CF22CA5003B169A /* vnodrivecell.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD7AA8F1CF22CA5003B169A /* vnodrivecell.m */; };
+		DAD7AA931CF22DEA003B169A /* vnodrivecellplate.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD7AA921CF22DEA003B169A /* vnodrivecellplate.m */; };
 		DAD875FC1CBD6CF200A4F91C /* vmenubutton.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD875FB1CBD6CF200A4F91C /* vmenubutton.m */; };
 		DAEA59F41CEA041900584526 /* mpollutionpollutant.m in Sources */ = {isa = PBXBuildFile; fileRef = DAEA59F31CEA041900584526 /* mpollutionpollutant.m */; };
 		DAEA59F71CEA3C0100584526 /* vpollutionfrontheadercell.m in Sources */ = {isa = PBXBuildFile; fileRef = DAEA59F61CEA3C0100584526 /* vpollutionfrontheadercell.m */; };
@@ -589,6 +590,8 @@
 		DAD7AA8C1CF21DEC003B169A /* mnodrivetodaysectionrestriction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mnodrivetodaysectionrestriction.m; sourceTree = "<group>"; };
 		DAD7AA8E1CF22CA5003B169A /* vnodrivecell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vnodrivecell.h; sourceTree = "<group>"; };
 		DAD7AA8F1CF22CA5003B169A /* vnodrivecell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vnodrivecell.m; sourceTree = "<group>"; };
+		DAD7AA911CF22DEA003B169A /* vnodrivecellplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vnodrivecellplate.h; sourceTree = "<group>"; };
+		DAD7AA921CF22DEA003B169A /* vnodrivecellplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vnodrivecellplate.m; sourceTree = "<group>"; };
 		DAD875FA1CBD6CF200A4F91C /* vmenubutton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vmenubutton.h; sourceTree = "<group>"; };
 		DAD875FB1CBD6CF200A4F91C /* vmenubutton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vmenubutton.m; sourceTree = "<group>"; };
 		DAEA59F21CEA041900584526 /* mpollutionpollutant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpollutionpollutant.h; sourceTree = "<group>"; };
@@ -1397,6 +1400,8 @@
 				DAD7AA441CEFBEAE003B169A /* vnodrivebar.m */,
 				DAD7AA8E1CF22CA5003B169A /* vnodrivecell.h */,
 				DAD7AA8F1CF22CA5003B169A /* vnodrivecell.m */,
+				DAD7AA911CF22DEA003B169A /* vnodrivecellplate.h */,
+				DAD7AA921CF22DEA003B169A /* vnodrivecellplate.m */,
 			);
 			path = nodrive;
 			sourceTree = "<group>";
@@ -1813,6 +1818,7 @@
 				DAC21D1D1CE4C2AA00D92161 /* mpollutionmenu.m in Sources */,
 				DA9274721CE55D090005138A /* mpollutionmapitem.m in Sources */,
 				DAB3FEE51CE273A600CCBB86 /* mdbupdate.m in Sources */,
+				DAD7AA931CF22DEA003B169A /* vnodrivecellplate.m in Sources */,
 				DAAEEDFE1CECE208008C992C /* mradiationactivity.m in Sources */,
 				DAAEEE071CECE253008C992C /* mradiationactivityoutdoors.m in Sources */,
 			);

@@ -13,6 +13,11 @@
 
 @property(strong, nonatomic, readwrite)NSArray<mnodrivetodayitem*> *items;
 @property(copy, nonatomic, readwrite)NSString *name;
+@property(copy, nonatomic, readwrite)NSString *reusableidentifier;
+@property(assign, nonatomic, readwrite)Class cellclass;
+@property(assign, nonatomic, readwrite)NSInteger cellwidth;
+@property(assign, nonatomic, readwrite)NSInteger cellheight;
+@property(assign, nonatomic, readwrite)BOOL fullwidth;
 
 @end
 

@@ -42,7 +42,14 @@
 
 #pragma mark functionality
 
--(mnodrivetodayitem*)modelforindex:(NSIndexPath*)index
+-(mnodrivetodaysection*)sectionforindex:(NSIndexPath*)index
+{
+    mnodrivetodaysection *model = self.model.sections[index.section];
+    
+    return model;
+}
+
+-(mnodrivetodayitem*)itemforindex:(NSIndexPath*)index
 {
     mnodrivetodayitem *model = self.model.sections[index.section].items[index.item];
     
@@ -54,6 +61,12 @@
 -(void)nodriveloaded:(mnodrivetoday*)model
 {
     self.model = model;
+    
+    for(mnodrivetodaysection *section in model.sections)
+    {
+        [self.collection registerClass:section.cellclass forCellWithReuseIdentifier:section.reusableidentifier];
+    }
+    
     [self.collection reloadData];
 }
 
@@ -62,7 +75,7 @@
 
 -(CGSize)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout sizeForItemAtIndexPath:(NSIndexPath*)index
 {
-    mnodrivetodayitem *model = [self modelforindex:index];
+    mnodrivetodaysection *model = [self sectionforindex:index];
     NSInteger width;
     NSInteger height = model.cellheight;
     
@@ -96,8 +109,10 @@
 
 -(UICollectionViewCell*)collectionView:(UICollectionView*)col cellForItemAtIndexPath:(NSIndexPath*)index
 {
-    mnodrivetodayitem *model = [self modelforindex:index];
-    vnodrivecell *cell = [col dequeueReusableCellWithReuseIdentifier:model.reusableidentifier forIndexPath:index];
+    mnodrivetodaysection *section = [self sectionforindex:index];
+    mnodrivetodayitem *item = [self itemforindex:index];
+    vnodrivecell *cell = [col dequeueReusableCellWithReuseIdentifier:section.reusableidentifier forIndexPath:index];
+    [cell config:item];
     
     return cell;
 }
