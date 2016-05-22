@@ -1,13 +1,9 @@
-//
-//  mnodrivetodaysection.h
-//  cdmx
-//
-//  Created by zero on 5/22/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
+#import "mnodrivetodayitem.h"
 
-@interface mnodrivetodaysection : NSObject
+@interface mnodrivetodaysection:NSObject
+
+@property(strong, nonatomic, readonly)NSArray<mnodrivetodayitem*> *items;
+@property(copy, nonatomic, readonly)NSString *name;
 
 @end
