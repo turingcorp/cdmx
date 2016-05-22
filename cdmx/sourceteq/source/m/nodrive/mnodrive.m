@@ -12,6 +12,7 @@
 @property(strong, nonatomic, readwrite)NSArray<mnodriveitem*> *week;
 @property(strong, nonatomic, readwrite)NSArray<mnodriveitem*> *staturdays;
 @property(strong, nonatomic, readwrite)NSArray<mnodriverating*> *ratings;
+@property(assign, nonatomic, readwrite)BOOL allstates;
 
 @end
 
@@ -29,6 +30,7 @@
     NSNumber *rawratings0 = rawratings[@"rate0"];
     NSNumber *rawratings1 = rawratings[@"rate1"];
     NSNumber *rawratings2 = rawratings[@"rate2"];
+    NSNumber *rawallstates = dictionary[@"allstates"];
     
     self.today = [[mnodriveitem alloc] init:rawtoday];
     
@@ -60,31 +62,32 @@
     
     NSMutableArray<mnodriverating*> *ratings = [NSMutableArray array];
     
-    if([rawratings00 boolValue])
+    if(rawratings00.boolValue)
     {
         mnodriverating *rating = [mnodriverating rate00];
         [ratings addObject:rating];
     }
     
-    if([rawratings0 boolValue])
+    if(rawratings0.boolValue)
     {
         mnodriverating *rating = [mnodriverating rate0];
         [ratings addObject:rating];
     }
     
-    if([rawratings1 boolValue])
+    if(rawratings1.boolValue)
     {
         mnodriverating *rating = [mnodriverating rate1];
         [ratings addObject:rating];
     }
     
-    if([rawratings2 boolValue])
+    if(rawratings2.boolValue)
     {
         mnodriverating *rating = [mnodriverating rate2];
         [ratings addObject:rating];
     }
     
     self.ratings = ratings;
+    self.allstates = rawallstates.boolValue;
     
     return self;
 }
