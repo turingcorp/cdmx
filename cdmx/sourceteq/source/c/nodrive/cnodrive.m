@@ -8,6 +8,7 @@
 
 @property(strong, nonatomic)vnodrive *view;
 @property(weak, nonatomic, readonly)cmain *parentViewController;
+@property(strong, nonatomic, readwrite)mnodrive *model;
 
 @end
 
@@ -100,6 +101,8 @@
                        
                        if(parser.nodrive)
                        {
+                           welf.model = parser.nodrive;
+                           
                            dispatch_async(dispatch_get_main_queue(),
                                           ^
                                           {
