@@ -13,6 +13,10 @@
 {
     NSMutableArray<mnodrivetodaysection*> *sections = [NSMutableArray array];
     
+    mnodrivetodaysection *sectionplates = [mnodrivetodaysection plates:model.today.plates];
+    
+    [sections addObject:sectionplates];
+    
     mnodrivetoday *today = [[mnodrivetoday alloc] init:sections];
     
     return today;

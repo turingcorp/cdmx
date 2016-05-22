@@ -9,4 +9,16 @@
 
 @implementation mnodrivetodaysection
 
++(instancetype)plates:(NSArray<mnodriveitemplate*>*)plates
+{
+    
+}
+
+-(instancetype)init:(NSString*)name items:(NSArray<mnodrivetodayitem*>*)items
+{
+    self = [super init];
+    
+    return self;
+}
+
 @end

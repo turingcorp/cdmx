@@ -97,7 +97,7 @@
 
 #pragma mark public
 
--(mnodrivetoday*)today
+-(mnodrivetoday*)modeltoday
 {
     mnodrivetoday *today = [mnodrivetoday model:self];
     

@@ -6,7 +6,7 @@
 @interface mnodrive:NSObject
 
 -(instancetype)init:(NSDictionary*)dictionary;
--(mnodrivetoday*)today;
+-(mnodrivetoday*)modeltoday;
 
 @property(strong, nonatomic, readonly)mnodriveitem *today;
 @property(strong, nonatomic, readonly)NSArray<mnodriveitem*> *week;
