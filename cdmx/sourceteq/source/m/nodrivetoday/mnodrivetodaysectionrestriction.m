@@ -3,7 +3,7 @@
 #import "vnodrivecellrestriction.h"
 #import "ecollectioncell.h"
 
-static NSInteger const nodrivetodayrestrictionheight = 40;
+static NSInteger const nodrivetodayrestrictionheight = 60;
 
 @interface mnodrivetodayitemrestriction ()
 
@@ -30,6 +30,9 @@ static NSInteger const nodrivetodayrestrictionheight = 40;
     NSString *name = NSLocalizedString(@"mnodrive_today_section_restriction", nil);
     NSMutableArray<mnodrivetodayitemrestriction*> *items = [NSMutableArray array];
     
+    mnodrivetodayitemrestriction *restrictiontime = [mnodrivetodayitemrestriction time:nodrive];
+    
+    [items addObject:restrictiontime];
     
     mnodrivetodaysectionrestriction *model = [[mnodrivetodaysectionrestriction alloc] init:name items:items];
     

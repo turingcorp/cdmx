@@ -90,6 +90,9 @@
 "mnodrive_today_section_hologram"="Holograms";
 "mnodrive_today_section_restriction"="Specifications";
 
+"mnodrive_today_restriction_time_title"="Time";
+"mnodrive_today_restriction_time_info"="5:00 am - 10:00 pm";
+
 "vpollution_radio_chart_title"="IMECA";
 "vpollution_front_header_button_imeca"="About IMECA";
 "vpollution_front_header_button_recommendation"="Precautions";

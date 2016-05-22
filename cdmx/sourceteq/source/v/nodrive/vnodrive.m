@@ -6,7 +6,7 @@
 
 static NSInteger const nodriveheaderheight = 60;
 static NSInteger const nodrivecoltop = 20;
-static NSInteger const nodrivecolbottom = 40;
+static NSInteger const nodrivecolbottom = 50;
 
 @interface vnodrive ()
 

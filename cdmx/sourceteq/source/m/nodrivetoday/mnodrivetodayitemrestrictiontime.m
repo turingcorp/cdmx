@@ -14,6 +14,10 @@
 {
     self = [super init];
     
+    self.asset = @"nodrive_clock";
+    self.title = NSLocalizedString(@"mnodrive_today_restriction_time_title", nil);
+    self.info = NSLocalizedString(@"mnodrive_today_restriction_time_info", nil);
+    
     return self;
 }
 
