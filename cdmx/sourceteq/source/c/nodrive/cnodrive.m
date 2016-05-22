@@ -106,7 +106,7 @@
                            dispatch_async(dispatch_get_main_queue(),
                                           ^
                                           {
-                                              [welf.view nodriveloaded:parser.nodrive];
+                                              [welf.view nodriveloaded:[parser.nodrive modeltoday]];
                                           });
                        }
                    });

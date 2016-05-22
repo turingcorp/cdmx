@@ -6,6 +6,7 @@ static NSInteger const nodrivetodayplateheight = 80;
 
 @interface mnodrivetodayitem ()
 
+@property(copy, nonatomic, readwrite)NSString *reusableidentifier;
 @property(assign, nonatomic, readwrite)Class cellclass;
 @property(assign, nonatomic, readwrite)NSInteger cellwidth;
 @property(assign, nonatomic, readwrite)NSInteger cellheight;
