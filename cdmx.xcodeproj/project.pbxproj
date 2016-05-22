@@ -68,6 +68,7 @@
 		DA8C16FD1CF238780034AA8E /* vnodriveheader.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8C16FC1CF238780034AA8E /* vnodriveheader.m */; };
 		DA8C17001CF25BFD0034AA8E /* mnodrivetodaysectionfree.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8C16FF1CF25BFD0034AA8E /* mnodrivetodaysectionfree.m */; };
 		DA8C17031CF2617E0034AA8E /* vnodrivecellhologram.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8C17021CF2617E0034AA8E /* vnodrivecellhologram.m */; };
+		DA8C17051CF26DA10034AA8E /* nodrive.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA8C17041CF26DA10034AA8E /* nodrive.xcassets */; };
 		DA8E6B881CDA8F5D009100EE /* vradiochart.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8E6B871CDA8F5D009100EE /* vradiochart.m */; };
 		DA8F03441CC1C6B10007596C /* districts.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA8F03431CC1C6B10007596C /* districts.xcassets */; };
 		DA9274651CE4E5640005138A /* mpollutionchartselect.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9274641CE4E5640005138A /* mpollutionchartselect.m */; };
@@ -339,6 +340,7 @@
 		DA8C16FF1CF25BFD0034AA8E /* mnodrivetodaysectionfree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mnodrivetodaysectionfree.m; sourceTree = "<group>"; };
 		DA8C17011CF2617E0034AA8E /* vnodrivecellhologram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vnodrivecellhologram.h; sourceTree = "<group>"; };
 		DA8C17021CF2617E0034AA8E /* vnodrivecellhologram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vnodrivecellhologram.m; sourceTree = "<group>"; };
+		DA8C17041CF26DA10034AA8E /* nodrive.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = nodrive.xcassets; sourceTree = "<group>"; };
 		DA8E6B861CDA8F5D009100EE /* vradiochart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vradiochart.h; sourceTree = "<group>"; };
 		DA8E6B871CDA8F5D009100EE /* vradiochart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vradiochart.m; sourceTree = "<group>"; };
 		DA8F03431CC1C6B10007596C /* districts.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = districts.xcassets; sourceTree = "<group>"; };
@@ -1208,6 +1210,7 @@
 				DA86ACBC1CE36E2500908755 /* pollution.xcassets */,
 				DA3F6BDE1CEBA60800625BE9 /* menu.xcassets */,
 				DAAEEE0B1CECF1EE008C992C /* radiation.xcassets */,
+				DA8C17041CF26DA10034AA8E /* nodrive.xcassets */,
 			);
 			path = imateq;
 			sourceTree = "<group>";
@@ -1580,6 +1583,7 @@
 				DAEA5A1D1CEA8AFA00584526 /* pollutants.plist in Resources */,
 				DAB3FEDC1CE26DCF00CCBB86 /* url.plist in Resources */,
 				DAD7AA291CEF631C003B169A /* radiation.plist in Resources */,
+				DA8C17051CF26DA10034AA8E /* nodrive.xcassets in Resources */,
 				DA8F03441CC1C6B10007596C /* districts.xcassets in Resources */,
 				DA4096411CDBF8880001D696 /* generic.xcassets in Resources */,
 				DA13FCD71CEAA4F800DE7A23 /* imeca.txt in Resources */,
