@@ -11,5 +11,6 @@
 @property(strong, nonatomic, readonly)NSArray<mnodriveitem*> *staturdays;
 @property(strong, nonatomic, readonly)NSArray<mnodriverating*> *ratings;
 @property(assign, nonatomic, readonly)BOOL allstates;
+@property(assign, nonatomic, readonly)BOOL bikesrestricted;
 
 @end

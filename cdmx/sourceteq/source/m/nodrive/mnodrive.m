@@ -13,6 +13,7 @@
 @property(strong, nonatomic, readwrite)NSArray<mnodriveitem*> *staturdays;
 @property(strong, nonatomic, readwrite)NSArray<mnodriverating*> *ratings;
 @property(assign, nonatomic, readwrite)BOOL allstates;
+@property(assign, nonatomic, readwrite)BOOL bikesrestricted;
 
 @end
 
@@ -31,6 +32,7 @@
     NSNumber *rawratings1 = rawratings[@"rate1"];
     NSNumber *rawratings2 = rawratings[@"rate2"];
     NSNumber *rawallstates = dictionary[@"allstates"];
+    NSNumber *rawbikesrestricted = dictionary[@"bikesrestricted"];
     
     self.today = [[mnodriveitem alloc] init:rawtoday];
     
@@ -88,6 +90,7 @@
     
     self.ratings = ratings;
     self.allstates = rawallstates.boolValue;
+    self.bikesrestricted = rawbikesrestricted.boolValue;
     
     return self;
 }
