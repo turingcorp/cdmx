@@ -1,13 +1,15 @@
-//
-//  mnodrivetodayitem.m
-//  cdmx
-//
-//  Created by zero on 5/22/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
-
 #import "mnodrivetodayitem.h"
 
+@interface mnodrivetodayitem ()
+
+@property(assign, nonatomic, readwrite)Class cellclass;
+@property(assign, nonatomic, readwrite)NSInteger cellwidth;
+@property(assign, nonatomic, readwrite)NSInteger cellheight;
+@property(assign, nonatomic, readwrite)BOOL fullwidth;
+
+@end
+
 @implementation mnodrivetodayitem
+
 
 @end

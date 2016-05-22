@@ -1,13 +1,6 @@
-//
-//  mnodrivetodayitemrestrictions.h
-//  cdmx
-//
-//  Created by zero on 5/22/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
+#import "mnodrivetodayitem.h"
 
-@interface mnodrivetodayitemrestrictions : NSObject
+@interface mnodrivetodayitemrestrictions:mnodrivetodayitem
 
 @end
