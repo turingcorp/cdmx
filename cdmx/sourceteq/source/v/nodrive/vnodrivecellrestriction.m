@@ -26,7 +26,7 @@
     UILabel *title = [[UILabel alloc] init];
     [title setBackgroundColor:[UIColor clearColor]];
     [title setTextColor:[UIColor main]];
-    [title setFont:[UIFont boldsize:13]];
+    [title setFont:[UIFont boldsize:12]];
     [title setTranslatesAutoresizingMaskIntoConstraints:NO];
     [title setUserInteractionEnabled:NO];
     self.title = title;
@@ -34,7 +34,7 @@
     UILabel *info = [[UILabel alloc] init];
     [info setBackgroundColor:[UIColor clearColor]];
     [info setTextColor:[UIColor colorWithWhite:0.4 alpha:1]];
-    [info setFont:[UIFont regularsize:15]];
+    [info setFont:[UIFont regularsize:14]];
     [info setTranslatesAutoresizingMaskIntoConstraints:NO];
     [info setUserInteractionEnabled:NO];
     self.info = info;
@@ -49,10 +49,10 @@
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[border]-20-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[border(1)]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[icon(30)]-10-[title]-5-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[icon]-10-[info]-5-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[icon(30)]-10-[title]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[icon]-10-[info]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[icon]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[title(15)]-0-[info(17)]-14-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[title(14)]-0-[info(16)]-15-|" options:0 metrics:metrics views:views]];
     
     return self;
 }

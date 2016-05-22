@@ -8,6 +8,7 @@ static NSInteger const nodrivetodayrestrictionheight = 60;
 @interface mnodrivetodayitemrestriction ()
 
 +(instancetype)time:(mnodrive*)model;
++(instancetype)foreigner:(mnodrive*)model;
 
 @end
 
@@ -31,8 +32,10 @@ static NSInteger const nodrivetodayrestrictionheight = 60;
     NSMutableArray<mnodrivetodayitemrestriction*> *items = [NSMutableArray array];
     
     mnodrivetodayitemrestriction *restrictiontime = [mnodrivetodayitemrestriction time:nodrive];
+    mnodrivetodayitemrestriction *restrictionforeigner = [mnodrivetodayitemrestriction foreigner:nodrive];
     
     [items addObject:restrictiontime];
+    [items addObject:restrictionforeigner];
     
     mnodrivetodaysectionrestriction *model = [[mnodrivetodaysectionrestriction alloc] init:name items:items];
     

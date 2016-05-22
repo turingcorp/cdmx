@@ -92,6 +92,9 @@
 
 "mnodrive_today_restriction_time_title"="Time";
 "mnodrive_today_restriction_time_info"="5:00 am - 10:00 pm";
+"mnodrive_today_restriction_foreigner_title"="Plates not from CDMX or State of Mexico";
+"mnodrive_today_restriction_foreigner_yes_info"="Same rules using last number";
+"mnodrive_today_restriction_foreigner_no_info"="Different rules, see the calendar";
 
 "vpollution_radio_chart_title"="IMECA";
 "vpollution_front_header_button_imeca"="About IMECA";
