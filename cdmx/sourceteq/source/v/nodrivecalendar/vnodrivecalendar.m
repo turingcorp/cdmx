@@ -4,8 +4,7 @@
 #import "vnodrivecalendarcell.h"
 #import "ecollectionreusable.h"
 
-static NSInteger const calendarheaderheight = 40;
-static NSInteger const calendarsectiontop = 20;
+static NSInteger const calendarheaderheight = 60;
 static NSInteger const calendarsectionbottom = 50;
 static NSInteger const calendarinteritem = -1;
 
@@ -28,7 +27,7 @@ static NSInteger const calendarinteritem = -1;
     [flow setMinimumLineSpacing:calendarinteritem];
     [flow setMinimumInteritemSpacing:0];
     [flow setScrollDirection:UICollectionViewScrollDirectionVertical];
-    [flow setSectionInset:UIEdgeInsetsMake(calendarsectiontop, 0, calendarsectionbottom, 0)];
+    [flow setSectionInset:UIEdgeInsetsMake(0, 0, calendarsectionbottom, 0)];
     
     UICollectionView *collection = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flow];
     [collection setClipsToBounds:YES];

@@ -4,7 +4,7 @@
 #import "vnodrivecalendarcellweek.h"
 #import "ecollectioncell.h"
 
-static NSInteger const nodrivecalendarweekheight = 70;
+static NSInteger const nodrivecalendarweekheight = 80;
 
 @interface mnodrivecalendaritemweek ()
 

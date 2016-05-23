@@ -57,7 +57,7 @@
         NSDictionary *rawsaturdayitem = rawsaturdays[indexsaturdays];
         mnodriveitem *saturdayitem = [[mnodriveitem alloc] init:rawsaturdayitem];
         
-        [saturdaysse addObject:saturdayitem];
+        [saturdays addObject:saturdayitem];
     }
     
     self.staturdays = saturdays;
