@@ -98,6 +98,9 @@
 "mnodrive_today_restriction_bike_title"="Motorcycles";
 "mnodrive_today_restriction_bike_yes_info"="Same rules as cars";
 "mnodrive_today_restriction_bike_no_info"="No restrictions";
+"mnodrive_today_restriction_permit_title"="Permits (no plate)";
+"mnodrive_today_restriction_permit_yes_info"="Can't drive today";
+"mnodrive_today_restriction_permit_no_info"="Free to drive";
 
 "vpollution_radio_chart_title"="IMECA";
 "vpollution_front_header_button_imeca"="About IMECA";
