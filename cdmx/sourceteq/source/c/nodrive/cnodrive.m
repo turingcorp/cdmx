@@ -87,7 +87,7 @@
 {
     if(self.model)
     {
-        cnodrivecalendar *controller = [[cnodrivecalendar alloc] init];
+        cnodrivecalendar *controller = [[cnodrivecalendar alloc] init:self.model];
         [self.parentViewController pushcontroller:controller];
     }
 }
@@ -107,11 +107,12 @@
                        if(parser.nodrive)
                        {
                            welf.model = parser.nodrive;
+                           mnodrivetoday *modeltoday = [parser.nodrive modeltoday];
                            
                            dispatch_async(dispatch_get_main_queue(),
                                           ^
                                           {
-                                              [welf.view nodriveloaded:[parser.nodrive modeltoday]];
+                                              [welf.view nodriveloaded:modeltoday];
                                           });
                        }
                    });
