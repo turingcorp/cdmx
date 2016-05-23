@@ -3,4 +3,10 @@
 
 @interface vnodrivecalendarcellweek:vnodrivecalendarcell
 
+@property(weak, nonatomic)UILabel *name;
+@property(weak, nonatomic)UILabel *numbera;
+@property(weak, nonatomic)UILabel *numberb;
+@property(weak, nonatomic)UIImageView *circlea;
+@property(weak, nonatomic)UIImageView *circleb;
+
 @end

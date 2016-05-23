@@ -6,6 +6,24 @@
 
 static NSInteger const nodrivecalendarweekheight = 70;
 
+@interface mnodrivecalendaritemweek ()
+
+-(instancetype)init:(NSInteger)day platea:(mnodriveitemplate*)platea plateb:(mnodriveitemplate*)plateb;
+
+@end
+
+@interface mnodrivecalendarsection ()
+
+-(instancetype)init:(NSString*)name items:(NSArray<mnodrivecalendaritem*>*)items;
+
+@property(strong, nonatomic, readwrite)NSArray<mnodrivecalendaritem*> *items;
+@property(copy, nonatomic, readwrite)NSString *name;
+@property(copy, nonatomic, readwrite)NSString *reusableidentifier;
+@property(assign, nonatomic, readwrite)Class cellclass;
+@property(assign, nonatomic, readwrite)NSInteger cellheight;
+
+@end
+
 @implementation mnodrivecalendarsectionweek
 
 +(instancetype)model:(NSArray<mnodriveitem*>*)week
@@ -17,12 +35,17 @@ static NSInteger const nodrivecalendarweekheight = 70;
     for(NSUInteger indexweek = 0; indexweek < countweek; indexweek++)
     {
         mnodriveitem *weekday = week[indexweek];
-        mnodrivecalendaritemweek *modelweekday = [[mnodrivecalendaritemweek alloc] init:plate];
         
-        [items addObject:modelweekday];
+        if(weekday.plates.count > 1)
+        {
+            mnodriveitemplate *platea = weekday.plates[0];
+            mnodriveitemplate *plateb = weekday.plates[1];
+            mnodrivecalendaritemweek *modelweekday = [[mnodrivecalendaritemweek alloc] init:indexweek platea:platea plateb:plateb];
+            [items addObject:modelweekday];
+        }
     }
     
-    mnodrivetodaysectionplate *model = [[mnodrivetodaysectionplate alloc] init:name items:items];
+    mnodrivecalendarsectionweek *model = [[mnodrivecalendarsectionweek alloc] init:name items:items];
     
     return model;
 }
@@ -30,13 +53,9 @@ static NSInteger const nodrivecalendarweekheight = 70;
 -(instancetype)init
 {
     self = [super init];
-    self.reusableidentifier = [vnodrivecellplate reusableidentifier];
-    self.cellclass = [vnodrivecellplate class];
-    self.cellwidth = nodrivetodayplatewidth;
-    self.cellheight = nodrivetodayplateheight;
-    self.cellsperrow = nodrivetodayplatecellsperrow;
-    self.fullwidth = NO;
-    self.headerborder = YES;
+    self.reusableidentifier = [vnodrivecalendarcellweek reusableidentifier];
+    self.cellclass = [vnodrivecalendarcellweek class];
+    self.cellheight = nodrivecalendarweekheight;
     
     return self;
 }

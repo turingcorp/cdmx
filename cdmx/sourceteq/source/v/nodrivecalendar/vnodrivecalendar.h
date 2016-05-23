@@ -2,7 +2,7 @@
 #import "vview.h"
 #import "mnodrivecalendar.h"
 
-@interface vnodrivecalendar:vview
+@interface vnodrivecalendar:vview<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
 -(void)modelcalendar:(mnodrivecalendar*)model;
 
