@@ -15,6 +15,7 @@
 		DA05C6DB1CE63C0C00A22A5E /* ecollectioncell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA05C6DA1CE63C0C00A22A5E /* ecollectioncell.m */; };
 		DA05C6DE1CE63C1500A22A5E /* ecollectionreusable.m in Sources */ = {isa = PBXBuildFile; fileRef = DA05C6DD1CE63C1500A22A5E /* ecollectionreusable.m */; };
 		DA13FCD71CEAA4F800DE7A23 /* imeca.txt in Resources */ = {isa = PBXBuildFile; fileRef = DA13FCD51CEAA4F800DE7A23 /* imeca.txt */; };
+		DA169ED91CF341EE00E61B8A /* mnodrivetodayitemrestrictiontourist.m in Sources */ = {isa = PBXBuildFile; fileRef = DA169ED81CF341EE00E61B8A /* mnodrivetodayitemrestrictiontourist.m */; };
 		DA20ACE71CD7FBC700754956 /* cpollution.m in Sources */ = {isa = PBXBuildFile; fileRef = DA20ACE61CD7FBC700754956 /* cpollution.m */; };
 		DA20AD031CD80B5100754956 /* enotification.m in Sources */ = {isa = PBXBuildFile; fileRef = DA20AD021CD80B5100754956 /* enotification.m */; };
 		DA20AD061CD80B5A00754956 /* ecolor.m in Sources */ = {isa = PBXBuildFile; fileRef = DA20AD051CD80B5A00754956 /* ecolor.m */; };
@@ -240,6 +241,8 @@
 		DA05C6DD1CE63C1500A22A5E /* ecollectionreusable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ecollectionreusable.m; sourceTree = "<group>"; };
 		DA13FCD61CEAA4F800DE7A23 /* en */ = {isa = PBXFileReference; lastKnownFileType = text; name = en; path = en.lproj/imeca.txt; sourceTree = "<group>"; };
 		DA13FCD81CEAA4FF00DE7A23 /* es */ = {isa = PBXFileReference; lastKnownFileType = text; name = es; path = es.lproj/imeca.txt; sourceTree = "<group>"; };
+		DA169ED71CF341EE00E61B8A /* mnodrivetodayitemrestrictiontourist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mnodrivetodayitemrestrictiontourist.h; sourceTree = "<group>"; };
+		DA169ED81CF341EE00E61B8A /* mnodrivetodayitemrestrictiontourist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mnodrivetodayitemrestrictiontourist.m; sourceTree = "<group>"; };
 		DA20ACE51CD7FBC700754956 /* cpollution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpollution.h; sourceTree = "<group>"; };
 		DA20ACE61CD7FBC700754956 /* cpollution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cpollution.m; sourceTree = "<group>"; };
 		DA20AD011CD80B5100754956 /* enotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = enotification.h; sourceTree = "<group>"; };
@@ -1510,6 +1513,8 @@
 				DA8C17101CF27CBD0034AA8E /* mnodrivetodayitemrestrictionbike.m */,
 				DA8C17121CF280450034AA8E /* mnodrivetodayitemrestrictionpermit.h */,
 				DA8C17131CF280450034AA8E /* mnodrivetodayitemrestrictionpermit.m */,
+				DA169ED71CF341EE00E61B8A /* mnodrivetodayitemrestrictiontourist.h */,
+				DA169ED81CF341EE00E61B8A /* mnodrivetodayitemrestrictiontourist.m */,
 			);
 			path = nodrivetoday;
 			sourceTree = "<group>";
@@ -1834,6 +1839,7 @@
 				DAB26D881CE0F9F100E1580F /* mdbpollutiondaily.m in Sources */,
 				DA3F6BCB1CEB904800625BE9 /* mmenusectionitem.m in Sources */,
 				DAAEEE011CECE21B008C992C /* mradiationactivityexercise.m in Sources */,
+				DA169ED91CF341EE00E61B8A /* mnodrivetodayitemrestrictiontourist.m in Sources */,
 				DA3F6BD71CEB934100625BE9 /* vmenuheader.m in Sources */,
 				DAC21D5C1CE4C40800D92161 /* mpollutionoption.m in Sources */,
 				DAB3FEDF1CE26E8900CCBB86 /* acallpollution.m in Sources */,
