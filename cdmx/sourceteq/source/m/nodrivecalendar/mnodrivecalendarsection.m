@@ -1,4 +1,8 @@
 #import "mnodrivecalendarsection.h"
+#import "mnodrivecalendarsectionweek.h"
+#import "mnodrivecalendarsectionsaturdays.h"
+#import "mnodrivecalendarsectionforeigner.h"
+#import "mnodrive.h"
 
 @interface mnodrivecalendarsection ()
 
@@ -11,5 +15,20 @@
 @end
 
 @implementation mnodrivecalendarsection
+
++(instancetype)week:(NSArray<mnodriveitem*>*)items
+{
+    
+}
+
++(instancetype)saturdays:(NSArray<mnodriveitem*>*)items
+{
+    
+}
+
++(instancetype)foreigner:(mnodrive*)nodrive
+{
+    
+}
 
 @end

@@ -8,4 +8,12 @@
 
 @implementation mnodrivecalendaritemforeignerplates
 
+-(instancetype)init
+{
+    self = [super init];
+    self.info = NSLocalizedString(@"mnodrive_calendar_foreigner_plates", nil);
+    
+    return self;
+}
+
 @end

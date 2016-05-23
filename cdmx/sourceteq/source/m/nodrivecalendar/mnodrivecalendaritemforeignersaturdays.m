@@ -11,7 +11,7 @@
 -(instancetype)init
 {
     self = [super init];
-    self.info = NSLocalizedString(@"", nil);
+    self.info = NSLocalizedString(@"mnodrive_calendar_foreigner_saturdays", nil);
     
     return self;
 }

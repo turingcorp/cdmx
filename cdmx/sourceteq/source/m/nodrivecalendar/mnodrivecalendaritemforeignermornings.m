@@ -8,4 +8,12 @@
 
 @implementation mnodrivecalendaritemforeignermornings
 
+-(instancetype)init
+{
+    self = [super init];
+    self.info = NSLocalizedString(@"mnodrive_calendar_foreigner_mornings", nil);
+    
+    return self;
+}
+
 @end
