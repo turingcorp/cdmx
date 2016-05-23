@@ -15,10 +15,8 @@
 		DA05C6DB1CE63C0C00A22A5E /* ecollectioncell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA05C6DA1CE63C0C00A22A5E /* ecollectioncell.m */; };
 		DA05C6DE1CE63C1500A22A5E /* ecollectionreusable.m in Sources */ = {isa = PBXBuildFile; fileRef = DA05C6DD1CE63C1500A22A5E /* ecollectionreusable.m */; };
 		DA0917261CF3839800FD1366 /* mnodrivecalendarsectionweek.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0917251CF3839800FD1366 /* mnodrivecalendarsectionweek.m */; };
-		DA0917291CF383B000FD1366 /* mnodrivecalendarsectionsaturdays.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0917281CF383B000FD1366 /* mnodrivecalendarsectionsaturdays.m */; };
 		DA09172C1CF3842C00FD1366 /* mnodrivecalendarsectionforeigner.m in Sources */ = {isa = PBXBuildFile; fileRef = DA09172B1CF3842C00FD1366 /* mnodrivecalendarsectionforeigner.m */; };
 		DA09172F1CF3858700FD1366 /* mnodrivecalendaritemweek.m in Sources */ = {isa = PBXBuildFile; fileRef = DA09172E1CF3858700FD1366 /* mnodrivecalendaritemweek.m */; };
-		DA0917321CF3859400FD1366 /* mnodrivecalendaritemsaturdays.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0917311CF3859400FD1366 /* mnodrivecalendaritemsaturdays.m */; };
 		DA0917351CF3870900FD1366 /* mnodrivecalendaritemforeigner.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0917341CF3870900FD1366 /* mnodrivecalendaritemforeigner.m */; };
 		DA0917381CF3872400FD1366 /* mnodrivecalendaritemforeignersame.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0917371CF3872400FD1366 /* mnodrivecalendaritemforeignersame.m */; };
 		DA09173E1CF3874800FD1366 /* mnodrivecalendaritemforeignerplates.m in Sources */ = {isa = PBXBuildFile; fileRef = DA09173D1CF3874800FD1366 /* mnodrivecalendaritemforeignerplates.m */; };
@@ -27,7 +25,6 @@
 		DA0917471CF38FBF00FD1366 /* vnodrivecalendarheader.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0917461CF38FBF00FD1366 /* vnodrivecalendarheader.m */; };
 		DA09174A1CF38FCB00FD1366 /* vnodrivecalendarcell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0917491CF38FCB00FD1366 /* vnodrivecalendarcell.m */; };
 		DA09174D1CF38FE400FD1366 /* vnodrivecalendarcellweek.m in Sources */ = {isa = PBXBuildFile; fileRef = DA09174C1CF38FE400FD1366 /* vnodrivecalendarcellweek.m */; };
-		DA0917501CF38FF100FD1366 /* vnodrivecalendarcellsaturdays.m in Sources */ = {isa = PBXBuildFile; fileRef = DA09174F1CF38FF100FD1366 /* vnodrivecalendarcellsaturdays.m */; };
 		DA0917531CF3900300FD1366 /* vnodrivecalendarcellforeigner.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0917521CF3900300FD1366 /* vnodrivecalendarcellforeigner.m */; };
 		DA13FCD71CEAA4F800DE7A23 /* imeca.txt in Resources */ = {isa = PBXBuildFile; fileRef = DA13FCD51CEAA4F800DE7A23 /* imeca.txt */; };
 		DA169ED91CF341EE00E61B8A /* mnodrivetodayitemrestrictiontourist.m in Sources */ = {isa = PBXBuildFile; fileRef = DA169ED81CF341EE00E61B8A /* mnodrivetodayitemrestrictiontourist.m */; };
@@ -261,14 +258,10 @@
 		DA05C6DD1CE63C1500A22A5E /* ecollectionreusable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ecollectionreusable.m; sourceTree = "<group>"; };
 		DA0917241CF3839800FD1366 /* mnodrivecalendarsectionweek.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mnodrivecalendarsectionweek.h; sourceTree = "<group>"; };
 		DA0917251CF3839800FD1366 /* mnodrivecalendarsectionweek.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mnodrivecalendarsectionweek.m; sourceTree = "<group>"; };
-		DA0917271CF383B000FD1366 /* mnodrivecalendarsectionsaturdays.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mnodrivecalendarsectionsaturdays.h; sourceTree = "<group>"; };
-		DA0917281CF383B000FD1366 /* mnodrivecalendarsectionsaturdays.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mnodrivecalendarsectionsaturdays.m; sourceTree = "<group>"; };
 		DA09172A1CF3842C00FD1366 /* mnodrivecalendarsectionforeigner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mnodrivecalendarsectionforeigner.h; sourceTree = "<group>"; };
 		DA09172B1CF3842C00FD1366 /* mnodrivecalendarsectionforeigner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mnodrivecalendarsectionforeigner.m; sourceTree = "<group>"; };
 		DA09172D1CF3858700FD1366 /* mnodrivecalendaritemweek.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mnodrivecalendaritemweek.h; sourceTree = "<group>"; };
 		DA09172E1CF3858700FD1366 /* mnodrivecalendaritemweek.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mnodrivecalendaritemweek.m; sourceTree = "<group>"; };
-		DA0917301CF3859400FD1366 /* mnodrivecalendaritemsaturdays.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mnodrivecalendaritemsaturdays.h; sourceTree = "<group>"; };
-		DA0917311CF3859400FD1366 /* mnodrivecalendaritemsaturdays.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mnodrivecalendaritemsaturdays.m; sourceTree = "<group>"; };
 		DA0917331CF3870900FD1366 /* mnodrivecalendaritemforeigner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mnodrivecalendaritemforeigner.h; sourceTree = "<group>"; };
 		DA0917341CF3870900FD1366 /* mnodrivecalendaritemforeigner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mnodrivecalendaritemforeigner.m; sourceTree = "<group>"; };
 		DA0917361CF3872400FD1366 /* mnodrivecalendaritemforeignersame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mnodrivecalendaritemforeignersame.h; sourceTree = "<group>"; };
@@ -285,8 +278,6 @@
 		DA0917491CF38FCB00FD1366 /* vnodrivecalendarcell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vnodrivecalendarcell.m; sourceTree = "<group>"; };
 		DA09174B1CF38FE400FD1366 /* vnodrivecalendarcellweek.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vnodrivecalendarcellweek.h; sourceTree = "<group>"; };
 		DA09174C1CF38FE400FD1366 /* vnodrivecalendarcellweek.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vnodrivecalendarcellweek.m; sourceTree = "<group>"; };
-		DA09174E1CF38FF100FD1366 /* vnodrivecalendarcellsaturdays.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vnodrivecalendarcellsaturdays.h; sourceTree = "<group>"; };
-		DA09174F1CF38FF100FD1366 /* vnodrivecalendarcellsaturdays.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vnodrivecalendarcellsaturdays.m; sourceTree = "<group>"; };
 		DA0917511CF3900300FD1366 /* vnodrivecalendarcellforeigner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vnodrivecalendarcellforeigner.h; sourceTree = "<group>"; };
 		DA0917521CF3900300FD1366 /* vnodrivecalendarcellforeigner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vnodrivecalendarcellforeigner.m; sourceTree = "<group>"; };
 		DA13FCD61CEAA4F800DE7A23 /* en */ = {isa = PBXFileReference; lastKnownFileType = text; name = en; path = en.lproj/imeca.txt; sourceTree = "<group>"; };
@@ -772,8 +763,6 @@
 				DA0917491CF38FCB00FD1366 /* vnodrivecalendarcell.m */,
 				DA09174B1CF38FE400FD1366 /* vnodrivecalendarcellweek.h */,
 				DA09174C1CF38FE400FD1366 /* vnodrivecalendarcellweek.m */,
-				DA09174E1CF38FF100FD1366 /* vnodrivecalendarcellsaturdays.h */,
-				DA09174F1CF38FF100FD1366 /* vnodrivecalendarcellsaturdays.m */,
 				DA0917511CF3900300FD1366 /* vnodrivecalendarcellforeigner.h */,
 				DA0917521CF3900300FD1366 /* vnodrivecalendarcellforeigner.m */,
 			);
@@ -1566,16 +1555,12 @@
 				DA169EE51CF34D3100E61B8A /* mnodrivecalendarsection.m */,
 				DA0917241CF3839800FD1366 /* mnodrivecalendarsectionweek.h */,
 				DA0917251CF3839800FD1366 /* mnodrivecalendarsectionweek.m */,
-				DA0917271CF383B000FD1366 /* mnodrivecalendarsectionsaturdays.h */,
-				DA0917281CF383B000FD1366 /* mnodrivecalendarsectionsaturdays.m */,
 				DA09172A1CF3842C00FD1366 /* mnodrivecalendarsectionforeigner.h */,
 				DA09172B1CF3842C00FD1366 /* mnodrivecalendarsectionforeigner.m */,
 				DA169EE71CF3534B00E61B8A /* mnodrivecalendaritem.h */,
 				DA169EE81CF3534B00E61B8A /* mnodrivecalendaritem.m */,
 				DA09172D1CF3858700FD1366 /* mnodrivecalendaritemweek.h */,
 				DA09172E1CF3858700FD1366 /* mnodrivecalendaritemweek.m */,
-				DA0917301CF3859400FD1366 /* mnodrivecalendaritemsaturdays.h */,
-				DA0917311CF3859400FD1366 /* mnodrivecalendaritemsaturdays.m */,
 				DA0917331CF3870900FD1366 /* mnodrivecalendaritemforeigner.h */,
 				DA0917341CF3870900FD1366 /* mnodrivecalendaritemforeigner.m */,
 				DA0917361CF3872400FD1366 /* mnodrivecalendaritemforeignersame.h */,
@@ -1858,7 +1843,6 @@
 				DA0917441CF3877000FD1366 /* mnodrivecalendaritemforeignersaturdays.m in Sources */,
 				DAC21D201CE4C2AA00D92161 /* mpollutionmenuitemdistricts.m in Sources */,
 				DA05C6D51CE6387800A22A5E /* vpollutionmapheader.m in Sources */,
-				DA0917321CF3859400FD1366 /* mnodrivecalendaritemsaturdays.m in Sources */,
 				DAC21D171CE4C2AA00D92161 /* mpollutionindexacceptable.m in Sources */,
 				DA169EE91CF3534B00E61B8A /* mnodrivecalendaritem.m in Sources */,
 				DA3F6C051CEBD3B400625BE9 /* vradiationreactor.m in Sources */,
@@ -1910,7 +1894,6 @@
 				DA8C17141CF280450034AA8E /* mnodrivetodayitemrestrictionpermit.m in Sources */,
 				DAD2F76D1CEDFB4900A6C534 /* vradiationabout.m in Sources */,
 				DAEA5A001CEA407300584526 /* mpollutionfrontitemoptionimeca.m in Sources */,
-				DA0917501CF38FF100FD1366 /* vnodrivecalendarcellsaturdays.m in Sources */,
 				DA0917471CF38FBF00FD1366 /* vnodrivecalendarheader.m in Sources */,
 				DAD7AA3E1CEFB6FF003B169A /* cnodrive.m in Sources */,
 				DAD7AA2E1CEF66E7003B169A /* mradiationabout.m in Sources */,
@@ -1981,7 +1964,6 @@
 				DAD7AA231CEF6115003B169A /* vradiationaboutcell.m in Sources */,
 				DAD7AA3A1CEFB156003B169A /* aparsernodrive.m in Sources */,
 				DA3F6BDD1CEBA0F500625BE9 /* vmenubar.m in Sources */,
-				DA0917291CF383B000FD1366 /* mnodrivecalendarsectionsaturdays.m in Sources */,
 				DA4096531CDC1F560001D696 /* cpollutionimeca.m in Sources */,
 				DAAEEE271CED17D2008C992C /* mradiationprecautionleveladvised.m in Sources */,
 				DAC21D531CE4C35B00D92161 /* vpollutionfrontlayoutlist.m in Sources */,

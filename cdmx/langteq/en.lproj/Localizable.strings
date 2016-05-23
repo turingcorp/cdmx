@@ -106,14 +106,13 @@
 "mnodrive_today_restriction_tourist_no_info"="Unactive at the moment";
 
 "mnodrive_calendar_section_week"="No drive on weekdays";
-"mnodrive_calendar_section_saturdays"="No drive on saturdays";
 "mnodrive_calendar_section_foreigner"="Plates not from CDMX or State of Mexico";
-"mnodrive_calendar_item_week_0"="Monday";
-"mnodrive_calendar_item_week_1"="Tuesday";
-"mnodrive_calendar_item_week_2"="Wednesday";
-"mnodrive_calendar_item_week_3"="Thursday";
-"mnodrive_calendar_item_week_4"="Friday";
-"mnodrive_calendar_item_week_permit"="Permit";
+"mnodrive_calendar_item_week_0"="Monday\n1st Saturday";
+"mnodrive_calendar_item_week_1"="Tuesday\n2nd Saturday";
+"mnodrive_calendar_item_week_2"="Wednesday\n3rd Saturday";
+"mnodrive_calendar_item_week_3"="Thursday\n4th Saturday";
+"mnodrive_calendar_item_week_4"="Friday\n5th Saturday";
+"mnodrive_calendar_item_week_permit"="& permits";
 "mnodrive_calendar_foreigner_same"="Same rules as local plates, No drive a weekday and a saturday according to the last number in the plate";
 "mnodrive_calendar_foreigner_plates"="No drive a weekday according to the last number in the plate";
 "mnodrive_calendar_foreigner_mornings"="No drive on weekdays from 5:00 am to 11:00 am";

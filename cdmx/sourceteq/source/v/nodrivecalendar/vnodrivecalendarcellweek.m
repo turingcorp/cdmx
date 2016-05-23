@@ -17,6 +17,7 @@
     [name setTextColor:[UIColor main]];
     [name setUserInteractionEnabled:NO];
     [name setTextAlignment:NSTextAlignmentRight];
+    [name setNumberOfLines:2];
     self.name = name;
     
     UILabel *numbera = [[UILabel alloc] init];
@@ -46,7 +47,6 @@
     [permit setFont:[UIFont regularsize:14]];
     [permit setTextColor:[UIColor blackColor]];
     [permit setUserInteractionEnabled:NO];
-    [permit setTextAlignment:NSTextAlignmentCenter];
     [permit setText:NSLocalizedString(@"mnodrive_calendar_item_week_permit", nil)];
     self.permit = permit;
     
@@ -76,8 +76,8 @@
     NSDictionary *views = @{@"name":name, @"circlea":circlea, @"circleb":circleb, @"numbera":numbera, @"numberb":numberb, @"permit":permit};
     NSDictionary *metrics = @{};
     
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[name(110)]-5-[circlea(60)]-0-[circleb(60)]-0-[permit(80)]" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[name]-8-[numbera(70)]-0-[numberb(70)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[name(110)]-5-[circlea(60)]-0-[circleb(60)]-3-[permit(110)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[name]-5-[numbera(60)]-0-[numberb(60)]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[name]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-15-[circlea]-15-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-15-[circleb]-15-|" options:0 metrics:metrics views:views]];

@@ -10,7 +10,6 @@
 
 @property(strong, nonatomic, readwrite)mnodriveitem *today;
 @property(strong, nonatomic, readwrite)NSArray<mnodriveitem*> *week;
-@property(strong, nonatomic, readwrite)NSArray<mnodriveitem*> *staturdays;
 @property(strong, nonatomic, readwrite)NSArray<mnodriverating*> *ratings;
 @property(assign, nonatomic, readwrite)BOOL allstates;
 @property(assign, nonatomic, readwrite)BOOL bikesrestricted;
@@ -25,7 +24,6 @@
     
     NSDictionary *rawtoday = dictionary[@"today"];
     NSArray *rawweek = dictionary[@"week"];
-    NSArray *rawsaturdays = dictionary[@"saturdays"];
     NSDictionary *rawratings = dictionary[@"ratings"];
     NSNumber *rawratings00 = rawratings[@"rate00"];
     NSNumber *rawratings0 = rawratings[@"rate0"];
@@ -48,19 +46,6 @@
     }
     
     self.week = week;
-    
-    NSMutableArray<mnodriveitem*> *saturdays = [NSMutableArray array];
-    NSUInteger countsaturdays = rawsaturdays.count;
-    
-    for(NSUInteger indexsaturdays = 0; indexsaturdays < countsaturdays; indexsaturdays++)
-    {
-        NSDictionary *rawsaturdayitem = rawsaturdays[indexsaturdays];
-        mnodriveitem *saturdayitem = [[mnodriveitem alloc] init:rawsaturdayitem];
-        
-        [saturdays addObject:saturdayitem];
-    }
-    
-    self.staturdays = saturdays;
     
     NSMutableArray<mnodriverating*> *ratings = [NSMutableArray array];
     
