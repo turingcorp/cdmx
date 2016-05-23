@@ -8,7 +8,7 @@ static NSInteger const nodrivecalendarweekheight = 80;
 
 @interface mnodrivecalendaritemweek ()
 
--(instancetype)init:(NSInteger)day platea:(mnodriveitemplate*)platea plateb:(mnodriveitemplate*)plateb;
+-(instancetype)init:(NSInteger)day platea:(mnodriveitemplate*)platea plateb:(mnodriveitemplate*)plateb permit:(BOOL)permit;
 
 @end
 
@@ -40,7 +40,7 @@ static NSInteger const nodrivecalendarweekheight = 80;
         {
             mnodriveitemplate *platea = weekday.plates[0];
             mnodriveitemplate *plateb = weekday.plates[1];
-            mnodrivecalendaritemweek *modelweekday = [[mnodrivecalendaritemweek alloc] init:indexweek platea:platea plateb:plateb];
+            mnodrivecalendaritemweek *modelweekday = [[mnodrivecalendaritemweek alloc] init:indexweek platea:platea plateb:plateb permit:weekday.permit];
             [items addObject:modelweekday];
         }
     }

@@ -4,7 +4,7 @@
 #import "vnodrivecalendarcell.h"
 #import "ecollectionreusable.h"
 
-static NSInteger const calendarheaderheight = 60;
+static NSInteger const calendarheaderheight = 70;
 static NSInteger const calendarsectionbottom = 50;
 static NSInteger const calendarinteritem = -1;
 
@@ -122,7 +122,7 @@ static NSInteger const calendarinteritem = -1;
 -(UICollectionReusableView*)collectionView:(UICollectionView*)col viewForSupplementaryElementOfKind:(NSString*)kind atIndexPath:(NSIndexPath*)index
 {
     mnodrivecalendarsection *section = [self sectionforindex:index];
-    vnodrivecalendarheader *header = [col dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:setion.reusableidentifier forIndexPath:index];
+    vnodrivecalendarheader *header = [col dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:[vnodrivecalendarheader reusableidentifier] forIndexPath:index];
     [header config:section];
     
     return header;
