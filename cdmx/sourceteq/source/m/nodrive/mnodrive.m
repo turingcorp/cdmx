@@ -104,4 +104,11 @@
     return today;
 }
 
+-(mnodrivecalendar*)modelcalendar
+{
+    mnodrivecalendar *calendar = [mnodrivecalendar model:self];
+    
+    return calendar;
+}
+
 @end

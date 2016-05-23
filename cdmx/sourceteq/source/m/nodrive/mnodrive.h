@@ -2,11 +2,13 @@
 #import "mnodriveitem.h"
 #import "mnodriverating.h"
 #import "mnodrivetoday.h"
+#import "mnodrivecalendar.h"
 
 @interface mnodrive:NSObject
 
 -(instancetype)init:(NSDictionary*)dictionary;
 -(mnodrivetoday*)modeltoday;
+-(mnodrivecalendar*)modelcalendar;
 
 @property(strong, nonatomic, readonly)mnodriveitem *today;
 @property(strong, nonatomic, readonly)NSArray<mnodriveitem*> *week;
