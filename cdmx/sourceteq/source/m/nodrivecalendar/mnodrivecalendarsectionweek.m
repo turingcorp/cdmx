@@ -1,25 +1,25 @@
 #import "mnodrivecalendarsectionweek.h"
+#import "mnodrivecalendaritemweek.h"
 #import "mnodriveitem.h"
-#import "vnodrivecellplate.h"
+#import "vnodrivecalendarcellweek.h"
 #import "ecollectioncell.h"
 
-static NSInteger const nodrivetodayplatewidth = 70;
-static NSInteger const nodrivetodayplateheight = 70;
-static NSInteger const nodrivetodayplatecellsperrow = 2;
+static NSInteger const nodrivecalendarweekheight = 70;
 
 @implementation mnodrivecalendarsectionweek
 
-+(instancetype)model:(NSArray<mnodriveitem*>*)items
++(instancetype)model:(NSArray<mnodriveitem*>*)week
 {
-    NSString *name = NSLocalizedString(@"mnodrive_today_section_plate", nil);
-    NSMutableArray<mnodrivetodayitemplate*> *items = [NSMutableArray array];
-    NSUInteger countplates = plates.count;
+    NSString *name = NSLocalizedString(@"mnodrive_calendar_section_week", nil);
+    NSMutableArray<mnodrivecalendaritem*> *items = [NSMutableArray array];
+    NSUInteger countweek = week.count;
     
-    for(NSUInteger indexplate = 0; indexplate < countplates; indexplate++)
+    for(NSUInteger indexweek = 0; indexweek < countweek; indexweek++)
     {
-        mnodriveitemplate *plate = plates[indexplate];
-        mnodrivetodayitemplate *modelplate = [[mnodrivetodayitemplate alloc] init:plate];
-        [items addObject:modelplate];
+        mnodriveitem *weekday = week[indexweek];
+        mnodrivecalendaritemweek *modelweekday = [[mnodrivecalendaritemweek alloc] init:plate];
+        
+        [items addObject:modelweekday];
     }
     
     mnodrivetodaysectionplate *model = [[mnodrivetodaysectionplate alloc] init:name items:items];

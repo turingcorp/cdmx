@@ -67,4 +67,11 @@
     return self;
 }
 
+-(NSString*)description
+{
+    NSString *descr = [NSString stringWithFormat:@"%@", @(self.number)];
+    
+    return descr;
+}
+
 @end
