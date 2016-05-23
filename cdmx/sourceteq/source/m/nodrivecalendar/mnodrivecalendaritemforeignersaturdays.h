@@ -1,13 +1,6 @@
-//
-//  mnodrivecalendaritemforeignersaturdays.h
-//  cdmx
-//
-//  Created by zero on 5/23/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
+#import "mnodrivecalendaritemforeigner.h"
 
-@interface mnodrivecalendaritemforeignersaturdays : NSObject
+@interface mnodrivecalendaritemforeignersaturdays:mnodrivecalendaritemforeigner
 
 @end
