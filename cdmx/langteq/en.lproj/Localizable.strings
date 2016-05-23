@@ -105,6 +105,11 @@
 "mnodrive_today_restriction_tourist_yes_info"="Can drive if have one";
 "mnodrive_today_restriction_tourist_no_info"="Unactive at the moment";
 
+"mnodrive_calendar_foreigner_same"="Same rules as local plates, No drive a weekday and a saturday according to the last number in the plate";
+"mnodrive_calendar_foreigner_plates"="No drive a weekday according to the last number in the plate";
+"mnodrive_calendar_foreigner_mornings"="No drive on weekdays from 5:00 am to 11:00 am";
+"mnodrive_calendar_foreigner_saturdays"="No drive on Saturdays";
+
 "vpollution_radio_chart_title"="IMECA";
 "vpollution_front_header_button_imeca"="About IMECA";
 "vpollution_front_header_button_recommendation"="Precautions";
