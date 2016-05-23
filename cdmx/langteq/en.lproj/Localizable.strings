@@ -95,6 +95,9 @@
 "mnodrive_today_restriction_foreigner_title"="Plates not from CDMX or State of Mexico";
 "mnodrive_today_restriction_foreigner_yes_info"="Same rules using last number";
 "mnodrive_today_restriction_foreigner_no_info"="Different rules, see the calendar";
+"mnodrive_today_restriction_bike_title"="Motorcycles";
+"mnodrive_today_restriction_bike_yes_info"="Same rules as cars";
+"mnodrive_today_restriction_bike_no_info"="No restrictions";
 
 "vpollution_radio_chart_title"="IMECA";
 "vpollution_front_header_button_imeca"="About IMECA";

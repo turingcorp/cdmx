@@ -23,7 +23,6 @@
     }
     else
     {
-        
         self.info = NSLocalizedString(@"mnodrive_today_restriction_foreigner_no_info", nil);
     }
     

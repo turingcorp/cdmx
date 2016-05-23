@@ -9,6 +9,7 @@ static NSInteger const nodrivetodayrestrictionheight = 60;
 
 +(instancetype)time:(mnodrive*)model;
 +(instancetype)foreigner:(mnodrive*)model;
++(instancetype)bike:(mnodrive*)model;
 
 @end
 
@@ -33,9 +34,11 @@ static NSInteger const nodrivetodayrestrictionheight = 60;
     
     mnodrivetodayitemrestriction *restrictiontime = [mnodrivetodayitemrestriction time:nodrive];
     mnodrivetodayitemrestriction *restrictionforeigner = [mnodrivetodayitemrestriction foreigner:nodrive];
+    mnodrivetodayitemrestriction *restrictionbike = [mnodrivetodayitemrestriction bike:nodrive];
     
     [items addObject:restrictiontime];
     [items addObject:restrictionforeigner];
+    [items addObject:restrictionbike];
     
     mnodrivetodaysectionrestriction *model = [[mnodrivetodaysectionrestriction alloc] init:name items:items];
     

@@ -32,7 +32,7 @@
     NSNumber *rawratings1 = rawratings[@"rate1"];
     NSNumber *rawratings2 = rawratings[@"rate2"];
     NSNumber *rawallstates = dictionary[@"allstates"];
-    NSNumber *rawbikesrestricted = dictionary[@"bikesrestricted"];
+    NSNumber *rawbikesrestricted = dictionary[@"bikerestricted"];
     
     self.today = [[mnodriveitem alloc] init:rawtoday];
     

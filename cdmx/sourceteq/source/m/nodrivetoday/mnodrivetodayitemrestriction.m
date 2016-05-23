@@ -1,6 +1,7 @@
 #import "mnodrivetodayitemrestriction.h"
 #import "mnodrivetodayitemrestrictiontime.h"
 #import "mnodrivetodayitemrestrictionforeigner.h"
+#import "mnodrivetodayitemrestrictionbike.h"
 
 @interface mnodrivetodayitemrestriction ()
 
@@ -22,6 +23,13 @@
 +(instancetype)foreigner:(mnodrive*)model
 {
     mnodrivetodayitemrestriction *restriction = [[mnodrivetodayitemrestrictionforeigner alloc] init:model];
+    
+    return restriction;
+}
+
++(instancetype)bike:(mnodrive*)model
+{
+    mnodrivetodayitemrestriction *restriction = [[mnodrivetodayitemrestrictionbike alloc] init:model];
     
     return restriction;
 }

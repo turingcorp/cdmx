@@ -72,6 +72,7 @@
 		DA8C17081CF26E230034AA8E /* vnodrivecellrestriction.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8C17071CF26E230034AA8E /* vnodrivecellrestriction.m */; };
 		DA8C170B1CF26FE80034AA8E /* mnodrivetodayitemrestrictiontime.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8C170A1CF26FE80034AA8E /* mnodrivetodayitemrestrictiontime.m */; };
 		DA8C170E1CF278B60034AA8E /* mnodrivetodayitemrestrictionforeigner.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8C170D1CF278B60034AA8E /* mnodrivetodayitemrestrictionforeigner.m */; };
+		DA8C17111CF27CBD0034AA8E /* mnodrivetodayitemrestrictionbike.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8C17101CF27CBD0034AA8E /* mnodrivetodayitemrestrictionbike.m */; };
 		DA8E6B881CDA8F5D009100EE /* vradiochart.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8E6B871CDA8F5D009100EE /* vradiochart.m */; };
 		DA8F03441CC1C6B10007596C /* districts.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA8F03431CC1C6B10007596C /* districts.xcassets */; };
 		DA9274651CE4E5640005138A /* mpollutionchartselect.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9274641CE4E5640005138A /* mpollutionchartselect.m */; };
@@ -350,6 +351,8 @@
 		DA8C170A1CF26FE80034AA8E /* mnodrivetodayitemrestrictiontime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mnodrivetodayitemrestrictiontime.m; sourceTree = "<group>"; };
 		DA8C170C1CF278B60034AA8E /* mnodrivetodayitemrestrictionforeigner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mnodrivetodayitemrestrictionforeigner.h; sourceTree = "<group>"; };
 		DA8C170D1CF278B60034AA8E /* mnodrivetodayitemrestrictionforeigner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mnodrivetodayitemrestrictionforeigner.m; sourceTree = "<group>"; };
+		DA8C170F1CF27CBD0034AA8E /* mnodrivetodayitemrestrictionbike.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mnodrivetodayitemrestrictionbike.h; sourceTree = "<group>"; };
+		DA8C17101CF27CBD0034AA8E /* mnodrivetodayitemrestrictionbike.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mnodrivetodayitemrestrictionbike.m; sourceTree = "<group>"; };
 		DA8E6B861CDA8F5D009100EE /* vradiochart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vradiochart.h; sourceTree = "<group>"; };
 		DA8E6B871CDA8F5D009100EE /* vradiochart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vradiochart.m; sourceTree = "<group>"; };
 		DA8F03431CC1C6B10007596C /* districts.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = districts.xcassets; sourceTree = "<group>"; };
@@ -1500,6 +1503,8 @@
 				DA8C170A1CF26FE80034AA8E /* mnodrivetodayitemrestrictiontime.m */,
 				DA8C170C1CF278B60034AA8E /* mnodrivetodayitemrestrictionforeigner.h */,
 				DA8C170D1CF278B60034AA8E /* mnodrivetodayitemrestrictionforeigner.m */,
+				DA8C170F1CF27CBD0034AA8E /* mnodrivetodayitemrestrictionbike.h */,
+				DA8C17101CF27CBD0034AA8E /* mnodrivetodayitemrestrictionbike.m */,
 			);
 			path = nodrivetoday;
 			sourceTree = "<group>";
@@ -1814,6 +1819,7 @@
 				DAB26D791CE0D09D00E1580F /* mdbcreate.m in Sources */,
 				DAD33FF71CBC83E300C87502 /* analytics.m in Sources */,
 				DAAEEDF81CECDFEC008C992C /* vradiationactivitiescell.m in Sources */,
+				DA8C17111CF27CBD0034AA8E /* mnodrivetodayitemrestrictionbike.m in Sources */,
 				DAC21D4F1CE4C35B00D92161 /* vpollutionfrontheader.m in Sources */,
 				DA05C6CC1CE6329B00A22A5E /* vpollutionmap.m in Sources */,
 				DAEA5A171CEA80D000584526 /* vpollutionpollutantsheader.m in Sources */,
