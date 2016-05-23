@@ -11,13 +11,6 @@
 
 @dynamic view;
 
--(instancetype)init
-{
-    self = [super init];
-    
-    return self;
-}
-
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];

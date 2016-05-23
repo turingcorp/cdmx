@@ -1,4 +1,5 @@
 #import "cnodrive.h"
+#import "cnodrivecalendar.h"
 #import "cmain.h"
 #import "vnodrive.h"
 #import "aparsernodrive.h"
@@ -84,7 +85,11 @@
 
 -(void)calendar
 {
-    
+    if(self.model)
+    {
+        cnodrivecalendar *controller = [[cnodrivecalendar alloc] init];
+        [self.parentViewController pushcontroller:controller];
+    }
 }
 
 #pragma mark -
