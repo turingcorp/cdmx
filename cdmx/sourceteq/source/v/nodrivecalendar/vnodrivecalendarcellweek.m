@@ -33,7 +33,7 @@
     [numberb setUserInteractionEnabled:NO];
     [numberb setTranslatesAutoresizingMaskIntoConstraints:NO];
     [numberb setBackgroundColor:[UIColor clearColor]];
-    [numberb setFont:[UIFont regularsize:16]];
+    [numberb setFont:[UIFont regularsize:18]];
     [numberb setTextColor:[UIColor blackColor]];
     [numberb setUserInteractionEnabled:NO];
     [numberb setTextAlignment:NSTextAlignmentCenter];
@@ -64,7 +64,7 @@
     NSDictionary *views = @{@"name":name, @"circlea":circlea, @"circleb":circleb, @"numbera":numbera, @"numberb":numberb};
     NSDictionary *metrics = @{};
     
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[name(110)]-8-[circlea(70)]-0-[circleb(70)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[name(120)]-8-[circlea(70)]-0-[circleb(70)]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[name]-8-[numbera(70)]-0-[numberb(70)]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[name]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-15-[circlea]-15-|" options:0 metrics:metrics views:views]];

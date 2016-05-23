@@ -119,6 +119,15 @@ static NSInteger const calendarinteritem = -1;
     return count;
 }
 
+-(UICollectionReusableView*)collectionView:(UICollectionView*)col viewForSupplementaryElementOfKind:(NSString*)kind atIndexPath:(NSIndexPath*)index
+{
+    mnodrivecalendarsection *section = [self sectionforindex:index];
+    vnodrivecalendarheader *header = [col dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:setion.reusableidentifier forIndexPath:index];
+    [header config:section];
+    
+    return header;
+}
+
 -(UICollectionViewCell*)collectionView:(UICollectionView*)col cellForItemAtIndexPath:(NSIndexPath*)index
 {
     mnodrivecalendarsection *section = [self sectionforindex:index];

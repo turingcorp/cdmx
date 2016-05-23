@@ -5,4 +5,6 @@
 
 -(void)config:(mnodrivecalendarsection*)model;
 
+@property(weak, nonatomic)UILabel *title;
+
 @end
