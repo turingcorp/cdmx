@@ -11,6 +11,7 @@ static NSInteger const nodrivetodayrestrictionheight = 60;
 +(instancetype)foreigner:(mnodrive*)model;
 +(instancetype)bike:(mnodrive*)model;
 +(instancetype)permit:(mnodrive*)model;
++(instancetype)tourist:(mnodrive*)model;
 
 @end
 
@@ -37,11 +38,13 @@ static NSInteger const nodrivetodayrestrictionheight = 60;
     mnodrivetodayitemrestriction *restrictionforeigner = [mnodrivetodayitemrestriction foreigner:nodrive];
     mnodrivetodayitemrestriction *restrictionbike = [mnodrivetodayitemrestriction bike:nodrive];
     mnodrivetodayitemrestriction *restrictionpermit = [mnodrivetodayitemrestriction permit:nodrive];
+    mnodrivetodayitemrestriction *restrictiontourist = [mnodrivetodayitemrestriction tourist:nodrive];
     
     [items addObject:restrictiontime];
     [items addObject:restrictionforeigner];
     [items addObject:restrictionbike];
     [items addObject:restrictionpermit];
+    [items addObject:restrictiontourist];
     
     mnodrivetodaysectionrestriction *model = [[mnodrivetodaysectionrestriction alloc] init:name items:items];
     

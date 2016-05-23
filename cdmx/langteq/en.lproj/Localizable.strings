@@ -101,6 +101,9 @@
 "mnodrive_today_restriction_permit_title"="Permits (no plate)";
 "mnodrive_today_restriction_permit_yes_info"="Can't drive today";
 "mnodrive_today_restriction_permit_no_info"="Free to drive";
+"mnodrive_today_restriction_tourist_title"="Tourist pass";
+"mnodrive_today_restriction_tourist_yes_info"="Can drive if have one";
+"mnodrive_today_restriction_tourist_no_info"="Unactive at the moment";
 
 "vpollution_radio_chart_title"="IMECA";
 "vpollution_front_header_button_imeca"="About IMECA";
