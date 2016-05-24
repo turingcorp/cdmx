@@ -1,7 +1,7 @@
 #import "analytics.h"
 #import "privateconstants.h"
 
-static NSInteger const analyticsrate = 15;
+static NSInteger const analyticsrate = 30;
 
 @implementation analytics
 

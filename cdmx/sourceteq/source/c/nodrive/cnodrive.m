@@ -4,6 +4,7 @@
 #import "vnodrive.h"
 #import "aparsernodrive.h"
 #import "enotification.h"
+#import "analytics.h"
 
 @interface cnodrive ()
 
@@ -74,6 +75,8 @@
                        [welf.apimanager cancelcall];
                        welf.apimanager = [amanager call:[acall nodrive] delegate:welf];
                    });
+    
+    [[analytics singleton] trackscreen:self];
 }
 
 -(void)menu

@@ -1,5 +1,6 @@
 #import "ccontroller.h"
 #import "cmain.h"
+#import "analytics.h"
 
 @interface ccontroller ()
 
@@ -27,8 +28,13 @@
     [self setEdgesForExtendedLayout:UIRectEdgeNone];
     [self setExtendedLayoutIncludesOpaqueBars:NO];
     [self setAutomaticallyAdjustsScrollViewInsets:NO];
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
     
-    //    [[analytics singleton] trackscreen:self];
+    [[analytics singleton] trackscreen:self];
 }
 
 #pragma mark public

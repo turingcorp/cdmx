@@ -4,6 +4,7 @@
 #import "vradiation.h"
 #import "aparserradiation.h"
 #import "enotification.h"
+#import "analytics.h"
 
 @interface cradiation ()
 
@@ -73,6 +74,8 @@
                        [welf.apimanager cancelcall];
                        welf.apimanager = [amanager call:[acall radiation] delegate:welf];
                    });
+    
+    [[analytics singleton] trackscreen:self];
 }
 
 -(void)menu

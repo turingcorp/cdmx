@@ -3,6 +3,7 @@
 #import "cmain.h"
 #import "vpollution.h"
 #import "aparserpollution.h"
+#import "analytics.h"
 
 static NSInteger const framespersecond = 60;
 
@@ -78,6 +79,8 @@ static NSInteger const framespersecond = 60;
                        [welf.apimanager cancelcall];
                        welf.apimanager = [amanager call:[acall pollution] delegate:welf];
                    });
+    
+    [[analytics singleton] trackscreen:self];
 }
 
 -(void)menu
