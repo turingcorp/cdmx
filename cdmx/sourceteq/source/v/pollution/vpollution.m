@@ -105,33 +105,49 @@ static NSInteger const pollutionmenuheight = 50;
     [self loadoption:map];
 }
 
+-(void)clearspinner
+{
+    __weak typeof(self) welf = self;
+    
+    [UIView animateWithDuration:0.5 animations:
+     ^
+     {
+         [welf.spinner setAlpha:0];
+     } completion:
+     ^(BOOL done)
+     {
+         [welf.spinner removeFromSuperview];
+     }];
+}
+
 #pragma mark public
 
 -(void)modelloaded
 {
-//    __weak typeof(self) welf = self;
-//    
-//    dispatch_async(dispatch_get_main_queue(),
-//                   ^
-//                   {
-//                       [welf loadmenu];
-//                       
-//                       dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC),
-//                                      dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
-//                                      ^
-//                                      {
-//                                          if(!welf.context)
-//                                          {
-//                                              [welf glkstart];
-//                                          }
-//                                          
-//                                          dispatch_async(dispatch_get_main_queue(),
-//                                                         ^
-//                                                         {
-//                                                             [welf show_districts];
-//                                                         });
-//                                      });
-//                   });
+    __weak typeof(self) welf = self;
+    
+    dispatch_async(dispatch_get_main_queue(),
+                   ^
+                   {
+                       [welf loadmenu];
+                       
+                       dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC),
+                                      dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
+                                      ^
+                                      {
+                                          if(!welf.context)
+                                          {
+                                              [welf glkstart];
+                                          }
+                                          
+                                          dispatch_async(dispatch_get_main_queue(),
+                                                         ^
+                                                         {
+                                                             [welf show_districts];
+                                                             [welf clearspinner];
+                                                         });
+                                      });
+                   });
 }
 
 -(void)show_districts
