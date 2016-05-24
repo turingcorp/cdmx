@@ -140,8 +140,11 @@ static NSInteger const menucellwidth = 50;
 
 -(void)collectionView:(UICollectionView*)col didSelectItemAtIndexPath:(NSIndexPath*)index
 {
-    mpollutionmenuitem *model = [self modelforindex:index];
-    [model actionselected:self.controller.view];
+    if(self.controller.model)
+    {
+        mpollutionmenuitem *model = [self modelforindex:index];
+        [model actionselected:self.controller.view];
+    }
 }
 
 @end

@@ -248,6 +248,7 @@ static NSInteger const pollutionmenuheight = 50;
 {
     [self.labelerror removeFromSuperview];
     [self.buttonerror removeFromSuperview];
+    [self.option remove];
     [self.spinner setHidden:YES];
     [self.spinner stopAnimating];
     

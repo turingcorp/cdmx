@@ -41,17 +41,24 @@ static NSInteger const nodrivecolbottom = 50;
     [collection setDelegate:self];
     [collection setDataSource:self];
     [collection registerClass:[vnodriveheader class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:[vnodriveheader reusableidentifier]];
+    [collection setHidden:YES];
     self.collection = collection;
+    
+    vspinner *spinner = [[vspinner alloc] init];
+    self.spinner = spinner;
     
     [self addSubview:bar];
     [self addSubview:collection];
+    [self addSubview:spinner];
     
-    NSDictionary *views = @{@"bar":bar, @"col":collection};
+    NSDictionary *views = @{@"bar":bar, @"col":collection, @"spinner":spinner};
     NSDictionary *metrics = @{};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[bar]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[bar]-0-[col]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[spinner]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-150-[spinner]" options:0 metrics:metrics views:views]];
     
     return self;
 }
@@ -87,6 +94,11 @@ static NSInteger const nodrivecolbottom = 50;
     }
     
     [self.collection reloadData];
+}
+
+-(void)error:(NSString*)error
+{
+    
 }
 
 #pragma mark -

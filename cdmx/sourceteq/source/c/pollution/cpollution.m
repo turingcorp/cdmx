@@ -130,6 +130,8 @@ static NSInteger const framespersecond = 60;
     dispatch_async(dispatch_get_main_queue(),
                    ^
                    {
+                       [welf.model clean];
+                       welf.model = nil;
                        [welf.view error:error];
                    });
 }
