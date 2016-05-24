@@ -6,7 +6,7 @@
 
 -(instancetype)init:(cmenu*)controller
 {
-    self = [super init];
+    self = [super init:controller];
     [self setBackgroundColor:[UIColor colorWithWhite:1 alpha:0.5]];
     
     UIImageView *logo = [[UIImageView alloc] init];
