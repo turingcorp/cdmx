@@ -121,6 +121,8 @@ static NSInteger const mapinteritemspace = -1;
             
         case kCLAuthorizationStatusNotDetermined:
             
+            [[NSNotificationCenter defaultCenter] removeObserver:self.controller];
+            
             self.locationmanager = [[CLLocationManager alloc] init];
             [self.locationmanager setDesiredAccuracy:kCLLocationAccuracyNearestTenMeters];
             [self.locationmanager setDistanceFilter:30];
@@ -128,7 +130,6 @@ static NSInteger const mapinteritemspace = -1;
             
             if([self.locationmanager respondsToSelector:@selector(requestWhenInUseAuthorization)])
             {
-                [[NSNotificationCenter defaultCenter] removeObserver:self.controller];
                 [self.locationmanager requestWhenInUseAuthorization];
             }
             else
@@ -226,12 +227,15 @@ static NSInteger const mapinteritemspace = -1;
 
 -(void)locationManager:(CLLocationManager*)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
 {
-    if(status == kCLAuthorizationStatusAuthorizedAlways || status == kCLAuthorizationStatusAuthorizedWhenInUse)
+    if(status != kCLAuthorizationStatusNotDetermined)
     {
-        [self.display setShowsUserLocation:YES];
+        if(status == kCLAuthorizationStatusAuthorizedAlways || status == kCLAuthorizationStatusAuthorizedWhenInUse)
+        {
+            [self.display setShowsUserLocation:YES];
+        }
+        
+        [self.controller activelistener];
     }
-    
-    [self.controller activelistener];
 }
 
 -(MKAnnotationView*)mapView:(MKMapView*)mapview viewForAnnotation:(id<MKAnnotation>)annotation
