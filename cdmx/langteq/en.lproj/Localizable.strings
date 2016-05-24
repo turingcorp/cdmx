@@ -105,7 +105,7 @@
 "mnodrive_today_restriction_tourist_yes_info"="Can drive if have one";
 "mnodrive_today_restriction_tourist_no_info"="Unactive at the moment";
 
-"mnodrive_calendar_section_week"="No drive on weekdays";
+"mnodrive_calendar_section_week"="No drive for weekdays and saturdays";
 "mnodrive_calendar_section_foreigner"="Plates not from CDMX or State of Mexico";
 "mnodrive_calendar_item_week_0"="Monday\n1st Saturday";
 "mnodrive_calendar_item_week_1"="Tuesday\n2nd Saturday";

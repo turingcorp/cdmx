@@ -9,6 +9,12 @@
 
 @end
 
+@interface mnodrivecalendarsectionforeigner ()
+
++(instancetype)model:(mnodrive*)nodrive;
+
+@end
+
 @interface mnodrivecalendarsection ()
 
 @property(strong, nonatomic, readwrite)NSArray<mnodrivecalendaritem*> *items;
@@ -28,14 +34,11 @@
     return model;
 }
 
-+(instancetype)saturdays:(NSArray<mnodriveitem*>*)saturdays
-{
-    return nil;
-}
-
 +(instancetype)foreigner:(mnodrive*)nodrive
 {
-    return nil;
+    mnodrivecalendarsection *model = [mnodrivecalendarsectionforeigner model:nodrive];
+    
+    return model;
 }
 
 -(instancetype)init:(NSString*)name items:(NSArray<mnodrivecalendaritem*>*)items

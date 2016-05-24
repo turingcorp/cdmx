@@ -4,7 +4,7 @@
 #import "vnodrivecalendarcell.h"
 #import "ecollectionreusable.h"
 
-static NSInteger const calendarheaderheight = 70;
+static NSInteger const calendarheaderheight = 80;
 static NSInteger const calendarsectionbottom = 50;
 static NSInteger const calendarinteritem = -1;
 

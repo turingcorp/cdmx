@@ -4,6 +4,7 @@
 @interface mnodrivecalendarsection ()
 
 +(instancetype)week:(NSArray<mnodriveitem*>*)week;
++(instancetype)foreigner:(mnodrive*)nodrive;
 
 @end
 
@@ -20,8 +21,10 @@
     NSMutableArray<mnodrivecalendarsection*> *sections = [NSMutableArray array];
     
     mnodrivecalendarsection *sectionweek = [mnodrivecalendarsection week:model.week];
+    mnodrivecalendarsection *sectionforeigner = [mnodrivecalendarsection foreigner:model];
     
     [sections addObject:sectionweek];
+    [sections addObject:sectionforeigner];
     
     mnodrivecalendar *calendar = [[mnodrivecalendar alloc] init:sections];
     
