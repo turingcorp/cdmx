@@ -26,53 +26,53 @@
             <key>symbol</key>
             <string>CO</string>
             <key>info</key>
-            <string>Carbon monoxide is a colorless, odorless, and tasteless gas that is slightly less dense than air. It is toxic to hemoglobic animals (including humans), although it is also produced in normal animal metabolism in low quantities, and is thought to have some normal biological functions. In the atmosphere, it is spatially variable and short lived, having a role in the formation of ground-level ozone.
+            <string>El monóxido de carbono es un gas incoloro, inodoro e insaboro que es un poco menos denso que el aire. Es toxico para animales hemoglobicos (incluyendo humanos), aunque tambien es producido por el metabolismo animal en pequeñas cantidades, y se cree que es responsable de algunas funciones biologicas. En la atmosfera es variable espacialmente y de corta duración, siendo responsable de la formación del ozono al nivel del suelo (el ozono contaminante).
                 
-                Is produced from the partial oxidation of carbon-containing compounds; it forms when there is not enough oxygen to produce carbon dioxide (CO₂), such as when operating a stove or an internal combustion engine in an enclosed space, in the presence of oxygen burns with a blue flame, producing carbon dioxide.
+                Se produce por la oxidación parcial de compuestos de carbono; se forma cuando no hay suficiente oxigeno para producir el dióxido de carbono (CO₂), por ejemplo en estufas o en maquinas de combustión interna en espacios cerrado, en presencia de oxigeno se quema con una flama azul produciendo dióxido de carbono.
                 
-                Coal gas, which was widely used before the 1960s for domestic lighting, cooking, and heating, had carbon monoxide as a significant fuel constituent. Some processes in modern technology, such as iron smelting, still produce carbon monoxide as a byproduct.
+                Gas de carbon, tambien conocido como gas de alumbrado, el cual fue ampliamente usado previo a la decada de los 60s para iluminacion domestica, cocinar, y calentadores, tenia monóxido de carbono como combustible principal. Algunos procesos de tecnologia moderna, tales como la funcion del hierro aun producen monóxido de carbono como residuo.
                 
-                Worldwide, the largest source of carbon monoxide is natural in origin, due to photochemical reactions in the troposphere, other natural sources include volcanoes, forest fires, and other forms of combustion.
+                A nivel mundial, la fuente mas grande de monóxido de carbono es de origen natural, debido a reacciones fotoquimicas en la troposfera. Otras fuentes naturales incluyen volcanes, incendios forestales y otras formas de combustión.
                 
-                Is a temporary atmospheric pollutant in some urban areas, chiefly from the exhaust of internal combustion engines (including vehicles, portable and back-up generators, lawn mowers, power washers, etc.), but also from incomplete combustion of various other fuels (including wood, coal, charcoal, oil, paraffin, propane, natural gas, and trash) and it can be observed from space over cities.</string>
+                Es un contaminante atmosferico temporal en algunas zonas urbanas, principalmente proveniente del escape de las maquinas de combustion interna (incluyendo vehiculos, generadores electricos portatiles, podadoras, mangeras electricas, etc.), pero tambien de combustiones incompletas de varios tipos de combustibles (incluyendo madera, carbon, aceite, parafina, gas propano, gas natural, y basura). Puede ser observado sobre el cielo de las ciudades.</string>
         </dict>
         <key>1018</key>
         <dict>
             <key>symbol</key>
             <string>O₃</string>
             <key>info</key>
-            <string>Ozone or trioxygen is an inorganic molecule with the chemical formula O₃. A pale blue gas with a distinctively pungent smell much less stable than the diatomic allotrope O₂, breaking down in the lower atmosphere to normal dioxygen.
+            <string>Ozono ó trioxigeno es una molecula inorganica con la formula quimica O₃. Un gas ligeramente azul con un distintivo olor desagradable, es mucho menos estable que el alotropo diatomico O₂, separandose en dióxigeno normal al llegar a la atmosfera baja.
                 
-                Ozone is a powerful oxidant, far more so than dioxygen, and has many industrial and consumer applications related to oxidation but this same high oxidising potential, however, causes ozone to damage mucous and respiratory tissues in animals, and also tissues in plants.
+                El ozono es un poderoso oxidante, mucho mas que el dióxigeno, y tiene muchas aplicaciones comerciales e industriales relacionadas a la oxidacion, sin embargo este alto potencial oxidante origina que el ozono dañe la mucosa y los tejidos respiratorios de los animales, y tambien los tejidos de las plantas.
                 
-                Ozone precursors are a group of pollutants, predominantly those emitted during the combustion of fossil fuels, ozone pollution is created near the Earth's surface by the action of daylight UV rays on these precursors.
+                Los precursores del ozono son un grupo de contaminantes, predominantemente aquellos emitidos durante la combustion de combustibles fosiles; la contaminación por ozono es producida cerca de la superficie terrestre por la reacción de los rayos ultra violeta durante el dia en estos precursores.
                 
-                There is a great deal of evidence to show that ground level ozone can harm lung function and irritates the respiratory system.
+                Existe bastante evidencia para demostrar que el ozono al nivel del suelo puede dañar las funciones pulmonares e irritar el sistema respiratorio.
                 
-                Exposure to ozone is linked to premature death, asthma, bronchitis, heart attack, and other cardiopulmonary problems.
+                Exposicion al ozono esta relacionada con la muerte prematura, asma, bronquitis, paros cardiacos, y otros problemas cardio pulmonares.
                 
-                Long term exposure to ozone has been shown to increase risk of death from respiratory illness.
+                Exposicion por largo plazo al ozono ha demostrado un incremento en el riesgo por muerte debido a enfermedades respiratorias.
                 
-                Ozone can also be present in indoor air pollution, partly as a result of electronic equipment such as photocopiers.</string>
+                El ozono tambien puede estar presente en la contaminación del aire en interiores, en parte como resultado de la operacion de aparatos electronicos como las fotocopiadoras.</string>
         </dict>
         <key>1022</key>
         <dict>
             <key>symbol</key>
             <string>PM</string>
             <key>info</key>
-            <string>Atmospheric particulate matter is microscopic matter suspended in the Earth's atmosphere, it can be solid or liquid and when mixed with air is commonly refered as aerosol.
+            <string>Las particulas en suspencion, o particulas atmosfericas son particulas microscopicas suspendidas en la atmosfera terrestre, pueden ser solidas o liquidas y cuando se mesclan con el aire se les conoce como aerosol.
                 
-                Sources of particulate matter can be man-made or natural and they have impacts on climate and precipitation such as to adversely affect human health.
+                Las fuentes de estas particulas pueden ser debidas a la actividad humana o de formas naturales e impactan el clima y la precipitacion de tal manera que pueden llegar a afectar la salud humana.
                 
-                The International 'Agency for Research on Cancer' and the 'World Health Organization' designate airborne particulates a Group 1 carcinogen and define them as the deadliest form of air pollution due to their ability to penetrate deep into the lungs and blood streams unfiltered, causing permanent DNA mutations, heart attacks, and premature death.
+                La Agencia Internacional para la Investigacion del Cancer y la Organizacion Mundial de la Salud definieron a las particulas suspendidas como cancerigenos dentro del Grupo 1, y estan definidas como la contaminación del aire mas mortifera debido a su facilidad para penetrar en los pulmones y en los flujos sanguineos sin poder ser filtradas, causando mutaciones permanentes en el ADN, paros cardiacos, y muerte prematura.
                 
-                There is no safe level of particulates and the smaller are particularly deadly as they can penetrate deeper into the lungs.
+                No existe ningun nivel seguro de particulas, y las mas pequeñas son especialmente mas mortiferas debido a que pueden penetrar aun mas profundamente en los pulmones.
                 
-                Some particulates occur naturally, originating from volcanoes, dust storms, forest and grassland fires, living vegetation, and sea spray.
+                Algunas de estas particulas se producen de manera natural, tienen sus origenes en volcanes, tormentas de arena, incendios forestales y de pastizales, debido a la vegetacion viva, y la brisa del mar.
                 
-                Human activities, such as the burning of fossil fuels in vehicles, power plants and various industrial processes also generate significant amounts of particulates.
+                Actividades humanas como la quema de combustibles fosiles en los vehiculos, platas generadoras de energia, y muchos otros procesos industriales tambien generan cantidades significantes de estas particulas.
                 
-                Because salt spray over the oceans is the overwhelmingly most common form of particulate in the atmosphere, aerosols made by human activities currently account for about 10 percent of the total mass of aerosols.</string>
+                Debido a que la brisa salina sobre los oceanos es por mucho la forma mas comun de particulas en suspencion, particulas creadas por la actividad humana alcanza apenas el 10% del total de masa encontrado en el aerosol.</string>
         </dict>
     </dict>
 </plist>
