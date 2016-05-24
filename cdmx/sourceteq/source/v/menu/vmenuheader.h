@@ -1,10 +1,10 @@
 #import <UIKit/UIKit.h>
-#import "mpagessection.h"
+#import "mmenusection.h"
 
 @interface vmenuheader:UICollectionReusableView
 
--(void)config:(mpagessection*)model;
+-(void)config:(mmenusection*)model;
 
-@property(weak, nonatomic)UILabel *title;
+@property(weak, nonatomic)UILabel *label;
 
 @end

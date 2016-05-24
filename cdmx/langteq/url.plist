@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>server</key>
+	<string>https://nubecero.com/</string>
+	<key>pollution</key>
+	<string>cdmx/pollution.api</string>
+	<key>radiation</key>
+	<string>cdmx/radiation.api</string>
+	<key>nodrive</key>
+	<string>cdmx/nodrive.api</string>
+</dict>
+</plist>

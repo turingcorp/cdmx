@@ -1,70 +1,76 @@
 #import "vmenu.h"
-#import "uicolor+uicolormain.h"
-#import "vmenubanner.h"
+#import "cmenu.h"
 #import "vmenuheader.h"
 #import "vmenucell.h"
-#import "cmain.h"
+#import "vmenubar.h"
+#import "ecollectionreusable.h"
+#import "ecollectioncell.h"
 #import "genericconstants.h"
 
-static NSString* const menuheaderid = @"headerid";
-static NSString* const menucellid = @"cellid";
-static NSInteger const bannerheight = 200;
-static NSInteger const headerheight = 55;
-static NSInteger const cellheight = 90;
-static NSInteger const interitem = -1;
+static NSInteger const menubarheight = 180;
+static NSInteger const menucollectionbottom = 40;
+static NSInteger const menuheaderheight = 50;
+static NSInteger const menucellheight = 60;
+static NSInteger const menuinteritem = -1;
+
+@interface vmenu ()
+
+@property(weak, nonatomic)cmenu *controller;
+
+@end
 
 @implementation vmenu
 
+@dynamic controller;
+
 -(instancetype)init:(cmenu*)controller
 {
-    self = [super init];
-    [self setClipsToBounds:YES];
-    [self setBackgroundColor:[UIColor whiteColor]];
-    self.controller = controller;
-    self.model = [cmain singleton].pages.model;
-    
-    vmenubanner *banner = [[vmenubanner alloc] init];
-    
+    self = [super init:controller];
+
     UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
     [flow setFooterReferenceSize:CGSizeZero];
+    [flow setMinimumLineSpacing:menuinteritem];
     [flow setMinimumInteritemSpacing:0];
-    [flow setMinimumLineSpacing:interitem];
     [flow setScrollDirection:UICollectionViewScrollDirectionVertical];
     
     UICollectionView *collection = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flow];
+    [collection setClipsToBounds:YES];
     [collection setBackgroundColor:[UIColor clearColor]];
     [collection setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [collection setClipsToBounds:YES];
     [collection setShowsVerticalScrollIndicator:NO];
     [collection setShowsHorizontalScrollIndicator:NO];
     [collection setAlwaysBounceVertical:YES];
-    [collection setDataSource:self];
     [collection setDelegate:self];
-    [collection registerClass:[vmenuheader class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:menuheaderid];
-    [collection registerClass:[vmenucell class] forCellWithReuseIdentifier:menucellid];
+    [collection setDataSource:self];
+    [collection registerClass:[vmenucell class] forCellWithReuseIdentifier:[vmenucell reusableidentifier]];
+    [collection registerClass:[vmenuheader class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:[vmenuheader reusableidentifier]];
     self.collection = collection;
+
+    [self insertSubview:collection belowSubview:self.bar];
     
-    [self addSubview:banner];
-    [self addSubview:collection];
+    NSDictionary *views = @{@"col":collection, @"bar":self.bar};
+    NSDictionary *metrics = @{};
     
-    NSDictionary *views = @{@"banner":banner, @"col":collection};
-    NSDictionary *metrics = @{@"bannerheight":@(bannerheight), @"navbarheightmin":@(navbarheightmin)};
-    
-    self.layoutbannerheight = [NSLayoutConstraint constraintWithItem:banner attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:bannerheight];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[banner]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[banner]" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(navbarheightmin)-[col]-0-|" options:0 metrics:metrics views:views]];
+    self.layoutbarheight = [NSLayoutConstraint constraintWithItem:self.bar attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:menubarheight];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraint:self.layoutbannerheight];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraint:self.layoutbarheight];
     
     return self;
 }
 
 #pragma mark functionality
 
--(mpagesitem*)modelatindex:(NSIndexPath*)index
+-(mmenusection*)sectionforindex:(NSIndexPath*)index
 {
-    mpagesitem *model = self.model.sections[index.section - 1].items[index.item];
+    mmenusection *model = self.controller.model.sections[index.section - 1];
+    
+    return model;
+}
+
+-(mmenusectionitem*)itemforindex:(NSIndexPath*)index
+{
+    mmenusectionitem *model = self.controller.model.sections[index.section - 1].items[index.item];
     
     return model;
 }
@@ -74,15 +80,19 @@ static NSInteger const interitem = -1;
 
 -(void)scrollViewDidScroll:(UIScrollView*)scroll
 {
-    CGFloat offset = self.collection.contentOffset.y;
-    CGFloat newbannerheight = bannerheight - offset;
+    CGFloat offsety = scroll.contentOffset.y;
+    CGFloat newbarheight = menubarheight - offsety;
     
-    if(newbannerheight < navbarheightmin)
+    if(newbarheight < navbarheightmin)
     {
-        newbannerheight = navbarheightmin;
+        newbarheight = navbarheightmin;
+    }
+    else if(newbarheight > menubarheight)
+    {
+        newbarheight = menubarheight;
     }
     
-    self.layoutbannerheight.constant = newbannerheight;
+    self.layoutbarheight.constant = newbarheight;
 }
 
 -(UIEdgeInsets)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout insetForSectionAtIndex:(NSInteger)section
@@ -91,14 +101,22 @@ static NSInteger const interitem = -1;
     
     if(section)
     {
-        insets = UIEdgeInsetsMake(interitem, 0, collectionbottom, 0);
+        insets = UIEdgeInsetsMake(0, 0, menucollectionbottom, 0);
     }
     else
     {
-        insets = UIEdgeInsetsMake(bannerheight, 0, 0, 0);
+        insets = UIEdgeInsetsMake(menubarheight, 0, 0, 0);
     }
     
     return insets;
+}
+
+-(CGSize)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout sizeForItemAtIndexPath:(NSIndexPath*)index
+{
+    CGFloat width = col.bounds.size.width;
+    CGSize size = CGSizeMake(width, menucellheight);
+    
+    return size;
 }
 
 -(CGSize)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout referenceSizeForHeaderInSection:(NSInteger)section
@@ -108,7 +126,7 @@ static NSInteger const interitem = -1;
     
     if(section)
     {
-        height = headerheight;
+        height = menuheaderheight;
     }
     
     CGSize size = CGSizeMake(width, height);
@@ -116,45 +134,38 @@ static NSInteger const interitem = -1;
     return size;
 }
 
--(CGSize)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout sizeForItemAtIndexPath:(NSIndexPath*)index
-{
-    CGFloat width = col.bounds.size.width;
-    CGSize size = CGSizeMake(width, cellheight);
-    
-    return size;
-}
-
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView*)col
 {
-    NSUInteger sections = self.model.sections.count + 1;
+    NSInteger countsections = self.controller.model.sections.count + 1;
     
-    return sections;
+    return countsections;
 }
 
 -(NSInteger)collectionView:(UICollectionView*)col numberOfItemsInSection:(NSInteger)section
 {
-    NSUInteger items = 0;
+    NSInteger countitems = 0;
     
     if(section)
     {
-        items = self.model.sections[section - 1].items.count;
+        countitems = self.controller.model.sections[section - 1].items.count;
     }
     
-    return items;
+    return countitems;
 }
 
 -(UICollectionReusableView*)collectionView:(UICollectionView*)col viewForSupplementaryElementOfKind:(NSString*)kind atIndexPath:(NSIndexPath*)index
 {
-    vmenuheader *reusable = [col dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:menuheaderid forIndexPath:index];
-    [reusable config:self.model.sections[index.section - 1]];
+    mmenusection *model = [self sectionforindex:index];
+    vmenuheader *header = [col dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:[vmenuheader reusableidentifier] forIndexPath:index];
+    [header config:model];
     
-    return reusable;
+    return header;
 }
 
 -(UICollectionViewCell*)collectionView:(UICollectionView*)col cellForItemAtIndexPath:(NSIndexPath*)index
 {
-    mpagesitem *model = [self modelatindex:index];
-    vmenucell *cell = [col dequeueReusableCellWithReuseIdentifier:menucellid forIndexPath:index];
+    mmenusectionitem *model = [self itemforindex:index];
+    vmenucell *cell = [col dequeueReusableCellWithReuseIdentifier:[vmenucell reusableidentifier] forIndexPath:index];
     [cell config:model];
     
     return cell;
@@ -162,8 +173,18 @@ static NSInteger const interitem = -1;
 
 -(void)collectionView:(UICollectionView*)col didSelectItemAtIndexPath:(NSIndexPath*)index
 {
-    mpagesitem *model = [self modelatindex:index];
-    [[cmain singleton].pages page:model animated:YES direction:UIPageViewControllerNavigationDirectionForward];
+    mmenusectionitem *model = [self itemforindex:index];
+    UIViewController *controller = [model controller];
+    [self.controller menuselected:controller];
+}
+
+#pragma mark view
+
+-(vviewbar*)loadbar
+{
+    vmenubar *bar = [[vmenubar alloc] init:self.controller];
+    
+    return bar;
 }
 
 @end

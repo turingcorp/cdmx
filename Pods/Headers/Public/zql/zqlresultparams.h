@@ -1,0 +1,1 @@
+../../../zql/zql/Classes/model/zqlresultparams.h

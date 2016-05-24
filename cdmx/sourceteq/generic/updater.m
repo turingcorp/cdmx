@@ -1,71 +1,62 @@
 #import "updater.h"
-#import "tools.h"
 #import "msettings.h"
-#import "mdb.h"
-#import "db.h"
 #import "analytics.h"
 #import "cmain.h"
-#import "mstations.h"
+#import "genericconstants.h"
+#import "mdbcreate.h"
 
 @implementation updater
-
-NSString *documents;
 
 +(void)launch
 {
     [[analytics singleton] start];
     [updater update];
     [[msettings singleton] load];
-    [updater registernotifications];
 }
 
 #pragma mark private
 
 +(void)update
 {
-    documents = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
-    NSDictionary *defaults = [tools defaultdict];
-    NSUserDefaults *properties = [NSUserDefaults standardUserDefaults];
-    NSInteger def_version = [defaults[@"version"] integerValue];
-    NSInteger pro_version = [[properties valueForKey:@"version"] integerValue];
+    NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];
+    NSString *appversion = [[[NSBundle mainBundle] infoDictionary] objectForKey:appversionos_key];
+    NSString *currentversion = [userdefaults valueForKey:appversion_key];
+    BOOL updateversion = NO;
     
-    if(def_version != pro_version)
+    if(currentversion)
     {
-        [properties setValue:@(def_version) forKeyPath:@"version"];        
+        CGFloat appversionscalar = appversion.floatValue;
+        CGFloat currentversionscalar = currentversion.floatValue;
         
-        if(pro_version != 20)
+        if(appversionscalar != currentversionscalar)
         {
-            [updater firsttime:defaults];
-            [mdb updatedb];
+            updateversion = YES;
         }
+        
+        [mdbcreate loaddatabase];
+    }
+    else
+    {
+        updateversion = YES;
+        [updater firsttime];
     }
     
-    dbname = [documents stringByAppendingPathComponent:[properties valueForKey:@"dbname"]];
+    if(updateversion)
+    {
+        [userdefaults setValue:appversion forKey:appversion_key];
+    }
 }
 
-+(void)firsttime:(NSDictionary*)plist
++(void)firsttime
 {
-    NSNumber *appid = plist[@"appid"];
-    NSUserDefaults *userdef = [NSUserDefaults standardUserDefaults];
+    NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];
     
-    [userdef removePersistentDomainForName:NSGlobalDomain];
-    [userdef removePersistentDomainForName:NSArgumentDomain];
-    [userdef removePersistentDomainForName:NSRegistrationDomain];
-    [userdef setValue:appid forKey:@"appid"];
-    [userdef synchronize];
-}
-
-+(void)registernotifications
-{
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC * 5), dispatch_get_main_queue(),
-                   ^
-                   {
-                       if([[UIApplication sharedApplication] respondsToSelector:@selector(registerUserNotificationSettings:)])
-                       {
-                           UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert categories:nil];
-                           [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
-                       }
-                   });
+    [userdefaults removePersistentDomainForName:NSGlobalDomain];
+    [userdefaults removePersistentDomainForName:NSArgumentDomain];
+    [userdefaults removePersistentDomainForName:NSRegistrationDomain];
+    [userdefaults synchronize];
+    
+    [mdbcreate firsttime];
 }
 
 @end

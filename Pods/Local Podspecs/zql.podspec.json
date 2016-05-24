@@ -1,0 +1,20 @@
+{
+  "name": "zql",
+  "version": "1.0",
+  "summary": "Superb SQLite engine",
+  "description": "Superb cool SQLite engine for iOS using Objective-C\nSuper cool really",
+  "homepage": "https://github.com/iturb/zql",
+  "license": "MIT",
+  "authors": {
+    "Agustin Iturbide": "reach@iturbi.de"
+  },
+  "source": {
+    "git": "https://github.com/iturb/zql.git",
+    "tag": "1.0"
+  },
+  "platforms": {
+    "ios": "7.0"
+  },
+  "source_files": "zql/Classes/**/**/*",
+  "libraries": "sqlite3"
+}

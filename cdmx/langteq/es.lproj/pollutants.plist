@@ -1,58 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict>
-	<key>ben</key>
-	<string>Benceno</string>
-	<key>tol</key>
-	<string>Tolueno</string>
-	<key>so4</key>
-	<string>Solfato</string>
-	<key>so2</key>
-	<string>Dióxido de azufre</string>
-	<key>no3</key>
-	<string>Nitrato</string>
-	<key>no2</key>
-	<string>Dióxido de nitrógeno</string>
-	<key>no</key>
-	<string>Óxido nítrico</string>
-	<key>nox</key>
-	<string>Óxidos de nitrógeno</string>
-	<key>cl</key>
-	<string>Cloruro</string>
-	<key>co3</key>
-	<string>Carbonato</string>
-	<key>co</key>
-	<string>Monóxido de carbono</string>
-	<key>h</key>
-	<string>Hidrógeno</string>
-	<key>nh4</key>
-	<string>Amonio</string>
-	<key>ca</key>
-	<string>Calcio</string>
-	<key>mg</key>
-	<string>Magnesio</string>
-	<key>na</key>
-	<string>Sodio</string>
-	<key>k</key>
-	<string>Potasio</string>
-	<key>o3</key>
-	<string>Ozono</string>
-	<key>pbpst</key>
-	<string>Plomo</string>
-	<key>pbpm</key>
-	<string>Plomo</string>
-	<key>etb</key>
-	<string>Etilbenceno</string>
-	<key>xil</key>
-	<string>Xileno</string>
-	<key>pm10</key>
-	<string>Partículas de polvo</string>
-	<key>pm2.5</key>
-	<string>Partículas de polvo</string>
-	<key>pmco</key>
-	<string>Partículas de polvo</string>
-	<key>pst</key>
-	<string>Partículas de polvo</string>
-</dict>
+    <dict>
+        <key>106</key>
+        <dict>
+            <key>symbol</key>
+            <string>NO₂</string>
+            <key>info</key>
+            <string>El Dióxido de nitrógeno es un compuesto quimico con la formula NO₂. Uno de varios óxidos de nitroógeno, un intermediarion en la sintetización industrial del ácido nítrico, de los cuales millones de toneladas son producidas cada año. En temperaturas muy altas es un gas rojiso que tiene un olor caracteristico muy fino y penetrante. Es uno de los principales contaminantes del aire.
+                
+                Para el publico en general las fuentes más comunes de este gas son las maquinas de combustión interna al usar combustibles fosiles, el humo de cigarrillos y calentadores ó estufas de butano o queroseno.
+                
+                Obreros en industrias donde el dióxido de nitrógeno es usado tambien estan expuestos y en riesgo de contraer enfermedades respiratorias relacionadas a este trabajo. Agricultores tambien pueden estar expuestos por la descomposición de las materias primas en los graneros ó silos. Exposicion constante puede llevar a dañar los pulmones y contraer la Enfermedad de Granero.
+                
+                Effectos en la salud son causados por la reaccion con antioxidantes y moleculas lipidas combinados con oxigenos reactivos y pueden ocasionar el bloqueo de las vías respiratiorias, inflamacion de las mismas, reduccion del sistema inmunologico, y puede llegar a tener efectos adversos en el corazón.
+                
+                Daños severos debido a la exposicion es poco probable en el publico en general y mas probable en obreros y agricultores.
+                
+                Exposicion directa con la piel puede causar irritación y quemaduras y solo muy altas cantidades en forma gaseosa pueden llegar a causar malestares inmediations, desde tos esporadica, cansancion y nausea, ligera irritacion de la nariz y garganta, edemas que pueden provocar bronquitis y neumonía e incluso la puerte por asfixia debido a liquido en los pulmones.
+                
+                Puede causar malestares respiratorios como inflamacion de la vías respiratorias en personas sanas e incrementar los sintomas respiratorios en personas con asma.</string>
+        </dict>
+        <key>1011</key>
+        <dict>
+            <key>symbol</key>
+            <string>CO</string>
+            <key>info</key>
+            <string>El monóxido de carbono es un gas incoloro, inodoro e insaboro que es un poco menos denso que el aire. Es toxico para animales hemoglobicos (incluyendo humanos), aunque tambien es producido por el metabolismo animal en pequeñas cantidades, y se cree que es responsable de algunas funciones biologicas. En la atmosfera es variable espacialmente y de corta duración, siendo responsable de la formación del ozono al nivel del suelo (el ozono contaminante).
+                
+                Se produce por la oxidación parcial de compuestos de carbono; se forma cuando no hay suficiente oxigeno para producir el dióxido de carbono (CO₂), por ejemplo en estufas o en maquinas de combustión interna en espacios cerrado, en presencia de oxigeno se quema con una flama azul produciendo dióxido de carbono.
+                
+                Gas de carbon, tambien conocido como gas de alumbrado, el cual fue ampliamente usado previo a la decada de los 60s para iluminacion domestica, cocinar, y calentadores, tenia monóxido de carbono como combustible principal. Algunos procesos de tecnologia moderna, tales como la funcion del hierro aun producen monóxido de carbono como residuo.
+                
+                A nivel mundial, la fuente mas grande de monóxido de carbono es de origen natural, debido a reacciones fotoquimicas en la troposfera. Otras fuentes naturales incluyen volcanes, incendios forestales y otras formas de combustión.
+                
+                Es un contaminante atmosferico temporal en algunas zonas urbanas, principalmente proveniente del escape de las maquinas de combustion interna (incluyendo vehiculos, generadores electricos portatiles, podadoras, mangeras electricas, etc.), pero tambien de combustiones incompletas de varios tipos de combustibles (incluyendo madera, carbon, aceite, parafina, gas propano, gas natural, y basura). Puede ser observado sobre el cielo de las ciudades.</string>
+        </dict>
+        <key>1018</key>
+        <dict>
+            <key>symbol</key>
+            <string>O₃</string>
+            <key>info</key>
+            <string>Ozono ó trioxigeno es una molecula inorganica con la formula quimica O₃. Un gas ligeramente azul con un distintivo olor desagradable, es mucho menos estable que el alotropo diatomico O₂, separandose en dióxigeno normal al llegar a la atmosfera baja.
+                
+                El ozono es un poderoso oxidante, mucho mas que el dióxigeno, y tiene muchas aplicaciones comerciales e industriales relacionadas a la oxidacion, sin embargo este alto potencial oxidante origina que el ozono dañe la mucosa y los tejidos respiratorios de los animales, y tambien los tejidos de las plantas.
+                
+                Los precursores del ozono son un grupo de contaminantes, predominantemente aquellos emitidos durante la combustion de combustibles fosiles; la contaminación por ozono es producida cerca de la superficie terrestre por la reacción de los rayos ultra violeta durante el dia en estos precursores.
+                
+                Existe bastante evidencia para demostrar que el ozono al nivel del suelo puede dañar las funciones pulmonares e irritar el sistema respiratorio.
+                
+                Exposicion al ozono esta relacionada con la muerte prematura, asma, bronquitis, paros cardiacos, y otros problemas cardio pulmonares.
+                
+                Exposicion por largo plazo al ozono ha demostrado un incremento en el riesgo por muerte debido a enfermedades respiratorias.
+                
+                El ozono tambien puede estar presente en la contaminación del aire en interiores, en parte como resultado de la operacion de aparatos electronicos como las fotocopiadoras.</string>
+        </dict>
+        <key>1022</key>
+        <dict>
+            <key>symbol</key>
+            <string>PM</string>
+            <key>info</key>
+            <string>Las particulas en suspencion, o particulas atmosfericas son particulas microscopicas suspendidas en la atmosfera terrestre, pueden ser solidas o liquidas y cuando se mesclan con el aire se les conoce como aerosol.
+                
+                Las fuentes de estas particulas pueden ser debidas a la actividad humana o de formas naturales e impactan el clima y la precipitacion de tal manera que pueden llegar a afectar la salud humana.
+                
+                La Agencia Internacional para la Investigacion del Cancer y la Organizacion Mundial de la Salud definieron a las particulas suspendidas como cancerigenos dentro del Grupo 1, y estan definidas como la contaminación del aire mas mortifera debido a su facilidad para penetrar en los pulmones y en los flujos sanguineos sin poder ser filtradas, causando mutaciones permanentes en el ADN, paros cardiacos, y muerte prematura.
+                
+                No existe ningun nivel seguro de particulas, y las mas pequeñas son especialmente mas mortiferas debido a que pueden penetrar aun mas profundamente en los pulmones.
+                
+                Algunas de estas particulas se producen de manera natural, tienen sus origenes en volcanes, tormentas de arena, incendios forestales y de pastizales, debido a la vegetacion viva, y la brisa del mar.
+                
+                Actividades humanas como la quema de combustibles fosiles en los vehiculos, platas generadoras de energia, y muchos otros procesos industriales tambien generan cantidades significantes de estas particulas.
+                
+                Debido a que la brisa salina sobre los oceanos es por mucho la forma mas comun de particulas en suspencion, particulas creadas por la actividad humana alcanza apenas el 10% del total de masa encontrado en el aerosol.</string>
+        </dict>
+    </dict>
 </plist>

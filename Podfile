@@ -1,11 +1,9 @@
-# Uncomment this line to define a global platform for your project
-# platform :ios, '8.0'
-# Uncomment this line if you're using Swift
-# use_frameworks!
+#source 'https://github.com/iturb/zql.git'
 
 target 'cdmx' do
 
 pod 'Google/Analytics'
+pod 'zql', :git => 'https://github.com/iturb/zql.git'
 
 end
 

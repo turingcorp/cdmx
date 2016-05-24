@@ -1,0 +1,13 @@
+The Metropolitan Index for Air Quality (IMECA in Spanish) is the reference used to showcase the amount of pollution in the air, applied in Mexico City but it could be used in any other city.
+
+The index is used to measure and compare the amounts of pollution at different moments to provide information regarding possible health risks for long exposure and how to act accordingly to avoid them.
+
+In 1977 the Health and Assistance department created the Mexican Index for Air Quality (IMEXCA) which in 1982 evolved into IMECA and then in 2006 Mexico City' administration published the Environmental Law that enforces and rules IMECA up to this day.
+
+Pollutants considerados en el índice
+
+    ■ Ozone
+    ■ Carbon monoxide
+    ■ Sulphur dioxide
+    ■ Nitrogen dioxide
+    ■ Particulates (dust)

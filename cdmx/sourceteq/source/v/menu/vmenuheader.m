@@ -1,5 +1,5 @@
 #import "vmenuheader.h"
-#import "uifont+uifontmain.h"
+#import "efont.h"
 
 @implementation vmenuheader
 
@@ -8,32 +8,31 @@
     self = [super initWithFrame:frame];
     [self setClipsToBounds:YES];
     [self setBackgroundColor:[UIColor clearColor]];
-    [self setUserInteractionEnabled:NO];
+
+    UILabel *label = [[UILabel alloc] init];
+    [label setUserInteractionEnabled:NO];
+    [label setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [label setBackgroundColor:[UIColor clearColor]];
+    [label setFont:[UIFont regularsize:14]];
+    [label setTextColor:[UIColor colorWithWhite:0.3 alpha:1]];
+    self.label = label;
     
-    UILabel *title = [[UILabel alloc] init];
-    [title setBackgroundColor:[UIColor clearColor]];
-    [title setUserInteractionEnabled:NO];
-    [title setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [title setFont:[UIFont regularsize:16]];
-    [title setTextColor:[UIColor colorWithWhite:0 alpha:0.6]];
-    self.title = title;
+    [self addSubview:label];
     
-    [self addSubview:title];
-    
-    NSDictionary *views = @{@"title":title};
+    NSDictionary *views = @{@"label":label};
     NSDictionary *metrics = @{};
     
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[title]" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[title]-10-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[label]-10-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[label(32)]-0-|" options:0 metrics:metrics views:views]];
     
     return self;
 }
 
 #pragma mark public
 
--(void)config:(mpagessection*)model
+-(void)config:(mmenusection*)model
 {
-    [self.title setText:model.name];
+    [self.label setText:model.name];
 }
 
 @end

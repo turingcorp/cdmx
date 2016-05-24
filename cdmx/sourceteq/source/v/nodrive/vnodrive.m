@@ -1,13 +1,20 @@
 #import "vnodrive.h"
-#import "genericconstants.h"
-#import "nsnotification+nsnotificationmain.h"
-#import "vnodriveholograms.h"
-#import "vnodriveplates.h"
-#import "mstations.h"
-#import "uifont+uifontmain.h"
-#import "uicolor+uicolormain.h"
+#import "vnodrivebar.h"
+#import "vnodrivecell.h"
+#import "vnodriveheader.h"
+#import "ecollectionreusable.h"
+#import "ecolor.h"
+#import "efont.h"
 
-static NSInteger const hologramsheight = 80;
+static NSInteger const nodriveheaderheight = 60;
+static NSInteger const nodrivecoltop = 20;
+static NSInteger const nodrivecolbottom = 50;
+
+@interface vnodrive ()
+
+@property(strong, nonatomic, readwrite)mnodrivetoday *model;
+
+@end
 
 @implementation vnodrive
 
@@ -18,150 +25,238 @@ static NSInteger const hologramsheight = 80;
     [self setBackgroundColor:[UIColor whiteColor]];
     self.controller = controller;
     
-    vnodrivebar *bar = [[vnodrivebar alloc] init:self.controller];
-    self.bar = bar;
-
-    UILabel *labelerror = [[UILabel alloc] init];
-    [labelerror setBackgroundColor:[UIColor clearColor]];
-    [labelerror setUserInteractionEnabled:NO];
-    [labelerror setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [labelerror setNumberOfLines:0];
-    [labelerror setFont:[UIFont regularsize:16]];
-    [labelerror setTextColor:[UIColor colorWithWhite:0 alpha:0.6]];
-    [labelerror setTextAlignment:NSTextAlignmentCenter];
-    self.labelerror = labelerror;
+    vnodrivebar *bar = [[vnodrivebar alloc] init:controller];
     
-    UIButton *buttontry = [[UIButton alloc] init];
-    [buttontry setClipsToBounds:YES];
-    [buttontry setBackgroundColor:[UIColor second]];
-    [buttontry setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [buttontry.titleLabel setFont:[UIFont boldsize:15]];
-    [buttontry setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [buttontry setTitleColor:[UIColor colorWithWhite:1 alpha:0.2] forState:UIControlStateHighlighted];
-    [buttontry setTitle:NSLocalizedString(@"cars_nodrive_button_retry", nil) forState:UIControlStateNormal];
-    [buttontry addTarget:self action:@selector(actionretry:) forControlEvents:UIControlEventTouchUpInside];
-    self.buttontry = buttontry;
+    UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
+    [flow setFooterReferenceSize:CGSizeZero];
+    [flow setMinimumLineSpacing:0];
+    [flow setMinimumInteritemSpacing:0];
+    [flow setScrollDirection:UICollectionViewScrollDirectionVertical];
+    
+    UICollectionView *collection = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flow];
+    [collection setBackgroundColor:[UIColor clearColor]];
+    [collection setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [collection setClipsToBounds:YES];
+    [collection setShowsVerticalScrollIndicator:NO];
+    [collection setShowsHorizontalScrollIndicator:NO];
+    [collection setAlwaysBounceVertical:YES];
+    [collection setDelegate:self];
+    [collection setDataSource:self];
+    [collection registerClass:[vnodriveheader class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:[vnodriveheader reusableidentifier]];
+    [collection setHidden:YES];
+    self.collection = collection;
+    
+    vspinner *spinner = [[vspinner alloc] init];
+    self.spinner = spinner;
     
     [self addSubview:bar];
-    [self addSubview:labelerror];
-    [self addSubview:buttontry];
+    [self addSubview:collection];
+    [self addSubview:spinner];
     
-    NSDictionary *views = @{@"bar":bar, @"buttontry":buttontry, @"labelerror":labelerror};
+    NSDictionary *views = @{@"bar":bar, @"col":collection, @"spinner":spinner};
     NSDictionary *metrics = @{};
-
+    
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[bar]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[bar]-100-[labelerror(50)]-10-[buttontry(34)]" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-50-[buttontry]-50-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[labelerror]-20-|" options:0 metrics:metrics views:views]];
-    
-    [NSNotification observe:self stationsloaded:@selector(notifiedstationsloaded:)];
-    
-    [self tryload];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[bar]-0-[col]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[spinner]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-150-[spinner]" options:0 metrics:metrics views:views]];
     
     return self;
 }
 
--(void)dealloc
-{
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
-
-#pragma mark notified
-
--(void)notifiedstationsloaded:(NSNotification*)notification
-{
-    dispatch_async(dispatch_get_main_queue(),
-                   ^
-                   {
-                       [self tryload];
-                   });
-}
-
 #pragma mark actions
 
--(void)actionretry:(UIButton*)button
+-(void)actionbuttonerror:(UIButton*)button
 {
-    [button setHidden:YES];
-    [[mstations singleton] fetch];
+    [self displayloading];
+    [self.controller loadnodrive];
 }
 
 #pragma mark functionality
 
--(void)tryload
+-(mnodrivetodaysection*)sectionforindex:(NSIndexPath*)index
 {
-    if([mstations singleton].error || ![mstations singleton].nodrive)
+    mnodrivetodaysection *model = self.model.sections[index.section];
+    
+    return model;
+}
+
+-(mnodrivetodayitem*)itemforindex:(NSIndexPath*)index
+{
+    mnodrivetodayitem *model = self.model.sections[index.section].items[index.item];
+    
+    return model;
+}
+
+-(void)displayloaded
+{
+    [self.spinner setHidden:YES];
+    [self.spinner stopAnimating];
+    [self.collection setHidden:NO];
+    [self.labelerror removeFromSuperview];
+    [self.buttonerror removeFromSuperview];
+}
+
+-(void)displayloading
+{
+    [self.spinner setHidden:NO];
+    [self.spinner startAnimating];
+    [self.collection setHidden:YES];
+    [self.labelerror removeFromSuperview];
+    [self.buttonerror removeFromSuperview];
+}
+
+-(void)displayerror
+{
+    [self.spinner setHidden:YES];
+    [self.spinner stopAnimating];
+    [self.collection setHidden:YES];
+    [self.labelerror removeFromSuperview];
+    [self.buttonerror removeFromSuperview];
+}
+
+#pragma mark public
+
+-(void)nodriveloaded:(mnodrivetoday*)model
+{
+    [self displayloaded];
+    self.model = model;
+    
+    for(mnodrivetodaysection *section in model.sections)
     {
-        [self.buttontry setHidden:NO];
-        
-        NSString *stringerror = [mstations singleton].error;
-        
-        if(stringerror)
+        if(section.items.count)
         {
-            [self.labelerror setText:stringerror];
+            [self.collection registerClass:section.cellclass forCellWithReuseIdentifier:section.reusableidentifier];
         }
     }
-    else if([mstations singleton].nodrive.explanation)
+    
+    [self.collection reloadData];
+}
+
+-(void)error:(NSString*)error
+{
+    [self displayerror];
+    
+    UILabel *labelerror = [[UILabel alloc] init];
+    [labelerror setBackgroundColor:[UIColor clearColor]];
+    [labelerror setUserInteractionEnabled:NO];
+    [labelerror setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [labelerror setUserInteractionEnabled:NO];
+    [labelerror setNumberOfLines:0];
+    [labelerror setTextAlignment:NSTextAlignmentCenter];
+    [labelerror setFont:[UIFont regularsize:16]];
+    [labelerror setTextColor:[UIColor colorWithWhite:0.5 alpha:1]];
+    [labelerror setText:error];
+    self.labelerror = labelerror;
+    
+    UIButton *buttonerror = [[UIButton alloc] init];
+    [buttonerror setBackgroundColor:[UIColor clearColor]];
+    [buttonerror setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [buttonerror setClipsToBounds:YES];
+    [buttonerror setTitleColor:[UIColor main] forState:UIControlStateNormal];
+    [buttonerror setTitleColor:[[UIColor main] colorWithAlphaComponent:0.2] forState:UIControlStateHighlighted];
+    [buttonerror setTitle:NSLocalizedString(@"vpollution_error_button", nil) forState:UIControlStateNormal];
+    [buttonerror.titleLabel setFont:[UIFont boldsize:14]];
+    [buttonerror addTarget:self action:@selector(actionbuttonerror:) forControlEvents:UIControlEventTouchUpInside];
+    self.buttonerror = buttonerror;
+    
+    [self addSubview:labelerror];
+    [self addSubview:buttonerror];
+    
+    NSDictionary *views = @{@"label":labelerror, @"button":buttonerror};
+    NSDictionary *metrics = @{};
+    
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[label]-20-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-50-[button]-50-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-100-[label(60)]-0-[button(40)]" options:0 metrics:metrics views:views]];
+}
+
+#pragma mark -
+#pragma mark col del
+
+-(UIEdgeInsets)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout insetForSectionAtIndex:(NSInteger)section
+{
+    mnodrivetodaysection *model = self.model.sections[section];
+    CGFloat margin = 0;
+    
+    if(!model.fullwidth)
     {
-        [self.buttontry setHidden:YES];
-        [self.labelerror setText:[mstations singleton].nodrive.explanation];
+        CGFloat width = col.bounds.size.width;
+        CGFloat cellwidth = model.cellwidth;
+        CGFloat allcells = cellwidth * model.cellsperrow;
+        CGFloat remain = width - allcells;
+        
+        if(remain > 0)
+        {
+            margin = remain / 2.0;
+        }
+    }
+    
+    UIEdgeInsets insets = UIEdgeInsetsMake(nodrivecoltop, margin, nodrivecolbottom, margin);
+    
+    return insets;
+}
+
+-(CGSize)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout referenceSizeForHeaderInSection:(NSInteger)section
+{
+    CGFloat width = col.bounds.size.width;
+    CGSize size = CGSizeMake(width, nodriveheaderheight);
+    
+    return size;
+}
+
+-(CGSize)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout sizeForItemAtIndexPath:(NSIndexPath*)index
+{
+    mnodrivetodaysection *model = [self sectionforindex:index];
+    NSInteger width;
+    NSInteger height = model.cellheight;
+    
+    if(model.fullwidth)
+    {
+        width = col.bounds.size.width;
     }
     else
     {
-        [self.labelerror setHidden:YES];
-        [self.buttontry setHidden:YES];
-        
-        [self showcollections];
+        width = model.cellwidth;
     }
+    
+    CGSize size = CGSizeMake(width, height);
+    
+    return size;
 }
 
--(void)showcollections
+-(NSInteger)numberOfSectionsInCollectionView:(UICollectionView*)col
 {
-    mstationsnodrive *nodrive = [mstations singleton].nodrive;
-    vnodriveholograms *colholograms = [[vnodriveholograms alloc] init:nodrive];
-    vnodriveplates *colplates = [[vnodriveplates alloc] init:nodrive];
+    NSInteger count = self.model.sections.count;
     
-    UILabel *labeltitle = [[UILabel alloc] init];
-    [labeltitle setBackgroundColor:[UIColor clearColor]];
-    [labeltitle setFont:[UIFont regularsize:20]];
-    [labeltitle setTextColor:[UIColor blackColor]];
-    [labeltitle setTextAlignment:NSTextAlignmentCenter];
-    [labeltitle setText:NSLocalizedString(@"cars_nodrive_title", nil)];
-    [labeltitle setUserInteractionEnabled:NO];
-    [labeltitle setTranslatesAutoresizingMaskIntoConstraints:NO];
+    return count;
+}
+
+-(NSInteger)collectionView:(UICollectionView*)col numberOfItemsInSection:(NSInteger)section
+{
+    NSInteger count = self.model.sections[section].items.count;
     
-    UILabel *labelholograms = [[UILabel alloc] init];
-    [labelholograms setBackgroundColor:[UIColor clearColor]];
-    [labelholograms setUserInteractionEnabled:NO];
-    [labelholograms setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [labelholograms setFont:[UIFont regularsize:18]];
-    [labelholograms setTextAlignment:NSTextAlignmentCenter];
-    [labelholograms setTextColor:[UIColor main]];
-    [labelholograms setText:NSLocalizedString(@"cars_nodrive_holograms_title", nil)];
+    return count;
+}
+
+-(UICollectionReusableView*)collectionView:(UICollectionView*)col viewForSupplementaryElementOfKind:(NSString*)kind atIndexPath:(NSIndexPath*)index
+{
+    mnodrivetodaysection *model = [self sectionforindex:index];
+    vnodriveheader *header = [col dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:[vnodriveheader reusableidentifier] forIndexPath:index];
+    [header config:model];
     
-    UILabel *labelplates = [[UILabel alloc] init];
-    [labelplates setBackgroundColor:[UIColor clearColor]];
-    [labelplates setUserInteractionEnabled:NO];
-    [labelplates setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [labelplates setFont:[UIFont regularsize:18]];
-    [labelplates setTextAlignment:NSTextAlignmentCenter];
-    [labelplates setTextColor:[UIColor main]];
-    [labelplates setText:NSLocalizedString(@"cars_nodrive_plates_title", nil)];
+    return header;
+}
+
+-(UICollectionViewCell*)collectionView:(UICollectionView*)col cellForItemAtIndexPath:(NSIndexPath*)index
+{
+    mnodrivetodaysection *section = [self sectionforindex:index];
+    mnodrivetodayitem *item = [self itemforindex:index];
+    vnodrivecell *cell = [col dequeueReusableCellWithReuseIdentifier:section.reusableidentifier forIndexPath:index];
+    [cell config:item];
     
-    [self addSubview:colholograms];
-    [self addSubview:colplates];
-    [self addSubview:labeltitle];
-    [self addSubview:labelholograms];
-    [self addSubview:labelplates];
-    
-    NSDictionary *views = @{@"bar":self.bar, @"holo":colholograms, @"labeltitle":labeltitle, @"labelholograms":labelholograms, @"labelplates":labelplates, @"colplates":colplates};
-    NSDictionary *metrics = @{@"holoheight":@(hologramsheight)};
-    
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[holo]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[colplates]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[labeltitle]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[labelplates]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[labelholograms]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[bar]-20-[labeltitle(35)]-20-[labelholograms(20)]-6-[holo(holoheight)]-25-[labelplates(20)]-6-[colplates]-0-|" options:0 metrics:metrics views:views]];
+    return cell;
 }
 
 @end

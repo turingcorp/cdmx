@@ -1,14 +1,9 @@
 #import <UIKit/UIKit.h>
-#import "cmenu.h"
-#import "mpages.h"
+#import "vview.h"
 
-@interface vmenu:UIView<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@interface vmenu:vview<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
--(instancetype)init:(cmenu*)controller;
-
-@property(weak, nonatomic)cmenu *controller;
-@property(weak, nonatomic)mpages *model;
 @property(weak, nonatomic)UICollectionView *collection;
-@property(weak, nonatomic)NSLayoutConstraint *layoutbannerheight;
+@property(weak, nonatomic)NSLayoutConstraint *layoutbarheight;
 
 @end

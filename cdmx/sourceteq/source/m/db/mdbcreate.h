@@ -1,10 +1,8 @@
-#import <UIKit/UIKit.h>
-#import "db.h"
-
-static CGFloat const coordinatesmult = 1000000;
+#import <Foundation/Foundation.h>
 
 @interface mdbcreate:NSObject
 
-+(void)create;
++(void)firsttime;
++(void)loaddatabase;
 
 @end

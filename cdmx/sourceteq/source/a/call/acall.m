@@ -1,7 +1,33 @@
 #import "acall.h"
 #import "aparser.h"
+#import "acallpollution.h"
+#import "acallradiation.h"
+#import "acallnodrive.h"
+
+static NSInteger const standardtimeout = 15;
 
 @implementation acall
+
++(instancetype)pollution
+{
+    acallpollution *call = [[acallpollution alloc] init];
+    
+    return call;
+}
+
++(instancetype)radiation
+{
+    acallradiation *call = [[acallradiation alloc] init];
+    
+    return call;
+}
+
++(instancetype)nodrive
+{
+    acallnodrive *call = [[acallnodrive alloc] init];
+    
+    return call;
+}
 
 -(instancetype)init
 {
@@ -9,7 +35,7 @@
     
     self.urlstring = @"";
     self.post = NO;
-    self.timeout = 25;
+    self.timeout = standardtimeout;
     self.cachepolicy = NSURLRequestReloadIgnoringLocalCacheData;
     
     return self;

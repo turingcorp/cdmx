@@ -1,13 +1,12 @@
 #import <UIKit/UIKit.h>
-#import "mpagesitem.h"
+#import "vcollectioncell.h"
+#import "mmenusectionitem.h"
 
-@interface vmenucell:UICollectionViewCell
+@interface vmenucell:vcollectioncell
 
--(void)config:(mpagesitem*)model;
+-(void)config:(mmenusectionitem*)model;
 
-@property(weak, nonatomic)mpagesitem *model;
-@property(weak, nonatomic)UILabel *title;
+@property(weak, nonatomic)UILabel *label;
 @property(weak, nonatomic)UIImageView *icon;
-@property(strong, nonatomic)NSMutableAttributedString *mut;
 
 @end

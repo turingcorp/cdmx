@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>nodata</key>
+	<string>The monitoring station is off or in maintenance, current conditions are unknown, try again later</string>
+	<key>acceptable</key>
+	<string>Air quality acceptable and without risk for your health.
+
+Check the Ultraviolet radiation index in before deciding to perform any outdoors activity.</string>
+	<key>warning</key>
+	<string>Air presenting some pollution, health issues may arise if your health is not stable at the moment.
+
+Is better for children and elders to stay indoors.</string>
+	<key>danger</key>
+    <string>Polluted air, stay indoors, avoid or being close to someone smoking, keep yourself hydrated.
+Stay away from grills, stoves, chimneys or any other kind of combustion.
+
+Health risks for children and elders if going outdoors.</string>
+	<key>disaster</key>
+	<string>Tier 1 of Environmental Alert.
+
+Avoid going outdoors, smoking or being close to someone smoking.
+Stay away from grills, stoves, chimneys or any other kind of combustion.
+
+Keep yourself hydrated and take special care for children and elders as they might present lung diseases.
+
+If it is really necessary to go out check the No Drive section beforehand.</string>
+	<key>fallout</key>
+	<string>Tier 2 of Environmental Alert, Emergency for the high pollution levels in the air.
+
+You health is at risk and even more that of children and elders.
+Do not go out or smoke.
+
+Stay way from grills, stoves, chimneys and keep yourself hydrated.
+
+If it is extremely necessary to go out check the No Drive section beforehand.</string>
+</dict>
+</plist>

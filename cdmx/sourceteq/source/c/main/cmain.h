@@ -1,10 +1,14 @@
 #import <UIKit/UIKit.h>
-#import "cpages.h"
 
-@interface cmain:UINavigationController
+@interface cmain:UIViewController
 
-+(instancetype)singleton;
+-(void)menu;
+-(void)rootcontroller:(UIViewController*)controller;
+-(void)movetocontroller:(UIViewController*)controller;
+-(void)pushcontroller:(UIViewController*)controller;
+-(void)back;
 
-@property(weak, nonatomic)cpages *pages;
+@property(weak, nonatomic, readonly)UIViewController *current;
+@property(strong, nonatomic, readonly)UIViewController *previous;
 
 @end

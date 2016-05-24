@@ -2,57 +2,77 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>ben</key>
-	<string>Benzene</string>
-	<key>tol</key>
-	<string>Toluene</string>
-	<key>so4</key>
-	<string>Sulfate</string>
-	<key>so2</key>
-	<string>Sulfur dioxide</string>
-	<key>no3</key>
-	<string>Nitrate</string>
-	<key>no2</key>
-	<string>Nitrogen dioxide</string>
-	<key>no</key>
-	<string>Nitric oxide</string>
-	<key>nox</key>
-	<string>Nitrogen oxides</string>
-	<key>cl</key>
-	<string>Chloride</string>
-	<key>co3</key>
-	<string>Carbonate</string>
-	<key>co</key>
-	<string>Carbon monoxide</string>
-	<key>h</key>
-	<string>Hydrogen</string>
-	<key>nh4</key>
-	<string>Ammonium</string>
-	<key>ca</key>
-	<string>Calcium</string>
-	<key>mg</key>
-	<string>Magnesium</string>
-	<key>na</key>
-	<string>Sodium</string>
-	<key>k</key>
-	<string>Potassium</string>
-	<key>o3</key>
-	<string>Ozone</string>
-	<key>pbpst</key>
-	<string>Lead</string>
-	<key>pbpm</key>
-	<string>Lead</string>
-	<key>etb</key>
-	<string>Ethylbenzene</string>
-	<key>xil</key>
-	<string>Xylene</string>
-	<key>pm10</key>
-	<string>Dust particles</string>
-	<key>pm2.5</key>
-	<string>Dust particles</string>
-	<key>pmco</key>
-	<string>Dust particles</string>
-	<key>pst</key>
-	<string>Dust particles</string>
+    <key>106</key>
+    <dict>
+        <key>symbol</key>
+        <string>NO₂</string>
+        <key>info</key>
+        <string>Nitrogen dioxide is the chemical compound with the formula NO₂. One of several nitrogen oxides, an intermediate in the industrial synthesis of nitric acid, millions of tons of which are produced each year. At high temperatures it is a reddish-brown gas that has a characteristic sharp, biting odor and is a prominent air pollutant.
+
+For the general public, the most prominent sources are internal combustion engines burning fossil fuels, cigarette smoke and butane or kerosene heaters and stoves.
+
+Workers in industries where nitrogen dioxide is used are also exposed and are at risk for occupational lung diseases. Agricultural workers can also be exposed from grain decomposing in silos. Chronic exposure can lead to lung damage in a condition called "Silo-filler's disease".
+
+Health effects are caused by the reaction products or their metabolites, which are reactive nitrogen species and reactive oxygen species that can drive bronchoconstriction, inflammation, reduced immune response, and may have effects on the heart.
+
+Acute harm due to exposure is only likely to arise in occupational settings.
+
+Direct exposure to the skin can cause irritations and burns, only very high concentrations of the gaseous form cause immediate distress, ranging from transient cough, fatigue and nausea, mild irritation of the nose and throat, edemas leading to bronchitis or pneumonia, and even death due to asphyxiation from fluid in the lungs.
+
+Can cause respiratory effects including airway inflammation in healthy people and increased respiratory symptoms in people with asthma.</string>
+    </dict>
+    <key>1011</key>
+    <dict>
+        <key>symbol</key>
+        <string>CO</string>
+        <key>info</key>
+        <string>Carbon monoxide is a colorless, odorless, and tasteless gas that is slightly less dense than air. It is toxic to hemoglobic animals (including humans), although it is also produced in normal animal metabolism in low quantities, and is thought to have some normal biological functions. In the atmosphere, it is spatially variable and short lived, having a role in the formation of ground-level ozone.
+
+Is produced from the partial oxidation of carbon-containing compounds; it forms when there is not enough oxygen to produce carbon dioxide (CO₂), such as when operating a stove or an internal combustion engine in an enclosed space, in the presence of oxygen burns with a blue flame, producing carbon dioxide.
+
+Coal gas, which was widely used before the 1960s for domestic lighting, cooking, and heating, had carbon monoxide as a significant fuel constituent. Some processes in modern technology, such as iron smelting, still produce carbon monoxide as a byproduct.
+
+Worldwide, the largest source of carbon monoxide is natural in origin, due to photochemical reactions in the troposphere, other natural sources include volcanoes, forest fires, and other forms of combustion.
+
+Is a temporary atmospheric pollutant in some urban areas, chiefly from the exhaust of internal combustion engines (including vehicles, portable and back-up generators, lawn mowers, power washers, etc.), but also from incomplete combustion of various other fuels (including wood, coal, charcoal, oil, paraffin, propane, natural gas, and trash) and it can be observed from space over cities.</string>
+    </dict>
+    <key>1018</key>
+    <dict>
+        <key>symbol</key>
+        <string>O₃</string>
+        <key>info</key>
+        <string>Ozone or trioxygen is an inorganic molecule with the chemical formula O₃. A pale blue gas with a distinctively pungent smell, it is much less stable than the diatomic allotrope O₂, breaking down in the lower atmosphere to normal dioxygen.
+            
+Ozone is a powerful oxidant, far more so than dioxygen, and has many industrial and consumer applications related to oxidation but this same high oxidising potential, however, causes ozone to damage mucous and respiratory tissues in animals, and also tissues in plants.
+            
+Ozone precursors are a group of pollutants, predominantly those emitted during the combustion of fossil fuels, ozone pollution is created near the Earth's surface by the action of daylight UV rays on these precursors.
+            
+There is a great deal of evidence to show that ground level ozone can harm lung function and irritates the respiratory system.
+            
+Exposure to ozone is linked to premature death, asthma, bronchitis, heart attack, and other cardiopulmonary problems.
+            
+Long term exposure to ozone has been shown to increase risk of death from respiratory illness.
+            
+Ozone can also be present in indoor air pollution, partly as a result of electronic equipment such as photocopiers.</string>
+    </dict>
+    <key>1022</key>
+    <dict>
+        <key>symbol</key>
+        <string>PM</string>
+        <key>info</key>
+        <string>Atmospheric particulate matter is microscopic matter suspended in the Earth's atmosphere, it can be solid or liquid and when mixed with air is commonly refered as aerosol.
+            
+Sources of particulate matter can be man-made or natural and they have impacts on climate and precipitation such as to adversely affect human health.
+            
+The International Agency for Research on Cancer and the World Health Organization designate airborne particulates a Group 1 carcinogen and define them as the deadliest form of air pollution due to their ability to penetrate deep into the lungs and blood streams unfiltered, causing permanent DNA mutations, heart attacks, and premature death.
+            
+There is no safe level of particulates and the smaller are particularly deadly as they can penetrate deeper into the lungs.
+            
+Some particulates occur naturally, originating from volcanoes, dust storms, forest and grassland fires, living vegetation, and sea spray.
+            
+Human activities, such as the burning of fossil fuels in vehicles, power plants and various industrial processes also generate significant amounts of particulates.
+            
+Because salt spray over the oceans is the overwhelmingly most common form of particulate in the atmosphere, aerosols made by human activities currently account for about 10 percent of the total mass of aerosols.</string>
+    </dict>
 </dict>
 </plist>
