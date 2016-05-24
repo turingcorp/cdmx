@@ -3,7 +3,7 @@
 <plist version="1.0">
     <dict>
         <key>nodata</key>
-        <string>The monitoring station is off or in maintenance, current conditions are unknown, please try again later</string>
+        <string>La estación de monitoreo esta fuera de linea o en mantenimiento, condiciones actuales son desconocidas, intenta mas tarde</string>
         <key>acceptable</key>
         <string>Calidad del aire satisfactoria y sin riesgos a tu salud.
             

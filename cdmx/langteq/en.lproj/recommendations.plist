@@ -3,37 +3,37 @@
 <plist version="1.0">
 <dict>
 	<key>nodata</key>
-	<string>The monitoring station is off or in maintenance, current conditions are unknown, please try again later</string>
+	<string>The monitoring station is off or in maintenance, current conditions are unknown, try again later</string>
 	<key>acceptable</key>
-	<string>Calidad del aire satisfactoria y sin riesgos a tu salud.
+	<string>Air quality acceptable and without risk for your health.
 
-Revisa el indice de radiación Ultra Violeta antes realizar alguna actividad prolongada al aire libre.</string>
+Check the Ultraviolet radiation index in before deciding to perform any outdoors activity.</string>
 	<key>warning</key>
-	<string>Aire con presencia de contaminantes, si eres de salud delicada es posible que resultes afectado al salir de casa.
+	<string>Air presenting some pollution, health issues may arise if your health is not stable at the moment.
 
-Es recomendable que niños y adultos mayores permanescan poco al aire libre.</string>
+Is better for children and elders to stay indoors.</string>
 	<key>danger</key>
-    <string>Aire contaminado, limita salir de casa, evita fumar o permanecer cerca de alguien que este fumando, consume bastantes liquidos.
-Alejate de parrillas, fogones, chimeneas ó cualquier otro tipo de combustión.
+    <string>Polluted air, stay indoors, avoid or being close to someone smoking, keep yourself hydrated.
+Stay away from grills, stoves, chimneys or any other kind of combustion.
 
-Niños y adultos mayores correran riesgos a su salud si salen de casa.</string>
+Health risks for children and elders if going outdoors.</string>
 	<key>disaster</key>
-	<string>Fase 1 de Contingencia Ambiental.
+	<string>Tier 1 of Environmental Alert.
 
-Evita salir de casa, fumar ó estar cerca de alguien que fuma.
-Alejate de parrillas, fogones, chimeneas, ó cualquier otro tipo de combustión.
+Avoid going outdoors, smoking or being close to someone smoking.
+Stay away from grills, stoves, chimneys or any other kind of combustion.
 
-Consume bastantes liquidos y ten especial cuidado con niños y adultos mayores pues seran mas propensos a enfermedades respiratorias.
+Keep yourself hydrated and take special care for children and elders as they might present lung diseases.
 
-En caso de que sea muy necesario salir de casa revisa antes el Hoy no circular.</string>
+If it is really necessary to go out check the No Drive section beforehand.</string>
 	<key>fallout</key>
-	<string>Fase 2 de Contingencia Ambiental, estado de emergencia debido al alto nivel de contaminación.
+	<string>Tier 2 of Environmental Alert, Emergency for the high pollution levels in the air.
 
-Tu salud esta en peligro y más la de niños y adultos mayores.
-No salgas de casa y no fumes.
+You health is at risk and even more that of children and elders.
+Do not go out or smoke.
 
-Alejate de cualquier tipo de combustión como parrillas, fogones y chimeneas. Consume bastantes liquidos.
+Stay way from grills, stoves, chimneys and keep yourself hydrated.
 
-Si necesitas salir urgentemente de tu casa revisa el primero el Hoy no circula.</string>
+If it is extremely necessary to go out check the No Drive section beforehand.</string>
 </dict>
 </plist>
