@@ -1,6 +1,7 @@
 #import <UIKit/UIKit.h>
 #import <GLKit/GLKit.h>
 #import "vpollutionoption.h"
+#import "vspinner.h"
 
 @class cpollution;
 @class vpollutionmenu;
@@ -17,6 +18,7 @@
 @property(weak, nonatomic)cpollution *controller;
 @property(weak, nonatomic)vpollutionoption *option;
 @property(weak, nonatomic)vpollutionmenu *menu;
+@property(weak, nonatomic)vspinner *spinner;
 @property(strong, nonatomic)NSMutableData *datatexture;
 @property(strong, nonatomic)GLKBaseEffect *baseeffect;
 @property(assign, nonatomic)GLKVector2 *pointertexture;

@@ -18,6 +18,16 @@ static NSInteger const pollutionmenuheight = 50;
     [self setBackgroundColor:[UIColor whiteColor]];
     self.controller = controller;
     
+    vspinner *spinner = [[vspinner alloc] init];
+    self.spinner = spinner;
+    [self addSubview:spinner];
+    
+    NSDictionary *views = @{@"spinner":spinner};
+    NSDictionary *metrics = @{};
+    
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[spinner]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-100-[spinner]" options:0 metrics:metrics views:views]];
+    
     return self;
 }
 
@@ -99,29 +109,29 @@ static NSInteger const pollutionmenuheight = 50;
 
 -(void)modelloaded
 {
-    __weak typeof(self) welf = self;
-    
-    dispatch_async(dispatch_get_main_queue(),
-                   ^
-                   {
-                       [welf loadmenu];
-                       
-                       dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC),
-                                      dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
-                                      ^
-                                      {
-                                          if(!welf.context)
-                                          {
-                                              [welf glkstart];
-                                          }
-                                          
-                                          dispatch_async(dispatch_get_main_queue(),
-                                                         ^
-                                                         {
-                                                             [welf show_districts];
-                                                         });
-                                      });
-                   });
+//    __weak typeof(self) welf = self;
+//    
+//    dispatch_async(dispatch_get_main_queue(),
+//                   ^
+//                   {
+//                       [welf loadmenu];
+//                       
+//                       dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC),
+//                                      dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
+//                                      ^
+//                                      {
+//                                          if(!welf.context)
+//                                          {
+//                                              [welf glkstart];
+//                                          }
+//                                          
+//                                          dispatch_async(dispatch_get_main_queue(),
+//                                                         ^
+//                                                         {
+//                                                             [welf show_districts];
+//                                                         });
+//                                      });
+//                   });
 }
 
 -(void)show_districts

@@ -1,6 +1,7 @@
 #import "vspinner.h"
 
-static CGFloat const animationduration = 2.0;
+static CGFloat const animationduration = 2;
+static NSUInteger const spinnerintrinsicsize = 90;
 
 @implementation vspinner
 
@@ -11,7 +12,7 @@ static CGFloat const animationduration = 2.0;
     [self setClipsToBounds:YES];
     [self setUserInteractionEnabled:NO];
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [self setContentMode:UIViewContentModeScaleAspectFit];
+    [self setContentMode:UIViewContentModeCenter];
     [self setAnimationDuration:animationduration];
     self.animationImages = @[
                              [UIImage imageNamed:@"spinner_0"],
@@ -26,7 +27,7 @@ static CGFloat const animationduration = 2.0;
 
 -(CGSize)intrinsicContentSize
 {
-    CGSize size = CGSizeMake(spinnerintrinsicsize, spinnerintrinsicsize);
+    CGSize size = CGSizeMake(UIViewNoIntrinsicMetric, spinnerintrinsicsize);
     
     return size;
 }
