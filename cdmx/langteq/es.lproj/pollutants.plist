@@ -2,18 +2,77 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
     <dict>
+        <key>106</key>
+        <dict>
+            <key>symbol</key>
+            <string>NO₂</string>
+            <key>info</key>
+            <string>El Dióxido de nitrógeno es un compuesto quimico con la formula NO₂. Uno de varios óxidos de nitroógeno, un intermediarion en la sintetización industrial del ácido nítrico, de los cuales millones de toneladas son producidas cada año. En temperaturas muy altas es un gas rojiso que tiene un olor caracteristico muy fino y penetrante. Es uno de los principales contaminantes del aire.
+                
+                Para el publico en general las fuentes más comunes de este gas son las maquinas de combustión interna al usar combustibles fosiles, el humo de cigarrillos y calentadores ó estufas de butano o queroseno.
+                
+                Obreros en industrias donde el dióxido de nitrógeno es usado tambien estan expuestos y en riesgo de contraer enfermedades respiratorias relacionadas a este trabajo. Agricultores tambien pueden estar expuestos por la descomposición de las materias primas en los graneros ó silos. Exposicion constante puede llevar a dañar los pulmones y contraer la Enfermedad de Granero.
+                
+                Effectos en la salud son causados por la reaccion con antioxidantes y moleculas lipidas combinados con oxigenos reactivos y pueden ocasionar el bloqueo de las vías respiratiorias, inflamacion de las mismas, reduccion del sistema inmunologico, y puede llegar a tener efectos adversos en el corazón.
+                
+                Daños severos debido a la exposicion es poco probable en el publico en general y mas probable en obreros y agricultores.
+                
+                Exposicion directa con la piel puede causar irritación y quemaduras y solo muy altas cantidades en forma gaseosa pueden llegar a causar malestares inmediations, desde tos esporadica, cansancion y nausea, ligera irritacion de la nariz y garganta, edemas que pueden provocar bronquitis y neumonía e incluso la puerte por asfixia debido a liquido en los pulmones.
+                
+                Puede causar malestares respiratorios como inflamacion de la vías respiratorias en personas sanas e incrementar los sintomas respiratorios en personas con asma.</string>
+        </dict>
+        <key>1011</key>
+        <dict>
+            <key>symbol</key>
+            <string>CO</string>
+            <key>info</key>
+            <string>Carbon monoxide is a colorless, odorless, and tasteless gas that is slightly less dense than air. It is toxic to hemoglobic animals (including humans), although it is also produced in normal animal metabolism in low quantities, and is thought to have some normal biological functions. In the atmosphere, it is spatially variable and short lived, having a role in the formation of ground-level ozone.
+                
+                Is produced from the partial oxidation of carbon-containing compounds; it forms when there is not enough oxygen to produce carbon dioxide (CO₂), such as when operating a stove or an internal combustion engine in an enclosed space, in the presence of oxygen burns with a blue flame, producing carbon dioxide.
+                
+                Coal gas, which was widely used before the 1960s for domestic lighting, cooking, and heating, had carbon monoxide as a significant fuel constituent. Some processes in modern technology, such as iron smelting, still produce carbon monoxide as a byproduct.
+                
+                Worldwide, the largest source of carbon monoxide is natural in origin, due to photochemical reactions in the troposphere, other natural sources include volcanoes, forest fires, and other forms of combustion.
+                
+                Is a temporary atmospheric pollutant in some urban areas, chiefly from the exhaust of internal combustion engines (including vehicles, portable and back-up generators, lawn mowers, power washers, etc.), but also from incomplete combustion of various other fuels (including wood, coal, charcoal, oil, paraffin, propane, natural gas, and trash) and it can be observed from space over cities.</string>
+        </dict>
         <key>1018</key>
         <dict>
             <key>symbol</key>
-            <string>O3</string>
+            <string>O₃</string>
             <key>info</key>
-            <string>Ozone precursors are a group of pollutants, predominantly those emitted during the combustion of fossil fuels. Ground-level ozone pollution (tropospheric ozone) is created near the Earth&apos;s surface by the action of daylight UV rays on these precursors. The ozone at ground level is primarily from fossil fuel precursors, but methane is a natural precursor, and the very low natural background level of ozone at ground level is considered safe.
+            <string>Ozone or trioxygen is an inorganic molecule with the chemical formula O₃. A pale blue gas with a distinctively pungent smell much less stable than the diatomic allotrope O₂, breaking down in the lower atmosphere to normal dioxygen.
                 
-                There is a great deal of evidence to show that ground level ozone can harm lung function and irritate the respiratory system.
-                Exposure to ozone (and the pollutants that produce it) is linked to premature death, asthma, bronchitis, heart attack, and other cardiopulmonary problems.
+                Ozone is a powerful oxidant, far more so than dioxygen, and has many industrial and consumer applications related to oxidation but this same high oxidising potential, however, causes ozone to damage mucous and respiratory tissues in animals, and also tissues in plants.
                 
-                Long-term exposure to ozone has been shown to increase risk of death from respiratory illness. A study of 450,000 people living in United States cities saw a significant correlation between ozone levels and respiratory illness over the 18-year follow-up period.
-                The study revealed that people living in cities with high ozone levels, such as Houston or Los Angeles, had an over 30% increased risk of dying from lung disease</string>
+                Ozone precursors are a group of pollutants, predominantly those emitted during the combustion of fossil fuels, ozone pollution is created near the Earth's surface by the action of daylight UV rays on these precursors.
+                
+                There is a great deal of evidence to show that ground level ozone can harm lung function and irritates the respiratory system.
+                
+                Exposure to ozone is linked to premature death, asthma, bronchitis, heart attack, and other cardiopulmonary problems.
+                
+                Long term exposure to ozone has been shown to increase risk of death from respiratory illness.
+                
+                Ozone can also be present in indoor air pollution, partly as a result of electronic equipment such as photocopiers.</string>
+        </dict>
+        <key>1022</key>
+        <dict>
+            <key>symbol</key>
+            <string>PM</string>
+            <key>info</key>
+            <string>Atmospheric particulate matter is microscopic matter suspended in the Earth's atmosphere, it can be solid or liquid and when mixed with air is commonly refered as aerosol.
+                
+                Sources of particulate matter can be man-made or natural and they have impacts on climate and precipitation such as to adversely affect human health.
+                
+                The International 'Agency for Research on Cancer' and the 'World Health Organization' designate airborne particulates a Group 1 carcinogen and define them as the deadliest form of air pollution due to their ability to penetrate deep into the lungs and blood streams unfiltered, causing permanent DNA mutations, heart attacks, and premature death.
+                
+                There is no safe level of particulates and the smaller are particularly deadly as they can penetrate deeper into the lungs.
+                
+                Some particulates occur naturally, originating from volcanoes, dust storms, forest and grassland fires, living vegetation, and sea spray.
+                
+                Human activities, such as the burning of fossil fuels in vehicles, power plants and various industrial processes also generate significant amounts of particulates.
+                
+                Because salt spray over the oceans is the overwhelmingly most common form of particulate in the atmosphere, aerosols made by human activities currently account for about 10 percent of the total mass of aerosols.</string>
         </dict>
     </dict>
 </plist>
