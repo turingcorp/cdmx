@@ -32,7 +32,7 @@
 "mpollution_index_nodata"="Error leyendo info";
 "mpollution_index_acceptable"="Aceptable";
 "mpollution_index_warning"="Cuidado";
-"mpollution_index_danger"="Peligro";
+"mpollution_index_danger"="Riesgoso";
 "mpollution_index_disaster"="Dañino";
 "mpollution_index_fallout"="Nocivo";
 

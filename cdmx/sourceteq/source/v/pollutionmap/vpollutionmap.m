@@ -128,6 +128,7 @@ static NSInteger const mapinteritemspace = -1;
             
             if([self.locationmanager respondsToSelector:@selector(requestWhenInUseAuthorization)])
             {
+                [[NSNotificationCenter defaultCenter] removeObserver:self.controller];
                 [self.locationmanager requestWhenInUseAuthorization];
             }
             else
@@ -229,6 +230,8 @@ static NSInteger const mapinteritemspace = -1;
     {
         [self.display setShowsUserLocation:YES];
     }
+    
+    [self.controller activelistener];
 }
 
 -(MKAnnotationView*)mapView:(MKMapView*)mapview viewForAnnotation:(id<MKAnnotation>)annotation
