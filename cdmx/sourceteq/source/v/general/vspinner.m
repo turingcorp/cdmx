@@ -17,9 +17,7 @@ static CGFloat const animationduration = 2.0;
                              [UIImage imageNamed:@"spinner_0"],
                              [UIImage imageNamed:@"spinner_1"],
                              [UIImage imageNamed:@"spinner_2"],
-                             [UIImage imageNamed:@"spinner_3"],
-                             [UIImage imageNamed:@"spinner_4"],
-                             [UIImage imageNamed:@"spinner_5"]
+                             [UIImage imageNamed:@"spinner_3"]
                              ];
     [self startAnimating];
     

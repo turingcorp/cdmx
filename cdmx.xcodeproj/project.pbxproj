@@ -75,6 +75,7 @@
 		DA4096501CDC170F0001D696 /* vviewbar.m in Sources */ = {isa = PBXBuildFile; fileRef = DA40964F1CDC170F0001D696 /* vviewbar.m */; };
 		DA4096531CDC1F560001D696 /* cpollutionimeca.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4096521CDC1F560001D696 /* cpollutionimeca.m */; };
 		DA40965D1CDD4C0D0001D696 /* vcollectioncell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA40965C1CDD4C0D0001D696 /* vcollectioncell.m */; };
+		DA6F59381CF4922B004DD437 /* spinner.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA6F59371CF4922B004DD437 /* spinner.xcassets */; };
 		DA86ACBD1CE36E2500908755 /* pollution.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA86ACBC1CE36E2500908755 /* pollution.xcassets */; };
 		DA86ACDE1CE3A20B00908755 /* gspatialcolor.m in Sources */ = {isa = PBXBuildFile; fileRef = DA86ACDD1CE3A20B00908755 /* gspatialcolor.m */; };
 		DA86ACEA1CE3BC6800908755 /* gpollutionchartspikes.m in Sources */ = {isa = PBXBuildFile; fileRef = DA86ACE91CE3BC6800908755 /* gpollutionchartspikes.m */; };
@@ -376,6 +377,7 @@
 		DA4096521CDC1F560001D696 /* cpollutionimeca.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cpollutionimeca.m; sourceTree = "<group>"; };
 		DA40965B1CDD4C0D0001D696 /* vcollectioncell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vcollectioncell.h; sourceTree = "<group>"; };
 		DA40965C1CDD4C0D0001D696 /* vcollectioncell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vcollectioncell.m; sourceTree = "<group>"; };
+		DA6F59371CF4922B004DD437 /* spinner.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = spinner.xcassets; sourceTree = "<group>"; };
 		DA86ACBC1CE36E2500908755 /* pollution.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = pollution.xcassets; sourceTree = "<group>"; };
 		DA86ACDC1CE3A20B00908755 /* gspatialcolor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gspatialcolor.h; sourceTree = "<group>"; };
 		DA86ACDD1CE3A20B00908755 /* gspatialcolor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gspatialcolor.m; sourceTree = "<group>"; };
@@ -1297,6 +1299,7 @@
 				DA3F6BDE1CEBA60800625BE9 /* menu.xcassets */,
 				DAAEEE0B1CECF1EE008C992C /* radiation.xcassets */,
 				DA8C17041CF26DA10034AA8E /* nodrive.xcassets */,
+				DA6F59371CF4922B004DD437 /* spinner.xcassets */,
 			);
 			path = imateq;
 			sourceTree = "<group>";
@@ -1705,6 +1708,7 @@
 				DAAEEE0C1CECF1EE008C992C /* radiation.xcassets in Resources */,
 				DAEA5A1D1CEA8AFA00584526 /* pollutants.plist in Resources */,
 				DAB3FEDC1CE26DCF00CCBB86 /* url.plist in Resources */,
+				DA6F59381CF4922B004DD437 /* spinner.xcassets in Resources */,
 				DAD7AA291CEF631C003B169A /* radiation.plist in Resources */,
 				DA8C17051CF26DA10034AA8E /* nodrive.xcassets in Resources */,
 				DA8F03441CC1C6B10007596C /* districts.xcassets in Resources */,
