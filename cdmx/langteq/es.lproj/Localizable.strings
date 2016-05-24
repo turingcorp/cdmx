@@ -86,13 +86,13 @@
 "mnodrive_rating_2"="2";
 
 "mnodrive_today_section_free"="Todos circulan hoy";
-"mnodrive_today_section_plate"="Ultimo numero en la placa o color";
+"mnodrive_today_section_plate"="Ultimo numero en la placa o engomado";
 "mnodrive_today_section_hologram"="Hologramas";
 "mnodrive_today_section_restriction"="Especificaciones";
 
 "mnodrive_today_restriction_time_title"="Tiempo";
 "mnodrive_today_restriction_time_info"="5:00 am - 10:00 pm";
-"mnodrive_today_restriction_foreigner_title"="Placas no de CDMX o Estado de México";
+"mnodrive_today_restriction_foreigner_title"="Placas no de CDMX ó Edo de México";
 "mnodrive_today_restriction_foreigner_yes_info"="Mismas reglas usando el ultimo numero";
 "mnodrive_today_restriction_foreigner_no_info"="Reglas diferentes, ve el calendario";
 "mnodrive_today_restriction_bike_title"="Motocicletas";
@@ -106,7 +106,7 @@
 "mnodrive_today_restriction_tourist_no_info"="No activos por ahora";
 
 "mnodrive_calendar_section_week"="Hoy no circulan entre semana y sabados";
-"mnodrive_calendar_section_foreigner"="Placas no de CDMX ó Estado de México";
+"mnodrive_calendar_section_foreigner"="Placas no de CDMX ó Edo de México";
 "mnodrive_calendar_item_week_0"="Lunes\n1º Sabado";
 "mnodrive_calendar_item_week_1"="Martes\n2º Sabado";
 "mnodrive_calendar_item_week_2"="Miercoles\n3º Sabado";
