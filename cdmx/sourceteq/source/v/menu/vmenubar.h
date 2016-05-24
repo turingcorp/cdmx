@@ -1,11 +1,6 @@
 #import <UIKit/UIKit.h>
+#import "vviewbar.h"
 
-@class cmenu;
-
-@interface vmenubar:UIView
-
--(instancetype)init:(cmenu*)controller;
-
-@property(weak, nonatomic)cmenu *controller;
+@interface vmenubar:vviewbar
 
 @end

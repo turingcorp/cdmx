@@ -7,10 +7,7 @@
 -(instancetype)init:(cmenu*)controller
 {
     self = [super init];
-    [self setClipsToBounds:YES];
-    [self setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self setBackgroundColor:[UIColor colorWithWhite:1 alpha:0.5]];
-    [self setUserInteractionEnabled:NO];
     
     UIImageView *logo = [[UIImageView alloc] init];
     [logo setUserInteractionEnabled:NO];
