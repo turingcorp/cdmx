@@ -4,7 +4,7 @@
     <array>
         <dict>
             <key>info</key>
-            <string>Safe</string>
+            <string>Seguro</string>
             <key>items</key>
             <array>
                 <integer>0</integer>
@@ -12,7 +12,7 @@
         </dict>
         <dict>
             <key>info</key>
-            <string>No risk</string>
+            <string>Sin riesgo</string>
             <key>items</key>
             <array>
                 <integer>1</integer>
@@ -21,7 +21,7 @@
         </dict>
         <dict>
             <key>info</key>
-            <string>May be harmful for your skin, try not to expose too much</string>
+            <string>Puede ser dañino para tu piel, trata de no exponerte demasiado</string>
             <key>items</key>
             <array>
                 <integer>3</integer>
@@ -31,7 +31,7 @@
         </dict>
         <dict>
             <key>info</key>
-            <string>Harmful for your skin, expose as little as possible</string>
+            <string>Dañino para tu piel, exponte lo menos posible</string>
             <key>items</key>
             <array>
                 <integer>6</integer>
@@ -40,7 +40,7 @@
         </dict>
         <dict>
             <key>info</key>
-            <string>Highly harmful for your skin, do not expose</string>
+            <string>Altamente dañino para tu piel, no te expongas</string>
             <key>items</key>
             <array>
                 <integer>8</integer>
@@ -50,7 +50,7 @@
         </dict>
         <dict>
             <key>info</key>
-            <string>Extremely harmful for your skin and eyes, avoid it</string>
+            <string>Extremadamente dañino para tus ojos y tu piel, evitalo</string>
             <key>items</key>
             <array>
                 <integer>11</integer>
