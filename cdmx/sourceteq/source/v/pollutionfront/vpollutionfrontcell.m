@@ -82,7 +82,7 @@ static NSInteger const cellapparentheight = 160;
     {
         [self.buttonup setHidden:NO];
         [self.label setTextColor:[UIColor whiteColor]];
-        [self.base setBackgroundColor:[UIColor second]];
+        [self.base setBackgroundColor:[UIColor main]];
     }
     else
     {
