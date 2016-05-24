@@ -89,6 +89,7 @@ static NSInteger const framespersecond = 60;
 
 -(void)option:(UIViewController*)controller
 {
+    [NSNotification becomeactiveremove:self];
     [self.parentViewController pushcontroller:controller];
     [self.model clean];
     [self.view loading];

@@ -61,7 +61,7 @@
     [self loadradiation];
 }
 
-#pragma mark functionality
+#pragma mark public
 
 -(void)loadradiation
 {
@@ -75,8 +75,6 @@
                    });
 }
 
-#pragma mark public
-
 -(void)menu
 {
     [self.parentViewController menu];
@@ -84,6 +82,7 @@
 
 -(void)about
 {
+    [NSNotification becomeactiveremove:self];
     cradiationabout *controller = [[cradiationabout alloc] init];
     [self.parentViewController pushcontroller:controller];
 }
@@ -109,7 +108,13 @@
 
 -(void)call:(amanager*)manager error:(NSString*)error
 {
-#warning "treat error";
+    __weak typeof(self) welf = self;
+    
+    dispatch_async(dispatch_get_main_queue(),
+                   ^
+                   {
+                       [welf.view error:error];
+                   });
 }
 
 @end

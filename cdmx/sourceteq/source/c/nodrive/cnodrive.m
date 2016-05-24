@@ -87,6 +87,7 @@
 {
     if(self.model)
     {
+        [NSNotification becomeactiveremove:self];
         cnodrivecalendar *controller = [[cnodrivecalendar alloc] init:self.model];
         [self.parentViewController pushcontroller:controller];
     }

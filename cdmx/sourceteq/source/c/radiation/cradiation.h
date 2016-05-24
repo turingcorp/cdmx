@@ -4,6 +4,7 @@
 
 @interface cradiation:UIViewController<acalldelegate>
 
+-(void)loadradiation;
 -(void)menu;
 -(void)about;
 
