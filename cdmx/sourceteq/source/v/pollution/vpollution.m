@@ -1,5 +1,7 @@
 #import "vpollution.h"
 #import "enotification.h"
+#import "ecolor.h"
+#import "efont.h"
 #import "cpollution.h"
 #import "vpollutionmenu.h"
 #import "vpollutionfront.h"
@@ -29,6 +31,17 @@ static NSInteger const pollutionmenuheight = 50;
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-100-[spinner]" options:0 metrics:metrics views:views]];
     
     return self;
+}
+
+#pragma mark actions
+
+-(void)actionbuttonerror:(UIButton*)button
+{
+    [self.labelerror removeFromSuperview];
+    [self.buttonerror removeFromSuperview];
+    [self.spinner setHidden:NO];
+    [self.spinner startAnimating];
+    [self.controller loadpollution];
 }
 
 #pragma mark functionality
@@ -129,6 +142,8 @@ static NSInteger const pollutionmenuheight = 50;
     dispatch_async(dispatch_get_main_queue(),
                    ^
                    {
+                       [welf.buttonerror removeFromSuperview];
+                       [welf.labelerror removeFromSuperview];
                        [welf loadmenu];
                        
                        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC),
@@ -219,6 +234,47 @@ static NSInteger const pollutionmenuheight = 50;
 -(void)clean
 {
     [self setUserInteractionEnabled:NO];
+}
+
+-(void)error:(NSString*)error
+{
+    [self.labelerror removeFromSuperview];
+    [self.buttonerror removeFromSuperview];
+    [self.spinner setHidden:YES];
+    [self.spinner stopAnimating];
+    
+    UILabel *labelerror = [[UILabel alloc] init];
+    [labelerror setBackgroundColor:[UIColor clearColor]];
+    [labelerror setUserInteractionEnabled:NO];
+    [labelerror setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [labelerror setUserInteractionEnabled:NO];
+    [labelerror setNumberOfLines:0];
+    [labelerror setTextAlignment:NSTextAlignmentCenter];
+    [labelerror setFont:[UIFont regularsize:16]];
+    [labelerror setTextColor:[UIColor colorWithWhite:0.5 alpha:1]];
+    [labelerror setText:error];
+    self.labelerror = labelerror;
+    
+    UIButton *buttonerror = [[UIButton alloc] init];
+    [buttonerror setBackgroundColor:[UIColor clearColor]];
+    [buttonerror setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [buttonerror setClipsToBounds:YES];
+    [buttonerror setTitleColor:[UIColor main] forState:UIControlStateNormal];
+    [buttonerror setTitleColor:[[UIColor main] colorWithAlphaComponent:0.2] forState:UIControlStateHighlighted];
+    [buttonerror setTitle:NSLocalizedString(@"vpollution_error_button", nil) forState:UIControlStateNormal];
+    [buttonerror.titleLabel setFont:[UIFont boldsize:14]];
+    [buttonerror addTarget:self action:@selector(actionbuttonerror:) forControlEvents:UIControlEventTouchUpInside];
+    self.buttonerror = buttonerror;
+    
+    [self addSubview:labelerror];
+    [self addSubview:buttonerror];
+    
+    NSDictionary *views = @{@"label":labelerror, @"button":buttonerror};
+    NSDictionary *metrics = @{};
+    
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[label]-20-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-50-[button]-50-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-50-[label(60)]-0-[button(40)]" options:0 metrics:metrics views:views]];
 }
 
 #pragma mark -

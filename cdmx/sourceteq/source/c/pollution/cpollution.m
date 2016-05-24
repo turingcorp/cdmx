@@ -66,7 +66,7 @@ static NSInteger const framespersecond = 60;
     [self loadpollution];
 }
 
-#pragma mark functionality
+#pragma mark public
 
 -(void)loadpollution
 {
@@ -79,8 +79,6 @@ static NSInteger const framespersecond = 60;
                        welf.apimanager = [amanager call:[acall pollution] delegate:welf];
                    });
 }
-
-#pragma mark public
 
 -(void)menu
 {
@@ -124,7 +122,13 @@ static NSInteger const framespersecond = 60;
 
 -(void)call:(amanager*)manager error:(NSString*)error
 {
-#warning "missing error actions"
+    __weak typeof(self) welf = self;
+    
+    dispatch_async(dispatch_get_main_queue(),
+                   ^
+                   {
+                       [welf.view error:error];
+                   });
 }
 
 @end

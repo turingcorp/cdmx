@@ -7,6 +7,7 @@
 
 @interface cpollution:GLKViewController<GLKViewControllerDelegate, acalldelegate>
 
+-(void)loadpollution;
 -(void)menu;
 -(void)option:(UIViewController*)controller;
 

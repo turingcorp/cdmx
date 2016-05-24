@@ -118,6 +118,7 @@
 "mnodrive_calendar_foreigner_mornings"="No drive on weekdays from 5:00 am to 11:00 am";
 "mnodrive_calendar_foreigner_saturdays"="No drive on Saturdays";
 
+"vpollution_error_button"="Try again";
 "vpollution_radio_chart_title"="IMECA";
 "vpollution_front_header_button_imeca"="About IMECA";
 "vpollution_front_header_button_recommendation"="Precautions";
