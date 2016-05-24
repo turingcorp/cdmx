@@ -37,10 +37,7 @@ static NSInteger const pollutionmenuheight = 50;
 
 -(void)actionbuttonerror:(UIButton*)button
 {
-    [self.labelerror removeFromSuperview];
-    [self.buttonerror removeFromSuperview];
-    [self.spinner setHidden:NO];
-    [self.spinner startAnimating];
+    [self loading];
     [self.controller loadpollution];
 }
 
@@ -122,14 +119,16 @@ static NSInteger const pollutionmenuheight = 50;
 {
     __weak typeof(self) welf = self;
     
-    [UIView animateWithDuration:0.5 animations:
+    [UIView animateWithDuration:0.6 animations:
      ^
      {
          [welf.spinner setAlpha:0];
      } completion:
      ^(BOOL done)
      {
-         [welf.spinner removeFromSuperview];
+         [welf.spinner setHidden:YES];
+         [welf.spinner stopAnimating];
+         [welf.spinner setAlpha:1];
      }];
 }
 
@@ -234,6 +233,15 @@ static NSInteger const pollutionmenuheight = 50;
 -(void)clean
 {
     [self setUserInteractionEnabled:NO];
+}
+
+-(void)loading
+{
+    [self.labelerror removeFromSuperview];
+    [self.buttonerror removeFromSuperview];
+    [self.spinner setHidden:NO];
+    [self.spinner startAnimating];
+    [self.option remove];
 }
 
 -(void)error:(NSString*)error

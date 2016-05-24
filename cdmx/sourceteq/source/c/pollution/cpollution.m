@@ -89,8 +89,9 @@ static NSInteger const framespersecond = 60;
 
 -(void)option:(UIViewController*)controller
 {
-    [self.view.option remove];
     [self.parentViewController pushcontroller:controller];
+    [self.model clean];
+    [self.view loading];
 }
 
 #pragma mark -

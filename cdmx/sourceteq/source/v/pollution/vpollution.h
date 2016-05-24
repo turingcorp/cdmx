@@ -14,6 +14,7 @@
 -(void)show_chart;
 -(void)show_map;
 -(void)clean;
+-(void)loading;
 -(void)error:(NSString*)error;
 
 @property(weak, nonatomic)cpollution *controller;
