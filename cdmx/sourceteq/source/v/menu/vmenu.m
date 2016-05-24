@@ -7,7 +7,7 @@
 #import "ecollectioncell.h"
 #import "genericconstants.h"
 
-static NSInteger const menubarheight = 150;
+static NSInteger const menubarheight = 180;
 static NSInteger const menucollectionbottom = 40;
 static NSInteger const menuheaderheight = 50;
 static NSInteger const menucellheight = 60;
