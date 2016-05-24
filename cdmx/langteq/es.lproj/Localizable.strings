@@ -129,15 +129,15 @@
 "vpollution_chart_header_title"="IMECA";
 "vpollution_chart_header_pollutanttitle"="Principal contaminante";
 "vpollution_map_header_loading"="Cargando tu ubicacion actual";
-"vpollution_map_header_denied"="CDMX no puede accesar tu ubicacion. Activala en la Configuracion";
+"vpollution_map_header_denied"="CDMX no puede accesar tu ubicacion. Activala en la Configuración";
 "vpollution_map_header_imeca"="IMECA";
 "vpollution_map_header_km"="a %@ kilometros";
 "vpollution_pollutants_title"="Contaminantes actuales";
 
 "vradiation_index_title"="Ultravioleta";
-"vradiation_index_subtitle"="indice";
-"vradiation_buttonright_title"="Indice";
-"vradiation_about_title"="Indice ultravioleta";
+"vradiation_index_subtitle"="índice";
+"vradiation_buttonright_title"="Índice";
+"vradiation_about_title"="Índice ultravioleta";
 
 "vnodrive_title"="Hoy no circula";
 "vnodrive_calendar_title"="Calendario";
@@ -145,8 +145,8 @@
 "mmenu_section_city"="Ciudad";
 "mmenu_section_mobility"="Movilidad";
 "mmenu_section_app"="App";
-"mmenu_item_pollution"="Contaminacion";
-"mmenu_item_radiation"="Radiacion ultravioleta";
+"mmenu_item_pollution"="Contaminación";
+"mmenu_item_radiation"="Radiación ultravioleta";
 "mmenu_item_climate"="Clima";
 "mmenu_item_nodrive"="Hoy no circula";
 "mmenu_item_ecobici"="ecobici";
