@@ -1,0 +1,156 @@
+"mpollution_front_global"="Resumen general";
+
+"mpollution_chart_month"="Ultimos 30 dias";
+"mpollution_chart_week"="Ultimos 7 dias";
+"mpollution_chart_today"="Hoy";
+
+"mpollution_item_hourly_0"="Medianoche";
+"mpollution_item_hourly_1"="1:00 am";
+"mpollution_item_hourly_2"="2:00 am";
+"mpollution_item_hourly_3"="3:00 am";
+"mpollution_item_hourly_4"="4:00 am";
+"mpollution_item_hourly_5"="5:00 am";
+"mpollution_item_hourly_6"="6:00 am";
+"mpollution_item_hourly_7"="7:00 am";
+"mpollution_item_hourly_8"="8:00 am";
+"mpollution_item_hourly_9"="9:00 am";
+"mpollution_item_hourly_10"="10:00 am";
+"mpollution_item_hourly_11"="11:00 am";
+"mpollution_item_hourly_12"="12:00 pm";
+"mpollution_item_hourly_13"="1:00 pm";
+"mpollution_item_hourly_14"="2:00 pm";
+"mpollution_item_hourly_15"="3:00 pm";
+"mpollution_item_hourly_16"="4:00 pm";
+"mpollution_item_hourly_17"="5:00 pm";
+"mpollution_item_hourly_18"="6:00 pm";
+"mpollution_item_hourly_19"="7:00 pm";
+"mpollution_item_hourly_20"="8:00 pm";
+"mpollution_item_hourly_21"="9:00 pm";
+"mpollution_item_hourly_22"="10:00 pm";
+"mpollution_item_hourly_23"="11:00 pm";
+
+"mpollution_index_nodata"="Error leyendo info";
+"mpollution_index_acceptable"="Aceptable";
+"mpollution_index_warning"="Cuidado";
+"mpollution_index_danger"="Peligro";
+"mpollution_index_disaster"="Dañino";
+"mpollution_index_fallout"="Nocivo";
+
+"mradiation_index_none"="Ninguna";
+"mradiation_index_low"="Baja";
+"mradiation_index_mid"="Considerable";
+"mradiation_index_high"="Alta";
+"mradiation_index_veryhigh"="Muy alta";
+"mradiation_index_extreme"="Extrema";
+
+"mradiation_activity_exercise"="Ejercisio";
+"mradiation_activity_transport"="Transporte";
+"mradiation_activity_outdoors"="Pasatiempos";
+"mradiation_activity_cafe"="Terraza";
+
+"mradiation_precaution_umbrella"="Sombrilla";
+"mradiation_precaution_shades"="Gafas";
+"mradiation_precaution_sunscreen"="Bloqueador";
+
+"mradiation_precaution_level_notnecessary"="No necesario";
+"mradiation_precaution_level_advised"="Recomendado";
+"mradiation_precaution_level_mandatory"="Requerido";
+
+"mpollution_pollutant_name_0"="Desconocido";
+"mpollution_pollutant_name_101"="Benzeno";
+"mpollution_pollutant_name_102"="Tolueno";
+"mpollution_pollutant_name_103"="Solfato";
+"mpollution_pollutant_name_104"="Dióxido sulfurico";
+"mpollution_pollutant_name_105"="Nitrato";
+"mpollution_pollutant_name_106"="Dióxide nitrico";
+"mpollution_pollutant_name_107"="Oxide nitrico";
+"mpollution_pollutant_name_108"="Oxidos nitricos";
+"mpollution_pollutant_name_109"="Clorido";
+"mpollution_pollutant_name_1010"="Carbonato";
+"mpollution_pollutant_name_1011"="Monoxido de carbono";
+"mpollution_pollutant_name_1012"="Hidrogeno";
+"mpollution_pollutant_name_1013"="Amonio";
+"mpollution_pollutant_name_1014"="Calcio";
+"mpollution_pollutant_name_1015"="Magnesio";
+"mpollution_pollutant_name_1016"="Sodio";
+"mpollution_pollutant_name_1017"="Potasio";
+"mpollution_pollutant_name_1018"="Ozono";
+"mpollution_pollutant_name_1019"="Plomo";
+"mpollution_pollutant_name_1020"="Etilbenzeno";
+"mpollution_pollutant_name_1021"="Xileno";
+"mpollution_pollutant_name_1022"="Particulas";
+
+"mnodrive_rating_00"="00";
+"mnodrive_rating_0"="0";
+"mnodrive_rating_1"="1";
+"mnodrive_rating_2"="2";
+
+"mnodrive_today_section_free"="Todos circulan hoy";
+"mnodrive_today_section_plate"="Ultimo numero de la placa o color";
+"mnodrive_today_section_hologram"="Hologramas";
+"mnodrive_today_section_restriction"="Especificaciones";
+
+"mnodrive_today_restriction_time_title"="Tiempo";
+"mnodrive_today_restriction_time_info"="5:00 am - 10:00 pm";
+"mnodrive_today_restriction_foreigner_title"="Placas no de CDMX o Estado de México";
+"mnodrive_today_restriction_foreigner_yes_info"="Mismas reglas usando el ultimo numero";
+"mnodrive_today_restriction_foreigner_no_info"="Reglas diferentes, ve el calendario";
+"mnodrive_today_restriction_bike_title"="Motorcicletas";
+"mnodrive_today_restriction_bike_yes_info"="Mismas reglas que los coches";
+"mnodrive_today_restriction_bike_no_info"="Sin restricciones";
+"mnodrive_today_restriction_permit_title"="Permisos (sin placa)";
+"mnodrive_today_restriction_permit_yes_info"="Hoy no circula";
+"mnodrive_today_restriction_permit_no_info"="Puede circular";
+"mnodrive_today_restriction_tourist_title"="Pase turistico";
+"mnodrive_today_restriction_tourist_yes_info"="Puedes circular";
+"mnodrive_today_restriction_tourist_no_info"="No funcionan por ahora";
+
+"mnodrive_calendar_section_week"="Hoy no circulan entre semana y sabados";
+"mnodrive_calendar_section_foreigner"="Placas no de CDMX ó Estado de México";
+"mnodrive_calendar_item_week_0"="Lunes\n1º Sabado";
+"mnodrive_calendar_item_week_1"="Martes\n2º Sabado";
+"mnodrive_calendar_item_week_2"="Miercoles\n3º Sabado";
+"mnodrive_calendar_item_week_3"="Jueves\n4º Sabado";
+"mnodrive_calendar_item_week_4"="Viernes\n5º Sabado";
+"mnodrive_calendar_item_week_permit"="y permisos";
+"mnodrive_calendar_foreigner_same"="Mismas reglas que las placas locales, no circula de acuerdo al ultimo numero de la placa";
+"mnodrive_calendar_foreigner_plates"="No circula un dia entre semana de acuerdo al ultimo numero en la placa";
+"mnodrive_calendar_foreigner_mornings"="No circula entre semana entre 5:00 am y 11:00 am";
+"mnodrive_calendar_foreigner_saturdays"="No circula los sabados";
+
+"vpollution_error_button"="Intenta de nuevo";
+"vpollution_radio_chart_title"="IMECA";
+"vpollution_front_header_button_imeca"="Acerca de IMECA";
+"vpollution_front_header_button_recommendation"="Recomendaciones";
+"vpollution_front_header_button_pollutant"="Acerca %@";
+"vpollution_front_header_button_allpollutants"="Contaminantes actuales";
+"vpollutionimeca_title"="IMECA";
+
+"vpollution_chart_header_title"="IMECA";
+"vpollution_chart_header_pollutanttitle"="Principal contaminante";
+"vpollution_map_header_loading"="Cargando tu ubicacion actual";
+"vpollution_map_header_denied"="CDMX no puede accesar tu ubicacion. Activala en la Configuracion";
+"vpollution_map_header_imeca"="IMECA";
+"vpollution_map_header_km"="a %@ kilometros";
+"vpollution_pollutants_title"="Contaminantes actuales";
+
+"vradiation_index_title"="Ultravioleta";
+"vradiation_index_subtitle"="indice";
+"vradiation_buttonright_title"="Acerca de";
+"vradiation_about_title"="Indice ultravioleta";
+
+"vnodrive_title"="Hoy no circula";
+"vnodrive_calendar_title"="Calendario";
+
+"mmenu_section_city"="Ciudad";
+"mmenu_section_mobility"="Movilidad";
+"mmenu_section_app"="App";
+"mmenu_item_pollution"="Contaminacion";
+"mmenu_item_radiation"="Radiacion ultravioleta";
+"mmenu_item_climate"="Clima";
+"mmenu_item_nodrive"="Hoy no circula";
+"mmenu_item_ecobici"="ecobici";
+"mmenu_item_about"="Acerca de";
+
+"api_error_nodata"="El servidor no responde, intenta de nuevo";
+"api_error_invalidjson"="Problemas al conectarse con el servidor, intenta de nuevo";
