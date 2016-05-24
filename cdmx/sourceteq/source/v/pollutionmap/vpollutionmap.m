@@ -207,8 +207,6 @@ static NSInteger const mapinteritemspace = -1;
     MKCoordinateRegion region = MKCoordinateRegionMake(model.annotation.coordinate, self.mapspan);
     [self.display setRegion:region animated:YES];
     [self.display selectAnnotation:model.annotation animated:YES];
-    
-    [[analytics singleton] trackevent:self.controller action:@"map" label:model.name];
 }
 
 #pragma mark location delegate
@@ -273,7 +271,7 @@ static NSInteger const mapinteritemspace = -1;
         NSInteger index = [self.model.items indexOfObject:annotation.model];
         [self.collection selectItemAtIndexPath:[NSIndexPath indexPathForItem:index inSection:0] animated:YES scrollPosition:UICollectionViewScrollPositionCenteredVertically];
         
-        [[analytics singleton] trackevent:self.controller action:@"map" label:annotation.title];
+        [[analytics singleton] trackevent:self.controller action:@"map" label:annotation.model.name];
     }
 }
 

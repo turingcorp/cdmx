@@ -86,7 +86,7 @@
 "mnodrive_rating_2"="2";
 
 "mnodrive_today_section_free"="Todos circulan hoy";
-"mnodrive_today_section_plate"="Ultimo numero de la placa o color";
+"mnodrive_today_section_plate"="Ultimo numero en la placa o color";
 "mnodrive_today_section_hologram"="Hologramas";
 "mnodrive_today_section_restriction"="Especificaciones";
 
@@ -95,15 +95,15 @@
 "mnodrive_today_restriction_foreigner_title"="Placas no de CDMX o Estado de México";
 "mnodrive_today_restriction_foreigner_yes_info"="Mismas reglas usando el ultimo numero";
 "mnodrive_today_restriction_foreigner_no_info"="Reglas diferentes, ve el calendario";
-"mnodrive_today_restriction_bike_title"="Motorcicletas";
+"mnodrive_today_restriction_bike_title"="Motocicletas";
 "mnodrive_today_restriction_bike_yes_info"="Mismas reglas que los coches";
 "mnodrive_today_restriction_bike_no_info"="Sin restricciones";
 "mnodrive_today_restriction_permit_title"="Permisos (sin placa)";
 "mnodrive_today_restriction_permit_yes_info"="Hoy no circula";
 "mnodrive_today_restriction_permit_no_info"="Puede circular";
 "mnodrive_today_restriction_tourist_title"="Pase turistico";
-"mnodrive_today_restriction_tourist_yes_info"="Puedes circular";
-"mnodrive_today_restriction_tourist_no_info"="No funcionan por ahora";
+"mnodrive_today_restriction_tourist_yes_info"="Puede circular";
+"mnodrive_today_restriction_tourist_no_info"="No activos por ahora";
 
 "mnodrive_calendar_section_week"="Hoy no circulan entre semana y sabados";
 "mnodrive_calendar_section_foreigner"="Placas no de CDMX ó Estado de México";
@@ -113,7 +113,7 @@
 "mnodrive_calendar_item_week_3"="Jueves\n4º Sabado";
 "mnodrive_calendar_item_week_4"="Viernes\n5º Sabado";
 "mnodrive_calendar_item_week_permit"="y permisos";
-"mnodrive_calendar_foreigner_same"="Mismas reglas que las placas locales, no circula de acuerdo al ultimo numero de la placa";
+"mnodrive_calendar_foreigner_same"="Mismas reglas que las placas locales, no circula de acuerdo al ultimo numero en la placa";
 "mnodrive_calendar_foreigner_plates"="No circula un dia entre semana de acuerdo al ultimo numero en la placa";
 "mnodrive_calendar_foreigner_mornings"="No circula entre semana entre 5:00 am y 11:00 am";
 "mnodrive_calendar_foreigner_saturdays"="No circula los sabados";
