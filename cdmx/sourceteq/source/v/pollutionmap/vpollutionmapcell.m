@@ -13,7 +13,7 @@
     [label setTranslatesAutoresizingMaskIntoConstraints:NO];
     [label setUserInteractionEnabled:NO];
     [label setTextAlignment:NSTextAlignmentCenter];
-    [label setFont:[UIFont boldsize:14]];
+    [label setFont:[UIFont boldsize:13]];
     self.label = label;
     
     [self addSubview:label];

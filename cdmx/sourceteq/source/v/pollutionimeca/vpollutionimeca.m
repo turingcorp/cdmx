@@ -20,6 +20,9 @@ static NSInteger const labelmarginbottom = 50;
     summarginx = labelmarginx + labelmarginx;
     summarginy = labelmargintop + labelmarginbottom;
     
+    NSString *plainstring = [NSString stringWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"imeca" withExtension:@"txt"] encoding:NSUTF8StringEncoding error:nil];
+    self.attrstring = [[NSAttributedString alloc] initWithString:plainstring attributes:@{NSFontAttributeName:[UIFont regularsize:16]}];
+    
     UIScrollView *scroll = [[UIScrollView alloc] init];
     [scroll setClipsToBounds:YES];
     [scroll setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -32,7 +35,8 @@ static NSInteger const labelmarginbottom = 50;
     [label setBackgroundColor:[UIColor clearColor]];
     [label setUserInteractionEnabled:NO];
     [label setNumberOfLines:0];
-    [label setTextColor:[UIColor colorWithWhite:0.3 alpha:1]];
+    [label setTextColor:[UIColor colorWithWhite:0.4 alpha:1]];
+    [label setAttributedText:self.attrstring];
     self.label = label;
     
     [scroll addSubview:label];
@@ -51,32 +55,17 @@ static NSInteger const labelmarginbottom = 50;
 {
     __weak typeof(self) welf = self;
     
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
+    CGFloat width = self.bounds.size.width;
+    CGFloat remainwidth = width - summarginx;
+    CGFloat textheight = ceilf([welf.attrstring boundingRectWithSize:CGSizeMake(remainwidth, 4000) options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading context:nil].size.height);
+    CGSize size = CGSizeMake(width, textheight + summarginy);
+    CGRect frame = CGRectMake(labelmarginx, labelmargintop, remainwidth, textheight);
+    
+    dispatch_async(dispatch_get_main_queue(),
                    ^
                    {
-                       if(!welf.attrstring)
-                       {
-                           CGFloat width = welf.scroll.bounds.size.width;
-                           
-                           if(width)
-                           {
-                               NSString *plainstring = [NSString stringWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"imeca" withExtension:@"txt"] encoding:NSUTF8StringEncoding error:nil];
-                               welf.attrstring = [[NSAttributedString alloc] initWithString:plainstring attributes:@{NSFontAttributeName:[UIFont regularsize:18]}];
-                               
-                               CGFloat remainwidth = width - summarginx;
-                               CGFloat textheight = ceilf([welf.attrstring boundingRectWithSize:CGSizeMake(remainwidth, 4000) options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading context:nil].size.height);
-                               CGSize size = CGSizeMake(width, textheight + summarginy);
-                               CGRect frame = CGRectMake(labelmarginx, labelmargintop, remainwidth, textheight);
-                               
-                               dispatch_async(dispatch_get_main_queue(),
-                                              ^
-                                              {
-                                                  [welf.scroll setContentSize:size];
-                                                  [welf.label setFrame:frame];
-                                                  [welf.label setAttributedText:welf.attrstring];
-                                              });
-                           }
-                       }
+                       [welf.scroll setContentSize:size];
+                       [welf.label setFrame:frame];
                    });
     
     [super layoutSubviews];
