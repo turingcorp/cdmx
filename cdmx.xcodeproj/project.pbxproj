@@ -2144,9 +2144,9 @@
 				INFOPLIST_FILE = "$(SRCROOT)/cdmx/sourceteq/core/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = iturbide.graphuss;
+				PRODUCT_BUNDLE_IDENTIFIER = iturbide.cdmx;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2e2460a5-197b-44fd-81b6-014d47abb850";
+				PROVISIONING_PROFILE = "adef29ab-7ffd-49ca-9ac1-8eace1b7eceb";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -2162,9 +2162,9 @@
 				INFOPLIST_FILE = "$(SRCROOT)/cdmx/sourceteq/core/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = iturbide.graphuss;
+				PRODUCT_BUNDLE_IDENTIFIER = iturbide.cdmx;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "9890c42a-ee9a-42df-8945-d018afd06809";
+				PROVISIONING_PROFILE = "4ea52ed7-60e8-4377-bc9d-8dcc2d5a63e2";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
