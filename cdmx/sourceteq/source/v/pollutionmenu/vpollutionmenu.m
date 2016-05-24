@@ -2,6 +2,7 @@
 #import "vpollutionmenucell.h"
 #import "ecollectioncell.h"
 #import "ecolor.h"
+#import "analytics.h"
 
 static NSInteger const menucellwidth = 50;
 
@@ -144,6 +145,8 @@ static NSInteger const menucellwidth = 50;
     {
         mpollutionmenuitem *model = [self modelforindex:index];
         [model actionselected:self.controller.view];
+        
+        [[analytics singleton] trackevent:self.controller action:model.asset label:nil];
     }
 }
 

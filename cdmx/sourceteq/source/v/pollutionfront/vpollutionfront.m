@@ -4,6 +4,7 @@
 #import "ecollectioncell.h"
 #import "ecollectionreusable.h"
 #import "genericconstants.h"
+#import "analytics.h"
 
 static NSInteger const frontcellwidth = 170;
 
@@ -229,6 +230,8 @@ static NSInteger const frontcellwidth = 170;
     trackscroll = NO;
     [col scrollToItemAtIndexPath:index atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
     [self postselect:index.item];
+    
+    [[analytics singleton] trackevent:self.controller action:@"front" label:self.currentitem.name];
 }
 
 @end

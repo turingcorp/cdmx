@@ -5,6 +5,7 @@
 #import "vpollutionchartercell.h"
 #import "genericconstants.h"
 #import "cpollution.h"
+#import "analytics.h"
 
 static NSInteger const chartercellheight = 40;
 static NSInteger const charterinteritem = -1;
@@ -135,6 +136,8 @@ static NSInteger const charterinteritem = -1;
 {
     mpollutionchartitem *model = [self modelforindex:index];
     [self selectmodel:model];
+    
+    [[analytics singleton] trackevent:self.controller action:@"charter" label:model.name];
 }
 
 @end
