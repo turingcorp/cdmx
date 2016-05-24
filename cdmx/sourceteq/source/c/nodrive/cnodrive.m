@@ -62,7 +62,7 @@
     [self loadnodrive];
 }
 
-#pragma mark functionality
+#pragma mark public
 
 -(void)loadnodrive
 {
@@ -75,8 +75,6 @@
                        welf.apimanager = [amanager call:[acall nodrive] delegate:welf];
                    });
 }
-
-#pragma mark public
 
 -(void)menu
 {
@@ -121,7 +119,14 @@
 
 -(void)call:(amanager*)manager error:(NSString*)error
 {
-#warning "treat error";
+    __weak typeof(self) welf = self;
+    
+    dispatch_async(dispatch_get_main_queue(),
+                   ^
+                   {
+                       welf.model = nil;
+                       [welf.view error:error];
+                   });
 }
 
 @end

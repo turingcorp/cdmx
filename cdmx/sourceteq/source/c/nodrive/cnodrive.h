@@ -5,6 +5,7 @@
 
 @interface cnodrive:UIViewController<acalldelegate>
 
+-(void)loadnodrive;
 -(void)menu;
 -(void)calendar;
 
