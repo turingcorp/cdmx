@@ -16,7 +16,7 @@
     [title setNumberOfLines:0];
     [title setUserInteractionEnabled:NO];
     [title setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [title setTextColor:[UIColor colorWithWhite:0.3 alpha:1hah]];
+    [title setTextColor:[UIColor colorWithWhite:0.3 alpha:1]];
     self.title = title;
     
     [self addSubview:title];

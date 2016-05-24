@@ -9,7 +9,7 @@
 
 static NSInteger const menubarheight = 150;
 static NSInteger const menucollectionbottom = 40;
-static NSInteger const menuheaderheight = 32;
+static NSInteger const menuheaderheight = 50;
 static NSInteger const menucellheight = 60;
 static NSInteger const menuinteritem = -1;
 
