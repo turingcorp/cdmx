@@ -9,7 +9,7 @@
 
 @property(strong, nonatomic)vclimate *view;
 @property(weak, nonatomic, readonly)cmain *parentViewController;
-@property(strong, nonatomic, readwrite)mnclimate *model;
+@property(strong, nonatomic, readwrite)mclimate *model;
 
 @end
 
@@ -117,7 +117,7 @@
                    ^
                    {
                        welf.model = nil;
-                       [welf.view error:error];
+//                       [welf.view error:error];
                    });
 }
 
