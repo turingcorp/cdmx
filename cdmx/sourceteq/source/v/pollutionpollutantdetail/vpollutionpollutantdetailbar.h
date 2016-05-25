@@ -3,6 +3,8 @@
 
 @interface vpollutionpollutantdetailbar:UIView
 
+-(instancetype)init:(cpollutionpollutantdetail*)controller;
+
 @property(weak, nonatomic)cpollutionpollutantdetail *controller;
 
 @end
