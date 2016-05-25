@@ -1,13 +1,14 @@
-//
-//  cclimate.h
-//  cdmx
-//
-//  Created by zero on 5/24/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
+#import <UIKit/UIKit.h>
+#import "acalldelegate.h"
+#import "amanager.h"
+#import "mclimate.h"
 
-#import <Foundation/Foundation.h>
+@interface cclimate:UIViewController<acalldelegate>
 
-@interface cclimate : NSObject
+-(void)loadclimate;
+-(void)menu;
+
+@property(weak, nonatomic)amanager *apimanager;
+@property(strong, nonatomic, readonly)mclimate *model;
 
 @end
