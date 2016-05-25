@@ -24,4 +24,10 @@
     self.view = [[vpollutionrecommendation alloc] init:self];
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self.view viewappear];
+}
+
 @end
