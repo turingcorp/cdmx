@@ -1,13 +1,8 @@
-//
-//  vpollutionpollutantdetailbar.h
-//  cdmx
-//
-//  Created by zero on 5/25/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
+#import <UIKit/UIKit.h>
+#import "cpollutionpollutantdetail.h"
 
-#import <Foundation/Foundation.h>
+@interface vpollutionpollutantdetailbar:UIView
 
-@interface vpollutionpollutantdetailbar : NSObject
+@property(weak, nonatomic)cpollutionpollutantdetail *controller;
 
 @end
