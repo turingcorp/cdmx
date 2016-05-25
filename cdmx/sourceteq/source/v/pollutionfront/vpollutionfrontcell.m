@@ -71,7 +71,7 @@ static NSInteger const cellapparentheight = 160;
 
 -(void)actionup:(UIButton*)button
 {
-    [self.front showdetail];
+    [self.front showdetail:YES];
 }
 
 #pragma mark functionality

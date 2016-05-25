@@ -14,6 +14,7 @@ static NSInteger const frontcellwidth = 170;
     NSInteger currentheaderaddheight;
     NSInteger selected;
     NSInteger currentitems;
+    NSInteger sections;
     BOOL trackscroll;
 }
 
@@ -23,6 +24,7 @@ static NSInteger const frontcellwidth = 170;
     self.model = (mpollutionfront*)controller.model.option;
     trackscroll = NO;
     selected = -1;
+    sections = 1;
     
     vpollutionfrontlayout *layout = [[vpollutionfrontlayout alloc] init];
     self.layout = layout;
@@ -49,7 +51,7 @@ static NSInteger const frontcellwidth = 170;
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
     
     [self postselect:0];
-    [self showdetail];
+    [self showdetail:NO];
     
     return self;
 }
@@ -76,28 +78,37 @@ static NSInteger const frontcellwidth = 170;
 -(void)updatecollection:(UICollectionViewScrollDirection)direction
 {
     NSIndexSet *index = [NSIndexSet indexSetWithIndex:0];
+    sections = 0;
     __weak typeof(self) welf = self;
     
     [welf.collection performBatchUpdates:
      ^
      {
          [welf.collection deleteSections:index];
-         [welf.collection insertSections:index];
      } completion:
      ^(BOOL done)
      {
          [welf.layout setScrollDirection:direction];
+         sections = 1;
          
-         if(currentitems)
-         {
-             [welf.collection selectItemAtIndexPath:[NSIndexPath indexPathForItem:selected inSection:0] animated:NO scrollPosition:UICollectionViewScrollPositionCenteredHorizontally];
-         }
+         [welf.collection performBatchUpdates:
+          ^
+          {
+              [welf.collection insertSections:index];
+          } completion:
+          ^(BOOL done)
+          {
+              if(currentitems)
+              {
+                  [welf.collection selectItemAtIndexPath:[NSIndexPath indexPathForItem:selected inSection:0] animated:NO scrollPosition:UICollectionViewScrollPositionCenteredHorizontally];
+              }
+          }];
      }];
 }
 
 #pragma mark public
 
--(void)showdetail
+-(void)showdetail:(BOOL)update
 {
     currentheadermultiplier = 1;
     currentheaderaddheight = pollution_drawableheight - navbarheightmin;
@@ -105,7 +116,11 @@ static NSInteger const frontcellwidth = 170;
     
     [self.collection setAlwaysBounceHorizontal:NO];
     [self.collection setAlwaysBounceVertical:YES];
-    [self updatecollection:UICollectionViewScrollDirectionVertical];
+    
+    if(update)
+    {
+        [self updatecollection:UICollectionViewScrollDirectionVertical];
+    }
 }
 
 -(void)showlist
@@ -200,7 +215,7 @@ static NSInteger const frontcellwidth = 170;
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView*)col
 {
-    return 1;
+    return sections;
 }
 
 -(NSInteger)collectionView:(UICollectionView*)col numberOfItemsInSection:(NSInteger)section

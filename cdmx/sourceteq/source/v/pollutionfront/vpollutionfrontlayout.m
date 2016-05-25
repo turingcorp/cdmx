@@ -16,7 +16,8 @@
 -(UICollectionViewLayoutAttributes*)initialLayoutAttributesForAppearingSupplementaryElementOfKind:(NSString*)kind atIndexPath:(NSIndexPath*)index
 {
     UICollectionViewLayoutAttributes *attributes = [super initialLayoutAttributesForAppearingSupplementaryElementOfKind:kind atIndexPath:index];
-    attributes.frame = CGRectMake(attributes.frame.origin.x, 30, attributes.frame.size.width, attributes.frame.size.height);
+    
+    attributes.frame = CGRectMake(0, 30, attributes.frame.size.width, attributes.frame.size.height);
     attributes.alpha = 0.3;
     
     return attributes;
