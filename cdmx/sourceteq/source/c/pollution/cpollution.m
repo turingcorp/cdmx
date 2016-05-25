@@ -14,6 +14,9 @@ static NSInteger const framespersecond = 60;
 @end
 
 @implementation cpollution
+{
+    BOOL pushback;
+}
 
 @dynamic view;
 @dynamic parentViewController;
@@ -43,12 +46,23 @@ static NSInteger const framespersecond = 60;
     [self setPreferredFramesPerSecond:framespersecond];
     [self setResumeOnDidBecomeActive:YES];
     [self setDelegate:self];
+    
+    pushback = NO;
 }
 
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [self loadpollution];
+    
+    if(pushback)
+    {
+        pushback = NO;
+    }
+    else
+    {
+        [self loadpollution];
+    }
+    
     [self activelistener];
 }
 
@@ -98,8 +112,7 @@ static NSInteger const framespersecond = 60;
 {
     [NSNotification becomeactiveremove:self];
     [self.parentViewController pushcontroller:controller];
-    [self.model clean];
-    [self.view loading];
+    pushback = YES;
 }
 
 #pragma mark -
