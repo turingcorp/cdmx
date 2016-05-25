@@ -62,7 +62,7 @@
 "mpollution_pollutant_name_103"="Solfato";
 "mpollution_pollutant_name_104"="Dióxido sulfurico";
 "mpollution_pollutant_name_105"="Nitrato";
-"mpollution_pollutant_name_106"="Dióxide nitrico";
+"mpollution_pollutant_name_106"="Dióxido de nitrógeno";
 "mpollution_pollutant_name_107"="Oxide nitrico";
 "mpollution_pollutant_name_108"="Oxidos nitricos";
 "mpollution_pollutant_name_109"="Clorido";
@@ -78,7 +78,7 @@
 "mpollution_pollutant_name_1019"="Plomo";
 "mpollution_pollutant_name_1020"="Etilbenzeno";
 "mpollution_pollutant_name_1021"="Xileno";
-"mpollution_pollutant_name_1022"="Particulas";
+"mpollution_pollutant_name_1022"="Partículas";
 
 "mnodrive_rating_00"="00";
 "mnodrive_rating_0"="0";

@@ -11,4 +11,4 @@ Contaminantes considerados en el índice
     ■ Monóxido de carbono
     ■ Dióxido de azufre
     ■ Dióxido de nitrógeno
-    ■ Partículas suspendidas (polvo)
+    ■ Partículas suspendidas
