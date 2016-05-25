@@ -25,4 +25,34 @@ static NSInteger const pollutantdetailbarheight = 150;
     return self;
 }
 
+#pragma mark public
+
+-(void)viewappear
+{
+    /*
+    NSDictionary *pollutants = [NSDictionary dictionaryWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"pollutants" withExtension:@"plist"]];
+    NSDictionary *attributes = @{NSFontAttributeName:[UIFont regularsize:15]};
+    
+    for(mpollutionpollutant *item in welf.controller.items)
+    {
+        NSNumber *pollutantid = item.serverid;
+        NSString *pollutantkey = [NSString stringWithFormat:@"%@", pollutantid];
+        NSDictionary *rawpollutant = pollutants[pollutantkey];
+        
+        if(rawpollutant)
+        {
+            NSString *symbol = rawpollutant[@"symbol"];
+            NSString *info = rawpollutant[@"info"];
+            
+            if(!symbol)
+            {
+                symbol = @"";
+            }
+            
+            [item createattributedstring:info attributes:attributes width:width];
+            item.symbol = symbol;
+        }
+    }*/
+}
+
 @end
