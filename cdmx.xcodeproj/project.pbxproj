@@ -26,6 +26,7 @@
 		DA09174A1CF38FCB00FD1366 /* vnodrivecalendarcell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0917491CF38FCB00FD1366 /* vnodrivecalendarcell.m */; };
 		DA09174D1CF38FE400FD1366 /* vnodrivecalendarcellweek.m in Sources */ = {isa = PBXBuildFile; fileRef = DA09174C1CF38FE400FD1366 /* vnodrivecalendarcellweek.m */; };
 		DA0917531CF3900300FD1366 /* vnodrivecalendarcellforeigner.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0917521CF3900300FD1366 /* vnodrivecalendarcellforeigner.m */; };
+		DA0F26641CF5363800E0D03F /* cclimate.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0F26631CF5363800E0D03F /* cclimate.m */; };
 		DA13FCD71CEAA4F800DE7A23 /* imeca.txt in Resources */ = {isa = PBXBuildFile; fileRef = DA13FCD51CEAA4F800DE7A23 /* imeca.txt */; };
 		DA169ED91CF341EE00E61B8A /* mnodrivetodayitemrestrictiontourist.m in Sources */ = {isa = PBXBuildFile; fileRef = DA169ED81CF341EE00E61B8A /* mnodrivetodayitemrestrictiontourist.m */; };
 		DA169EDC1CF3488C00E61B8A /* cnodrivecalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = DA169EDB1CF3488C00E61B8A /* cnodrivecalendar.m */; };
@@ -281,6 +282,8 @@
 		DA09174C1CF38FE400FD1366 /* vnodrivecalendarcellweek.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vnodrivecalendarcellweek.m; sourceTree = "<group>"; };
 		DA0917511CF3900300FD1366 /* vnodrivecalendarcellforeigner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vnodrivecalendarcellforeigner.h; sourceTree = "<group>"; };
 		DA0917521CF3900300FD1366 /* vnodrivecalendarcellforeigner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vnodrivecalendarcellforeigner.m; sourceTree = "<group>"; };
+		DA0F26621CF5363800E0D03F /* cclimate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cclimate.h; sourceTree = "<group>"; };
+		DA0F26631CF5363800E0D03F /* cclimate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cclimate.m; sourceTree = "<group>"; };
 		DA13FCD61CEAA4F800DE7A23 /* en */ = {isa = PBXFileReference; lastKnownFileType = text; name = en; path = en.lproj/imeca.txt; sourceTree = "<group>"; };
 		DA13FCD81CEAA4FF00DE7A23 /* es */ = {isa = PBXFileReference; lastKnownFileType = text; name = es; path = es.lproj/imeca.txt; sourceTree = "<group>"; };
 		DA169ED71CF341EE00E61B8A /* mnodrivetodayitemrestrictiontourist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mnodrivetodayitemrestrictiontourist.h; sourceTree = "<group>"; };
@@ -752,6 +755,15 @@
 				DA05C6D71CE6388500A22A5E /* vpollutionmapcell.m */,
 			);
 			path = pollutionmap;
+			sourceTree = "<group>";
+		};
+		DA0F26611CF5360100E0D03F /* climate */ = {
+			isa = PBXGroup;
+			children = (
+				DA0F26621CF5363800E0D03F /* cclimate.h */,
+				DA0F26631CF5363800E0D03F /* cclimate.m */,
+			);
+			path = climate;
 			sourceTree = "<group>";
 		};
 		DA169EDD1CF3490400E61B8A /* nodrivecalendar */ = {
@@ -1371,6 +1383,7 @@
 		DAD33FD21CBC83E300C87502 /* c */ = {
 			isa = PBXGroup;
 			children = (
+				DA0F26611CF5360100E0D03F /* climate */,
 				DAD7AA3B1CEFB6F7003B169A /* nodrive */,
 				DA3F6BF81CEBC8DB00625BE9 /* radiation */,
 				DA3F6BBA1CEB8E0500625BE9 /* menu */,
@@ -1909,6 +1922,7 @@
 				DAD7AA6A1CF0D9C0003B169A /* mnodriveratingone.m in Sources */,
 				DAD7AA451CEFBEAE003B169A /* vnodrivebar.m in Sources */,
 				DA3F6BF71CEBBE1D00625BE9 /* mmenusectionitemabout.m in Sources */,
+				DA0F26641CF5363800E0D03F /* cclimate.m in Sources */,
 				DA0917351CF3870900FD1366 /* mnodrivecalendaritemforeigner.m in Sources */,
 				DAEA5A061CEA40A300584526 /* mpollutionfrontitemoptionpollutant.m in Sources */,
 				DA3F6BD41CEB918E00625BE9 /* mmenusectionitempollution.m in Sources */,
