@@ -24,12 +24,15 @@
         {
             NSNumber *serverid = item.pollutant.serverid;
             
-            if(![pollids containsObject:serverid])
+            if(serverid.integerValue)
             {
-                mpollutionpollutant *pollutant = [mpollutionpollutant server:serverid];
-                
-                [pollids addObject:serverid];
-                [pollutants addObject:pollutant];
+                if(![pollids containsObject:serverid])
+                {
+                    mpollutionpollutant *pollutant = [mpollutionpollutant server:serverid];
+                    
+                    [pollids addObject:serverid];
+                    [pollutants addObject:pollutant];
+                }
             }
         }
     }
