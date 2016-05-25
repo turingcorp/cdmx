@@ -132,7 +132,8 @@
 "vpollution_map_header_denied"="CDMX no puede accesar tu ubicacion. Activala en la Configuración";
 "vpollution_map_header_imeca"="IMECA";
 "vpollution_map_header_km"="a %@ kilometros";
-"vpollution_pollutants_title"="Contaminantes actuales";
+"vpollution_pollutants_title_plural"="Contaminantes actuales";
+"vpollution_pollutants_title_singular"="Principal contaminante";
 
 "vradiation_index_title"="Ultravioleta";
 "vradiation_index_subtitle"="índice";
