@@ -3,37 +3,38 @@
 <plist version="1.0">
     <dict>
         <key>nodata</key>
-        <string>La estación de monitoreo esta fuera de linea o en mantenimiento, condiciones actuales son desconocidas, intenta mas tarde</string>
+        <string>La estación de monitoreo esta fuera de linea o en mantenimiento, condiciones actuales son desconocidas, intenta mas tarde.</string>
         <key>acceptable</key>
         <string>Calidad del aire satisfactoria y sin riesgos a tu salud.
             
-            Revisa el indice de radiación Ultra Violeta antes realizar alguna actividad prolongada al aire libre.</string>
+Revisa el indice de radiación Ultra Violeta antes de realizar alguna actividad prolongada al aire libre.</string>
         <key>warning</key>
         <string>Aire con presencia de contaminantes, si eres de salud delicada es posible que resultes afectado al salir de casa.
             
-            Es recomendable que niños y adultos mayores permanescan poco al aire libre.</string>
+Es recomendable que niños y adultos mayores permanescan poco al aire libre.</string>
         <key>danger</key>
         <string>Aire contaminado, limita salir de casa, evita fumar o permanecer cerca de alguien que este fumando, consume bastantes liquidos.
-            Alejate de parrillas, fogones, chimeneas ó cualquier otro tipo de combustión.
             
-            Niños y adultos mayores correran riesgos a su salud si salen de casa.</string>
+Alejate de parrillas, fogones, chimeneas ó cualquier otro tipo de combustión.
+            
+Niños y adultos mayores correran riesgos a su salud si salen de casa.</string>
         <key>disaster</key>
         <string>Fase 1 de Contingencia Ambiental.
             
-            Evita salir de casa, fumar ó estar cerca de alguien que fuma.
-            Alejate de parrillas, fogones, chimeneas, ó cualquier otro tipo de combustión.
+Evita salir de casa, fumar ó estar cerca de alguien que fuma.
+Alejate de parrillas, fogones, chimeneas, ó cualquier otro tipo de combustión.
             
-            Consume bastantes liquidos y ten especial cuidado con niños y adultos mayores pues seran mas propensos a enfermedades respiratorias.
+Consume bastantes liquidos y ten especial cuidado con niños y adultos mayores pues seran mas propensos a enfermedades respiratorias.
             
             En caso de que sea muy necesario salir de casa revisa antes el Hoy no circular.</string>
         <key>fallout</key>
         <string>Fase 2 de Contingencia Ambiental, estado de emergencia debido al alto nivel de contaminación.
             
-            Tu salud esta en peligro y más la de niños y adultos mayores.
-            No salgas de casa y no fumes.
+Tu salud esta en peligro y más la de niños y adultos mayores.
+No salgas de casa y no fumes.
             
-            Alejate de cualquier tipo de combustión como parrillas, fogones y chimeneas. Consume bastantes liquidos.
+Alejate de cualquier tipo de combustión como parrillas, fogones y chimeneas. Consume bastantes liquidos.
             
-            Si necesitas salir urgentemente de tu casa revisa el primero el Hoy no circula.</string>
+Si necesitas salir urgentemente de tu casa revisa el primero el Hoy no circula.</string>
     </dict>
 </plist>
