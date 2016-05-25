@@ -29,7 +29,7 @@
 "mpollution_item_hourly_22"="10:00 pm";
 "mpollution_item_hourly_23"="11:00 pm";
 
-"mpollution_index_nodata"="Error leyendo info";
+"mpollution_index_nodata"="No disponible";
 "mpollution_index_acceptable"="Aceptable";
 "mpollution_index_warning"="Cuidado";
 "mpollution_index_danger"="Riesgoso";
