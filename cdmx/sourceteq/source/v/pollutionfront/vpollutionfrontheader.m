@@ -207,6 +207,13 @@ static NSInteger const infomarginx = 10;
     mpollutionfrontitemoption *model = [self modelforindex:index];
     UIViewController *controller = [model controller];
     [self.controller option:controller];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC), dispatch_get_main_queue(),
+                   ^
+                   {
+                       UICollectionViewCell *cell = [col cellForItemAtIndexPath:index];
+                       [cell setSelected:NO];
+                   });
 }
 
 @end
