@@ -35,7 +35,7 @@ static NSInteger const infomarginx = 10;
     
     UIView *bordertop = [[UIView alloc] init];
     [bordertop setUserInteractionEnabled:NO];
-    [bordertop setBackgroundColor:[UIColor background]];
+    [bordertop setBackgroundColor:[UIColor colorWithWhite:0 alpha:0.3]];
     [bordertop setTranslatesAutoresizingMaskIntoConstraints:NO];
     
     UILabel *labelpollutanttitle = [[UILabel alloc] init];
@@ -101,7 +101,7 @@ static NSInteger const infomarginx = 10;
     self.layoutcollectionheight = [NSLayoutConstraint constraintWithItem:collection attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:0];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[blanket]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(bordery)-[blanket]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-5-[bordertop]-5-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[bordertop]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(bordery)-[bordertop(1)]-0-[current]-20-[radiochart]-15-[labelpollutanttitle(14)]-0-[labelpollutant(21)]" options:0 metrics:metrics views:views]
      ];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[collection]-0-|" options:0 metrics:metrics views:views]
