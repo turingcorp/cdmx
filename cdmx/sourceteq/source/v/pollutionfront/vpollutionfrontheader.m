@@ -42,7 +42,7 @@ static NSInteger const infomarginx = 10;
     [labelpollutanttitle setBackgroundColor:[UIColor clearColor]];
     [labelpollutanttitle setTranslatesAutoresizingMaskIntoConstraints:NO];
     [labelpollutanttitle setUserInteractionEnabled:NO];
-    [labelpollutanttitle setTextColor:[UIColor colorWithWhite:0 alpha:0.4]];
+    [labelpollutanttitle setTextColor:[UIColor colorWithWhite:0.6 alpha:1]];
     [labelpollutanttitle setNumberOfLines:0];
     [labelpollutanttitle setFont:[UIFont regularsize:12]];
     [labelpollutanttitle setTextAlignment:NSTextAlignmentCenter];
@@ -53,9 +53,9 @@ static NSInteger const infomarginx = 10;
     [labelpollutant setBackgroundColor:[UIColor clearColor]];
     [labelpollutant setTranslatesAutoresizingMaskIntoConstraints:NO];
     [labelpollutant setUserInteractionEnabled:NO];
-    [labelpollutant setTextColor:[UIColor main]];
+    [labelpollutant setTextColor:[UIColor colorWithWhite:0.5 alpha:1]];
     [labelpollutant setNumberOfLines:0];
-    [labelpollutant setFont:[UIFont boldsize:18]];
+    [labelpollutant setFont:[UIFont boldsize:14]];
     [labelpollutant setTextAlignment:NSTextAlignmentCenter];
     self.labelpollutant = labelpollutant;
     
@@ -102,7 +102,7 @@ static NSInteger const infomarginx = 10;
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[blanket]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(bordery)-[blanket]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[bordertop]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(bordery)-[bordertop(1)]-0-[current]-20-[radiochart]-15-[labelpollutanttitle(14)]-0-[labelpollutant(21)]" options:0 metrics:metrics views:views]
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(bordery)-[bordertop(1)]-0-[current]-20-[radiochart]-10-[labelpollutanttitle(14)]-0-[labelpollutant(17)]" options:0 metrics:metrics views:views]
      ];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[collection]-0-|" options:0 metrics:metrics views:views]
      ];
