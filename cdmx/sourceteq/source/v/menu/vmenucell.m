@@ -13,7 +13,7 @@
     [label setTranslatesAutoresizingMaskIntoConstraints:NO];
     [label setBackgroundColor:[UIColor clearColor]];
     [label setFont:[UIFont boldsize:14]];
-    [label setTextColor:[UIColor main]];
+    [label setTextColor:[UIColor colorWithWhite:0.4 alpha:1]];
     self.label = label;
     
     UIImageView *icon = [[UIImageView alloc] init];
