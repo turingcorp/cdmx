@@ -29,17 +29,29 @@
     [title setFont:[UIFont boldsize:35]];
     [title setTextColor:[UIColor whiteColor]];
     [title setTextAlignment:NSTextAlignmentCenter];
+    self.title = title;
+    
+    UILabel *subtitle = [[UILabel alloc] init];
+    [subtitle setBackgroundColor:[UIColor clearColor]];
+    [subtitle setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [subtitle setUserInteractionEnabled:NO];
+    [subtitle setFont:[UIFont boldsize:14]];
+    [subtitle setTextColor:[UIColor whiteColor]];
+    [subtitle setTextAlignment:NSTextAlignmentCenter];
+    [subtitle setText:controller.model.name];
     
     [self addSubview:title];
+    [self addSubview:subtitle];
     [self addSubview:buttonleft];
     
-    NSDictionary *views = @{@"button":buttonleft, @"title":title};
+    NSDictionary *views = @{@"button":buttonleft, @"title":title, @"subtitle":subtitle};
     NSDictionary *metrics = @{};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[button(60)]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-20-[button(45)]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[title]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-20-[title]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-64-[title(50)]-0-[subtitle(16)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[subtitle]-0-|" options:0 metrics:metrics views:views]];
     
     return self;
 }

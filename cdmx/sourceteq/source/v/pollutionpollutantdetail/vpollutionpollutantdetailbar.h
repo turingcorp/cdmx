@@ -7,6 +7,5 @@
 
 @property(weak, nonatomic)cpollutionpollutantdetail *controller;
 @property(weak, nonatomic)UILabel *title;
-@property(weak, nonatomic)UILabel *subtitle;
 
 @end
