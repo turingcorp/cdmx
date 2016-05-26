@@ -101,7 +101,12 @@ static NSInteger const pollutantsinteritem = -1;
     mpollutionpollutant *model = [self modelforindex:index];
     [self.controller detail:model];
     
-    dispatch_after(<#dispatch_time_t when#>, <#dispatch_queue_t queue#>, <#^(void)block#>)
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC), dispatch_get_main_queue(),
+                   ^
+                   {
+                       UICollectionViewCell *cell = [col cellForItemAtIndexPath:index];
+                       [cell setSelected:NO];
+                   });
 }
 
 @end
