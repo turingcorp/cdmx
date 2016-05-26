@@ -12,7 +12,7 @@
     [label setUserInteractionEnabled:NO];
     [label setTranslatesAutoresizingMaskIntoConstraints:NO];
     [label setNumberOfLines:0];
-    [label setTextColor:[UIColor colorWithWhite:0.55 alpha:1]];
+    [label setTextColor:[UIColor colorWithWhite:0.6 alpha:1]];
     [label setFont:[UIFont boldsize:15]];
     [label setTextAlignment:NSTextAlignmentCenter];
     self.label = label;

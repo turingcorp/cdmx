@@ -47,10 +47,10 @@ static NSInteger const pollutantsinteritem = -1;
     [self addSubview:collection];
     
     NSDictionary *views = @{@"col":collection, @"bar":self.bar};
-    NSDictionary *metrics = @{};
+    NSDictionary *metrics = @{@"border":@(pollutantsinteritem)};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[bar]-0-[col]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[bar]-(border)-[col]-0-|" options:0 metrics:metrics views:views]];
     
     return self;
 }
@@ -94,6 +94,14 @@ static NSInteger const pollutantsinteritem = -1;
     [cell config:model];
     
     return cell;
+}
+
+-(void)collectionView:(UICollectionView*)col didSelectItemAtIndexPath:(NSIndexPath*)index
+{
+    mpollutionpollutant *model = [self modelforindex:index];
+    [self.controller detail:model];
+    
+    dispatch_after(<#dispatch_time_t when#>, <#dispatch_queue_t queue#>, <#^(void)block#>)
 }
 
 @end

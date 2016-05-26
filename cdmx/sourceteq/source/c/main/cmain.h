@@ -8,7 +8,7 @@
 -(void)pushcontroller:(UIViewController*)controller;
 -(void)back;
 
+@property(strong, nonatomic, readonly)NSMutableArray<UIViewController*> *previous;
 @property(weak, nonatomic, readonly)UIViewController *current;
-@property(strong, nonatomic, readonly)UIViewController *previous;
 
 @end

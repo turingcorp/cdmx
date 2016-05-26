@@ -4,8 +4,8 @@
 
 @interface cmain ()
 
+@property(strong, nonatomic, readwrite)NSMutableArray<UIViewController*> *previous;
 @property(weak, nonatomic, readwrite)UIViewController *current;
-@property(strong, nonatomic, readwrite)UIViewController *previous;
 
 @end
 
@@ -19,6 +19,7 @@ static CGFloat const pushcontrolleranimation = 0.3;
 {
     self = [super init];
     cpollution *controller = [[cpollution alloc] init];
+    self.previous = [NSMutableArray array];
     [self rootcontroller:controller];
     
     return self;
@@ -145,7 +146,7 @@ static CGFloat const pushcontrolleranimation = 0.3;
      } completion:
      ^(BOOL done)
      {
-         welf.previous = welf.current;
+         [welf.previous addObject:welf.current];
          [welf.current removeFromParentViewController];
          [controller didMoveToParentViewController:welf];
          [shade removeFromSuperview];
@@ -167,18 +168,20 @@ static CGFloat const pushcontrolleranimation = 0.3;
     CGRect currentleavingrect = CGRectMake(rectx + rectwidth, recty, rectwidth, rectheight);
     CGRect movingenteringrect = CGRectMake(rectx - (rectwidth / 2.0), recty, rectwidth, rectheight);
     UIView *shade = [welf shade];
+    UIViewController *prevcontroller = [welf.previous lastObject];
+    [welf.previous removeLastObject];
     
     [shade setFrame:rect];
     [shade setAlpha:0.2];
-    [welf.previous.view setFrame:movingenteringrect];
+    [prevcontroller.view setFrame:movingenteringrect];
     
     [welf.current willMoveToParentViewController:nil];
-    [welf addChildViewController:welf.previous];
+    [welf addChildViewController:prevcontroller];
     
-    [welf transitionFromViewController:welf.current toViewController:welf.previous duration:pushcontrolleranimation options:UIViewAnimationOptionCurveEaseOut animations:
+    [welf transitionFromViewController:welf.current toViewController:prevcontroller duration:pushcontrolleranimation options:UIViewAnimationOptionCurveEaseOut animations:
      ^{
          [shade setAlpha:0];
-         [welf.previous.view setFrame:rect];
+         [prevcontroller.view setFrame:rect];
          [welf.current.view setFrame:currentleavingrect];
          [welf.view bringSubviewToFront:welf.current.view];
          [welf.view insertSubview:shade belowSubview:welf.current.view];
@@ -186,10 +189,9 @@ static CGFloat const pushcontrolleranimation = 0.3;
      ^(BOOL done)
      {
          [welf.current removeFromParentViewController];
-         [welf.previous didMoveToParentViewController:welf];
+         [prevcontroller didMoveToParentViewController:welf];
          [shade removeFromSuperview];
-         welf.current = welf.previous;
-         welf.previous = nil;
+         welf.current = prevcontroller;
          
          [welf setNeedsStatusBarAppearanceUpdate];
      }];
