@@ -26,9 +26,9 @@
     [title setBackgroundColor:[UIColor clearColor]];
     [title setTranslatesAutoresizingMaskIntoConstraints:NO];
     [title setUserInteractionEnabled:NO];
-    [title setFont:[UIFont boldsize:30]];
+    [title setFont:[UIFont boldsize:35]];
     [title setTextColor:[UIColor whiteColor]];
-    [title setText:controller.model.symbol];
+    [title setTextAlignment:NSTextAlignmentCenter];
     
     [self addSubview:title];
     [self addSubview:buttonleft];

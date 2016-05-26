@@ -23,19 +23,7 @@ static NSInteger const pollutantcollectionbottom = 60;
 {
     self = [super init:controller];
     [self.bar buttonback];
-    
-    NSString *stringtitle;
-    
-    if(controller.items.count > 1)
-    {
-        stringtitle = NSLocalizedString(@"vpollution_pollutants_title_plural", nil);
-    }
-    else
-    {
-        stringtitle = NSLocalizedString(@"vpollution_pollutants_title_singular", nil);
-    }
-    
-    [self.bar title:stringtitle];
+    [self.bar title:NSLocalizedString(@"vpollution_pollutants_title", nil)];
     
     return self;
 }

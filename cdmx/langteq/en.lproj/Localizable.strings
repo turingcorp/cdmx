@@ -132,6 +132,7 @@
 "vpollution_map_header_denied"="CDMX can't access your current location. You can enable it in the Settings";
 "vpollution_map_header_imeca"="IMECA";
 "vpollution_map_header_km"="%@ Kilometers away";
+"vpollution_pollutants_title"="Current pollutants";
 
 "vradiation_index_title"="Ultraviolet";
 "vradiation_index_subtitle"="index";
