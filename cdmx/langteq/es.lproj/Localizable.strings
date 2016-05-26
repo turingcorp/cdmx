@@ -122,12 +122,11 @@
 "vpollution_radio_chart_title"="IMECA";
 "vpollution_front_header_button_imeca"="Acerca de IMECA";
 "vpollution_front_header_button_recommendation"="Recomendaciones";
-"vpollution_front_header_button_pollutant"="Acerca de %@";
+"vpollution_front_header_button_pollutant"="Contaminante: %@";
 "vpollution_front_header_button_allpollutants"="Contaminantes actuales";
 "vpollutionimeca_title"="IMECA";
 
 "vpollution_chart_header_title"="IMECA";
-"vpollution_chart_header_pollutanttitle"="Principal contaminante";
 "vpollution_map_header_loading"="Cargando tu ubicacion actual";
 "vpollution_map_header_denied"="CDMX no puede accesar tu ubicacion. Activala en la Configuración";
 "vpollution_map_header_imeca"="IMECA";

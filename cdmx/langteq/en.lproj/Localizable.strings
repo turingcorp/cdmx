@@ -122,12 +122,11 @@
 "vpollution_radio_chart_title"="IMECA";
 "vpollution_front_header_button_imeca"="About IMECA";
 "vpollution_front_header_button_recommendation"="Precautions";
-"vpollution_front_header_button_pollutant"="About %@";
+"vpollution_front_header_button_pollutant"="Pollutant: %@";
 "vpollution_front_header_button_allpollutants"="Current pollutants";
 "vpollutionimeca_title"="IMECA";
 
 "vpollution_chart_header_title"="IMECA";
-"vpollution_chart_header_pollutanttitle"="Predominant pollutant";
 "vpollution_map_header_loading"="Loading your current location";
 "vpollution_map_header_denied"="CDMX can't access your current location. You can enable it in the Settings";
 "vpollution_map_header_imeca"="IMECA";
