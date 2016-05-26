@@ -1,6 +1,5 @@
 #import "vpollutionmapheader.h"
 #import "efont.h"
-#import "ecolor.h"
 
 static NSInteger const maxfractionskm = 1;
 
@@ -28,7 +27,7 @@ static NSInteger const maxfractionskm = 1;
     [labelindex setUserInteractionEnabled:NO];
     [labelindex setTranslatesAutoresizingMaskIntoConstraints:NO];
     [labelindex setTextAlignment:NSTextAlignmentCenter];
-    [labelindex setFont:[UIFont numericsize:26]];
+    [labelindex setFont:[UIFont regularsize:20]];
     [labelindex setTextColor:[UIColor blackColor]];
     self.labelindex = labelindex;
     
@@ -49,7 +48,7 @@ static NSInteger const maxfractionskm = 1;
     [labelstation setTranslatesAutoresizingMaskIntoConstraints:NO];
     [labelstation setTextAlignment:NSTextAlignmentCenter];
     [labelstation setFont:[UIFont boldsize:15]];
-    [labelstation setTextColor:[UIColor main]];
+    [labelstation setTextColor:[UIColor colorWithWhite:0.3 alpha:1]];
     self.labelstation = labelstation;
     
     UILabel *labelkm = [[UILabel alloc] init];
@@ -58,7 +57,7 @@ static NSInteger const maxfractionskm = 1;
     [labelkm setTranslatesAutoresizingMaskIntoConstraints:NO];
     [labelkm setTextAlignment:NSTextAlignmentCenter];
     [labelkm setFont:[UIFont regularsize:13]];
-    [labelkm setTextColor:[UIColor main]];
+    [labelkm setTextColor:[UIColor colorWithWhite:0.5 alpha:1]];
     self.labelkm = labelkm;
     
     UIImageView *circle = [[UIImageView alloc] init];

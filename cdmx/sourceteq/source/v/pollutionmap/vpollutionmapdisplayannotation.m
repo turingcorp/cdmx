@@ -75,7 +75,7 @@ static NSInteger const annotationheightmax = 67;
         [self.img setImage:[[UIImage imageNamed:@"pollution_annbig"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
         [self setFrame:CGRectMake(0, 0, annotationwidthmax, annotationheightmax)];
         [self setCenterOffset:CGPointMake(0, annotationheightmax / -2.0)];
-        [self.label setFont:[UIFont numericsize:20]];
+        [self.label setFont:[UIFont regularsize:18]];
         self.layoutlabeltop.constant = 8;
     }
     else
@@ -83,7 +83,7 @@ static NSInteger const annotationheightmax = 67;
         [self.img setImage:[[UIImage imageNamed:@"pollution_annsmall"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
         [self setFrame:CGRectMake(0, 0, annotationwidthmin, annotationheightmax)];
         [self setCenterOffset:CGPointMake(0, annotationheightmin / -2.0)];
-        [self.label setFont:[UIFont numericsize:9]];
+        [self.label setFont:[UIFont regularsize:8]];
         self.layoutlabeltop.constant = 11;
     }
 }

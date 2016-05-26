@@ -44,7 +44,7 @@ static const char *queuename = "charterqueue";
     [labelname setBackgroundColor:[UIColor clearColor]];
     [labelname setTextAlignment:NSTextAlignmentCenter];
     [labelname setFont:[UIFont regularsize:13]];
-    [labelname setTextColor:[UIColor main]];
+    [labelname setTextColor:[UIColor colorWithWhite:0.3 alpha:1]];
     [labelname setHidden:YES];
     self.labelname = labelname;
     

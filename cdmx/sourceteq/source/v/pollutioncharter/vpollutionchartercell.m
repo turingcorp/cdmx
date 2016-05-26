@@ -14,6 +14,7 @@
     [label setUserInteractionEnabled:NO];
     [label setTextAlignment:NSTextAlignmentCenter];
     [label setFont:[UIFont boldsize:16]];
+    [label setTextColor:[UIColor colorWithWhite:0.2 alpha:1]];
     self.label = label;
     
     [self addSubview:label];
@@ -42,12 +43,10 @@
 {
     if(self.isSelected || self.isHighlighted)
     {
-        [self.label setTextColor:[UIColor main]];
         [self setAlpha:1];
     }
     else
     {
-        [self.label setTextColor:[UIColor colorWithWhite:0.3 alpha:1]];
         [self setAlpha:0.2];
     }
 }
