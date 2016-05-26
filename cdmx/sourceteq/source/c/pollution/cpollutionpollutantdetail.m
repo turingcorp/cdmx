@@ -20,11 +20,6 @@
     return self;
 }
 
--(UIStatusBarStyle)preferredStatusBarStyle
-{
-    return UIStatusBarStyleLightContent;
-}
-
 -(void)loadView
 {
     self.view = [[vpollutionpollutantdetail alloc] init:self];

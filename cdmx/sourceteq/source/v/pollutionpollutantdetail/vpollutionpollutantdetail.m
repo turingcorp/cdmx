@@ -81,7 +81,7 @@ static NSInteger const pollutantmarginhr = 10;
             [label setBackgroundColor:[UIColor clearColor]];
             [label setNumberOfLines:0];
             [label setAttributedText:attrstring];
-            [label setTextColor:[UIColor colorWithWhite:0.5 alpha:1]];
+            [label setTextColor:[UIColor colorWithWhite:0.4 alpha:1]];
             
             [scroll addSubview:label];
             [self.bar.title setText:symbol];
