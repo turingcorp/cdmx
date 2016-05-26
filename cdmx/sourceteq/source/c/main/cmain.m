@@ -9,7 +9,7 @@
 
 @end
 
-static CGFloat const menuanimation = 0.4;
+static CGFloat const menuanimation = 0.3;
 static CGFloat const movecontrolleranimation = 0.3;
 static CGFloat const pushcontrolleranimation = 0.3;
 

@@ -20,7 +20,7 @@ static NSInteger const recommmaringhr = 10;
 {
     self = [super init:controller];
     [self.bar buttonback];
-    [self.bar title:controller.model.name];
+    [self.bar title:controller.model.index.name];
     
     return self;
 }
@@ -31,32 +31,23 @@ static NSInteger const recommmaringhr = 10;
 {
     if(!self.label)
     {
-        NSString *title = self.controller.model.index.name;
         NSString *recommendation = [self.controller.model.index recommendations];
-        NSString *recommcompund = [NSString stringWithFormat:@"\n%@", recommendation];
-        
-        NSDictionary *attrtitle = @{NSFontAttributeName:[UIFont boldsize:18], NSForegroundColorAttributeName:[UIColor main]};
         NSDictionary *attrrecomm = @{NSFontAttributeName:[UIFont regularsize:16], NSForegroundColorAttributeName:[UIColor colorWithWhite:0.4 alpha:1]};
-        
-        NSAttributedString *astringtitle = [[NSAttributedString alloc] initWithString:title attributes:attrtitle];
-        NSAttributedString *astringrecomm = [[NSAttributedString alloc] initWithString:recommcompund attributes:attrrecomm];
-        
-        NSMutableAttributedString *mut = [[NSMutableAttributedString alloc] init];
-        [mut appendAttributedString:astringtitle];
-        [mut appendAttributedString:astringrecomm];
+
+        NSAttributedString *astringrecomm = [[NSAttributedString alloc] initWithString:recommendation attributes:attrrecomm];
         
         CGFloat width = self.bounds.size.width;
         CGFloat margin = recommmaringhr + recommmaringhr;
         CGFloat remain = width - margin;
         CGSize stringmaxsize = CGSizeMake(remain, 1000);
-        CGFloat height = ceilf([mut boundingRectWithSize:stringmaxsize options:NSStringDrawingUsesFontLeading|NSStringDrawingUsesLineFragmentOrigin context:nil].size.height);
+        CGFloat height = ceilf([astringrecomm boundingRectWithSize:stringmaxsize options:NSStringDrawingUsesFontLeading|NSStringDrawingUsesLineFragmentOrigin context:nil].size.height);
         
         UILabel *label = [[UILabel alloc] init];
         [label setUserInteractionEnabled:NO];
         [label setTranslatesAutoresizingMaskIntoConstraints:NO];
         [label setNumberOfLines:0];
         [label setBackgroundColor:[UIColor clearColor]];
-        [label setAttributedText:mut];
+        [label setAttributedText:astringrecomm];
         self.label = label;
         
         [self addSubview:label];

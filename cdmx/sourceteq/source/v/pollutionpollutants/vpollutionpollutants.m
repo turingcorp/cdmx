@@ -104,8 +104,7 @@ static NSInteger const pollutantsinteritem = -1;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC), dispatch_get_main_queue(),
                    ^
                    {
-                       UICollectionViewCell *cell = [col cellForItemAtIndexPath:index];
-                       [cell setSelected:NO];
+                       [col selectItemAtIndexPath:[NSIndexPath indexPathForItem:-1 inSection:0] animated:NO scrollPosition:UICollectionViewScrollPositionNone];
                    });
 }
 

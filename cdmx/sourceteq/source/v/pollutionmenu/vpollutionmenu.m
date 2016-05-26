@@ -24,7 +24,7 @@ static NSInteger const menucellwidth = 50;
     [buttonmenu setClipsToBounds:YES];
     [buttonmenu.imageView setContentMode:UIViewContentModeScaleAspectFit];
     [buttonmenu.imageView setClipsToBounds:YES];
-    [buttonmenu.imageView setTintColor:[UIColor main]];
+    [buttonmenu.imageView setTintColor:[UIColor blackColor]];
     [buttonmenu setImageEdgeInsets:UIEdgeInsetsMake(14, 0, 13, 18)];
     [buttonmenu addTarget:self action:@selector(actionmenu:) forControlEvents:UIControlEventTouchUpInside];
     
