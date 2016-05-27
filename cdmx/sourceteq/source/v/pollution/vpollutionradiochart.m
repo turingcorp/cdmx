@@ -42,7 +42,7 @@ static NSInteger const radiochartlinewidth = 8;
     [labelstatus setUserInteractionEnabled:NO];
     [labelstatus setTextAlignment:NSTextAlignmentCenter];
     [labelstatus setFont:[UIFont regularsize:12]];
-    [labelstatus setTextColor:[UIColor colorWithWhite:0 alpha:0.6]];
+    [labelstatus setTextColor:[UIColor colorWithWhite:0 alpha:0.9]];
     self.labelstatus = labelstatus;
     
     [self addSubview:labelpoints];

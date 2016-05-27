@@ -15,7 +15,7 @@ static NSInteger const buttonheight = 45;
     [labeltitle setUserInteractionEnabled:NO];
     [labeltitle setTextAlignment:NSTextAlignmentCenter];
     [labeltitle setFont:[UIFont boldsize:14]];
-    [labeltitle setTextColor:[UIColor colorWithWhite:0.4 alpha:1]];
+    [labeltitle setTextColor:[UIColor blackColor]];
     self.labeltitle = labeltitle;
     
     UIImageView *icon = [[UIImageView alloc] init];
@@ -24,7 +24,7 @@ static NSInteger const buttonheight = 45;
     [icon setTranslatesAutoresizingMaskIntoConstraints:NO];
     [icon setContentMode:UIViewContentModeScaleAspectFit];
     [icon setImage:[[UIImage imageNamed:@"generic_menu"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
-    [icon setTintColor:[UIColor colorWithWhite:0.5 alpha:1]];
+    [icon setTintColor:[UIColor blackColor]];
     
     [self addSubview:labeltitle];
     [self addSubview:icon];

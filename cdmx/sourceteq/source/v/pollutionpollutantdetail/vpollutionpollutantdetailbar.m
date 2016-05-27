@@ -27,7 +27,7 @@
     [title setTranslatesAutoresizingMaskIntoConstraints:NO];
     [title setUserInteractionEnabled:NO];
     [title setFont:[UIFont boldsize:35]];
-    [title setTextColor:[UIColor colorWithWhite:0.9 alpha:1]];
+    [title setTextColor:[UIColor colorWithWhite:0.85 alpha:1]];
     [title setTextAlignment:NSTextAlignmentCenter];
     self.title = title;
     
@@ -36,7 +36,7 @@
     [subtitle setTranslatesAutoresizingMaskIntoConstraints:NO];
     [subtitle setUserInteractionEnabled:NO];
     [subtitle setFont:[UIFont boldsize:13]];
-    [subtitle setTextColor:[UIColor colorWithWhite:0.4 alpha:1]];
+    [subtitle setTextColor:[UIColor blackColor]];
     [subtitle setTextAlignment:NSTextAlignmentCenter];
     [subtitle setText:controller.model.name];
     

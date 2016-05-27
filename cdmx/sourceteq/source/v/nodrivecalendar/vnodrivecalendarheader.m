@@ -14,8 +14,8 @@
     [title setBackgroundColor:[UIColor clearColor]];
     [title setUserInteractionEnabled:NO];
     [title setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [title setFont:[UIFont boldsize:15]];
-    [title setTextColor:[UIColor colorWithWhite:0.4 alpha:1]];
+    [title setFont:[UIFont boldsize:14]];
+    [title setTextColor:[UIColor colorWithWhite:0.2 alpha:1]];
     [title setTextAlignment:NSTextAlignmentCenter];
     [title setNumberOfLines:2];
     self.title = title;
