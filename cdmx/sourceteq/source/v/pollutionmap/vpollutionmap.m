@@ -10,8 +10,8 @@ static CGFloat const pollutionmapspansize = 0.05;
 static CGFloat const latitudezocalo = 19.432503;
 static CGFloat const longitudezocalo = -99.133223;
 static NSInteger const mapheaderheight = 60;
-static NSInteger const mapcellheight = 50;
-static NSInteger const mapcollectionbottom = 100;
+static NSInteger const mapcellheight = 52;
+static NSInteger const mapcollectionbottom = 65;
 static NSInteger const mapinteritemspace = -1;
 static NSInteger const pollutionmapheight = 200;
 
@@ -45,7 +45,7 @@ static NSInteger const pollutionmapheight = 200;
     [flow setMinimumLineSpacing:mapinteritemspace];
     [flow setMinimumInteritemSpacing:0];
     [flow setScrollDirection:UICollectionViewScrollDirectionVertical];
-    [flow setSectionInset:UIEdgeInsetsMake(pollutionmapheight + mapheaderheight, 0, mapcollectionbottom, 0)];
+    [flow setSectionInset:UIEdgeInsetsMake(pollutionmapheight + mapheaderheight + mapinteritemspace, 0, mapcollectionbottom, 0)];
     
     UICollectionView *collection = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flow];
     [collection setClipsToBounds:YES];
@@ -235,6 +235,10 @@ static NSInteger const pollutionmapheight = 200;
         if(status == kCLAuthorizationStatusAuthorizedAlways || status == kCLAuthorizationStatusAuthorizedWhenInUse)
         {
             [self.display setShowsUserLocation:YES];
+        }
+        else
+        {
+            [self.header deniedlocation];
         }
         
         [self.controller activelistener];

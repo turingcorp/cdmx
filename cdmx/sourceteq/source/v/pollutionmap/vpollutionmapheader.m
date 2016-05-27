@@ -4,6 +4,9 @@
 static NSInteger const maxfractionskm = 1;
 
 @implementation vpollutionmapheader
+{
+    BOOL denied;
+}
 
 -(instancetype)init
 {
@@ -11,14 +14,15 @@ static NSInteger const maxfractionskm = 1;
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self setClipsToBounds:YES];
     [self setBackgroundColor:[UIColor whiteColor]];
+    denied = NO;
     
     UILabel *label = [[UILabel alloc] init];
     [label setBackgroundColor:[UIColor clearColor]];
     [label setUserInteractionEnabled:NO];
     [label setTranslatesAutoresizingMaskIntoConstraints:NO];
     [label setTextAlignment:NSTextAlignmentCenter];
-    [label setFont:[UIFont regularsize:15]];
-    [label setTextColor:[UIColor colorWithWhite:0.6 alpha:1]];
+    [label setFont:[UIFont regularsize:13]];
+    [label setTextColor:[UIColor colorWithWhite:0.4 alpha:1]];
     [label setNumberOfLines:0];
     [label setText:NSLocalizedString(@"vpollution_map_header_loading", nil)];
     self.label = label;
@@ -72,26 +76,30 @@ static NSInteger const maxfractionskm = 1;
 
 -(void)deniedlocation
 {
+    denied = YES;
     [self.label setText:NSLocalizedString(@"vpollution_map_header_denied", nil)];
 }
 
 -(void)showlocation:(mpollutionmapitem*)model
 {
-    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-    [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
-    [formatter setMaximumFractionDigits:maxfractionskm];
-    NSString *strkm = [NSString stringWithFormat:NSLocalizedString(@"vpollution_map_header_km", nil), [formatter stringFromNumber:@(model.kilometers)]];
-    
-    [self.label removeFromSuperview];
-    [self.labelkm setText:strkm];
-    
-    if(model.closer)
+    if(!denied)
     {
-        [self.labeltitle setHidden:NO];
-    }
-    else
-    {
-        [self.labeltitle setHidden:YES];
+        NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+        [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
+        [formatter setMaximumFractionDigits:maxfractionskm];
+        NSString *strkm = [NSString stringWithFormat:NSLocalizedString(@"vpollution_map_header_km", nil), [formatter stringFromNumber:@(model.kilometers)]];
+        
+        [self.label removeFromSuperview];
+        [self.labelkm setText:strkm];
+        
+        if(model.closer)
+        {
+            [self.labeltitle setHidden:NO];
+        }
+        else
+        {
+            [self.labeltitle setHidden:YES];
+        }
     }
 }
 
