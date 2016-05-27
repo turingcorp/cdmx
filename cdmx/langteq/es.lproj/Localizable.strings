@@ -105,7 +105,7 @@
 "mnodrive_today_restriction_tourist_yes_info"="Puede circular";
 "mnodrive_today_restriction_tourist_no_info"="No activos por ahora";
 
-"mnodrive_calendar_section_week"="Hoy no circulan entre semana y sabados";
+"mnodrive_calendar_section_week"="Entre semana y sabados";
 "mnodrive_calendar_section_foreigner"="Placas no de CDMX ó Edo de México";
 "mnodrive_calendar_item_week_0"="Lunes\n1º Sabado";
 "mnodrive_calendar_item_week_1"="Martes\n2º Sabado";
