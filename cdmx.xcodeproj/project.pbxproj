@@ -147,6 +147,7 @@
 		DAB3FEE21CE270F900CCBB86 /* aparserpollution.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB3FEE11CE270F900CCBB86 /* aparserpollution.m */; };
 		DAB3FEE51CE273A600CCBB86 /* mdbupdate.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB3FEE41CE273A600CCBB86 /* mdbupdate.m */; };
 		DABC91F41CF90496001FE9DE /* aparserclimate.m in Sources */ = {isa = PBXBuildFile; fileRef = DABC91F31CF90496001FE9DE /* aparserclimate.m */; };
+		DABC91F71CF90684001FE9DE /* acallclimate.m in Sources */ = {isa = PBXBuildFile; fileRef = DABC91F61CF90684001FE9DE /* acallclimate.m */; };
 		DAC21D081CE4C2AA00D92161 /* mpollution.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC21CD11CE4C2AA00D92161 /* mpollution.m */; };
 		DAC21D091CE4C2AA00D92161 /* mpollutionhour.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC21CD31CE4C2AA00D92161 /* mpollutionhour.m */; };
 		DAC21D0F1CE4C2AA00D92161 /* mpollutionnotificationdraw.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC21CDF1CE4C2AA00D92161 /* mpollutionnotificationdraw.m */; };
@@ -521,6 +522,8 @@
 		DAB3FEE41CE273A600CCBB86 /* mdbupdate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mdbupdate.m; sourceTree = "<group>"; };
 		DABC91F21CF90496001FE9DE /* aparserclimate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aparserclimate.h; sourceTree = "<group>"; };
 		DABC91F31CF90496001FE9DE /* aparserclimate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = aparserclimate.m; sourceTree = "<group>"; };
+		DABC91F51CF90684001FE9DE /* acallclimate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = acallclimate.h; sourceTree = "<group>"; };
+		DABC91F61CF90684001FE9DE /* acallclimate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = acallclimate.m; sourceTree = "<group>"; };
 		DAC21CD01CE4C2AA00D92161 /* mpollution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpollution.h; sourceTree = "<group>"; };
 		DAC21CD11CE4C2AA00D92161 /* mpollution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mpollution.m; sourceTree = "<group>"; };
 		DAC21CD21CE4C2AA00D92161 /* mpollutionhour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpollutionhour.h; sourceTree = "<group>"; };
@@ -1036,6 +1039,8 @@
 				DAAEEDD91CECAE96008C992C /* acallradiation.m */,
 				DAD7AA351CEFB14D003B169A /* acallnodrive.h */,
 				DAD7AA361CEFB14D003B169A /* acallnodrive.m */,
+				DABC91F51CF90684001FE9DE /* acallclimate.h */,
+				DABC91F61CF90684001FE9DE /* acallclimate.m */,
 			);
 			path = call;
 			sourceTree = "<group>";
@@ -1883,6 +1888,7 @@
 				DAC21D211CE4C2AA00D92161 /* mpollutionmenuitemmap.m in Sources */,
 				DAAEEDE01CECC04A008C992C /* mradiationnone.m in Sources */,
 				DAAEEDEF1CECC081008C992C /* mradiationextreme.m in Sources */,
+				DABC91F71CF90684001FE9DE /* acallclimate.m in Sources */,
 				DAC21D561CE4C35B00D92161 /* vpollutionmenucell.m in Sources */,
 				DAC21D091CE4C2AA00D92161 /* mpollutionhour.m in Sources */,
 				DAD7AA5B1CEFD250003B169A /* mnodriveitemplategreen.m in Sources */,
