@@ -7,6 +7,7 @@
 
 -(void)loadclimate;
 -(void)menu;
+-(void)forecast;
 
 @property(weak, nonatomic)amanager *apimanager;
 @property(strong, nonatomic, readonly)mclimate *model;
