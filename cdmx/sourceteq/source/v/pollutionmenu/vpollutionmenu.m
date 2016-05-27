@@ -46,6 +46,7 @@ static NSInteger const menucellwidth = 50;
     [collection setDataSource:self];
     [collection setDelegate:self];
     [collection registerClass:[vpollutionmenucell class] forCellWithReuseIdentifier:[vpollutionmenucell reusableidentifier]];
+    self.collection = collection;
     
     UIView *border = [[UIView alloc] init];
     [border setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -66,6 +67,7 @@ static NSInteger const menucellwidth = 50;
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[button(60)]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[button]-0-|" options:0 metrics:metrics views:views]];
     
+    [self optionsactive:NO];
     [collection selectItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0] animated:NO scrollPosition:UICollectionViewScrollPositionNone];
     
     return self;
@@ -85,6 +87,22 @@ static NSInteger const menucellwidth = 50;
     mpollutionmenuitem *model = self.model.items[index.item];
     
     return model;
+}
+
+#pragma mark public
+
+-(void)optionsactive:(BOOL)active
+{
+    if(active)
+    {
+        [self.collection setUserInteractionEnabled:YES];
+        [self.collection setAlpha:1];
+    }
+    else
+    {
+        [self.collection setUserInteractionEnabled:NO];
+        [self.collection setAlpha:0.5];
+    }
 }
 
 #pragma mark -

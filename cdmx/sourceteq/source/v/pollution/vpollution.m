@@ -22,13 +22,21 @@ static NSInteger const pollutionmenuheight = 50;
     
     vspinner *spinner = [[vspinner alloc] init];
     self.spinner = spinner;
-    [self addSubview:spinner];
     
-    NSDictionary *views = @{@"spinner":spinner};
-    NSDictionary *metrics = @{};
+    vpollutionmenu *menu = [[vpollutionmenu alloc] init:self.controller];
+    [menu setUserInteractionEnabled:NO];
+    self.menu = menu;
+    
+    [self addSubview:spinner];
+    [self addSubview:menu];
+    
+    NSDictionary *views = @{@"spinner":spinner, @"menu":menu};
+    NSDictionary *metrics = @{@"height":@(pollutionmenuheight)};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[spinner]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-100-[spinner]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[menu]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[menu(height)]-0-|" options:0 metrics:metrics views:views]];
     
     return self;
 }
@@ -68,21 +76,6 @@ static NSInteger const pollutionmenuheight = 50;
     self.baseeffect = [[GLKBaseEffect alloc] init];
     self.baseeffect.texture2d0.target = GLKTextureTarget2D;
     self.baseeffect.transform.projectionMatrix = GLKMatrix4MakeOrtho(0, screenwidth, screenheight, 0, 1, -1);
-}
-
--(void)loadmenu
-{
-    vpollutionmenu *menu = [[vpollutionmenu alloc] init:self.controller];
-    [menu setUserInteractionEnabled:NO];
-    self.menu = menu;
-    
-    [self addSubview:menu];
-    
-    NSDictionary *views = @{@"menu":menu};
-    NSDictionary *metrics = @{@"height":@(pollutionmenuheight)};
-    
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[menu]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[menu(height)]-0-|" options:0 metrics:metrics views:views]];
 }
 
 -(void)loadoption:(vpollutionoption*)option
@@ -143,7 +136,6 @@ static NSInteger const pollutionmenuheight = 50;
                    {
                        [welf.buttonerror removeFromSuperview];
                        [welf.labelerror removeFromSuperview];
-                       [welf loadmenu];
                        
                        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC),
                                       dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
@@ -168,7 +160,7 @@ static NSInteger const pollutionmenuheight = 50;
 {
     __weak typeof(self) welf = self;
     
-    [welf.menu setUserInteractionEnabled:NO];
+    [welf.menu optionsactive:NO];
     [welf.option remove];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
@@ -181,7 +173,7 @@ static NSInteger const pollutionmenuheight = 50;
                                       ^
                                       {
                                           [welf loadfront];
-                                          [welf.menu setUserInteractionEnabled:YES];
+                                          [welf.menu optionsactive:YES];
                                       });
                    });
 }
@@ -190,7 +182,7 @@ static NSInteger const pollutionmenuheight = 50;
 {
     __weak typeof(self) welf = self;
     
-    [welf.menu setUserInteractionEnabled:NO];
+    [welf.menu optionsactive:NO];
     [welf.option remove];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
@@ -203,7 +195,7 @@ static NSInteger const pollutionmenuheight = 50;
                                       ^
                                       {
                                           [self loadcharter];
-                                          [welf.menu setUserInteractionEnabled:YES];
+                                          [welf.menu optionsactive:YES];
                                       });
                    });
 }
@@ -212,7 +204,7 @@ static NSInteger const pollutionmenuheight = 50;
 {
     __weak typeof(self) welf = self;
     
-    [welf.menu setUserInteractionEnabled:NO];
+    [welf.menu optionsactive:NO];
     [welf.option remove];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
@@ -225,7 +217,7 @@ static NSInteger const pollutionmenuheight = 50;
                                       ^
                                       {
                                           [welf loadmap];
-                                          [welf.menu setUserInteractionEnabled:YES];
+                                          [welf.menu optionsactive:YES];
                                       });
                    });
 }
