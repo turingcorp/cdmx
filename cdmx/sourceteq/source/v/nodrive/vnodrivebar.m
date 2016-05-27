@@ -20,7 +20,7 @@
     [buttonleft setImage:[[UIImage imageNamed:@"generic_menu"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateHighlighted];
     [buttonleft.imageView setContentMode:UIViewContentModeScaleAspectFit];
     [buttonleft.imageView setClipsToBounds:YES];
-    [buttonleft.imageView setTintColor:[UIColor main]];
+    [buttonleft.imageView setTintColor:[UIColor blackColor]];
     [buttonleft setImageEdgeInsets:UIEdgeInsetsMake(11, 0, 11, 18)];
     [buttonleft addTarget:self action:@selector(actionbuttonleft:) forControlEvents:UIControlEventTouchUpInside];
     
@@ -31,7 +31,7 @@
     [buttonright setImage:[[UIImage imageNamed:@"generic_calendar"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateHighlighted];
     [buttonright.imageView setContentMode:UIViewContentModeScaleAspectFit];
     [buttonright.imageView setClipsToBounds:YES];
-    [buttonright.imageView setTintColor:[UIColor main]];
+    [buttonright.imageView setTintColor:[UIColor blackColor]];
     [buttonright setImageEdgeInsets:UIEdgeInsetsMake(12, 18, 12, 0)];
     [buttonright addTarget:self action:@selector(actionbuttonright:) forControlEvents:UIControlEventTouchUpInside];
     
@@ -45,9 +45,9 @@
     [label setTranslatesAutoresizingMaskIntoConstraints:NO];
     [label setUserInteractionEnabled:NO];
     [label setBackgroundColor:[UIColor clearColor]];
-    [label setFont:[UIFont boldsize:14]];
+    [label setFont:[UIFont boldsize:12]];
     [label setTextAlignment:NSTextAlignmentCenter];
-    [label setTextColor:[UIColor main]];
+    [label setTextColor:[UIColor blackColor]];
     [label setText:NSLocalizedString(@"vnodrive_title", nil)];
     
     [self addSubview:label];
