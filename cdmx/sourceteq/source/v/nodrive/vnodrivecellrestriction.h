@@ -1,7 +1,6 @@
 #import <UIKit/UIKit.h>
-#import "vnodrivecell.h"
 
-@interface vnodrivecellrestriction:vnodrivecell
+@interface vnodrivecellrestriction:UICollectionViewCell
 
 @property(weak, nonatomic)UIImageView *icon;
 @property(weak, nonatomic)UILabel *title;
