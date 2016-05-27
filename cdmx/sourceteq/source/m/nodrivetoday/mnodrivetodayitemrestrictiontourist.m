@@ -17,13 +17,13 @@
     self.asset = @"nodrive_tourist";
     self.title = NSLocalizedString(@"mnodrive_today_restriction_tourist_title", nil);
     
-    if(model.today.permit)
+    if(model.allstates)
     {
-        self.info = NSLocalizedString(@"mnodrive_today_restriction_tourist_yes_info", nil);
+        self.info = NSLocalizedString(@"mnodrive_today_restriction_tourist_no_info", nil);
     }
     else
     {
-        self.info = NSLocalizedString(@"mnodrive_today_restriction_tourist_no_info", nil);
+        self.info = NSLocalizedString(@"mnodrive_today_restriction_tourist_yes_info", nil);
     }
     
     return self;
