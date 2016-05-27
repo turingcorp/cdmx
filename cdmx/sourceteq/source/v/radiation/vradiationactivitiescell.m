@@ -32,7 +32,7 @@
     [title setBackgroundColor:[UIColor clearColor]];
     [title setFont:[UIFont regularsize:11]];
     [title setTextAlignment:NSTextAlignmentCenter];
-    [title setTextColor:[UIColor colorWithWhite:0.3 alpha:1]];
+    [title setTextColor:[UIColor colorWithWhite:0.1 alpha:1]];
     self.title = title;
     
     [self addSubview:title];

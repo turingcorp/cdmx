@@ -93,7 +93,7 @@
 "mnodrive_today_restriction_time_title"="Horario";
 "mnodrive_today_restriction_time_info"="5:00 am - 10:00 pm";
 "mnodrive_today_restriction_foreigner_title"="Placas no de CDMX ó Edo de México";
-"mnodrive_today_restriction_foreigner_yes_info"="Mismas reglas usando el ultimo numero";
+"mnodrive_today_restriction_foreigner_yes_info"="Mismas reglas usando el último número";
 "mnodrive_today_restriction_foreigner_no_info"="Reglas diferentes, ve el calendario";
 "mnodrive_today_restriction_bike_title"="Motocicletas";
 "mnodrive_today_restriction_bike_yes_info"="Mismas reglas que los coches";
