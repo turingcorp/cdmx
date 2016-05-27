@@ -24,7 +24,6 @@ static NSInteger const pollutionmenuheight = 50;
     self.spinner = spinner;
     
     vpollutionmenu *menu = [[vpollutionmenu alloc] init:self.controller];
-    [menu setUserInteractionEnabled:NO];
     self.menu = menu;
     
     [self addSubview:spinner];
@@ -110,19 +109,9 @@ static NSInteger const pollutionmenuheight = 50;
 
 -(void)clearspinner
 {
-    __weak typeof(self) welf = self;
-    
-    [UIView animateWithDuration:0.6 animations:
-     ^
-     {
-         [welf.spinner setAlpha:0];
-     } completion:
-     ^(BOOL done)
-     {
-         [welf.spinner setHidden:YES];
-         [welf.spinner stopAnimating];
-         [welf.spinner setAlpha:1];
-     }];
+    [self.spinner setHidden:YES];
+    [self.spinner stopAnimating];
+    [self.spinner setAlpha:1];
 }
 
 #pragma mark public
@@ -149,8 +138,7 @@ static NSInteger const pollutionmenuheight = 50;
                                           dispatch_async(dispatch_get_main_queue(),
                                                          ^
                                                          {
-                                                             [welf show_districts];
-                                                             [welf clearspinner];
+                                                             [welf.menu currentselected];
                                                          });
                                       });
                    });
@@ -160,6 +148,7 @@ static NSInteger const pollutionmenuheight = 50;
 {
     __weak typeof(self) welf = self;
     
+    [welf loading];
     [welf.menu optionsactive:NO];
     [welf.option remove];
     
@@ -172,6 +161,7 @@ static NSInteger const pollutionmenuheight = 50;
                        dispatch_async(dispatch_get_main_queue(),
                                       ^
                                       {
+                                          [welf clearspinner];
                                           [welf loadfront];
                                           [welf.menu optionsactive:YES];
                                       });
@@ -182,6 +172,7 @@ static NSInteger const pollutionmenuheight = 50;
 {
     __weak typeof(self) welf = self;
     
+    [welf loading];
     [welf.menu optionsactive:NO];
     [welf.option remove];
     
@@ -194,7 +185,8 @@ static NSInteger const pollutionmenuheight = 50;
                        dispatch_async(dispatch_get_main_queue(),
                                       ^
                                       {
-                                          [self loadcharter];
+                                          [welf clearspinner];
+                                          [welf loadcharter];
                                           [welf.menu optionsactive:YES];
                                       });
                    });
@@ -204,6 +196,7 @@ static NSInteger const pollutionmenuheight = 50;
 {
     __weak typeof(self) welf = self;
     
+    [welf loading];
     [welf.menu optionsactive:NO];
     [welf.option remove];
     
@@ -216,6 +209,7 @@ static NSInteger const pollutionmenuheight = 50;
                        dispatch_async(dispatch_get_main_queue(),
                                       ^
                                       {
+                                          [welf clearspinner];
                                           [welf loadmap];
                                           [welf.menu optionsactive:YES];
                                       });
@@ -229,11 +223,11 @@ static NSInteger const pollutionmenuheight = 50;
 
 -(void)loading
 {
+    [self.option removeFromSuperview];
     [self.labelerror removeFromSuperview];
     [self.buttonerror removeFromSuperview];
     [self.spinner setHidden:NO];
     [self.spinner startAnimating];
-    [self.option remove];
 }
 
 -(void)error:(NSString*)error

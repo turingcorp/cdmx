@@ -16,6 +16,7 @@ static NSInteger const menucellwidth = 50;
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
     self.controller = controller;
     self.model = [[mpollutionmenu alloc] init];
+    self.selected = self.model.items[0];
     
     UIButton *buttonmenu = [[UIButton alloc] init];
     [buttonmenu setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -101,8 +102,13 @@ static NSInteger const menucellwidth = 50;
     else
     {
         [self.collection setUserInteractionEnabled:NO];
-        [self.collection setAlpha:0.5];
+        [self.collection setAlpha:0.2];
     }
+}
+
+-(void)currentselected
+{
+    [self.selected actionselected:self.controller.view];
 }
 
 #pragma mark -
@@ -162,6 +168,7 @@ static NSInteger const menucellwidth = 50;
     if(self.controller.model)
     {
         mpollutionmenuitem *model = [self modelforindex:index];
+        self.selected = model;
         [model actionselected:self.controller.view];
         
         [[analytics singleton] trackevent:self.controller action:model.asset label:nil];
