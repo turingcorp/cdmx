@@ -12,5 +12,6 @@
 @property(assign, nonatomic)CGFloat latitude;
 @property(assign, nonatomic)CGFloat longitude;
 @property(assign, nonatomic)CGFloat kilometers;
+@property(assign, nonatomic)BOOL closer;
 
 @end

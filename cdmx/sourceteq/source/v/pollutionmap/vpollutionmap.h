@@ -12,6 +12,7 @@
 @property(weak, nonatomic)vpollutionmapdisplay *display;
 @property(weak, nonatomic)vpollutionmapheader *header;
 @property(weak, nonatomic)UICollectionView *collection;
+@property(weak, nonatomic)NSLayoutConstraint *layoutdisplayheight;
 @property(assign, nonatomic)CLLocationCoordinate2D userlocation;
 @property(assign, nonatomic)MKCoordinateSpan mapspan;
 

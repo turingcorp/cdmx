@@ -3,17 +3,17 @@
 #import "vpollutionmapcell.h"
 #import "vpollutionmapdisplayannotation.h"
 #import "ecollectioncell.h"
-#import "ecollectionreusable.h"
 #import "eannotationview.h"
 #import "analytics.h"
 
-static CGFloat const pollutionmapspansize = 0.02;
+static CGFloat const pollutionmapspansize = 0.05;
 static CGFloat const latitudezocalo = 19.432503;
 static CGFloat const longitudezocalo = -99.133223;
-static NSInteger const mapheaderheight = 150;
+static NSInteger const mapheaderheight = 60;
 static NSInteger const mapcellheight = 50;
-static NSInteger const mapcollectionbottom = 120;
+static NSInteger const mapcollectionbottom = 100;
 static NSInteger const mapinteritemspace = -1;
+static NSInteger const pollutionmapheight = 200;
 
 @implementation vpollutionmap
 {
@@ -33,15 +33,19 @@ static NSInteger const mapinteritemspace = -1;
     [display setRegion:region animated:NO];
     [display setDelegate:self];
     
+    vpollutionmapheader *header = [[vpollutionmapheader alloc] init];
+    self.header = header;
+    
     self.display = display;
     userupdated = NO;
     
     UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
     [flow setFooterReferenceSize:CGSizeZero];
+    [flow setHeaderReferenceSize:CGSizeZero];
     [flow setMinimumLineSpacing:mapinteritemspace];
     [flow setMinimumInteritemSpacing:0];
     [flow setScrollDirection:UICollectionViewScrollDirectionVertical];
-    [flow setSectionInset:UIEdgeInsetsMake(0, 0, mapcollectionbottom, 0)];
+    [flow setSectionInset:UIEdgeInsetsMake(pollutionmapheight + mapheaderheight, 0, mapcollectionbottom, 0)];
     
     UICollectionView *collection = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flow];
     [collection setClipsToBounds:YES];
@@ -53,19 +57,23 @@ static NSInteger const mapinteritemspace = -1;
     [collection setDelegate:self];
     [collection setDataSource:self];
     [collection registerClass:[vpollutionmapcell class] forCellWithReuseIdentifier:[vpollutionmapcell reusableidentifier]];
-    [collection registerClass:[vpollutionmapheader class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:[vpollutionmapheader reusableidentifier]];
     [collection setAlpha:0];
     self.collection = collection;
     
-    [self addSubview:display];
     [self addSubview:collection];
+    [self addSubview:header];
+    [self addSubview:display];
     
-    NSDictionary *views = @{@"display":display, @"col":collection};
-    NSDictionary *metrics = @{};
+    NSDictionary *views = @{@"display":display, @"col":collection, @"header":header};
+    NSDictionary *metrics = @{@"headerheight":@(mapheaderheight)};
     
+    self.layoutdisplayheight = [NSLayoutConstraint constraintWithItem:display attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:pollutionmapheight];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[display]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[display]-0-[col]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[header]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[display]-0-[header(headerheight)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraint:self.layoutdisplayheight];
     
     return self;
 }
@@ -100,10 +108,10 @@ static NSInteger const mapinteritemspace = -1;
                    {
                        mpollutionmapitem *closeritem = [welf.model closertolat:welf.userlocation.latitude lon:welf.userlocation.longitude];
                        
-                       dispatch_async(dispatch_get_main_queue(),
+                       dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC * 1.5), dispatch_get_main_queue(),
                                       ^
                                       {
-                                          [welf.header closerstationfound:closeritem];
+                                          [welf.display selectAnnotation:closeritem.annotation animated:YES];
                                       });
                    });
 }
@@ -156,18 +164,23 @@ static NSInteger const mapinteritemspace = -1;
 #pragma mark -
 #pragma mark col del
 
+-(void)scrollViewDidScroll:(UIScrollView*)scroll
+{
+    CGFloat offsety = scroll.contentOffset.y;
+    CGFloat newdisplayheight = pollutionmapheight - offsety;
+    
+    if(newdisplayheight < pollutionmapheight)
+    {
+        newdisplayheight = pollutionmapheight;
+    }
+    
+    self.layoutdisplayheight.constant = newdisplayheight;
+}
+
 -(CGSize)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout sizeForItemAtIndexPath:(NSIndexPath*)index
 {
     CGFloat width = col.bounds.size.width;
     CGSize size = CGSizeMake(width, mapcellheight);
-    
-    return size;
-}
-
--(CGSize)collectionView:(UICollectionView*)col layout:(UICollectionViewLayout*)layout referenceSizeForHeaderInSection:(NSInteger)section
-{
-    CGFloat width = col.bounds.size.width;
-    CGSize size = CGSizeMake(width, mapheaderheight);
     
     return size;
 }
@@ -182,14 +195,6 @@ static NSInteger const mapinteritemspace = -1;
     NSInteger count = self.model.items.count;
     
     return count;
-}
-
--(UICollectionReusableView*)collectionView:(UICollectionView*)col viewForSupplementaryElementOfKind:(NSString*)kind atIndexPath:(NSIndexPath*)index
-{
-    vpollutionmapheader *header = [col dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:[vpollutionmapheader reusableidentifier] forIndexPath:index];
-    self.header = header;
-    
-    return header;
 }
 
 -(UICollectionViewCell*)collectionView:(UICollectionView*)col cellForItemAtIndexPath:(NSIndexPath*)index
@@ -270,7 +275,7 @@ static NSInteger const mapinteritemspace = -1;
         mpollutionmapitemannotation *annotation = (mpollutionmapitemannotation*)view.annotation;
         NSInteger index = [self.model.items indexOfObject:annotation.model];
         [self.collection selectItemAtIndexPath:[NSIndexPath indexPathForItem:index inSection:0] animated:YES scrollPosition:UICollectionViewScrollPositionCenteredVertically];
-        
+        [self.header showlocation:annotation.model];
         [[analytics singleton] trackevent:self.controller action:@"map" label:annotation.model.name];
     }
 }
