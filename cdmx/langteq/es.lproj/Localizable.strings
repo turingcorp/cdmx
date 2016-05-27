@@ -113,8 +113,8 @@
 "mnodrive_calendar_item_week_3"="Jueves\n4º Sabado";
 "mnodrive_calendar_item_week_4"="Viernes\n5º Sabado";
 "mnodrive_calendar_item_week_permit"="y permisos";
-"mnodrive_calendar_foreigner_same"="Mismas reglas, no circula entre semana y sabados de acuerdo al ultimo numero en la placa";
-"mnodrive_calendar_foreigner_plates"="No circula un dia entre semana de acuerdo al ultimo numero en la placa";
+"mnodrive_calendar_foreigner_same"="Mismas reglas, no circula entre semana y sabados de acuerdo al último número en la placa";
+"mnodrive_calendar_foreigner_plates"="No circula un día entre semana de acuerdo al último número en la placa";
 "mnodrive_calendar_foreigner_mornings"="No circula entre semana entre 5:00 am y 11:00 am";
 "mnodrive_calendar_foreigner_saturdays"="No circula los sabados";
 
