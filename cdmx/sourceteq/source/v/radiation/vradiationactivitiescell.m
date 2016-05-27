@@ -32,7 +32,7 @@
     [title setBackgroundColor:[UIColor clearColor]];
     [title setFont:[UIFont regularsize:11]];
     [title setTextAlignment:NSTextAlignmentCenter];
-    [title setTextColor:[UIColor colorWithWhite:0 alpha:0.4]];
+    [title setTextColor:[UIColor colorWithWhite:0.3 alpha:1]];
     self.title = title;
     
     [self addSubview:title];
@@ -66,7 +66,7 @@
     }
     else
     {
-        colorindicator = [UIColor second];
+        colorindicator = [UIColor redColor];
         assetindicator = @"radiation_notallowed";
     }
     

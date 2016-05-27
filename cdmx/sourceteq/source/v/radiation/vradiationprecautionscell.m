@@ -1,5 +1,4 @@
 #import "vradiationprecautionscell.h"
-#import "ecolor.h"
 #import "efont.h"
 
 @implementation vradiationprecautionscell
@@ -25,7 +24,7 @@
     [title setTranslatesAutoresizingMaskIntoConstraints:NO];
     [title setTextAlignment:NSTextAlignmentCenter];
     [title setFont:[UIFont regularsize:12]];
-    [title setTextColor:[UIColor colorWithWhite:0 alpha:0.4]];
+    [title setTextColor:[UIColor colorWithWhite:0.45 alpha:1]];
     self.title = title;
     
     UILabel *level = [[UILabel alloc] init];
@@ -34,7 +33,7 @@
     [level setTranslatesAutoresizingMaskIntoConstraints:NO];
     [level setTextAlignment:NSTextAlignmentCenter];
     [level setFont:[UIFont boldsize:12]];
-    [level setTextColor:[UIColor main]];
+    [level setTextColor:[UIColor colorWithWhite:0.25 alpha:1]];
     self.level = level;
     
     [self addSubview:image];
@@ -59,7 +58,6 @@
     [self.image setImage:[[UIImage imageNamed:model.asset] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
     [self.title setText:model.name];
     [self.level setText:model.level.name];
-    [self.level setTextColor:model.level.color];
 }
 
 @end
