@@ -27,6 +27,17 @@
     return self;
 }
 
+-(NSString*)description
+{
+    NSMutableString *string = [NSMutableString string];
+    [string appendString:@"wind: "];
+    [string appendFormat:@"[chill %@]", @(self.chill)];
+    [string appendFormat:@"[direction %@]", @(self.direction)];
+    [string appendFormat:@"[speed %@]", @(self.speed)];
+    
+    return string;
+}
+
 #pragma mark functionality
 
 -(void)converttointernational

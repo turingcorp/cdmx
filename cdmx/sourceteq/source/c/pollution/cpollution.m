@@ -90,6 +90,7 @@ static NSInteger const framespersecond = 60;
 -(void)loadpollution
 {
     __weak typeof(self) welf = self;
+    [welf.model clean];
     [welf.view loading];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),

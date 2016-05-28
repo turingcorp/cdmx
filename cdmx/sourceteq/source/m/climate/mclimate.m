@@ -37,6 +37,8 @@ static CGFloat const milestokmratio = 1.60934;
     
     self.wind = [[mclimatewind alloc] init:rawwind];
     
+    NSLog(@"%@", self.wind);
+    
     return self;
 }
 
