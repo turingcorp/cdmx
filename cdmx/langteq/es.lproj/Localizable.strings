@@ -122,7 +122,6 @@
 "mclimate_atmosphere_rising_rasing"="Subiendo";
 "mclimate_atmosphere_rising_falling"="Bajando";
 
-"vpollution_error_button"="Intenta de nuevo";
 "vpollution_radio_chart_title"="IMECA";
 "vpollution_front_header_button_imeca"="Acerca de IMECA";
 "vpollution_front_header_button_recommendation"="Recomendaciones";
@@ -155,5 +154,6 @@
 "mmenu_item_ecobici"="ecobici";
 "mmenu_item_about"="Acerca de";
 
+"api_retry"="Reintentar";
 "api_error_nodata"="El servidor no responde, intenta de nuevo";
 "api_error_invalidjson"="Problemas al conectarse con el servidor, intenta de nuevo";

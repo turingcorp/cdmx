@@ -1,6 +1,5 @@
 #import "vpollution.h"
 #import "enotification.h"
-#import "ecolor.h"
 #import "efont.h"
 #import "cpollution.h"
 #import "vpollutionmenu.h"
@@ -254,10 +253,10 @@ static NSInteger const pollutionmenuheight = 50;
     [buttonerror setBackgroundColor:[UIColor clearColor]];
     [buttonerror setTranslatesAutoresizingMaskIntoConstraints:NO];
     [buttonerror setClipsToBounds:YES];
-    [buttonerror setTitleColor:[UIColor main] forState:UIControlStateNormal];
-    [buttonerror setTitleColor:[[UIColor main] colorWithAlphaComponent:0.2] forState:UIControlStateHighlighted];
-    [buttonerror setTitle:NSLocalizedString(@"vpollution_error_button", nil) forState:UIControlStateNormal];
-    [buttonerror.titleLabel setFont:[UIFont boldsize:14]];
+    [buttonerror setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [buttonerror setTitleColor:[[UIColor colorWithWhite:0.8 alpha:1] colorWithAlphaComponent:0.2] forState:UIControlStateHighlighted];
+    [buttonerror setTitle:NSLocalizedString(@"api_retry", nil) forState:UIControlStateNormal];
+    [buttonerror.titleLabel setFont:[UIFont boldsize:16]];
     [buttonerror addTarget:self action:@selector(actionbuttonerror:) forControlEvents:UIControlEventTouchUpInside];
     self.buttonerror = buttonerror;
     

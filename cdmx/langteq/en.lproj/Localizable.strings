@@ -122,7 +122,6 @@
 "mclimate_atmosphere_rising_rasing"="Rising";
 "mclimate_atmosphere_rising_falling"="Falling";
 
-"vpollution_error_button"="Try again";
 "vpollution_radio_chart_title"="IMECA";
 "vpollution_front_header_button_imeca"="About IMECA";
 "vpollution_front_header_button_recommendation"="Precautions";
@@ -155,5 +154,6 @@
 "mmenu_item_ecobici"="ecobici";
 "mmenu_item_about"="About";
 
+"api_retry"="Retry";
 "api_error_nodata"="Server no responding, try again later";
 "api_error_invalidjson"="Trouble reaching server, try again later";
