@@ -98,11 +98,12 @@
                        if(parser.climate)
                        {
                            welf.model = parser.climate;
+                           mclimatecurrent *modelcurrent = [welf.model current];
                            
                            dispatch_async(dispatch_get_main_queue(),
                                           ^
                                           {
-                                              [welf.view climateloaded];
+                                              [welf.view climateloaded:modelcurrent];
                                           });
                        }
                    });

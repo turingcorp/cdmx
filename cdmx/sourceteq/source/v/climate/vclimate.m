@@ -4,6 +4,7 @@
 
 @interface vclimate ()
 
+@property(strong, nonatomic, readwrite)mclimatecurrent *model;
 @property(weak, nonatomic, readwrite)cclimate *controller;
 
 @end
@@ -75,9 +76,11 @@
 
 #pragma mark public
 
--(void)climateloaded
+-(void)climateloaded:(mclimatecurrent*)model
 {
+    self.model = model;
     [self displayloaded];
+    [self.collection reloadData];
 }
 
 -(void)error:(NSString*)error
