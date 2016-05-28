@@ -12,4 +12,11 @@
     return self;
 }
 
+#pragma mark public
+
+-(void)config:(mclimatecurrentitem*)model
+{
+    
+}
+
 @end
