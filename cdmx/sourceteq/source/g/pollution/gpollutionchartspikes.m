@@ -3,7 +3,7 @@
 #import "ecolor.h"
 #import "genericconstants.h"
 
-static CGFloat const chartspikesdeltamove = -5;
+static CGFloat const chartspikesdeltamove = -9;
 
 @interface gpollutionchartspikes ()
 
@@ -90,7 +90,7 @@ static CGFloat const chartspikesdeltamove = -5;
     NSInteger indexvector = 0;
     self.corners = corners2;
     
-    GLKVector4 colortop = [[[UIColor main] colorWithAlphaComponent:0.1] asvector];
+    GLKVector4 colortop = [[UIColor colorWithWhite:0 alpha:0.02] asvector];
     GLKVector4 colorbottom = GLKVector4Make(0, 0, 0, 0);
     
     self.dataposition = [NSMutableData dataWithLength:corners2 * sizeof(GLKVector2)];

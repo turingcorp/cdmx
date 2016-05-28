@@ -17,13 +17,20 @@
     self.controller = controller;
     
     vclimatebar *bar = [[vclimatebar alloc] init:controller];
+    
+    vspinner *spinner = [[vspinner alloc] init];
+    self.spinner = spinner;
+    
+    [self addSubview:spinner];
     [self addSubview:bar];
     
-    NSDictionary *views = @{@"bar":bar};
+    NSDictionary *views = @{@"bar":bar, @"spinner":spinner};
     NSDictionary *metrics = @{};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[bar]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[bar]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[spinner]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-100-[spinner]" options:0 metrics:metrics views:views]];
     
     return self;
 }
