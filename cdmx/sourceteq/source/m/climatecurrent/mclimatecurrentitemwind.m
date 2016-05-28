@@ -1,4 +1,7 @@
 #import "mclimatecurrentitemwind.h"
+#import "vclimatecellwind.h"
+
+static NSInteger const climatewindheight = 100;
 
 @interface mclimatecurrentitem ()
 
@@ -16,7 +19,7 @@
 
 -(instancetype)init:(mclimatewind*)wind
 {
-    //self = [super init:<#(__unsafe_unretained Class)#> height:<#(NSInteger)#>];
+    self = [super init:[vclimatecellwind class] height:climatewindheight];
     self.wind = wind;
     
     return self;

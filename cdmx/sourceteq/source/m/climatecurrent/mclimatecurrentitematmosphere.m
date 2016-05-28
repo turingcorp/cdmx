@@ -1,4 +1,7 @@
 #import "mclimatecurrentitematmosphere.h"
+#import "vclimatecellatmosphere.h"
+
+static NSInteger const climateatmosphereheight = 130;
 
 @interface mclimatecurrentitem ()
 
@@ -16,7 +19,7 @@
 
 -(instancetype)init:(mclimateatmosphere*)atmosphere
 {
-    //self = [super init:<#(__unsafe_unretained Class)#> height:<#(NSInteger)#>];
+    self = [super init:[vclimatecellatmosphere class] height:climateatmosphereheight];
     self.atmosphere = atmosphere;
     
     return self;
