@@ -1,9 +1,8 @@
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface mclimatewind:NSObject
 
-@property(assign, nonatomic, readonly)NSInteger chill;
+@property(assign, nonatomic, readonly)CGFloat speed;
 @property(assign, nonatomic, readonly)NSInteger direction;
-@property(assign, nonatomic, readonly)NSInteger speed;
 
 @end
