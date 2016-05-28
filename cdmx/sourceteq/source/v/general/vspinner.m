@@ -20,7 +20,10 @@ static NSUInteger const spinnerintrinsicsize = 90;
                              [UIImage imageNamed:@"spinner_2"],
                              [UIImage imageNamed:@"spinner_4"],
                              [UIImage imageNamed:@"spinner_5"],
-                             [UIImage imageNamed:@"spinner_6"]
+                             [UIImage imageNamed:@"spinner_6"],
+                             [UIImage imageNamed:@"spinner_7"],
+                             [UIImage imageNamed:@"spinner_8"],
+                             [UIImage imageNamed:@"spinner_9"]
                              ];
     [self startAnimating];
     
