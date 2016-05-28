@@ -145,6 +145,7 @@
 "vnodrive_calendar_title"="Calendar";
 
 "vclimate_conditions_temp"="%@°";
+"vclimate_atmosphere_humidity"="%@%%";
 
 "mmenu_section_city"="City";
 "mmenu_section_mobility"="Mobility";

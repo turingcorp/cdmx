@@ -3,4 +3,7 @@
 
 @interface vclimatecellatmosphere:vclimatecell
 
+@property(weak, nonatomic)UILabel *humiditylabel;
+@property(weak, nonatomic)NSLayoutConstraint *layouthumidityleft;
+
 @end

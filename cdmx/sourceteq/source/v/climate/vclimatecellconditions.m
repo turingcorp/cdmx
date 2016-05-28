@@ -34,7 +34,7 @@ static CGFloat conditionstimerinterval = 0.03;
     NSDictionary *metrics = @{};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[tempnumber]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[tempnumber(160)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-40-[tempnumber(120)]" options:0 metrics:metrics views:views]];
     
     return self;
 }
