@@ -83,11 +83,6 @@
     [self.parentViewController menu];
 }
 
--(void)forecast
-{
-    
-}
-
 #pragma mark -
 #pragma mark call del
 
