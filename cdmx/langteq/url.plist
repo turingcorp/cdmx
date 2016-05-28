@@ -13,6 +13,6 @@
 	<key>server-weather</key>
 	<string>https://query.yahooapis.com/</string>
 	<key>forecast</key>
-	<string>v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid3D116545&amp;format=json</string>
+	<string>v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%3D116545&amp;format=json</string>
 </dict>
 </plist>
