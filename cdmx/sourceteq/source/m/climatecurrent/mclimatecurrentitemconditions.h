@@ -1,13 +1,9 @@
-//
-//  mclimatecurrentitemconditions.h
-//  cdmx
-//
-//  Created by zero on 5/28/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
+#import "mclimatecurrentitem.h"
+#import "mclimateconditions.h"
 
-@interface mclimatecurrentitemconditions : NSObject
+@interface mclimatecurrentitemconditions:mclimatecurrentitem
+
+@property(weak, nonatomic, readonly)mclimateconditions *conditions;
 
 @end

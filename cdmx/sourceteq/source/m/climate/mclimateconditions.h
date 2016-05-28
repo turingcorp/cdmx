@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 
-@interface mclimatecondition:NSObject
+@interface mclimateconditions:NSObject
 
 @property(assign, nonatomic, readonly)NSInteger temp;
 @property(assign, nonatomic, readonly)NSInteger code;

@@ -1,4 +1,14 @@
 #import "mclimatecurrentitem.h"
+#import "mclimatecurrentitemconditions.h"
+#import "mclimatecurrentitematmosphere.h"
+#import "mclimatecurrentitemwind.h"
+#import "mclimate.h"
+
+@interface mclimatecurrentitemconditions ()
+
+-(instancetype)init:(mclimateconditions*)conditions;
+
+@end
 
 @interface mclimatecurrentitem ()
 
@@ -9,6 +19,13 @@
 @end
 
 @implementation mclimatecurrentitem
+
++(instancetype)conditions:(mclimateconditions*)conditions
+{
+    mclimatecurrentitem *item = [[mclimatecurrentitemconditions alloc] init:conditions];
+    
+    return item;
+}
 
 -(instancetype)init:(Class)cellclass height:(NSInteger)cellheight
 {

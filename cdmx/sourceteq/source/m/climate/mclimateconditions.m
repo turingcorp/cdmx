@@ -1,13 +1,13 @@
-#import "mclimatecondition.h"
+#import "mclimateconditions.h"
 
-@interface mclimatecondition ()
+@interface mclimateconditions ()
 
 @property(assign, nonatomic, readwrite)NSInteger temp;
 @property(assign, nonatomic, readwrite)NSInteger code;
 
 @end
 
-@implementation mclimatecondition
+@implementation mclimateconditions
 
 -(instancetype)init:(NSDictionary*)dictionary;
 {
@@ -24,7 +24,7 @@
 -(NSString*)description
 {
     NSMutableString *string = [NSMutableString string];
-    [string appendString:@"condition: "];
+    [string appendString:@"conditions: "];
     [string appendFormat:@"[temp %@] ", @(self.temp)];
     [string appendFormat:@"[code %@]", @(self.code)];
     
