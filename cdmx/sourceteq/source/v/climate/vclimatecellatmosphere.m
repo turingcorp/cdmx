@@ -34,7 +34,7 @@ static NSInteger const humidityimagesize = 50;
     self.layouthumidityleft = [NSLayoutConstraint constraintWithItem:humidityimage attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeft multiplier:1 constant:0];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[humidityimage(humidityimagesize)]-0-[humiditylabel(100)]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[humidityimage(humidityimagesize)]" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[humiditylabel(humidityimagesize)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-5-[humiditylabel(humidityimagesize)]" options:0 metrics:metrics views:views]];
     [self addConstraint:self.layouthumidityleft];
     
     return self;
@@ -43,7 +43,7 @@ static NSInteger const humidityimagesize = 50;
 -(void)layoutSubviews
 {
     CGFloat width = self.bounds.size.width;
-    CGFloat remain = width - humidityimagesize;
+    CGFloat remain = width - (humidityimagesize * 2);
     CGFloat margin = remain / 2.0;
     self.layouthumidityleft.constant = margin;
     
