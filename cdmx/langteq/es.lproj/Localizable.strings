@@ -118,6 +118,10 @@
 "mnodrive_calendar_foreigner_mornings"="No circula entre semana entre 5:00 am y 11:00 am";
 "mnodrive_calendar_foreigner_saturdays"="No circula los sabados";
 
+"mclimate_atmosphere_rising_steady"="Estable";
+"mclimate_atmosphere_rising_rasing"="Subiendo";
+"mclimate_atmosphere_rising_falling"="Bajando";
+
 "vpollution_error_button"="Intenta de nuevo";
 "vpollution_radio_chart_title"="IMECA";
 "vpollution_front_header_button_imeca"="Acerca de IMECA";

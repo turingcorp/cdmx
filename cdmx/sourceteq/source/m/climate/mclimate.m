@@ -6,9 +6,16 @@
 
 @end
 
+@interface mclimateatmosphere ()
+
+-(instancetype)init:(NSDictionary*)dictionary;
+
+@end
+
 @interface mclimate ()
 
 @property(strong, nonatomic, readwrite)mclimatewind *wind;
+@property(strong, nonatomic, readwrite)mclimateatmosphere *atmosphere;
 
 @end
 
@@ -22,12 +29,24 @@
     NSDictionary *results = query[@"results"];
     NSDictionary *channel = results[@"channel"];
     NSDictionary *rawwind = channel[@"wind"];
+    NSDictionary *rawatmosphere = channel[@"atmosphere"];
     
     self.wind = [[mclimatewind alloc] init:rawwind];
-    
-    NSLog(@"%@", self.wind);
+    self.atmosphere = [[mclimateatmosphere alloc] init:rawatmosphere];
+
+    NSLog(@"%@", self);
     
     return self;
+}
+
+-(NSString*)description
+{
+    NSMutableString *string = [NSMutableString string];
+    [string appendString:@"climate >\n"];
+    [string appendFormat:@"%@\n", self.wind];
+    [string appendFormat:@"%@", self.atmosphere];
+    
+    return string;
 }
 
 @end
