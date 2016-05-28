@@ -7,6 +7,7 @@
 +(instancetype)pollution;
 +(instancetype)radiation;
 +(instancetype)nodrive;
++(instancetype)climate;
 -(NSURLRequest*)request;
 
 @property(strong, nonatomic)aparser *parser;

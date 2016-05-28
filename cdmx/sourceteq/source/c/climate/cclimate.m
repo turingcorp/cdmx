@@ -1,7 +1,7 @@
 #import "cclimate.h"
 #import "cmain.h"
 #import "vclimate.h"
-//#import "aparsernodrive.h"
+#import "aparserclimate.h"
 #import "enotification.h"
 #import "analytics.h"
 
@@ -72,7 +72,7 @@
                    ^
                    {
                        [welf.apimanager cancelcall];
-                       //welf.apimanager = [amanager call:[acall nodrive] delegate:welf];
+                       welf.apimanager = [amanager call:[acall climate] delegate:welf];
                    });
     
     [[analytics singleton] trackscreen:self];
