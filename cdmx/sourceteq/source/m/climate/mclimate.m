@@ -49,8 +49,6 @@
     self.conditions = [[mclimateconditions alloc] init:rawconditions];
     self.wind = [[mclimatewind alloc] init:rawwind];
     self.atmosphere = [[mclimateatmosphere alloc] init:rawatmosphere];
-
-    NSLog(@"%@", self);
     
     return self;
 }

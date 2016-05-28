@@ -3,4 +3,6 @@
 
 @interface vclimatecellconditions:vclimatecell
 
+@property(weak, nonatomic)UILabel *tempnumber;
+
 @end
