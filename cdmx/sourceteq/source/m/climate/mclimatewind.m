@@ -25,7 +25,7 @@
 {
     NSMutableString *string = [NSMutableString string];
     [string appendString:@"wind: "];
-    [string appendFormat:@"[direction %@]", @(self.direction)];
+    [string appendFormat:@"[direction %@] ", @(self.direction)];
     [string appendFormat:@"[speed %@]", @(self.speed)];
     
     return string;
