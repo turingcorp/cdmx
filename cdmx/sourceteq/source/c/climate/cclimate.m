@@ -93,19 +93,18 @@
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
                    ^
                    {
-//                       aparsernodrive *parser = (aparsernodrive*)manager.call.parser;
-//                       
-//                       if(parser.nodrive)
-//                       {
-//                           welf.model = parser.nodrive;
-//                           mnodrivetoday *modeltoday = [parser.nodrive modeltoday];
-//                           
-//                           dispatch_async(dispatch_get_main_queue(),
-//                                          ^
-//                                          {
-//                                              [welf.view nodriveloaded:modeltoday];
-//                                          });
-//                       }
+                       aparserclimate *parser = (aparserclimate*)manager.call.parser;
+                       
+                       if(parser.climate)
+                       {
+                           welf.model = parser.climate;
+                           
+                           dispatch_async(dispatch_get_main_queue(),
+                                          ^
+                                          {
+                                              [welf.view climateloaded];
+                                          });
+                       }
                    });
 }
 
@@ -117,7 +116,7 @@
                    ^
                    {
                        welf.model = nil;
-//                       [welf.view error:error];
+                       [welf.view error:error];
                    });
 }
 

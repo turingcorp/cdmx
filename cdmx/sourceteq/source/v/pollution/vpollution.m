@@ -113,6 +113,15 @@ static NSInteger const pollutionmenuheight = 50;
     [self.spinner setAlpha:1];
 }
 
+-(void)displayerror
+{
+    [self.labelerror removeFromSuperview];
+    [self.buttonerror removeFromSuperview];
+    [self.option remove];
+    [self.spinner setHidden:YES];
+    [self.spinner stopAnimating];
+}
+
 #pragma mark public
 
 -(void)modelloaded
@@ -231,11 +240,7 @@ static NSInteger const pollutionmenuheight = 50;
 
 -(void)error:(NSString*)error
 {
-    [self.labelerror removeFromSuperview];
-    [self.buttonerror removeFromSuperview];
-    [self.option remove];
-    [self.spinner setHidden:YES];
-    [self.spinner stopAnimating];
+    [self displayerror];
     
     UILabel *labelerror = [[UILabel alloc] init];
     [labelerror setBackgroundColor:[UIColor clearColor]];
