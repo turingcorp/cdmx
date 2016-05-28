@@ -2,7 +2,18 @@
 #import "mclimatecurrentitemconditions.h"
 #import "efont.h"
 
+static CGFloat conditionstimerinterval = 0.03;
+
+@interface vclimatecellconditions ()
+
+@property(weak, nonatomic)mclimatecurrentitemconditions *model;
+
+@end
+
 @implementation vclimatecellconditions
+{
+    NSInteger currenttemp;
+}
 
 -(instancetype)initWithFrame:(CGRect)frame
 {
@@ -14,6 +25,7 @@
     [tempnumber setBackgroundColor:[UIColor clearColor]];
     [tempnumber setFont:[UIFont numericsize:80]];
     [tempnumber setTextColor:[UIColor blackColor]];
+    [tempnumber setTextAlignment:NSTextAlignmentCenter];
     self.tempnumber = tempnumber;
     
     [self addSubview:tempnumber];
@@ -21,10 +33,36 @@
     NSDictionary *views = @{@"tempnumber":tempnumber};
     NSDictionary *metrics = @{};
     
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[tempnumber(220)]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-50-[tempnumber(100)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[tempnumber]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[tempnumber(160)]" options:0 metrics:metrics views:views]];
     
     return self;
+}
+
+-(void)dealloc
+{
+    [self.timer invalidate];
+}
+
+#pragma mark functionality
+
+-(void)tick:(NSTimer*)timer
+{
+    currenttemp++;
+    
+    if(currenttemp >= self.model.conditions.temp)
+    {
+        currenttemp = self.model.conditions.temp;
+        [timer invalidate];
+    }
+    
+    [self print];
+}
+
+-(void)print
+{
+    NSString *string = [NSString stringWithFormat:NSLocalizedString(@"vclimate_conditions_temp", nil), @(currenttemp)];
+    [self.tempnumber setText:string];
 }
 
 #pragma mark -
@@ -32,9 +70,11 @@
 
 -(void)config:(mclimatecurrentitemconditions*)model
 {
-    NSString *string = [NSString stringWithFormat:NSLocalizedString(@"vclimate_conditions_temp", nil), @(model.conditions.temp)];
+    self.model = model;
+    currenttemp = 0;
     
-    [self.tempnumber setText:string];
+    [self print];
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:conditionstimerinterval target:self selector:@selector(tick:) userInfo:nil repeats:YES];
 }
 
 @end

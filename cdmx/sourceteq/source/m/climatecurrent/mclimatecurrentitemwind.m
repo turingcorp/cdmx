@@ -1,7 +1,7 @@
 #import "mclimatecurrentitemwind.h"
 #import "vclimatecellwind.h"
 
-static NSInteger const climatewindheight = 100;
+static NSInteger const climatewindheight = 150;
 
 @interface mclimatecurrentitem ()
 
