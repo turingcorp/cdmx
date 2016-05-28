@@ -1,5 +1,4 @@
 #import "vmenubar.h"
-#import "ecolor.h"
 #import "cmenu.h"
 
 @implementation vmenubar
@@ -20,7 +19,7 @@
     [border setUserInteractionEnabled:NO];
     [border setClipsToBounds:YES];
     [border setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [border setBackgroundColor:[UIColor main]];
+    [border setBackgroundColor:[UIColor blackColor]];
     
     [self addSubview:border];
     [self addSubview:logo];
@@ -31,7 +30,7 @@
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[logo]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[logo]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[border]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[border(1)]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[border(1)]" options:0 metrics:metrics views:views]];
     
     return self;
 }
