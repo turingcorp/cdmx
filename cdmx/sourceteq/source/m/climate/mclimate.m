@@ -1,7 +1,5 @@
 #import "mclimate.h"
 
-static CGFloat const milestokmratio = 1.60934;
-
 @interface mclimatewind ()
 
 -(instancetype)init:(NSDictionary*)dictionary;
