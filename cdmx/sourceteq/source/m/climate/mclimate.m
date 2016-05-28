@@ -18,6 +18,12 @@
 
 @end
 
+@interface mclimatecurrent ()
+
+-(instancetype)init:(mclimate*)model;
+
+@end
+
 @interface mclimate ()
 
 @property(strong, nonatomic, readwrite)mclimateconditions *conditions;
@@ -58,6 +64,15 @@
     [string appendFormat:@"%@", self.atmosphere];
     
     return string;
+}
+
+#pragma mark public
+
+-(mclimatecurrent*)current
+{
+    mclimatecurrent *current = [[mclimatecurrent alloc] init:self];
+    
+    return current;
 }
 
 @end

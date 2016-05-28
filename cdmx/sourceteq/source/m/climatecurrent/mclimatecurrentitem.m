@@ -10,6 +10,18 @@
 
 @end
 
+@interface mclimatecurrentitematmosphere ()
+
+-(instancetype)init:(mclimateatmosphere*)atmosphere;
+
+@end
+
+@interface mclimatecurrentitemwind ()
+
+-(instancetype)init:(mclimatewind*)wind;
+
+@end
+
 @interface mclimatecurrentitem ()
 
 @property(copy, nonatomic, readwrite)NSString *reusableidentifier;
@@ -23,6 +35,20 @@
 +(instancetype)conditions:(mclimateconditions*)conditions
 {
     mclimatecurrentitem *item = [[mclimatecurrentitemconditions alloc] init:conditions];
+    
+    return item;
+}
+
++(instancetype)atmosphere:(mclimateatmosphere*)atmosphere
+{
+    mclimatecurrentitem *item = [[mclimatecurrentitematmosphere alloc] init:atmosphere];
+    
+    return item;
+}
+
++(instancetype)wind:(mclimatewind*)wind
+{
+    mclimatecurrentitem *item = [[mclimatecurrentitemwind alloc] init:wind];
     
     return item;
 }
