@@ -25,17 +25,28 @@ static NSInteger const humidityimagesize = 50;
     [humiditylabel setTextColor:[UIColor blackColor]];
     self.humiditylabel = humiditylabel;
     
+    UIImageView *risingimage = [[UIImageView alloc] init];
+    [risingimage setClipsToBounds:YES];
+    [risingimage setUserInteractionEnabled:NO];
+    [risingimage setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [risingimage setContentMode:UIViewContentModeCenter];
+    self.risingimage = risingimage;
+    
     [self addSubview:humidityimage];
     [self addSubview:humiditylabel];
+    [self addSubview:risingimage];
     
-    NSDictionary *views = @{@"humidityimage":humidityimage, @"humiditylabel":humiditylabel};
-    NSDictionary *metrics = @{@"humidityimagesize":@(humidityimagesize)};
+    NSDictionary *views = @{@"humidityimage":humidityimage, @"humiditylabel":humiditylabel, @"risingimage":risingimage};
+    NSDictionary *metrics = @{@"humidityimagesize":@(humidityimagesize), @"risingwidth":@(humidityimagesize * 2)};
     
     self.layouthumidityleft = [NSLayoutConstraint constraintWithItem:humidityimage attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeft multiplier:1 constant:0];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[humidityimage(humidityimagesize)]-0-[humiditylabel(100)]" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[humidityimage(humidityimagesize)]" options:0 metrics:metrics views:views]];
+    self.layoutrisingleft = [NSLayoutConstraint constraintWithItem:risingimage attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeft multiplier:1 constant:0];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[humidityimage(humidityimagesize)]-0-[humiditylabel(humidityimagesize)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[risingimage(risingwidth)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[humidityimage(humidityimagesize)]-0-[risingimage(humidityimagesize)]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-5-[humiditylabel(humidityimagesize)]" options:0 metrics:metrics views:views]];
     [self addConstraint:self.layouthumidityleft];
+    [self addConstraint:self.layoutrisingleft];
     
     return self;
 }
@@ -46,6 +57,7 @@ static NSInteger const humidityimagesize = 50;
     CGFloat remain = width - (humidityimagesize * 2);
     CGFloat margin = remain / 2.0;
     self.layouthumidityleft.constant = margin;
+    self.layoutrisingleft.constant = margin;
     
     [super layoutSubviews];
 }
@@ -57,6 +69,7 @@ static NSInteger const humidityimagesize = 50;
 {
     NSString *string = [NSString stringWithFormat:NSLocalizedString(@"vclimate_atmosphere_humidity", nil), @(model.atmosphere.humidity)];
     [self.humiditylabel setText:string];
+    [self.risingimage setImage:[UIImage imageNamed:model.atmosphere.rising.asset]];
 }
 
 @end
