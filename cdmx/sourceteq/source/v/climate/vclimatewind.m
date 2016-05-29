@@ -2,7 +2,7 @@
 #import "ecolor.h"
 
 static NSInteger const circlelinewidth = 2;
-static NSInteger const circleradius = 80;
+static NSInteger const circleradius = 140;
 
 @implementation vclimatewind
 
