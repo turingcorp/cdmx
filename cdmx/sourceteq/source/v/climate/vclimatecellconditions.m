@@ -2,7 +2,7 @@
 #import "mclimatecurrentitemconditions.h"
 #import "efont.h"
 
-static CGFloat conditionstimerinterval = 0.03;
+static CGFloat conditionstimerinterval = 0.04;
 
 @interface vclimatecellconditions ()
 
