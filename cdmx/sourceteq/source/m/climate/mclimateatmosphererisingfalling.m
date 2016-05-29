@@ -13,6 +13,7 @@
 {
     self = [super init];
     self.name = NSLocalizedString(@"mclimate_atmosphere_rising_falling", nil);
+    self.asset = @"climate_risingfalling";
     
     return self;
 }
