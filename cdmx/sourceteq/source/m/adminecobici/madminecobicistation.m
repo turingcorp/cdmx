@@ -53,15 +53,25 @@
         
         NSArray *splitlocation = [rawlocation componentsSeparatedByString:@", "];
         NSUInteger locationcount = splitlocation.count;
-        /*
+        
         if(locationcount == 2)
         {
-            NSException *exception = [NSException exceptionWithName:@"ParsingException" reason:@"Parsing location failed" userInfo:nil];
-            [exception raise];
-        }*/
+            NSString *rawlatitude = splitlocation[0];
+            NSString *rawlongitude = splitlocation[1];
+            CGFloat floatlatitude = rawlatitude.floatValue;
+            CGFloat floatlongitude = rawlongitude.floatValue;
+            
+            if(!floatlatitude)
+            {
+                self.latitude = @(floatlatitude);
+            }
+            
+            if(!floatlongitude)
+            {
+                self.longitude = @(floatlongitude);
+            }
+        }
     }
-    
-    NSLog(@"name: %@", self.name);
     
     return self;
 }
