@@ -4,8 +4,25 @@ branches:
   only:
     - dev
 script:
-  - scripts/devices_tests.sh
+- if [ $OS == '8' ]; then xcodebuild -workspace cdmx.xcworkspace \
+                              -scheme cdmx \
+                              -sdk "iphonesimulator" \
+                              -destination "platform=iOS Simulator,OS=8.1,name=iPhone 5" \
+                              -configuration Release \
+                              test;
+                              fi
+- if [ $OS == '9' ]; then xcodebuild -workspace cdmx.xcworkspace \
+                              -scheme cdmx \
+                              -sdk "iphonesimulator" \
+                              -destination "platform=iOS Simulator,OS=9.3,name=iPhone 6" \
+                              -configuration Release \
+                              test;
+                              fi
 notifications:
   email:
     on_success: never
     on_failure: never
+env:
+  matrix:
+  - OS=8
+  - OS=9
