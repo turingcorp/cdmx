@@ -1,8 +1,7 @@
 #import <UIKit/UIKit.h>
-#import "ccontroller.h"
 #import "mmenu.h"
 
-@interface cmenu:ccontroller
+@interface cmenu:UIViewController
 
 -(void)menuselected:(UIViewController*)controller;
 

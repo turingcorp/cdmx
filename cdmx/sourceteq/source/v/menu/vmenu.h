@@ -1,8 +1,11 @@
 #import <UIKit/UIKit.h>
-#import "vview.h"
+#import "cmenu.h"
 
-@interface vmenu:vview<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@interface vmenu:UIView<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
+-(instancetype)init:(cmenu*)controller;
+
+@property(weak, nonatomic)cmenu *controller;
 @property(weak, nonatomic)UICollectionView *collection;
 @property(weak, nonatomic)NSLayoutConstraint *layoutbarheight;
 

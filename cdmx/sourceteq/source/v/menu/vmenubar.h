@@ -1,6 +1,5 @@
 #import <UIKit/UIKit.h>
-#import "vviewbar.h"
 
-@interface vmenubar:vviewbar
+@interface vmenubar:UIView
 
 @end

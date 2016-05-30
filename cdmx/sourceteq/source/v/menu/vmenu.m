@@ -13,20 +13,17 @@ static NSInteger const menuheaderheight = 50;
 static NSInteger const menucellheight = 60;
 static NSInteger const menuinteritem = -1;
 
-@interface vmenu ()
-
-@property(weak, nonatomic)cmenu *controller;
-
-@end
-
 @implementation vmenu
-
-@dynamic controller;
 
 -(instancetype)init:(cmenu*)controller
 {
-    self = [super init:controller];
+    self = [super init];
+    [self setClipsToBounds:YES];
+    [self setBackgroundColor:[UIColor whiteColor]];
+    self.controller = controller;
 
+    vmenubar *bar = [[vmenubar alloc] init];
+    
     UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
     [flow setFooterReferenceSize:CGSizeZero];
     [flow setMinimumLineSpacing:menuinteritem];
@@ -46,12 +43,15 @@ static NSInteger const menuinteritem = -1;
     [collection registerClass:[vmenuheader class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:[vmenuheader reusableidentifier]];
     self.collection = collection;
 
-    [self insertSubview:collection belowSubview:self.bar];
+    [self addSubview:collection];
+    [self addSubview:bar];
     
-    NSDictionary *views = @{@"col":collection, @"bar":self.bar};
+    NSDictionary *views = @{@"col":collection, @"bar":bar};
     NSDictionary *metrics = @{};
     
-    self.layoutbarheight = [NSLayoutConstraint constraintWithItem:self.bar attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:menubarheight];
+    self.layoutbarheight = [NSLayoutConstraint constraintWithItem:bar attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:menubarheight];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[bar]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[bar]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraint:self.layoutbarheight];
@@ -172,15 +172,6 @@ static NSInteger const menuinteritem = -1;
     mmenusectionitem *model = [self itemforindex:index];
     UIViewController *controller = [model controller];
     [self.controller menuselected:controller];
-}
-
-#pragma mark view
-
--(vviewbar*)loadbar
-{
-    vmenubar *bar = [[vmenubar alloc] init:self.controller];
-    
-    return bar;
 }
 
 @end
