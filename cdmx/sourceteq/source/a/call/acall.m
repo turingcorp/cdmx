@@ -5,7 +5,7 @@
 #import "acallnodrive.h"
 #import "acallclimate.h"
 
-static NSInteger const standardtimeout = 15;
+static NSInteger const standardtimeout = 12;
 
 @implementation acall
 

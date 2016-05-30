@@ -3,6 +3,13 @@
 
 @implementation vclimatecellwind
 
+-(instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    
+    return self;
+}
+
 #pragma mark -
 #pragma mark climate cell
 

@@ -5,4 +5,6 @@
 
 -(instancetype)init:(mclimatewind*)model;
 
+@property(weak, nonatomic, readonly)mclimatewind *model;
+
 @end
