@@ -28,87 +28,25 @@ static NSString *const ecobicidbname = @"ecobici.zql";
     zqlquery *querytablestations = [zqlquery createtable:dbstations params:params];
     [queries addObject:querytablestations];
     
-    return dburl;
+    NSUInteger countstations = model.stations.count;
     
-    /*
-    NSString *filename = NSLocalizedString(@"flow_exportname", nil);
-    NSString *filepath = [NSTemporaryDirectory() stringByAppendingPathComponent:filename];
-    NSURL *url = [NSURL fileURLWithPath:filepath];*/
-    
-    /*NSArray *rawdistricts = [NSArray arrayWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"districts" withExtension:@"plist"]];
-    NSMutableArray<zqlquery*> *queries = [NSMutableArray array];
-    
-    zqlparam *paramserverid = [zqlparam type:[zqltype integer] name:dbserverindex value:nil];
-    zqlparam *paramname = [zqlparam type:[zqltype text] name:dbdistricts_name value:nil];
-    zqlparam *parampollution = [zqlparam type:[zqltype integer] name:dbdistricts_pollution value:nil];
-    zqlparam *parampollutantid = [zqlparam type:[zqltype integer] name:dbdistricts_pollutantid value:nil];
-    zqlparam *paramasset = [zqlparam type:[zqltype text] name:dbdistricts_asset value:nil];
-    zqlparam *paramx = [zqlparam type:[zqltype integer] name:dbdistricts_x value:nil];
-    zqlparam *paramy = [zqlparam type:[zqltype integer] name:dbdistricts_y value:nil];
-    zqlparam *paramwidth = [zqlparam type:[zqltype integer] name:dbdistricts_width value:nil];
-    zqlparam *paramheight = [zqlparam type:[zqltype integer] name:dbdistricts_height value:nil];
-    zqlparam *paramlatitude = [zqlparam type:[zqltype integer] name:dbdistricts_latitude value:nil];
-    zqlparam *paramlongitude = [zqlparam type:[zqltype integer] name:dbdistricts_longitude value:nil];
-    
-    NSArray<zqlparam*> *params = @[
-                                   paramserverid,
-                                   paramname,
-                                   parampollution,
-                                   parampollutantid,
-                                   paramasset,
-                                   paramx,
-                                   paramy,
-                                   paramwidth,
-                                   paramheight,
-                                   paramlatitude,
-                                   paramlongitude
-                                   ];
-    
-    zqlquery *querytabledistricts = [zqlquery createtable:dbdistricts params:params];
-    [queries addObject:querytabledistricts];
-    
-    NSUInteger countdistricts = rawdistricts.count;
-    
-    for(NSUInteger indexdistricts = 0; indexdistricts < countdistricts; indexdistricts++)
+    for(NSUInteger indexstation = 0; indexstation < countstations; indexstation++)
     {
-        NSDictionary *rawdistrict = rawdistricts[indexdistricts];
-        NSString *districtname = rawdistrict[dbdistricts_name];
-        NSString *districtasset = rawdistrict[dbdistricts_asset];
-        NSNumber *districtserverid = rawdistrict[dbserverindex];
-        NSNumber *districtx = rawdistrict[dbdistricts_x];
-        NSNumber *districty = rawdistrict[dbdistricts_y];
-        NSNumber *districtwidth = rawdistrict[dbdistricts_width];
-        NSNumber *districtheight = rawdistrict[dbdistricts_height];
-        NSNumber *districtlatitude = rawdistrict[dbdistricts_latitude];
-        NSNumber *districtlongitude = rawdistrict[dbdistricts_longitude];
-        NSNumber *uselatitude = @(districtlatitude.floatValue * dbintegermultiply);
-        NSNumber *uselongitude = @(districtlongitude.floatValue * dbintegermultiply);
+        madminecobicistation *station = model.stations[indexstation];
+        paramstationid.value = station.stationid;
+        paramname.value = station.name;
+        paramlatitude.value = station.latitude;
+        paramlongitude.value = station.longitude;
         
-        paramserverid.value = districtserverid;
-        paramname.value = districtname;
-        paramasset.value = districtasset;
-        paramx.value = districtx;
-        paramy.value = districty;
-        paramwidth.value = districtwidth;
-        paramheight.value = districtheight;
-        paramlatitude.value = uselatitude;
-        paramlongitude.value = uselongitude;
-        zqlquery *newquery = [zqlquery insert:dbdistricts params:params];
-        [queries addObject:newquery];
+        zqlquery *insertquery = [zqlquery insert:dbstations params:params];
+        [queries addObject:insertquery];
     }
     
-    zqlparam *paramdate = [zqlparam type:[zqltype integer] name:dbpollutiondaily_date value:nil];
-    zqlparam *parammaxpollution = [zqlparam type:[zqltype integer] name:dbpollutiondaily_maxpollution value:nil];
-    paramdate.unique = YES;
+    zqlresult *result = [zql query:queries db:dbname];
     
-    params = @[
-               paramdate,
-               parammaxpollution
-               ];
+    NSLog(@"%@", result);
     
-    zqlquery *querytablepollutiondaily = [zqlquery createtable:dbpollutiondaily params:params];
-    [queries addObject:querytablepollutiondaily];
-    [zql query:queries];*/
+    return dburl;
 }
 
 @end

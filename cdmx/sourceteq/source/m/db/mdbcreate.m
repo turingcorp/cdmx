@@ -78,8 +78,9 @@
         paramheight.value = districtheight;
         paramlatitude.value = uselatitude;
         paramlongitude.value = uselongitude;
-        zqlquery *newquery = [zqlquery insert:dbdistricts params:params];
-        [queries addObject:newquery];
+        
+        zqlquery *insertquery = [zqlquery insert:dbdistricts params:params];
+        [queries addObject:insertquery];
     }
     
     zqlparam *paramdate = [zqlparam type:[zqltype integer] name:dbpollutiondaily_date value:nil];
