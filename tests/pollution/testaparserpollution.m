@@ -38,13 +38,13 @@
     NSArray<mdbdistrict*> *districts = [self.parser parsedistricts:rawdistricts];
     XCTAssertEqual(districts.count, 16, @"Different number of districts");
 }
-/*
-- (void)testPerformanceExample
+
+- (void)testparserpollutionperformance
 {
     [self measureBlock:
      ^{
-        
+         [self.parser parse:self.pollutionmockup];
     }];
 }
-*/
+
 @end
