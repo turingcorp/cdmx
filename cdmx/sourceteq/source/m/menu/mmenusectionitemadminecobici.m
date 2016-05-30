@@ -1,4 +1,5 @@
 #import "mmenusectionitemadminecobici.h"
+#import "cadminecobici.h"
 
 @interface mmenusectionitem ()
 
@@ -13,9 +14,19 @@
 {
     self = [super init];
     self.name = NSLocalizedString(@"mmenu_item_adminecobici", nil);
-    self.asset = @"menu_city_pollution";
+    self.asset = @"generic_logo";
     
     return self;
+}
+
+#pragma mark -
+#pragma mark item
+
+-(UIViewController*)controller
+{
+    cadminecobici *controller = [[cadminecobici alloc] init];
+    
+    return controller;
 }
 
 @end
