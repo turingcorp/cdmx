@@ -4,8 +4,15 @@ branches:
   only:
     - dev
 script:
-  - scripts/devices_tests.sh
+- if [ $MODE == 'test8' ]; then xctool -workspace cdmx.xcworkspace -scheme cdmx -sdk "iphonesimulator" -destination "platform=iOS Simulator,OS=8.1,name=iPhone 5" -configuration Debug test; fi
+- if [ $MODE == 'test9' ]; then xctool -workspace cdmx.xcworkspace -scheme cdmx -sdk "iphonesimulator" -destination "platform=iOS Simulator,OS=9.3,name=iPhone 6" -configuration Debug test; fi
+- if [ $MODE == 'Release' ]; then xctool -workspace cdmx.xcworkspace -scheme cdmx -sdk "iphonesimulator" -destination "platform=iOS Simulator,OS=9.3,name=iPhone 6" -configuration Release build; fi
 notifications:
   email:
     on_success: never
     on_failure: never
+env:
+  matrix:
+  - MODE=test8
+  - MODE=test9
+  - MODE=Release
