@@ -53,12 +53,12 @@
         
         NSArray *splitlocation = [rawlocation componentsSeparatedByString:@", "];
         NSUInteger locationcount = splitlocation.count;
-        
+        /*
         if(locationcount == 2)
         {
             NSException *exception = [NSException exceptionWithName:@"ParsingException" reason:@"Parsing location failed" userInfo:nil];
             [exception raise];
-        }
+        }*/
     }
     
     NSLog(@"name: %@", self.name);

@@ -29,6 +29,7 @@
 -(void)tearDown
 {
     [super tearDown];
+    
     self.parser = nil;
     self.pollutionmockup = nil;
 }
