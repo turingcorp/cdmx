@@ -29,6 +29,7 @@
 -(void)tearDown
 {
     [super tearDown];
+    self.parser = nil;
     self.pollutionmockup = nil;
 }
 
@@ -36,7 +37,14 @@
 {
     NSArray *rawdistricts = self.pollutionmockup[@"districts"];
     NSArray<mdbdistrict*> *districts = [self.parser parsedistricts:rawdistricts];
-    XCTAssertEqual(districts.count, 16, @"Different number of districts");
+    XCTAssertEqual(districts.count, 16, @"Different number of districts at parsing");
+    
+    for(mdbdistrict *district in districts)
+    {
+        XCTAssertGreaterThan(district.pollutantid.integerValue, 0, @"Couldn't parser pollutant id");
+        XCTAssertGreaterThan(district.serverid.integerValue, 0, @"Couldn't parser server id");
+        XCTAssertGreaterThan(district.pollution.integerValue, -1, @"Couldn't parser pollution");
+    }
 }
 
 - (void)testparserpollutionperformance
