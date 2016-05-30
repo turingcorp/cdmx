@@ -694,7 +694,6 @@
 		DAD33FE91CBC83E300C87502 /* vblur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vblur.m; sourceTree = "<group>"; };
 		DAD33FEA1CBC83E300C87502 /* vspinner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vspinner.h; sourceTree = "<group>"; };
 		DAD33FEB1CBC83E300C87502 /* vspinner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vspinner.m; sourceTree = "<group>"; };
-		DAD340091CBC84A700C87502 /* privateconstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = privateconstants.h; sourceTree = "<group>"; };
 		DAD3400A1CBC858A00C87502 /* brand.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = brand.xcassets; sourceTree = "<group>"; };
 		DAD7AA211CEF6115003B169A /* vradiationaboutcell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vradiationaboutcell.h; sourceTree = "<group>"; };
 		DAD7AA221CEF6115003B169A /* vradiationaboutcell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vradiationaboutcell.m; sourceTree = "<group>"; };
@@ -1564,7 +1563,6 @@
 		DAD33FB31CBC83E300C87502 /* sourceteq */ = {
 			isa = PBXGroup;
 			children = (
-				DAD340071CBC84A700C87502 /* private */,
 				DAD33FB41CBC83E300C87502 /* core */,
 				DAD33FB91CBC83E300C87502 /* generic */,
 				DAD33FD11CBC83E300C87502 /* source */,
@@ -1709,14 +1707,6 @@
 				DA40965C1CDD4C0D0001D696 /* vcollectioncell.m */,
 			);
 			path = general;
-			sourceTree = "<group>";
-		};
-		DAD340071CBC84A700C87502 /* private */ = {
-			isa = PBXGroup;
-			children = (
-				DAD340091CBC84A700C87502 /* privateconstants.h */,
-			);
-			path = private;
 			sourceTree = "<group>";
 		};
 		DAD7AA2B1CEF66BD003B169A /* radiationabout */ = {

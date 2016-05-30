@@ -1,5 +1,7 @@
 static NSString* const appversionos_key =               @"CFBundleShortVersionString";
 static NSString* const appversion_key =                 @"currentversion";
+static NSString* const appstoreid =                     @"1002967469";
+static NSString* const analyticsid =                    @"UA-72037850-10";
 static NSInteger const navbarheight =                   65;
 static NSInteger const navbarheightmin =                20;
 static NSInteger const pollution_mapy =                 40;
