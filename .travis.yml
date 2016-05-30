@@ -5,12 +5,10 @@ xcode_workspace: cdmx.workspace
 xcode_scheme: cdmx
 branches:
   only:
-  - dev
-  
+    - dev
 env:
-  matrix:
-    - TEST_SDK=iphonesimulator7.0 SIMULATOR=iphone
-    - TEST_SDK=iphonesimulator8.1 SIMULATOR=iphone
-    - TEST_SDK=iphonesimulator9.2 SIMULATOR=iphone
+  - TEST_SDK="iphonesimulator7.0" SIMULATOR="iphone"
+  - TEST_SDK="iphonesimulator8.1" SIMULATOR="iphone"
+  - TEST_SDK="iphonesimulator9.2" SIMULATOR="iphone"
 script:
   - xctool test -test-sdk $TEST_SDK -simulator $SIMULATOR
