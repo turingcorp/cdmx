@@ -168,6 +168,7 @@
 		DABC922D1CFA603E001FE9DE /* climate.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DABC922C1CFA603E001FE9DE /* climate.xcassets */; };
 		DABC92301CFA6D2A001FE9DE /* vclimatewind.m in Sources */ = {isa = PBXBuildFile; fileRef = DABC922F1CFA6D2A001FE9DE /* vclimatewind.m */; };
 		DABC92451CFC939C001FE9DE /* testaparserpollution.m in Sources */ = {isa = PBXBuildFile; fileRef = DABC92441CFC939C001FE9DE /* testaparserpollution.m */; };
+		DABC92471CFC9697001FE9DE /* mockpollution_common.json in Resources */ = {isa = PBXBuildFile; fileRef = DABC92461CFC9697001FE9DE /* mockpollution_common.json */; };
 		DAC21D081CE4C2AA00D92161 /* mpollution.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC21CD11CE4C2AA00D92161 /* mpollution.m */; };
 		DAC21D091CE4C2AA00D92161 /* mpollutionhour.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC21CD31CE4C2AA00D92161 /* mpollutionhour.m */; };
 		DAC21D0F1CE4C2AA00D92161 /* mpollutionnotificationdraw.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC21CDF1CE4C2AA00D92161 /* mpollutionnotificationdraw.m */; };
@@ -594,6 +595,7 @@
 		DABC92351CFC903A001FE9DE /* tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DABC92391CFC903A001FE9DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DABC92441CFC939C001FE9DE /* testaparserpollution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testaparserpollution.m; sourceTree = "<group>"; };
+		DABC92461CFC9697001FE9DE /* mockpollution_common.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mockpollution_common.json; sourceTree = "<group>"; };
 		DAC21CD01CE4C2AA00D92161 /* mpollution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpollution.h; sourceTree = "<group>"; };
 		DAC21CD11CE4C2AA00D92161 /* mpollution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mpollution.m; sourceTree = "<group>"; };
 		DAC21CD21CE4C2AA00D92161 /* mpollutionhour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpollutionhour.h; sourceTree = "<group>"; };
@@ -1275,6 +1277,7 @@
 		DABC92401CFC9168001FE9DE /* mocks */ = {
 			isa = PBXGroup;
 			children = (
+				DABC92461CFC9697001FE9DE /* mockpollution_common.json */,
 			);
 			path = mocks;
 			sourceTree = "<group>";
@@ -1957,6 +1960,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DABC92471CFC9697001FE9DE /* mockpollution_common.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
