@@ -1,39 +1,39 @@
-//
-//  testaparserpollution.m
-//  cdmx
-//
-//  Created by zero on 5/30/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
-
 #import <XCTest/XCTest.h>
+#import "teststools.h"
+#import "aparserpollution.h"
 
-@interface testaparserpollution : XCTestCase
+@interface testaparserpollution:XCTestCase
+
+@property(strong, nonatomic)NSDictionary *pollutionmockup;
 
 @end
 
 @implementation testaparserpollution
 
-- (void)setUp {
+-(void)setUp
+{
     [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    self.pollutionmockup = [teststools loadmock:@"mockpollution_common"];
 }
 
-- (void)tearDown {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
+-(void)tearDown
+{
     [super tearDown];
+    self.pollutionmockup = nil;
+}
+/*
+-(void)testExample
+{
+    
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
-}
-
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
+- (void)testPerformanceExample
+{
+    [self measureBlock:
+     ^{
+        
     }];
 }
-
+*/
 @end

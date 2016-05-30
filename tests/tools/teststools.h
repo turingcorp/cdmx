@@ -2,4 +2,6 @@
 
 @interface teststools:NSObject
 
++(id)loadmock:(NSString*)jsonname;
+
 @end
