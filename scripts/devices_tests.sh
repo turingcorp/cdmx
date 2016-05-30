@@ -8,7 +8,7 @@ set -o pipefail && xcodebuild -workspace cdmx.xcworkspace \
                               test | xcpretty -c
 
 set -o pipefail && xcodebuild -workspace MLSell.xcworkspace \
-                              -scheme cdmx \
+                              -scheme tests \
                               -sdk "iphonesimulator" \
                               -destination "platform=iOS Simulator,OS=9.3,name=iPhone 6" \
                               test | xcpretty -c
