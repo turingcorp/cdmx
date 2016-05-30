@@ -17,7 +17,7 @@
     NSString *rawname = dictionary[@"name"];
     NSString *rawlocation = dictionary[@"location"];
     
-    if(rawnumber.integerValue && rawname.length)
+    if(rawnumber.integerValue && rawname && rawlocation)
     {
         self = [super init];
         self.stationid = rawnumber;
@@ -50,9 +50,18 @@
         }
         
         self.name = realname;
+        
+        NSArray *splitlocation = [rawlocation componentsSeparatedByString:@", "];
+        NSUInteger locationcount = splitlocation.count;
+        
+        if(locationcount == 2)
+        {
+            NSException *exception = [NSException exceptionWithName:@"ParsingException" reason:@"Parsing location failed" userInfo:nil];
+            [exception raise];
+        }
     }
     
-    NSLog(@"name: ", self.name);
+    NSLog(@"name: %@", self.name);
     
     return self;
 }

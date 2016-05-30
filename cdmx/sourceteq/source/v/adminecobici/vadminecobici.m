@@ -58,11 +58,11 @@
     [buttonexport setHidden:YES];
     [buttonexport setTranslatesAutoresizingMaskIntoConstraints:NO];
     [buttonexport setTitle:NSLocalizedString(@"vadmin_ecobici_buttonexport", nil) forState:UIControlStateNormal];
-    [buttonexport.titleLabel setFont:[UIFont boldsize:15]];
+    [buttonexport.titleLabel setFont:[UIFont boldsize:18]];
     [buttonexport setTitleColor:[UIColor main] forState:UIControlStateNormal];
     [buttonexport setTitleColor:[[UIColor main] colorWithAlphaComponent:0.2] forState:UIControlStateHighlighted];
     [buttonexport addTarget:self action:@selector(actionexport:) forControlEvents:UIControlEventTouchUpInside];
-    self.buttonexport = buttonretry;
+    self.buttonexport = buttonexport;
     
     [self addSubview:spinner];
     [self addSubview:labelerror];
