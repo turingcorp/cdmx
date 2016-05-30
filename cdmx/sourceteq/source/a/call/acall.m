@@ -4,6 +4,7 @@
 #import "acallradiation.h"
 #import "acallnodrive.h"
 #import "acallclimate.h"
+#import "acalladminecobici.h"
 
 static NSInteger const standardtimeout = 12;
 
@@ -33,6 +34,13 @@ static NSInteger const standardtimeout = 12;
 +(instancetype)climate
 {
     acallclimate *call = [[acallclimate alloc] init];
+    
+    return call;
+}
+
++(instancetype)adminecobici:(NSInteger)page
+{
+    acalladminecobici *call = [[acalladminecobici alloc] init:page];
     
     return call;
 }

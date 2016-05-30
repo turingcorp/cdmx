@@ -152,6 +152,7 @@
 "vadmin_ecobici_buttonretry"="Retry";
 "vadmin_ecobici_buttonexport"="Export";
 "vadmin_ecobici_labelexport"="Export ecobici database: %@ stations";
+"vadmin_ecobici_error_reponse"="Wrong response";
 
 "mmenu_section_city"="City";
 "mmenu_section_mobility"="Mobility";

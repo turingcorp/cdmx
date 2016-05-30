@@ -8,6 +8,7 @@
 +(instancetype)radiation;
 +(instancetype)nodrive;
 +(instancetype)climate;
++(instancetype)adminecobici:(NSInteger)page;
 -(NSURLRequest*)request;
 
 @property(strong, nonatomic)aparser *parser;

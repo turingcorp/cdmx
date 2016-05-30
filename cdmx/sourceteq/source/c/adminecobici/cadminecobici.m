@@ -1,10 +1,12 @@
 #import "cadminecobici.h"
 #import "vadminecobici.h"
 #import "aparseradminecobici.h"
+#import "enotification.h"
 
 @interface cadminecobici ()
 
 @property(strong, nonatomic, readwrite)madminecobici *model;
+@property(strong, nonatomic)vadminecobici *view;
 
 @end
 
@@ -13,15 +15,35 @@
     NSInteger currentpage;
 }
 
--(void)viewDidLoad
+@synthesize view;
+
+-(void)viewDidAppear:(BOOL)animated
 {
-    [super viewDidLoad];
-    self.model = [[madminecobici alloc] init];
+    [super viewDidAppear:animated];
+    [self pullecobicidata];
+    
+    [NSNotification becomeactiveremove:self];
+    [NSNotification observe:self becomeactive:@selector(notifiedbecomeactive:)];
 }
 
 -(void)loadView
 {
     self.view = [[vadminecobici alloc] init:self];
+}
+
+#pragma mark notified
+
+-(void)notifiedbecomeactive:(NSNotification*)notification
+{
+    [self pullecobicidata];
+}
+
+#pragma mark private
+
+-(void)pull
+{
+    [self.apimanager cancelcall];
+    self.apimanager = [amanager call:[acall adminecobici:currentpage] delegate:self];
 }
 
 #pragma mark public
@@ -36,8 +58,7 @@
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
                    ^
                    {
-                       [welf.apimanager cancelcall];
-                       welf.apimanager = [amanager call:[acall climate] delegate:welf];
+                       [welf pull];
                    });
 }
 
@@ -53,15 +74,26 @@
                    {
                        aparseradminecobici *parser = (aparseradminecobici*)manager.call.parser;
                        
-                       if(parser.climate)
+                       if(parser.stations.count)
                        {
-                           welf.model = parser.climate;
-                           mclimatecurrent *modelcurrent = [welf.model current];
+                           [welf.model append:parser.stations];
+                           currentpage++;
                            
+                           [welf pull];
+                       }
+                       else
+                       {
                            dispatch_async(dispatch_get_main_queue(),
                                           ^
                                           {
-                                              [welf.view climateloaded:modelcurrent];
+                                              if(currentpage)
+                                              {
+                                                  [welf.view succeded];
+                                              }
+                                              else
+                                              {
+                                                  [welf.view error:NSLocalizedString(@"vadmin_ecobici_error_reponse", nil)];
+                                              }
                                           });
                        }
                    });

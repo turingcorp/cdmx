@@ -109,7 +109,12 @@
 
 -(void)succeded
 {
+    NSString *stringexport = [NSString stringWithFormat:NSLocalizedString(@"vadmin_ecobici_labelexport", nil), self.controller.model.stations.count];
     
+    [self.spinner setHidden:YES];
+    [self.buttonexport setHidden:NO];
+    [self.labelexport setHidden:NO];
+    [self.labelexport setText:stringexport];
 }
 
 @end
