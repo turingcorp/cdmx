@@ -1,10 +1,18 @@
 #import "mdbadminecobici.h"
 #import <zql/zql.h>
 
+static NSString *const ecobicidbname = @"ecobici.zql";
+
 @implementation mdbadminecobici
 
-+(void)createecobicidb
++(NSURL*)createecobicidb:(madminecobici*)model
 {
+    NSString *dbname = [NSTemporaryDirectory() stringByAppendingPathComponent:ecobicidbname];
+    NSURL *dburl = [NSURL fileURLWithPath:dbname];
+    
+    
+    return dburl;
+    
     /*
     NSString *filename = NSLocalizedString(@"flow_exportname", nil);
     NSString *filepath = [NSTemporaryDirectory() stringByAppendingPathComponent:filename];

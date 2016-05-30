@@ -5,8 +5,9 @@
 @interface vadminecobici:vview
 
 -(void)error:(NSString*)error;
--(void)succeded;
+-(void)succeded:(NSURL*)dburl;
 
+@property(strong, nonatomic, readonly)NSURL *dburl;
 @property(weak, nonatomic)vspinner *spinner;
 @property(weak, nonatomic)UILabel *labelerror;
 @property(weak, nonatomic)UILabel *labelexport;

@@ -2,6 +2,7 @@
 #import "vadminecobici.h"
 #import "aparseradminecobici.h"
 #import "enotification.h"
+#import "mdbadminecobici.h"
 
 @interface ccontroller ()
 
@@ -51,7 +52,14 @@
 
 -(void)createdatabase
 {
+    __weak typeof(self) welf = self;
+    NSURL *dburl = [mdbadminecobici createecobicidb:self.model];
     
+    dispatch_async(dispatch_get_main_queue(),
+                   ^
+                   {
+                       [welf.view succeded:dburl];
+                   });
 }
 
 #pragma mark public
@@ -91,18 +99,18 @@
                        }
                        else
                        {
-                           dispatch_async(dispatch_get_main_queue(),
-                                          ^
-                                          {
-                                              if(currentpage)
-                                              {
-                                                  [welf createdatabase];
-                                              }
-                                              else
+                           if(currentpage)
+                           {
+                               [welf createdatabase];
+                           }
+                           else
+                           {
+                               dispatch_async(dispatch_get_main_queue(),
+                                              ^
                                               {
                                                   [welf.view error:NSLocalizedString(@"vadmin_ecobici_error_reponse", nil)];
-                                              }
-                                          });
+                                              });
+                           }
                        }
                    });
 }

@@ -5,6 +5,7 @@
 
 @interface vadminecobici ()
 
+@property(strong, nonatomic, readwrite)NSURL *dburl;
 @property(weak, nonatomic)cadminecobici *controller;
 
 @end
@@ -111,8 +112,9 @@
     [self.labelerror setText:error];
 }
 
--(void)succeded
+-(void)succeded:(NSURL*)dburl
 {
+    self.dburl = dburl;
     NSString *stringexport = [NSString stringWithFormat:NSLocalizedString(@"vadmin_ecobici_labelexport", nil), @(self.controller.model.stations.count)];
     
     [self.spinner setHidden:YES];
