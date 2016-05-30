@@ -21,7 +21,7 @@ static const char *queuename = "charterqueue";
     [labelindex setNumberOfLines:0];
     [labelindex setBackgroundColor:[UIColor clearColor]];
     [labelindex setTextAlignment:NSTextAlignmentCenter];
-    [labelindex setFont:[UIFont numericsize:32]];
+    [labelindex setFont:[UIFont numericsize:36]];
     [labelindex setTextColor:[UIColor blackColor]];
     [labelindex setHidden:YES];
     self.labelindex = labelindex;
@@ -32,7 +32,7 @@ static const char *queuename = "charterqueue";
     [labeltitle setNumberOfLines:0];
     [labeltitle setBackgroundColor:[UIColor clearColor]];
     [labeltitle setTextAlignment:NSTextAlignmentCenter];
-    [labeltitle setFont:[UIFont boldsize:10]];
+    [labeltitle setFont:[UIFont boldsize:12]];
     [labeltitle setText:NSLocalizedString(@"vpollution_chart_header_title", nil)];
     [labeltitle setHidden:YES];
     self.labeltitle = labeltitle;
@@ -44,7 +44,7 @@ static const char *queuename = "charterqueue";
     [labelname setBackgroundColor:[UIColor clearColor]];
     [labelname setTextAlignment:NSTextAlignmentCenter];
     [labelname setFont:[UIFont regularsize:13]];
-    [labelname setTextColor:[UIColor main]];
+    [labelname setTextColor:[UIColor colorWithWhite:0.2 alpha:1]];
     [labelname setHidden:YES];
     self.labelname = labelname;
     
@@ -58,7 +58,7 @@ static const char *queuename = "charterqueue";
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[index]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[title]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[name]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-25-[index(37)]-(-6)-[title(14)]-0-[name(16)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-25-[index(41)]-(-8)-[title(16)]-0-[name(16)]" options:0 metrics:metrics views:views]];
     
     return self;
 }

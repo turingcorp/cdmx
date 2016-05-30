@@ -29,7 +29,7 @@
 "mpollution_item_hourly_22"="10:00 pm";
 "mpollution_item_hourly_23"="11:00 pm";
 
-"mpollution_index_nodata"="Error reading info";
+"mpollution_index_nodata"="Not available";
 "mpollution_index_acceptable"="Acceptable";
 "mpollution_index_warning"="Warning";
 "mpollution_index_danger"="Danger";
@@ -105,7 +105,7 @@
 "mnodrive_today_restriction_tourist_yes_info"="Can drive if have one";
 "mnodrive_today_restriction_tourist_no_info"="Unactive at the moment";
 
-"mnodrive_calendar_section_week"="No drive for weekdays and saturdays";
+"mnodrive_calendar_section_week"="Weekdays and saturdays";
 "mnodrive_calendar_section_foreigner"="Plates not from CDMX or St of Mexico";
 "mnodrive_calendar_item_week_0"="Monday\n1st Saturday";
 "mnodrive_calendar_item_week_1"="Tuesday\n2nd Saturday";
@@ -118,20 +118,22 @@
 "mnodrive_calendar_foreigner_mornings"="No drive on weekdays from 5:00 am to 11:00 am";
 "mnodrive_calendar_foreigner_saturdays"="No drive on Saturdays";
 
-"vpollution_error_button"="Try again";
+"mclimate_atmosphere_rising_steady"="Steady";
+"mclimate_atmosphere_rising_rasing"="Rising";
+"mclimate_atmosphere_rising_falling"="Falling";
+
 "vpollution_radio_chart_title"="IMECA";
 "vpollution_front_header_button_imeca"="About IMECA";
 "vpollution_front_header_button_recommendation"="Precautions";
-"vpollution_front_header_button_pollutant"="About %@";
+"vpollution_front_header_button_pollutant"="Pollutant: %@";
 "vpollution_front_header_button_allpollutants"="Current pollutants";
 "vpollutionimeca_title"="IMECA";
 
 "vpollution_chart_header_title"="IMECA";
-"vpollution_chart_header_pollutanttitle"="Predominant pollutant";
 "vpollution_map_header_loading"="Loading your current location";
 "vpollution_map_header_denied"="CDMX can't access your current location. You can enable it in the Settings";
-"vpollution_map_header_imeca"="IMECA";
-"vpollution_map_header_km"="%@ Kilometers away";
+"vpollution_map_header_km"="%@ km";
+"vpollution_map_header_closer"="Closer station";
 "vpollution_pollutants_title"="Current pollutants";
 
 "vradiation_index_title"="Ultraviolet";
@@ -141,6 +143,11 @@
 
 "vnodrive_title"="No drive";
 "vnodrive_calendar_title"="Calendar";
+
+"vclimate_conditions_temp"="%@°";
+"vclimate_atmosphere_humidity"="%@%%";
+"vclimate_wind_title"="Wind\n";
+"vclimate_wind_subtitle"="%@ km/h";
 
 "mmenu_section_city"="City";
 "mmenu_section_mobility"="Mobility";
@@ -152,5 +159,6 @@
 "mmenu_item_ecobici"="ecobici";
 "mmenu_item_about"="About";
 
+"api_retry"="Retry";
 "api_error_nodata"="Server no responding, try again later";
 "api_error_invalidjson"="Trouble reaching server, try again later";

@@ -1,6 +1,5 @@
 #import "vpollution.h"
 #import "enotification.h"
-#import "ecolor.h"
 #import "efont.h"
 #import "cpollution.h"
 #import "vpollutionmenu.h"
@@ -22,13 +21,20 @@ static NSInteger const pollutionmenuheight = 50;
     
     vspinner *spinner = [[vspinner alloc] init];
     self.spinner = spinner;
-    [self addSubview:spinner];
     
-    NSDictionary *views = @{@"spinner":spinner};
-    NSDictionary *metrics = @{};
+    vpollutionmenu *menu = [[vpollutionmenu alloc] init:self.controller];
+    self.menu = menu;
+    
+    [self addSubview:spinner];
+    [self addSubview:menu];
+    
+    NSDictionary *views = @{@"spinner":spinner, @"menu":menu};
+    NSDictionary *metrics = @{@"height":@(pollutionmenuheight)};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[spinner]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-100-[spinner]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[menu]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[menu(height)]-0-|" options:0 metrics:metrics views:views]];
     
     return self;
 }
@@ -70,21 +76,6 @@ static NSInteger const pollutionmenuheight = 50;
     self.baseeffect.transform.projectionMatrix = GLKMatrix4MakeOrtho(0, screenwidth, screenheight, 0, 1, -1);
 }
 
--(void)loadmenu
-{
-    vpollutionmenu *menu = [[vpollutionmenu alloc] init:self.controller];
-    [menu setUserInteractionEnabled:NO];
-    self.menu = menu;
-    
-    [self addSubview:menu];
-    
-    NSDictionary *views = @{@"menu":menu};
-    NSDictionary *metrics = @{@"height":@(pollutionmenuheight)};
-    
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[menu]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[menu(height)]-0-|" options:0 metrics:metrics views:views]];
-}
-
 -(void)loadoption:(vpollutionoption*)option
 {
     self.option = option;
@@ -117,19 +108,18 @@ static NSInteger const pollutionmenuheight = 50;
 
 -(void)clearspinner
 {
-    __weak typeof(self) welf = self;
-    
-    [UIView animateWithDuration:0.6 animations:
-     ^
-     {
-         [welf.spinner setAlpha:0];
-     } completion:
-     ^(BOOL done)
-     {
-         [welf.spinner setHidden:YES];
-         [welf.spinner stopAnimating];
-         [welf.spinner setAlpha:1];
-     }];
+    [self.spinner setHidden:YES];
+    [self.spinner stopAnimating];
+    [self.spinner setAlpha:1];
+}
+
+-(void)displayerror
+{
+    [self.labelerror removeFromSuperview];
+    [self.buttonerror removeFromSuperview];
+    [self.option remove];
+    [self.spinner setHidden:YES];
+    [self.spinner stopAnimating];
 }
 
 #pragma mark public
@@ -143,7 +133,6 @@ static NSInteger const pollutionmenuheight = 50;
                    {
                        [welf.buttonerror removeFromSuperview];
                        [welf.labelerror removeFromSuperview];
-                       [welf loadmenu];
                        
                        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC),
                                       dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
@@ -157,8 +146,7 @@ static NSInteger const pollutionmenuheight = 50;
                                           dispatch_async(dispatch_get_main_queue(),
                                                          ^
                                                          {
-                                                             [welf show_districts];
-                                                             [welf clearspinner];
+                                                             [welf.menu currentselected];
                                                          });
                                       });
                    });
@@ -168,7 +156,8 @@ static NSInteger const pollutionmenuheight = 50;
 {
     __weak typeof(self) welf = self;
     
-    [welf.menu setUserInteractionEnabled:NO];
+    [welf loading];
+    [welf.menu optionsactive:NO];
     [welf.option remove];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
@@ -180,8 +169,9 @@ static NSInteger const pollutionmenuheight = 50;
                        dispatch_async(dispatch_get_main_queue(),
                                       ^
                                       {
+                                          [welf clearspinner];
                                           [welf loadfront];
-                                          [welf.menu setUserInteractionEnabled:YES];
+                                          [welf.menu optionsactive:YES];
                                       });
                    });
 }
@@ -190,7 +180,8 @@ static NSInteger const pollutionmenuheight = 50;
 {
     __weak typeof(self) welf = self;
     
-    [welf.menu setUserInteractionEnabled:NO];
+    [welf loading];
+    [welf.menu optionsactive:NO];
     [welf.option remove];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
@@ -202,8 +193,9 @@ static NSInteger const pollutionmenuheight = 50;
                        dispatch_async(dispatch_get_main_queue(),
                                       ^
                                       {
-                                          [self loadcharter];
-                                          [welf.menu setUserInteractionEnabled:YES];
+                                          [welf clearspinner];
+                                          [welf loadcharter];
+                                          [welf.menu optionsactive:YES];
                                       });
                    });
 }
@@ -212,7 +204,8 @@ static NSInteger const pollutionmenuheight = 50;
 {
     __weak typeof(self) welf = self;
     
-    [welf.menu setUserInteractionEnabled:NO];
+    [welf loading];
+    [welf.menu optionsactive:NO];
     [welf.option remove];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
@@ -224,8 +217,9 @@ static NSInteger const pollutionmenuheight = 50;
                        dispatch_async(dispatch_get_main_queue(),
                                       ^
                                       {
+                                          [welf clearspinner];
                                           [welf loadmap];
-                                          [welf.menu setUserInteractionEnabled:YES];
+                                          [welf.menu optionsactive:YES];
                                       });
                    });
 }
@@ -237,20 +231,16 @@ static NSInteger const pollutionmenuheight = 50;
 
 -(void)loading
 {
+    [self.option removeFromSuperview];
     [self.labelerror removeFromSuperview];
     [self.buttonerror removeFromSuperview];
     [self.spinner setHidden:NO];
     [self.spinner startAnimating];
-    [self.option remove];
 }
 
 -(void)error:(NSString*)error
 {
-    [self.labelerror removeFromSuperview];
-    [self.buttonerror removeFromSuperview];
-    [self.option remove];
-    [self.spinner setHidden:YES];
-    [self.spinner stopAnimating];
+    [self displayerror];
     
     UILabel *labelerror = [[UILabel alloc] init];
     [labelerror setBackgroundColor:[UIColor clearColor]];
@@ -268,10 +258,10 @@ static NSInteger const pollutionmenuheight = 50;
     [buttonerror setBackgroundColor:[UIColor clearColor]];
     [buttonerror setTranslatesAutoresizingMaskIntoConstraints:NO];
     [buttonerror setClipsToBounds:YES];
-    [buttonerror setTitleColor:[UIColor main] forState:UIControlStateNormal];
-    [buttonerror setTitleColor:[[UIColor main] colorWithAlphaComponent:0.2] forState:UIControlStateHighlighted];
-    [buttonerror setTitle:NSLocalizedString(@"vpollution_error_button", nil) forState:UIControlStateNormal];
-    [buttonerror.titleLabel setFont:[UIFont boldsize:14]];
+    [buttonerror setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [buttonerror setTitleColor:[[UIColor colorWithWhite:0.8 alpha:1] colorWithAlphaComponent:0.2] forState:UIControlStateHighlighted];
+    [buttonerror setTitle:NSLocalizedString(@"api_retry", nil) forState:UIControlStateNormal];
+    [buttonerror.titleLabel setFont:[UIFont boldsize:16]];
     [buttonerror addTarget:self action:@selector(actionbuttonerror:) forControlEvents:UIControlEventTouchUpInside];
     self.buttonerror = buttonerror;
     

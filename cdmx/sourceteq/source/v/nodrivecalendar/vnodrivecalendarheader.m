@@ -1,6 +1,5 @@
 #import "vnodrivecalendarheader.h"
 #import "efont.h"
-#import "ecolor.h"
 
 @implementation vnodrivecalendarheader
 
@@ -15,8 +14,8 @@
     [title setBackgroundColor:[UIColor clearColor]];
     [title setUserInteractionEnabled:NO];
     [title setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [title setFont:[UIFont boldsize:16]];
-    [title setTextColor:[UIColor main]];
+    [title setFont:[UIFont boldsize:14]];
+    [title setTextColor:[UIColor colorWithWhite:0.2 alpha:1]];
     [title setTextAlignment:NSTextAlignmentCenter];
     [title setNumberOfLines:2];
     self.title = title;

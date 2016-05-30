@@ -5,6 +5,6 @@
 
 -(instancetype)init:(mpollutionpollutant*)pollutant;
 
-@property(strong, nonatomic, readonly)NSArray<mpollutionpollutant*> *pollutants;
+@property(weak, nonatomic, readonly)mpollutionpollutant *pollutant;
 
 @end

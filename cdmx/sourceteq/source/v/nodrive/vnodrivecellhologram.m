@@ -19,7 +19,7 @@
     
     UILabel *symbol = [[UILabel alloc] init];
     [symbol setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [symbol setTextColor:[UIColor main]];
+    [symbol setTextColor:[UIColor blackColor]];
     [symbol setTextAlignment:NSTextAlignmentCenter];
     [symbol setUserInteractionEnabled:NO];
     [symbol setFont:[UIFont boldsize:14]];

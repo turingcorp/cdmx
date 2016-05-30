@@ -58,7 +58,7 @@
     [label setUserInteractionEnabled:NO];
     [label setTranslatesAutoresizingMaskIntoConstraints:NO];
     [label setTextAlignment:NSTextAlignmentCenter];
-    [label setFont:[UIFont boldsize:14]];
+    [label setFont:[UIFont boldsize:12]];
     [label setTextColor:[UIColor blackColor]];
     [label setText:title];
     self.labeltitle = label;
@@ -82,7 +82,7 @@
     [buttonleft.imageView setClipsToBounds:YES];
     [buttonleft.imageView setTintColor:[UIColor blackColor]];
     [buttonleft addTarget:self action:@selector(actionback:) forControlEvents:UIControlEventTouchUpInside];
-    [buttonleft setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 10)];
+    [buttonleft setImageEdgeInsets:UIEdgeInsetsMake(6, 0, 6, 15)];
     self.buttonleft = buttonleft;
     
     [self addSubview:buttonleft];

@@ -54,6 +54,8 @@ static CGFloat const kilometersperdegree = 111.1;
         CGFloat deltalon2 = deltalon * deltalon;
         CGFloat deltasum = deltalat2 + deltalon2;
         CGFloat delta = sqrtf(deltasum);
+        CGFloat kilometers = delta * kilometersperdegree;
+        item.kilometers = kilometers;
         
         if(indexitem)
         {
@@ -70,8 +72,7 @@ static CGFloat const kilometersperdegree = 111.1;
         }
     }
     
-    CGFloat kilometers = distance * kilometersperdegree;
-    closer.kilometers = kilometers;
+    closer.closer = YES;
     
     return closer;
 }

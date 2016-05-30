@@ -1,6 +1,5 @@
 #import "vradiationbar.h"
 #import "genericconstants.h"
-#import "ecolor.h"
 #import "efont.h"
 
 @implementation vradiationbar
@@ -20,7 +19,7 @@
     [buttonleft setImage:[[UIImage imageNamed:@"generic_menu"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateHighlighted];
     [buttonleft.imageView setContentMode:UIViewContentModeScaleAspectFit];
     [buttonleft.imageView setClipsToBounds:YES];
-    [buttonleft.imageView setTintColor:[UIColor main]];
+    [buttonleft.imageView setTintColor:[UIColor blackColor]];
     [buttonleft setImageEdgeInsets:UIEdgeInsetsMake(11, 0, 11, 18)];
     [buttonleft addTarget:self action:@selector(actionbuttonleft:) forControlEvents:UIControlEventTouchUpInside];
     
@@ -29,8 +28,8 @@
     [buttonright setTranslatesAutoresizingMaskIntoConstraints:NO];
     [buttonright setBackgroundColor:[UIColor clearColor]];
     [buttonright setTitle:NSLocalizedString(@"vradiation_buttonright_title", nil) forState:UIControlStateNormal];
-    [buttonright setTitleColor:[UIColor main] forState:UIControlStateNormal];
-    [buttonright setTitleColor:[UIColor background] forState:UIControlStateHighlighted];
+    [buttonright setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [buttonright setTitleColor:[UIColor colorWithWhite:0.9 alpha:1] forState:UIControlStateHighlighted];
     [buttonright addTarget:self action:@selector(actionbuttonright:) forControlEvents:UIControlEventTouchUpInside];
     [buttonright.titleLabel setFont:[UIFont boldsize:12]];
     

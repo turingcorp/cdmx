@@ -17,7 +17,7 @@
     [title setTextAlignment:NSTextAlignmentCenter];
     [title setNumberOfLines:0];
     [title setFont:[UIFont regularsize:14]];
-    [title setTextColor:[UIColor main]];
+    [title setTextColor:[UIColor blackColor]];
     [title setTranslatesAutoresizingMaskIntoConstraints:NO];
     self.title = title;
     

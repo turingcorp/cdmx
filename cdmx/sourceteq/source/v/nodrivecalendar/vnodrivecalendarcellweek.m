@@ -1,7 +1,6 @@
 #import "vnodrivecalendarcellweek.h"
 #import "mnodrivecalendaritemweek.h"
 #import "efont.h"
-#import "ecolor.h"
 
 @implementation vnodrivecalendarcellweek
 
@@ -13,8 +12,8 @@
     [name setUserInteractionEnabled:NO];
     [name setTranslatesAutoresizingMaskIntoConstraints:NO];
     [name setBackgroundColor:[UIColor clearColor]];
-    [name setFont:[UIFont boldsize:13]];
-    [name setTextColor:[UIColor main]];
+    [name setFont:[UIFont regularsize:13]];
+    [name setTextColor:[UIColor blackColor]];
     [name setUserInteractionEnabled:NO];
     [name setTextAlignment:NSTextAlignmentRight];
     [name setNumberOfLines:2];

@@ -1,4 +1,5 @@
 #import "mmenusectionitemclimate.h"
+#import "cclimate.h"
 
 @interface mmenusectionitem ()
 
@@ -16,6 +17,16 @@
     self.asset = @"menu_city_climate";
     
     return self;
+}
+
+#pragma mark -
+#pragma mark item
+
+-(UIViewController*)controller
+{
+    cclimate *controller = [[cclimate alloc] init];
+    
+    return controller;
 }
 
 @end

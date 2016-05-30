@@ -3,7 +3,7 @@
 #import "vnodrivecellrestriction.h"
 #import "ecollectioncell.h"
 
-static NSInteger const nodrivetodayrestrictionheight = 60;
+static NSInteger const nodrivetodayrestrictionheight = 46;
 
 @interface mnodrivetodayitemrestriction ()
 

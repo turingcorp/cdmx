@@ -3,55 +3,61 @@
 #import "efont.h"
 #import "ecolor.h"
 
+static NSInteger const recommmargintop = 10;
+static NSInteger const recommmaringhr = 10;
+
+@interface vpollutionrecommendation ()
+
+@property(weak, nonatomic)cpollutionrecommendation *controller;
+
+@end
+
 @implementation vpollutionrecommendation
+
+@dynamic controller;
 
 -(instancetype)init:(cpollutionrecommendation*)controller
 {
     self = [super init:controller];
     [self.bar buttonback];
-    [self.bar title:controller.model.name];
-    
-    UILabel *label = [[UILabel alloc] init];
-    [label setUserInteractionEnabled:NO];
-    [label setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [label setNumberOfLines:0];
-    [label setBackgroundColor:[UIColor clearColor]];
-    [label setFont:[UIFont regularsize:17]];
-    [label setTextColor:[UIColor colorWithWhite:0.4 alpha:1]];
-    
-    UILabel *labeltitle = [[UILabel alloc] init];
-    [labeltitle setUserInteractionEnabled:NO];
-    [labeltitle setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [labeltitle setBackgroundColor:[UIColor clearColor]];
-    [labeltitle setFont:[UIFont boldsize:20]];
-    [labeltitle setTextColor:[UIColor main]];
-    [labeltitle setTextAlignment:NSTextAlignmentCenter];
-    [labeltitle setText:controller.model.index.name];
-    
-    __weak typeof(self) welf = self;
-    
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
-                   ^
-                   {
-                       NSString *string = [controller.model.index recommendations];
-                       
-                       dispatch_async(dispatch_get_main_queue(),
-                                      ^
-                                      {
-                                          [label setText:string];
-                                          [welf addSubview:label];
-                                          [welf addSubview:labeltitle];
-                                          
-                                          NSDictionary *views = @{@"label":label, @"bar":welf.bar, @"labeltitle":labeltitle};
-                                          NSDictionary *metrics = @{};
-                                          
-                                          [welf addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[label]-10-|" options:0 metrics:metrics views:views]];
-                                          [welf addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[labeltitle]-10-|" options:0 metrics:metrics views:views]];
-                                          [welf addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[bar]-15-[labeltitle(24)]-10-[label]" options:0 metrics:metrics views:views]];
-                                      });
-                   });
+    [self.bar title:controller.model.index.name];
     
     return self;
+}
+
+#pragma mark public
+
+-(void)viewappear
+{
+    if(!self.label)
+    {
+        NSString *recommendation = [self.controller.model.index recommendations];
+        NSDictionary *attrrecomm = @{NSFontAttributeName:[UIFont regularsize:16], NSForegroundColorAttributeName:[UIColor colorWithWhite:0.4 alpha:1]};
+
+        NSAttributedString *astringrecomm = [[NSAttributedString alloc] initWithString:recommendation attributes:attrrecomm];
+        
+        CGFloat width = self.bounds.size.width;
+        CGFloat margin = recommmaringhr + recommmaringhr;
+        CGFloat remain = width - margin;
+        CGSize stringmaxsize = CGSizeMake(remain, 1000);
+        CGFloat height = ceilf([astringrecomm boundingRectWithSize:stringmaxsize options:NSStringDrawingUsesFontLeading|NSStringDrawingUsesLineFragmentOrigin context:nil].size.height);
+        
+        UILabel *label = [[UILabel alloc] init];
+        [label setUserInteractionEnabled:NO];
+        [label setTranslatesAutoresizingMaskIntoConstraints:NO];
+        [label setNumberOfLines:0];
+        [label setBackgroundColor:[UIColor clearColor]];
+        [label setAttributedText:astringrecomm];
+        self.label = label;
+        
+        [self addSubview:label];
+        
+        NSDictionary *views = @{@"label":label, @"bar":self.bar};
+        NSDictionary *metrics = @{@"margin":@(recommmaringhr), @"top":@(recommmargintop), @"height":@(height)};
+        
+        [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(margin)-[label]-(margin)-|" options:0 metrics:metrics views:views]];
+        [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[bar]-(top)-[label(height)]" options:0 metrics:metrics views:views]];
+    }
 }
 
 @end

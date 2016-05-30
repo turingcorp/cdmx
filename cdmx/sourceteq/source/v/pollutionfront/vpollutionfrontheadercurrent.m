@@ -1,5 +1,4 @@
 #import "vpollutionfrontheadercurrent.h"
-#import "ecolor.h"
 #import "efont.h"
 
 static NSInteger const buttonheight = 45;
@@ -15,8 +14,8 @@ static NSInteger const buttonheight = 45;
     [labeltitle setTranslatesAutoresizingMaskIntoConstraints:NO];
     [labeltitle setUserInteractionEnabled:NO];
     [labeltitle setTextAlignment:NSTextAlignmentCenter];
-    [labeltitle setFont:[UIFont boldsize:16]];
-    [labeltitle setTextColor:[UIColor main]];
+    [labeltitle setFont:[UIFont boldsize:14]];
+    [labeltitle setTextColor:[UIColor blackColor]];
     self.labeltitle = labeltitle;
     
     UIImageView *icon = [[UIImageView alloc] init];
@@ -25,7 +24,7 @@ static NSInteger const buttonheight = 45;
     [icon setTranslatesAutoresizingMaskIntoConstraints:NO];
     [icon setContentMode:UIViewContentModeScaleAspectFit];
     [icon setImage:[[UIImage imageNamed:@"generic_menu"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
-    [icon setTintColor:[UIColor main]];
+    [icon setTintColor:[UIColor blackColor]];
     
     [self addSubview:labeltitle];
     [self addSubview:icon];

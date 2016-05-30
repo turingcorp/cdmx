@@ -1,9 +1,9 @@
 #import "mpollutionfrontitemoptionpollutant.h"
-#import "cpollutionpollutants.h"
+#import "cpollutionpollutantdetail.h"
 
 @interface mpollutionfrontitemoptionpollutant ()
 
-@property(strong, nonatomic, readwrite)NSArray<mpollutionpollutant*> *pollutants;
+@property(weak, nonatomic, readwrite)mpollutionpollutant *pollutant;
 
 @end
 
@@ -13,7 +13,7 @@
 {
     self = [super init];
     self.name = [NSString stringWithFormat:NSLocalizedString(@"vpollution_front_header_button_pollutant", nil), pollutant.name];
-    self.pollutants = @[pollutant];
+    self.pollutant = pollutant;
     
     return self;
 }
@@ -23,7 +23,7 @@
 
 -(UIViewController*)controller
 {
-    cpollutionpollutants *controller = [[cpollutionpollutants alloc] init:self.pollutants];
+    cpollutionpollutantdetail *controller = [[cpollutionpollutantdetail alloc] init:self.pollutant];
     
     return controller;
 }

@@ -1,8 +1,7 @@
 #import "vpollutionfrontcell.h"
+#import "genericconstants.h"
 #import "efont.h"
 #import "ecolor.h"
-
-static NSInteger const cellapparentheight = 160;
 
 @implementation vpollutionfrontcell
 
@@ -24,7 +23,7 @@ static NSInteger const cellapparentheight = 160;
     [base setClipsToBounds:YES];
     [base setUserInteractionEnabled:NO];
     [base setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [base.layer setCornerRadius:4];
+    [base.layer setCornerRadius:3];
     self.base = base;
     
     UIButton *buttonup = [[UIButton alloc] init];
@@ -43,14 +42,14 @@ static NSInteger const cellapparentheight = 160;
     [self addSubview:buttonup];
     
     NSDictionary *views = @{@"label":label, @"up":buttonup, @"base":base};
-    NSDictionary *metrics = @{@"apparentheight":@(cellapparentheight)};
+    NSDictionary *metrics = @{@"apparentheight":@(pollution_drawableheight - 82), @"baseheight":@(pollution_drawableheight)};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[label]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[label]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[base]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[up]-(-10)-[base(34)]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[up]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[up(60)]-(apparentheight)-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(baseheight)-[base(30)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(apparentheight)-[up(140)]" options:0 metrics:metrics views:views]];
     
     return self;
 }
@@ -71,7 +70,7 @@ static NSInteger const cellapparentheight = 160;
 
 -(void)actionup:(UIButton*)button
 {
-    [self.front showdetail];
+    [self.front showdetail:YES];
 }
 
 #pragma mark functionality

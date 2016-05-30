@@ -16,6 +16,7 @@ static NSInteger const menucellwidth = 50;
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
     self.controller = controller;
     self.model = [[mpollutionmenu alloc] init];
+    self.selected = self.model.items[0];
     
     UIButton *buttonmenu = [[UIButton alloc] init];
     [buttonmenu setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -24,7 +25,7 @@ static NSInteger const menucellwidth = 50;
     [buttonmenu setClipsToBounds:YES];
     [buttonmenu.imageView setContentMode:UIViewContentModeScaleAspectFit];
     [buttonmenu.imageView setClipsToBounds:YES];
-    [buttonmenu.imageView setTintColor:[UIColor main]];
+    [buttonmenu.imageView setTintColor:[UIColor blackColor]];
     [buttonmenu setImageEdgeInsets:UIEdgeInsetsMake(14, 0, 13, 18)];
     [buttonmenu addTarget:self action:@selector(actionmenu:) forControlEvents:UIControlEventTouchUpInside];
     
@@ -46,6 +47,7 @@ static NSInteger const menucellwidth = 50;
     [collection setDataSource:self];
     [collection setDelegate:self];
     [collection registerClass:[vpollutionmenucell class] forCellWithReuseIdentifier:[vpollutionmenucell reusableidentifier]];
+    self.collection = collection;
     
     UIView *border = [[UIView alloc] init];
     [border setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -66,6 +68,7 @@ static NSInteger const menucellwidth = 50;
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[button(60)]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[button]-0-|" options:0 metrics:metrics views:views]];
     
+    [self optionsactive:NO];
     [collection selectItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0] animated:NO scrollPosition:UICollectionViewScrollPositionNone];
     
     return self;
@@ -85,6 +88,27 @@ static NSInteger const menucellwidth = 50;
     mpollutionmenuitem *model = self.model.items[index.item];
     
     return model;
+}
+
+#pragma mark public
+
+-(void)optionsactive:(BOOL)active
+{
+    if(active)
+    {
+        [self.collection setUserInteractionEnabled:YES];
+        [self.collection setAlpha:1];
+    }
+    else
+    {
+        [self.collection setUserInteractionEnabled:NO];
+        [self.collection setAlpha:0.2];
+    }
+}
+
+-(void)currentselected
+{
+    [self.selected actionselected:self.controller.view];
 }
 
 #pragma mark -
@@ -144,6 +168,7 @@ static NSInteger const menucellwidth = 50;
     if(self.controller.model)
     {
         mpollutionmenuitem *model = [self modelforindex:index];
+        self.selected = model;
         [model actionselected:self.controller.view];
         
         [[analytics singleton] trackevent:self.controller action:model.asset label:nil];

@@ -7,7 +7,7 @@
 #import "cpollution.h"
 #import "analytics.h"
 
-static NSInteger const chartercellheight = 40;
+static NSInteger const chartercellheight = 45;
 static NSInteger const charterinteritem = -1;
 
 @implementation vpollutioncharter

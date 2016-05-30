@@ -1,6 +1,5 @@
 #import "vmenucell.h"
 #import "efont.h"
-#import "ecolor.h"
 
 @implementation vmenucell
 
@@ -13,7 +12,7 @@
     [label setTranslatesAutoresizingMaskIntoConstraints:NO];
     [label setBackgroundColor:[UIColor clearColor]];
     [label setFont:[UIFont boldsize:14]];
-    [label setTextColor:[UIColor main]];
+    [label setTextColor:[UIColor colorWithWhite:0.5 alpha:1]];
     self.label = label;
     
     UIImageView *icon = [[UIImageView alloc] init];
@@ -21,7 +20,7 @@
     [icon setContentMode:UIViewContentModeScaleAspectFit];
     [icon setTranslatesAutoresizingMaskIntoConstraints:NO];
     [icon setClipsToBounds:YES];
-    [icon setTintColor:[UIColor main]];
+    [icon setTintColor:[UIColor blackColor]];
     self.icon = icon;
     
     [self addSubview:label];

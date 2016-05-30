@@ -21,7 +21,7 @@ static NSInteger const informarginhr = 10;
     [labelname setBackgroundColor:[UIColor clearColor]];
     [labelname setTextAlignment:NSTextAlignmentCenter];
     [labelname setFont:[UIFont boldsize:16]];
-    [labelname setTextColor:[UIColor main]];
+    [labelname setTextColor:[UIColor blackColor]];
     self.labelname = labelname;
     
     UILabel *labelinfo = [[UILabel alloc] init];
@@ -30,7 +30,7 @@ static NSInteger const informarginhr = 10;
     [labelinfo setBackgroundColor:[UIColor clearColor]];
     [labelinfo setNumberOfLines:0];
     [labelinfo setTextAlignment:NSTextAlignmentCenter];
-    [labelinfo setTextColor:[UIColor colorWithWhite:0.55 alpha:1]];
+    [labelinfo setTextColor:[UIColor colorWithWhite:0.5 alpha:1]];
     self.labelinfo = labelinfo;
     
     [self addSubview:labelinfo];
@@ -42,7 +42,7 @@ static NSInteger const informarginhr = 10;
     self.layoutlabelinfoheight = [NSLayoutConstraint constraintWithItem:labelinfo attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:0];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[name]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(margin)-[info]-(margin)-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[name(18)]-0-[info]-7-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[name(18)]-(-2)-[info]-7-|" options:0 metrics:metrics views:views]];
     [self addConstraint:self.layoutlabelinfoheight];
     
     return self;

@@ -20,8 +20,8 @@
 
 -(void)newx:(CGFloat)x
 {
-    CGFloat pointerx;
-    CGFloat pointery;
+    CGFloat pointerx = 0;
+    CGFloat pointery = 0;
     NSInteger countpoints = self.points.count;
     NSInteger countpoints_1 = countpoints - 1;
     

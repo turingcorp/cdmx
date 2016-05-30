@@ -10,4 +10,4 @@ Pollutants considerados en el índice
     ■ Carbon monoxide
     ■ Sulphur dioxide
     ■ Nitrogen dioxide
-    ■ Particulates (dust)
+    ■ Particulates

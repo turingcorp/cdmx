@@ -1,6 +1,5 @@
 #import "vpollutionfrontheadercell.h"
 #import "efont.h"
-#import "ecolor.h"
 
 @implementation vpollutionfrontheadercell
 
@@ -13,8 +12,8 @@
     [label setUserInteractionEnabled:NO];
     [label setTranslatesAutoresizingMaskIntoConstraints:NO];
     [label setTextAlignment:NSTextAlignmentCenter];
-    [label setFont:[UIFont boldsize:14]];
-    [label setTextColor:[UIColor main]];
+    [label setFont:[UIFont regularsize:14]];
+    [label setTextColor:[UIColor colorWithWhite:0.3 alpha:1]];
     self.label = label;
     
     [self addSubview:label];

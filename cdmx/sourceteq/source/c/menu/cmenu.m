@@ -1,6 +1,7 @@
 #import "cmenu.h"
 #import "cmain.h"
 #import "vmenu.h"
+#import "analytics.h"
 
 @interface cmenu ()
 
@@ -33,6 +34,8 @@
     [self setAutomaticallyAdjustsScrollViewInsets:NO];
     
     self.model = [[mmenu alloc] init];
+    
+    [[analytics singleton] trackscreen:self];
 }
 
 -(void)loadView

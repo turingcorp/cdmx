@@ -10,6 +10,7 @@
     annotation.index = self.index;
     annotation.model = self;
     self.annotation = annotation;
+    self.closer = NO;
     
     return annotation;
 }

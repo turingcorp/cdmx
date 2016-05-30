@@ -3,8 +3,9 @@
 #import "acallpollution.h"
 #import "acallradiation.h"
 #import "acallnodrive.h"
+#import "acallclimate.h"
 
-static NSInteger const standardtimeout = 15;
+static NSInteger const standardtimeout = 12;
 
 @implementation acall
 
@@ -25,6 +26,13 @@ static NSInteger const standardtimeout = 15;
 +(instancetype)nodrive
 {
     acallnodrive *call = [[acallnodrive alloc] init];
+    
+    return call;
+}
+
++(instancetype)climate
+{
+    acallclimate *call = [[acallclimate alloc] init];
     
     return call;
 }

@@ -7,9 +7,8 @@
 #import "vpollutionfrontheadercell.h"
 #import "ecollectioncell.h"
 
-static NSInteger const frontheadercellheight = 50;
+static NSInteger const frontheadercellheight = 45;
 static NSInteger const frontheaderinteritem = -1;
-static NSInteger const frontheadercollectionbottom = 50;
 static NSInteger const infomarginx = 10;
 
 @implementation vpollutionfrontheader
@@ -35,29 +34,8 @@ static NSInteger const infomarginx = 10;
     
     UIView *bordertop = [[UIView alloc] init];
     [bordertop setUserInteractionEnabled:NO];
-    [bordertop setBackgroundColor:[UIColor background]];
+    [bordertop setBackgroundColor:[UIColor colorWithWhite:0 alpha:0.3]];
     [bordertop setTranslatesAutoresizingMaskIntoConstraints:NO];
-    
-    UILabel *labelpollutanttitle = [[UILabel alloc] init];
-    [labelpollutanttitle setBackgroundColor:[UIColor clearColor]];
-    [labelpollutanttitle setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [labelpollutanttitle setUserInteractionEnabled:NO];
-    [labelpollutanttitle setTextColor:[UIColor colorWithWhite:0 alpha:0.4]];
-    [labelpollutanttitle setNumberOfLines:0];
-    [labelpollutanttitle setFont:[UIFont regularsize:12]];
-    [labelpollutanttitle setTextAlignment:NSTextAlignmentCenter];
-    [labelpollutanttitle setText:NSLocalizedString(@"vpollution_chart_header_pollutanttitle", nil)];
-    self.labelpollutanttitle = labelpollutanttitle;
-    
-    UILabel *labelpollutant = [[UILabel alloc] init];
-    [labelpollutant setBackgroundColor:[UIColor clearColor]];
-    [labelpollutant setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [labelpollutant setUserInteractionEnabled:NO];
-    [labelpollutant setTextColor:[UIColor main]];
-    [labelpollutant setNumberOfLines:0];
-    [labelpollutant setFont:[UIFont boldsize:18]];
-    [labelpollutant setTextAlignment:NSTextAlignmentCenter];
-    self.labelpollutant = labelpollutant;
     
     vpollutionradiochart *radiochart = [[vpollutionradiochart alloc] init];
     self.radiochart = radiochart;
@@ -89,29 +67,21 @@ static NSInteger const infomarginx = 10;
     
     [self addSubview:blanket];
     [self addSubview:bordertop];
-    [self addSubview:labelpollutanttitle];
-    [self addSubview:labelpollutant];
     [self addSubview:radiochart];
     [self addSubview:current];
     [self addSubview:collection];
     
-    NSDictionary *views = @{@"bordertop":bordertop, @"blanket":blanket, @"labelpollutanttitle":labelpollutanttitle, @"labelpollutant":labelpollutant, @"radiochart":radiochart, @"current":current, @"collection":collection};
+    NSDictionary *views = @{@"bordertop":bordertop, @"blanket":blanket, @"radiochart":radiochart, @"current":current, @"collection":collection};
     NSDictionary *metrics = @{@"bordery":@(bordery), @"infomarginx":@(infomarginx)};
     
-    self.layoutcollectionheight = [NSLayoutConstraint constraintWithItem:collection attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:0];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[blanket]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(bordery)-[blanket]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-5-[bordertop]-5-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(bordery)-[bordertop(1)]-0-[current]-20-[radiochart]-15-[labelpollutanttitle(14)]-0-[labelpollutant(21)]" options:0 metrics:metrics views:views]
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[bordertop]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(bordery)-[bordertop(1)]-0-[current]-20-[radiochart]-35-[collection]-0-|" options:0 metrics:metrics views:views]
      ];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[collection]-0-|" options:0 metrics:metrics views:views]
-     ];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[labelpollutanttitle]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[labelpollutant]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[radiochart]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[collection]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[current]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraint:self.layoutcollectionheight];
     
     return self;
 }
@@ -127,38 +97,10 @@ static NSInteger const infomarginx = 10;
 {
     self.model = model;
     self.controller = controller;
-    
     [self.radiochart render:model.index];
     [self.current config:model];
-    
-    if(model.pollutant)
-    {
-        [self.labelpollutanttitle setHidden:NO];
-        [self.labelpollutant setHidden:NO];
-        [self.labelpollutant setText:model.pollutant.name];
-    }
-    else
-    {
-        [self.labelpollutanttitle setHidden:YES];
-        [self.labelpollutant setHidden:YES];
-    }
-    
-    __weak typeof(self) welf = self;
-    
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
-                   ^
-                   {
-                       welf.options = [welf.model options];
-                       NSInteger countoptions = welf.options.count;
-                       NSInteger optionsheight = (countoptions * frontheadercellheight) + frontheadercollectionbottom;
-                       
-                       dispatch_async(dispatch_get_main_queue(),
-                                      ^
-                                      {
-                                          welf.layoutcollectionheight.constant = optionsheight;
-                                          [welf.collection reloadData];
-                                      });
-                   });
+    self.options = [model options];
+    [self.collection reloadData];
 }
 
 #pragma mark functionality
@@ -207,6 +149,12 @@ static NSInteger const infomarginx = 10;
     mpollutionfrontitemoption *model = [self modelforindex:index];
     UIViewController *controller = [model controller];
     [self.controller option:controller];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC), dispatch_get_main_queue(),
+                   ^
+                   {
+                       [col selectItemAtIndexPath:[NSIndexPath indexPathForItem:-1 inSection:0] animated:NO scrollPosition:UICollectionViewScrollPositionNone];
+                   });
 }
 
 @end

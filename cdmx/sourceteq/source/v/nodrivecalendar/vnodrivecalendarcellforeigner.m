@@ -12,11 +12,11 @@
     UILabel *title = [[UILabel alloc] init];
     [title setBackgroundColor:[UIColor clearColor]];
     [title setTextAlignment:NSTextAlignmentCenter];
-    [title setFont:[UIFont regularsize:16]];
+    [title setFont:[UIFont regularsize:15]];
     [title setNumberOfLines:0];
     [title setUserInteractionEnabled:NO];
     [title setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [title setTextColor:[UIColor colorWithWhite:0.3 alpha:1]];
+    [title setTextColor:[UIColor colorWithWhite:0.2 alpha:1]];
     self.title = title;
     
     [self addSubview:title];

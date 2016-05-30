@@ -10,5 +10,9 @@
 	<string>cdmx/radiation.api</string>
 	<key>nodrive</key>
 	<string>cdmx/nodrive.api</string>
+	<key>server-weather</key>
+	<string>https://query.yahooapis.com/</string>
+	<key>forecast</key>
+	<string>v1/public/yql?q=select%20wind.direction%2C%20wind.speed%2C%20atmosphere.humidity%2C%20atmosphere.rising%2C%20item.condition.temp%2C%20item.condition.code%20from%20weather.forecast%20where%20woeid%20%3D%20116545%20and%20u%3D%22c%22&amp;format=json&amp;env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys</string>
 </dict>
 </plist>

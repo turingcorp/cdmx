@@ -5,7 +5,7 @@
 
 @interface vpollutionfront:vpollutionoption<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
--(void)showdetail;
+-(void)showdetail:(BOOL)update;
 -(void)showlist;
 
 @property(weak, nonatomic)UICollectionView *collection;

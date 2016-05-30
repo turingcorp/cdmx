@@ -1,6 +1,5 @@
 #import "vradiation.h"
 #import "vradiationbar.h"
-#import "ecolor.h"
 #import "efont.h"
 
 @implementation vradiation
@@ -27,9 +26,9 @@
     [label setUserInteractionEnabled:NO];
     [label setTranslatesAutoresizingMaskIntoConstraints:NO];
     [label setBackgroundColor:[UIColor clearColor]];
-    [label setFont:[UIFont boldsize:15]];
+    [label setFont:[UIFont boldsize:17]];
     [label setTextAlignment:NSTextAlignmentCenter];
-    [label setTextColor:[UIColor main]];
+    [label setTextColor:[UIColor blackColor]];
     self.label = label;
     
     [self addSubview:bar];
@@ -46,7 +45,7 @@
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[label]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[activities]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[precautions]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[bar]-(-40)-[reactor]-0-[label(18)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[bar]-(-40)-[reactor]-(-3)-[label(20)]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[activities]-30-[precautions]-10-|" options:0 metrics:metrics views:views]];
     
     return self;
@@ -126,10 +125,10 @@
     [buttonerror setBackgroundColor:[UIColor clearColor]];
     [buttonerror setTranslatesAutoresizingMaskIntoConstraints:NO];
     [buttonerror setClipsToBounds:YES];
-    [buttonerror setTitleColor:[UIColor main] forState:UIControlStateNormal];
-    [buttonerror setTitleColor:[[UIColor main] colorWithAlphaComponent:0.2] forState:UIControlStateHighlighted];
-    [buttonerror setTitle:NSLocalizedString(@"vpollution_error_button", nil) forState:UIControlStateNormal];
-    [buttonerror.titleLabel setFont:[UIFont boldsize:14]];
+    [buttonerror setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [buttonerror setTitleColor:[[UIColor colorWithWhite:0.8 alpha:1] colorWithAlphaComponent:0.2] forState:UIControlStateHighlighted];
+    [buttonerror setTitle:NSLocalizedString(@"api_retry", nil) forState:UIControlStateNormal];
+    [buttonerror.titleLabel setFont:[UIFont boldsize:16]];
     [buttonerror addTarget:self action:@selector(actionbuttonerror:) forControlEvents:UIControlEventTouchUpInside];
     self.buttonerror = buttonerror;
     
