@@ -29,7 +29,7 @@
     [labelerror setNumberOfLines:0];
     [labelerror setTextAlignment:NSTextAlignmentCenter];
     [labelerror setFont:[UIFont regularsize:17]];
-    [labelerror setTextColor:[UIColor blackColor]];
+    [labelerror setTextColor:[UIColor colorWithWhite:0.4 alpha:1]];
     [labelerror setHidden:YES];
     self.labelerror = labelerror;
     
@@ -40,7 +40,7 @@
     [labelexport setNumberOfLines:0];
     [labelexport setTextAlignment:NSTextAlignmentCenter];
     [labelexport setFont:[UIFont regularsize:17]];
-    [labelexport setTextColor:[UIColor blackColor]];
+    [labelexport setTextColor:[UIColor colorWithWhite:0.4 alpha:1]];
     [labelexport setHidden:YES];
     self.labelexport = labelexport;
     
@@ -68,15 +68,17 @@
     [self addSubview:buttonretry];
     [self addSubview:buttonexport];
     
-    NSDictionary *views = @{@"spinner":spinner, @"buttonretry":buttonretry, @"buttonexport":buttonexport};
+    NSDictionary *views = @{@"spinner":spinner, @"buttonretry":buttonretry, @"buttonexport":buttonexport, @"labelerror":labelerror, @"labelexport":labelexport};
     NSDictionary *metrics = @{};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[spinner]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-150-[spinner]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[buttonretry]-20-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[buttonexport]-20-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-100-[labelretry(60)]-0-[buttonretry(40)]" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-100-[labelexport(60)]-0-[buttonexport(40)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[labelerror]-20-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[labelexport]-20-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-100-[labelerror(100)]-0-[buttonretry(40)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-100-[labelexport(100)]-0-[buttonexport(40)]" options:0 metrics:metrics views:views]];
     
     return self;
 }

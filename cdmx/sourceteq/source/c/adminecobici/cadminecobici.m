@@ -3,10 +3,15 @@
 #import "aparseradminecobici.h"
 #import "enotification.h"
 
+@interface ccontroller ()
+
+@property(strong, nonatomic)vadminecobici *view;
+
+@end
+
 @interface cadminecobici ()
 
 @property(strong, nonatomic, readwrite)madminecobici *model;
-@property(strong, nonatomic)vadminecobici *view;
 
 @end
 
@@ -14,8 +19,6 @@
 {
     NSInteger currentpage;
 }
-
-@synthesize view;
 
 -(void)viewDidAppear:(BOOL)animated
 {
