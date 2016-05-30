@@ -7,7 +7,7 @@
 +(void)firsttime
 {
     [[zqlconfig shared] createdb:databasename];
-    
+    [[zqlconfig shared] startdb:databasename];
     [mdbcreate create];
 }
 
