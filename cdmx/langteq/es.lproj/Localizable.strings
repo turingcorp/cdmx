@@ -146,6 +146,8 @@
 
 "vclimate_conditions_temp"="%@°";
 "vclimate_atmosphere_humidity"="%@%%";
+"vclimate_wind_title"="Viento\n";
+"vclimate_wind_subtitle"="%@ km/h";
 
 "mmenu_section_city"="Ciudad";
 "mmenu_section_mobility"="Movilidad";

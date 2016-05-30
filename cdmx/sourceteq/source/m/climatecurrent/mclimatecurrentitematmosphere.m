@@ -1,7 +1,7 @@
 #import "mclimatecurrentitematmosphere.h"
 #import "vclimatecellatmosphere.h"
 
-static NSInteger const climateatmosphereheight = 57;
+static NSInteger const climateatmosphereheight = 60;
 
 @interface mclimatecurrentitem ()
 

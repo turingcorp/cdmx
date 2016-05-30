@@ -5,5 +5,6 @@
 @interface vclimatecellwind:vclimatecell
 
 @property(weak, nonatomic)vclimatewind *wind;
+@property(weak, nonatomic)UILabel *label;
 
 @end

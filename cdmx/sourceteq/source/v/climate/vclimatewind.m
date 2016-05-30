@@ -3,10 +3,10 @@
 #import "efont.h"
 
 static CGFloat const radian0 = M_PI_2;
-static CGFloat const windradius = 0.1;
+static CGFloat const windradius = 0.15;
 static NSInteger const circlelinewidth = 2;
-static NSInteger const circleradius = 120;
-static NSInteger const circleminiradius = 10;
+static NSInteger const circleradius = 40;
+static NSInteger const circleminiradius = 6;
 
 @interface vclimatewind ()
 
@@ -40,7 +40,7 @@ static NSInteger const circleminiradius = 10;
     NSDictionary *metrics = @{};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[labelnorth]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-25-[labelnorth(15)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[labelnorth(20)]" options:0 metrics:metrics views:views]];
     
     return self;
 }
