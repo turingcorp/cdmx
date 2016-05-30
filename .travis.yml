@@ -7,6 +7,4 @@ branches:
   only:
     - dev
 xcode_sdk:
-  - iphonesimulator7.0
-  - iphonesimulator8.1
-  - iphonesimulator9.3 OS_SIMULATOR=7.0
+  - iphonesimulator9.3 -destination 'platform=iOS Simulator,name=iPhone 6 Plus'
