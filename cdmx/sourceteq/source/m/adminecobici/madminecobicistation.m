@@ -13,7 +13,7 @@
 
 -(instancetype)init:(NSDictionary*)dictionary
 {
-    NSNumber *rawnumber = dictionary[@"number"];
+    NSNumber *rawnumber = dictionary[@"id"];
     NSString *rawname = dictionary[@"name"];
     NSString *rawlocation = dictionary[@"location"];
     

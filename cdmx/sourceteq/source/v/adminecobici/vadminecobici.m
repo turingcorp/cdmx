@@ -62,7 +62,7 @@
     [buttonexport setTitleColor:[UIColor main] forState:UIControlStateNormal];
     [buttonexport setTitleColor:[[UIColor main] colorWithAlphaComponent:0.2] forState:UIControlStateHighlighted];
     [buttonexport addTarget:self action:@selector(actionexport:) forControlEvents:UIControlEventTouchUpInside];
-    self.buttonretry = buttonretry;
+    self.buttonexport = buttonretry;
     
     [self addSubview:spinner];
     [self addSubview:labelerror];
@@ -113,7 +113,7 @@
 
 -(void)succeded
 {
-    NSString *stringexport = [NSString stringWithFormat:NSLocalizedString(@"vadmin_ecobici_labelexport", nil), self.controller.model.stations.count];
+    NSString *stringexport = [NSString stringWithFormat:NSLocalizedString(@"vadmin_ecobici_labelexport", nil), @(self.controller.model.stations.count)];
     
     [self.spinner setHidden:YES];
     [self.buttonexport setHidden:NO];
