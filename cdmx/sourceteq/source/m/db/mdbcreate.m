@@ -20,6 +20,10 @@
 
 +(void)create
 {
+    NSString *filename = NSLocalizedString(@"flow_exportname", nil);
+    NSString *filepath = [NSTemporaryDirectory() stringByAppendingPathComponent:filename];
+    NSURL *url = [NSURL fileURLWithPath:filepath];
+    
     NSArray *rawdistricts = [NSArray arrayWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"districts" withExtension:@"plist"]];
     NSMutableArray<zqlquery*> *queries = [NSMutableArray array];
     

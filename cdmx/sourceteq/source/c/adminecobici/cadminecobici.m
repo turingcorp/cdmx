@@ -49,6 +49,11 @@
     self.apimanager = [amanager call:[acall adminecobici:currentpage] delegate:self];
 }
 
+-(void)createdatabase
+{
+    
+}
+
 #pragma mark public
 
 -(void)pullecobicidata
@@ -91,7 +96,7 @@
                                           {
                                               if(currentpage)
                                               {
-                                                  [welf.view succeded];
+                                                  [welf createdatabase];
                                               }
                                               else
                                               {

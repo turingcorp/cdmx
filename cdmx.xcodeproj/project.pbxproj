@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C3BD6A7468310A16E342BC14 /* libPods-cdmx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F783FFE8E5E9FE2B5CBFD0 /* libPods-cdmx.a */; };
 		DA000D821CC459D100A82EC0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA000D811CC459D100A82EC0 /* MapKit.framework */; };
 		DA05C6CC1CE6329B00A22A5E /* vpollutionmap.m in Sources */ = {isa = PBXBuildFile; fileRef = DA05C6CB1CE6329B00A22A5E /* vpollutionmap.m */; };
 		DA05C6D21CE632DD00A22A5E /* vpollutionmapdisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = DA05C6D11CE632DD00A22A5E /* vpollutionmapdisplay.m */; };
@@ -181,6 +182,7 @@
 		DABC92691CFCE7F5001FE9DE /* acalladminecobici.m in Sources */ = {isa = PBXBuildFile; fileRef = DABC92681CFCE7F5001FE9DE /* acalladminecobici.m */; };
 		DABC926B1CFCF3C9001FE9DE /* mockadminecobici_common.json in Resources */ = {isa = PBXBuildFile; fileRef = DABC926A1CFCF3C9001FE9DE /* mockadminecobici_common.json */; };
 		DABC926E1CFCF435001FE9DE /* testaparseradminecobici.m in Sources */ = {isa = PBXBuildFile; fileRef = DABC926D1CFCF435001FE9DE /* testaparseradminecobici.m */; };
+		DABC92741CFCFB94001FE9DE /* mdbadminecobici.m in Sources */ = {isa = PBXBuildFile; fileRef = DABC92731CFCFB94001FE9DE /* mdbadminecobici.m */; };
 		DAC21D081CE4C2AA00D92161 /* mpollution.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC21CD11CE4C2AA00D92161 /* mpollution.m */; };
 		DAC21D091CE4C2AA00D92161 /* mpollutionhour.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC21CD31CE4C2AA00D92161 /* mpollutionhour.m */; };
 		DAC21D0F1CE4C2AA00D92161 /* mpollutionnotificationdraw.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC21CDF1CE4C2AA00D92161 /* mpollutionnotificationdraw.m */; };
@@ -277,7 +279,6 @@
 		DAEA5A1A1CEA80DC00584526 /* vpollutionpollutantscell.m in Sources */ = {isa = PBXBuildFile; fileRef = DAEA5A191CEA80DC00584526 /* vpollutionpollutantscell.m */; };
 		DAEA5A1D1CEA8AFA00584526 /* pollutants.plist in Resources */ = {isa = PBXBuildFile; fileRef = DAEA5A1B1CEA8AFA00584526 /* pollutants.plist */; };
 		DAEA5A211CEA9FEE00584526 /* recommendations.plist in Resources */ = {isa = PBXBuildFile; fileRef = DAEA5A1F1CEA9FEE00584526 /* recommendations.plist */; };
-		E99EDB84D6293E5D839C08A5 /* libPods-cdmx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E47528F2CEFA76F37D95E3 /* libPods-cdmx.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -291,7 +292,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B9E47528F2CEFA76F37D95E3 /* libPods-cdmx.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-cdmx.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D32952314FCD27A8C2E8173 /* Pods-cdmx.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cdmx.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cdmx/Pods-cdmx.debug.xcconfig"; sourceTree = "<group>"; };
+		5DC131EAC01035C9F90726B3 /* Pods-cdmx.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cdmx.release.xcconfig"; path = "Pods/Target Support Files/Pods-cdmx/Pods-cdmx.release.xcconfig"; sourceTree = "<group>"; };
 		DA000D811CC459D100A82EC0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		DA05C6CA1CE6329B00A22A5E /* vpollutionmap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vpollutionmap.h; sourceTree = "<group>"; };
 		DA05C6CB1CE6329B00A22A5E /* vpollutionmap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vpollutionmap.m; sourceTree = "<group>"; };
@@ -629,6 +631,8 @@
 		DABC92681CFCE7F5001FE9DE /* acalladminecobici.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = acalladminecobici.m; sourceTree = "<group>"; };
 		DABC926A1CFCF3C9001FE9DE /* mockadminecobici_common.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mockadminecobici_common.json; sourceTree = "<group>"; };
 		DABC926D1CFCF435001FE9DE /* testaparseradminecobici.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testaparseradminecobici.m; sourceTree = "<group>"; };
+		DABC92721CFCFB94001FE9DE /* mdbadminecobici.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mdbadminecobici.h; sourceTree = "<group>"; };
+		DABC92731CFCFB94001FE9DE /* mdbadminecobici.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mdbadminecobici.m; sourceTree = "<group>"; };
 		DAC21CD01CE4C2AA00D92161 /* mpollution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpollution.h; sourceTree = "<group>"; };
 		DAC21CD11CE4C2AA00D92161 /* mpollution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mpollution.m; sourceTree = "<group>"; };
 		DAC21CD21CE4C2AA00D92161 /* mpollutionhour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpollutionhour.h; sourceTree = "<group>"; };
@@ -821,8 +825,7 @@
 		DAEA5A1E1CEA8B0500584526 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = es; path = es.lproj/pollutants.plist; sourceTree = "<group>"; };
 		DAEA5A201CEA9FEE00584526 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/recommendations.plist; sourceTree = "<group>"; };
 		DAEA5A221CEA9FF600584526 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = es; path = es.lproj/recommendations.plist; sourceTree = "<group>"; };
-		EFFF53693CD2BFB9D79DACFE /* Pods-cdmx.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cdmx.release.xcconfig"; path = "Pods/Target Support Files/Pods-cdmx/Pods-cdmx.release.xcconfig"; sourceTree = "<group>"; };
-		FB216D6F4F8C21A7E0923298 /* Pods-cdmx.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cdmx.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cdmx/Pods-cdmx.debug.xcconfig"; sourceTree = "<group>"; };
+		E9F783FFE8E5E9FE2B5CBFD0 /* libPods-cdmx.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-cdmx.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -838,7 +841,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA000D821CC459D100A82EC0 /* MapKit.framework in Frameworks */,
-				E99EDB84D6293E5D839C08A5 /* libPods-cdmx.a in Frameworks */,
+				C3BD6A7468310A16E342BC14 /* libPods-cdmx.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -849,18 +852,9 @@
 			isa = PBXGroup;
 			children = (
 				DA000D811CC459D100A82EC0 /* MapKit.framework */,
-				B9E47528F2CEFA76F37D95E3 /* libPods-cdmx.a */,
+				E9F783FFE8E5E9FE2B5CBFD0 /* libPods-cdmx.a */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		C3D176AC3B2F842612BB623B /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				FB216D6F4F8C21A7E0923298 /* Pods-cdmx.debug.xcconfig */,
-				EFFF53693CD2BFB9D79DACFE /* Pods-cdmx.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		DA05C6C91CE6328400A22A5E /* pollutionmap */ = {
@@ -1273,6 +1267,8 @@
 				DAB26D841CE0F9E000E1580F /* mdbdistrict.m */,
 				DAB26D861CE0F9F100E1580F /* mdbpollutiondaily.h */,
 				DAB26D871CE0F9F100E1580F /* mdbpollutiondaily.m */,
+				DABC92721CFCFB94001FE9DE /* mdbadminecobici.h */,
+				DABC92731CFCFB94001FE9DE /* mdbadminecobici.m */,
 			);
 			path = db;
 			sourceTree = "<group>";
@@ -1592,8 +1588,8 @@
 				DAD33F921CBC825900C87502 /* cdmx */,
 				DABC92361CFC903A001FE9DE /* tests */,
 				DAD33F911CBC825900C87502 /* Products */,
-				C3D176AC3B2F842612BB623B /* Pods */,
 				C175A9947E79ECC4892F4B50 /* Frameworks */,
+				FB742DB9D9548458790B898B /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1962,6 +1958,15 @@
 			path = pollutionpollutants;
 			sourceTree = "<group>";
 		};
+		FB742DB9D9548458790B898B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1D32952314FCD27A8C2E8173 /* Pods-cdmx.debug.xcconfig */,
+				5DC131EAC01035C9F90726B3 /* Pods-cdmx.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1987,12 +1992,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DAD33FA71CBC825A00C87502 /* Build configuration list for PBXNativeTarget "cdmx" */;
 			buildPhases = (
-				2623658FF20ECA458FADAA7C /* Check Pods Manifest.lock */,
+				8ED29CB0A28DB8D955620689 /* 📦 Check Pods Manifest.lock */,
 				DAD33F8C1CBC825900C87502 /* Sources */,
 				DAD33F8D1CBC825900C87502 /* Frameworks */,
 				DAD33F8E1CBC825900C87502 /* Resources */,
-				EF892A6037A9F1FDD9C30D6A /* Embed Pods Frameworks */,
-				D367A09A182497F62E13A118 /* Copy Pods Resources */,
+				DD3874FE7D1ABF0DD72F7CB2 /* 📦 Embed Pods Frameworks */,
+				1778F5ECA33A27CEC401E883 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -2083,29 +2088,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2623658FF20ECA458FADAA7C /* Check Pods Manifest.lock */ = {
+		1778F5ECA33A27CEC401E883 /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		D367A09A182497F62E13A118 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
+			name = "📦 Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2113,14 +2103,29 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-cdmx/Pods-cdmx-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EF892A6037A9F1FDD9C30D6A /* Embed Pods Frameworks */ = {
+		8ED29CB0A28DB8D955620689 /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DD3874FE7D1ABF0DD72F7CB2 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2304,6 +2309,7 @@
 				DAAEEE181CED15D5008C992C /* mradiationprecautionsunscreen.m in Sources */,
 				DAEA59F41CEA041900584526 /* mpollutionpollutant.m in Sources */,
 				DAA0C67A1CD978BD00880D3E /* gtexture.m in Sources */,
+				DABC92741CFCFB94001FE9DE /* mdbadminecobici.m in Sources */,
 				DAC21D081CE4C2AA00D92161 /* mpollution.m in Sources */,
 				DA0917261CF3839800FD1366 /* mnodrivecalendarsectionweek.m in Sources */,
 				DAD7AA611CF0D984003B169A /* mnodriverating.m in Sources */,
@@ -2573,7 +2579,7 @@
 		};
 		DAD33FA81CBC825A00C87502 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FB216D6F4F8C21A7E0923298 /* Pods-cdmx.debug.xcconfig */;
+			baseConfigurationReference = 1D32952314FCD27A8C2E8173 /* Pods-cdmx.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
@@ -2592,7 +2598,7 @@
 		};
 		DAD33FA91CBC825A00C87502 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EFFF53693CD2BFB9D79DACFE /* Pods-cdmx.release.xcconfig */;
+			baseConfigurationReference = 5DC131EAC01035C9F90726B3 /* Pods-cdmx.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
@@ -2619,6 +2625,7 @@
 				DABC923E1CFC903A001FE9DE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DAD33F8B1CBC825900C87502 /* Build configuration list for PBXProject "cdmx" */ = {
 			isa = XCConfigurationList;

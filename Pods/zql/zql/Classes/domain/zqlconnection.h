@@ -3,7 +3,7 @@
 
 @interface zqlconnection:NSObject
 
--(NSInteger)connect:(sqlite3**)sqlite;
+-(NSInteger)connect:(sqlite3**)sqlite dbname:(NSString*)dbname;
 -(NSInteger)close:(sqlite3**)sqlite;
 
 @end
