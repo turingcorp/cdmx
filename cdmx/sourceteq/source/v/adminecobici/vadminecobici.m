@@ -51,6 +51,7 @@
     [buttonretry.titleLabel setFont:[UIFont boldsize:15]];
     [buttonretry setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [buttonretry setTitleColor:[UIColor colorWithWhite:0.8 alpha:1] forState:UIControlStateHighlighted];
+    [buttonretry addTarget:self action:@selector(actionretry:) forControlEvents:UIControlEventTouchUpInside];
     self.buttonretry = buttonretry;
     
     UIButton *buttonexport = [[UIButton alloc] init];
@@ -60,6 +61,7 @@
     [buttonexport.titleLabel setFont:[UIFont boldsize:15]];
     [buttonexport setTitleColor:[UIColor main] forState:UIControlStateNormal];
     [buttonexport setTitleColor:[[UIColor main] colorWithAlphaComponent:0.2] forState:UIControlStateHighlighted];
+    [buttonexport addTarget:self action:@selector(actionexport:) forControlEvents:UIControlEventTouchUpInside];
     self.buttonretry = buttonretry;
     
     [self addSubview:spinner];
@@ -77,8 +79,8 @@
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[buttonexport]-20-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[labelerror]-20-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[labelexport]-20-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-100-[labelerror(100)]-0-[buttonretry(40)]" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-100-[labelexport(100)]-0-[buttonexport(40)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-100-[labelerror(130)]-0-[buttonretry(40)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-100-[labelexport(130)]-0-[buttonexport(40)]" options:0 metrics:metrics views:views]];
     
     return self;
 }
