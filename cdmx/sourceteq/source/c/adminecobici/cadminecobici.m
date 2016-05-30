@@ -8,4 +8,11 @@
     self.view = [[vadminecobici alloc] init:self];
 }
 
+#pragma mark public
+
+-(void)pullecobicidata
+{
+    
+}
+
 @end

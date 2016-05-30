@@ -3,4 +3,6 @@
 
 @interface cadminecobici:ccontroller
 
+-(void)pullecobicidata;
+
 @end

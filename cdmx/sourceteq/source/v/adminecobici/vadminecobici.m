@@ -1,10 +1,19 @@
 #import "vadminecobici.h"
 #import "efont.h"
 #import "ecolor.h"
+#import "cadminecobici.h"
+
+@interface vadminecobici ()
+
+@property(weak, nonatomic)cadminecobici *controller;
+
+@end
 
 @implementation vadminecobici
 
--(instancetype)init:(ccontroller*)controller
+@dynamic controller;
+
+-(instancetype)init:(cadminecobici*)controller
 {
     self = [super init:controller];
     [self.bar title:NSLocalizedString(@"mmenu_item_adminecobici", nil)];
@@ -12,6 +21,28 @@
     
     vspinner *spinner = [[vspinner alloc] init];
     self.spinner = spinner;
+    
+    UILabel *labelerror = [[UILabel alloc] init];
+    [labelerror setBackgroundColor:[UIColor clearColor]];
+    [labelerror setUserInteractionEnabled:NO];
+    [labelerror setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [labelerror setNumberOfLines:0];
+    [labelerror setTextAlignment:NSTextAlignmentCenter];
+    [labelerror setFont:[UIFont regularsize:17]];
+    [labelerror setTextColor:[UIColor blackColor]];
+    [labelerror setHidden:YES];
+    self.labelerror = labelerror;
+    
+    UILabel *labelexport = [[UILabel alloc] init];
+    [labelexport setBackgroundColor:[UIColor clearColor]];
+    [labelexport setUserInteractionEnabled:NO];
+    [labelexport setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [labelexport setNumberOfLines:0];
+    [labelexport setTextAlignment:NSTextAlignmentCenter];
+    [labelexport setFont:[UIFont regularsize:17]];
+    [labelexport setTextColor:[UIColor blackColor]];
+    [labelexport setHidden:YES];
+    self.labelexport = labelexport;
     
     UIButton *buttonretry = [[UIButton alloc] init];
     [buttonretry setHidden:YES];
@@ -32,6 +63,8 @@
     self.buttonretry = buttonretry;
     
     [self addSubview:spinner];
+    [self addSubview:labelerror];
+    [self addSubview:labelexport];
     [self addSubview:buttonretry];
     [self addSubview:buttonexport];
     
@@ -46,6 +79,37 @@
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-100-[labelexport(60)]-0-[buttonexport(40)]" options:0 metrics:metrics views:views]];
     
     return self;
+}
+
+#pragma mark actions
+
+-(void)actionretry:(UIButton*)button
+{
+    [self.spinner setHidden:NO];
+    [self.spinner startAnimating];
+    [self.buttonretry setHidden:YES];
+    [self.labelerror setHidden:YES];
+    [self.controller pullecobicidata];
+}
+
+-(void)actionexport:(UIButton*)button
+{
+    
+}
+
+#pragma mark public
+
+-(void)error:(NSString*)error
+{
+    [self.spinner setHidden:YES];
+    [self.buttonretry setHidden:NO];
+    [self.labelerror setHidden:NO];
+    [self.labelerror setText:error];
+}
+
+-(void)succeded
+{
+    
 }
 
 @end

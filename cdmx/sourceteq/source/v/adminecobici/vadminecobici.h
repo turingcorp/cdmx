@@ -5,6 +5,7 @@
 @interface vadminecobici:vview
 
 -(void)error:(NSString*)error;
+-(void)succeded;
 
 @property(weak, nonatomic)vspinner *spinner;
 @property(weak, nonatomic)UILabel *labelerror;
