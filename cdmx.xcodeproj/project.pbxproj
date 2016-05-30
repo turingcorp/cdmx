@@ -167,6 +167,7 @@
 		DABC922B1CFA42AB001FE9DE /* vclimatecellwind.m in Sources */ = {isa = PBXBuildFile; fileRef = DABC922A1CFA42AB001FE9DE /* vclimatecellwind.m */; };
 		DABC922D1CFA603E001FE9DE /* climate.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DABC922C1CFA603E001FE9DE /* climate.xcassets */; };
 		DABC92301CFA6D2A001FE9DE /* vclimatewind.m in Sources */ = {isa = PBXBuildFile; fileRef = DABC922F1CFA6D2A001FE9DE /* vclimatewind.m */; };
+		DABC92381CFC903A001FE9DE /* tests.m in Sources */ = {isa = PBXBuildFile; fileRef = DABC92371CFC903A001FE9DE /* tests.m */; };
 		DAC21D081CE4C2AA00D92161 /* mpollution.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC21CD11CE4C2AA00D92161 /* mpollution.m */; };
 		DAC21D091CE4C2AA00D92161 /* mpollutionhour.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC21CD31CE4C2AA00D92161 /* mpollutionhour.m */; };
 		DAC21D0F1CE4C2AA00D92161 /* mpollutionnotificationdraw.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC21CDF1CE4C2AA00D92161 /* mpollutionnotificationdraw.m */; };
@@ -265,6 +266,16 @@
 		DAEA5A211CEA9FEE00584526 /* recommendations.plist in Resources */ = {isa = PBXBuildFile; fileRef = DAEA5A1F1CEA9FEE00584526 /* recommendations.plist */; };
 		E99EDB84D6293E5D839C08A5 /* libPods-cdmx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E47528F2CEFA76F37D95E3 /* libPods-cdmx.a */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DABC923A1CFC903A001FE9DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DAD33F881CBC825900C87502 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DAD33F8F1CBC825900C87502;
+			remoteInfo = cdmx;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		B9E47528F2CEFA76F37D95E3 /* libPods-cdmx.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-cdmx.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -580,6 +591,9 @@
 		DABC922C1CFA603E001FE9DE /* climate.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = climate.xcassets; sourceTree = "<group>"; };
 		DABC922E1CFA6D2A001FE9DE /* vclimatewind.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vclimatewind.h; sourceTree = "<group>"; };
 		DABC922F1CFA6D2A001FE9DE /* vclimatewind.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vclimatewind.m; sourceTree = "<group>"; };
+		DABC92351CFC903A001FE9DE /* tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DABC92371CFC903A001FE9DE /* tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = tests.m; sourceTree = "<group>"; };
+		DABC92391CFC903A001FE9DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAC21CD01CE4C2AA00D92161 /* mpollution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpollution.h; sourceTree = "<group>"; };
 		DAC21CD11CE4C2AA00D92161 /* mpollution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mpollution.m; sourceTree = "<group>"; };
 		DAC21CD21CE4C2AA00D92161 /* mpollutionhour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpollutionhour.h; sourceTree = "<group>"; };
@@ -778,6 +792,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		DABC92321CFC903A001FE9DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DAD33F8D1CBC825900C87502 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -1231,6 +1252,15 @@
 			path = climatecurrent;
 			sourceTree = "<group>";
 		};
+		DABC92361CFC903A001FE9DE /* tests */ = {
+			isa = PBXGroup;
+			children = (
+				DABC92371CFC903A001FE9DE /* tests.m */,
+				DABC92391CFC903A001FE9DE /* Info.plist */,
+			);
+			path = tests;
+			sourceTree = "<group>";
+		};
 		DAC21CCF1CE4C2AA00D92161 /* pollution */ = {
 			isa = PBXGroup;
 			children = (
@@ -1419,6 +1449,7 @@
 			isa = PBXGroup;
 			children = (
 				DAD33F921CBC825900C87502 /* cdmx */,
+				DABC92361CFC903A001FE9DE /* tests */,
 				DAD33F911CBC825900C87502 /* Products */,
 				C3D176AC3B2F842612BB623B /* Pods */,
 				C175A9947E79ECC4892F4B50 /* Frameworks */,
@@ -1429,6 +1460,7 @@
 			isa = PBXGroup;
 			children = (
 				DAD33F901CBC825900C87502 /* cdmx.app */,
+				DABC92351CFC903A001FE9DE /* tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1798,6 +1830,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		DABC92341CFC903A001FE9DE /* tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DABC923C1CFC903A001FE9DE /* Build configuration list for PBXNativeTarget "tests" */;
+			buildPhases = (
+				DABC92311CFC903A001FE9DE /* Sources */,
+				DABC92321CFC903A001FE9DE /* Frameworks */,
+				DABC92331CFC903A001FE9DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DABC923B1CFC903A001FE9DE /* PBXTargetDependency */,
+			);
+			name = tests;
+			productName = tests;
+			productReference = DABC92351CFC903A001FE9DE /* tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		DAD33F8F1CBC825900C87502 /* cdmx */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DAD33FA71CBC825A00C87502 /* Build configuration list for PBXNativeTarget "cdmx" */;
@@ -1827,6 +1877,10 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = Iturbide;
 				TargetAttributes = {
+					DABC92341CFC903A001FE9DE = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = DAD33F8F1CBC825900C87502;
+					};
 					DAD33F8F1CBC825900C87502 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 7AMWG3RLHN;
@@ -1853,11 +1907,19 @@
 			projectRoot = "";
 			targets = (
 				DAD33F8F1CBC825900C87502 /* cdmx */,
+				DABC92341CFC903A001FE9DE /* tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		DABC92331CFC903A001FE9DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DAD33F8E1CBC825900C87502 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1932,6 +1994,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		DABC92311CFC903A001FE9DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DABC92381CFC903A001FE9DE /* tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DAD33F8C1CBC825900C87502 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2180,6 +2250,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		DABC923B1CFC903A001FE9DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DAD33F8F1CBC825900C87502 /* cdmx */;
+			targetProxy = DABC923A1CFC903A001FE9DE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		DA13FCD51CEAA4F800DE7A23 /* imeca.txt */ = {
 			isa = PBXVariantGroup;
@@ -2229,6 +2307,34 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		DABC923D1CFC903A001FE9DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = iturbide.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/cdmx.app/cdmx";
+			};
+			name = Debug;
+		};
+		DABC923E1CFC903A001FE9DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = iturbide.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/cdmx.app/cdmx";
+			};
+			name = Release;
+		};
 		DAD33FA51CBC825A00C87502 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -2354,6 +2460,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		DABC923C1CFC903A001FE9DE /* Build configuration list for PBXNativeTarget "tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DABC923D1CFC903A001FE9DE /* Debug */,
+				DABC923E1CFC903A001FE9DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		DAD33F8B1CBC825900C87502 /* Build configuration list for PBXProject "cdmx" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
