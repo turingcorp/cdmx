@@ -152,12 +152,14 @@
 "mmenu_section_city"="Ciudad";
 "mmenu_section_mobility"="Movilidad";
 "mmenu_section_app"="App";
+"mmenu_section_admin"="Admin";
 "mmenu_item_pollution"="Contaminación";
 "mmenu_item_radiation"="Radiación ultravioleta";
 "mmenu_item_climate"="Clima";
 "mmenu_item_nodrive"="Hoy no circula";
 "mmenu_item_ecobici"="ecobici";
 "mmenu_item_about"="Acerca de";
+"mmenu_item_adminecobici"="Ecobici";
 
 "api_retry"="Reintentar";
 "api_error_nodata"="El servidor no responde, intenta de nuevo";

@@ -2,6 +2,7 @@
 #import "mmenusectioncity.h"
 #import "mmenusectionmobility.h"
 #import "mmenusectionapp.h"
+#import "mmenusectionadmin.h"
 
 @interface mmenu ()
 
@@ -18,6 +19,11 @@
                       [[mmenusectioncity alloc] init],
                       [[mmenusectionmobility alloc] init],
                       //[[mmenusectionapp alloc] init]
+#if debug
+      
+                      [mmenusection]
+                      
+#endif
                       ];
     
     return self;
