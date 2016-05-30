@@ -36,7 +36,7 @@
                                    ];
     
     zqlquery *query = [zqlquery select:dbdistricts params:params ordered:paramname ascendent:YES limit:0];
-    zqlresult *result = [zql query:@[query]];
+    zqlresult *result = [zql query:@[query] db:nil];
     
     NSUInteger districtscount = result.params.count;
     for(NSUInteger indexdistrict = 0; indexdistrict < districtscount; indexdistrict++)
@@ -91,7 +91,7 @@
                                    ];
     
     zqlquery *query = [zqlquery select:dbpollutiondaily params:params ordered:paramdate ascendent:YES limit:0];
-    zqlresult *result = [zql query:@[query]];
+    zqlresult *result = [zql query:@[query] db:nil];
     
     NSUInteger districtscount = result.params.count;
     
@@ -136,7 +136,7 @@
                                    ];
     
     zqlquery *query = [zqlquery select:dbpollutiondaily params:params ordered:paramdate ascendent:NO limit:1];
-    zqlresult *result = [zql query:@[query]];
+    zqlresult *result = [zql query:@[query] db:nil];
     
     NSUInteger districtscount = result.params.count;
     

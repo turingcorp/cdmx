@@ -20,10 +20,6 @@
 
 +(void)create
 {
-    NSString *filename = NSLocalizedString(@"flow_exportname", nil);
-    NSString *filepath = [NSTemporaryDirectory() stringByAppendingPathComponent:filename];
-    NSURL *url = [NSURL fileURLWithPath:filepath];
-    
     NSArray *rawdistricts = [NSArray arrayWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"districts" withExtension:@"plist"]];
     NSMutableArray<zqlquery*> *queries = [NSMutableArray array];
     
@@ -97,7 +93,7 @@
     
     zqlquery *querytablepollutiondaily = [zqlquery createtable:dbpollutiondaily params:params];
     [queries addObject:querytablepollutiondaily];
-    [zql query:queries];
+    [zql query:queries db:nil];
 }
 
 @end
