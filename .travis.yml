@@ -1,13 +1,10 @@
-sudo: false
 language: objective-c
 osx_image: xcode7.3
-xcode_workspace: cdmx.xcworkspace
-xcode_scheme: tests
 branches:
   only:
     - dev
-xcode_sdk:
-  - iphonesimulator9.3
+script:
+  - scripts/devices_tests.sh
 notifications:
   email:
     on_success: never
