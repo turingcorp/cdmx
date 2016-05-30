@@ -24,20 +24,7 @@
         
         
         
-        NSUInteger countdaily = rawdaily.count;
         
-        for(NSUInteger indexdaily = 0; indexdaily < countdaily; indexdaily++)
-        {
-            NSDictionary *rawday = rawdaily[indexdaily];
-            NSNumber *rawdaydate = rawday[@"date"];
-            NSNumber *rawdaypollution = rawday[@"pollution"];
-            
-            mdbpollutiondaily *modelday = [[mdbpollutiondaily alloc] init];
-            modelday.date = rawdaydate;
-            modelday.pollution = rawdaypollution;
-            
-            [modeldaily addObject:modelday];
-        }
         
         NSUInteger counthours = rawhourly.count;
         
@@ -81,6 +68,27 @@
     }
     
     return modeldistricts;
+}
+
+-(NSArray<mdbpollutiondaily*>*)parserdaily:(NSArray*)rawdaily
+{
+    NSMutableArray<mdbpollutiondaily*> *modeldaily = [NSMutableArray array];
+    NSUInteger countdaily = rawdaily.count;
+    
+    for(NSUInteger indexdaily = 0; indexdaily < countdaily; indexdaily++)
+    {
+        NSDictionary *rawday = rawdaily[indexdaily];
+        NSNumber *rawdaydate = rawday[@"date"];
+        NSNumber *rawdaypollution = rawday[@"pollution"];
+        
+        mdbpollutiondaily *modelday = [[mdbpollutiondaily alloc] init];
+        modelday.date = rawdaydate;
+        modelday.pollution = rawdaypollution;
+        
+        [modeldaily addObject:modelday];
+    }
+    
+    return modeldaily;
 }
 
 @end
