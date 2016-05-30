@@ -159,7 +159,7 @@
 "mmenu_item_nodrive"="No drive";
 "mmenu_item_ecobici"="ecobici";
 "mmenu_item_about"="About";
-"mmenu_item_adminecobici"="Ecobici";
+"mmenu_item_adminecobici"="Admin Ecobici";
 
 "api_retry"="Retry";
 "api_error_nodata"="Server no responding, try again later";

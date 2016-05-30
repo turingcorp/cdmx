@@ -1,5 +1,6 @@
 #import <UIKit/UIKit.h>
+#import "ccontroller.h"
 
-@interface cadminecobici:UIViewController
+@interface cadminecobici:ccontroller
 
 @end
