@@ -15,6 +15,17 @@
     if(self.validjson)
     {
         NSMutableArray<madminecobicistation*> *stations = [NSMutableArray array];
+        NSArray *jsonstations = (NSArray*)self.validjson;
+        
+        for(NSDictionary *rawstation in jsonstations)
+        {
+            madminecobicistation *station = [[madminecobicistation alloc] init:rawstation];
+            
+            if(station)
+            {
+                [stations addObject:station];
+            }
+        }
         
         self.stations = stations;
     }
