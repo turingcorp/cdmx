@@ -87,10 +87,6 @@ static NSInteger const menuinteritem = -1;
     {
         newbarheight = navbarheightmin;
     }
-    else if(newbarheight > menubarheight)
-    {
-        newbarheight = menubarheight;
-    }
     
     self.layoutbarheight.constant = newbarheight;
 }
