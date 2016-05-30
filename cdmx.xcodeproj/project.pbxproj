@@ -175,6 +175,9 @@
 		DABC92541CFCC2A6001FE9DE /* testmmenu.m in Sources */ = {isa = PBXBuildFile; fileRef = DABC92531CFCC2A6001FE9DE /* testmmenu.m */; };
 		DABC92581CFCD4B1001FE9DE /* cadminecobici.m in Sources */ = {isa = PBXBuildFile; fileRef = DABC92571CFCD4B1001FE9DE /* cadminecobici.m */; };
 		DABC925C1CFCD5A1001FE9DE /* vadminecobici.m in Sources */ = {isa = PBXBuildFile; fileRef = DABC925B1CFCD5A1001FE9DE /* vadminecobici.m */; };
+		DABC925F1CFCE13B001FE9DE /* aparseradminecobici.m in Sources */ = {isa = PBXBuildFile; fileRef = DABC925E1CFCE13B001FE9DE /* aparseradminecobici.m */; };
+		DABC92631CFCE17E001FE9DE /* madminecobici.m in Sources */ = {isa = PBXBuildFile; fileRef = DABC92621CFCE17E001FE9DE /* madminecobici.m */; };
+		DABC92661CFCE19A001FE9DE /* madminecobicistation.m in Sources */ = {isa = PBXBuildFile; fileRef = DABC92651CFCE19A001FE9DE /* madminecobicistation.m */; };
 		DAC21D081CE4C2AA00D92161 /* mpollution.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC21CD11CE4C2AA00D92161 /* mpollution.m */; };
 		DAC21D091CE4C2AA00D92161 /* mpollutionhour.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC21CD31CE4C2AA00D92161 /* mpollutionhour.m */; };
 		DAC21D0F1CE4C2AA00D92161 /* mpollutionnotificationdraw.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC21CDF1CE4C2AA00D92161 /* mpollutionnotificationdraw.m */; };
@@ -613,6 +616,12 @@
 		DABC92571CFCD4B1001FE9DE /* cadminecobici.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cadminecobici.m; sourceTree = "<group>"; };
 		DABC925A1CFCD5A1001FE9DE /* vadminecobici.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vadminecobici.h; sourceTree = "<group>"; };
 		DABC925B1CFCD5A1001FE9DE /* vadminecobici.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vadminecobici.m; sourceTree = "<group>"; };
+		DABC925D1CFCE13B001FE9DE /* aparseradminecobici.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aparseradminecobici.h; sourceTree = "<group>"; };
+		DABC925E1CFCE13B001FE9DE /* aparseradminecobici.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = aparseradminecobici.m; sourceTree = "<group>"; };
+		DABC92611CFCE17E001FE9DE /* madminecobici.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = madminecobici.h; sourceTree = "<group>"; };
+		DABC92621CFCE17E001FE9DE /* madminecobici.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = madminecobici.m; sourceTree = "<group>"; };
+		DABC92641CFCE19A001FE9DE /* madminecobicistation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = madminecobicistation.h; sourceTree = "<group>"; };
+		DABC92651CFCE19A001FE9DE /* madminecobicistation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = madminecobicistation.m; sourceTree = "<group>"; };
 		DAC21CD01CE4C2AA00D92161 /* mpollution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpollution.h; sourceTree = "<group>"; };
 		DAC21CD11CE4C2AA00D92161 /* mpollution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mpollution.m; sourceTree = "<group>"; };
 		DAC21CD21CE4C2AA00D92161 /* mpollutionhour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpollutionhour.h; sourceTree = "<group>"; };
@@ -1183,6 +1192,8 @@
 				DAD7AA391CEFB156003B169A /* aparsernodrive.m */,
 				DABC91F21CF90496001FE9DE /* aparserclimate.h */,
 				DABC91F31CF90496001FE9DE /* aparserclimate.m */,
+				DABC925D1CFCE13B001FE9DE /* aparseradminecobici.h */,
+				DABC925E1CFCE13B001FE9DE /* aparseradminecobici.m */,
 			);
 			path = parser;
 			sourceTree = "<group>";
@@ -1357,6 +1368,17 @@
 			children = (
 				DABC925A1CFCD5A1001FE9DE /* vadminecobici.h */,
 				DABC925B1CFCD5A1001FE9DE /* vadminecobici.m */,
+			);
+			path = adminecobici;
+			sourceTree = "<group>";
+		};
+		DABC92601CFCE174001FE9DE /* adminecobici */ = {
+			isa = PBXGroup;
+			children = (
+				DABC92611CFCE17E001FE9DE /* madminecobici.h */,
+				DABC92621CFCE17E001FE9DE /* madminecobici.m */,
+				DABC92641CFCE19A001FE9DE /* madminecobicistation.h */,
+				DABC92651CFCE19A001FE9DE /* madminecobicistation.m */,
 			);
 			path = adminecobici;
 			sourceTree = "<group>";
@@ -1671,6 +1693,7 @@
 		DAD33FD41CBC83E300C87502 /* m */ = {
 			isa = PBXGroup;
 			children = (
+				DABC92601CFCE174001FE9DE /* adminecobici */,
 				DABC92101CFA3A1A001FE9DE /* climatecurrent */,
 				DA4D6BE71CF5E43F00ECA350 /* climate */,
 				DAD7AA711CF21300003B169A /* nodrivecalendar */,
@@ -2107,6 +2130,7 @@
 				DAEA5A1A1CEA80DC00584526 /* vpollutionpollutantscell.m in Sources */,
 				DAC21D481CE4C35B00D92161 /* vpollutionoption.m in Sources */,
 				DAAEEDEC1CECC077008C992C /* mradiationveryhigh.m in Sources */,
+				DABC925F1CFCE13B001FE9DE /* aparseradminecobici.m in Sources */,
 				DAC21D1C1CE4C2AA00D92161 /* mpollutionindexwarning.m in Sources */,
 				DABC92031CFA1DAA001FE9DE /* mclimateatmosphererising.m in Sources */,
 				DA3F6BF11CEBBBF200625BE9 /* mmenusectionitemecobici.m in Sources */,
@@ -2200,6 +2224,7 @@
 				DA4D6BF41CF5FF3000ECA350 /* vpollutionpollutantdetailbar.m in Sources */,
 				DAC21D131CE4C2AA00D92161 /* mpollutionchartitemtoday.m in Sources */,
 				DAB26D821CE0F98200E1580F /* mdbselect.m in Sources */,
+				DABC92631CFCE17E001FE9DE /* madminecobici.m in Sources */,
 				DA20AD031CD80B5100754956 /* enotification.m in Sources */,
 				DA3F6C0C1CEBDEA400625BE9 /* mradiation.m in Sources */,
 				DAC21D1F1CE4C2AA00D92161 /* mpollutionmenuitemchart.m in Sources */,
@@ -2277,6 +2302,7 @@
 				DA05C6D81CE6388500A22A5E /* vpollutionmapcell.m in Sources */,
 				DAEA59F71CEA3C0100584526 /* vpollutionfrontheadercell.m in Sources */,
 				DA0F26681CF5392A00E0D03F /* vclimate.m in Sources */,
+				DABC92661CFCE19A001FE9DE /* madminecobicistation.m in Sources */,
 				DAAEEE151CED15C4008C992C /* mradiationprecautionshades.m in Sources */,
 				DAC21D511CE4C35B00D92161 /* vpollutionfrontheadercurrent.m in Sources */,
 				DA92746F1CE55B600005138A /* mpollutionmap.m in Sources */,
