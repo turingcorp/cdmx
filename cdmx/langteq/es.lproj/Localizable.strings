@@ -149,6 +149,10 @@
 "vclimate_wind_title"="Viento\n";
 "vclimate_wind_subtitle"="%@ km/h";
 
+"vadmin_ecobici_buttonretry"="Reintentar";
+"vadmin_ecobici_buttonexport"="Exportar";
+"vadmin_ecobici_labelexport"="Exportar datos ecobici: %@ estaciones";
+
 "mmenu_section_city"="Ciudad";
 "mmenu_section_mobility"="Movilidad";
 "mmenu_section_app"="App";
