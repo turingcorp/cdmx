@@ -179,6 +179,7 @@
 		DABC92631CFCE17E001FE9DE /* madminecobici.m in Sources */ = {isa = PBXBuildFile; fileRef = DABC92621CFCE17E001FE9DE /* madminecobici.m */; };
 		DABC92661CFCE19A001FE9DE /* madminecobicistation.m in Sources */ = {isa = PBXBuildFile; fileRef = DABC92651CFCE19A001FE9DE /* madminecobicistation.m */; };
 		DABC92691CFCE7F5001FE9DE /* acalladminecobici.m in Sources */ = {isa = PBXBuildFile; fileRef = DABC92681CFCE7F5001FE9DE /* acalladminecobici.m */; };
+		DABC926B1CFCF3C9001FE9DE /* mockadminecobici_common.json in Resources */ = {isa = PBXBuildFile; fileRef = DABC926A1CFCF3C9001FE9DE /* mockadminecobici_common.json */; };
 		DAC21D081CE4C2AA00D92161 /* mpollution.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC21CD11CE4C2AA00D92161 /* mpollution.m */; };
 		DAC21D091CE4C2AA00D92161 /* mpollutionhour.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC21CD31CE4C2AA00D92161 /* mpollutionhour.m */; };
 		DAC21D0F1CE4C2AA00D92161 /* mpollutionnotificationdraw.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC21CDF1CE4C2AA00D92161 /* mpollutionnotificationdraw.m */; };
@@ -625,6 +626,7 @@
 		DABC92651CFCE19A001FE9DE /* madminecobicistation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = madminecobicistation.m; sourceTree = "<group>"; };
 		DABC92671CFCE7F5001FE9DE /* acalladminecobici.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = acalladminecobici.h; sourceTree = "<group>"; };
 		DABC92681CFCE7F5001FE9DE /* acalladminecobici.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = acalladminecobici.m; sourceTree = "<group>"; };
+		DABC926A1CFCF3C9001FE9DE /* mockadminecobici_common.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mockadminecobici_common.json; sourceTree = "<group>"; };
 		DAC21CD01CE4C2AA00D92161 /* mpollution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpollution.h; sourceTree = "<group>"; };
 		DAC21CD11CE4C2AA00D92161 /* mpollution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mpollution.m; sourceTree = "<group>"; };
 		DAC21CD21CE4C2AA00D92161 /* mpollutionhour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpollutionhour.h; sourceTree = "<group>"; };
@@ -1316,6 +1318,7 @@
 			isa = PBXGroup;
 			children = (
 				DABC92461CFC9697001FE9DE /* mockpollution_common.json */,
+				DABC926A1CFCF3C9001FE9DE /* mockadminecobici_common.json */,
 			);
 			path = mocks;
 			sourceTree = "<group>";
@@ -2039,6 +2042,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DABC92471CFC9697001FE9DE /* mockpollution_common.json in Resources */,
+				DABC926B1CFCF3C9001FE9DE /* mockadminecobici_common.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
