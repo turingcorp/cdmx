@@ -1,5 +1,5 @@
 #import "tools.h"
-#import "privateconstants.h"
+#import "genericconstants.h"
 
 static NSString* const shareurl = @"https://itunes.apple.com/us/app/cdmx/id%@";
 static NSString* const rateurl = @"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=%@";
