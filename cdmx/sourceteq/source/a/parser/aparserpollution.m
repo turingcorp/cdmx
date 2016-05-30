@@ -19,28 +19,8 @@
         NSArray *rawdaily = self.validjson[@"daily"];
         NSArray *rawhourly = self.validjson[@"hourly"];
         NSArray<mdbdistrict*> *modeldistricts = [self parsedistricts:rawdistricts];
-        NSMutableArray<mdbpollutiondaily*> *modeldaily = [NSMutableArray array];
-        NSMutableArray<mpollutionhour*> *modelhourly = [NSMutableArray array];
-        
-        
-        
-        
-        
-        NSUInteger counthours = rawhourly.count;
-        
-        for(NSUInteger indexhour = 0; indexhour < counthours; indexhour++)
-        {
-            NSDictionary *rawhour = rawhourly[indexhour];
-            NSNumber *rawhourhour = rawhour[@"hour"];
-            NSNumber *rawhourpollution = rawhour[@"pollution"];
-            
-            mpollutionhour *modelhour = [[mpollutionhour alloc] init];
-            modelhour.hour = rawhourhour;
-            modelhour.pollution = rawhourpollution;
-            [modelhourly addObject:modelhour];
-        }
-        
-        self.modelhourly = modelhourly;
+        NSArray<mdbpollutiondaily*> *modeldaily = [self parserdaily:rawdaily];
+        self.modelhourly = [self parsehourly:rawhourly];
         [mdbupdate pollutiondistricts:modeldistricts daily:modeldaily];
     }
 }
@@ -89,6 +69,26 @@
     }
     
     return modeldaily;
+}
+
+-(NSArray<mpollutionhour*>*)parsehourly:(NSArray*)rawhourly
+{
+    NSMutableArray<mpollutionhour*> *modelhourly = [NSMutableArray array];
+    NSUInteger counthours = rawhourly.count;
+    
+    for(NSUInteger indexhour = 0; indexhour < counthours; indexhour++)
+    {
+        NSDictionary *rawhour = rawhourly[indexhour];
+        NSNumber *rawhourhour = rawhour[@"hour"];
+        NSNumber *rawhourpollution = rawhour[@"pollution"];
+        
+        mpollutionhour *modelhour = [[mpollutionhour alloc] init];
+        modelhour.hour = rawhourhour;
+        modelhour.pollution = rawhourpollution;
+        [modelhourly addObject:modelhour];
+    }
+    
+    return modelhourly;
 }
 
 @end
