@@ -36,7 +36,7 @@
 {
     NSArray *rawdistricts = self.pollutionmockup[@"districts"];
     NSArray<mdbdistrict*> *districts = [self.parser parsedistricts:rawdistricts];
-    XCTAssertEqual(districts.count, 16, @"Different number of districsts");
+    XCTAssertEqual(districts.count, 16, @"Different number of districts");
 }
 /*
 - (void)testPerformanceExample
