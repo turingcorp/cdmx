@@ -9,15 +9,15 @@ script:
                               -scheme tests \
                               -sdk "iphonesimulator" \
                               -destination "platform=iOS Simulator,OS=8.1,name=iPhone 6" \
-                              -freshInstall -freshSimulator \
-                              test | xcpretty -c
+                              test \
+                              -freshInstall -freshSimulator
 
   xctool -workspace cdmx.xcworkspace \
                               -scheme cdmx \
                               -sdk "iphonesimulator" \
                               -destination "platform=iOS Simulator,OS=9.3,name=iPhone 6" \
-                              -freshInstall -freshSimulator \
-                              test | xcpretty -c
+                              test \
+                              -freshInstall -freshSimulator
 notifications:
   email:
     on_success: never
