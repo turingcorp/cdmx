@@ -9,4 +9,4 @@ branches:
 xcode_sdk:
   - iphonesimulator7.0
   - iphonesimulator8.1
-  - iphonesimulator9.2
+  - iphonesimulator9.3
