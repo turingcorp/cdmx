@@ -61,12 +61,12 @@
             CGFloat floatlatitude = rawlatitude.floatValue;
             CGFloat floatlongitude = rawlongitude.floatValue;
             
-            if(!floatlatitude)
+            if(floatlatitude)
             {
                 self.latitude = @(floatlatitude);
             }
             
-            if(!floatlongitude)
+            if(floatlongitude)
             {
                 self.longitude = @(floatlongitude);
             }
