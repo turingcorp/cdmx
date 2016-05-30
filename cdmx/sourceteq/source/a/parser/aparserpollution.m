@@ -18,26 +18,11 @@
         NSArray *rawdistricts = self.validjson[@"districts"];
         NSArray *rawdaily = self.validjson[@"daily"];
         NSArray *rawhourly = self.validjson[@"hourly"];
-        NSMutableArray<mdbdistrict*> *modeldistricts = [NSMutableArray array];
+        NSArray<mdbdistrict*> *modeldistricts = [self parsedistricts:rawdistricts];
         NSMutableArray<mdbpollutiondaily*> *modeldaily = [NSMutableArray array];
         NSMutableArray<mpollutionhour*> *modelhourly = [NSMutableArray array];
         
-        NSUInteger countdistricts = rawdistricts.count;
         
-        for(NSUInteger indexdistricts = 0; indexdistricts < countdistricts; indexdistricts++)
-        {
-            NSDictionary *rawdist = rawdistricts[indexdistricts];
-            NSNumber *rawdistid = rawdist[@"id"];
-            NSNumber *rawdistpollution = rawdist[@"pollution"];
-            NSNumber *rawdistpollutantid = rawdist[@"pollutantid"];
-            
-            mdbdistrict *modeldist = [[mdbdistrict alloc] init];
-            modeldist.serverid = rawdistid;
-            modeldist.pollution = rawdistpollution;
-            modeldist.pollutantid = rawdistpollutantid;
-            
-            [modeldistricts addObject:modeldist];
-        }
         
         NSUInteger countdaily = rawdaily.count;
         
@@ -71,6 +56,31 @@
         self.modelhourly = modelhourly;
         [mdbupdate pollutiondistricts:modeldistricts daily:modeldaily];
     }
+}
+
+#pragma mark private
+
+-(NSArray<mdbdistrict*>*)parsedistricts:(NSArray*)rawdistricts
+{
+    NSMutableArray<mdbdistrict*> *modeldistricts = [NSMutableArray array];
+    NSUInteger countdistricts = rawdistricts.count;
+    
+    for(NSUInteger indexdistricts = 0; indexdistricts < countdistricts; indexdistricts++)
+    {
+        NSDictionary *rawdist = rawdistricts[indexdistricts];
+        NSNumber *rawdistid = rawdist[@"id"];
+        NSNumber *rawdistpollution = rawdist[@"pollution"];
+        NSNumber *rawdistpollutantid = rawdist[@"pollutantid"];
+        
+        mdbdistrict *modeldist = [[mdbdistrict alloc] init];
+        modeldist.serverid = rawdistid;
+        modeldist.pollution = rawdistpollution;
+        modeldist.pollutantid = rawdistpollutantid;
+        
+        [modeldistricts addObject:modeldist];
+    }
+    
+    return modeldistricts;
 }
 
 @end
