@@ -19,9 +19,9 @@
                       [[mmenusectioncity alloc] init],
                       [[mmenusectionmobility alloc] init],
                       //[[mmenusectionapp alloc] init]
-#if debug
+#if DEBUG
       
-                      [mmenusection]
+                      [[mmenusectionadmin alloc] init]
                       
 #endif
                       ];

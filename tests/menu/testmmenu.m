@@ -1,39 +1,40 @@
-//
-//  testmmenu.m
-//  cdmx
-//
-//  Created by zero on 5/30/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
-
 #import <XCTest/XCTest.h>
+#import "mmenu.h"
+#import "mmenusectionadmin.h"
 
-@interface testmmenu : XCTestCase
+@interface testmmenu:XCTestCase
 
 @end
 
 @implementation testmmenu
 
-- (void)setUp {
-    [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
-}
-
-- (void)tearDown {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
-    [super tearDown];
-}
-
-- (void)testExample {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
-}
-
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
+-(void)testmenuadminprivate
+{
+    BOOL foundadminsection = NO;
+    mmenu *model = [[mmenu alloc] init];
+    
+    for(mmenusection *section in model.sections)
+    {
+        Class sectionclass = [section class];
+        
+        if(sectionclass == [mmenusectionadmin class])
+        {
+            foundadminsection = YES;
+            
+            break;
+        }
+    }
+    
+#if DEBUG
+    
+    XCTAssertTrue(foundadminsection, @"admin should be available in debug");
+    
+#else
+    
+    XCTAssertFalse(foundadminsection, @"admin should not be available in release");
+    
+#endif
+    
 }
 
 @end
