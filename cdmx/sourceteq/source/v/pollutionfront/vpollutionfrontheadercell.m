@@ -13,7 +13,7 @@
     [label setTranslatesAutoresizingMaskIntoConstraints:NO];
     [label setTextAlignment:NSTextAlignmentCenter];
     [label setFont:[UIFont regularsize:14]];
-    [label setTextColor:[UIColor colorWithWhite:0.4 alpha:1]];
+    [label setTextColor:[UIColor colorWithWhite:0.3 alpha:1]];
     self.label = label;
     
     [self addSubview:label];
