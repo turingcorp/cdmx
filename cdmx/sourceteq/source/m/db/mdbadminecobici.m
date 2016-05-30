@@ -11,6 +11,22 @@ static NSString *const ecobicidbname = @"ecobici.zql";
     NSString *dbname = [NSTemporaryDirectory() stringByAppendingPathComponent:ecobicidbname];
     NSURL *dburl = [NSURL fileURLWithPath:dbname];
     
+    NSMutableArray<zqlquery*> *queries = [NSMutableArray array];
+    
+    zqlparam *paramstationid = [zqlparam type:[zqltype integer] name:dbstations_stationid value:nil];
+    zqlparam *paramname = [zqlparam type:[zqltype text] name:dbstations_name value:nil];
+    zqlparam *paramlatitude = [zqlparam type:[zqltype integer] name:dbstations_latitude value:nil];
+    zqlparam *paramlongitude = [zqlparam type:[zqltype integer] name:dbstations_longitude value:nil];
+    
+    NSArray<zqlparam*> *params = @[
+                                   paramstationid,
+                                   paramname,
+                                   paramlatitude,
+                                   paramlongitude
+                                   ];
+    
+    zqlquery *querytablestations = [zqlquery createtable:dbstations params:params];
+    [queries addObject:querytablestations];
     
     return dburl;
     

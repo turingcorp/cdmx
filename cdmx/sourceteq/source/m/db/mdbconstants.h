@@ -16,6 +16,7 @@ static NSString* const dbpollutiondaily =                       @"pollutiondaily
 static NSString* const dbpollutiondaily_date =                  @"date";
 static NSString* const dbpollutiondaily_maxpollution =          @"maxpollution";
 static NSString* const dbstations =                             @"stations";
+static NSString* const dbstations_stationid =                   @"stationid";
 static NSString* const dbstations_name =                        @"name";
 static NSString* const dbstations_latitude =                    @"latitude";
 static NSString* const dbstations_longitude =                   @"longitude";
