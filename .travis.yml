@@ -2,12 +2,22 @@ sudo: false
 language: objective-c
 osx_image: xcode7.3
 xcode_workspace: cdmx.xcworkspace
-xcode_scheme: tests
 branches:
   only:
     - dev
-xcode_sdk:
-  - iphonesimulator9.3
+script:
+  set -ev
+  set -o pipefail && xcodebuild -workspace MLSell.xcworkspace \
+                              -scheme tests \
+                              -sdk "iphonesimulator" \
+                              -destination "platform=iOS Simulator,OS=8.1,name=iPhone 6" \
+                              test | xcpretty -c
+
+  set -o pipefail && xcodebuild -workspace MLSell.xcworkspace \
+                              -scheme cdmx \
+                              -sdk "iphonesimulator" \
+                              -destination "platform=iOS Simulator,OS=9.3,name=iPhone 6" \
+                              test | xcpretty -c
 notifications:
   email:
     on_success: never
