@@ -51,7 +51,13 @@ static NSString* const zqlfoldername = @"zql";
         [filemanager createDirectoryAtURL:folderurl withIntermediateDirectories:NO attributes:nil error:nil];
     }
     
-    [filemanager createFileAtPath:dbpath contents:nil attributes:nil];
+    [self createabsolutepathdb:dbpath];
+}
+
+-(void)createabsolutepathdb:(NSString*)dbname
+{
+    NSFileManager *filemanager = [NSFileManager defaultManager];
+    [filemanager createFileAtPath:dbname contents:nil attributes:nil];
 }
 
 -(void)startdb:(NSString*)dbname

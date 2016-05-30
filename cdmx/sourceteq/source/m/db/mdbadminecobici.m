@@ -42,6 +42,7 @@ static NSString *const ecobicidbname = @"ecobici.zql";
         [queries addObject:insertquery];
     }
     
+    [[zqlconfig shared] createdb:dbname];
     zqlresult *result = [zql query:queries db:dbname];
     
     NSLog(@"%@", result);

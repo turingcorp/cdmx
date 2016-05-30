@@ -28,7 +28,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   zql:
-    :commit: 6d9e8878958a45c2402ebe45affd286f925b7b7d
+    :commit: 04d0b7493315f429662a948d4c467ea5224b2f4c
     :git: https://github.com/iturb/zql.git
 
 SPEC CHECKSUMS:
