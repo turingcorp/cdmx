@@ -8,6 +8,7 @@ static NSString* const zqlerrornodb =                   @"No database initialize
 static NSString* const zqlerrorerror =                  @"SQL error or missing database";
 static NSString* const zqlerrorinternal =               @"Internal logic error in SQLite";
 static NSString* const zqlerrorpermission =             @"Access permission denied";
+static NSString* const zqlerroropendbfile =             @"Unable to open the database file";
 
 @interface zqlresulterror ()
 
@@ -55,6 +56,12 @@ static NSString* const zqlerrorpermission =             @"Access permission deni
         case SQLITE_PERM:
             
             errordescr = zqlerrorpermission;
+            
+            break;
+            
+        case SQLITE_CANTOPEN:
+            
+            errordescr = zqlerroropendbfile;
             
             break;
             
