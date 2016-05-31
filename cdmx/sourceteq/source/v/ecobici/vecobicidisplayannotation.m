@@ -27,6 +27,7 @@ static NSInteger const annotationheightmax = 158;
     [image setContentMode:UIViewContentModeScaleAspectFit];
     [image setUserInteractionEnabled:NO];
     [image setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [image setTintColor:[UIColor blackColor]];
     self.img = image;
     
     [self addSubview:image];
@@ -58,13 +59,15 @@ static NSInteger const annotationheightmax = 158;
 {
     if(self.isSelected || self.isHighlighted)
     {
-        [self.img setImage:[UIImage imageNamed:@"ecobici_annotationbig"]];
+        [self.img setImage:[[UIImage imageNamed:@"ecobici_annotationbig"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+        [self.img setTintColor:[UIColor blackColor]];
         [self setFrame:CGRectMake(0, 0, annotationwidthmax, annotationheightmax)];
         [self setCenterOffset:CGPointMake(0, annotationheightmax / -2.0)];
     }
     else
     {
-        [self.img setImage:[UIImage imageNamed:@"ecobici_annotationsmall"]];
+        [self.img setImage:[[UIImage imageNamed:@"ecobici_annotationsmall"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+        [self.img setTintColor:[UIColor colorWithWhite:0.6 alpha:1]];
         [self setFrame:CGRectMake(0, 0, annotationwidthmin, annotationheightmax)];
         [self setCenterOffset:CGPointMake(0, annotationheightmin / -2.0)];
     }
