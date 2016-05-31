@@ -77,7 +77,7 @@
     return array;
 }
 
-+(NSArray<mdbpollutiondaily*>*)pollutiondaily;
++(NSArray<mdbpollutiondaily*>*)pollutiondaily
 {
     NSMutableArray<mdbpollutiondaily*> *array = [NSMutableArray array];
     zqlparam *paramprimarykey = [zqlparam type:[zqltype integer] name:dbprimarykey value:nil];
@@ -154,6 +154,11 @@
     }
     
     return lastdaily;
+}
+
++(NSArray<mdbecobicistation*>*)ecobicistations
+{
+    
 }
 
 @end
