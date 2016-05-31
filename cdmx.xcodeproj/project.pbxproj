@@ -280,6 +280,7 @@
 		DAEA5A1D1CEA8AFA00584526 /* pollutants.plist in Resources */ = {isa = PBXBuildFile; fileRef = DAEA5A1B1CEA8AFA00584526 /* pollutants.plist */; };
 		DAEA5A211CEA9FEE00584526 /* recommendations.plist in Resources */ = {isa = PBXBuildFile; fileRef = DAEA5A1F1CEA9FEE00584526 /* recommendations.plist */; };
 		DAF94A271CFD129F00D190B5 /* ecobici.zql in Resources */ = {isa = PBXBuildFile; fileRef = DAF94A261CFD129F00D190B5 /* ecobici.zql */; };
+		DAF94A2B1CFD1A9D00D190B5 /* cecobici.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF94A2A1CFD1A9D00D190B5 /* cecobici.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -827,6 +828,8 @@
 		DAEA5A201CEA9FEE00584526 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/recommendations.plist; sourceTree = "<group>"; };
 		DAEA5A221CEA9FF600584526 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = es; path = es.lproj/recommendations.plist; sourceTree = "<group>"; };
 		DAF94A261CFD129F00D190B5 /* ecobici.zql */ = {isa = PBXFileReference; lastKnownFileType = file; path = ecobici.zql; sourceTree = "<group>"; };
+		DAF94A291CFD1A9D00D190B5 /* cecobici.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cecobici.h; sourceTree = "<group>"; };
+		DAF94A2A1CFD1A9D00D190B5 /* cecobici.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cecobici.m; sourceTree = "<group>"; };
 		E9F783FFE8E5E9FE2B5CBFD0 /* libPods-cdmx.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-cdmx.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -1697,6 +1700,7 @@
 		DAD33FD21CBC83E300C87502 /* c */ = {
 			isa = PBXGroup;
 			children = (
+				DAF94A281CFD1A8E00D190B5 /* ecobici */,
 				DABC92551CFCD4A4001FE9DE /* adminecobici */,
 				DA0F26611CF5360100E0D03F /* climate */,
 				DAD7AA3B1CEFB6F7003B169A /* nodrive */,
@@ -1959,6 +1963,15 @@
 				DAEA5A191CEA80DC00584526 /* vpollutionpollutantscell.m */,
 			);
 			path = pollutionpollutants;
+			sourceTree = "<group>";
+		};
+		DAF94A281CFD1A8E00D190B5 /* ecobici */ = {
+			isa = PBXGroup;
+			children = (
+				DAF94A291CFD1A9D00D190B5 /* cecobici.h */,
+				DAF94A2A1CFD1A9D00D190B5 /* cecobici.m */,
+			);
+			path = ecobici;
 			sourceTree = "<group>";
 		};
 		FB742DB9D9548458790B898B /* Pods */ = {
@@ -2294,6 +2307,7 @@
 				DAD7AA3E1CEFB6FF003B169A /* cnodrive.m in Sources */,
 				DAD7AA2E1CEF66E7003B169A /* mradiationabout.m in Sources */,
 				DAAEEDE61CECC061008C992C /* mradiationmid.m in Sources */,
+				DAF94A2B1CFD1A9D00D190B5 /* cecobici.m in Sources */,
 				DAD7AA341CEF6709003B169A /* mradiationaboutitem.m in Sources */,
 				DA9274681CE4E73C0005138A /* mpollutionchartitempoint.m in Sources */,
 				DABC921F1CFA3A83001FE9DE /* mclimatecurrentitemwind.m in Sources */,
