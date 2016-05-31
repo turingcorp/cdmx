@@ -1,5 +1,11 @@
 #import "mecobicimenuitemuser.h"
 
+@interface mecobicimenuitem ()
+
+@property(copy, nonatomic, readwrite)NSString *asset;
+
+@end
+
 @implementation mecobicimenuitemuser
 
 #pragma mark -

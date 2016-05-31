@@ -3,6 +3,12 @@
 #import "mecobicimenuitemcloser.h"
 #import "mecobicimenuitemuser.h"
 
+@interface mecobicimenuitem ()
+
+@property(copy, nonatomic, readwrite)NSString *asset;
+
+@end
+
 @implementation mecobicimenuitem
 
 +(instancetype)menu

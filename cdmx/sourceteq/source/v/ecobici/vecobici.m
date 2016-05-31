@@ -12,7 +12,7 @@ static NSInteger const ecobicimenuheight = 50;
     [self setBackgroundColor:[UIColor whiteColor]];
     self.controller = controller;
     
-    vecobicimenu *menu = [[vecobicimenu alloc] init];
+    vecobicimenu *menu = [[vecobicimenu alloc] init:controller];
     
     [self addSubview:menu];
     
@@ -20,7 +20,7 @@ static NSInteger const ecobicimenuheight = 50;
     NSDictionary *metrics = @{@"menuheight":@(ecobicimenuheight)};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[menu]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[menu(ecobicimenuheight)]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[menu(menuheight)]-0-|" options:0 metrics:metrics views:views]];
     
     return self;
 }

@@ -1,5 +1,11 @@
 #import "mecobicimenuitemcloser.h"
 
+@interface mecobicimenuitem ()
+
+@property(copy, nonatomic, readwrite)NSString *asset;
+
+@end
+
 @implementation mecobicimenuitemcloser
 
 #pragma mark -

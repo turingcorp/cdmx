@@ -9,4 +9,6 @@
 
 -(void)action:(cecobici*)controller;
 
+@property(copy, nonatomic, readonly)NSString *asset;
+
 @end

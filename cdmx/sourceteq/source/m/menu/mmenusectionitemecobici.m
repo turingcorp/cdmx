@@ -1,4 +1,5 @@
 #import "mmenusectionitemecobici.h"
+#import "cecobici.h"
 
 @interface mmenusectionitem ()
 
@@ -16,6 +17,16 @@
     self.asset = @"menu_mobility_ecobici";
     
     return self;
+}
+
+#pragma mark -
+#pragma mark item
+
+-(UIViewController*)controller
+{
+    cecobici *controller = [[cecobici alloc] init];
+    
+    return controller;
 }
 
 @end

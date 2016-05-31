@@ -1,6 +1,7 @@
 #import "vecobicimenu.h"
 #import "vecobicimenucell.h"
 #import "ecollectioncell.h"
+#import "ecolor.h"
 
 static NSInteger const ecobicimenucellwidth = 60;
 
@@ -19,8 +20,15 @@ static NSInteger const ecobicimenucellwidth = 60;
     self = [super init];
     [self setClipsToBounds:YES];
     [self setBackgroundColor:[UIColor clearColor]];
+    [self setTranslatesAutoresizingMaskIntoConstraints:NO];
     self.controller = controller;
     self.model = [[mecobicimenu alloc] init];
+
+    UIView *border = [[UIView alloc] init];
+    [border setUserInteractionEnabled:NO];
+    [border setBackgroundColor:[UIColor background]];
+    [border setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [border setClipsToBounds:YES];
     
     UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
     [flow setHeaderReferenceSize:CGSizeZero];
@@ -42,13 +50,16 @@ static NSInteger const ecobicimenucellwidth = 60;
     [collection registerClass:[vecobicimenucell class] forCellWithReuseIdentifier:[vecobicimenucell reusableidentifier]];
     self.collection = collection;
     
+    [self addSubview:border];
     [self addSubview:collection];
     
-    NSDictionary *views = @{@"col":collection};
+    NSDictionary *views = @{@"col":collection, @"border":border};
     NSDictionary *metrics = @{};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[border]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[border(1)]" options:0 metrics:metrics views:views]];
     
     return self;
 }
