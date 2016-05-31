@@ -50,13 +50,23 @@
 
 -(void)loadecobici
 {
-    __weak typeof(self) welf = self;
-    
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
-                   ^
-                   {
-                       NSArray<mdbecobicistation*> *stations = [mdbselect ecobicistations];
-                   });
+    if(!self.model)
+    {
+        __weak typeof(self) welf = self;
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
+                       ^
+                       {
+                           NSArray<mdbecobicistation*> *stations = [mdbselect ecobicistations];
+                           welf.model = [[mecobici alloc] init:stations];
+                           
+                           dispatch_async(dispatch_get_main_queue(),
+                                          ^
+                                          {
+                                              [welf.view viewdidappear];
+                                          });
+                       });
+    }
     
     [[analytics singleton] trackscreen:self];
 }
