@@ -29,11 +29,11 @@ static NSString *const ecobicidbname = @"ecobici.zql";
     zqlquery *querytablestations = [zqlquery createtable:dbecobicistations params:params];
     [queries addObject:querytablestations];
     
-    NSUInteger countstations = model.stations.count;
+    NSUInteger countstations = model.count;
     
     for(NSUInteger indexstation = 0; indexstation < countstations; indexstation++)
     {
-        madminecobicistation *station = model.stations[indexstation];
+        mdbecobicistation *station = model[indexstation];
         NSNumber *usablelatitude = @(station.latitude.floatValue * dbintegermultiply);
         NSNumber *usablelongitude = @(station.longitude.floatValue * dbintegermultiply);
         paramstationid.value = station.stationid;
