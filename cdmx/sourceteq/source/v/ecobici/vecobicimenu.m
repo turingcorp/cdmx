@@ -1,4 +1,8 @@
 #import "vecobicimenu.h"
+#import "vecobicimenucell.h"
+#import "ecollectioncell.h"
+
+static NSInteger const ecobicimenucellwidth = 60;
 
 @interface vecobicimenu ()
 
@@ -17,6 +21,18 @@
     [self setBackgroundColor:[UIColor clearColor]];
     self.controller = controller;
     self.model = [[mecobicimenu alloc] init];
+    
+    UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
+    [flow setHeaderReferenceSize:CGSizeZero];
+    [flow setFooterReferenceSize:CGSizeZero];
+    [flow setMinimumLineSpacing:0];
+    [flow setMinimumInteritemSpacing:0];
+    [flow setScrollDirection:UICollectionViewScrollDirectionHorizontal];
+    
+    UICollectionView *collection = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flow];
+    self.collection = collection;
+    
+    [self addSubview:collection];
     
     return self;
 }
@@ -38,7 +54,9 @@
 
 -(UICollectionViewCell*)collectionView:(UICollectionView*)col cellForItemAtIndexPath:(NSIndexPath*)index
 {
+    vecobicimenucell *cell = [col dequeueReusableCellWithReuseIdentifier:[vecobicimenucell reusableidentifier] forIndexPath:index];
     
+    return cell;
 }
 
 @end
