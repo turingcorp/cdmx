@@ -173,8 +173,9 @@
                                    paramname
                                    ];
     
+    NSString *urldatabase = [[NSBundle mainBundle] pathForResource:@"ecobici" ofType:@"zql"];
     zqlquery *query = [zqlquery select:dbecobicistations params:params ordered:paramname ascendent:YES limit:0];
-    zqlresult *result = [zql query:@[query] db:nil];
+    zqlresult *result = [zql query:@[query] db:urldatabase];
     NSUInteger stationscount = result.params.count;
     
     for(NSUInteger indexstation = 0; indexstation < stationscount; indexstation++)

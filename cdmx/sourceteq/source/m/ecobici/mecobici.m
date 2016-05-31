@@ -23,6 +23,8 @@
         [items addObject:item];
     }
     
+    self.items = items;
+    
     return self;
 }
 
