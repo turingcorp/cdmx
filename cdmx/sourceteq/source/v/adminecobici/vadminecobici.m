@@ -99,7 +99,7 @@
 
 -(void)actionexport:(UIButton*)button
 {
-    
+    [self.controller exportdb];
 }
 
 #pragma mark public

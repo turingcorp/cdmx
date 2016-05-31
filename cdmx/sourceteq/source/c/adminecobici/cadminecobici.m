@@ -78,6 +78,20 @@
                    });
 }
 
+-(void)exportdb
+{
+    UIActivityViewController *act = [[UIActivityViewController alloc] initWithActivityItems:@[self.view.dburl] applicationActivities:nil];
+    
+    if([UIPopoverPresentationController class])
+    {
+        act.popoverPresentationController.sourceView = self.view;
+        act.popoverPresentationController.sourceRect = CGRectMake(50, 50, 1, 1);
+        act.popoverPresentationController.permittedArrowDirections = UIPopoverArrowDirectionAny;
+    }
+    
+    [self presentViewController:act animated:YES completion:nil];
+}
+
 #pragma mark -
 #pragma mark call del
 

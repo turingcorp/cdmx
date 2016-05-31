@@ -43,7 +43,7 @@ static NSString *const ecobicidbname = @"ecobici.zql";
     }
     
     [[zqlconfig shared] createabsolutepathdb:dbname];
-    zqlresult *result = [zql query:queries db:dbname];
+    [zql query:queries db:dbname];
     
     return dburl;
 }
