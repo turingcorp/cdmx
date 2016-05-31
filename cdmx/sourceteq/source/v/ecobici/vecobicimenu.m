@@ -104,4 +104,10 @@ static NSInteger const ecobicimenucellwidth = 60;
     return cell;
 }
 
+-(void)collectionView:(UICollectionView*)col didSelectItemAtIndexPath:(NSIndexPath*)index
+{
+    mecobicimenuitem *model = [self modelforindex:index];
+    [model action:self.controller];
+}
+
 @end

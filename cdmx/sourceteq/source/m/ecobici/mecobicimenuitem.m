@@ -26,4 +26,10 @@
     return model;
 }
 
+#pragma mark public
+
+-(void)action:(cecobici*)controller
+{
+}
+
 @end
