@@ -179,18 +179,12 @@ static NSInteger const ecobicimapheight = 200;
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
                        ^
                        {
-                           NSArray<mpollutionmapitemannotation*> *annotations = [welf.model annotations];
+                           NSArray<mecobiciitemannotation*> *annotations = [welf.controller.model annotations];
                            
                            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC), dispatch_get_main_queue(),
                                           ^
                                           {
                                               [welf.display addAnnotations:annotations];
-                                              
-                                              [UIView animateWithDuration:0.5 animations:
-                                               ^
-                                               {
-                                                   [welf.collection setAlpha:1];
-                                               }];
                                           });
                        });
     }
