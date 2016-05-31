@@ -279,6 +279,7 @@
 		DAEA5A1A1CEA80DC00584526 /* vpollutionpollutantscell.m in Sources */ = {isa = PBXBuildFile; fileRef = DAEA5A191CEA80DC00584526 /* vpollutionpollutantscell.m */; };
 		DAEA5A1D1CEA8AFA00584526 /* pollutants.plist in Resources */ = {isa = PBXBuildFile; fileRef = DAEA5A1B1CEA8AFA00584526 /* pollutants.plist */; };
 		DAEA5A211CEA9FEE00584526 /* recommendations.plist in Resources */ = {isa = PBXBuildFile; fileRef = DAEA5A1F1CEA9FEE00584526 /* recommendations.plist */; };
+		DAF7AF081CFDC71200E1FADA /* ecobici.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAF7AF071CFDC71200E1FADA /* ecobici.xcassets */; };
 		DAF94A271CFD129F00D190B5 /* ecobici.zql in Resources */ = {isa = PBXBuildFile; fileRef = DAF94A261CFD129F00D190B5 /* ecobici.zql */; };
 		DAF94A2B1CFD1A9D00D190B5 /* cecobici.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF94A2A1CFD1A9D00D190B5 /* cecobici.m */; };
 /* End PBXBuildFile section */
@@ -827,6 +828,7 @@
 		DAEA5A1E1CEA8B0500584526 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = es; path = es.lproj/pollutants.plist; sourceTree = "<group>"; };
 		DAEA5A201CEA9FEE00584526 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/recommendations.plist; sourceTree = "<group>"; };
 		DAEA5A221CEA9FF600584526 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = es; path = es.lproj/recommendations.plist; sourceTree = "<group>"; };
+		DAF7AF071CFDC71200E1FADA /* ecobici.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ecobici.xcassets; sourceTree = "<group>"; };
 		DAF94A261CFD129F00D190B5 /* ecobici.zql */ = {isa = PBXFileReference; lastKnownFileType = file; path = ecobici.zql; sourceTree = "<group>"; };
 		DAF94A291CFD1A9D00D190B5 /* cecobici.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cecobici.h; sourceTree = "<group>"; };
 		DAF94A2A1CFD1A9D00D190B5 /* cecobici.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cecobici.m; sourceTree = "<group>"; };
@@ -1629,6 +1631,7 @@
 				DA8C17041CF26DA10034AA8E /* nodrive.xcassets */,
 				DA6F59371CF4922B004DD437 /* spinner.xcassets */,
 				DABC922C1CFA603E001FE9DE /* climate.xcassets */,
+				DAF7AF071CFDC71200E1FADA /* ecobici.xcassets */,
 			);
 			path = imateq;
 			sourceTree = "<group>";
@@ -2096,6 +2099,7 @@
 				DABC922D1CFA603E001FE9DE /* climate.xcassets in Resources */,
 				DAD3400B1CBC858A00C87502 /* brand.xcassets in Resources */,
 				DAEA5A211CEA9FEE00584526 /* recommendations.plist in Resources */,
+				DAF7AF081CFDC71200E1FADA /* ecobici.xcassets in Resources */,
 				DAB26D7F1CE0ECB300E1580F /* districts.plist in Resources */,
 				DAF94A271CFD129F00D190B5 /* ecobici.zql in Resources */,
 				DA86ACBD1CE36E2500908755 /* pollution.xcassets in Resources */,
