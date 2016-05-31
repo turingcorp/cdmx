@@ -17,7 +17,6 @@ static NSInteger const pollutionmapheight = 200;
 
 @implementation vpollutionmap
 {
-    CGRect rect1;
     BOOL userupdated;
 }
 
@@ -26,18 +25,16 @@ static NSInteger const pollutionmapheight = 200;
     self = [super init:controller];
     self.model = (mpollutionmap*)controller.model.option;
     self.mapspan = MKCoordinateSpanMake(pollutionmapspansize, pollutionmapspansize);
-    rect1 = CGRectMake(0, 0, 1, 1);
+    userupdated = NO;
   
     vpollutionmapdisplay *display = [[vpollutionmapdisplay alloc] init];
     MKCoordinateRegion region = MKCoordinateRegionMake(CLLocationCoordinate2DMake(latitudezocalo, longitudezocalo), self.mapspan);
     [display setRegion:region animated:NO];
     [display setDelegate:self];
+    self.display = display;
     
     vpollutionmapheader *header = [[vpollutionmapheader alloc] init];
     self.header = header;
-    
-    self.display = display;
-    userupdated = NO;
     
     UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
     [flow setFooterReferenceSize:CGSizeZero];
@@ -84,7 +81,7 @@ static NSInteger const pollutionmapheight = 200;
     [self.display setShowsUserLocation:NO];
 }
 
-#pragma mark functionality
+#pragma mark private
 
 -(mpollutionmapitem*)modeforindex:(NSIndexPath*)index
 {
