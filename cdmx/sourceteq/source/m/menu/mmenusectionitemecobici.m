@@ -13,7 +13,7 @@
 {
     self = [super init];
     self.name = NSLocalizedString(@"mmenu_item_ecobici", nil);
-    self.asset = @"menu_city_pollution";
+    self.asset = @"menu_mobility_ecobici";
     
     return self;
 }
