@@ -280,6 +280,7 @@
 		DAEA5A1D1CEA8AFA00584526 /* pollutants.plist in Resources */ = {isa = PBXBuildFile; fileRef = DAEA5A1B1CEA8AFA00584526 /* pollutants.plist */; };
 		DAEA5A211CEA9FEE00584526 /* recommendations.plist in Resources */ = {isa = PBXBuildFile; fileRef = DAEA5A1F1CEA9FEE00584526 /* recommendations.plist */; };
 		DAF7AF081CFDC71200E1FADA /* ecobici.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAF7AF071CFDC71200E1FADA /* ecobici.xcassets */; };
+		DAF7AF0C1CFDC78C00E1FADA /* vecobici.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF7AF0B1CFDC78C00E1FADA /* vecobici.m */; };
 		DAF94A271CFD129F00D190B5 /* ecobici.zql in Resources */ = {isa = PBXBuildFile; fileRef = DAF94A261CFD129F00D190B5 /* ecobici.zql */; };
 		DAF94A2B1CFD1A9D00D190B5 /* cecobici.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF94A2A1CFD1A9D00D190B5 /* cecobici.m */; };
 /* End PBXBuildFile section */
@@ -829,6 +830,8 @@
 		DAEA5A201CEA9FEE00584526 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/recommendations.plist; sourceTree = "<group>"; };
 		DAEA5A221CEA9FF600584526 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = es; path = es.lproj/recommendations.plist; sourceTree = "<group>"; };
 		DAF7AF071CFDC71200E1FADA /* ecobici.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ecobici.xcassets; sourceTree = "<group>"; };
+		DAF7AF0A1CFDC78C00E1FADA /* vecobici.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vecobici.h; sourceTree = "<group>"; };
+		DAF7AF0B1CFDC78C00E1FADA /* vecobici.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vecobici.m; sourceTree = "<group>"; };
 		DAF94A261CFD129F00D190B5 /* ecobici.zql */ = {isa = PBXFileReference; lastKnownFileType = file; path = ecobici.zql; sourceTree = "<group>"; };
 		DAF94A291CFD1A9D00D190B5 /* cecobici.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cecobici.h; sourceTree = "<group>"; };
 		DAF94A2A1CFD1A9D00D190B5 /* cecobici.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cecobici.m; sourceTree = "<group>"; };
@@ -1760,6 +1763,7 @@
 		DAD33FE41CBC83E300C87502 /* v */ = {
 			isa = PBXGroup;
 			children = (
+				DAF7AF091CFDC75900E1FADA /* ecobici */,
 				DABC92591CFCD598001FE9DE /* adminecobici */,
 				DA4D6BEE1CF5FED500ECA350 /* pollutionpollutantdetail */,
 				DA0F26651CF5392100E0D03F /* climate */,
@@ -1966,6 +1970,15 @@
 				DAEA5A191CEA80DC00584526 /* vpollutionpollutantscell.m */,
 			);
 			path = pollutionpollutants;
+			sourceTree = "<group>";
+		};
+		DAF7AF091CFDC75900E1FADA /* ecobici */ = {
+			isa = PBXGroup;
+			children = (
+				DAF7AF0A1CFDC78C00E1FADA /* vecobici.h */,
+				DAF7AF0B1CFDC78C00E1FADA /* vecobici.m */,
+			);
+			path = ecobici;
 			sourceTree = "<group>";
 		};
 		DAF94A281CFD1A8E00D190B5 /* ecobici */ = {
@@ -2271,6 +2284,7 @@
 				DA4D6BF41CF5FF3000ECA350 /* vpollutionpollutantdetailbar.m in Sources */,
 				DAC21D131CE4C2AA00D92161 /* mpollutionchartitemtoday.m in Sources */,
 				DAB26D821CE0F98200E1580F /* mdbselect.m in Sources */,
+				DAF7AF0C1CFDC78C00E1FADA /* vecobici.m in Sources */,
 				DABC92631CFCE17E001FE9DE /* madminecobici.m in Sources */,
 				DA20AD031CD80B5100754956 /* enotification.m in Sources */,
 				DA3F6C0C1CEBDEA400625BE9 /* mradiation.m in Sources */,
