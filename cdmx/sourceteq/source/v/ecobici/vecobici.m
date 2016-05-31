@@ -1,5 +1,7 @@
 #import "vecobici.h"
 
+static NSInteger const ecobicimenuheight = 50;
+
 @implementation vecobici
 
 -(instancetype)init:(cecobici*)controller
