@@ -29,12 +29,6 @@ static NSInteger const ecobicimapheight = 200;
     self.mapspan = MKCoordinateSpanMake(ecobicimapspansize, ecobicimapspansize);
     userupdated = NO;
     
-    vecobicidisplay *display = [[vecobicidisplay alloc] init];
-    MKCoordinateRegion region = MKCoordinateRegionMake(CLLocationCoordinate2DMake(latitudecondesa, longitudecondesa), self.mapspan);
-    [display setRegion:region animated:NO];
-    [display setDelegate:self];
-    self.display = display;
-    
     vecobicimenu *menu = [[vecobicimenu alloc] init:controller];
     
     UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
@@ -59,19 +53,14 @@ static NSInteger const ecobicimapheight = 200;
     
     [self addSubview:collection];
     [self addSubview:menu];
-    [self addSubview:display];
     
-    NSDictionary *views = @{@"menu":menu, @"display":display, @"col":collection};
+    NSDictionary *views = @{@"menu":menu, @"col":collection};
     NSDictionary *metrics = @{@"menuheight":@(ecobicimenuheight)};
     
-    self.layoutdisplayheight = [NSLayoutConstraint constraintWithItem:display attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:ecobicimapheight];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[menu]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[menu(menuheight)]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[display]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[display]" options:0 metrics:metrics views:views]];
-    [self addConstraint:self.layoutdisplayheight];
     
     return self;
 }
@@ -83,6 +72,25 @@ static NSInteger const ecobicimapheight = 200;
 }
 
 #pragma mark private
+
+-(void)loaddisplay
+{
+    vecobicidisplay *display = [[vecobicidisplay alloc] init];
+    MKCoordinateRegion region = MKCoordinateRegionMake(CLLocationCoordinate2DMake(latitudecondesa, longitudecondesa), self.mapspan);
+    [display setRegion:region animated:NO];
+    [display setDelegate:self];
+    self.display = display;
+    
+    [self addSubview:display];
+    
+    NSDictionary *views = @{@"display":display};
+    NSDictionary *metrics = @{};
+    
+    self.layoutdisplayheight = [NSLayoutConstraint constraintWithItem:display attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:ecobicimapheight];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[display]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[display]" options:0 metrics:metrics views:views]];
+    [self addConstraint:self.layoutdisplayheight];
+}
 
 -(void)centeruser
 {
@@ -155,6 +163,37 @@ static NSInteger const ecobicimapheight = 200;
     mecobiciitem *model = self.controller.model.items[index.item];
     
     return model;
+}
+
+#pragma mark public
+
+-(void)viewdidappear
+{
+    if(!self.display)
+    {
+        [self loaddisplay];
+        [self locationscheck];
+        
+        __weak typeof(self) welf = self;
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
+                       ^
+                       {
+                           NSArray<mpollutionmapitemannotation*> *annotations = [welf.model annotations];
+                           
+                           dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC), dispatch_get_main_queue(),
+                                          ^
+                                          {
+                                              [welf.display addAnnotations:annotations];
+                                              
+                                              [UIView animateWithDuration:0.5 animations:
+                                               ^
+                                               {
+                                                   [welf.collection setAlpha:1];
+                                               }];
+                                          });
+                       });
+    }
 }
 
 #pragma mark -
@@ -264,9 +303,9 @@ static NSInteger const ecobicimapheight = 200;
     if([view isKindOfClass:[vecobicidisplayannotation class]])
     {
         mecobiciitemannotation *annotation = (mecobiciitemannotation*)view.annotation;
-//        NSInteger index = [self.model.items indexOfObject:annotation.model];
-//        [self.collection selectItemAtIndexPath:[NSIndexPath indexPathForItem:index inSection:0] animated:YES scrollPosition:UICollectionViewScrollPositionCenteredVertically];
-//        [[analytics singleton] trackevent:self.controller action:@"station" label:annotation.model.name];
+        NSInteger index = [self.controller.model.items indexOfObject:annotation.model];
+        [self.collection selectItemAtIndexPath:[NSIndexPath indexPathForItem:index inSection:0] animated:YES scrollPosition:UICollectionViewScrollPositionCenteredVertically];
+        [[analytics singleton] trackevent:self.controller action:@"station" label:annotation.model.name];
     }
 }
 

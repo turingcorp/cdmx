@@ -6,6 +6,7 @@
 @interface vecobici:UIView<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CLLocationManagerDelegate, MKMapViewDelegate>
 
 -(instancetype)init:(cecobici*)controller;
+-(void)viewdidappear;
 
 @property(strong, nonatomic)CLLocationManager *locationmanager;
 @property(weak, nonatomic)cecobici *controller;
