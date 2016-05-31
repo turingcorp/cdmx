@@ -188,22 +188,26 @@ static NSInteger const ecobicimapheight = 200;
 
 -(NSInteger)collectionView:(UICollectionView*)col numberOfItemsInSection:(NSInteger)section
 {
-    NSInteger count = 0;//self.controller.model.items.count;
+    NSInteger count = self.controller.model.items.count;
     
     return count;
 }
 
 -(UICollectionViewCell*)collectionView:(UICollectionView*)col cellForItemAtIndexPath:(NSIndexPath*)index
 {
-    return nil;
+    mecobiciitem *model = [self modelforindex:index];
+    vecobicicell *cell = [col dequeueReusableCellWithReuseIdentifier:[vecobicicell reusableidentifier] forIndexPath:index];
+    [cell config:model];
+    
+    return cell;
 }
 
 -(void)collectionView:(UICollectionView*)col didSelectItemAtIndexPath:(NSIndexPath*)index
 {
-//    mpollutionmapitem *model = [self modeforindex:index];
-//    MKCoordinateRegion region = MKCoordinateRegionMake(model.annotation.coordinate, self.mapspan);
-//    [self.display setRegion:region animated:YES];
-//    [self.display selectAnnotation:model.annotation animated:YES];
+    mecobiciitem *model = [self modelforindex:index];
+    MKCoordinateRegion region = MKCoordinateRegionMake(model.annotation.coordinate, self.mapspan);
+    [self.display setRegion:region animated:YES];
+    [self.display selectAnnotation:model.annotation animated:YES];
 }
 
 #pragma mark location delegate

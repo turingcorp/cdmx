@@ -83,7 +83,7 @@ static NSInteger const pollutionmapheight = 200;
 
 #pragma mark private
 
--(mpollutionmapitem*)modeforindex:(NSIndexPath*)index
+-(mpollutionmapitem*)modelforindex:(NSIndexPath*)index
 {
     mpollutionmapitem *model = self.model.items[index.item];
     
@@ -196,7 +196,7 @@ static NSInteger const pollutionmapheight = 200;
 
 -(UICollectionViewCell*)collectionView:(UICollectionView*)col cellForItemAtIndexPath:(NSIndexPath*)index
 {
-    mpollutionmapitem *model = [self modeforindex:index];
+    mpollutionmapitem *model = [self modelforindex:index];
     vpollutionmapcell *cell = [col dequeueReusableCellWithReuseIdentifier:[vpollutionmapcell reusableidentifier] forIndexPath:index];
     [cell config:model];
     
@@ -205,7 +205,7 @@ static NSInteger const pollutionmapheight = 200;
 
 -(void)collectionView:(UICollectionView*)col didSelectItemAtIndexPath:(NSIndexPath*)index
 {
-    mpollutionmapitem *model = [self modeforindex:index];
+    mpollutionmapitem *model = [self modelforindex:index];
     MKCoordinateRegion region = MKCoordinateRegionMake(model.annotation.coordinate, self.mapspan);
     [self.display setRegion:region animated:YES];
     [self.display selectAnnotation:model.annotation animated:YES];
