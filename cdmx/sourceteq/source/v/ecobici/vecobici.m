@@ -1,7 +1,10 @@
 #import "vecobici.h"
 #import "vecobicimenu.h"
+#import "vecobicidisplayannotation.h"
+#import "eannotationview.h"
+#import "analytics.h"
 
-static CGFloat const ecobicimapspansize = 0.015;
+static CGFloat const ecobicimapspansize = 0.008;
 static CGFloat const latitudecondesa = 19.411619;
 static CGFloat const longitudecondesa = -99.170436;
 static NSInteger const ecobicimenuheight = 50;
@@ -203,7 +206,7 @@ static NSInteger const ecobicimapheight = 200;
     }
     else
     {
-        anview = [mapview dequeueReusableAnnotationViewWithIdentifier:[vpollutionmapdisplayannotation reusableidentifier]];
+        anview = [mapview dequeueReusableAnnotationViewWithIdentifier:[vecobicidisplayannotation reusableidentifier]];
         
         if(anview)
         {
@@ -211,10 +214,10 @@ static NSInteger const ecobicimapheight = 200;
         }
         else
         {
-            anview = [[vpollutionmapdisplayannotation alloc] initWithAnnotation:annotation reuseIdentifier:[vpollutionmapdisplayannotation reusableidentifier]];
+            anview = [[vecobicidisplayannotation alloc] initWithAnnotation:annotation reuseIdentifier:[vecobicidisplayannotation reusableidentifier]];
         }
         
-        [(vpollutionmapdisplayannotation*)anview config];
+        [(vecobicidisplayannotation*)anview hover];
     }
     
     return anview;
@@ -222,13 +225,12 @@ static NSInteger const ecobicimapheight = 200;
 
 -(void)mapView:(MKMapView*)mapView didSelectAnnotationView:(MKAnnotationView*)view
 {
-    if([view isKindOfClass:[vpollutionmapdisplayannotation class]])
+    if([view isKindOfClass:[vecobicidisplayannotation class]])
     {
-        mpollutionmapitemannotation *annotation = (mpollutionmapitemannotation*)view.annotation;
-        NSInteger index = [self.model.items indexOfObject:annotation.model];
-        [self.collection selectItemAtIndexPath:[NSIndexPath indexPathForItem:index inSection:0] animated:YES scrollPosition:UICollectionViewScrollPositionCenteredVertically];
-        [self.header showlocation:annotation.model];
-        [[analytics singleton] trackevent:self.controller action:@"map" label:annotation.model.name];
+        mecobiciitemannotation *annotation = (mecobiciitemannotation*)view.annotation;
+//        NSInteger index = [self.model.items indexOfObject:annotation.model];
+//        [self.collection selectItemAtIndexPath:[NSIndexPath indexPathForItem:index inSection:0] animated:YES scrollPosition:UICollectionViewScrollPositionCenteredVertically];
+//        [[analytics singleton] trackevent:self.controller action:@"station" label:annotation.model.name];
     }
 }
 
