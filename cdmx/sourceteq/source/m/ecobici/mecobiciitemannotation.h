@@ -1,6 +1,7 @@
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
-#import "mecobiciitem.h"
+
+@class mecobiciitem;
 
 @interface mecobiciitemannotation:NSObject<MKAnnotation>
 

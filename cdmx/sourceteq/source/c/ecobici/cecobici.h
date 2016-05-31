@@ -4,5 +4,7 @@
 
 -(void)loadecobici;
 -(void)menu;
+-(void)centeruser;
+-(void)centercloserstation;
 
 @end

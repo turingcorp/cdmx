@@ -66,4 +66,14 @@
     [self.parentViewController menu];
 }
 
+-(void)centeruser
+{
+    
+}
+
+-(void)centercloserstation
+{
+    
+}
+
 @end

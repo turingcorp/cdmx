@@ -1,13 +1,14 @@
-//
-//  mecobiciitem.h
-//  cdmx
-//
-//  Created by zero on 5/31/16.
-//  Copyright © 2016 Iturbide. All rights reserved.
-//
+#import <UIKit/UIKit.h>
+#import "mecobiciitemannotation.h"
 
-#import <Foundation/Foundation.h>
+@interface mecobiciitem:NSObject
 
-@interface mecobiciitem : NSObject
+-(mecobiciitemannotation*)asannotation;
+
+@property(weak, nonatomic)mecobiciitemannotation *annotation;
+@property(copy, nonatomic, readonly)NSString *name;
+@property(assign, nonatomic, readonly)CGFloat latitude;
+@property(assign, nonatomic, readonly)CGFloat longitude;
+@property(assign, nonatomic)BOOL closer;
 
 @end
