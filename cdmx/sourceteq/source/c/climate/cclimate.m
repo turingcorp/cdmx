@@ -64,7 +64,7 @@
 
 #pragma mark public
 
--(void)loadclimate;
+-(void)loadclimate
 {
     __weak typeof(self) welf = self;
     

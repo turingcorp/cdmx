@@ -2,4 +2,7 @@
 
 @interface cecobici:UIViewController
 
+-(void)loadecobici;
+-(void)menu;
+
 @end
