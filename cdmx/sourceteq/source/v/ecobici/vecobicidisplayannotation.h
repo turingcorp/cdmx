@@ -1,11 +1,11 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
-#import "mpollutionmapitemannotation.h"
+#import "mecobiciitemannotation.h"
 
 @interface vecobicidisplayannotation:MKAnnotationView
 
--(void)config;
+-(void)hover;
 
 @property(weak, nonatomic)UIImageView *img;
 
