@@ -1,8 +1,8 @@
 #import <Foundation/Foundation.h>
-#import "madminecobici.h"
+#import "mdbecobicistation.h"
 
 @interface mdbadminecobici:NSObject
 
-+(NSURL*)createecobicidb:(madminecobici*)model;
++(NSURL*)createecobicidb:(NSArray<mdbecobicistation*>*)model;
 
 @end

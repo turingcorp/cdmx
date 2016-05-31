@@ -6,7 +6,7 @@ static NSString *const ecobicidbname = @"ecobici.zql";
 
 @implementation mdbadminecobici
 
-+(NSURL*)createecobicidb:(madminecobici*)model
++(NSURL*)createecobicidb:(NSArray<mdbecobicistation*>*)model
 {
     NSString *dbname = [NSTemporaryDirectory() stringByAppendingPathComponent:ecobicidbname];
     NSURL *dburl = [NSURL fileURLWithPath:dbname];

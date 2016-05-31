@@ -58,7 +58,7 @@
 -(void)createdatabase
 {
     __weak typeof(self) welf = self;
-    NSURL *dburl = [mdbadminecobici createecobicidb:self.model];
+    NSURL *dburl = [mdbadminecobici createecobicidb:[self.model dbmodel]];
     
     dispatch_async(dispatch_get_main_queue(),
                    ^
