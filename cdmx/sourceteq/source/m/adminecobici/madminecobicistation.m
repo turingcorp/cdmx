@@ -31,24 +31,30 @@
         
         for(NSUInteger indexsplitname = 1; indexsplitname < splitnamecount; indexsplitname++)
         {
-            if(indexsplitname > 1)
-            {
-                [realname appendString:@" "];
-            }
-            
             NSString *splittedstring = splitname[indexsplitname];
+            NSInteger length = splittedstring.length;
             
-            if(splittedstring.length > 1)
+            if(length)
             {
-                NSString *capital = [splittedstring substringToIndex:1].uppercaseString;
-                NSString *noncapital = [splittedstring substringFromIndex:1].lowercaseString;
+                if(indexsplitname > 1)
+                {
+                    [realname appendString:@" "];
+                }
                 
-                [realname appendString:capital];
-                [realname appendString:noncapital];
-            }
-            else
-            {
-                [realname appendString:splittedstring];
+                NSString *splittedstring = splitname[indexsplitname];
+                
+                if(splittedstring.length > 1)
+                {
+                    NSString *capital = [splittedstring substringToIndex:1].uppercaseString;
+                    NSString *noncapital = [splittedstring substringFromIndex:1].lowercaseString;
+                    
+                    [realname appendString:capital];
+                    [realname appendString:noncapital];
+                }
+                else
+                {
+                    [realname appendString:splittedstring];
+                }
             }
         }
         
