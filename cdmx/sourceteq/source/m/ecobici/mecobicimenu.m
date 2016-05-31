@@ -11,7 +11,11 @@
 -(instancetype)init
 {
     self = [super init];
-    self.items = @[];
+    self.items = @[
+                   [mecobicimenuitem menu],
+                   [mecobicimenuitem user],
+                   [mecobicimenuitem closer]
+                   ];
     
     return self;
 }
