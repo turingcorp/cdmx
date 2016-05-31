@@ -289,6 +289,7 @@
 		DAF7AF1F1CFDCD7500E1FADA /* mecobicimenuitemcloser.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF7AF1E1CFDCD7500E1FADA /* mecobicimenuitemcloser.m */; };
 		DAF7AF221CFDCD8200E1FADA /* mecobicimenuitemuser.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF7AF211CFDCD8200E1FADA /* mecobicimenuitemuser.m */; };
 		DAF7AF251CFDCF3E00E1FADA /* vecobicimenucell.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF7AF241CFDCF3E00E1FADA /* vecobicimenucell.m */; };
+		DAF7AF281CFDDD1A00E1FADA /* vecobicidisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF7AF271CFDDD1A00E1FADA /* vecobicidisplay.m */; };
 		DAF94A271CFD129F00D190B5 /* ecobici.zql in Resources */ = {isa = PBXBuildFile; fileRef = DAF94A261CFD129F00D190B5 /* ecobici.zql */; };
 		DAF94A2B1CFD1A9D00D190B5 /* cecobici.m in Sources */ = {isa = PBXBuildFile; fileRef = DAF94A2A1CFD1A9D00D190B5 /* cecobici.m */; };
 /* End PBXBuildFile section */
@@ -856,6 +857,8 @@
 		DAF7AF211CFDCD8200E1FADA /* mecobicimenuitemuser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mecobicimenuitemuser.m; sourceTree = "<group>"; };
 		DAF7AF231CFDCF3E00E1FADA /* vecobicimenucell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vecobicimenucell.h; sourceTree = "<group>"; };
 		DAF7AF241CFDCF3E00E1FADA /* vecobicimenucell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vecobicimenucell.m; sourceTree = "<group>"; };
+		DAF7AF261CFDDD1A00E1FADA /* vecobicidisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vecobicidisplay.h; sourceTree = "<group>"; };
+		DAF7AF271CFDDD1A00E1FADA /* vecobicidisplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vecobicidisplay.m; sourceTree = "<group>"; };
 		DAF94A261CFD129F00D190B5 /* ecobici.zql */ = {isa = PBXFileReference; lastKnownFileType = file; path = ecobici.zql; sourceTree = "<group>"; };
 		DAF94A291CFD1A9D00D190B5 /* cecobici.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cecobici.h; sourceTree = "<group>"; };
 		DAF94A2A1CFD1A9D00D190B5 /* cecobici.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cecobici.m; sourceTree = "<group>"; };
@@ -2006,6 +2009,8 @@
 				DAF7AF121CFDCBD500E1FADA /* vecobicimenu.m */,
 				DAF7AF231CFDCF3E00E1FADA /* vecobicimenucell.h */,
 				DAF7AF241CFDCF3E00E1FADA /* vecobicimenucell.m */,
+				DAF7AF261CFDDD1A00E1FADA /* vecobicidisplay.h */,
+				DAF7AF271CFDDD1A00E1FADA /* vecobicidisplay.m */,
 			);
 			path = ecobici;
 			sourceTree = "<group>";
@@ -2442,6 +2447,7 @@
 				DAC21D5C1CE4C40800D92161 /* mpollutionoption.m in Sources */,
 				DAB3FEDF1CE26E8900CCBB86 /* acallpollution.m in Sources */,
 				DA0917381CF3872400FD1366 /* mnodrivecalendaritemforeignersame.m in Sources */,
+				DAF7AF281CFDDD1A00E1FADA /* vecobicidisplay.m in Sources */,
 				DABC91F41CF90496001FE9DE /* aparserclimate.m in Sources */,
 				DAC21D191CE4C2AA00D92161 /* mpollutionindexdisaster.m in Sources */,
 				DAAEEDF21CECDEE2008C992C /* vradiationactivities.m in Sources */,
