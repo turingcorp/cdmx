@@ -22,6 +22,7 @@
         self = [super init];
         self.stationid = rawnumber;
         
+        rawname = [rawname stringByReplacingOccurrencesOfString:@"-" withString:@", "];
         NSArray *splitname = [rawname componentsSeparatedByString:@" "];
         NSMutableString *realname = [NSMutableString string];
         NSUInteger splitnamecount = splitname.count;
