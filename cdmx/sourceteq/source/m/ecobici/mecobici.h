@@ -3,4 +3,6 @@
 
 @interface mecobici:NSObject
 
+@property(strong, nonatomic, readonly)NSArray<mecobiciitem*> *items;
+
 @end

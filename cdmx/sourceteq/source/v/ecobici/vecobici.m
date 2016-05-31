@@ -1,7 +1,9 @@
 #import "vecobici.h"
+#import "vecobicicell.h"
 #import "vecobicimenu.h"
 #import "vecobicidisplayannotation.h"
 #import "eannotationview.h"
+#import "ecollectioncell.h"
 #import "analytics.h"
 
 static CGFloat const ecobicimapspansize = 0.008;
@@ -35,15 +37,38 @@ static NSInteger const ecobicimapheight = 200;
     
     vecobicimenu *menu = [[vecobicimenu alloc] init:controller];
     
+    UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
+    [flow setHeaderReferenceSize:CGSizeZero];
+    [flow setFooterReferenceSize:CGSizeZero];
+    [flow setMinimumLineSpacing:mapinteritemspace];
+    [flow setMinimumInteritemSpacing:0];
+    [flow setScrollDirection:UICollectionViewScrollDirectionVertical];
+    [flow setSectionInset:UIEdgeInsetsMake(ecobicimapheight, 0, mapcollectionbottom, 0)];
+    
+    UICollectionView *collection = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flow];
+    [collection setClipsToBounds:YES];
+    [collection setBackgroundColor:[UIColor clearColor]];
+    [collection setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [collection setAlwaysBounceVertical:YES];
+    [collection setShowsVerticalScrollIndicator:NO];
+    [collection setShowsHorizontalScrollIndicator:NO];
+    [collection setDelegate:self];
+    [collection setDataSource:self];
+    [collection registerClass:[vecobicicell class] forCellWithReuseIdentifier:[vecobicicell reusableidentifier]];
+    self.collection = collection;
+    
+    [self addSubview:collection];
     [self addSubview:menu];
     [self addSubview:display];
     
-    NSDictionary *views = @{@"menu":menu, @"display":display};
+    NSDictionary *views = @{@"menu":menu, @"display":display, @"col":collection};
     NSDictionary *metrics = @{@"menuheight":@(ecobicimenuheight)};
     
     self.layoutdisplayheight = [NSLayoutConstraint constraintWithItem:display attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:ecobicimapheight];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[menu]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[menu(menuheight)]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[display]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[display]" options:0 metrics:metrics views:views]];
     [self addConstraint:self.layoutdisplayheight];
@@ -123,6 +148,13 @@ static NSInteger const ecobicimapheight = 200;
         case kCLAuthorizationStatusRestricted:
             break;
     }
+}
+
+-(mecobiciitem*)modelforindex:(NSIndexPath*)index
+{
+    mecobiciitem *model = self.controller.model.items[index.item];
+    
+    return model;
 }
 
 #pragma mark -
