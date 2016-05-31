@@ -279,6 +279,7 @@
 		DAEA5A1A1CEA80DC00584526 /* vpollutionpollutantscell.m in Sources */ = {isa = PBXBuildFile; fileRef = DAEA5A191CEA80DC00584526 /* vpollutionpollutantscell.m */; };
 		DAEA5A1D1CEA8AFA00584526 /* pollutants.plist in Resources */ = {isa = PBXBuildFile; fileRef = DAEA5A1B1CEA8AFA00584526 /* pollutants.plist */; };
 		DAEA5A211CEA9FEE00584526 /* recommendations.plist in Resources */ = {isa = PBXBuildFile; fileRef = DAEA5A1F1CEA9FEE00584526 /* recommendations.plist */; };
+		DAF94A271CFD129F00D190B5 /* ecobici.zql in Resources */ = {isa = PBXBuildFile; fileRef = DAF94A261CFD129F00D190B5 /* ecobici.zql */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -825,6 +826,7 @@
 		DAEA5A1E1CEA8B0500584526 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = es; path = es.lproj/pollutants.plist; sourceTree = "<group>"; };
 		DAEA5A201CEA9FEE00584526 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/recommendations.plist; sourceTree = "<group>"; };
 		DAEA5A221CEA9FF600584526 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = es; path = es.lproj/recommendations.plist; sourceTree = "<group>"; };
+		DAF94A261CFD129F00D190B5 /* ecobici.zql */ = {isa = PBXFileReference; lastKnownFileType = file; path = ecobici.zql; sourceTree = "<group>"; };
 		E9F783FFE8E5E9FE2B5CBFD0 /* libPods-cdmx.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-cdmx.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -1631,6 +1633,7 @@
 		DAD33FAD1CBC83E300C87502 /* langteq */ = {
 			isa = PBXGroup;
 			children = (
+				DAF94A261CFD129F00D190B5 /* ecobici.zql */,
 				DAD7AA271CEF631C003B169A /* radiation.plist */,
 				DA13FCD51CEAA4F800DE7A23 /* imeca.txt */,
 				DAEA5A1F1CEA9FEE00584526 /* recommendations.plist */,
@@ -2081,6 +2084,7 @@
 				DAD3400B1CBC858A00C87502 /* brand.xcassets in Resources */,
 				DAEA5A211CEA9FEE00584526 /* recommendations.plist in Resources */,
 				DAB26D7F1CE0ECB300E1580F /* districts.plist in Resources */,
+				DAF94A271CFD129F00D190B5 /* ecobici.zql in Resources */,
 				DA86ACBD1CE36E2500908755 /* pollution.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
