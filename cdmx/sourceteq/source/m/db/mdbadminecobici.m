@@ -13,10 +13,10 @@ static NSString *const ecobicidbname = @"ecobici.zql";
     
     NSMutableArray<zqlquery*> *queries = [NSMutableArray array];
     
-    zqlparam *paramstationid = [zqlparam type:[zqltype integer] name:dbstations_stationid value:nil];
-    zqlparam *paramname = [zqlparam type:[zqltype text] name:dbstations_name value:nil];
-    zqlparam *paramlatitude = [zqlparam type:[zqltype integer] name:dbstations_latitude value:nil];
-    zqlparam *paramlongitude = [zqlparam type:[zqltype integer] name:dbstations_longitude value:nil];
+    zqlparam *paramstationid = [zqlparam type:[zqltype integer] name:dbecobicistations_stationid value:nil];
+    zqlparam *paramname = [zqlparam type:[zqltype text] name:dbecobicistations_name value:nil];
+    zqlparam *paramlatitude = [zqlparam type:[zqltype integer] name:dbecobicistations_latitude value:nil];
+    zqlparam *paramlongitude = [zqlparam type:[zqltype integer] name:dbecobicistations_longitude value:nil];
     paramstationid.unique = YES;
     
     NSArray<zqlparam*> *params = @[
@@ -26,7 +26,7 @@ static NSString *const ecobicidbname = @"ecobici.zql";
                                    paramlongitude
                                    ];
     
-    zqlquery *querytablestations = [zqlquery createtable:dbstations params:params];
+    zqlquery *querytablestations = [zqlquery createtable:dbecobicistations params:params];
     [queries addObject:querytablestations];
     
     NSUInteger countstations = model.stations.count;
@@ -41,7 +41,7 @@ static NSString *const ecobicidbname = @"ecobici.zql";
         paramlatitude.value = usablelatitude;
         paramlongitude.value = usablelongitude;
         
-        zqlquery *insertquery = [zqlquery insert:dbstations params:params];
+        zqlquery *insertquery = [zqlquery insert:dbecobicistations params:params];
         [queries addObject:insertquery];
     }
     
