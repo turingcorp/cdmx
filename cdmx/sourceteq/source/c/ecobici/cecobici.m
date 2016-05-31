@@ -14,6 +14,14 @@
 
 @implementation cecobici
 
+@dynamic view;
+@dynamic parentViewController;
+
+-(void)dealloc
+{
+    
+}
+
 @end
 
 
