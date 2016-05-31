@@ -9,6 +9,23 @@
 
 @implementation mecobici
 
+-(instancetype)init:(NSArray<mdbecobicistation*>*)stations
+{
+    self = [super init];
+    
+    NSMutableArray<mecobiciitem*> *items = [NSMutableArray array];
+    NSUInteger countstations = stations.count;
+    
+    for(NSUInteger indexstation = 0; indexstation < countstations; indexstation++)
+    {
+        mdbecobicistation *dbmodel = stations[indexstation];
+        mecobiciitem *item = [[mecobiciitem alloc] init:dbmodel];
+        [items addObject:item];
+    }
+    
+    return self;
+}
+
 -(NSArray<mecobiciitemannotation*>*)annotations
 {
     NSMutableArray<mecobiciitemannotation*> *annotations = [NSMutableArray array];

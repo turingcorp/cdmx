@@ -1,6 +1,7 @@
 #import "cecobici.h"
 #import "cmain.h"
 #import "vecobici.h"
+#import "mdbselect.h"
 #import "analytics.h"
 
 @interface cecobici ()
@@ -54,7 +55,7 @@
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
                    ^
                    {
-                       
+                       NSArray<mdbecobicistation*> *stations = [mdbselect ecobicistations];
                    });
     
     [[analytics singleton] trackscreen:self];
