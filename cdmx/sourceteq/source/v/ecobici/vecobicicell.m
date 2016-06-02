@@ -1,5 +1,6 @@
 #import "vecobicicell.h"
 #import "efont.h"
+#import "ecolor.h"
 
 @implementation vecobicicell
 
@@ -12,14 +13,12 @@
     [labelname setTranslatesAutoresizingMaskIntoConstraints:NO];
     [labelname setBackgroundColor:[UIColor clearColor]];
     [labelname setFont:[UIFont regularsize:13]];
-    [labelname setTextColor:[UIColor colorWithWhite:0.4 alpha:1]];
     self.labelname = labelname;
     
     UILabel *labelnumber = [[UILabel alloc] init];
     [labelnumber setBackgroundColor:[UIColor clearColor]];
     [labelnumber setUserInteractionEnabled:NO];
     [labelnumber setFont:[UIFont regularsize:11]];
-    [labelnumber setTextColor:[UIColor blackColor]];
     [labelnumber setTranslatesAutoresizingMaskIntoConstraints:NO];
     self.labelnumber = labelnumber;
     
@@ -44,6 +43,26 @@
     
     [self.labelname setText:model.name];
     [self.labelnumber setText:stationnumber];
+    [self hover];
+}
+
+#pragma mark -
+#pragma mark col cell
+
+-(void)hover
+{
+    if(self.isSelected || self.isHighlighted)
+    {
+        [self setBackgroundColor:[UIColor main]];
+        [self.labelnumber setTextColor:[UIColor whiteColor]];
+        [self.labelname setTextColor:[UIColor whiteColor]];
+    }
+    else
+    {
+        [self setBackgroundColor:[UIColor clearColor]];
+        [self.labelnumber setTextColor:[UIColor blackColor]];
+        [self.labelname setTextColor:[UIColor colorWithWhite:0.4 alpha:1]];
+    }
 }
 
 @end
