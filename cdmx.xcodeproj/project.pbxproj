@@ -41,6 +41,12 @@
 		DA20AD061CD80B5A00754956 /* ecolor.m in Sources */ = {isa = PBXBuildFile; fileRef = DA20AD051CD80B5A00754956 /* ecolor.m */; };
 		DA20AD091CD80B6000754956 /* efont.m in Sources */ = {isa = PBXBuildFile; fileRef = DA20AD081CD80B6000754956 /* efont.m */; };
 		DA20AD1D1CD80D8100754956 /* msettings.m in Sources */ = {isa = PBXBuildFile; fileRef = DA20AD1C1CD80D8100754956 /* msettings.m */; };
+		DA249AB31CFFC95900D134F3 /* teststools.m in Sources */ = {isa = PBXBuildFile; fileRef = DA249AAB1CFFC94A00D134F3 /* teststools.m */; };
+		DA249AB41CFFC95C00D134F3 /* testaparserpollution.m in Sources */ = {isa = PBXBuildFile; fileRef = DA249AA81CFFC94A00D134F3 /* testaparserpollution.m */; };
+		DA249AB51CFFC96000D134F3 /* mockpollution_common.json in Resources */ = {isa = PBXBuildFile; fileRef = DA249AA61CFFC94A00D134F3 /* mockpollution_common.json */; };
+		DA249AB61CFFC96400D134F3 /* mockadminecobici_common.json in Resources */ = {isa = PBXBuildFile; fileRef = DA249AA51CFFC94A00D134F3 /* mockadminecobici_common.json */; };
+		DA249AB71CFFC96700D134F3 /* testmmenu.m in Sources */ = {isa = PBXBuildFile; fileRef = DA249AA31CFFC94A00D134F3 /* testmmenu.m */; };
+		DA249AB81CFFC96B00D134F3 /* testaparseradminecobici.m in Sources */ = {isa = PBXBuildFile; fileRef = DA249AA01CFFC94A00D134F3 /* testaparseradminecobici.m */; };
 		DA24B7B61CE7AE140008DE86 /* mpollutionmapitemannotation.m in Sources */ = {isa = PBXBuildFile; fileRef = DA24B7B51CE7AE140008DE86 /* mpollutionmapitemannotation.m */; };
 		DA24B7B91CE7BB160008DE86 /* vpollutionmapdisplayannotation.m in Sources */ = {isa = PBXBuildFile; fileRef = DA24B7B81CE7BB160008DE86 /* vpollutionmapdisplayannotation.m */; };
 		DA24B7BC1CE7BFE00008DE86 /* eannotationview.m in Sources */ = {isa = PBXBuildFile; fileRef = DA24B7BB1CE7BFE00008DE86 /* eannotationview.m */; };
@@ -168,20 +174,14 @@
 		DABC922B1CFA42AB001FE9DE /* vclimatecellwind.m in Sources */ = {isa = PBXBuildFile; fileRef = DABC922A1CFA42AB001FE9DE /* vclimatecellwind.m */; };
 		DABC922D1CFA603E001FE9DE /* climate.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DABC922C1CFA603E001FE9DE /* climate.xcassets */; };
 		DABC92301CFA6D2A001FE9DE /* vclimatewind.m in Sources */ = {isa = PBXBuildFile; fileRef = DABC922F1CFA6D2A001FE9DE /* vclimatewind.m */; };
-		DABC92451CFC939C001FE9DE /* testaparserpollution.m in Sources */ = {isa = PBXBuildFile; fileRef = DABC92441CFC939C001FE9DE /* testaparserpollution.m */; };
-		DABC92471CFC9697001FE9DE /* mockpollution_common.json in Resources */ = {isa = PBXBuildFile; fileRef = DABC92461CFC9697001FE9DE /* mockpollution_common.json */; };
-		DABC924B1CFC970D001FE9DE /* teststools.m in Sources */ = {isa = PBXBuildFile; fileRef = DABC924A1CFC970D001FE9DE /* teststools.m */; };
 		DABC924E1CFCBD7D001FE9DE /* mmenusectionadmin.m in Sources */ = {isa = PBXBuildFile; fileRef = DABC924D1CFCBD7D001FE9DE /* mmenusectionadmin.m */; };
 		DABC92511CFCBE00001FE9DE /* mmenusectionitemadminecobici.m in Sources */ = {isa = PBXBuildFile; fileRef = DABC92501CFCBE00001FE9DE /* mmenusectionitemadminecobici.m */; };
-		DABC92541CFCC2A6001FE9DE /* testmmenu.m in Sources */ = {isa = PBXBuildFile; fileRef = DABC92531CFCC2A6001FE9DE /* testmmenu.m */; };
 		DABC92581CFCD4B1001FE9DE /* cadminecobici.m in Sources */ = {isa = PBXBuildFile; fileRef = DABC92571CFCD4B1001FE9DE /* cadminecobici.m */; };
 		DABC925C1CFCD5A1001FE9DE /* vadminecobici.m in Sources */ = {isa = PBXBuildFile; fileRef = DABC925B1CFCD5A1001FE9DE /* vadminecobici.m */; };
 		DABC925F1CFCE13B001FE9DE /* aparseradminecobici.m in Sources */ = {isa = PBXBuildFile; fileRef = DABC925E1CFCE13B001FE9DE /* aparseradminecobici.m */; };
 		DABC92631CFCE17E001FE9DE /* madminecobici.m in Sources */ = {isa = PBXBuildFile; fileRef = DABC92621CFCE17E001FE9DE /* madminecobici.m */; };
 		DABC92661CFCE19A001FE9DE /* madminecobicistation.m in Sources */ = {isa = PBXBuildFile; fileRef = DABC92651CFCE19A001FE9DE /* madminecobicistation.m */; };
 		DABC92691CFCE7F5001FE9DE /* acalladminecobici.m in Sources */ = {isa = PBXBuildFile; fileRef = DABC92681CFCE7F5001FE9DE /* acalladminecobici.m */; };
-		DABC926B1CFCF3C9001FE9DE /* mockadminecobici_common.json in Resources */ = {isa = PBXBuildFile; fileRef = DABC926A1CFCF3C9001FE9DE /* mockadminecobici_common.json */; };
-		DABC926E1CFCF435001FE9DE /* testaparseradminecobici.m in Sources */ = {isa = PBXBuildFile; fileRef = DABC926D1CFCF435001FE9DE /* testaparseradminecobici.m */; };
 		DABC92741CFCFB94001FE9DE /* mdbadminecobici.m in Sources */ = {isa = PBXBuildFile; fileRef = DABC92731CFCFB94001FE9DE /* mdbadminecobici.m */; };
 		DAC21D081CE4C2AA00D92161 /* mpollution.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC21CD11CE4C2AA00D92161 /* mpollution.m */; };
 		DAC21D091CE4C2AA00D92161 /* mpollutionhour.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC21CD31CE4C2AA00D92161 /* mpollutionhour.m */; };
@@ -377,6 +377,14 @@
 		DA20AD081CD80B6000754956 /* efont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = efont.m; sourceTree = "<group>"; };
 		DA20AD1B1CD80D8100754956 /* msettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = msettings.h; sourceTree = "<group>"; };
 		DA20AD1C1CD80D8100754956 /* msettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = msettings.m; sourceTree = "<group>"; };
+		DA249AA01CFFC94A00D134F3 /* testaparseradminecobici.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testaparseradminecobici.m; sourceTree = "<group>"; };
+		DA249AA11CFFC94A00D134F3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA249AA31CFFC94A00D134F3 /* testmmenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testmmenu.m; sourceTree = "<group>"; };
+		DA249AA51CFFC94A00D134F3 /* mockadminecobici_common.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mockadminecobici_common.json; sourceTree = "<group>"; };
+		DA249AA61CFFC94A00D134F3 /* mockpollution_common.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mockpollution_common.json; sourceTree = "<group>"; };
+		DA249AA81CFFC94A00D134F3 /* testaparserpollution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testaparserpollution.m; sourceTree = "<group>"; };
+		DA249AAA1CFFC94A00D134F3 /* teststools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = teststools.h; sourceTree = "<group>"; };
+		DA249AAB1CFFC94A00D134F3 /* teststools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = teststools.m; sourceTree = "<group>"; };
 		DA24B7B41CE7AE140008DE86 /* mpollutionmapitemannotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpollutionmapitemannotation.h; sourceTree = "<group>"; };
 		DA24B7B51CE7AE140008DE86 /* mpollutionmapitemannotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mpollutionmapitemannotation.m; sourceTree = "<group>"; };
 		DA24B7B71CE7BB160008DE86 /* vpollutionmapdisplayannotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vpollutionmapdisplayannotation.h; sourceTree = "<group>"; };
@@ -625,16 +633,10 @@
 		DABC922E1CFA6D2A001FE9DE /* vclimatewind.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vclimatewind.h; sourceTree = "<group>"; };
 		DABC922F1CFA6D2A001FE9DE /* vclimatewind.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vclimatewind.m; sourceTree = "<group>"; };
 		DABC92351CFC903A001FE9DE /* tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DABC92391CFC903A001FE9DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DABC92441CFC939C001FE9DE /* testaparserpollution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testaparserpollution.m; sourceTree = "<group>"; };
-		DABC92461CFC9697001FE9DE /* mockpollution_common.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mockpollution_common.json; sourceTree = "<group>"; };
-		DABC92491CFC970D001FE9DE /* teststools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = teststools.h; sourceTree = "<group>"; };
-		DABC924A1CFC970D001FE9DE /* teststools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = teststools.m; sourceTree = "<group>"; };
 		DABC924C1CFCBD7D001FE9DE /* mmenusectionadmin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mmenusectionadmin.h; sourceTree = "<group>"; };
 		DABC924D1CFCBD7D001FE9DE /* mmenusectionadmin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mmenusectionadmin.m; sourceTree = "<group>"; };
 		DABC924F1CFCBE00001FE9DE /* mmenusectionitemadminecobici.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mmenusectionitemadminecobici.h; sourceTree = "<group>"; };
 		DABC92501CFCBE00001FE9DE /* mmenusectionitemadminecobici.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mmenusectionitemadminecobici.m; sourceTree = "<group>"; };
-		DABC92531CFCC2A6001FE9DE /* testmmenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testmmenu.m; sourceTree = "<group>"; };
 		DABC92561CFCD4B1001FE9DE /* cadminecobici.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cadminecobici.h; sourceTree = "<group>"; };
 		DABC92571CFCD4B1001FE9DE /* cadminecobici.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cadminecobici.m; sourceTree = "<group>"; };
 		DABC925A1CFCD5A1001FE9DE /* vadminecobici.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vadminecobici.h; sourceTree = "<group>"; };
@@ -647,8 +649,6 @@
 		DABC92651CFCE19A001FE9DE /* madminecobicistation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = madminecobicistation.m; sourceTree = "<group>"; };
 		DABC92671CFCE7F5001FE9DE /* acalladminecobici.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = acalladminecobici.h; sourceTree = "<group>"; };
 		DABC92681CFCE7F5001FE9DE /* acalladminecobici.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = acalladminecobici.m; sourceTree = "<group>"; };
-		DABC926A1CFCF3C9001FE9DE /* mockadminecobici_common.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mockadminecobici_common.json; sourceTree = "<group>"; };
-		DABC926D1CFCF435001FE9DE /* testaparseradminecobici.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testaparseradminecobici.m; sourceTree = "<group>"; };
 		DABC92721CFCFB94001FE9DE /* mdbadminecobici.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mdbadminecobici.h; sourceTree = "<group>"; };
 		DABC92731CFCFB94001FE9DE /* mdbadminecobici.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mdbadminecobici.m; sourceTree = "<group>"; };
 		DAC21CD01CE4C2AA00D92161 /* mpollution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpollution.h; sourceTree = "<group>"; };
@@ -1018,6 +1018,61 @@
 			path = settings;
 			sourceTree = "<group>";
 		};
+		DA249A9E1CFFC94A00D134F3 /* tests */ = {
+			isa = PBXGroup;
+			children = (
+				DA249A9F1CFFC94A00D134F3 /* admin */,
+				DA249AA11CFFC94A00D134F3 /* Info.plist */,
+				DA249AA21CFFC94A00D134F3 /* menu */,
+				DA249AA41CFFC94A00D134F3 /* mocks */,
+				DA249AA71CFFC94A00D134F3 /* pollution */,
+				DA249AA91CFFC94A00D134F3 /* tools */,
+			);
+			path = tests;
+			sourceTree = "<group>";
+		};
+		DA249A9F1CFFC94A00D134F3 /* admin */ = {
+			isa = PBXGroup;
+			children = (
+				DA249AA01CFFC94A00D134F3 /* testaparseradminecobici.m */,
+			);
+			path = admin;
+			sourceTree = "<group>";
+		};
+		DA249AA21CFFC94A00D134F3 /* menu */ = {
+			isa = PBXGroup;
+			children = (
+				DA249AA31CFFC94A00D134F3 /* testmmenu.m */,
+			);
+			path = menu;
+			sourceTree = "<group>";
+		};
+		DA249AA41CFFC94A00D134F3 /* mocks */ = {
+			isa = PBXGroup;
+			children = (
+				DA249AA51CFFC94A00D134F3 /* mockadminecobici_common.json */,
+				DA249AA61CFFC94A00D134F3 /* mockpollution_common.json */,
+			);
+			path = mocks;
+			sourceTree = "<group>";
+		};
+		DA249AA71CFFC94A00D134F3 /* pollution */ = {
+			isa = PBXGroup;
+			children = (
+				DA249AA81CFFC94A00D134F3 /* testaparserpollution.m */,
+			);
+			path = pollution;
+			sourceTree = "<group>";
+		};
+		DA249AA91CFFC94A00D134F3 /* tools */ = {
+			isa = PBXGroup;
+			children = (
+				DA249AAA1CFFC94A00D134F3 /* teststools.h */,
+				DA249AAB1CFFC94A00D134F3 /* teststools.m */,
+			);
+			path = tools;
+			sourceTree = "<group>";
+		};
 		DA3F6BB61CEB599000625BE9 /* pollutionrecommendation */ = {
 			isa = PBXGroup;
 			children = (
@@ -1344,77 +1399,6 @@
 			path = climatecurrent;
 			sourceTree = "<group>";
 		};
-		DABC92361CFC903A001FE9DE /* tests */ = {
-			isa = PBXGroup;
-			children = (
-				DABC926C1CFCF419001FE9DE /* admin */,
-				DABC92521CFCC28F001FE9DE /* menu */,
-				DABC92481CFC96FC001FE9DE /* tools */,
-				DABC923F1CFC9168001FE9DE /* climate */,
-				DABC92401CFC9168001FE9DE /* mocks */,
-				DABC92411CFC9168001FE9DE /* nodrive */,
-				DABC92421CFC9168001FE9DE /* pollution */,
-				DABC92431CFC9168001FE9DE /* radiation */,
-				DABC92391CFC903A001FE9DE /* Info.plist */,
-			);
-			path = tests;
-			sourceTree = "<group>";
-		};
-		DABC923F1CFC9168001FE9DE /* climate */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = climate;
-			sourceTree = "<group>";
-		};
-		DABC92401CFC9168001FE9DE /* mocks */ = {
-			isa = PBXGroup;
-			children = (
-				DABC92461CFC9697001FE9DE /* mockpollution_common.json */,
-				DABC926A1CFCF3C9001FE9DE /* mockadminecobici_common.json */,
-			);
-			path = mocks;
-			sourceTree = "<group>";
-		};
-		DABC92411CFC9168001FE9DE /* nodrive */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = nodrive;
-			sourceTree = "<group>";
-		};
-		DABC92421CFC9168001FE9DE /* pollution */ = {
-			isa = PBXGroup;
-			children = (
-				DABC92441CFC939C001FE9DE /* testaparserpollution.m */,
-			);
-			path = pollution;
-			sourceTree = "<group>";
-		};
-		DABC92431CFC9168001FE9DE /* radiation */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = radiation;
-			sourceTree = "<group>";
-		};
-		DABC92481CFC96FC001FE9DE /* tools */ = {
-			isa = PBXGroup;
-			children = (
-				DABC92491CFC970D001FE9DE /* teststools.h */,
-				DABC924A1CFC970D001FE9DE /* teststools.m */,
-			);
-			path = tools;
-			sourceTree = "<group>";
-		};
-		DABC92521CFCC28F001FE9DE /* menu */ = {
-			isa = PBXGroup;
-			children = (
-				DABC92531CFCC2A6001FE9DE /* testmmenu.m */,
-			);
-			path = menu;
-			sourceTree = "<group>";
-		};
 		DABC92551CFCD4A4001FE9DE /* adminecobici */ = {
 			isa = PBXGroup;
 			children = (
@@ -1442,14 +1426,6 @@
 				DABC92651CFCE19A001FE9DE /* madminecobicistation.m */,
 			);
 			path = adminecobici;
-			sourceTree = "<group>";
-		};
-		DABC926C1CFCF419001FE9DE /* admin */ = {
-			isa = PBXGroup;
-			children = (
-				DABC926D1CFCF435001FE9DE /* testaparseradminecobici.m */,
-			);
-			path = admin;
 			sourceTree = "<group>";
 		};
 		DAC21CCF1CE4C2AA00D92161 /* pollution */ = {
@@ -1640,7 +1616,6 @@
 			isa = PBXGroup;
 			children = (
 				DAD33F921CBC825900C87502 /* cdmx */,
-				DABC92361CFC903A001FE9DE /* tests */,
 				DAD33F911CBC825900C87502 /* Products */,
 				C175A9947E79ECC4892F4B50 /* Frameworks */,
 				FB742DB9D9548458790B898B /* Pods */,
@@ -1659,6 +1634,7 @@
 		DAD33F921CBC825900C87502 /* cdmx */ = {
 			isa = PBXGroup;
 			children = (
+				DA249A9E1CFFC94A00D134F3 /* tests */,
 				DAD33FAC1CBC83E300C87502 /* imateq */,
 				DAD33FAD1CBC83E300C87502 /* langteq */,
 				DAD33FB31CBC83E300C87502 /* sourceteq */,
@@ -2167,8 +2143,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DABC92471CFC9697001FE9DE /* mockpollution_common.json in Resources */,
-				DABC926B1CFCF3C9001FE9DE /* mockadminecobici_common.json in Resources */,
+				DA249AB51CFFC96000D134F3 /* mockpollution_common.json in Resources */,
+				DA249AB61CFFC96400D134F3 /* mockadminecobici_common.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2252,10 +2228,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DABC92451CFC939C001FE9DE /* testaparserpollution.m in Sources */,
-				DABC926E1CFCF435001FE9DE /* testaparseradminecobici.m in Sources */,
-				DABC924B1CFC970D001FE9DE /* teststools.m in Sources */,
-				DABC92541CFCC2A6001FE9DE /* testmmenu.m in Sources */,
+				DA249AB31CFFC95900D134F3 /* teststools.m in Sources */,
+				DA249AB81CFFC96B00D134F3 /* testaparseradminecobici.m in Sources */,
+				DA249AB41CFFC95C00D134F3 /* testaparserpollution.m in Sources */,
+				DA249AB71CFFC96700D134F3 /* testmmenu.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2594,7 +2570,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				INFOPLIST_FILE = tests/Info.plist;
+				INFOPLIST_FILE = cdmx/tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = iturbide.tests;
@@ -2609,7 +2585,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_TESTABILITY = NO;
-				INFOPLIST_FILE = tests/Info.plist;
+				INFOPLIST_FILE = cdmx/tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
