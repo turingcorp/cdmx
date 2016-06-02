@@ -8,6 +8,14 @@
 
 @implementation mecobicimenuitemuser
 
+-(instancetype)init
+{
+    self = [super init];
+    self.asset = @"ecobici_me";
+    
+    return self;
+}
+
 #pragma mark -
 #pragma mark ecobici menu item
 
