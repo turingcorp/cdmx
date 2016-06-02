@@ -2695,7 +2695,7 @@
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = iturbide.cdmx;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "adef29ab-7ffd-49ca-9ac1-8eace1b7eceb";
+				PROVISIONING_PROFILE = "c49780d6-1726-4a1c-b30f-5d93ebc5f011";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -2714,7 +2714,7 @@
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = iturbide.cdmx;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4ea52ed7-60e8-4377-bc9d-8dcc2d5a63e2";
+				PROVISIONING_PROFILE = "0c7628c6-bddf-454e-a383-58c83aa3799a";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
