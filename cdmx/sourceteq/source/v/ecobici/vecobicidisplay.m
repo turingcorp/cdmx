@@ -1,4 +1,5 @@
 #import "vecobicidisplay.h"
+#import "ecolor.h"
 
 @implementation vecobicidisplay
 
@@ -29,6 +30,19 @@
     {
         [self setShowsTraffic:NO];
     }
+    
+    UIView *border = [[UIView alloc] init];
+    [border setUserInteractionEnabled:NO];
+    [border setClipsToBounds:YES];
+    [border setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [border setBackgroundColor:[UIColor background]];
+    [self addSubview:border];
+    
+    NSDictionary *views = @{@"border":border};
+    NSDictionary *metrics = @{};
+    
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[border]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[border(1)]-0-|" options:0 metrics:metrics views:views]];
     
     return self;
 }
