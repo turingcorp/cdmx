@@ -6,7 +6,7 @@
 #import "ecollectioncell.h"
 #import "analytics.h"
 
-static CGFloat const ecobicimapspansize = 0.008;
+static CGFloat const ecobicimapspansize = 0.004;
 static CGFloat const latitudecondesa = 19.411619;
 static CGFloat const longitudecondesa = -99.170436;
 static NSInteger const ecobicimenuheight = 50;

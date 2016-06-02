@@ -1,9 +1,9 @@
 #import "vecobicidisplayannotation.h"
 
-static NSInteger const annotationwidthmin = 28;
-static NSInteger const annotationheightmin = 45;
-static NSInteger const annotationwidthmax = 70;
-static NSInteger const annotationheightmax = 111;
+static NSInteger const annotationwidthmin = 17;
+static NSInteger const annotationheightmin = 27;
+static NSInteger const annotationwidthmax = 42;
+static NSInteger const annotationheightmax = 67;
 
 @interface vecobicidisplayannotation ()
 
@@ -67,7 +67,7 @@ static NSInteger const annotationheightmax = 111;
     else
     {
         [self.img setImage:[[UIImage imageNamed:@"ecobici_annotationsmall"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
-        [self.img setTintColor:[UIColor colorWithWhite:0 alpha:0.4]];
+        [self.img setTintColor:[UIColor colorWithWhite:0 alpha:0.25]];
         [self setFrame:CGRectMake(0, 0, annotationwidthmin, annotationheightmax)];
         [self setCenterOffset:CGPointMake(0, annotationheightmin / -2.0)];
     }
