@@ -8,6 +8,14 @@
 
 @implementation mecobicimenuitemcloser
 
+-(instancetype)init
+{
+    self = [super init];
+    self.asset = @"ecobici_closer";
+    
+    return self;
+}
+
 #pragma mark -
 #pragma mark ecobici menu item
 
