@@ -19,7 +19,7 @@ static NSInteger const ecobicimenucellwidth = 60;
 {
     self = [super init];
     [self setClipsToBounds:YES];
-    [self setBackgroundColor:[UIColor clearColor]];
+    [self setBackgroundColor:[UIColor whiteColor]];
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
     self.controller = controller;
     self.model = [[mecobicimenu alloc] init];

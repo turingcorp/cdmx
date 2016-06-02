@@ -11,9 +11,10 @@ static CGFloat const latitudecondesa = 19.411619;
 static CGFloat const longitudecondesa = -99.170436;
 static NSInteger const ecobicimenuheight = 50;
 static NSInteger const mapcellheight = 46;
-static NSInteger const mapcollectionbottom = 40;
+static NSInteger const mapcollectionbottom = 80;
 static NSInteger const mapinteritemspace = -1;
 static NSInteger const ecobicimapheight = 200;
+static NSInteger const ecobicimapmargin = 120;
 
 @implementation vecobici
 {
@@ -37,7 +38,7 @@ static NSInteger const ecobicimapheight = 200;
     [flow setMinimumLineSpacing:mapinteritemspace];
     [flow setMinimumInteritemSpacing:0];
     [flow setScrollDirection:UICollectionViewScrollDirectionVertical];
-    [flow setSectionInset:UIEdgeInsetsMake(ecobicimapheight, 0, mapcollectionbottom, 0)];
+    [flow setSectionInset:UIEdgeInsetsMake(ecobicimapheight - ecobicimapmargin, 0, mapcollectionbottom, 0)];
     
     UICollectionView *collection = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flow];
     [collection setClipsToBounds:YES];
@@ -55,11 +56,12 @@ static NSInteger const ecobicimapheight = 200;
     [self addSubview:menu];
     
     NSDictionary *views = @{@"menu":menu, @"col":collection};
-    NSDictionary *metrics = @{@"menuheight":@(ecobicimenuheight)};
+    NSDictionary *metrics = @{@"menuheight":@(ecobicimenuheight), @"mapmargin":@(ecobicimapmargin)};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[menu]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[col]-0-[menu(menuheight)]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(mapmargin)-[col]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[menu(menuheight)]-0-|" options:0 metrics:metrics views:views]];
     
     return self;
 }
