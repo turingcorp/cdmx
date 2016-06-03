@@ -119,6 +119,12 @@ static NSInteger const ecobicimenucellwidth = 60;
 {
     mecobicimenuitem *model = [self modelforindex:index];
     [model action:self.controller];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_MSEC * 300), dispatch_get_main_queue(),
+                   ^
+                   {
+                       [col selectItemAtIndexPath:[NSIndexPath indexPathForItem:-1 inSection:0] animated:NO scrollPosition:UICollectionViewScrollPositionNone];
+                   });
 }
 
 @end
