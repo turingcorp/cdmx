@@ -11,8 +11,7 @@
 +(instancetype)basicmenu
 {
     mecobicimenu *model = [[mecobicimenu alloc] init:@[
-                                                       [mecobicimenuitem menu],
-                                                       [mecobicimenuitem closer]
+                                                       [mecobicimenuitem menu]
                                                        ]];
     
     return model;

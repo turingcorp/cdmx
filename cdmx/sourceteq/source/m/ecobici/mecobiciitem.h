@@ -12,6 +12,7 @@
 @property(copy, nonatomic, readonly)NSNumber *stationid;
 @property(assign, nonatomic, readonly)CGFloat latitude;
 @property(assign, nonatomic, readonly)CGFloat longitude;
+@property(assign, nonatomic)CGFloat kilometers;
 @property(assign, nonatomic)BOOL closer;
 
 @end

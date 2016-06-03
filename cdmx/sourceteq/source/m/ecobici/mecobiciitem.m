@@ -19,6 +19,7 @@
     self.latitude = dbmodel.latitude.floatValue;
     self.longitude = dbmodel.longitude.floatValue;
     self.closer = NO;
+    self.kilometers = 0;
     
     return self;
 }

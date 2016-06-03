@@ -2,6 +2,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "cecobici.h"
 #import "vecobicidisplay.h"
+#import "vecobicimenu.h"
 
 @interface vecobici:UIView<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CLLocationManagerDelegate, MKMapViewDelegate>
 
@@ -11,6 +12,8 @@
 @property(strong, nonatomic)CLLocationManager *locationmanager;
 @property(weak, nonatomic)cecobici *controller;
 @property(weak, nonatomic)vecobicidisplay *display;
+@property(weak, nonatomic)vecobicimenu *menu;
+@property(weak, nonatomic)mecobiciitem *closeritem;
 @property(weak, nonatomic)UICollectionView *collection;
 @property(weak, nonatomic)NSLayoutConstraint *layoutdisplayheight;
 @property(assign, nonatomic)CLLocationCoordinate2D userlocation;

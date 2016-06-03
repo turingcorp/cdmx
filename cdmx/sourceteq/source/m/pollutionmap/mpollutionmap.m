@@ -1,6 +1,5 @@
 #import "mpollutionmap.h"
-
-static CGFloat const kilometersperdegree = 111.1;
+#import "genericconstants.h"
 
 @interface mpollutionmap ()
 

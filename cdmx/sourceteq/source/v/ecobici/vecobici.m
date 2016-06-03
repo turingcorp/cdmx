@@ -1,12 +1,11 @@
 #import "vecobici.h"
 #import "vecobicicell.h"
-#import "vecobicimenu.h"
 #import "vecobicidisplayannotation.h"
 #import "eannotationview.h"
 #import "ecollectioncell.h"
 #import "analytics.h"
 
-static CGFloat const ecobicimapspansize = 0.004;
+static CGFloat const ecobicimapspansize = 0.0025;
 static CGFloat const latitudecondesa = 19.411619;
 static CGFloat const longitudecondesa = -99.170436;
 static NSInteger const ecobicimenuheight = 50;
@@ -31,6 +30,7 @@ static NSInteger const ecobicimapmargin = 120;
     userupdated = NO;
     
     vecobicimenu *menu = [[vecobicimenu alloc] init:controller];
+    self.menu = menu;
     
     UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
     [flow setHeaderReferenceSize:CGSizeZero];
@@ -99,22 +99,27 @@ static NSInteger const ecobicimapmargin = 120;
     [self.display setRegion:region animated:YES];
 }
 
+-(void)centercloser
+{
+    [self.display selectAnnotation:self.closeritem.annotation animated:YES];
+}
+
 -(void)findcloserstation
 {
-    /*
     __weak typeof(self) welf = self;
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),
                    ^
                    {
-                       mpollutionmapitem *closeritem = [welf.model closertolat:welf.userlocation.latitude lon:welf.userlocation.longitude];
+                       welf.closeritem = [welf.controller.model closertolat:welf.userlocation.latitude lon:welf.userlocation.longitude];
                        
-                       dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC * 1.5), dispatch_get_main_queue(),
+                       dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC * 1), dispatch_get_main_queue(),
                                       ^
                                       {
-                                          [welf.display selectAnnotation:closeritem.annotation animated:YES];
+                                          [welf centercloser];
+                                          [welf.menu updateuser];
                                       });
-                   });*/
+                   });
 }
 
 -(void)locationscheck
