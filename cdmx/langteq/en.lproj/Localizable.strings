@@ -154,6 +154,8 @@
 "vadmin_ecobici_labelexport"="Export ecobici database: %@ stations";
 "vadmin_ecobici_error_reponse"="Wrong response";
 
+"vecobici_cell_km"="%@ km";
+
 "mmenu_section_city"="City";
 "mmenu_section_mobility"="Mobility";
 "mmenu_section_app"="App";

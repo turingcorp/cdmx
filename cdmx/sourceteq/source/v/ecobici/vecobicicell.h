@@ -8,5 +8,6 @@
 
 @property(weak, nonatomic)UILabel *labelname;
 @property(weak, nonatomic)UILabel *labelnumber;
+@property(weak, nonatomic)UILabel *labelkm;
 
 @end
