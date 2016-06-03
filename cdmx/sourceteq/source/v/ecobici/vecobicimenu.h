@@ -5,6 +5,7 @@
 @interface vecobicimenu:UIView<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
 -(instancetype)init:(cecobici*)controller;
+-(void)updateuser;
 
 @property(weak, nonatomic, readonly)UICollectionView *collection;
 @property(weak, nonatomic, readonly)cecobici *controller;

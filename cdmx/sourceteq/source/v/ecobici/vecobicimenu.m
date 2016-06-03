@@ -22,7 +22,7 @@ static NSInteger const ecobicimenucellwidth = 60;
     [self setBackgroundColor:[UIColor whiteColor]];
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
     self.controller = controller;
-    self.model = [[mecobicimenu alloc] init];
+    self.model = [mecobicimenu basicmenu];
 
     UIView *border = [[UIView alloc] init];
     [border setUserInteractionEnabled:NO];
@@ -71,6 +71,14 @@ static NSInteger const ecobicimenucellwidth = 60;
     mecobicimenuitem *model = self.model.items[index.item];
     
     return model;
+}
+
+#pragma mark public
+
+-(void)updateuser
+{
+    self.model = [mecobicimenu completemenu];
+    [self.collection reloadData];
 }
 
 #pragma mark -
