@@ -18,7 +18,7 @@
     UILabel *labelnumber = [[UILabel alloc] init];
     [labelnumber setBackgroundColor:[UIColor clearColor]];
     [labelnumber setUserInteractionEnabled:NO];
-    [labelnumber setFont:[UIFont regularsize:11]];
+    [labelnumber setFont:[UIFont boldsize:11]];
     [labelnumber setTranslatesAutoresizingMaskIntoConstraints:NO];
     self.labelnumber = labelnumber;
     
@@ -37,7 +37,7 @@
     NSDictionary *metrics = @{};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[labelname]-10-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[labelnumber(60)]-0-[labelkm]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[labelnumber(20)]-(-3)-[labelkm]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-6-[labelnumber(13)]-0-[labelname(15)]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-6-[labelkm(13)]" options:0 metrics:metrics views:views]];
     
@@ -85,8 +85,8 @@
     else
     {
         [self setBackgroundColor:[UIColor clearColor]];
-        [self.labelnumber setTextColor:[UIColor blackColor]];
-        [self.labelname setTextColor:[UIColor colorWithWhite:0.4 alpha:1]];
+        [self.labelnumber setTextColor:[UIColor colorWithWhite:0.65 alpha:1]];
+        [self.labelname setTextColor:[UIColor blackColor]];
         [self.labelkm setTextColor:[UIColor blackColor]];
     }
 }

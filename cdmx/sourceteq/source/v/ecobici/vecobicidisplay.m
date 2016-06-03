@@ -34,7 +34,7 @@
     [border setUserInteractionEnabled:NO];
     [border setClipsToBounds:YES];
     [border setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [border setBackgroundColor:[UIColor colorWithWhite:0.4 alpha:1]];
+    [border setBackgroundColor:[UIColor colorWithWhite:0.6 alpha:1]];
     [self addSubview:border];
     
     NSDictionary *views = @{@"border":border};

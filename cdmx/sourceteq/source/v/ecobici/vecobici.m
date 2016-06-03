@@ -102,8 +102,11 @@ static NSInteger const ecobicimapmargin = 120;
 
 -(void)centercloser
 {
+    NSInteger itemindex = [self.controller.model.items indexOfObject:self.closeritem];
+    NSIndexPath *index = [NSIndexPath indexPathForItem:itemindex inSection:0];
     MKCoordinateRegion region = MKCoordinateRegionMake(self.closeritem.annotation.coordinate, self.mapspan);
     [self.display setRegion:region animated:YES];
+    [self.collection selectItemAtIndexPath:index animated:YES scrollPosition:UICollectionViewScrollPositionCenteredVertically];
     [self.display selectAnnotation:self.closeritem.annotation animated:YES];
 }
 
