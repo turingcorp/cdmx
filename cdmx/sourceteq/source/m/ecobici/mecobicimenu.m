@@ -8,14 +8,31 @@
 
 @implementation mecobicimenu
 
--(instancetype)init
++(instancetype)basicmenu
+{
+    mecobicimenu *model = [[mecobicimenu alloc] init:@[
+                                                       [mecobicimenuitem menu],
+                                                       [mecobicimenuitem closer]
+                                                       ]];
+    
+    return model;
+}
+
++(instancetype)completemenu
+{
+    mecobicimenu *model = [[mecobicimenu alloc] init:@[
+                                                       [mecobicimenuitem menu],
+                                                       [mecobicimenuitem user],
+                                                       [mecobicimenuitem closer]
+                                                       ]];
+    
+    return model;
+}
+
+-(instancetype)init:(NSArray<mecobicimenuitem*>*)items
 {
     self = [super init];
-    self.items = @[
-                   [mecobicimenuitem menu],
-                   [mecobicimenuitem user],
-                   [mecobicimenuitem closer]
-                   ];
+    self.items = items;
     
     return self;
 }
