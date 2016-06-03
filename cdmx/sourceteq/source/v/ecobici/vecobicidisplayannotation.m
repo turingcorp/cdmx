@@ -67,7 +67,7 @@ static NSInteger const annotationheightmax = 67;
     else
     {
         [self.img setImage:[[UIImage imageNamed:@"ecobici_annotationsmall"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
-        [self.img setTintColor:[UIColor colorWithWhite:0 alpha:0.25]];
+        [self.img setTintColor:[UIColor colorWithWhite:0 alpha:0.35]];
         [self setFrame:CGRectMake(0, 0, annotationwidthmin, annotationheightmax)];
         [self setCenterOffset:CGPointMake(0, annotationheightmin / -2.0)];
     }

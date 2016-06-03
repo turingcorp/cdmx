@@ -97,10 +97,13 @@ static NSInteger const ecobicimapmargin = 120;
 {
     MKCoordinateRegion region = MKCoordinateRegionMake(self.userlocation, self.mapspan);
     [self.display setRegion:region animated:YES];
+    [self.collection selectItemAtIndexPath:[NSIndexPath indexPathForItem:-1 inSection:0] animated:NO scrollPosition:UICollectionViewScrollPositionNone];
 }
 
 -(void)centercloser
 {
+    MKCoordinateRegion region = MKCoordinateRegionMake(self.closeritem.annotation.coordinate, self.mapspan);
+    [self.display setRegion:region animated:YES];
     [self.display selectAnnotation:self.closeritem.annotation animated:YES];
 }
 

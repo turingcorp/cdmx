@@ -21,7 +21,7 @@
 
 -(void)action:(cecobici*)controller
 {
-    
+    [controller centeruser];
 }
 
 @end

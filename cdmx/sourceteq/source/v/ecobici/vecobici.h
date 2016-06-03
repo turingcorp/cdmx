@@ -8,6 +8,8 @@
 
 -(instancetype)init:(cecobici*)controller;
 -(void)viewdidappear;
+-(void)centeruser;
+-(void)centercloser;
 
 @property(strong, nonatomic)CLLocationManager *locationmanager;
 @property(weak, nonatomic)cecobici *controller;

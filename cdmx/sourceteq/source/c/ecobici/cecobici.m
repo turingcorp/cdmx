@@ -78,12 +78,12 @@
 
 -(void)centeruser
 {
-    
+    [self.view centeruser];
 }
 
 -(void)centercloserstation
 {
-    
+    [self.view centercloser];
 }
 
 @end
