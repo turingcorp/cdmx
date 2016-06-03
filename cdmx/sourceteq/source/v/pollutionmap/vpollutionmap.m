@@ -12,6 +12,7 @@ static CGFloat const longitudezocalo = -99.133223;
 static NSInteger const mapheaderheight = 60;
 static NSInteger const mapcellheight = 52;
 static NSInteger const mapcollectionbottom = 65;
+static NSInteger const mapcollectiontop = 140;
 static NSInteger const mapinteritemspace = -1;
 static NSInteger const pollutionmapheight = 200;
 
@@ -26,7 +27,7 @@ static NSInteger const pollutionmapheight = 200;
     self.model = (mpollutionmap*)controller.model.option;
     self.mapspan = MKCoordinateSpanMake(pollutionmapspansize, pollutionmapspansize);
     userupdated = NO;
-  
+    
     vpollutionmapdisplay *display = [[vpollutionmapdisplay alloc] init];
     MKCoordinateRegion region = MKCoordinateRegionMake(CLLocationCoordinate2DMake(latitudezocalo, longitudezocalo), self.mapspan);
     [display setRegion:region animated:NO];
@@ -42,7 +43,7 @@ static NSInteger const pollutionmapheight = 200;
     [flow setMinimumLineSpacing:mapinteritemspace];
     [flow setMinimumInteritemSpacing:0];
     [flow setScrollDirection:UICollectionViewScrollDirectionVertical];
-    [flow setSectionInset:UIEdgeInsetsMake(pollutionmapheight + mapheaderheight + mapinteritemspace, 0, mapcollectionbottom, 0)];
+    [flow setSectionInset:UIEdgeInsetsMake((pollutionmapheight + mapheaderheight + mapinteritemspace) - mapcollectiontop, 0, mapcollectionbottom, 0)];
     
     UICollectionView *collection = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flow];
     [collection setClipsToBounds:YES];
@@ -62,14 +63,14 @@ static NSInteger const pollutionmapheight = 200;
     [self addSubview:display];
     
     NSDictionary *views = @{@"display":display, @"col":collection, @"header":header};
-    NSDictionary *metrics = @{@"headerheight":@(mapheaderheight)};
+    NSDictionary *metrics = @{@"headerheight":@(mapheaderheight), @"collectiontop":@(mapcollectiontop)};
     
     self.layoutdisplayheight = [NSLayoutConstraint constraintWithItem:display attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:pollutionmapheight];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[display]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[header]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[display]-0-[header(headerheight)]" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[col]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(collectiontop)-[col]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraint:self.layoutdisplayheight];
     
     return self;
