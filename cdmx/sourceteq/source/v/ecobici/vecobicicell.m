@@ -21,7 +21,7 @@
     [circle setUserInteractionEnabled:NO];
     [circle setTranslatesAutoresizingMaskIntoConstraints:NO];
     [circle setClipsToBounds:YES];
-    [circle setContentMode:UIViewContentModeCenter];
+    [circle setContentMode:UIViewContentModeScaleAspectFit];
     [circle setImage:[[UIImage imageNamed:@"generic_halo"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
     self.circle = circle;
     
@@ -36,10 +36,11 @@
     [number setBackgroundColor:[UIColor clearColor]];
     [number setUserInteractionEnabled:NO];
     [number setFont:[UIFont boldsize:10]];
+    [number setTextAlignment:NSTextAlignmentCenter];
     [number setTranslatesAutoresizingMaskIntoConstraints:NO];
     self.number = number;
     
-    self.attrtitle = @{NSFontAttributeName:[UIFont regularsize:14], NSForegroundColorAttributeName:[UIColor colorWithWhite:0.4 alpha:1]};
+    self.attrtitle = @{NSFontAttributeName:[UIFont regularsize:12], NSForegroundColorAttributeName:[UIColor colorWithWhite:0.2 alpha:1]};
     self.attrkm = @{NSFontAttributeName:[UIFont regularsize:14], NSForegroundColorAttributeName:[UIColor blackColor]};
     self.numberformatter = [[NSNumberFormatter alloc] init];
     [self.numberformatter setNumberStyle:NSNumberFormatterDecimalStyle];
@@ -47,7 +48,6 @@
     
     [circle addSubview:number];
     [self addSubview:circle];
-    [self addSubview:number];
     [self addSubview:label];
     
     NSDictionary *views = @{@"number":number, @"label":label, @"circle":circle};
@@ -55,7 +55,7 @@
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[number]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[number]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[circle(30)]-5-[label]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-5-[circle(34)]-4-[label]-2-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[circle]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[label]-0-|" options:0 metrics:metrics views:views]];
     
@@ -77,14 +77,8 @@
         [mut appendAttributedString:astringkm];
     }
     
-    NSString *stringname = self.model.name;
-    
-    if(!stringname)
-    {
-        stringname = @"";
-    }
-    
-    
+    NSAttributedString *astringtitle = [[NSAttributedString alloc] initWithString:self.model.name attributes:self.attrtitle];
+    [mut appendAttributedString:astringtitle];
     
     [self.label setAttributedText:mut];
 }
@@ -96,19 +90,9 @@
     self.model = model;
     NSString *stationnumber = [NSString stringWithFormat:@"%@", model.stationid];
     [self.number setText:stationnumber];
-    /*
-    [self.labelname setText:model.name];
-    [self hover];
     
-    if(model.kilometers > 0)
-    {
-        
-        
-    }
-    else
-    {
-        [self.labelkm setText:@""];
-    }*/
+    [self createstring];
+    [self hover];
 }
 
 #pragma mark -
@@ -118,17 +102,15 @@
 {
     if(self.isSelected || self.isHighlighted)
     {
-        [self setBackgroundColor:[UIColor main]];
-        [self.number setTextColor:[UIColor whiteColor]];
-        [self.label setTextColor:[UIColor whiteColor]];
-        [self.circle setTintColor:[UIColor whiteColor]];
+        [self setAlpha:1];
+        [self.number setTextColor:[UIColor blackColor]];
+        [self.circle setTintColor:[UIColor main]];
     }
     else
     {
-        [self setBackgroundColor:[UIColor clearColor]];
-        [self createstring];
+        [self setAlpha:0.4];
         [self.number setTextColor:[UIColor colorWithWhite:0.6 alpha:1]];
-        [self.circle setTintColor:[UIColor main]];
+        [self.circle setTintColor:[UIColor background]];
     }
 }
 
