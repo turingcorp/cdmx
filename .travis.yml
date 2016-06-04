@@ -1,11 +1,11 @@
 language: objective-c
-osx_image: xcode7.3
+osx_image: xcode6.1
 branches:
   only:
     - dev
 script:
-- if [ $MODE == 'test8' ]; then set -o pipefail && xcodebuild -osx_image xcode6.3 -workspace cdmx.xcworkspace -scheme cdmx -sdk "iphonesimulator" -destination "platform=iOS Simulator,OS=7.1,name=iPhone 4s" test | xcpretty -c; fi
-- if [ $MODE == 'test9' ]; then set -o pipefail && xcodebuild -workspace cdmx.xcworkspace -scheme cdmx -sdk "iphonesimulator" -destination "platform=iOS Simulator,OS=9.3,name=iPhone 6" test | xcpretty -c; fi
+- if [ $MODE == 'test8' ]; then set -o pipefail && xcodebuild -workspace cdmx.xcworkspace -scheme cdmx -sdk "iphonesimulator" -destination "platform=iOS Simulator,OS=7.0,name=iPhone 4s" test | xcpretty -c; fi
+- if [ $MODE == 'test9' ]; then set -o pipefail && xcodebuild -workspace cdmx.xcworkspace -scheme cdmx -sdk "iphonesimulator" -destination "platform=iOS Simulator,OS=8.1,name=iPhone 6" test | xcpretty -c; fi
 - if [ $MODE == 'Release' ]; then xctool -workspace cdmx.xcworkspace -scheme cdmx -destination "platform=iOS Simulator,OS=9.3,name=iPhone 6" -configuration Release build; fi
 notifications:
   email:
