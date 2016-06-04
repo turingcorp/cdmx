@@ -96,7 +96,7 @@
     self.model = model;
     NSString *stationnumber = [NSString stringWithFormat:@"%@", model.stationid];
     [self.number setText:stationnumber];
-    
+    /*
     [self.labelname setText:model.name];
     [self hover];
     
@@ -108,7 +108,7 @@
     else
     {
         [self.labelkm setText:@""];
-    }
+    }*/
 }
 
 #pragma mark -

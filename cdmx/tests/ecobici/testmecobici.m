@@ -24,4 +24,13 @@
     [super tearDown];
 }
 
+-(void)testparseallstations
+{
+    NSArray<mdbecobicistation*> *stations = [mdbselect ecobicistations];
+    NSInteger totalstations = stations.count;
+    NSInteger parsedstations = self.model.items.count;
+    
+    XCTAssertEqual(totalstations, parsedstations, @"Didn't parsed all the stations");
+}
+
 @end
