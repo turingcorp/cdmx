@@ -21,10 +21,10 @@
 
 -(void)tearDown
 {
-    [super tearDown];
-    
     self.parser = nil;
     self.adminecobicimockup = nil;
+    
+    [super tearDown];
 }
 
 -(void)testparseallstations

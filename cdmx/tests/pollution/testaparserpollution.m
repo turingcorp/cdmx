@@ -28,10 +28,10 @@
 
 -(void)tearDown
 {
-    [super tearDown];
-    
     self.parser = nil;
     self.pollutionmockup = nil;
+    
+    [super tearDown];
 }
 
 -(void)testparsedistricts
