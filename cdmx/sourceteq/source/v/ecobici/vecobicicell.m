@@ -8,6 +8,14 @@
 {
     self = [super initWithFrame:frame];
     
+    UIImageView *circle = [[UIImageView alloc] init];
+    [circle setUserInteractionEnabled:NO];
+    [circle setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [circle setClipsToBounds:YES];
+    [circle setContentMode:UIViewContentModeScaleAspectFit];
+    [circle setImage:[[UIImage imageNamed:@"generic_halo"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+    [circle setTintColor:[UIColor main]];
+    
     UILabel *labelname = [[UILabel alloc] init];
     [labelname setUserInteractionEnabled:NO];
     [labelname setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -29,15 +37,18 @@
     [labelkm setTranslatesAutoresizingMaskIntoConstraints:NO];
     self.labelkm = labelkm;
     
+    [self addSubview:circle];
     [self addSubview:labelnumber];
     [self addSubview:labelname];
     [self addSubview:labelkm];
     
-    NSDictionary *views = @{@"labelnumber":labelnumber, @"labelname":labelname, @"labelkm":labelkm};
+    NSDictionary *views = @{@"labelnumber":labelnumber, @"labelname":labelname, @"labelkm":labelkm, @"circle":circle};
     NSDictionary *metrics = @{};
     
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[circle(30)]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[labelname]-10-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[labelnumber(27)]-(-3)-[labelkm]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[labelnumber(27)]-0-[labelkm]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[circle]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-6-[labelnumber(13)]-0-[labelname(15)]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-6-[labelkm(13)]" options:0 metrics:metrics views:views]];
     
@@ -86,7 +97,7 @@
     {
         [self setBackgroundColor:[UIColor clearColor]];
         [self.labelnumber setTextColor:[UIColor colorWithWhite:0.65 alpha:1]];
-        [self.labelname setTextColor:[UIColor blackColor]];
+        [self.labelname setTextColor:[UIColor colorWithWhite:0.4 alpha:1]];
         [self.labelkm setTextColor:[UIColor blackColor]];
     }
 }

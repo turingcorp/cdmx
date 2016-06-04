@@ -6,8 +6,7 @@
 
 -(void)config:(mecobiciitem*)model;
 
-@property(weak, nonatomic)UILabel *labelname;
-@property(weak, nonatomic)UILabel *labelnumber;
-@property(weak, nonatomic)UILabel *labelkm;
+@property(weak, nonatomic)UILabel *label;
+@property(weak, nonatomic)UILabel *number;
 
 @end
