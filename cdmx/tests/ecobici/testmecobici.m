@@ -33,4 +33,12 @@
     XCTAssertEqual(totalstations, parsedstations, @"Didn't parsed all the stations");
 }
 
+-(void)teststationshavename
+{
+    for(mecobiciitem *station in self.model.items)
+    {
+        XCTAssertNotNil(station.name, @"Station doesn't have a name");
+    }
+}
+
 @end
