@@ -268,6 +268,7 @@
 		DAD7AA931CF22DEA003B169A /* vnodrivecellplate.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD7AA921CF22DEA003B169A /* vnodrivecellplate.m */; };
 		DAD875FC1CBD6CF200A4F91C /* vmenubutton.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD875FB1CBD6CF200A4F91C /* vmenubutton.m */; };
 		DAE8DC191D036A3700395431 /* testmecobici.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE8DC181D036A3700395431 /* testmecobici.m */; };
+		DAE8DC1C1D036D1500395431 /* testmdbselect.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE8DC1B1D036D1500395431 /* testmdbselect.m */; };
 		DAEA59F41CEA041900584526 /* mpollutionpollutant.m in Sources */ = {isa = PBXBuildFile; fileRef = DAEA59F31CEA041900584526 /* mpollutionpollutant.m */; };
 		DAEA59F71CEA3C0100584526 /* vpollutionfrontheadercell.m in Sources */ = {isa = PBXBuildFile; fileRef = DAEA59F61CEA3C0100584526 /* vpollutionfrontheadercell.m */; };
 		DAEA59FD1CEA3E8E00584526 /* mpollutionfrontitemoption.m in Sources */ = {isa = PBXBuildFile; fileRef = DAEA59FC1CEA3E8E00584526 /* mpollutionfrontitemoption.m */; };
@@ -821,6 +822,7 @@
 		DAD875FA1CBD6CF200A4F91C /* vmenubutton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vmenubutton.h; sourceTree = "<group>"; };
 		DAD875FB1CBD6CF200A4F91C /* vmenubutton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = vmenubutton.m; sourceTree = "<group>"; };
 		DAE8DC181D036A3700395431 /* testmecobici.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testmecobici.m; sourceTree = "<group>"; };
+		DAE8DC1B1D036D1500395431 /* testmdbselect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testmdbselect.m; sourceTree = "<group>"; };
 		DAEA59F21CEA041900584526 /* mpollutionpollutant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpollutionpollutant.h; sourceTree = "<group>"; };
 		DAEA59F31CEA041900584526 /* mpollutionpollutant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mpollutionpollutant.m; sourceTree = "<group>"; };
 		DAEA59F51CEA3C0100584526 /* vpollutionfrontheadercell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vpollutionfrontheadercell.h; sourceTree = "<group>"; };
@@ -1024,6 +1026,7 @@
 			isa = PBXGroup;
 			children = (
 				DA249AA11CFFC94A00D134F3 /* Info.plist */,
+				DAE8DC1A1D036D0800395431 /* db */,
 				DAE8DC171D03698D00395431 /* ecobici */,
 				DA249A9F1CFFC94A00D134F3 /* admin */,
 				DA249AA21CFFC94A00D134F3 /* menu */,
@@ -1984,6 +1987,14 @@
 			path = ecobici;
 			sourceTree = "<group>";
 		};
+		DAE8DC1A1D036D0800395431 /* db */ = {
+			isa = PBXGroup;
+			children = (
+				DAE8DC1B1D036D1500395431 /* testmdbselect.m */,
+			);
+			path = db;
+			sourceTree = "<group>";
+		};
 		DAEA59F11CEA01E300584526 /* pollutionpollutant */ = {
 			isa = PBXGroup;
 			children = (
@@ -2240,6 +2251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA249AB31CFFC95900D134F3 /* teststools.m in Sources */,
+				DAE8DC1C1D036D1500395431 /* testmdbselect.m in Sources */,
 				DA249AB81CFFC96B00D134F3 /* testaparseradminecobici.m in Sources */,
 				DAE8DC191D036A3700395431 /* testmecobici.m in Sources */,
 				DA249AB41CFFC95C00D134F3 /* testaparserpollution.m in Sources */,
