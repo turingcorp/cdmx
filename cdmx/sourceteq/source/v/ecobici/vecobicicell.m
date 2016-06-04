@@ -2,6 +2,15 @@
 #import "efont.h"
 #import "ecolor.h"
 
+@interface vecobicicell ()
+
+@property(weak, nonatomic)mecobiciitem *model;
+@property(strong, nonatomic)NSNumberFormatter *numberformatter;
+@property(strong, nonatomic)NSDictionary *attrtitle;
+@property(strong, nonatomic)NSDictionary *attrkm;
+
+@end
+
 @implementation vecobicicell
 
 -(instancetype)initWithFrame:(CGRect)frame
@@ -12,68 +21,89 @@
     [circle setUserInteractionEnabled:NO];
     [circle setTranslatesAutoresizingMaskIntoConstraints:NO];
     [circle setClipsToBounds:YES];
-    [circle setContentMode:UIViewContentModeScaleAspectFit];
+    [circle setContentMode:UIViewContentModeCenter];
     [circle setImage:[[UIImage imageNamed:@"generic_halo"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
-    [circle setTintColor:[UIColor main]];
+    self.circle = circle;
     
-    UILabel *labelname = [[UILabel alloc] init];
-    [labelname setUserInteractionEnabled:NO];
-    [labelname setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [labelname setBackgroundColor:[UIColor clearColor]];
-    [labelname setFont:[UIFont regularsize:13]];
-    self.labelname = labelname;
+    UILabel *label = [[UILabel alloc] init];
+    [label setUserInteractionEnabled:NO];
+    [label setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [label setBackgroundColor:[UIColor clearColor]];
+    [label setNumberOfLines:0];
+    self.label = label;
     
-    UILabel *labelnumber = [[UILabel alloc] init];
-    [labelnumber setBackgroundColor:[UIColor clearColor]];
-    [labelnumber setUserInteractionEnabled:NO];
-    [labelnumber setFont:[UIFont boldsize:11]];
-    [labelnumber setTranslatesAutoresizingMaskIntoConstraints:NO];
-    self.labelnumber = labelnumber;
+    UILabel *number = [[UILabel alloc] init];
+    [number setBackgroundColor:[UIColor clearColor]];
+    [number setUserInteractionEnabled:NO];
+    [number setFont:[UIFont boldsize:10]];
+    [number setTranslatesAutoresizingMaskIntoConstraints:NO];
+    self.number = number;
     
-    UILabel *labelkm = [[UILabel alloc] init];
-    [labelkm setBackgroundColor:[UIColor clearColor]];
-    [labelkm setUserInteractionEnabled:NO];
-    [labelkm setFont:[UIFont regularsize:11]];
-    [labelkm setTranslatesAutoresizingMaskIntoConstraints:NO];
-    self.labelkm = labelkm;
+    self.attrtitle = @{NSFontAttributeName:[UIFont regularsize:14], NSForegroundColorAttributeName:[UIColor colorWithWhite:0.4 alpha:1]};
+    self.attrkm = @{NSFontAttributeName:[UIFont regularsize:14], NSForegroundColorAttributeName:[UIColor blackColor]};
+    self.numberformatter = [[NSNumberFormatter alloc] init];
+    [self.numberformatter setNumberStyle:NSNumberFormatterDecimalStyle];
+    [self.numberformatter setMaximumFractionDigits:2];
     
+    [circle addSubview:number];
     [self addSubview:circle];
-    [self addSubview:labelnumber];
-    [self addSubview:labelname];
-    [self addSubview:labelkm];
+    [self addSubview:number];
+    [self addSubview:label];
     
-    NSDictionary *views = @{@"labelnumber":labelnumber, @"labelname":labelname, @"labelkm":labelkm, @"circle":circle};
+    NSDictionary *views = @{@"number":number, @"label":label, @"circle":circle};
     NSDictionary *metrics = @{};
     
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[circle(30)]" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[labelname]-10-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[labelnumber(27)]-0-[labelkm]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[number]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[number]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-10-[circle(30)]-5-[label]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[circle]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-6-[labelnumber(13)]-0-[labelname(15)]" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-6-[labelkm(13)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[label]-0-|" options:0 metrics:metrics views:views]];
     
     return self;
+}
+
+#pragma mark private
+
+-(void)createstring
+{
+    NSMutableAttributedString *mut = [[NSMutableAttributedString alloc] init];
+    
+    if(self.model.kilometers > 0)
+    {
+        NSString *stringnum = [self.numberformatter stringFromNumber:@(self.model.kilometers)];
+        NSString *stringkm = [NSString stringWithFormat:NSLocalizedString(@"vecobici_cell_km", nil), stringnum];
+        
+        NSAttributedString *astringkm = [[NSAttributedString alloc] initWithString:stringkm attributes:self.attrkm];
+        [mut appendAttributedString:astringkm];
+    }
+    
+    NSString *stringname = self.model.name;
+    
+    if(!stringname)
+    {
+        stringname = @"";
+    }
+    
+    
+    
+    [self.label setAttributedText:mut];
 }
 
 #pragma mark public
 
 -(void)config:(mecobiciitem*)model
 {
+    self.model = model;
     NSString *stationnumber = [NSString stringWithFormat:@"%@", model.stationid];
+    [self.number setText:stationnumber];
     
     [self.labelname setText:model.name];
-    [self.labelnumber setText:stationnumber];
     [self hover];
     
     if(model.kilometers > 0)
     {
-        NSNumberFormatter *numberformatter = [[NSNumberFormatter alloc] init];
-        [numberformatter setNumberStyle:NSNumberFormatterDecimalStyle];
-        [numberformatter setMaximumFractionDigits:2];
-        NSString *stringnum = [numberformatter stringFromNumber:@(model.kilometers)];
-        NSString *stringkm = [NSString stringWithFormat:NSLocalizedString(@"vecobici_cell_km", nil), stringnum];
         
-        [self.labelkm setText:stringkm];
+        
     }
     else
     {
@@ -89,16 +119,16 @@
     if(self.isSelected || self.isHighlighted)
     {
         [self setBackgroundColor:[UIColor main]];
-        [self.labelnumber setTextColor:[UIColor whiteColor]];
-        [self.labelname setTextColor:[UIColor whiteColor]];
-        [self.labelkm setTextColor:[UIColor whiteColor]];
+        [self.number setTextColor:[UIColor whiteColor]];
+        [self.label setTextColor:[UIColor whiteColor]];
+        [self.circle setTintColor:[UIColor whiteColor]];
     }
     else
     {
         [self setBackgroundColor:[UIColor clearColor]];
-        [self.labelnumber setTextColor:[UIColor colorWithWhite:0.65 alpha:1]];
-        [self.labelname setTextColor:[UIColor colorWithWhite:0.4 alpha:1]];
-        [self.labelkm setTextColor:[UIColor blackColor]];
+        [self createstring];
+        [self.number setTextColor:[UIColor colorWithWhite:0.6 alpha:1]];
+        [self.circle setTintColor:[UIColor main]];
     }
 }
 

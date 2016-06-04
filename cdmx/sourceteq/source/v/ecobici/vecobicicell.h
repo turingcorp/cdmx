@@ -6,6 +6,7 @@
 
 -(void)config:(mecobiciitem*)model;
 
+@property(weak, nonatomic)UIImageView *circle;
 @property(weak, nonatomic)UILabel *label;
 @property(weak, nonatomic)UILabel *number;
 
