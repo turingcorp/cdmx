@@ -73,4 +73,13 @@
     
 }
 
+#pragma mark public
+
+-(void)modelcreated
+{
+    [self.spinner setHidden:YES];
+    [self.spinner stopAnimating];
+    [self.buttonexport setHidden:NO];
+}
+
 @end

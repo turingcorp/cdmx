@@ -4,6 +4,8 @@
 
 @interface vadminmetro:vview
 
+-(void)modelcreated;
+
 @property(weak, nonatomic)vspinner *spinner;
 @property(weak, nonatomic)UIButton *buttonexport;
 
