@@ -16,4 +16,11 @@
     self.view = [[vadminmetro alloc] init:self];
 }
 
+#pragma mark public
+
+-(void)createdatabase
+{
+    
+}
+
 @end

@@ -19,13 +19,17 @@
     [self.bar title:NSLocalizedString(@"mmenu_item_adminmetro", nil)];
     [self.bar buttonmenu];
     
+    vspinner *spinner = [[vspinner alloc] init];
+    [spinner setHidden:YES];
+    [spinner stopAnimating];
+    self.spinner = spinner;
+    
     UIButton *buttoncreate = [[UIButton alloc] init];
     [buttoncreate setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [buttoncreate setTitleColor:[UIColor colorWithWhite:0 alpha:0.2] forState:UIControlStateHighlighted];
     [buttoncreate setTitle:NSLocalizedString(@"vadmin_metro_buttoncreate", nil) forState:UIControlStateNormal];
     [buttoncreate.titleLabel setFont:[UIFont boldsize:16]];
     [buttoncreate setTranslatesAutoresizingMaskIntoConstraints:NO];
-    self.buttoncreate = buttoncreate;
     
     UIButton *buttonexport = [[UIButton alloc] init];
     [buttonexport setTitleColor:[UIColor main] forState:UIControlStateNormal];
@@ -38,15 +42,33 @@
     
     [self addSubview:buttoncreate];
     [self addSubview:buttonexport];
+    [self addSubview:spinner];
     
-    NSDictionary *views = @{@"create":buttoncreate, @"export":buttonexport};
+    NSDictionary *views = @{@"create":buttoncreate, @"export":buttonexport, @"spinner":spinner};
     NSDictionary *metrics = @{};
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[create]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[export]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-80-[create(40)]-50-[export(40)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[spinner]-0-|" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-150-[spinner]" options:0 metrics:metrics views:views]];
     
     return self;
+}
+
+#pragma mark actions
+
+-(void)actioncreate:(UIButton*)button
+{
+    [button setHidden:YES];
+    [self.spinner setHidden:NO];
+    [self.spinner startAnimating];
+    [self.controller createdatabase];
+}
+
+-(void)actionexport:(UIButton*)button
+{
+    
 }
 
 @end

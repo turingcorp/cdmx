@@ -3,4 +3,6 @@
 
 @interface cadminmetro:ccontroller
 
+-(void)createdatabase;
+
 @end
