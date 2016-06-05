@@ -30,6 +30,7 @@
     [buttoncreate setTitle:NSLocalizedString(@"vadmin_metro_buttoncreate", nil) forState:UIControlStateNormal];
     [buttoncreate.titleLabel setFont:[UIFont boldsize:16]];
     [buttoncreate setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [buttoncreate addTarget:self action:@selector(actioncreate:) forControlEvents:UIControlEventTouchUpInside];
     
     UIButton *buttonexport = [[UIButton alloc] init];
     [buttonexport setTitleColor:[UIColor main] forState:UIControlStateNormal];
@@ -38,6 +39,7 @@
     [buttonexport.titleLabel setFont:[UIFont boldsize:16]];
     [buttonexport setTranslatesAutoresizingMaskIntoConstraints:NO];
     [buttonexport setHidden:YES];
+    [buttonexport addTarget:self action:@selector(actionexport:) forControlEvents:UIControlEventTouchUpInside];
     self.buttonexport = buttonexport;
     
     [self addSubview:buttoncreate];
@@ -49,7 +51,7 @@
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[create]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[export]-0-|" options:0 metrics:metrics views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-80-[create(40)]-50-[export(40)]" options:0 metrics:metrics views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-80-[create(50)]-50-[export(50)]" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[spinner]-0-|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-150-[spinner]" options:0 metrics:metrics views:views]];
     
