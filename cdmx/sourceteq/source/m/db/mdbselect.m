@@ -36,7 +36,7 @@
                                    ];
     
     zqlquery *query = [zqlquery select:dbdistricts params:params ordered:paramname ascendent:YES limit:0];
-    zqlresult *result = [zql query:@[query]];
+    zqlresult *result = [zql query:@[query] db:nil];
     
     NSUInteger districtscount = result.params.count;
     for(NSUInteger indexdistrict = 0; indexdistrict < districtscount; indexdistrict++)
@@ -77,7 +77,7 @@
     return array;
 }
 
-+(NSArray<mdbpollutiondaily*>*)pollutiondaily;
++(NSArray<mdbpollutiondaily*>*)pollutiondaily
 {
     NSMutableArray<mdbpollutiondaily*> *array = [NSMutableArray array];
     zqlparam *paramprimarykey = [zqlparam type:[zqltype integer] name:dbprimarykey value:nil];
@@ -91,7 +91,7 @@
                                    ];
     
     zqlquery *query = [zqlquery select:dbpollutiondaily params:params ordered:paramdate ascendent:YES limit:0];
-    zqlresult *result = [zql query:@[query]];
+    zqlresult *result = [zql query:@[query] db:nil];
     
     NSUInteger districtscount = result.params.count;
     
@@ -136,7 +136,7 @@
                                    ];
     
     zqlquery *query = [zqlquery select:dbpollutiondaily params:params ordered:paramdate ascendent:NO limit:1];
-    zqlresult *result = [zql query:@[query]];
+    zqlresult *result = [zql query:@[query] db:nil];
     
     NSUInteger districtscount = result.params.count;
     
@@ -154,6 +154,52 @@
     }
     
     return lastdaily;
+}
+
++(NSArray<mdbecobicistation*>*)ecobicistations
+{
+    NSMutableArray<mdbecobicistation*> *array = [NSMutableArray array];
+    zqlparam *paramprimarykey = [zqlparam type:[zqltype integer] name:dbprimarykey value:nil];
+    zqlparam *paramstationid = [zqlparam type:[zqltype integer] name:dbecobicistations_stationid value:nil];
+    zqlparam *paramlatitude = [zqlparam type:[zqltype integer] name:dbecobicistations_latitude value:nil];
+    zqlparam *paramlongitude = [zqlparam type:[zqltype integer] name:dbecobicistations_longitude value:nil];
+    zqlparam *paramname = [zqlparam type:[zqltype text] name:dbecobicistations_name value:nil];
+    
+    NSArray<zqlparam*> *params = @[
+                                   paramprimarykey,
+                                   paramstationid,
+                                   paramlatitude,
+                                   paramlongitude,
+                                   paramname
+                                   ];
+    
+    NSString *urldatabase = [[NSBundle mainBundle] pathForResource:@"ecobici" ofType:@"zql"];
+    zqlquery *query = [zqlquery select:dbecobicistations params:params ordered:paramstationid ascendent:YES limit:0];
+    zqlresult *result = [zql query:@[query] db:urldatabase];
+    NSUInteger stationscount = result.params.count;
+    
+    for(NSUInteger indexstation = 0; indexstation < stationscount; indexstation++)
+    {
+        mdbecobicistation *model = [[mdbecobicistation alloc] init];
+        zqlresultparams *resultparams = result.params[indexstation];
+        zqlparam *pprimarykey = resultparams.items[dbprimarykey];
+        zqlparam *pstationid = resultparams.items[dbecobicistations_stationid];
+        zqlparam *platitude = resultparams.items[dbecobicistations_latitude];
+        zqlparam *plongitude = resultparams.items[dbecobicistations_longitude];
+        zqlparam *pname = resultparams.items[dbecobicistations_name];
+        NSNumber *uselatitude = @([platitude.value integerValue] / (CGFloat)dbintegermultiply);
+        NSNumber *uselongitude = @([plongitude.value integerValue] / (CGFloat)dbintegermultiply);
+        
+        model.primarykey = pprimarykey.value;
+        model.stationid = pstationid.value;
+        model.latitude = uselatitude;
+        model.longitude = uselongitude;
+        model.name = pname.value;
+        
+        [array addObject:model];
+    }
+    
+    return array;
 }
 
 @end

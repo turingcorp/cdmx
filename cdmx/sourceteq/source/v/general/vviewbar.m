@@ -98,13 +98,13 @@
 {
     UIButton *buttonleft = [[UIButton alloc] init];
     [buttonleft setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [buttonleft setImage:[[UIImage imageNamed:@"generic_menu"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];
-    [buttonleft setImage:[[UIImage imageNamed:@"generic_menu"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateHighlighted];
+    [buttonleft setImage:[[UIImage imageNamed:@"generic_menu"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
+    [buttonleft setImage:[[UIImage imageNamed:@"generic_menu"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateHighlighted];
     [buttonleft.imageView setContentMode:UIViewContentModeScaleAspectFit];
     [buttonleft.imageView setClipsToBounds:YES];
-    [buttonleft.imageView setTintColor:[UIColor colorWithWhite:1 alpha:0.2]];
+    [buttonleft.imageView setTintColor:[UIColor blackColor]];
     [buttonleft addTarget:self action:@selector(actionmenu:) forControlEvents:UIControlEventTouchUpInside];
-    [buttonleft setImageEdgeInsets:UIEdgeInsetsMake(10, 0, 10, 27)];
+    [buttonleft setImageEdgeInsets:UIEdgeInsetsMake(11, 0, 11, 18)];
     self.buttonleft = buttonleft;
     
     [self addSubview:buttonleft];

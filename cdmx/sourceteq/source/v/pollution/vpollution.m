@@ -60,20 +60,23 @@ static NSInteger const pollutionmenuheight = 50;
         [msettings singleton].context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
     }
     
-    [self setContext:[msettings singleton].context];
-    [self setDelegate:self];
-
-    self.datatexture = [NSMutableData dataWithLength:texturecorners * sizeof(GLKVector2)];
-    self.pointertexture = self.datatexture.mutableBytes;
-    self.pointertexture[0] = GLKVector2Make(0, 0);
-    self.pointertexture[1] = GLKVector2Make(0, 1);
-    self.pointertexture[2] = GLKVector2Make(1, 1);
-    self.pointertexture[3] = GLKVector2Make(1, 1);
-    self.pointertexture[4] = GLKVector2Make(1, 0);
-    self.pointertexture[5] = GLKVector2Make(0, 0);
-    self.baseeffect = [[GLKBaseEffect alloc] init];
-    self.baseeffect.texture2d0.target = GLKTextureTarget2D;
-    self.baseeffect.transform.projectionMatrix = GLKMatrix4MakeOrtho(0, screenwidth, screenheight, 0, 1, -1);
+    if([msettings singleton].context)
+    {
+        [self setContext:[msettings singleton].context];
+        [self setDelegate:self];
+        
+        self.datatexture = [NSMutableData dataWithLength:texturecorners * sizeof(GLKVector2)];
+        self.pointertexture = self.datatexture.mutableBytes;
+        self.pointertexture[0] = GLKVector2Make(0, 0);
+        self.pointertexture[1] = GLKVector2Make(0, 1);
+        self.pointertexture[2] = GLKVector2Make(1, 1);
+        self.pointertexture[3] = GLKVector2Make(1, 1);
+        self.pointertexture[4] = GLKVector2Make(1, 0);
+        self.pointertexture[5] = GLKVector2Make(0, 0);
+        self.baseeffect = [[GLKBaseEffect alloc] init];
+        self.baseeffect.texture2d0.target = GLKTextureTarget2D;
+        self.baseeffect.transform.projectionMatrix = GLKMatrix4MakeOrtho(0, screenwidth, screenheight, 0, 1, -1);
+    }
 }
 
 -(void)loadoption:(vpollutionoption*)option

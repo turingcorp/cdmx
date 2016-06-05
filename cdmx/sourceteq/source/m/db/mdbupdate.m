@@ -48,7 +48,7 @@
         [queries addObject:querydaily];
     }
     
-    [zql query:queries];
+    [zql query:queries db:nil];
 }
 
 @end

@@ -149,15 +149,24 @@
 "vclimate_wind_title"="Wind\n";
 "vclimate_wind_subtitle"="%@ km/h";
 
+"vadmin_ecobici_buttonretry"="Retry";
+"vadmin_ecobici_buttonexport"="Export";
+"vadmin_ecobici_labelexport"="Export ecobici database: %@ stations";
+"vadmin_ecobici_error_reponse"="Wrong response";
+
+"vecobici_cell_km"="%@ km\n";
+
 "mmenu_section_city"="City";
 "mmenu_section_mobility"="Mobility";
 "mmenu_section_app"="App";
+"mmenu_section_admin"="Admin";
 "mmenu_item_pollution"="Pollution";
 "mmenu_item_radiation"="Ultraviolet radiation";
 "mmenu_item_climate"="Weather";
 "mmenu_item_nodrive"="No drive";
 "mmenu_item_ecobici"="ecobici";
 "mmenu_item_about"="About";
+"mmenu_item_adminecobici"="Admin Ecobici";
 
 "api_retry"="Retry";
 "api_error_nodata"="Server no responding, try again later";

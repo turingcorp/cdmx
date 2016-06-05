@@ -13,14 +13,20 @@
 
 @implementation zql
 
-+(zqlresult*)query:(NSArray<zqlquery*>*)querylist
++(nonnull zqlresult*)query:(nonnull NSArray<zqlquery*>*)querylist db:(nullable NSString*)dbpath
 {
     zqlresult *result;
+    NSString *dbname = dbpath;
     
-    if([zqlconfig shared].dbname)
+    if(!dbname)
+    {
+        dbname = [zqlconfig shared].dbname;
+    }
+    
+    if(dbname)
     {
         zql *manager = [[zql alloc] init];
-        [manager connect];
+        [manager connect:dbname];
         
         if(manager.result.success)
         {
@@ -134,9 +140,9 @@
 
 #pragma mark functionality
 
--(void)connect
+-(void)connect:(NSString*)dbname
 {
-    NSInteger resultnumber = [self.connection connect:&_sqlite];
+    NSInteger resultnumber = [self.connection connect:&_sqlite dbname:dbname];
     
     self.result = [zqlresult sqlresponse:resultnumber];
 }

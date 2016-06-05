@@ -1,0 +1,244 @@
+{
+    "districts": [
+                  {
+                  "id": "101",
+                  "pollution": "18",
+                  "pollutantid": "1018"
+                  },
+                  {
+                  "id": "102",
+                  "pollution": "60",
+                  "pollutantid": "1022"
+                  },
+                  {
+                  "id": "103",
+                  "pollution": "50",
+                  "pollutantid": "1022"
+                  },
+                  {
+                  "id": "104",
+                  "pollution": "20",
+                  "pollutantid": "106"
+                  },
+                  {
+                  "id": "105",
+                  "pollution": "36",
+                  "pollutantid": "1022"
+                  },
+                  {
+                  "id": "106",
+                  "pollution": "48",
+                  "pollutantid": "1022"
+                  },
+                  {
+                  "id": "107",
+                  "pollution": "12",
+                  "pollutantid": "1011"
+                  },
+                  {
+                  "id": "108",
+                  "pollution": "45",
+                  "pollutantid": "1022"
+                  },
+                  {
+                  "id": "109",
+                  "pollution": "55",
+                  "pollutantid": "1022"
+                  },
+                  {
+                  "id": "1010",
+                  "pollution": "44",
+                  "pollutantid": "1022"
+                  },
+                  {
+                  "id": "1011",
+                  "pollution": "44",
+                  "pollutantid": "1022"
+                  },
+                  {
+                  "id": "1012",
+                  "pollution": "39",
+                  "pollutantid": "1022"
+                  },
+                  {
+                  "id": "1013",
+                  "pollution": "41",
+                  "pollutantid": "1022"
+                  },
+                  {
+                  "id": "1014",
+                  "pollution": "44",
+                  "pollutantid": "1022"
+                  },
+                  {
+                  "id": "1015",
+                  "pollution": "71",
+                  "pollutantid": "1022"
+                  },
+                  {
+                  "id": "1016",
+                  "pollution": "14",
+                  "pollutantid": "1018"
+                  }
+                  ],
+    "daily": [
+              {
+              "date": "160503",
+              "pollution": "164"
+              },
+              {
+              "date": "160504",
+              "pollution": "192"
+              },
+              {
+              "date": "160505",
+              "pollution": "127"
+              },
+              {
+              "date": "160506",
+              "pollution": "142"
+              },
+              {
+              "date": "160507",
+              "pollution": "114"
+              },
+              {
+              "date": "160508",
+              "pollution": "122"
+              },
+              {
+              "date": "160509",
+              "pollution": "148"
+              },
+              {
+              "date": "160510",
+              "pollution": "147"
+              },
+              {
+              "date": "160511",
+              "pollution": "143"
+              },
+              {
+              "date": "160512",
+              "pollution": "122"
+              },
+              {
+              "date": "160513",
+              "pollution": "109"
+              },
+              {
+              "date": "160514",
+              "pollution": "157"
+              },
+              {
+              "date": "160515",
+              "pollution": "104"
+              },
+              {
+              "date": "160516",
+              "pollution": "94"
+              },
+              {
+              "date": "160517",
+              "pollution": "142"
+              },
+              {
+              "date": "160518",
+              "pollution": "139"
+              },
+              {
+              "date": "160519",
+              "pollution": "148"
+              },
+              {
+              "date": "160520",
+              "pollution": "188"
+              },
+              {
+              "date": "160521",
+              "pollution": "137"
+              },
+              {
+              "date": "160522",
+              "pollution": "148"
+              },
+              {
+              "date": "160523",
+              "pollution": "133"
+              },
+              {
+              "date": "160524",
+              "pollution": "151"
+              },
+              {
+              "date": "160525",
+              "pollution": "125"
+              },
+              {
+              "date": "160526",
+              "pollution": "140"
+              },
+              {
+              "date": "160527",
+              "pollution": "165"
+              },
+              {
+              "date": "160528",
+              "pollution": "143"
+              },
+              {
+              "date": "160529",
+              "pollution": "149"
+              },
+              {
+              "date": "160530",
+              "pollution": "86"
+              }
+              ],
+    "hourly": [
+               {
+               "hour": "0",
+               "pollution": "65"
+               },
+               {
+               "hour": "1",
+               "pollution": "67"
+               },
+               {
+               "hour": "2",
+               "pollution": "68"
+               },
+               {
+               "hour": "3",
+               "pollution": "70"
+               },
+               {
+               "hour": "4",
+               "pollution": "70"
+               },
+               {
+               "hour": "5",
+               "pollution": "73"
+               },
+               {
+               "hour": "6",
+               "pollution": "76"
+               },
+               {
+               "hour": "7",
+               "pollution": "76"
+               },
+               {
+               "hour": "8",
+               "pollution": "78"
+               },
+               {
+               "hour": "9",
+               "pollution": "81"
+               },
+               {
+               "hour": "10",
+               "pollution": "86"
+               }
+               ]
+}
