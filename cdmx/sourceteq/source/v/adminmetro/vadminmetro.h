@@ -3,4 +3,7 @@
 
 @interface vadminmetro:vview
 
+@property(weak, nonatomic)UIButton *buttoncreate;
+@property(weak, nonatomic)UIButton *buttonexport;
+
 @end

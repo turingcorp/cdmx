@@ -156,6 +156,9 @@
 
 "vecobici_cell_km"="%@ km\n";
 
+"vadmin_metro_buttoncreate"="Crear";
+"vadmin_metro_buttonexport"="Exportar";
+
 "mmenu_section_city"="Ciudad";
 "mmenu_section_mobility"="Movilidad";
 "mmenu_section_app"="App";
