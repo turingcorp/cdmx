@@ -167,7 +167,7 @@
 "mmenu_item_ecobici"="ecobici";
 "mmenu_item_about"="About";
 "mmenu_item_adminecobici"="Admin Ecobici";
-"mmenu_item_adminecobici"="Admin Metro";
+"mmenu_item_adminmetro"="Admin Metro";
 
 "api_retry"="Retry";
 "api_error_nodata"="Server no responding, try again later";
