@@ -12,7 +12,7 @@
 -(instancetype)init
 {
     self = [super init];
-    self.name = NSLocalizedString(@"mmenu_item_adminecobici", nil);
+    self.name = NSLocalizedString(@"mmenu_item_adminmetro", nil);
     self.asset = @"generic_logo";
     
     return self;

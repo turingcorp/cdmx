@@ -1,5 +1,6 @@
 #import "mmenusectionadmin.h"
 #import "mmenusectionitemadminecobici.h"
+#import "mmenusectionitemadminmetro.h"
 
 @interface mmenusection ()
 
@@ -15,7 +16,8 @@
     self = [super init];
     self.name = NSLocalizedString(@"mmenu_section_admin", nil);
     self.items = @[
-                   [[mmenusectionitemadminecobici alloc] init]
+                   [[mmenusectionitemadminecobici alloc] init],
+                   [[mmenusectionitemadminmetro alloc] init]
                    ];
     
     return self;
