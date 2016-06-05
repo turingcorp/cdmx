@@ -1,4 +1,5 @@
 #import "mmenusectionitemadminmetro.h"
+#import "cadminmetro.h"
 
 @interface mmenusectionitem ()
 
@@ -23,7 +24,7 @@
 
 -(UIViewController*)controller
 {
-    UIViewController *controller = [[UIViewController alloc] init];
+    cadminmetro *controller = [[cadminmetro alloc] init];
     
     return controller;
 }
