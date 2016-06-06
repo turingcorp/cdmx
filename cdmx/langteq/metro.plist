@@ -26,10 +26,28 @@
 					<key>latitude</key>
 					<real>19.398163</real>
 					<key>longitude</key>
-					<real>-99.20038099999999</real>
+					<real>-99.200233</real>
 				</dict>
 				<key>link</key>
 				<array/>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Tacubaya</string>
+				<key>asset</key>
+				<string>metro_1_tacubaya</string>
+				<key>location</key>
+				<dict>
+					<key>latitude</key>
+					<real>19.401929</real>
+					<key>longitude</key>
+					<real>-99.187292</real>
+				</dict>
+				<key>link</key>
+				<array>
+					<string>7</string>
+					<string>9</string>
+				</array>
 			</dict>
 		</array>
 	</dict>
