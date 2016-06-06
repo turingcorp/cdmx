@@ -79,6 +79,21 @@
                 <key>link</key>
                 <array/>
             </dict>
+            <dict>
+                <key>name</key>
+                <string>Sevilla</string>
+                <key>asset</key>
+                <string>metro_1_sevilla</string>
+                <key>location</key>
+                <dict>
+                    <key>latitude</key>
+                    <real>19.421728</real>
+                    <key>longitude</key>
+                    <real>-99.170824</real>
+                </dict>
+                <key>link</key>
+                <array/>
+            </dict>
 		</array>
 	</dict>
 </array>
