@@ -49,6 +49,21 @@
 					<string>9</string>
 				</array>
 			</dict>
+            <dict>
+                <key>name</key>
+                <string>Juanacatlan</string>
+                <key>asset</key>
+                <string>metro_1_juanacatlan</string>
+                <key>location</key>
+                <dict>
+                    <key>latitude</key>
+                    <real>19.412949</real>
+                    <key>longitude</key>
+                    <real>-99.181684</real>
+                </dict>
+                <key>link</key>
+                <array/>
+            </dict>
 		</array>
 	</dict>
 </array>
