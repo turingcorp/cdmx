@@ -8,12 +8,30 @@
 		<key>color</key>
 		<dict>
 			<key>red</key>
-			<integer>0</integer>
+			<real>0.949</real>
 			<key>green</key>
-			<integer>0</integer>
+			<real>0.396</real>
 			<key>blue</key>
-			<integer>0</integer>
+			<real>0.584</real>
 		</dict>
+		<key>stations</key>
+		<array>
+			<dict>
+				<key>name</key>
+				<string>Observatorio</string>
+				<key>asset</key>
+				<string>metro_1_observatorio</string>
+				<key>location</key>
+				<dict>
+					<key>latitude</key>
+					<real>19.398163</real>
+					<key>longitude</key>
+					<real>-99.20038099999999</real>
+				</dict>
+				<key>link</key>
+				<array/>
+			</dict>
+		</array>
 	</dict>
 </array>
 </plist>
