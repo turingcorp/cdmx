@@ -94,6 +94,21 @@
                 <key>link</key>
                 <array/>
             </dict>
+            <dict>
+                <key>name</key>
+                <string>Insurgentes</string>
+                <key>asset</key>
+                <string>metro_1_insurgentes</string>
+                <key>location</key>
+                <dict>
+                    <key>latitude</key>
+                    <real>19.423508</real>
+                    <key>longitude</key>
+                    <real>-99.163316</real>
+                </dict>
+                <key>link</key>
+                <array/>
+            </dict>
 		</array>
 	</dict>
 </array>
