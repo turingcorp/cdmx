@@ -124,6 +124,23 @@
                 <key>link</key>
                 <array/>
             </dict>
+            <dict>
+                <key>name</key>
+                <string>Balderas</string>
+                <key>asset</key>
+                <string>metro_1_balderas</string>
+                <key>location</key>
+                <dict>
+                    <key>latitude</key>
+                    <real>19.427579</real>
+                    <key>longitude</key>
+                    <real>-99.148999</real>
+                </dict>
+                <key>link</key>
+                <array>
+                    <string>3</string>
+                </array>
+            </dict>
 		</array>
 	</dict>
 </array>
