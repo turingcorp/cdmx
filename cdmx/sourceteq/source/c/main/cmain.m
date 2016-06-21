@@ -111,7 +111,7 @@ static CGFloat const pushcontrolleranimation = 0.3;
      {
          [welf.current removeFromParentViewController];
          [controller didMoveToParentViewController:welf];
-         welf.current = controller;
+         welf.current = controller; 
          
          [welf setNeedsStatusBarAppearanceUpdate];
      }];
