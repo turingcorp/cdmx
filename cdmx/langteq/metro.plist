@@ -140,6 +140,34 @@
                     <string>8</string>
                 </array>
             </dict>
+            <dict>
+                <key>name</key>
+                <string>Isabel la católica</string>
+                <key>location</key>
+                <dict>
+                    <key>latitude</key>
+                    <real>19.426382</real>
+                    <key>longitude</key>
+                    <real>-99.137822</real>
+                </dict>
+                <key>link</key>
+                <array/>
+            </dict>
+            <dict>
+                <key>name</key>
+                <string>Pino Suárez</string>
+                <key>location</key>
+                <dict>
+                    <key>latitude</key>
+                    <real>19.425613</real>
+                    <key>longitude</key>
+                    <real>-99.132897</real>
+                </dict>
+                <key>link</key>
+                <array>
+                    <string>2</string>
+                </array>
+            </dict>
 		</array>
 	</dict>
 </array>
