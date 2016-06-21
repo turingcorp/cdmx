@@ -168,6 +168,32 @@
                     <string>2</string>
                 </array>
             </dict>
+            <dict>
+                <key>name</key>
+                <string>Merced</string>
+                <key>location</key>
+                <dict>
+                    <key>latitude</key>
+                    <real>19.425340</real>
+                    <key>longitude</key>
+                    <real>-99.125333</real>
+                </dict>
+                <key>link</key>
+                <array/>
+            </dict>
+            <dict>
+                <key>name</key>
+                <string>Candelaria</string>
+                <key>location</key>
+                <dict>
+                    <key>latitude</key>
+                    <real>19.429286</real>
+                    <key>longitude</key>
+                    <real>-99.120687</real>
+                </dict>
+                <key>link</key>
+                <array/>
+            </dict>
 		</array>
 	</dict>
 </array>
