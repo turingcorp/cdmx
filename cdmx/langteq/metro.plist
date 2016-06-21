@@ -226,13 +226,13 @@
             </dict>
             <dict>
                 <key>name</key>
-                <string>Balbuena</string>
+                <string>Boulevard Puerto Aereo</string>
                 <key>location</key>
                 <dict>
                     <key>latitude</key>
-                    <real>19.422876</real>
+                    <real>19.419982</real>
                     <key>longitude</key>
-                    <real>-99.102646</real>
+                    <real>-99.096016</real>
                 </dict>
                 <key>link</key>
                 <array/>
