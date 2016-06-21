@@ -19,8 +19,6 @@
 			<dict>
 				<key>name</key>
 				<string>Observatorio</string>
-				<key>asset</key>
-				<string>metro_1_observatorio</string>
 				<key>location</key>
 				<dict>
 					<key>latitude</key>
@@ -34,8 +32,6 @@
 			<dict>
 				<key>name</key>
 				<string>Tacubaya</string>
-				<key>asset</key>
-				<string>metro_1_tacubaya</string>
 				<key>location</key>
 				<dict>
 					<key>latitude</key>
@@ -52,8 +48,6 @@
             <dict>
                 <key>name</key>
                 <string>Juanacatlan</string>
-                <key>asset</key>
-                <string>metro_1_juanacatlan</string>
                 <key>location</key>
                 <dict>
                     <key>latitude</key>
@@ -67,8 +61,6 @@
             <dict>
                 <key>name</key>
                 <string>Chapultepec</string>
-                <key>asset</key>
-                <string>metro_1_chapultepec</string>
                 <key>location</key>
                 <dict>
                     <key>latitude</key>
@@ -82,8 +74,6 @@
             <dict>
                 <key>name</key>
                 <string>Sevilla</string>
-                <key>asset</key>
-                <string>metro_1_sevilla</string>
                 <key>location</key>
                 <dict>
                     <key>latitude</key>
@@ -97,8 +87,6 @@
             <dict>
                 <key>name</key>
                 <string>Insurgentes</string>
-                <key>asset</key>
-                <string>metro_1_insurgentes</string>
                 <key>location</key>
                 <dict>
                     <key>latitude</key>
@@ -112,8 +100,6 @@
             <dict>
                 <key>name</key>
                 <string>Cuauhtémoc</string>
-                <key>asset</key>
-                <string>metro_1_cuauhtemoc</string>
                 <key>location</key>
                 <dict>
                     <key>latitude</key>
@@ -127,8 +113,6 @@
             <dict>
                 <key>name</key>
                 <string>Balderas</string>
-                <key>asset</key>
-                <string>metro_1_balderas</string>
                 <key>location</key>
                 <dict>
                     <key>latitude</key>
@@ -139,6 +123,21 @@
                 <key>link</key>
                 <array>
                     <string>3</string>
+                </array>
+            </dict>
+            <dict>
+                <key>name</key>
+                <string>Salto del agua</string>
+                <key>location</key>
+                <dict>
+                    <key>latitude</key>
+                    <real>19.427060</real>
+                    <key>longitude</key>
+                    <real>-99.143315</real>
+                </dict>
+                <key>link</key>
+                <array>
+                    <string>8</string>
                 </array>
             </dict>
 		</array>
