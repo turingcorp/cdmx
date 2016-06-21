@@ -250,6 +250,19 @@
                 <key>link</key>
                 <array/>
             </dict>
+            <dict>
+                <key>name</key>
+                <string>Zaragoza</string>
+                <key>location</key>
+                <dict>
+                    <key>latitude</key>
+                    <real>19.412264</real>
+                    <key>longitude</key>
+                    <real>-99.082363</real>
+                </dict>
+                <key>link</key>
+                <array/>
+            </dict>
 		</array>
 	</dict>
 </array>
