@@ -188,7 +188,7 @@
 		DAC1AAE11D04B87C00C1355D /* vadminmetro.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC1AAE01D04B87C00C1355D /* vadminmetro.m */; };
 		DAC1AAE51D04C35600C1355D /* madminmetro.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC1AAE41D04C35600C1355D /* madminmetro.m */; };
 		DAC1AAE81D04C4CC00C1355D /* ecobici.zql in Resources */ = {isa = PBXBuildFile; fileRef = DAC1AAE71D04C4CC00C1355D /* ecobici.zql */; };
-		DAC1AAEA1D04C51C00C1355D /* metro.plist in Resources */ = {isa = PBXBuildFile; fileRef = DAC1AAE91D04C51C00C1355D /* metro.plist */; };
+		DAC1AAEA1D04C51C00C1355D /* metro1.plist in Resources */ = {isa = PBXBuildFile; fileRef = DAC1AAE91D04C51C00C1355D /* metro1.plist */; };
 		DAC21D081CE4C2AA00D92161 /* mpollution.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC21CD11CE4C2AA00D92161 /* mpollution.m */; };
 		DAC21D091CE4C2AA00D92161 /* mpollutionhour.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC21CD31CE4C2AA00D92161 /* mpollutionhour.m */; };
 		DAC21D0F1CE4C2AA00D92161 /* mpollutionnotificationdraw.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC21CDF1CE4C2AA00D92161 /* mpollutionnotificationdraw.m */; };
@@ -667,7 +667,7 @@
 		DAC1AAE31D04C35600C1355D /* madminmetro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = madminmetro.h; sourceTree = "<group>"; };
 		DAC1AAE41D04C35600C1355D /* madminmetro.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = madminmetro.m; sourceTree = "<group>"; };
 		DAC1AAE71D04C4CC00C1355D /* ecobici.zql */ = {isa = PBXFileReference; lastKnownFileType = file; path = ecobici.zql; sourceTree = "<group>"; };
-		DAC1AAE91D04C51C00C1355D /* metro.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = metro.plist; sourceTree = "<group>"; };
+		DAC1AAE91D04C51C00C1355D /* metro1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = metro1.plist; sourceTree = "<group>"; };
 		DAC21CD01CE4C2AA00D92161 /* mpollution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpollution.h; sourceTree = "<group>"; };
 		DAC21CD11CE4C2AA00D92161 /* mpollution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mpollution.m; sourceTree = "<group>"; };
 		DAC21CD21CE4C2AA00D92161 /* mpollutionhour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpollutionhour.h; sourceTree = "<group>"; };
@@ -1727,7 +1727,7 @@
 				DAD33FB01CBC83E300C87502 /* Localizable.strings */,
 				DAB26D7E1CE0ECB300E1580F /* districts.plist */,
 				DAB3FEDB1CE26DCF00CCBB86 /* url.plist */,
-				DAC1AAE91D04C51C00C1355D /* metro.plist */,
+				DAC1AAE91D04C51C00C1355D /* metro1.plist */,
 			);
 			path = langteq;
 			sourceTree = "<group>";
@@ -2246,7 +2246,7 @@
 				DAEA5A211CEA9FEE00584526 /* recommendations.plist in Resources */,
 				DAF7AF081CFDC71200E1FADA /* ecobici.xcassets in Resources */,
 				DAB26D7F1CE0ECB300E1580F /* districts.plist in Resources */,
-				DAC1AAEA1D04C51C00C1355D /* metro.plist in Resources */,
+				DAC1AAEA1D04C51C00C1355D /* metro1.plist in Resources */,
 				DA86ACBD1CE36E2500908755 /* pollution.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
