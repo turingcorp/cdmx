@@ -263,6 +263,23 @@
                 <key>link</key>
                 <array/>
             </dict>
+            <dict>
+                <key>name</key>
+                <string>Pantitlán</string>
+                <key>location</key>
+                <dict>
+                    <key>latitude</key>
+                    <real>19.415785</real>
+                    <key>longitude</key>
+                    <real>-99.074349</real>
+                </dict>
+                <key>link</key>
+                <array>
+                    <string>5</string>
+                    <string>9</string>
+                    <string>A</string>
+                </array>
+            </dict>
 		</array>
 	</dict>
 </array>
