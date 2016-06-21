@@ -192,7 +192,24 @@
                     <real>-99.120687</real>
                 </dict>
                 <key>link</key>
-                <array/>
+                <array>
+                    <string>4</string>
+                </array>
+            </dict>
+            <dict>
+                <key>name</key>
+                <string>San Lázaro</string>
+                <key>location</key>
+                <dict>
+                    <key>latitude</key>
+                    <real>19.430844</real>
+                    <key>longitude</key>
+                    <real>-99.114931</real>
+                </dict>
+                <key>link</key>
+                <array>
+                    <string>B</string>
+                </array>
             </dict>
 		</array>
 	</dict>
