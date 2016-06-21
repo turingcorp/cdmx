@@ -113,6 +113,7 @@
 		DA92746B1CE540050005138A /* vpollutionfrontlayout.m in Sources */ = {isa = PBXBuildFile; fileRef = DA92746A1CE540050005138A /* vpollutionfrontlayout.m */; };
 		DA92746F1CE55B600005138A /* mpollutionmap.m in Sources */ = {isa = PBXBuildFile; fileRef = DA92746E1CE55B600005138A /* mpollutionmap.m */; };
 		DA9274721CE55D090005138A /* mpollutionmapitem.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9274711CE55D090005138A /* mpollutionmapitem.m */; };
+		DA98E3E81D18CCCF008FE56F /* metro2.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA98E3E71D18CCCF008FE56F /* metro2.plist */; };
 		DAA0C67A1CD978BD00880D3E /* gtexture.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA0C6791CD978BD00880D3E /* gtexture.m */; };
 		DAA0C67D1CD978C600880D3E /* gspatial.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA0C67C1CD978C600880D3E /* gspatial.m */; };
 		DAA0C6801CD978CF00880D3E /* gspatialtexture.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA0C67F1CD978CF00880D3E /* gspatialtexture.m */; };
@@ -520,6 +521,7 @@
 		DA92746E1CE55B600005138A /* mpollutionmap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mpollutionmap.m; sourceTree = "<group>"; };
 		DA9274701CE55D090005138A /* mpollutionmapitem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpollutionmapitem.h; sourceTree = "<group>"; };
 		DA9274711CE55D090005138A /* mpollutionmapitem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mpollutionmapitem.m; sourceTree = "<group>"; };
+		DA98E3E71D18CCCF008FE56F /* metro2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = metro2.plist; sourceTree = "<group>"; };
 		DAA0C6781CD978BD00880D3E /* gtexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gtexture.h; sourceTree = "<group>"; };
 		DAA0C6791CD978BD00880D3E /* gtexture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gtexture.m; sourceTree = "<group>"; };
 		DAA0C67B1CD978C600880D3E /* gspatial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gspatial.h; sourceTree = "<group>"; };
@@ -1728,6 +1730,7 @@
 				DAB26D7E1CE0ECB300E1580F /* districts.plist */,
 				DAB3FEDB1CE26DCF00CCBB86 /* url.plist */,
 				DAC1AAE91D04C51C00C1355D /* metro1.plist */,
+				DA98E3E71D18CCCF008FE56F /* metro2.plist */,
 			);
 			path = langteq;
 			sourceTree = "<group>";
@@ -2236,6 +2239,7 @@
 				DA6F59381CF4922B004DD437 /* spinner.xcassets in Resources */,
 				DAD7AA291CEF631C003B169A /* radiation.plist in Resources */,
 				DA8C17051CF26DA10034AA8E /* nodrive.xcassets in Resources */,
+				DA98E3E81D18CCCF008FE56F /* metro2.plist in Resources */,
 				DA8F03441CC1C6B10007596C /* districts.xcassets in Resources */,
 				DA4096411CDBF8880001D696 /* generic.xcassets in Resources */,
 				DA13FCD71CEAA4F800DE7A23 /* imeca.txt in Resources */,
