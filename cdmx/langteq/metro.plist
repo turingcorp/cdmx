@@ -224,6 +224,19 @@
                 <key>link</key>
                 <array/>
             </dict>
+            <dict>
+                <key>name</key>
+                <string>Balbuena</string>
+                <key>location</key>
+                <dict>
+                    <key>latitude</key>
+                    <real>19.422876</real>
+                    <key>longitude</key>
+                    <real>-99.102646</real>
+                </dict>
+                <key>link</key>
+                <array/>
+            </dict>
 		</array>
 	</dict>
 </array>
