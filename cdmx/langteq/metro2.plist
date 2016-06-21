@@ -1,14 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<!--
-   metro2.plist
-   cdmx
-
-   Created by zero on 6/20/16.
-   Copyright (c) 2016 Iturbide. All rights reserved.
--->
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-    <dict>
-    
-    </dict>
+    <array>
+        <dict>
+            <key>name</key>
+            <string>2</string>
+            <key>color</key>
+            <dict>
+                <key>red</key>
+                <real>0.074</real>
+                <key>green</key>
+                <real>0.482</real>
+                <key>blue</key>
+                <real>0.756</real>
+            </dict>
+            <key>stations</key>
+            <array>
+                <dict>
+                    <key>name</key>
+                    <string>Tasqueña</string>
+                    <key>location</key>
+                    <dict>
+                        <key>latitude</key>
+                        <real>19.343682</real>
+                        <key>longitude</key>
+                        <real>-99.139566</real>
+                    </dict>
+                    <key>link</key>
+                    <array/>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>General Anaya</string>
+                    <key>location</key>
+                    <dict>
+                        <key>latitude</key>
+                        <real>19.353309</real>
+                        <key>longitude</key>
+                        <real>-99.144930</real>
+                    </dict>
+                    <key>link</key>
+                    <array/>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>Ermita</string>
+                    <key>location</key>
+                    <dict>
+                        <key>latitude</key>
+                        <real>19.361619</real>
+                        <key>longitude</key>
+                        <real>-99.142816</real>
+                    </dict>
+                    <key>link</key>
+                    <array>
+                        <string>12</string>
+                    </array>
+                </dict>
+            </array>
+        </dict>
+    </array>
 </plist>
