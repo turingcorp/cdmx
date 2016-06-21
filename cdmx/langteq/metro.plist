@@ -237,6 +237,19 @@
                 <key>link</key>
                 <array/>
             </dict>
+            <dict>
+                <key>name</key>
+                <string>Gómez Farias</string>
+                <key>location</key>
+                <dict>
+                    <key>latitude</key>
+                    <real>19.416592</real>
+                    <key>longitude</key>
+                    <real>-99.090158</real>
+                </dict>
+                <key>link</key>
+                <array/>
+            </dict>
 		</array>
 	</dict>
 </array>
